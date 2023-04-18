@@ -1,0 +1,28 @@
+====== Tabulify - Step ======
+
+
+===== Step =====
+A ''step'' (''operation step'') is an element of a [[docs:flow:pipeline|pipeline]] that executes a [[docs:op:op|data operation]].
+
+
+===== Syntax =====
+
+The syntax of a step is the following:
+<code yaml>
+pipeline:
+    - name: "name" # The name of a step is the identifier and should not contains any space
+      comment: "A long or short command/description of the step"
+      op: "operationName" # the name of the operation to perform
+      args: # The arguments to pass to the operation
+          arg1:  value1 # the first argument
+          arg2:  value2 # the second argument
+          ....
+          argN:  valueN # the Nieme argument
+</code>
+
+
+===== Optional Post Operation =====
+
+A step can apply other optional [[docs:op:op|data operation]] on its [[docs:flow:source|source data resources]] after
+  * successful
+  * or failed execution

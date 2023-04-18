@@ -1,0 +1,17 @@
+====== Tabli - log-level option ======
+
+
+===== Log =====
+The [[docs:common:log|log level]] of the Tabulify platform is managed for [[docs:tabli:tabli|Tabli]] via the ''%%--log-level%%'' [[option|option]].
+
+
+===== Management =====
+==== Set ====
+
+=== Command Line Option ===
+
+You can change the log level via the ''log-level'' [[docs:tabli:option|option]].
+<code bash>
+tabli data list --log-level tip 
+</code>
+

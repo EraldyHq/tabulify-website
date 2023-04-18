@@ -1,0 +1,49 @@
+====== Data Resource - Json ======
+
+
+===== About =====
+A <icon name="carbon:json"/> ''json'' file is a [[text|text file]] that contains one or several ''json object''.
+
+
+===== Howto =====
+<related pattern="howto:*" />
+
+===== Type =====
+''Tabulify'' supports the following JSON [[type|type]]:
+  * ''json'' : one JSON object by file
+  * ''jsonl'': one JSON object by line (ie the [[http://jsonlines.org/|Jsonl]] format)
+
+===== Attributes =====
+The [[attribute|attributes]] of a JSON file are:
+
+^ Name ^ Description ^
+| ''structure'' | ''document'' - the whole ''JSON'' document will be stored in [[docs:resource:tabular|tabular format]] with ''1'' column of the ''json'' [[docs:common:data_type|data type]] \\ ''properties'' - the JSON file will be parsed and all first level properties will create several columns in a full [[docs:resource:tabular|tabular format]] |
+^ Because a ''json'' file is also a [[text|text file]], it inherits all [[text#attributes|text attributes]] ^^
+| [[text#arguments|endOfRecord]] | For a ''JSON'' file, ''end of a file (EOF)''. It expects one JSON object by file \\ For a ''JSONL'' file, ''end of a line (EOL)''. It expects one JSON object by line |
+| [[text#arguments|columnName]] | The name of the column in the case of a ''document'' structure (Default to ''json'') |
+
+
+
+===== Creation =====
+With the [[docs:op:template|JSON template]], you can create a JSON file from tabular data.
+
+
+===== How to see the first lines =====
+By default, ''Tabulify'' treats one JSON document as one record (line), you would see the whole document.
+
+If you want to see the first text lines of a document, you need to set the [[type|type]] to [[text|text]].
+
+Example:
+<unit>
+<code bash>
+tabli data head --type text --limit 3 books_template.json@howto
+</code>
+<console>
+The first 3 rows of the data resource (books_template.json@howto): 
+lines              
+----------------   
+{                  
+  "${group}": {    
+    "${asin}": {
+</console>
+</unit>

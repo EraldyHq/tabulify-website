@@ -1,0 +1,5 @@
+====== Data Operation - Truncate ======
+
+===== About =====
+''truncate'' is a [[op|data operation]] that is supported by the [[docs:tabli:data:truncate|data truncate command]] that will delete the [[docs:resource:content|content]] of a [[docs:resource:resource|data resource]] but not it's [[docs:resource:metadata|metadata]]
+

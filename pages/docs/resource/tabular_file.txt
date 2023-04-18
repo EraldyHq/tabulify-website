@@ -1,0 +1,8 @@
+====== Data Resource - Tabular File ======
+
+===== About =====
+A ''tabular file'' is a [[docs:resource:file|file]] that may show a [[docs:resource:tabular|tabular structure]].
+===== List =====
+  * [[docs:resource:csv]]
+  * [[docs:resource:excel]]
+  * [[json]] when the chosen structure option is ''tabular''

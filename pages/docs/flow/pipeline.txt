@@ -1,0 +1,28 @@
+====== Tabulify - Pipeline Flow ======
+
+===== Pipeline =====
+A ''pipeline'' is a [[docs:common:yaml|yaml]] file that defines a serie of [[docs:flow:step|step]] where:
+  * the first step called the [[docs:flow:supplier|supplier step]]:
+      * selects [[docs:resource:resource|data resources]]
+      * and send them to the next step
+  * and the following steps called [[intermediate|intermediate steps]]:
+      * accept the [[target|output (target)]] of the previous step as [[source|source]]
+      * and produce [[target|target (output) resources]].
+
+
+===== Syntax =====
+The syntax of a pipeline script is the following
+
+
+<code yaml  pipeline.yml>
+pipeline:
+    - name: supplierStep1 # first operation of a pipeline is a supplier step
+      .....
+    - name: intermediateStep2 # next operation are called intermediate and works on the resource returned from the supplier
+      .....
+</code>
+where each name is the name of a [[step|step]]
+
+===== Execution =====
+You can execute a pipeline with the [[docs:tabli:flow:execute|flow execute command]]
+

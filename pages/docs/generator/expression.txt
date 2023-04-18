@@ -1,0 +1,87 @@
+====== Expression Generator ======
+
+
+===== About =====
+A ''expression generator'' is a [[column|column data generator]] that can [[generator|generate]] data created from:
+  * other columns (known as ''parent columns'') 
+  * by giving an ''expression (or formula)''.
+===== Howto =====
+<related pattern="howto:*" />
+
+
+===== Syntax =====
+
+<code yaml>
+columns:
+  - name: columnName
+    DataGenerator:
+      type: expression
+      ColumnParents: 
+           - columnParentName1 # variable x
+           - columnParentName2 # variable y
+           - ...... # variable "z", "a", "b", "c", "d","e","f"
+      expression: "javascriptExpression"  # See below for example
+</code>
+
+
+
+^ Mandatory Key ^  Description ^
+| ''ColumnParents'' | The column generator used in the expression | 
+| ''expression'' | The expression in javascript where the parents columns maps by order to the following variables "x", "y", "z", "a", "b", "c", "d","e", "f" |
+
+===== How to hide intermediate columns ?=====
+
+When creating an expression generator, you may want to create columns that should not appear in the data generated.
+For this purpose, you can use the ''hidden'' property.
+
+Example:
+<code yaml>
+- name: columnToHide
+  Hidden: true  # The column will not be added to the output.
+  Description: An hidden column
+  DataGenerator:
+    type: entity
+</code>
+
+
+===== Snippet of expression =====
+This section is showing snippet of expression (Javascript).
+
+==== Time ====
+
+  * Month where ''x'' represents the ''date'' value of the first parent columns
+<code javascript>
+x.getMonth()+1 // Month
+</code>
+  * Month names. The below snippet use a ''date'' column as parent and lookup an array to get the month name.
+<code javascript>
+var monthNames = ['Jan', 'Feb', 'Maa', 'Apr', 'Mei', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec']; 
+monthNames[x.getMonth()]
+</code>
+  * Year number
+<code javascript>
+x.getFullYear()
+</code>
+==== Email ====
+Email String concatenation where:
+      * ''x'' would be a name from the first parent column
+      * ''y'' would be a company name from the second parent column 
+      * ''z'' would be a TLD domain extension (''.com'', ...)
+<code javascript>
+x+'@'+y+'.'+z
+</code>
+
+===== Data Type =====
+
+The below data type are supported:
+
+^ Data Type ^
+| Integer |
+| Float |
+| Double | 
+| Numeric | 
+| Decimal |
+| Date |
+| Timestamp |
+| Varchar |
+

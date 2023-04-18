@@ -1,0 +1,27 @@
+---json
+{
+    "aliases": [
+        { "path": ":docs:system:mysql" }
+    ],
+    "page_id": "sizgoan0iv6rk1bvityc5"
+}
+---
+====== MySql ======
+
+
+===== About =====
+''MySql'' is a [[docs:system:relational|relational database system]] that is supported as [[docs:flow:source|source]] and [[docs:flow:target|target]].
+
+===== Catalog vs Database vs Schema =====
+In ''MySQL'' (([[https://dev.mysql.com/doc/refman/8.0/en/create-table.html#create-table-name|Reference Fully Qualified Table Name]])) :
+  * ''SQL Catalog'' are called  ''database''
+  * ''SQL Schema'' are not supported
+
+Because Tabulify is data source agnostic, a ''MySql Catalog'' is known as a [[docs:resource:schema|schema]] (ie the first parent).
+
+
+===== Version =====
+MySql is tested against version [[https://dev.mysql.com/doc/refman/5.7/en/|5.7]].
+
+===== Howto =====
+To follow the [[howto:howto|Howto]], you need to start a MySql container database. The steps by steps are available on this page: [[howto]]

@@ -1,0 +1,47 @@
+<container width="700px" align="center">
+====== Tabulify - Where To Get Help ======
+
+
+<note spacing="my-3">
+''Feedback'' and ''Questions'' are always welcome. 
+
+Even if we think heel hard about it, real experience is the best feedback and we can't wait to hear what you have to say.
+</note>
+
+<card-columns>
+
+<card width="fit-content" align="center">
+=== Easy as an Email ===
+<icon name="email"/> Feel free to contact us!
+
+<button spacing="mt-3" elevation="true">[[support@tabulify.com]]</button>
+</card>
+
+
+
+<card>
+
+=== Twitter ===
+<icon name="twitter"/> For the latest news about Tabulify
+
+<btn spacing="mt-3">
+[[https://twitter.com/tabulify|Follow us on Twitter ]]
+</btn>
+</card>
+
+
+
+<card>
+=== Stack Overflow ===
+<icon name="stack-overflow"/> Stack Overflow is a popular forum to ask questions or if you’re stuck with a specific error. 
+
+<btn spacing="mt-3">
+[[https://stackoverflow.com/questions/ask?tags=tabulify|Ask your own question]]
+</btn>
+</card>
+
+</card-columns>
+</container>
+
+
+

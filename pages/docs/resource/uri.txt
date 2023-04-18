@@ -1,0 +1,12 @@
+====== Resource - URI/URL ======
+
+
+===== About =====
+
+A resource can be identified directly with an URI (URL) for instance on the [[docs:system:http|web]] or local file system.
+
+
+
+
+An URI can be passed directly as [[data_selector|data selector]].
+

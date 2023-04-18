@@ -1,0 +1,11 @@
+====== Tabulify - Flow ======
+
+
+===== About =====
+''pipeline'' is the script language of ''Tabulify'' and describes a workflow of [[pipeline|pipeline]] that process [[docs:resource:resource|data resources]]
+
+
+
+
+===== Execution =====
+You can execute a pipeline with the [[docs:tabli:flow:execute|flow execute command]]

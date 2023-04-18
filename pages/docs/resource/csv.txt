@@ -1,0 +1,24 @@
+====== Data Resource - Csv ======
+
+
+
+===== About =====
+''csv'' is a supported [[tabular_file|tabular file]] [[resource|data resource]].
+
+===== Howto =====
+<related pattern="howto:*" />
+
+===== Properties =====
+
+
+^ Name ^ Default Value ^ Description ^
+| ''commentCharacter'' | ''%%#%%'' | The character that if found as the first character of a line makes the line a comment |
+| ''delimiterCharacter'' | ''%%,%%'' | The character that delimits every fields (ie columns) |
+| ''escapeCharacter'' | ''null'' | The character that when found before a CSV character, set it as a character and not as a property |
+| ''headerRowId'' | ''1'' | The row id where the header is located (''0'' means no header and ''1'' the first line) | 
+| ''ignoreEmptyLine'' | ''true'' | Empty line are ignored |
+| ''quoteCharacter'' | ''%%"%%'' | The character that enclose a field value. |
+
+<note tip>
+Because a ''csv'' file is also a [[text|text file]], you can also set [[text#properties|text properties]]
+</note>

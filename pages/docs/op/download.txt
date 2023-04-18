@@ -1,0 +1,9 @@
+====== Data Operation - DownLoad ======
+
+
+===== About =====
+A ''download'' is a [[transfer|transfer operation]] from a remote data system (ie [[docs:connection:connection|connection]]) to the [[docs:connection:cd|local file system]].
+
+
+
+

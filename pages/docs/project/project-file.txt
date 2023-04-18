@@ -1,0 +1,26 @@
+====== Project File ======
+
+
+===== About =====
+The project file is a [[docs:conf:conf|configuration file]]:
+  * named ''.tabli.yml'' 
+  * that is located in the [[docs:connection:project|project home directory]] 
+  * that defines optionally the location of the [[#configuration|configuration files for the project]] 
+
+
+===== Configuration =====
+By [[docs:project:environment|environment]], the project file can redefine the location of:
+  * the [[docs:conf:vault|connection vault file]]
+  * the [[docs:conf:variable_file|variables file]]
+
+
+
+<code yaml .tabli.yml>
+envs:
+  development:
+    connections: app/conf/development/connections.ini
+    variables: app/conf/development/variables.yml
+  production:
+    connections: app/conf/production/connections.ini
+    variables: app/conf/production/variables.yml
+</code>

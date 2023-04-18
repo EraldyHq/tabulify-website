@@ -1,0 +1,67 @@
+====== Data Resource - Text File ======
+
+
+===== About =====
+A ''text'' file is a [[file|file]] [[resource|data resource]] that contains ''characters'' data.
+
+
+
+
+===== Attributes =====
+
+A ''text file'' allows to specifies the following [[attribute|attributes]].
+
+^ Name ^ Default Values ^ Description ^
+| ''endOfRecords'' | ''\r\n'', ''\n'' or ''\r''  on Read \\  ''\r\n'' (Windows) or ''\n'' (Linux) on Write | The ''end of record (EOR)'' are the characters that design the end of a [[record|record]] (by default the end of line) |
+| ''characterSet'' | Detected on Read \\ ''UTF-8'' on Creation | The character set that maps bits data to characters.  |
+| ''columnName'' | ''Lines'' | The name of the column when loaded in a [[docs:system:relational|relational database]]. \\ A text file is then processed as [[tabular|tabular data]] with one column of [[docs:common:data_type|type]] text. |
+
+<note>
+Note also that the [[count|count common attribute]] gives you the number of record (line by default).
+</note>
+
+
+===== CharacterSet =====
+
+The below values are the detected and most known ''characterSet'' values.
+
+<note info>
+If a value entered is not supported, you will get the whole list of supported character set.
+</note>
+
+^ Value ^ Languages (Description) ^
+| ''US-ASCII'' | Seven-bit ASCII, a.k.a. |
+| ''UTF-16'' | Sixteen-bit UCS Transformation Format, \\ byte order identified by an optional byte-order mark |
+| ''UTF-16BE'' | Sixteen-bit UCS Transformation Format, big-endian byte order |
+| ''UTF-16LE'' | Sixteen-bit UCS Transformation Format, little-endian byte order |
+| ''UTF-8'' | Eight-bit UCS Transformation Format |
+| ''UTF-32BE'' |  |
+| ''UTF-32LE'' |  |
+| ''Shift_JIS'' | Japanese |
+| ''ISO-2022-JP'' | Japanese |
+| ''ISO-2022-CN'' | Simplified Chinese |
+| ''ISO-2022-KR'' | Korean |
+| ''GB18030'' | Chinese |
+| ''Big5'' | Traditional Chinese |
+| ''EUC-JP'' | Japanese |
+| ''EUC-KR'' | Korean |
+| ''ISO-8859-1'' | Danish, Dutch, English, French, German, Italian, \\ Norwegian, Portuguese, Swedish - ISO Latin Alphabet No |
+| ''ISO-8859-2'' | Czech, Hungarian, Polish, Romanian |
+| ''ISO-8859-5'' | Russian |
+| ''ISO-8859-6'' | Arabic |
+| ''ISO-8859-7'' | Greek |
+| ''ISO-8859-8'' | Hebrew |
+| ''ISO-8859-9'' | Turkish |
+| ''windows-1250'' | Czech, Hungarian, Polish, Romanian |
+| ''windows-1251'' | Russian |
+| ''windows-1252'' | Danish, Dutch, English, French, German, Italian, \\ Norwegian, Portuguese, Swedish |
+| ''windows-1253'' | Greek |
+| ''windows-1254'' | Turkish |
+| ''windows-1255'' | Hebrew |
+| ''windows-1256'' | Arabic |
+| ''KOI8-R'' | Russian |
+| ''IBM420'' | Arabic |
+| ''IBM424'' | Hebrew |
+
+
+

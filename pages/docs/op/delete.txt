@@ -1,0 +1,13 @@
+====== Data Operation - Delete ======
+
+
+===== About =====
+''delete'' is a [[transfer|transfer operation]] that remove records from the [[docs:resource:content|data]] of a [[docs:resource:resource|data resource]].
+
+
+
+
+===== Support =====
+==== data delete operation ====
+
+The [[docs:tabli:data:delete|data delete operation]] supports the ''delete'' operation at a record level

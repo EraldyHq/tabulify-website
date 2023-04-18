@@ -1,0 +1,111 @@
+---json
+{
+    "description": "This how-to shows you how to generate an  integer sequence (1,2,3,\u2026) with the column sequence generator.",
+    "low_quality_page": "false",
+    "page_id": "eh9fj9ievp326r6c0s8sk",
+    "title": "How to generate a sequence of numbers"
+}
+---
+====== Tabulify - How to generate a sequence of numbers ======
+
+===== About =====
+This [[..:howto|how-to]] shows you how to generate an <icon name="ant-design:ordered-list-outlined" /> ''integer'' [[docs:generator:sequence|sequence]] (1,2,3,...) with the [[docs:generator:sequence|column sequence generator]].
+
+===== Steps =====
+
+==== Creation of the generator file ====
+To generate data, you need to create a [[docs:resource:generator|generator file]] that will describe the data to be generated.
+
+The below [[docs:resource:generator|data resource generator]]:
+  * has the [[docs:resource:name|name]] ''sequence_number--datagen.yml''
+  * has the [[docs:resource:logicalname|logical name]] ''sequence_number''
+  * will generate ''14'' values (''MaxRecordCount'' count)
+  * has a column named ''id'' that has [[docs:generator:sequence|sequence data generator]] that:
+      * starts by default at the value ''1''
+      * increments by default with the value ''1''
+  * has a column named ''seq_int'' with the ''integer'' data type that has [[docs:generator:sequence|sequence data generator]] that:
+      * ''start'' with the value ''3''
+      * increments every ''2'' digits (the ''step'' value)
+      * generates ''5'' values (the ''maxTick'' value)
+  * has a column named ''seq_float'' with the ''float'' data type that has [[docs:generator:sequence|sequence data generator]] that:
+      * ''start'' with the value ''1'' (default)
+      * increments every ''0.5'' digits (the ''step'' value)
+
+<unit>
+<file yaml sequence_number--datagen.yml>
+MaxRecordCount: 14
+Columns:
+  - name: id
+    type: integer
+    comment: A id column to see easily the number of values generated
+    DataGenerator:
+      type: sequence
+  - name: seq_int
+    type: integer
+    comment: A column with a complex sequence integer generator
+    DataGenerator:
+      type: sequence
+      start: 3
+      step: 2
+      maxTick: 5
+  - name: seq_float
+    type: float
+    comment: A column with a float sequence generator
+    DataGenerator:
+      type: sequence
+      step: 0.5
+  - name: seq_double
+    type: double
+    comment: A column with a double sequence generator
+    DataGenerator:
+      type: sequence
+      start: 10
+      step: 0.75
+  - name: seq_numeric
+    scale: 2
+    type: numeric
+    comment: A column with a numeric sequence generator
+    DataGenerator:
+      type: sequence
+      start: 3
+      step: 0.255
+  - name: seq_decimal
+    scale: 2
+    type: decimal
+    comment: A column with a decimal sequence generator
+    DataGenerator:
+      type: sequence
+      start: 3
+      step: 0.255
+
+</file>
+</unit>
+==== Printing the data ====
+
+With the [[docs:tabli:data:print|data print command]], we can print the ''14 values'' generated.
+<unit>
+<code dos>
+tabli data print sequence_number--datagen.yml@howto
+</code>
+<note tip>
+[[docs:connection:howto|howto]] is the connection that contains the files used in the [[..:howto|HowTo's]].
+</note>
+<console>
+id   seq_int   seq_float   seq_double   seq_numeric   seq_decimal
+--   -------   ---------   ----------   -----------   -----------
+ 1         3         1.0         10.0          3.00          3.00
+ 2         5         1.5        10.75          3.26          3.26
+ 3         7         2.0         11.5          3.51          3.51
+ 4         9         2.5        12.25          3.77          3.77
+ 5        11         3.0         13.0          4.02          4.02
+</console>
+</unit>
+===== Next =====
+
+
+
+Because a [[docs:resource:generator|generator]] is just a [[docs:resource:resource|data resource]], you can use it in every [[docs:op:op|data operation]].
+
+<btn>
+[[generator_data_operation|How to use a generator in a data operation ]]
+</btn>

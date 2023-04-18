@@ -1,0 +1,91 @@
+---json
+{
+    "canonical": "tpcds",
+    "description": "This page talks about the TPC-DS benchmark and how you can use it with Tabulify",
+    "images": [
+        { "path": ":docs:system:tpc.ico" },
+        { "path": ":docs:system:tpc.png" }
+    ],
+    "name": "Tpc-ds",
+    "title": "How to execute the TPC-DS benchmark data and query"
+}
+---
+
+
+====== Tabulify - TPC-DS (Benchmark) ======
+
+{{ :howto:database:tpc.svg?200|}}
+
+===== About =====
+''Tabulify'' supports the [[http://www.tpc.org/tpcds/|Tpc-Ds]] [[database|database]] benchmark on the following points:
+  * the [[howto:database:tabli_create_table_with_dependencies|creation of schema]]
+  * the [[howto:getting_started:6_transfer_data_resource|transfer of data]]
+  * the execution of [[docs:connection:tpcds_query|TPC-DS queries]]
+
+
+===== Operations =====
+==== Schema Management====
+This section shows you how to manage the sub-schema of ''TPC-DS''
+=== All tables ===
+''tpcds'' - all ''TPC-DS'' tables
+  * [[docs:tabli:data:list]]
+<code bash>
+tabli data list *@tpcds
+</code>
+  * [[docs:tabli:data:create]]
+<code bash>
+tabli data create *@tpcds @targetConnection
+</code>
+  * [[docs:tabli:data:fill]]
+<code bash>
+tabli data fill *@tpcds @targetConnection
+</code>
+
+=== Dwh ===
+the data-warehouse tables - all tables without the tables that starts with a ''s'' (ie without the staging tables)
+  * [[docs:tabli:data:list]]
+<code bash>
+tabli data list [!s]*@tpcds
+</code>
+  * [[docs:tabli:data:create]]
+<code bash>
+tabli data create [!s]*@tpcds @targetConnection
+</code>
+  * [[docs:tabli:data:fill]]
+<code bash>
+tabli data fill [!s]*@tpcds @targetConnection
+</code>
+=== Store Sales ===
+
+The ''store-sales'' schema has  the ''store_sales'' and ''store_return'' star schema (a data-warehouse schema).
+
+  * [[docs:tabli:data:list]]
+<unit>
+<code bash>
+tabli data list --with-dependencies store*@tpcds
+</code>
+<console>
+</console>
+</unit>
+
+  * [[docs:tabli:data:create]]: With the same argument, you can create the tables
+<code bash>
+tabli data create --with-dependencies store*@tpcds @targetConnection
+</code>
+  * [[docs:tabli:data:copy]]
+<code bash>
+tabli data copy --with-dependencies store*@tpcds @targetConnection
+</code>
+
+<note tip>
+This article explains this technic: [[howto:database:tabli_create_table_with_dependencies|how to select a star schema]]
+</note>
+
+==== Note on the schema ====
+The ''TPC-DS'' benchmark does not define the ''B'' column (''business key'') as unique key. Our implementation makes them all unique (except on the ''item'' table where the column is unique only with the start and end date)
+
+Why ? Because when using ''TPC-DS'' as a sample schema, the [[docs:generator:generator|data generator]] will then create data that is consistent with the  [[docs:connection:tpcds_query|queries]].
+
+<note>
+For TPC-DS, a business key is neither a primary key nor a foreign key in the context of the data warehouse schema. It is only used to differentiate new data from update data of the source tables during the data maintenance operations.
+</note>

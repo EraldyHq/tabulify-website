@@ -1,0 +1,12 @@
+====== Directory ======
+
+
+===== About =====
+A ''directory'' is a ''container'' [[docs:system:file|file system]] [[resource|data resource]] that contains [[file|file]] or ''directory''
+
+
+
+
+
+===== Children Count =====
+The [[count|count attribute]] gives you the number of children.

@@ -1,0 +1,67 @@
+---json
+{
+    "aliases": [
+        { "path": ":docs:connection:vault" }
+    ],
+    "low_quality_page": "false",
+    "name": "Connection Vault",
+    "page_id": "tolx54t1e4mfb0i75vixb"
+}
+---
+====== Tabulify - Connection Vault ======
+
+
+===== About =====
+The ''connection vault'' is a [[docs:conf:conf|configuration file]] where all [[..:connection:connection|connections]] are stored.
+
+
+===== Location =====
+
+==== User ====
+
+You can get the location of the user connection vault with the [[docs:tabli:variable:list|variable list command]].
+<unit>
+<code bash>
+tabli variable list user.connection-vault
+</code>
+<console>
+type       key                     value                                       
+--------   ---------------------   -----------------------------------------   
+Internal   user.connection-vault   C:\Users\gerardnico\.tabli\connection.ini
+</console>
+</unit>
+
+==== Project ====
+The default path when running in a [[docs:project:project|project]] is ''[[..:connection:project|project home]]/conf/connection.ini''
+
+===== Management =====
+
+==== Tabli ====
+
+The [[docs:tabli:connection:start|Tabli Connection module]] permits to manage this file.
+
+In every [[docs:tabli:tabli|tabli command]], you can specify the location of this file with the ''%%--connection-vault%%'' [[docs:tabli:global|global option]].
+
+==== Manually ====
+You can also modify the file  directly with a text editor. 
+
+If you wish to encrypt properties, you can do it:
+  * [[docs:tabli:vault:encrypt|manullay]]
+  * or automatically via the [[..:connection:attribute#automatic_encryption|automatic encryption feature]].
+
+
+===== Format =====
+This file follows the same semantic than ODBC.ini file where each section is a database (ie DSN).
+
+
+===== Encrytion =====
+
+==== Password  ====
+Every password in a connection vault store is encrypted. See [[docs:common:vault]]
+
+
+==== Passphrase ====
+
+When a system connection needs a password, a [[docs:common:passphrase|passphrase]] is mandatory to secure the password. This passphrase should be unique by connection vault file. See [[docs:common:passphrase]]
+
+

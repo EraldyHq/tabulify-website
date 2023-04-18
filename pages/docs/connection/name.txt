@@ -1,0 +1,22 @@
+====== Connection - Name attribute ======
+
+===== Name =====
+A ''connection name'' is a mandatory [[attribute|connection attribute]] as it's the unique identifier of a [[connection|connection]].
+
+
+===== Usage =====
+
+This name is used in:
+  * [[docs:resource:data_uri|data uri]].
+  * [[docs:resource:selector|data resource selector]]
+  * [[docs:resource:target_uri|target uri]]
+
+===== Naming Convention =====
+
+Characters not allowed:
+    * ''/'' the backslash is not allowed (It may induce a tree organization for instance in ''ini'' file)
+
+===== Management =====
+==== See ====
+
+The connection name can be seen with the [[docs:tabli:connection:list|connection list command]]

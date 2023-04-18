@@ -1,0 +1,15 @@
+====== Tabulify - Supplier Step ======
+
+===== About =====
+A ''supplier'' is an [[step|step]] that selects or defines [[docs:resource:resource|data resource]].
+
+It's used the first [[step|step]] of a [[pipeline|pipeline pipeline]].
+
+===== List =====
+
+Tabulify supports the following supplier step.
+
+^ Supplier Step ^ Description ^
+| [[docs:op:select|select]] | Select one or more data resources |
+| [[docs:op:define|define]] | Define or or more data resources |
+

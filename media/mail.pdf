@@ -1,0 +1,23 @@
+Date: Thu, 25 Aug 2022 15:38:57 +0200 (CEST)
+From: support@combostrap.com
+To: gerardnico@gmail.com
+Message-ID: <557540454.1.1661434737485@host.docker.internal>
+Subject: An multi-part mail example
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_0_1469216781.1661434737470"
+
+------=_Part_0_1469216781.1661434737470
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+Hallo,
+ This is the email with one attachment.
+------=_Part_0_1469216781.1661434737470
+Content-Type: text/plain; charset=us-ascii; 
+	name=BMail9595852603126942997.txt
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename=BMail9595852603126942997.txt
+
+The attachement
+------=_Part_0_1469216781.1661434737470--

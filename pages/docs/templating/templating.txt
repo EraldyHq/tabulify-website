@@ -1,0 +1,36 @@
+---json
+{
+    "description": "Templating is the process of transforming a template into a data resource (ie document).",
+    "low_quality_page": "false",
+    "page_id": "e9h7wfpbvfmqjak9o2cw7",
+    "title": "What is templating ?"
+}
+---
+====== Templating ======
+
+\\
+
+{{ :docs:templating:undraw_website_builder.svg?600&ratio=21:9 |}}
+
+\\
+
+===== About =====
+
+''Templating'' is the process of transforming a [[template|template]] into a [[docs:resource:resource|data resource]] (ie document).
+
+This process is executed by a [[engine|template engine]].
+
+
+
+
+===== Template Operation =====
+
+When applying ''values'' of a [[docs:flow:source|source data resource]] to the [[template|template]] via the [[docs:op:template|template operation]], a new [[docs:resource:resource|data resource]] is created by replacing the ''variable name'' by their respective ''value'' and executing optionally logical transformation.
+
+
+
+
+
+
+
+

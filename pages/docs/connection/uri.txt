@@ -1,0 +1,50 @@
+====== Connection - URI attribute ======
+
+
+===== URL =====
+''URI'' is a mandatory [[attribute|attribute]] of a [[connection|connection]] and is also known as the ''connection string''
+
+It's a string that defines the most important connection properties such as:
+  * the ''scheme'': the technology used to connect
+  * the ''host'': the host where the system is located
+  * the ''port'': the port where the system is reachable on the host
+  * the ''database'': the database name
+
+The ''URI'' is system dependent and therefore should be looked in the [[docs:system:system|documentation page of each system]].
+
+This is the property that defines the connection to a [[docs:system:system|system]]
+
+<note tip>
+The ''URI'' is also known as:
+  * [[wp>Data_source_name|Data Source Name (DSN)]]
+  * or ''connection string''
+</note>
+===== Example =====
+
+Example of URI with with the [[docs:tabli:connection:list|tabli connection list]] command where you can see the [[howtos|howtos]] connection.
+
+<unit>
+<code dos>
+tabli connection list
+</code>
+<console>
+Name            Uri                                                                       
+-------------   -----------------------------------------------------------------------   
+cd              file:///C:/Users/gerardnico/                                              
+entity          file:///D:/code/bytle-mono/db-gen-entities/src/main/resources/entity/     
+howto           file:///D:/code/bytle-mono/db-website/src/doc/howto/                      
+memory          mem                                                                       
+mysql           jdbc:mysql://[host]:[port]/[database]                                     
+oracle          jdbc:oracle:thin:@localhost:1521:xe                                       
+postgres        jdbc:postgresql://localhost:5432/postgres                                 
+sqlite          jdbc:sqlite:///C:/Users/gerardnico/AppData/Local/tabli/sqlite.db          
+sqlite_target   jdbc:sqlite:///C:/Users/gerardnico/AppData/Local/tabli/sqlite_target.db   
+sqlserver       jdbc:sqlserver://localhost;databaseName=AdventureWorks;                   
+temp            file:///C:/Users/GERARD~1/AppData/Local/Temp/                             
+tpcds           tpcds                                                                     
+tpcds_query     file:///D:/code/bytle-mono/db-jdbc/src/main/sql/tpcds/
+</console>
+</unit>
+
+
+

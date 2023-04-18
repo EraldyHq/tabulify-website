@@ -1,0 +1,77 @@
+====== Data Operation - Select (Selection) ======
+
+
+===== About =====
+''select'' is a [[docs:op:op|data operation]] that selects [[docs:resource:resource|data Resources]].
+
+
+
+<note important>
+This is not the [[docs:resource:select|select sql statement]]. The [[docs:resource:select|select sql statement]] selects [[docs:resource:record|records]] while the ''select'' operation selects [[docs:resource:resource|Data Resources]].
+</note>
+
+<note info>
+See the following ''learning guide'' page, to known more: [[howto:getting_started:4_select_data_resources]]
+</note>
+
+
+
+
+
+
+
+===== Arguments =====
+The ''select'' operations has the following arguments.
+
+^ Argument ^ Default ^ Description ^
+| [[docs:resource:data_selector|data selector]] | - | It will select [[docs:resource:resource|data resources]] by [[docs:resource:name|name]] |
+| the [[docs:op:with-dependencies|with-dependencies]] option | false | If set to true, the [[docs:resource:dependency|dependencies]] will be added |
+| ''strict'' | false | If set to true, the ''select'' operation will throw an error if the selection does not return any data resource |
+| ''type'' | Optional, detected by default | The [[:docs:resource:type|media type]] of the selected resources |
+| ''logical-name'' | Optional | A [[:docs:conf:template|template logical name]] |
+^ Data Definition ^^^
+| ''data-definition'' | Optional | A inline [[:docs:resource:data-definition|data definition]] |
+| ''attributes'' | a map of key value | The attributes of the data path |
+
+===== Usage =====
+
+<tabs skin="tabs">
+<tab panel="pipeline" selected="true">Flow</tab>
+<tab panel="tabli" >Tabli Data Command</tab>
+</tabs>
+<tabpanels>
+<tabpanel id="pipeline">
+In a [[docs:flow:pipeline|pipeline pipeline]], this is a first operation (known as the [[docs:flow:supplier|supplier operation]]) because it supplies [[docs:resource:resource|data resources]] to the others operations in the pipeline.
+
+Example:
+  * Simple selection:
+<code yaml>
+pipeline:
+  - name: 'Select data resources'
+    operation: select
+    args:
+      data-selector: pattern@connection
+      with-dependency: (yes|no)
+      strict: yes
+</code>
+</tabpanel>
+<tabpanel id="tabli">
+In a [[docs:tabli:data:start|tabli data command]], you set :
+  * the [[docs:resource:data_selector|data selector]] as argument
+  * and the [[docs:op:with-dependencies|with-dependencies]] as [[docs:tabli:flag|flag]]
+  * and the ''not-strict'' as [[docs:tabli:flag|flag]]
+
+Example:
+<code bash>
+tabli data command [--not-strict] [--with-dependency] dataSelector
+</code>
+</tabpanel>
+</tabpanels>
+
+
+===== Note on Empty Selection =====
+
+If no ''data resource'' matched the [[docs:resource:data_selector|data selector]], this is not considered an error.
+This is already the case for all sql statement (ie an update that does not match a row does not return an error)
+
+If you want to throw an error, you should set the ''strict'' option to true.

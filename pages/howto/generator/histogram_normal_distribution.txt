@@ -1,0 +1,136 @@
+---json
+{
+    "description": "This how-to shows you how to generate data that follows a normal distribution with the column histogram generator",
+    "low_quality_page": "false",
+    "page_id": "wllpdo8jabagb71rrlmkp",
+    "title": "How to generate a normal distribution with an histogram generator"
+}
+---
+====== Tabulify - How to generate a normal distribution with an histogram generator ======
+
+===== About =====
+This [[..:howto|how-to]] shows you how to generate data that follows a [[datacadamia>normal_distribution|normal distribution]] with the [[docs:generator:histogram|column histogram generator]].
+
+===== Steps =====
+
+==== Defining the buckets ====
+
+
+
+The [[docs:generator:histogram#buckets|bucket list]] needs a serie of value and their respective factor.
+
+We will simulate the arrival of people at an event.
+
+The time will be the value and the factor will follow the probability of the normal distribution.
+
+Example:
+The below bucket definition:
+<code yaml>
+Buckets:
+  "8:45": 0.05
+  "8:50": 0.5
+  "8:55": 0.22
+  "9:00": 0.4
+  "9:05": 0.22
+  "9:10": 0.5
+  "9:15": 0.05
+</code>
+models the below normal distribution:
+
+{{howto:generator:normal_distribution_incoming_time_meeting.png|}}
+
+==== Creation of the generator file ====
+To generate data, you need to create a [[docs:resource:generator|generator file]] that will describe the data to be generated.
+
+The below [[docs:resource:generator|data resource generator]]:
+  * has the [[docs:resource:name|name]] ''histogram_normal_distribution--datagen.yml''
+  * has the [[docs:resource:logicalname|logical name]] ''histogram_normal_distribution''
+  * will generate ''30'' values (''MaxRecordCount'' count)
+  * has a column named ''id'' that has [[docs:generator:sequence|sequence data generator]] that:
+      * starts by default at the value ''1''
+      * increments by default with the value ''1''
+  * has a column named ''buckets_map'' with a [[docs:generator:histogram|histogram generator]] where the ''buckets'' property defines a map where:
+      * the key is the value to generate
+      * the value is the chance factor of generation:
+          * the more, the more chance that you get the value generated
+          * this is the equivalent of the probability value of the distribution.
+
+<unit>
+<file yaml histogram_normal_distribution--datagen.yml>
+MaxRecordCount: 30
+Columns:
+  - name: id
+    type: integer
+    comment: A id column to see easily the number of values generated
+    DataGenerator:
+      type: sequence
+  - name: bucket_map
+    type: time
+    comment: A column with a histogram generator that generates an uniform distribution of time
+    DataGenerator:
+      type: histogram
+      Buckets:
+        "8:45": 0.05
+        "8:50": 0.5
+        "8:55": 0.22
+        "9:00": 0.4
+        "9:05": 0.22
+        "9:10": 0.5
+        "9:15": 0.05
+
+</file>
+</unit>
+==== Printing the data ====
+
+With the [[docs:tabli:data:print|data print command]], we can print the ''30 values'' generated.
+<unit>
+<code dos>
+tabli data print histogram_normal_distribution--datagen.yml@howto
+</code>
+<note tip>
+[[docs:connection:howto|howto]] is the connection that contains the files used in the [[..:howto|HowTo's]].
+</note>
+<console>
+id   bucket_map
+--   ----------
+ 1   08:45:00
+ 2   09:15:00
+ 3   09:05:00
+ 4   09:05:00
+ 5   08:50:00
+ 6   09:00:00
+ 7   08:50:00
+ 8   09:05:00
+ 9   09:05:00
+10   08:45:00
+11   08:50:00
+12   08:55:00
+13   09:15:00
+14   08:50:00
+15   08:55:00
+16   09:15:00
+17   08:50:00
+18   08:50:00
+19   09:05:00
+20   09:00:00
+21   09:10:00
+22   08:50:00
+23   08:50:00
+24   09:10:00
+25   09:05:00
+26   09:10:00
+27   09:00:00
+28   09:15:00
+29   09:05:00
+30   09:05:00
+</console>
+</unit>
+===== Next =====
+
+
+
+Because a [[docs:resource:generator|generator]] is just a [[docs:resource:resource|data resource]], you can use it in every [[docs:op:op|data operation]].
+
+<btn>
+[[generator_data_operation|How to use a generator in a data operation ]]
+</btn>

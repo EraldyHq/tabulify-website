@@ -1,0 +1,97 @@
+---json
+{
+    "description": "This how-to shows you how to generate a sequence based on provided values with the column sequence generator.",
+    "low_quality_page": "false",
+    "page_id": "eog6re1g6g9n88i9tggw2",
+    "title": "How to generate a sequence based on provided values"
+}
+---
+====== Tabulify - How to generate a sequence based on provided values ======
+
+===== About =====
+This [[..:howto|how-to]] shows you how to generate a <icon name="ant-design:ordered-list-outlined" /> [[docs:generator:sequence|sequence]] based on provided values with the [[docs:generator:sequence|column sequence generator]].
+
+This page demonstrate the ''values'' and ''reset'' property of the [[docs:generator:sequence|column sequence generator]].
+
+The sequence will be created with a list of colors.
+
+===== Steps =====
+
+==== Creation of the generator file ====
+To generate data, you need to create a [[docs:resource:generator|generator file]] that will describe the data to be generated.
+
+The below [[docs:resource:generator|data resource generator]]:
+  * has the [[docs:resource:name|name]] ''sequence_color--datagen.yml''
+  * has the [[docs:resource:logicalname|logical name]] ''sequence_color''
+  * will generate ''10'' values (''MaxRecordCount'' count)
+  * has a column named ''id'' that has [[docs:generator:sequence|sequence data generator]] that:
+      * starts by default at the value ''1''
+      * increments by default with the value ''1''
+  * has a column named ''seq_color'' with the ''varchar'' data type (default) that has [[docs:generator:sequence|sequence data generator]] that:
+      * will reset (restart from the first value when the last is reached)
+      * will return the color values provided in the ''values'' property.
+
+<unit>
+<file yaml sequence_color--datagen.yml>
+MaxRecordCount: 10
+Columns:
+  - name: id
+    type: integer
+    comment: A id column to see easily the number of values generated
+    DataGenerator:
+      type: sequence
+  - name: seq_color
+    type: varchar
+    comment: A column with a color sequence date generator
+    DataGenerator:
+      type: sequence
+      # when the last color has been given (black), restart from the first element (blue)
+      reset: true
+      # the list of values returned in sequence
+      values:
+        - blue
+        - red
+        - green
+        - cyan
+        - magenta
+        - yellow
+        - black
+
+
+
+</file>
+</unit>
+==== Printing the data ====
+
+With the [[docs:tabli:data:print|data print command]], we can print the ''values'' generated.
+<unit>
+<code dos>
+tabli data print sequence_color--datagen.yml@howto
+</code>
+<note tip>
+[[docs:connection:howto|howto]] is the connection that contains the files used in the [[..:howto|HowTo's]].
+</note>
+<console>
+id   seq_color
+--   ---------
+ 1   blue
+ 2   red
+ 3   green
+ 4   cyan
+ 5   magenta
+ 6   yellow
+ 7   black
+ 8   blue
+ 9   red
+10   green
+</console>
+</unit>
+===== Next =====
+
+
+
+Because a [[docs:resource:generator|generator]] is just a [[docs:resource:resource|data resource]], you can use it in every [[docs:op:op|data operation]].
+
+<btn>
+[[generator_data_operation|How to use a generator in a data operation ]]
+</btn>

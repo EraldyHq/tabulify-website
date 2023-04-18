@@ -1,0 +1,160 @@
+====== Learning Tabulify - Step 10 - How to compare data resources ? ======
+
+
+
+===== Comparison =====
+''Data comparison'' is the corner stone of every development because it validates the data processing.
+
+
+''Tabulify'' ships with a [[docs:op:compare|Data comparison operation]] that allows you to compare:
+  * the [[docs:resource:content|data content]]
+  * and the [[docs:resource:structure|data structure]]
+
+The [[docs:op:compare|comparison operation]] is implemented with the [[docs:tabli:data:compare|data compare command]].
+
+===== Data to compare =====
+
+For the sake of simplicty, we will compare two [[docs:resource:csv|csv data resource]] but you may compare any [[docs:resource:content|content data resource]] such as a [[docs:resource:table|SQL table]] or [[docs:resource:select|SQL query]]
+
+
+  * The ''source'' data resource (also known as the ''left'' resource)
+<unit>
+<file csv characters.csv>
+Last Name,First Name,Birth Date,Wikipedia Page
+Schwarzenegger,Arnold,1947-07-30,https://en.wikipedia.org/wiki/Arnold_Schwarzenegger
+Norman,Don,1935-12-25,https://en.wikipedia.org/wiki/Don_Norman
+Harbison Carnagey,Dale,1888-11-24,https://en.wikipedia.org/wiki/Dale_Carnegie
+Kahneman,Daniel,1934-03-05,https://en.wikipedia.org/wiki/Daniel_Kahneman
+
+</file>
+</unit>
+  * The ''target'' data resource (also known as the ''right'' resource)
+<unit>
+<file csv characters_target.csv>
+Last Name,First Name,Birth Date,Wikipedia Page
+Schwarzenegger,Arnold,1947-07-30,https://en.wikipedia.org/wiki/Arnold_Schwarzenegger
+Norman,Don,1935-12-23,https://en.wikipedia.org/wiki/Don_Norman
+Kahneman,Daniel,1934-03-05,https://en.wikipedia.org/wiki/Daniel_Kahneman
+
+</file>
+</unit>
+
+
+The fact that a record is missing can be easily spotted but there is a more subtle difference.
+
+===== The comparison report =====
+
+All comparison can be executed with the [[docs:tabli:data:compare|data compare command]] by giving as argument the [[docs:flow:source|source]] and [[docs:flow:target|target]] data resource.
+
+<unit>
+<code bash>
+tabli data compare characters.csv@howto characters_target.csv@howto
+</code>
+<console>
+Comparison Report
+Source                 Target                        Equals   DiffCount   RecordCount
+--------------------   ---------------------------   ------   ---------   -----------
+characters.csv@howto   characters_target.csv@howto   false            3             4
+</console>
+</unit>
+
+The default report is to show a high level that lists the source and target resources and the result of the comparison:
+  * ''Equals'': Does the [[docs:flow:source|source]] and [[docs:flow:target|target]] are equals
+  * ''DiffCount'': How many records are differents
+  * ''RecordCount'': How many records were compared.
+
+There is a total of ''4'' records that were compared and ''3'' were differents. It doesn't seem quite right, let's take a look at it by asking a comparison report at the record level to see the difference in details.
+
+===== The record comparison report =====
+
+To get a comparison on the record level, you set the ''report-level'' option to the ''record'' value.
+
+<unit>
+<code bash>
+tabli data compare --report-level record characters.csv@howto characters_target.csv@howto
+</code>
+<console>
+Comparison result between source (characters.csv@howto) and target (characters_target.csv@howto).
+Values that are not equals are encapsulated with the characters `***`.
+comp_id   comp_origin   comp_comment                                                     comp_diff_id   comp_origin_id   Last Name                 First Name     Birth Date         Wikipedia Page
+-------   -----------   --------------------------------------------------------------   ------------   --------------   -----------------------   ------------   ----------------   ---------------------------------------------------
+1                                                                                                       1                Schwarzenegger            Arnold         1947-07-30         https://en.wikipedia.org/wiki/Arnold_Schwarzenegger
+2         Source        Value Diff (Birth Date)                                          1              2                Norman                    Don            ***1935-12-25***   https://en.wikipedia.org/wiki/Don_Norman
+3         Target        Value Diff (Birth Date)                                          1              2                Norman                    Don            ***1935-12-23***   https://en.wikipedia.org/wiki/Don_Norman
+4         Source        Value Diff (Last Name, First Name, Birth Date, Wikipedia Page)   2              3                ***Harbison Carnagey***   ***Dale***     ***1888-11-24***   ***https://en.wikipedia.org/wiki/Dale_Carnegie***
+5         Target        Value Diff (Last Name, First Name, Birth Date, Wikipedia Page)   2              3                ***Kahneman***            ***Daniel***   ***1934-03-05***   ***https://en.wikipedia.org/wiki/Daniel_Kahneman***
+6         Source        Record not found in target                                       3              4                Kahneman                  Daniel         1934-03-05         https://en.wikipedia.org/wiki/Daniel_Kahneman
+</console>
+</unit>
+
+==== Data Comparison Report explained ====
+
+=== Columns ===
+
+The report shows ''3'' columns that starts with the prefix ''comp'':
+  * ''comp_id'' is a record sequence to be able to locate the record
+  * ''comp_origin'' gives the origin of the record.
+      * ''Source'' means that record comes from the [[docs:flow:source|source]]
+      * ''Target'' means that record comes from the [[docs:flow:target|target]]
+      * Blank means that the record is the same in the [[docs:flow:source|source]] and in the [[docs:flow:target|target]]
+  * ''comp_comment'' is a short explanation of the difference if any.
+  * ''comp_diff_id'' is the id of a difference. The last number on the report would show the total number of difference found.
+  * ''comp_record_id'' is the record number (ie row id, line id). This column is present only if a unique colum cannot be defined.
+
+All the columns afterwards are column names from the [[docs:flow:source|source]].
+
+=== Values ===
+
+  * The value that differs are encapsulated with three stars ''%%***%%''
+  * The two records (''source'' and ''target'') are inserted when there is a difference.
+
+==== Report Analysis ====
+
+In this report, we can see that on the ''record_id'' ''3'', the target record ''Kahneman'' was compared to the source record ''Harbison Carnagey''.
+
+This is not right because the source has also a ''Kahneman'' record and they should have been compared together.
+
+This is because the comparison was executed by ''record id'' and not by ''last name''. The next step will show you how to define the unique column used to drive the comparison.
+
+===== Data Comparison Report with Unique Column Definition =====
+
+To improve our comparison, we will define the unique column of our data resource with the ''%%--unique-column%%'' column option.
+<unit>
+<code bash>
+tabli data compare --report-level record --unique-column "Last Name" characters.csv@howto characters_target.csv@howto
+</code>
+<console>
+Comparison result between source (characters.csv@howto) and target (characters_target.csv@howto).
+Values that are not equals are encapsulated with the characters `***`.
+comp_id   comp_origin   comp_comment                 comp_diff_id   Last Name           First Name   Birth Date         Wikipedia Page
+-------   -----------   --------------------------   ------------   -----------------   ----------   ----------------   ---------------------------------------------------
+1                                                                   Schwarzenegger      Arnold       1947-07-30         https://en.wikipedia.org/wiki/Arnold_Schwarzenegger
+2         Source        Value Diff (Birth Date)      1              Norman              Don          ***1935-12-25***   https://en.wikipedia.org/wiki/Don_Norman
+3         Target        Value Diff (Birth Date)      1              Norman              Don          ***1935-12-23***   https://en.wikipedia.org/wiki/Don_Norman
+4         Source        Record not found in target   2              Harbison Carnagey   Dale         1888-11-24         https://en.wikipedia.org/wiki/Dale_Carnegie
+5                                                                   Kahneman            Daniel       1934-03-05         https://en.wikipedia.org/wiki/Daniel_Kahneman
+</console>
+</unit>
+
+This time the comparison has:
+  * not compared the source record ''Harbison Carnagey'' with the target record ''Kahneman''
+  * compared the source record ''Kahneman'' with the target record ''Kahneman''
+
+We can see that:
+  * we have ''2'' difference via the value in the ''comp_diff_id'' column.
+  * the first difference is on the ''norman'' record where the ''birth date'' differs.
+  * the record ''Harbison Carnagey'' was not found in the target.
+
+===== Conclusion =====
+
+This page end the learning guide of ''Tabulify'' at the command line with ''Tabli'' where we have learned to perform data operation one command at a time.
+
+<box style="display:none">
+''Tabulify'' supports also the creation of workflows with the ''pipeline'' scripting language where you bind all this operations in pipelines.
+
+To learn more about the ''pipeline'' scripting language, we have create the ''pipeline learning guide'' where you will learn how to create a datawarehouse and analyse weblog event of a website.
+
+<btn>
+Flow Learning Guide - How to analyze weblog ?
+</btn>
+</box>

@@ -1,0 +1,7 @@
+====== Sql Server ======
+
+
+
+===== Varchar =====
+''Tabulify'' modifies the default length for VARCHAR and NVARCHAR from ''1'' to ''max'' which is the default for most database and avoid many problem  when the length is not defined (ie it's never ''1'' that's meant).
+

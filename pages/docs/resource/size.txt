@@ -1,0 +1,21 @@
+====== Data Resource - Size ======
+
+
+===== About =====
+''size'' is a [[attribute|data resource attribute]] that shows the size of a [[resource|data resource]] in byte on disk (may be blank if not yet supported)
+
+
+===== Example =====
+
+With the [[docs:connection:howto|howto file]] ''characters.csv'' and the [[docs:tabli:data:list|data list command]]
+<unit>
+<code dos>
+tabli data list --attribute size characters.csv@howto
+</code>
+<console>
+size
+----
+ 346
+</console>
+</unit>
+

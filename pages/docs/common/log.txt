@@ -1,0 +1,23 @@
+====== Tabulify - Log Level ======
+
+
+===== About =====
+''Tabulify'' supports 5 levels of log.
+
+===== Values =====
+
+
+^ Level Value ^ Description ^
+| ''error'' | Show only the ''error'' log |
+| ''warning'' | Show the ''warning'' log and all level above (ie ''error'')|
+| ''tip'' | Show the ''tip'' log and all log above (ie ''error'' and ''warning'') |
+| ''info'' | Show the ''info'' logs and all level above (ie ''error'', ''warning'' and ''tip'') |
+| ''fine'' | Show all logs |
+
+===== Management =====
+
+==== Default ====
+By default, the log level is the ''info'' level.
+
+==== Tabli ====
+  * [[docs:tabli:log-level]]

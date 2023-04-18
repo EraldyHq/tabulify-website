@@ -1,0 +1,33 @@
+====== Home (User home directory) Connection ======
+
+
+===== About =====
+
+''home'' is [[built-in|built-in connection]] that points to the ''home'' [[docs:resource:directory|directory]] of the [[docs:system:local|local file system]].
+
+
+===== How-to's =====
+<related pattern="howto:*" />
+
+
+===== Info =====
+With the [[docs:tabli:connection:info|connection info]] command
+<unit>
+<code bash>
+tabli connection info home
+</code>
+<console>
+Information about the connection (home)
+Attribute              Value                                              Description                                                            
+--------------------   ------------------------------------------------   --------------------------------------------------------------------   
+Comment                The user home directory of the local file system   A connection description                                               
+MaxConcurrentThread    1                                                  The maximum number of threads that can be created against the system   
+MaxNameInPath          2147483647                                         The maximum number of names in a path                                  
+Name                   home                                               The name of the connection                                             
+TabBooleanDataType     Native                                             Boolean data type used to store boolean values                         
+TabDateDataType        Native                                             Date data type used to store date values                               
+TabTimeDataType        Native                                             Time format data type to store time values                             
+TabTimestampDataType   Native                                             Timestamp data type used to store timestamp values                     
+Url                    file:///C:/Users/gerardnico/                       The url of the connection
+</console>
+</unit>

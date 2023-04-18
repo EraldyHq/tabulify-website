@@ -1,0 +1,31 @@
+====== System Connection - Cd (Current Directory) ======
+
+
+===== About =====
+
+The ''cd'' [[connection|connection]] is a [[built-in|built-in connection]] that points to the current [[docs:resource:directory|directory]] of the [[docs:system:local|local file system]].
+
+This is the [[connection#default|default connection]].
+
+===== Info =====
+To get the path of the current directory, with the [[docs:tabli:connection:info|connection info]] command
+<unit>
+<code bash>
+tabli connection info cd
+</code>
+<console>
+Information about the connection (cd)
+Attribute              Value                          Description                                                            
+--------------------   ----------------------------   --------------------------------------------------------------------   
+Working Path           C:\Users\gerardnico            Schema for database, directory for file system                         
+Comment                The local file system          A connection description                                               
+MaxConcurrentThread    1                              The maximum number of threads that can be created against the system   
+MaxNameInPath          2147483647                     The maximum number of names in a path                                  
+Name                   cd                             The name of the connection                                             
+TabBooleanDataType     Native                         Boolean data type used to store boolean values                         
+TabDateDataType        Native                         Date data type used to store date values                               
+TabTimeDataType        Native                         Time format data type to store time values                             
+TabTimestampDataType   Native                         Timestamp data type used to store timestamp values                     
+Url                    file:///C:/Users/gerardnico/   The url of the connection
+</console>
+</unit>

@@ -1,0 +1,21 @@
+====== Flow - Target (Output) ======
+
+
+===== About =====
+A ''target'' [[docs:resource:resource|data resource]] is:
+  * the [[docs:resource:content|data]] recipient of a [[docs:op:transfer|transfer operation]]
+  * or the output of a [[step|pipeline step]]
+
+
+===== Transfer =====
+
+In every [[docs:op:transfer|transfer operation]]:
+  * the [[docs:resource:target_uri|target data uri]] defines the target
+  * if the defined target does not exist, it will be created
+  * one of the following ''target operation'' can be executed before transfer:
+      * ''replace''
+      * ''truncate''
+
+<note>
+The ''target operation'' in ''tabli'' is set with the ''target-operation'' [[docs:tabli:option|option]]
+</note>

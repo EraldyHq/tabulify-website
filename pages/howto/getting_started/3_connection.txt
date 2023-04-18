@@ -1,0 +1,61 @@
+====== Learning Tabulify - Step 3 - What's a Connection ? ======
+
+
+===== Connection =====
+In the [[2_data_resource|previous page]], we learned that all ''data'' are known as [[docs:resource:resource|data resource]].
+
+[[docs:resource:resource|Data resources]] are stored in  ''systems'' in ''Tabulify''.
+
+
+There is generally speaking two kind of [[docs:system:system|systems]]:
+  * [[docs:system:file|file system]]
+  * [[docs:system:database|database]] (Postgres, Oracle, MySql, ...)
+
+A ''Connection'' is a set of properties that defines how to connect to this systems.
+
+
+===== List =====
+
+''Tabulify'' comes with:
+  * [[docs:connection:built-in|built-in connection]] (connection that are always available)
+  * and [[docs:connection:howtos|howto connection]] (connections used in the [[howto:howto|howto pages]])
+
+The default connection is the ''current directory'' of the local file system, known as the [[docs:connection:cd|cd]] (for short).
+
+
+In this ''learning guide'', we used mostly:
+  * [[docs:connection:cd|cd]]: the local file system
+  * [[docs:connection:tpcds|tpcds]]: a set of table and their data for benchmarking purpose.
+  * and the [[docs:connection:howtos|sqlite howto local database]]
+
+
+You can see the full list with the [[docs:tabli:connection:list|connection list]] command.
+
+<unit>
+<code dos>
+tabli connection list
+</code>
+<console>
+Name            Url
+-------------   -----------------------------------------------------------------------
+cd              file:///C:/Users/gerardnico/
+entity          file:///D:/code/bytle-mono/db-gen-entities/src/main/resources/entity/
+howto           file:///D:/code/bytle-mono/db-website/src/doc/howto/
+memory          mem
+mysql           jdbc:mysql://[host]:[port]/[database]
+oracle          jdbc:oracle:thin:@localhost:1521:xe
+postgres        jdbc:postgresql://localhost:5432/postgres
+sqlite          jdbc:sqlite:///C:/Users/gerardnico/AppData/Local/tabli/sqlite.db
+sqlite_target   jdbc:sqlite:///C:/Users/gerardnico/AppData/Local/tabli/sqlite_target.db
+sqlserver       jdbc:sqlserver://localhost;databaseName=AdventureWorks;
+temp            file:///C:/Users/GERARD~1/AppData/Local/Temp/
+tpcds           tpcds
+tpcds_query     file:///D:/code/bytle-mono/db-jdbc/src/main/sql/tpcds/
+</console>
+</unit>
+
+===== Next =====
+
+<btn>
+[[howto:getting_started:4_select_data_resources]]
+</btn>

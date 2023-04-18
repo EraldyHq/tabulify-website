@@ -1,0 +1,11 @@
+====== Tabulify - Templating Engine ======
+
+
+====== Engine ======
+A ''templating'' engine is the process that transform a [[templating|text template]] in [[docs:resource:resource|data resource]] (ie document)
+
+''Tabulify'' supports the following [[templating|templating]] engine :
+  * [[native|native]] - the tabulify internal engine
+  * [[thymeleaf]] - a natural templating engine
+  * [[pebble]] - a python jinja templating syntax engine
+

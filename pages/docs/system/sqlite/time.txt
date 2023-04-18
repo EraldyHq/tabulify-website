@@ -1,0 +1,36 @@
+====== Sqlite - Time ======
+
+
+===== Time =====
+Sqlite does not support natively the storage of a ''time'' data type. It lets you choose between text and number (see [[https://sqlite.org/datatype3.html#date_and_time_datatype|date and time datatype in Sqlite]]. ie
+  * ''2020-10-14 21:06:46.507'' (Iso string)
+  * ''1602702406'' (Epoch Seconds called ''unixepoch'' in the date time function of Sqlite)
+
+
+By default, ''tabulify'' has chosen to save the date in the ''text'' (ie ''SqlLiteral'') format because:
+  * they are more readable 
+  * they are the default argument type of the [[https://sqlite.org/lang_datefunc.html|date and time function]]
+
+You can control this behavior by setting the [[docs:common:time#configuration|time configuration built-in attributes]]
+
+===== Example =====
+
+With ''tabulify'', by default, you would be able to manipulate them with the [[https://sqlite.org/lang_datefunc.html|Sqlite Date Time function]] like that:
+  * Date
+<code sql>
+SELECT date('2020-10-15','-1 day')
+-- or 
+SELECT date(dateColumn,'-1 day') from table;
+</code>
+  * Timestamp (Datetime)
+<code sql>
+SELECT datetime('2020-10-15 16:34:56.607','-1 seconds')
+-- or 
+SELECT datetime(timestampColumn,'-1 seconds') from table;
+</code>
+  * Time
+<code sql>
+SELECT time('22:10:23','+1 seconds') 
+-- or 
+SELECT time(timeColumn,'+1 seconds')  from table;
+</code>

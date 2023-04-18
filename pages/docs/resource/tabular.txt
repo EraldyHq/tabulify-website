@@ -1,0 +1,18 @@
+====== Tabular Structure (Data Set, Relation) ======
+
+
+===== About =====
+A ''tabular data structure'' is a [[structure|data structure]] that shows data as a collection of [[column|columns]] with the same data type that can be read by rows or by columns.
+
+A tabular is also known as:
+  * a relation
+  * or data set
+
+===== Type =====
+
+  * [[docs:resource:tabular_file|Tabular File]]
+  * [[docs:resource:table|Relational Table]]
+  * [[docs:resource:select|Sql Query]]
+
+===== Built-in =====
+''Tabulify'' comes pre-installed with a couple of data set used in the [[docs:generator:entity|entity generator]]. The base entity (person, ...) are stored in csv data set file. More .. see [[docs:generator:entity]]

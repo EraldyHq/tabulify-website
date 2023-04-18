@@ -1,0 +1,14 @@
+====== Data Resource - Container Resource ======
+
+
+===== About =====
+A ''container resource'' is a [[resource|resource]] that contains other resources:
+  * [[content|data resource]] ([[script|script resource]] included)
+  * or another ''container resource''
+
+[[schema|sql schema]] or a [[directory|directory]] are ''container resources''
+
+
+
+===== Selection =====
+A ''container resource'' is selected with a [[data_selector|data selector]].

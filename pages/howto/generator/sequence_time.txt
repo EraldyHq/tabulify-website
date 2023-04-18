@@ -1,0 +1,114 @@
+---json
+{
+    "description": "This how-to shows you how to generate a  sequence of date and timestamp with the column sequence generator.",
+    "low_quality_page": "false",
+    "page_id": "y9zojgja3xtisuadhxhb0",
+    "title": "How to generate a sequence of date and timestamp"
+}
+---
+====== Tabulify - How to generate a sequence of date and timestamp ======
+
+===== About =====
+This [[..:howto|how-to]] shows you how to generate a <icon name="clarity:timeline-line"/> [[docs:generator:sequence|sequence]] of ''date'' and ''timestamp'' with the [[docs:generator:sequence|column sequence generator]].
+
+===== Steps =====
+
+==== Creation of the generator file ====
+To generate data, you need to create a [[docs:resource:generator|generator file]] that will describe the data to be generated.
+
+The below [[docs:resource:generator|data resource generator]]:
+  * has the [[docs:resource:name|name]] ''sequence_time--datagen.yml''
+  * has the [[docs:resource:logicalname|logical name]] ''sequence_time''
+  * will generate ''30'' values (''MaxRecordCount'' count)
+  * has a column named ''id'' that has [[docs:generator:sequence|sequence data generator]] that:
+      * starts by default at the value ''1''
+      * increments by default with the value ''1''
+  * has a column named ''seq_date'' with the ''date'' data type that has [[docs:generator:sequence|sequence data generator]]
+      * with an ''offset'' of ''10'' days in the future from the ''start'' date (by default today)
+  * has a column named ''seq_timestamp'' with the ''timestamp'' data type that has [[docs:generator:sequence|sequence data generator]]
+      * starts by default at the value ''now''
+      * increments by default with the value ''10000'' ms (ie 10s)
+
+<unit>
+<file yaml sequence_time--datagen.yml>
+MaxRecordCount: 30
+Columns:
+  - name: id
+    type: integer
+    comment: A id column to see easily the number of values generated
+    DataGenerator:
+      type: sequence
+  - name: seq_date
+    type: date
+    comment: A column with a sequence date generator
+    DataGenerator:
+      type: sequence
+      start: 2020-11-23
+      offset: 10 # the number of day in the future from the start value
+      step: 2
+  - name: seq_timestamp
+    type: timestamp
+    comment: A column with a sequence timestamp generator
+    DataGenerator:
+      type: sequence
+      start: 2020-11-23 08:11:10
+      step: 10000
+
+
+
+</file>
+</unit>
+==== Printing the data ====
+
+With the [[docs:tabli:data:print|data print command]], we can print the ''values'' generated.
+<unit>
+<code dos>
+tabli data print sequence_time--datagen.yml@howto
+</code>
+<note tip>
+[[docs:connection:howto|howto]] is the connection that contains the files used in the [[..:howto|HowTo's]].
+</note>
+<console>
+id   seq_date     seq_timestamp
+--   ----------   ---------------------
+ 1   2020-12-03   2020-11-23 08:11:10.0
+ 2   2020-12-05   2020-11-23 08:11:20.0
+ 3   2020-12-07   2020-11-23 08:11:30.0
+ 4   2020-12-09   2020-11-23 08:11:40.0
+ 5   2020-12-11   2020-11-23 08:11:50.0
+ 6   2020-12-13   2020-11-23 08:12:00.0
+ 7   2020-12-15   2020-11-23 08:12:10.0
+ 8   2020-12-17   2020-11-23 08:12:20.0
+ 9   2020-12-19   2020-11-23 08:12:30.0
+10   2020-12-21   2020-11-23 08:12:40.0
+11   2020-12-23   2020-11-23 08:12:50.0
+12   2020-12-25   2020-11-23 08:13:00.0
+13   2020-12-27   2020-11-23 08:13:10.0
+14   2020-12-29   2020-11-23 08:13:20.0
+15   2020-12-31   2020-11-23 08:13:30.0
+16   2021-01-02   2020-11-23 08:13:40.0
+17   2021-01-04   2020-11-23 08:13:50.0
+18   2021-01-06   2020-11-23 08:14:00.0
+19   2021-01-08   2020-11-23 08:14:10.0
+20   2021-01-10   2020-11-23 08:14:20.0
+21   2021-01-12   2020-11-23 08:14:30.0
+22   2021-01-14   2020-11-23 08:14:40.0
+23   2021-01-16   2020-11-23 08:14:50.0
+24   2021-01-18   2020-11-23 08:15:00.0
+25   2021-01-20   2020-11-23 08:15:10.0
+26   2021-01-22   2020-11-23 08:15:20.0
+27   2021-01-24   2020-11-23 08:15:30.0
+28   2021-01-26   2020-11-23 08:15:40.0
+29   2021-01-28   2020-11-23 08:15:50.0
+30   2021-01-30   2020-11-23 08:16:00.0
+</console>
+</unit>
+===== Next =====
+
+
+
+Because a [[docs:resource:generator|generator]] is just a [[docs:resource:resource|data resource]], you can use it in every [[docs:op:op|data operation]].
+
+<btn>
+[[generator_data_operation|How to use a generator in a data operation ]]
+</btn>

@@ -1,0 +1,35 @@
+====== What is the smtp Connection ? ======
+
+
+===== About =====
+''smtp'' is the default [[docs:connection:connection|connection]] of a [[:docs:system:smtp|SMTP server (Simple Mail)]] that is used by the [[docs:op:sendmail|sendmail operation]].
+
+
+===== Parameters =====
+
+It defaults to the local smtp server as you can see with the [[docs:tabli:connection:list|tabli connection list]].
+<unit>
+<code bash>
+tabli connection list smtp
+</code>
+<console>
+Name    Uri                                                            
+-----   ------------------------------------------------------------   
+email   smtp://localhost:25?from=gerardnico%2540host.docker.internal
+</console>
+</unit>
+
+You can modify the parameters by setting the following [[:docs:conf:variable|environment variable]] on your operating system.
+
+^ Name ^ Default ^ Description ^
+| SMTP_HOST | localhost | the smtp host server |
+| SMTP_PORT | 25 | the smtp port |
+| SMTP_FROM | user@fqdn | the default `from` address if none is provided |
+| SMTP_FROM_NAME | user@fqdn | the default name `from` address if none is provided |
+| SMTP_TO | | the default `to` address if none is provided |
+| SMTP_TO_NAMES | | the default `names` to address if none is provided |
+| SMTP_AUTH | false | 
+| SMTP_TLS | false | enable secured communication with TLS |
+| SMTP_USER | | the connection user |
+| SMTP_PWD | | the connection password |
+

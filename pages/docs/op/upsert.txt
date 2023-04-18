@@ -1,0 +1,22 @@
+====== Data Operation -  Upsert ======
+
+
+===== About =====
+A ''upsert'' operation is an [[op|operation]] against the [[docs:resource:content|data]] that will:
+  * try to [[insert|insert]] a record
+  * and [[update|update]] it if it already exists.
+
+The [[docs:tabli:data:upsert|data upsert operation]] supports the ''upsert'' operation.
+
+
+===== Requirements =====
+  * The [[docs:flow:source|source data resource]] should be in a [[docs:resource:tabular|tabular format]] and have data for all constrained columns of the [[docs:flow:target|target table]].
+  * The [[docs:flow:target|target data resource]] should have a unique column.
+
+===== What happens when multiple target unique constraint matches the source columns =====
+A ''upsert'' does an update when a unique constraint is violated after insertion. This is not possible to specify two unique constraints and therefore ''Tabulify'' needs to choose one.
+
+If you have multiple [[docs:flow:target|target]] unique constraints matched by the [[docs:flow:source|source]] columns, the process takes as unique constraint:
+  * the first [[docs:flow:target|target]] unique key found in the [[docs:flow:source|source]] columns.
+  * and if not present the [[docs:flow:target|target]] primary key.
+

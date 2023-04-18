@@ -1,0 +1,41 @@
+====== Step Granularity ======
+
+
+===== About =====
+''step-granularity'' is a [[docs:tabli:option|step property]] that tells if the step is performed:
+  * on each resource (default)
+  * or on each record of the resource
+
+  
+  
+  
+  
+  
+
+===== Example =====
+==== Resource Granularity: Table to Csv file ====
+In this case, the granularity would be ''resource''.
+
+You would get one file for one table.
+
+==== Record Granularity: Log Column to a SQL file ====
+Suppose that you have a log table that stores all SQL execution history.
+
+It has generally one record for each execution with a column that stores the SQL executed.
+
+If you want to export the SQL with one file by SQL, you would choose the ''record'' granularity.
+
+
+===== What are the steps implementing granularity ? =====
+
+<webcode name="backlinks" frameborder="0">
+<iterator>
+<data>select from backlinks</data>
+<template>
+  * [[$path|$title]]
+</template>
+</iterator>
+</webcode>
+
+
+ 

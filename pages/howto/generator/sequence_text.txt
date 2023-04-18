@@ -1,0 +1,99 @@
+---json
+{
+    "description": "This how-to shows you how to generate an string,varchar, text sequence with the column sequence generator.",
+    "low_quality_page": "false",
+    "page_id": "dmt70cbrkzmxrnyyrgign",
+    "title": "How to generate a sequence of letters"
+}
+---
+====== Tabulify - How to generate a sequence of letters ======
+
+===== About =====
+This [[..:howto|how-to]] shows you how to generate an <icon name="ant-design:sort-ascending-outlined"/> ''string'',''varchar'', ''text'' [[docs:generator:sequence|sequence]] with the [[docs:generator:sequence|column sequence generator]].
+
+===== Steps =====
+
+==== Creation of the generator file ====
+To generate data, you need to create a [[docs:resource:generator|generator file]] that will describe the data to be generated.
+
+The below [[docs:resource:generator|data resource generator]]:
+  * has the [[docs:resource:name|name]] ''sequence_varchar--datagen.yml''
+  * has the [[docs:resource:logicalname|logical name]] ''sequence_varchar''
+  * will generate ''30'' values (''MaxRecordCount'' count)
+  * has a column named ''id'' that has [[docs:generator:sequence|sequence data generator]] that:
+      * starts by default at the value ''1''
+      * increments by default with the value ''1''
+  * has a column named ''seq_char'' with the ''varchar'' data type that has [[docs:generator:sequence|sequence data generator]]
+
+<unit>
+<file yaml sequence_varchar--datagen.yml>
+MaxRecordCount: 30
+Columns:
+  - name: id
+    type: integer
+    comment: A id column to see easily the number of values generated
+    DataGenerator:
+      type: sequence
+  - name: seq_char
+    type: varchar
+    precision: 2
+    comment: A column with a sequence character generator
+    DataGenerator:
+      type: sequence
+
+</file>
+</unit>
+==== Printing the data ====
+
+With the [[docs:tabli:data:print|data print command]], we can print the ''values'' generated.
+<unit>
+<code dos>
+tabli data print sequence_varchar--datagen.yml@howto
+</code>
+<note tip>
+[[docs:connection:howto|howto]] is the connection that contains the files used in the [[..:howto|HowTo's]].
+</note>
+<console>
+id   seq_char
+--   --------
+ 1   a
+ 2   b
+ 3   c
+ 4   d
+ 5   e
+ 6   f
+ 7   g
+ 8   h
+ 9   i
+10   j
+11   k
+12   l
+13   m
+14   n
+15   o
+16   p
+17   q
+18   r
+19   s
+20   t
+21   u
+22   v
+23   w
+24   x
+25   y
+26   z
+27   ba
+28   bb
+29   bc
+30   bd
+</console>
+</unit>
+===== Next =====
+
+
+
+Because a [[docs:resource:generator|generator]] is just a [[docs:resource:resource|data resource]], you can use it in every [[docs:op:op|data operation]].
+
+<btn>
+[[generator_data_operation|How to use a generator in a data operation ]]
+</btn>

@@ -1,0 +1,31 @@
+====== HowTo Connection ======
+
+
+===== About =====
+''howto'' is a [[docs:system:local|local file system]] [[connection|connection]] that points to a [[docs:resource:directory|directory]] where all [[docs:resource:file|files]] used in the [[howto:howto|howto's]] are stored.
+
+
+===== Howto =====
+<related pattern="howto:*" />
+
+===== How to know the files location ? =====
+With the [[docs:tabli:connection:info|tabli connection info]] command
+<unit>
+<code dos>
+tabli connection info howto
+</code>
+<console>
+Information about the connection (howto)
+Attribute              Value                                                  Description                                                            
+--------------------   ----------------------------------------------------   --------------------------------------------------------------------   
+MaxConcurrentThread    1                                                      The maximum number of threads that can be created against the system   
+MaxNameInPath          2147483647                                             The maximum number of names in a path                                  
+Name                   howto                                                  The name of the connection                                             
+TabBooleanDataType     Native                                                 Boolean data type used to store boolean values                         
+TabDateDataType        Native                                                 Date data type used to store date values                               
+TabTimeDataType        Native                                                 Time format data type to store time values                             
+TabTimestampDataType   Native                                                 Timestamp data type used to store timestamp values                     
+Url                    file:///D:/code/bytle-mono/db-website/src/doc/howto/   The url of the connection
+</console>
+</unit>
+

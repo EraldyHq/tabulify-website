@@ -1,0 +1,26 @@
+====== Tabulify - template ======
+
+
+===== Template =====
+A template is a [[docs:resource:text|text document]] that contains ''variable name'' (with optionally processing logic syntax). 
+
+Each [[engine|engine]] supports its own template syntax.
+
+
+===== Operation =====
+To transform a template into a [[docs:resource:resource|data resource]], you use the [[docs:op:template|template operation]].
+
+===== Type =====
+
+A template may be from the following [[docs:resource:type|type]]:
+  * [[docs:resource:text|text]] (default)
+  * [[docs:resource:xml|xml]]
+  * [[docs:resource:json|json]]
+  * ''html''
+  * ''javascript''
+  * ''css''
+  * ''raw'' - the template will not be processed and be returned as-is. (no-op operation)
+
+
+They are not all supported by the [[engine|template engine]] and you should verify in the [[engine|engine documentation]].
+

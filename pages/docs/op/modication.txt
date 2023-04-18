@@ -1,0 +1,20 @@
+====== Data Modifications / Manipulation Operations ======
+
+
+===== About =====
+The ''data modification operations'' are the [[op|data operations]] that modify the [[docs:resource:content|content of a data resource]].
+
+
+
+===== List =====
+
+  * [[docs:op:insert|Insertion / append]]
+  * [[docs:op:update|Update]]
+  * [[docs:op:upsert|Upsert]]
+  * [[docs:op:delete|Delete / remove]]
+
+
+<note tip>
+  * In the data storage world, they are known under the [[datacadamia>CRUD|CRUD acronym (Create/Read/Update/Delete)]]. Read is known as [[print|print]] in ''tabulify''
+  * In the SQL world, the are known as the [[datacadamia>DML operation (Data Manipulation Language)]]
+</note>

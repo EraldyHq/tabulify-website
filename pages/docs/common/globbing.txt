@@ -1,0 +1,55 @@
+====== Tabulify - Glob Pattern ======
+
+
+===== Glob Pattern =====
+<icon name="carbon:character-patterns"/> ''Glob pattern'' are used in ''Tabulify'' to select objects such as :
+  * [[docs:connection:connection|connection]]
+  * [[docs:resource:resource|resource]] (in [[docs:resource:data_selector|data selector]])
+  * or [[..:conf:conf|configuration]]
+
+
+<note info>
+If you are new to ''glob pattern'', see this page [[howto:tabli:glob]]
+</note>
+
+
+===== Wildcard support =====
+
+The following wildcard are supported in order to define the glob pattern:
+  * ''*'' that matches every characters
+  * ''%%**%%'' matches all [[docs:resource:container|container (directories/schema)]]. Use for recursive search (for instance ''**/foo.md'' will search all ''foo.md'' files in all sub directories)
+  * ''?'' that matches a single character
+  * ''[]'' that matches a class of character (Example: ''[0-9]'' matches all digit)
+  * ''[!]'' that does not match a character in the class of character. (Example: ''[!0-9]'' will not match a digit)
+  * ''{pattern1,pattern2,..}'' to match a collection of sub-pattern (Example: ''{temp*,tmp*}'' matches all data resource name that begins with ''temp'' or ''tmp''). It creates also a group for back-referencing.
+
+===== Back-referencing =====
+
+When data resources are selected via globbing, they get extra numeric variables that captures the text that matches.
+
+ie:
+  * the variable ''1'' is the text captured by the first glob pattern
+  * the variable ''2'' is the text captured by the second glob pattern
+  * and so on.
+
+You can use this extra variable in:
+  * a [[docs:conf:template|template name]]
+  * a [[:docs:resource:target_uri|target uri]]
+
+Example with the [[:docs:tabli:data:list|data list command]] that:
+  * selects the table that starts with ''web'' on a [[:docs:system:tpcds|tpcds schema]]
+  * shows the [[:docs:resource:logicalname|logical]] and the ''1'' first back-reference value
+
+<unit>
+<code bash>
+tabli data list -a logicalName -a 1 web_*@tpcds
+</code>
+<console>
+logicalName   1
+-----------   -------
+web_page      page
+web_returns   returns
+web_sales     sales
+web_site      site
+</console>
+</unit>

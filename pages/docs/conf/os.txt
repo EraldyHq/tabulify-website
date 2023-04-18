@@ -1,0 +1,22 @@
+====== Os Environment Variable ======
+
+
+===== About =====
+''tabulify'' set the operating system environment variables  as [[docs:conf:variable|tabulify variable]].
+
+It captures them and and deletes the ''tabli'' prefix if any.
+
+
+===== Example =====
+If you want to set the [[:docs:project:environment|environment]], you can
+set it on Linux as:
+
+<code bash>
+env=prod
+# or
+tabli_env=prod
+# or
+TABLI_ENV=prod
+</code>
+
+

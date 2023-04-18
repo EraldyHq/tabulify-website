@@ -1,0 +1,160 @@
+====== Learning Tabulify - Step 1 - Installation ======
+
+
+===== Tabli =====
+To learn ''Tabulify'', you need to install the [[docs:tabli:tabli|Tabli command line tool]]. 
+
+This pages will guide you through the installation steps.
+
+===== Steps =====
+
+==== Prerequisites ====
+''Tabulify'' relies on ''Java'' version ''1.8''
+
+You should have therefore already a ''java'' installation from and above ''1.8''
+
+You can check it by calling the below command
+<code>
+java -version
+</code>
+<console>
+java version "1.8.0_251"
+Java(TM) SE Runtime Environment (build 1.8.0_251-b08)
+Java HotSpot(TM) 64-Bit Server VM (build 25.251-b08, mixed mode)
+</console>
+
+<note>
+If this is not the case, you can download it and install it at the [[https://www.oracle.com/java/technologies/javase-downloads.html|Java download page]]
+</note>
+
+
+
+
+==== Installation Directory ====
+
+
+Create a directory called the [[docs:tabli:home|Tabulify Home]] where you will unzip the content of the installation file. <inote>A path without space is recommended</inote>
+
+  * Windows
+<code dos>
+:: Below c:\tabulify is the Tabulify Home.
+mkdir c:\tabulify
+</code>
+  * Linux / Mac
+<code bash>
+# Below /opt/tabulify is the Tabulify Home.
+mkdir /opt/tabulify
+</code>
+
+==== Download ====
+You need to [[https://tabulify.com/tabulify.zip]] download the zipped file for your operating system.
+
+''Tabulify'' is distributed for different operation system.
+
+
+
+
+
+==== Unzip ====
+Unzip the downloaded file into the [[docs:tabli:home|Tabulify Home]]
+
+At the command line:
+  * Windows 
+<code dos>
+unzip tabulify.zip -d c:\tabulify
+</code>
+  * Linux
+<code bash>
+unzip tabulify.zip -d /opt/tabulify
+</code>
+==== Symlink ====
+
+  * Optionally, create a symlink into your bin directory to be able to call [[docs:tabli:tabli|Tabulify]] from everywhere.
+<code dos>
+mklink c:\tabulify\tabli.cmd %USERPROFILE%\bin\tabli.cmd
+</code>
+  * This local ''bin'' directory should be added to the ''PATH'' environment variable.
+<code dos>
+setx PATH=%PATH%,%USERPROFILE%\bin
+</code>
+
+===== Tabli =====
+If you can call the ''tabli'' command line, your installation is validated.
+
+[[docs:tabli:tabli|Tabli]] is the command line tool of ''Tabulify'' and is composed of [[docs:tabli:module|module]] that regroups [[docs:tabli:command|command]] where each command can be customized with ''argument'' and [[docs:tabli:option|options]].
+
+  * Open a console
+  * Call [[docs:tabli:tabli|tabli]] with the ''help'' option
+<unit>
+<code dos>
+tabli --help
+:: or if you didn't have the directory in your PATH environment variable
+:: TABULIFY_HOME\tabli.cmd --help
+:: in our installation documentation
+:: c:\tabulify\tabli.cmd
+</code>
+  * The [[docs:tabli:help|help]] should shows up.
+<console>
+Tabli
+=====
+
+Tabli, the tabulify command line data processing tool
+
+
+
+Example
+-------
+
+ 1 - To load a csv file into the sqlite database, you would type:
+
+
+    tabli data transfer data.csv @sqlite
+
+
+
+
+Syntax
+------
+
+
+    tabli <command> [-h,--help]
+
+
+where:
+
+
+  Commands:
+
+    conf          Management and configuration of the tabli environment.
+
+    connection    Management and configuration of the connections to systems.
+
+    data          Data operations against data resources (table, file, ...).
+
+    vault         Encrypt and decrypt sensitive information
+
+
+  Option:
+
+    -h,--help     Print this help
+</console>
+</unit>
+
+===== Terminal =====
+
+
+''Tabulify'' supports a lot of command line in the [[docs:tabli:data:start|tabli data module]] and having a good terminal that simplify our task is important.
+
+We recommend therefore a terminal that supports bash.
+
+See [[docs:common:bash]]
+
+
+
+===== Next Step =====
+
+In ''Tabulify'', all data are uniformly called ''data resources''. All [[docs:op:op|data operations]] are made on ''data resource''. You drop, select, create, ... etc ''data resources''.
+
+<btn>
+[[2_data_resource|What's a Data Resource ?]]
+</btn>

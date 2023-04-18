@@ -1,0 +1,25 @@
+====== Data Resource - Script ======
+
+
+===== About =====
+A ''script data resource'' is a special type of [[content|data resource]] where its [[content|content]] is seen as a ''script''
+
+A ''script'' is one ore more instruction that is executed against a [[docs:connection:connection|connection]]
+
+
+
+===== Type =====
+
+There is two kind of script:
+  * a ''pure script'' that returns only an execution status (ie failed or succeeded).
+  * a [[query|query]] that returns a [[resource|data resource]]
+
+===== Data Selectors =====
+A ''script'' is selected via a [[data_selector#composed|composed data selector]]
+
+<code>
+(globPattern@ScriptConnection)@targetConnection
+</code>
+where:
+  * the first ''data selector'' defines the [[file|file data resources]] (known also as ''script'') where the scripts are written
+  * and the second  part defines the [[docs:connection:connection|connection]] where the script is executed

@@ -1,0 +1,13 @@
+====== Flow - Source (Input) ======
+
+
+===== About =====
+A ''source data resource'' is a [[docs:resource:resource|data resource]] used as a ''source'':
+  * in a [[step|pipeline step]].
+  * or  in a [[docs:tabli:data:start|tabli data operations]]
+
+
+
+===== Selection =====
+One ore more ''source data resource'' via selected via a [[docs:resource:selector|data selector]]
+

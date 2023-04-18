@@ -1,0 +1,13 @@
+====== Sqlite - Boolean ======
+
+
+===== Boolean =====
+[[sqlite|Sqlite]] does not support natively the ''BOOLEAN'' data type. 
+
+It recommends to save it as an integer ''0'' (false) and ''1'' (true). 
+See [[https://sqlite.org/datatype3.html#boolean_datatype|Sqlite boolean documentation]]
+
+<note>
+''Tabulify'' supports it and extends the boolean system. It recognize also natively a list of string and number as ''BOOLEAN'' (case indépendant: ''Y'' or ''y'' means ''y''). More [[docs:common:boolean]]
+</note>
+

@@ -1,0 +1,43 @@
+---json
+{
+    "description": "A data resource is container that contains data. This section lists all data resources supported from file to directory, sql, script and more",
+    "low_quality_page": "false",
+    "page_id": "t0mw1c6ff57bd90io67ej",
+    "title": "Data Resources - Master your environment"
+}
+---
+====== Tabulify - Data Resources ======
+
+
+===== About =====
+A ''data resource'' is container that contains data. This section lists all data resources supported.
+
+It can be of the following type:
+  * [[content|content resource]] (for instance, a [[table|table]] or a [[file|file]])
+  * [[script|script resource]] (for instance, a [[query|query]] or just a script)
+  * or other [[container|container resource]] (for instance, a [[schema|sql schema]], a [[directory|directory]])
+
+
+A ''resource'' is uniquely located by a [[data_uri|data uri]] and has [[attribute|attributes]]
+
+{{ :docs:resource:undraw_environment.svg?600&ratio=16:9 |}}
+
+===== List by System =====
+
+==== Database ====
+[[docs:system:database|database system]]
+  * [[table]]
+  * [[schema]]
+  * [[select]]
+
+==== File System ====
+[[docs:system:file|file system]] data resources:
+
+  * [[directory]]
+  * [[file]]
+      * [[csv]]
+      * [[json]]
+      * [[excel]]
+      * [[xml]]
+
+

@@ -1,0 +1,126 @@
+====== Data Resource - Attribute (Property) ======
+
+
+===== About =====
+An ''attribute'' is a ''property'' [[metadata|metadata]] for a [[resource|data resources]].
+
+
+They may be:
+  * derived attributes such as the size
+  * [[docs:resource:data-definition|data definition]] attributes that describes:
+      * their [[structure|structure]] (for instance, the ''headerRowId'' attribute for a [[docs:resource:csv|csv]] determines if there is or not a header row).
+      * and eventually request attributes that are used as request attribute (for instance, a HTTP header for a [[docs:system:http|HTTP resource]]).
+
+
+
+
+
+===== Management  =====
+
+
+<note>
+Attribute name are ''case-insensitive'' meaning that you can type them as you wish in:
+  * ''UPPERCASE'',
+  * ''lowercase''
+  * or ''CamelCase''.
+</note>
+==== See ====
+
+
+You can see this attributes with the [[docs:tabli:data:info|tabli data info]] command
+
+<unit>
+<code dos>
+tabli data info characters.csv@howto
+</code>
+<console>
+Information about the data resource (characters.csv@howto)
+ATTRIBUTE      VALUE
+------------   ----------------------------------------------------------
+AbsolutePath   D:\code\bytle-mono\db-website\src\doc\howto\characters.csv
+Characterset   ISO-8859-2
+Connection     howto
+Count          4
+DataUri        characters.csv@howto
+LogicalName    characters
+Name           characters.csv
+Path           characters.csv
+Size           346
+Type           text/csv
+</console>
+</unit>
+==== List ====
+
+You can get them in a tabular format with the [[docs:tabli:data:list|tabli data list]] command
+
+<unit>
+<code dos>
+tabli data list -a count -a size *@howto
+</code>
+<console>
+count   size
+-------------------   ----
+                  6    132
+                  4    346
+                  3    268
+                  5     70
+         2147483647   1446
+9223372036854775807    479
+         2147483647    227
+                 30    501
+                 10    623
+                 30   1512
+                  1      0
+                 30    313
+                 10    589
+                  5   1031
+               1000   1027
+                 30    601
+                 30    321
+                  1     17
+                  4     65
+                  1    301
+                  7    230
+                  2    420
+</console>
+</unit>
+
+==== Set ====
+You can set the attributes via:
+  * a [[data-definition#attribute|data definition]]
+  * the [[docs:tabli:option|tabli options]]
+      * ''source-attribute'' or ''target-attribute'' in a [[docs:tabli:data:transfer|transfer command]]
+      * ''attribute'' for others [[docs:tabli:data:start|data command]]
+
+==== Add as virtual column ====
+You can add the data resource attribute as extra-column via the [[virtual_column|virtual columns]].
+
+
+
+
+===== Type =====
+==== Common ====
+''Common attributes'' are attributes that you will find on every [[resource|data resources]].
+
+The following attributes are common:
+  * [[name|name]] - the name of the [[resource|data resource]]
+  * [[logicalname|logicalName]] - the name of the [[resource|data resource]] without any extension
+  * [[count|count]] - the number of children (Records for a [[table|table]], File or Directory for a [[directory|directory]], ..)
+  * [[size|size]] - the size in byte on disk (may be blank if not yet supported)
+  * [[path|path]] - the relative (if possible) path in the [[docs:connection:connection|connection]]
+  * ''absolutePath'' - the absolute path in the [[docs:connection:connection|connection]]
+  * [[docs:connection:connection|connection]] -  the connection name
+  * [[data_uri|dataUri]] - the unique identifier of this data resource
+  * [[type|type]] -  the resource media type (ie "text/html")
+  * [[type|subtype]] -  the resource media subtype (ie "html")
+  * ''parent'' - the parent logical name
+  * ''md5'' - the ''MD5'' digest
+  * ''sha384'' - the ''SHA384'' digest
+  * ''sha384_integrity'' - the ''SHA384'' integrity digest used in a integrity HTML attribute.
+
+==== Specific ====
+
+''Specific attributes'' are attributes that are available only for specific ''type'' of data resource.
+
+For instance, for a [[text|text file]], you would have its ''characterSet''.
+

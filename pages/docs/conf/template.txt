@@ -1,0 +1,35 @@
+====== Template Variables ======
+
+
+===== About =====
+[[docs:conf:variable|variables]] can be used at several place as template variable.
+
+
+For instance, in:
+  * [[:docs:conf:vault|a connection vault]]
+  * [[:docs:flow:pipeline|pipeline file]]
+  * [[:docs:resource:logicalname|logical name]] definition
+  * [[:docs:resource:target_uri|target uri]] definition
+
+
+You can see the variables that you can use for:
+  * a connection with the [[:docs:tabli:connection:info|connection info command]] 
+  * a resource with the [[docs:tabli:data:info|data info command]]
+
+
+===== Example =====
+
+If you want a file to take as [[:docs:resource:logicalname|logical name]] a part of its name, you can use [[:docs:common:globbing|back-reference globbing variables]] when you [[:docs:op:select|select]] them.
+
+  * If you have an export file with an obscur identifier such as:
+<file>
+cleaned_members_export_d874afd3b7.csv
+</file>
+  * If you select this file with the [[:docs:common:globbing|glob selector]] ''*_export_*.csv''
+  * You can set its logical name to ''cleaned_members'' by setting the logical name to ''$1''.
+
+
+
+
+
+

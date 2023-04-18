@@ -1,0 +1,11 @@
+====== Generator - Entity Column Generator ======
+
+
+===== Entity =====
+
+A ''entity column generator''  is a [[column|column data generator]] that can [[generator|generate]] data created from provided data set such as:
+  * a person
+  * or a country
+
+===== Location =====
+The entity data sets are located in the entity connection.

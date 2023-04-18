@@ -1,0 +1,9 @@
+====== Data Operation - Load / UpLoad ======
+
+
+===== About =====
+A ''upload'' is a [[transfer|transfer operation]] from the [[docs:connection:cd|local file system]] to another remote data system (ie [[docs:connection:connection|connection]])
+
+
+
+

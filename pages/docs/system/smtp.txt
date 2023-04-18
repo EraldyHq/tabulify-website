@@ -1,0 +1,49 @@
+====== SMTP ======
+
+
+===== About =====
+''smtp'' is a special [[docs:system:system|system]] where you can only [[docs:op:sendmail|send an email]].
+
+
+===== Built-in connection =====
+
+The default connection is the [[docs:connection:smtp|smtp connection]].
+
+
+===== Smtp Server Connection creation =====
+
+To create a ''smtp'' connection, you have the following possibilities
+<tabs enclosed-tabs>
+<panel>
+<label>Connection Vault</label>
+In a [[docs:conf:vault|Connection Vault]], to define a smtp [[docs:connection:connection|connection]] with the name ''mySmtp'', you could write:
+\\
+
+<code properties>
+[mySmtp]
+uri = smtp://localhost:587
+user = user
+pwd = secret
+to = foo@tabulify.com; bar@tabulify.com
+to-names = foo; bar
+from = tabulify@server.com
+from-name = tabulify
+tls = true
+auth = true
+</code>
+
+</panel>
+<panel selected>
+<label>Tabli</label>
+
+With the [[docs:tabli:connection:add|tabli add command of the connection module]], adding a smtp connection with the name ''smtpConnectionName'':
+
+<code dos>
+tabli connection add "smtpConnectionName" "smtp://localhost:587"
+</code>
+
+Note that you can add all configuration as query properties of the uri.
+
+</panel>
+</tabs>
+

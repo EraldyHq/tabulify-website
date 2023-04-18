@@ -1,0 +1,11 @@
+====== Data Resource - Metadata ======
+
+
+===== About =====
+''metadata'' are ''data'' about the [[resource|data resource]].
+
+===== Type =====
+
+There is two kind of metadata:
+  * [[attribute|attributes]] - (ie creation date, size, ...) 
+  * [[structure|data structure]] - (ie column, type, ...)

@@ -1,0 +1,66 @@
+====== Oracle Database ======
+
+
+
+===== About =====
+''Tabulify'' supports the [[https://www.oracle.com/database/|sqlite]] [[docs:system:relational|relational database]] as a [[docs:system:system|system]]
+
+<note>
+If you don't have any knowledge of ''Tabulify'', you can start with the [[howto:getting_started:getting_started|Learning Guide]],
+otherwise you can also browser the [[howto:database:database|relational database Howto's]]
+</note>
+
+
+===== Connection =====
+
+To create a ''Oracle'' connection, you have the following possibilities
+<tabs skin="tabs">
+<tab panel="connectionVault" >Connection Vault</tab>
+<tab panel="tabli" selected="true">Tabli</tab>
+</tabs>
+<tabpanels>
+<tabpanel id="connectionVault" spacing="m-3">
+In a [[docs:connection:vault|Connection Vault]], to define a Oracle [[docs:connection:connection|connection]] with the name ''myOracle'', you would write:
+\\
+
+<code properties>
+[myOracle]
+url = jdbc\:oracle\:thin\:@[host]\:[port]/[servicename]
+driver = oracle.jdbc.OracleDriver
+user = loginUser
+password = loginPassword
+</code>
+<note>
+The [[docs:connection:password|password]] will be [[docs:common:vault|encrypted]] the next time that you start a Tabulify product such as [[docs:tabli:tabli|Tabli]]
+</note>
+</tabpanel>
+<tabpanel id="tabli" spacing="m-3">
+
+With the [[docs:tabli:connection:add|tabli add command of the connection module]], adding a Oracle connection with the name ''oracleConnectionName'':
+
+<unit display="none">
+<code cmd>
+tabli connection delete --not-strict "oracleConnectionName"
+</code>
+</unit>
+
+
+  * With the Windows CMD console
+<code dos>
+tabli connection add "oracleConnectionName" "jdbc:oracle:thin:@[host]:[port]/[servicename]" ^
+    --user login ^
+    --password password
+</code>
+  * With Linux Bash
+<code bash>
+tabli connection add "oracleConnectionName" "jdbc:oracle:thin:@[host]:[port]/[servicename]" \
+    --user login \
+    --password password
+</code>
+
+</tabpanel>
+</tabpanels>
+
+===== Version =====
+
+The [[https://www.oracle.com/database/technologies/appdev/jdbc-downloads.html|driver version]] used is the ''19.8.3''

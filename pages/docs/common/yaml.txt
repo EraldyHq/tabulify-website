@@ -1,0 +1,28 @@
+====== Yaml ======
+
+===== About =====
+Tabulify uses Yaml as the file format of
+  * [[..:conf:variable_file|configuration file]]
+  * and [[docs:flow:pipeline|pipeline]].
+
+
+
+===== Timestamp Variation =====
+''Tabulify'' introduces one variation of the ''YAML'' specification in the manipulation of [[#Timestamp|Timestamp]].
+
+In the [[https://yaml.org/type/timestamp.html|Yaml specification, a timestamp]] without timezone is interpreted as having the ''UTC'' timezone. ''Tabulify'' changes this behavior and delete the time zone information.
+
+Why ? Because if you are specifying the timestamp ''2020-10-01 01:00:00'' in YAML and that you are in the [[https://en.wikipedia.org/wiki/UTC%2B02:00UTC+2|UTC+2 timezone (Amsterdam)]], you will see the time  ''2020-10-01 02:00:00'' and that's too much trouble to understand why.
+
+
+Example:
+  * timestamp without timezone
+<code yaml>
+timestamp: 2020-10-01 01:00:00
+</code>
+  * timestamp with the timezone [[https://en.wikipedia.org/wiki/UTC%2B02:00UTC+2|UTC+2 time (Amsterdam)]]
+<code yaml>
+timestamp: 2020-10-01 01:00:00 +2
+</code>
+
+More on the timestamp in ''Yaml'' format can be found on [[https://yaml.org/type/timestamp.html|this page]].

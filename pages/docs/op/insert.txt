@@ -1,0 +1,10 @@
+====== Data Operation - Insert ======
+
+
+===== About =====
+A ''insert'' operation will insert [[docs:resource:content|data into a content resource]].
+
+
+The [[docs:tabli:data:insert|data insert operation]] supports the ''insert'' operation.
+
+

@@ -1,0 +1,61 @@
+---json
+{
+    "aliases": [
+        { "path": ":docs:tabli:conf:start" }
+    ],
+    "low_quality_page": "false",
+    "page_id": "bv0n23zxipve82u6k4uc0"
+}
+---
+====== Tabli - Variable Module  ======
+
+
+===== About =====
+The ''variable'' [[docs:tabli:module|module]] manages the [[docs:conf:variable_file|variable environment]] of [[docs:tabli:tabli|tabli]].
+
+===== Commands =====
+
+^ Actions ^ Description ^
+| [[list|list]] | Show in a list format all variables |
+| [[delete|delete]] | Delete a variable |
+| [[set|set]] | Set a variable |
+
+===== Syntax =====
+
+<unit>
+<code dos>
+tabli variable --log-level warning -h
+</code>
+<console>
+Tabli variable
+==============
+
+Management and configuration of the tabli variables environment.
+
+
+
+Syntax
+------
+
+
+    tabli variable <command> [-h,--help]
+
+
+where:
+
+
+  Commands:
+
+    delete       Delete a variable
+
+    list         List the variables
+
+    set          Set a variable
+
+
+  Option:
+
+    -h,--help    Print this help
+</console>
+</unit>
+

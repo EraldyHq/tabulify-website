@@ -1,0 +1,12 @@
+====== Data Operation - Print ======
+
+
+===== About =====
+''printing'' is the process to show the content of [[docs:resource:resource|data resources]] on a media.
+
+The ''print'' operation is supported by:
+  * the [[docs:tabli:data:print|data print command]]
+  * the [[docs:tabli:data:head|data head command]]
+  * the [[docs:tabli:data:tail|data tail command]]
+
+

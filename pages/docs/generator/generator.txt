@@ -1,0 +1,21 @@
+---json
+{
+    "description": "The data generator is a module that permits to generate data.",
+    "page_id": "xxxkddnftkzksslsaulzu",
+    "title": "Generate data as you wish"
+}
+---
+====== Data Generator ======
+
+{{ :docs:generator:undraw_file_manager.svg?600&ratio=21:9 |}}
+
+===== About =====
+<icon name="mdi:cog"/> ''Data Generator'' is a  module that permits to generate data.
+
+It is based on two elements:
+  * the [[docs:resource:generator|generator resource]] that defines and generate data.
+  * the [[docs:op:fill|data fill]] operation that ''fill'' [[docs:resource:content|content data resource]] with data.
+
+
+
+

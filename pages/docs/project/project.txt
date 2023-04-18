@@ -1,0 +1,15 @@
+====== Tabulify - Project ======
+
+
+===== Project =====
+A ''project'' is a directory where the [[docs:project:project-file|project file]] is located.
+
+It groups the following artifactories:
+  * [[docs:resource:resource]] ([[docs:resource:file|file]], [[docs:resource:script]], ...)
+  * [[docs:conf:vault|connections]]
+  * [[docs:conf:variable_file]]
+  * [[docs:flow:pipeline]] - data processing pipeline
+
+
+
+Typically ''Tabulify'' projects are stored in a version control system such as Git and are hooked to a Continuous Integration system that deploy to target environnement such as production or test.

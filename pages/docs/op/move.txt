@@ -1,0 +1,13 @@
+====== Data Operation - Move ======
+
+
+===== About =====
+''move'' is an [[transfer|transfer operation]] that will:
+  * [[rename|rename]] the [[docs:resource:resource|data resource]] if it happens on the same [[docs:connection:connection|connection]]
+  * or [[copy|copy]] and [[drop|drop]] the source [[docs:resource:resource|data resource]] if it happens between two [[docs:connection:connection|connections]].
+
+
+===== Example =====
+
+See the [[:docs:tabli:data:move|move tabli command for example]]
+

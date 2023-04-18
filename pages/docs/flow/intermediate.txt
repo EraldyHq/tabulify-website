@@ -1,0 +1,7 @@
+====== Tabulify - Intermediate Step ======
+
+
+===== Intermediate =====
+A ''intermediate'' step is a [[step|step]] of a [[pipeline|pipeline]] that:
+  * get as [[docs:resource:resource|data resource]] as [[source|input (source)]] 
+  * and returns one or more [[docs:resource:resource|data resources]] as [[target|output (target)]]

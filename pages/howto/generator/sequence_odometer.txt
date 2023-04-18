@@ -1,0 +1,221 @@
+---json
+{
+    "description": "This how-to shows you how to generate a digital Odometer with the column sequence generator.",
+    "low_quality_page": "false",
+    "page_id": "upklbuyki3z05zffuz2sm",
+    "title": "How to create an odometer with a sequence generator"
+}
+---
+====== Tabulify - How to create an odometer with a sequence generator ======
+
+===== About =====
+This [[..:howto|how-to]] shows you how to generate a [[wp>odometer|digital Odometer]] with the [[docs:generator:sequence|column sequence generator]].
+
+This page demonstrates the ''tickerFor'' property that is used to fill unique columns constraint mostly.
+
+The ''tickerFor'' property will ''tick'' another column, meaning that the generator associated will generate a new value.
+
+<note info  width="300px">
+An ''odometer'' is the indicator in your car dashboard that count the number of kilometers.
+\\
+\\
+{{ howto:generator:odometer.png?100 |}}
+</note>
+
+
+
+===== Steps =====
+
+==== Creation of the generator file ====
+To generate data, you need to create a [[docs:resource:generator|generator file]] that will describe the data to be generated.
+
+The below [[docs:resource:generator|data resource generator]]:
+  * has the [[docs:resource:name|name]] ''sequence_odometer--datagen.yml''
+  * has the [[docs:resource:logicalname|logical name]] ''sequence_odometer''
+  * has a column named ''id'' that has [[docs:generator:sequence|sequence data generator]] that:
+      * starts with the default value ''1''
+      * increments by default with the value ''1''
+  * has a column named ''x'' with the ''integer'' data type that has a [[docs:generator:sequence|sequence data generator]] that:
+      * starts from ''0''
+      * and goes to ''9'' (''maxTick'')
+      * with a ''step'' of ''1'' (Default value)
+  * has a column named ''y'' with the ''integer'' data type that has a [[docs:generator:sequence|sequence data generator]]
+      * starts from ''0''
+      * generate data with a ''step'' of ''1'' (Default value)
+      * goes to ''9'' (''maxTick'')
+      * and ''tick'' the column ''x'' when ''maxTick'' is reached (ie the column ''x'' will generate a new value)
+  * has a column named ''z'' with the ''integer'' data type that has a [[docs:generator:sequence|sequence data generator]]
+      * starts from ''0'' (default start value)
+      * generate data with a ''step'' of ''1'' (Default value)
+      * goes to ''9'' (''maxTick'')
+      * and ''tick'' the column ''y'' when ''maxTick'' is reached (ie the column ''y'' will generate a new value)
+  * will generate ''1000'' values because each column can generate ''10'' element (ie ''10x10x10'')
+<unit>
+<file yaml sequence_odometer--datagen.yml>
+Columns:
+  - name: id
+    type: integer
+    comment: A id column to see easily the number of values generated
+    DataGenerator:
+      type: sequence
+  - name: x
+    type: integer
+    comment: A column with a sequence date generator
+    DataGenerator:
+      type: sequence
+      start: 0
+      # number from 0 to 9 will be generated (10 elements)
+      maxTick: 10
+  - name: y
+    type: integer
+    comment: A column with a sequence timestamp generator
+    DataGenerator:
+      type: sequence
+      start: 0
+      # number from 0 to 9 will be generated (10 elements)
+      maxTick: 10
+      # the x column will go to the next value when this sequence has reach its last value
+      tickerFor: x
+  - name: z
+    type: integer
+    comment: A column with a sequence timestamp generator
+    DataGenerator:
+      type: sequence
+      start: 0
+      # number from 0 to 9 will be generated (10 elements)
+      maxTick: 10
+      # the y column will go to the next value when this sequence has reach its last value
+      tickerFor: y
+
+
+
+</file>
+</unit>
+==== Printing the data ====
+
+With the [[docs:tabli:data:head|data head command]], we can print the ''values'' generated.
+<unit>
+<code dos>
+tabli data head --limit 101 sequence_odometer--datagen.yml@howto
+</code>
+<note tip>
+[[docs:connection:howto|howto]] is the connection that contains the files used in the [[..:howto|HowTo's]].
+</note>
+<console>
+The first 101 rows of the data resource (sequence_odometer--datagen.yml@howto):
+ id   x   y   z
+---   -   -   -
+  1   0   0   0
+  2   0   0   1
+  3   0   0   2
+  4   0   0   3
+  5   0   0   4
+  6   0   0   5
+  7   0   0   6
+  8   0   0   7
+  9   0   0   8
+ 10   0   0   9
+ 11   0   1   0
+ 12   0   1   1
+ 13   0   1   2
+ 14   0   1   3
+ 15   0   1   4
+ 16   0   1   5
+ 17   0   1   6
+ 18   0   1   7
+ 19   0   1   8
+ 20   0   1   9
+ 21   0   2   0
+ 22   0   2   1
+ 23   0   2   2
+ 24   0   2   3
+ 25   0   2   4
+ 26   0   2   5
+ 27   0   2   6
+ 28   0   2   7
+ 29   0   2   8
+ 30   0   2   9
+ 31   0   3   0
+ 32   0   3   1
+ 33   0   3   2
+ 34   0   3   3
+ 35   0   3   4
+ 36   0   3   5
+ 37   0   3   6
+ 38   0   3   7
+ 39   0   3   8
+ 40   0   3   9
+ 41   0   4   0
+ 42   0   4   1
+ 43   0   4   2
+ 44   0   4   3
+ 45   0   4   4
+ 46   0   4   5
+ 47   0   4   6
+ 48   0   4   7
+ 49   0   4   8
+ 50   0   4   9
+ 51   0   5   0
+ 52   0   5   1
+ 53   0   5   2
+ 54   0   5   3
+ 55   0   5   4
+ 56   0   5   5
+ 57   0   5   6
+ 58   0   5   7
+ 59   0   5   8
+ 60   0   5   9
+ 61   0   6   0
+ 62   0   6   1
+ 63   0   6   2
+ 64   0   6   3
+ 65   0   6   4
+ 66   0   6   5
+ 67   0   6   6
+ 68   0   6   7
+ 69   0   6   8
+ 70   0   6   9
+ 71   0   7   0
+ 72   0   7   1
+ 73   0   7   2
+ 74   0   7   3
+ 75   0   7   4
+ 76   0   7   5
+ 77   0   7   6
+ 78   0   7   7
+ 79   0   7   8
+ 80   0   7   9
+ 81   0   8   0
+ 82   0   8   1
+ 83   0   8   2
+ 84   0   8   3
+ 85   0   8   4
+ 86   0   8   5
+ 87   0   8   6
+ 88   0   8   7
+ 89   0   8   8
+ 90   0   8   9
+ 91   0   9   0
+ 92   0   9   1
+ 93   0   9   2
+ 94   0   9   3
+ 95   0   9   4
+ 96   0   9   5
+ 97   0   9   6
+ 98   0   9   7
+ 99   0   9   8
+100   0   9   9
+101   1   0   0
+</console>
+</unit>
+
+
+===== Next =====
+
+
+
+Because a [[docs:resource:generator|generator]] is just a [[docs:resource:resource|data resource]], you can use it in every [[docs:op:op|data operation]].
+
+<btn>
+[[generator_data_operation|How to use a generator in a data operation ]]
+</btn>

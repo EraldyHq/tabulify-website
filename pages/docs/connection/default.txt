@@ -1,0 +1,10 @@
+====== Default Connection ======
+
+
+===== About =====
+The ''default connection'' is the [[connection|connection]] used when no ''connection'' part is specified in a [[docs:resource:data_uri|data uri]].
+
+===== Determination =====
+
+  * If the run is inside a [[docs:common:project|project]], the default connection is the [[docs:connection:project|project]] home,
+  * Otherwise this is the [[cd|current directory connection(cd)]]

@@ -1,0 +1,32 @@
+====== Working Path ======
+
+
+===== About =====
+The ''working path'' is a path from where the relative [[docs:resource:path|path]] are resolved.
+
+
+  * In a [[docs:system:database|database]], this is the [[docs:resource:schema|schema]]
+  * In a [[docs:system:file|file system]], this is a [[docs:resource:directory|directory]] 
+
+This working path is set by the [[docs:connection:uri|connection url]].
+
+
+
+
+===== How to see the working path ? =====
+
+To see the working path, you can use the [[docs:tabli:connection:info|connection info]] command.
+
+===== Current directory =====
+
+For operating process, The ''working path'' is known as:
+  * the ''current directory''
+  * or ''working directory''
+
+If you want to see the working path of the tabulify process against the local file system, you can use the [[docs:connection:cd|cd connection]] (ie current directory)
+
+
+<code bash>
+tabli connection info cd
+</code>
+

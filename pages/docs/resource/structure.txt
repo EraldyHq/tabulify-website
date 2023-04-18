@@ -1,0 +1,28 @@
+====== Data Structure (Data Definition) ======
+
+
+===== About =====
+A ''data structure'' defines the structure of a [[resource|data resource]].
+
+This definition may be created:
+  * via a [[data-definition|data definition file]]
+  * via a command (Example: for a [[docs:system:database|database]], a ''SQL'' statement known as the ''Data Definition Language (DDL)'')
+  * via the structure of another [[resource|data resource]]
+
+
+
+
+===== Operation =====
+
+==== Creation ====
+The creation of a data structure in ''Tabulify'' is done via the [[docs:op:create|create operation]].
+
+==== View ====
+The data structure is viewable via the [[docs:tabli:data:struct|struct operations]]
+
+===== Logical Structure =====
+
+There is roughly three logical structures in the world that are:
+  * a [[tabular|tabular]]
+  * a ''graph''
+  * a ''hierarchy'' (ie a graph without cycle)

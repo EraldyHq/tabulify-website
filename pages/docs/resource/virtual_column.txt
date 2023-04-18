@@ -1,0 +1,25 @@
+====== Data Resource - Virtual Columns ======
+
+
+===== Virtual =====
+''virtual columns'' are [[column|columns]] where their values are computed.
+
+===== Howto =====
+<related pattern="howto:*" />
+===== Syntax =====
+
+''Tabulify'' permits to add virtual columns that contains [[attribute|data resource attribute]] such as the [[name|name]] of a file with:
+  * the [[docs:op:enrich|enrich operation]]
+  * or the ''virtual-column'' [[docs:tabli:option|tabli option]].
+
+
+==== tabli ====
+The [[docs:tabli:option|tabli option]] syntax is the following:
+<code>
+--virtual-column "virtualColumnName=resourceAttributeName "
+</code>
+where:
+  * ''virtualColumnName'' is the name of the column added
+  * ''resourceAttributeName'' is the name of [[docs:resource:attribute|resource attribute]].
+
+

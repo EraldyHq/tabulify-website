@@ -1,0 +1,38 @@
+====== Data Resource - Data Locator ======
+
+
+===== About =====
+A ''data locator'' is a [[data_uri|data URI]] that permits to locate precisely a [[resource|data resource]].  It's the unique identifier of a [[resource|data resource]]
+
+===== Syntax =====
+
+<code>
+path[@connection]
+</code>
+where:
+  * ''connection'' is the [[docs:connection:name|connection name]]
+  * ''path'' is a hierarchical path consisting of a sequence of path segments separated generally by:
+      * a slash (''/'') for a [[docs:system:file|file system]]
+      * a point (''.'') for a [[docs:system:database|database]]
+
+===== Example =====
+
+  * A [[docs:resource:table#uri|table uri]]
+<code bash>
+# Absolute path
+[catalog.][schema.]table@databaseName
+# Relative path
+//.otherschema.table@databaseName
+</code>
+  * A [[docs:resource:file|file]]
+<code bash>
+# Absolute path
+/dir1/dir2/file.extension@fileConnection
+# Relative path
+../dir/file.extension@fileConnection
+</code>
+
+
+
+
+

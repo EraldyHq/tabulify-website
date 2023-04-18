@@ -1,0 +1,20 @@
+<navbar breakpoint="md" align="center" position="top">
+<brand title="Tabulify">
+<icon name="file-table-box-outline" />
+Tabulify
+</brand>
+<collapse>
+<group expand="true">
+[[howto:getting_started:getting_started|Getting Started]]
+[[:docs:docs|Docs]]
+[[howto:howto|HowTo's]]
+</group>
+<btn light spacing="mr-2" border-color="gray">
+[[https://tower.combostrap.com/combo/app/list/registration?listGuid=lis-l89qSd8|Subscribe]]
+</btn>
+<btn elevation="true">
+[[howto:getting_started:getting_started|Getting Started]]
+</btn>
+<search class="mr-0 pr-0 pl-3"/>
+</collapse>
+</navbar>

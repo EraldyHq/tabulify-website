@@ -1,0 +1,228 @@
+====== Learning Tabulify - Step 9 - How to fill a data resource with generated data ? ======
+
+
+===== Data Generation =====
+''Tabulify'' integrates natively a [[docs:generator:generator|data generator]].
+
+You can generate realistic production data and start working on your project right away.
+
+
+<note tip>
+Because the data is fake but realistic, you don't need to:
+  * anonymize production data in your development environment because of the privacy laws
+  * or create any acceptance environment.
+</note>
+
+
+===== The fill command =====
+
+The [[docs:op:fill|data fill operation]] is an operation that will [[docs:op:select|select target data resource]] and fill them with data.
+
+''Tabulify'' supports two mode:
+  * [[#auto fill|auto]] - the data generated is automatically chosen
+  * [[#generator|generator]] - the data generated is defined in a file called the ''generator''
+
+The [[docs:op:fill|fill operation]] is supported by the [[docs:tabli:data:fill|data fill command]].
+
+===== Auto Fill =====
+
+Let's first delete all data with the [[docs:tabli:data:truncate|data truncate command]] to get a clean schema.
+<unit >
+<code dos>
+tabli data truncate *@sqlite
+</code>
+</unit>
+
+The below [[docs:tabli:data:fill|fill command]] will fill all [[docs:resource:table|tables]] with auto-generated data
+
+<unit >
+<code dos>
+tabli data fill *@sqlite
+</code>
+
+<console>
+Source                          Target                          Latency (ms)   Row Count   Error   Message
+-----------------------------   -----------------------------   ------------   ---------   -----   -------
+call_center@memgen              call_center@sqlite              137            1000
+catalog_page@memgen             catalog_page@sqlite             48             1000
+catalog_sales@memgen            catalog_sales@sqlite            130            1000
+customer@memgen                 customer@sqlite                 98             1000
+customer_address@memgen         customer_address@sqlite         94             1000
+customer_demographics@memgen    customer_demographics@sqlite    62             1000
+date_dim@memgen                 date_dim@sqlite                 104            1000
+household_demographics@memgen   household_demographics@sqlite   32             1000
+income_band@memgen              income_band@sqlite              37             1000
+item@memgen                     item@sqlite                     195            1000
+promotion@memgen                promotion@sqlite                76             1000
+ship_mode@memgen                ship_mode@sqlite                45             1000
+store@memgen                    store@sqlite                    105            1000
+store_sales@memgen              store_sales@sqlite              100            1000
+time_dim@memgen                 time_dim@sqlite                 56             1000
+warehouse@memgen                warehouse@sqlite                81             1000
+web_page@memgen                 web_page@sqlite                 70             1000
+web_sales@memgen                web_sales@sqlite                135            1000
+web_site@memgen                 web_site@sqlite                 96             1000
+</console>
+</unit>
+
+<note>
+The [[docs:tabli:data:fill|data fill command]] loads ''1000'' records for each [[docs:resource:table|table]] because this is the default value of the  [[docs:generator:max-record-count|max-record-count]] [[docs:tabli:option|option]] ( This option defines the number of records generated ).
+</note>
+
+
+===== Query 11 =====
+
+By running the [[howto:getting_started:7_query|query 11 (of the query lesson)]], we don't get any data back.
+<unit >
+<code dos>
+tabli data print (sqlite/query_11.sql@tpcds_query)@sqlite
+</code>
+<console>
+customer_id   customer_first_name   customer_last_name   customer_email_address
+-----------   -------------------   ------------------   ----------------------
+
+</console>
+</unit>
+
+Why ? Because the [[howto:getting_started:7_query|query 11]] is based on time data of the year ''2001'' and unfortunately the auto-generated data does not contain ''2001'' in the ''d_year'' column.
+
+<unit >
+<code dos>
+tabli data head --limit 10 date_dim@sqlite
+</code>
+<console>
+The first 10 rows of the data resource (date_dim@sqlite):
+d_date_sk   d_date_id   d_date       d_month_seq   d_week_seq   d_quarter_seq   d_year   d_dow   d_moy   d_dom   d_qoy   d_fy_year   d_fy_quarter_seq   d_fy_week_seq   d_day_name   d_quarter_name   d_holiday   d_weekend   d_following_holiday   d_first_dom   d_last_dom   d_same_day_ly   d_same_day_lq   d_current_day   d_current_week   d_current_month   d_current_quarter   d_current_year
+---------   ---------   ----------   -----------   ----------   -------------   ------   -----   -----   -----   -----   ---------   ----------------   -------------   ----------   --------------   ---------   ---------   -------------------   -----------   ----------   -------------   -------------   -------------   --------------   ---------------   -----------------   --------------
+        1   a           2020-12-06             8            7               8        3       5       8       2       2           1                  3               2   j            e                r           w           q                               8            4               9               0   x               g                b                 k                   i
+        2   b           2020-12-04             0            6               7        0       1       5       6       5           4                  4               4   t            n                h           t           l                               3            8               4               5   b               j                x                 l                   a
+        3   c           2020-12-12             5            3               1        7       9       0       0       7           9                  5               9   m            c                c           b           g                               1            0               7               1   o               h                h                 f                   a
+        4   d           2020-12-12             9            4               9        9       0       4       9       2           8                 10               9   b            l                b           d           o                               8            2              10               1   d               h                k                 n                   n
+        5   e           2020-12-02             4            8               3        6       2       2       3       8           8                  8               8   i            e                e           g           k                               3            1               8               0   b               l                w                 a                   p
+        6   f           2020-12-09             8            2               0       10       3       6       2       0           5                  2               6   i            u                c           i           o                               4            1               3               5   e               q                p                 t                   v
+        7   g           2020-12-10             5           10              10        8       6       2       1       3          10                  7               2   e            o                h           h           a                               9            5               8               8   q               p                k                 n                   f
+        8   h           2020-12-06             1            6              10        7       7       5       5       2           1                 10               1   t            w                f           o           k                              10           10               4               4   y               j                m                 j                   h
+        9   i           2020-12-06             6            2               8        1       5       1       5       3           6                  9              10   s            q                l           v           d                               6            5               0               6   o               f                v                 n                   x
+       10   j           2020-12-03             6            8               6        8       6       0       3       7           9                  6               2   v            s                w           o           a                               1           10               1               6   w               n                v                 x                   q
+</console>
+</unit>
+
+To update the column ''dyear'' with data from the year ''2001'', we will use a [[#generator|generator]] in the next section.
+
+===== Generator =====
+
+A [[docs:resource:generator|generator]] is a [[docs:resource:file|file]] that contains the data generation definition.
+
+For each column, a [[docs:generator:column|column data generator]] is defined that control the data generated.
+
+The below [[docs:resource:generator|generator]] generates one year of data with two columns:
+  * ''d_date'' that has a [[docs:generator:sequence|date sequence generator]] to generate ''date'' data from ''2001-01-01'' and upwards
+  * ''dyear'' that has a [[docs:generator:expression|expression generator]] that extracts the ''year'' of the ''d_date'' column.
+
+<unit>
+<file yaml date_dim_2001--datagen.yml>
+LogicalName: date_dim
+Columns:
+  - name: d_date
+    type: date
+    comment: A column with a sequence generator that generates a date sequence from 2001-01-01 and after
+    DataGenerator:
+      type: sequence
+      start: 2001-01-01
+      step: 1
+  - name: d_year
+    precision: 4
+    comment: A column with a expression generator that extract the year from the date column
+    DataGenerator:
+      type: expression
+      ColumnParents: d_date
+      expression: "x.getFullYear()"
+
+</file>
+</unit>
+
+This [[docs:resource:generator|generator]] is also a [[docs:resource:content|content resource]] and therefore you can use it as any [[docs:resource:tabular|tabular resource]] and take a look at the data generated
+
+<unit>
+<code bash>
+tabli data head date_dim_2001--datagen.yml@howto
+</code>
+<console>
+The first 10 rows of the data resource (date_dim_2001--datagen.yml@howto):
+d_date       d_year
+----------   ------
+2001-01-01   2001
+2001-01-02   2001
+2001-01-03   2001
+2001-01-04   2001
+2001-01-05   2001
+2001-01-06   2001
+2001-01-07   2001
+2001-01-08   2001
+2001-01-09   2001
+2001-01-10   2001
+</console>
+</unit>
+
+===== Fill with generators =====
+
+After having created a generator for the ''date_dim'' [[docs:resource:table|table]], we can pass it to the [[docs:tabli:data:fill|data fill command]] with the ''--generator-selector'' option to make the data generation more controled.
+<unit >
+<code dos>
+tabli data fill --generator-selector date_dim_2001--datagen.yml@howto   *@sqlite
+</code>
+<note>
+As the option ''generator-selector'' is a [[docs:resource:selector|resource selector]], you can create a [[docs:resource:generator|generator]] for each table where you want to customize the generated data and select them with the [[docs:common:globbing|glob pattern]].
+</note>
+Output:
+<console>
+Source                          Target                          Latency (ms)   Row Count   Error   Message
+-----------------------------   -----------------------------   ------------   ---------   -----   -------
+call_center@memgen              call_center@sqlite              131            1000
+catalog_page@memgen             catalog_page@sqlite             49             1000
+catalog_sales@memgen            catalog_sales@sqlite            130            1000
+customer@memgen                 customer@sqlite                 71             1000
+customer_address@memgen         customer_address@sqlite         64             1000
+customer_demographics@memgen    customer_demographics@sqlite    84             1000
+date_dim@memgen                 date_dim@sqlite                 1794           1000
+household_demographics@memgen   household_demographics@sqlite   32             1000
+income_band@memgen              income_band@sqlite              30             1000
+item@memgen                     item@sqlite                     145            1000
+promotion@memgen                promotion@sqlite                77             1000
+ship_mode@memgen                ship_mode@sqlite                42             1000
+store@memgen                    store@sqlite                    108            1000
+store_sales@memgen              store_sales@sqlite              94             1000
+time_dim@memgen                 time_dim@sqlite                 53             1000
+warehouse@memgen                warehouse@sqlite                79             1000
+web_page@memgen                 web_page@sqlite                 66             1000
+web_sales@memgen                web_sales@sqlite                131            1000
+web_site@memgen                 web_site@sqlite                 122            1000
+</console>
+</unit>
+
+And the ''query 11'' is now giving back a result. The generated data is minimal and should be further defined.
+
+<unit >
+<code dos>
+tabli data print (sqlite/query_11.sql@tpcds_query)@sqlite
+</code>
+
+<console>
+customer_id   customer_first_name   customer_last_name   customer_email_address
+-----------   -------------------   ------------------   ----------------------
+bbi           g                     k                    e
+bbx           j                     a                    w
+bhj           h                     r                    i
+cw            z                     w                    p
+ga            q                     e                    d
+kd            w                     f                    h
+sl            a                     x                    q
+</console>
+</unit>
+
+===== Next =====
+Learn how to compare data resource.
+
+<btn>
+[[10_resource_comparison|Data Resource Comparison]]
+</btn>

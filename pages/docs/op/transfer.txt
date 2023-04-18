@@ -1,0 +1,141 @@
+====== Data Operation - Transfer ======
+
+===== About =====
+''transfer'' is a [[op|data operation]] that executes all this [[docs:resource:resource|data resources]] operations:
+  * [[copy|copy]] (Default)
+  * [[download|download]], [[upload|upload, load]]
+  * [[move|move]], [[rename|rename]]
+  * [[insert|insert, append]]
+  * [[upsert|upsert]]
+  * [[update|update]]
+  * [[delete|delete]]
+
+<note important>
+In general, if you need to ''move'' or ''process'' data, you will ''transfer'' it.
+</note>
+
+
+The ''data transfer'' action permits you to
+  * [[download|download]] a [[docs:resource:table|Sql table]] into a [[docs:resource:tabular_file|file]] ([[docs:resource:csv|CSV]], [[docs:resource:excel|Excel file]], ...)
+  * [[howto:database:tabli_load_csv|load a local CSV file into a relational table]]
+  * [[copy|copy]] a local file to a [[docs:system:ssh|sftp server]]
+  * and more
+
+
+
+
+
+
+===== Usage =====
+
+<tabs enclosed-tabs>
+
+<panel selected>
+        <label>Flow</label>
+<code yaml>
+pipeline:
+# ...
+  - name: "Store"
+    operation: transfer
+    args:
+      target-uri: 'build/${logicalName}.csv@cd'
+      transfer-operation: insert
+      target-operation: replace
+</code>
+    </panel>
+    <panel>
+        <label>Tabli Data Transfer Command</label>
+The ''transfer'' operation is performed by the [[docs:tabli:data:transfer|tabli data transfer]] command
+    </panel>
+</tabs>
+
+
+
+
+
+
+
+===== Arguments =====
+
+
+
+^ Name ^ Default ^ Description ^
+| ''target-uri'' | - | The [[docs:resource:target_uri|target uri]] (Mandatory) |
+| ''target-operation'' | - | A [[#resource-operation|resource operation]] that will happens on the target before the transfer |
+| ''source-operation'' | - | A [[#resource-operation|resource operation]] that will happens on the source after the transfer |
+^ Flow Property ^^^
+| [[..:flow:granularity|step-granularity]] | ''resource'' (default) or ''record'' | The operation will be done for the whole resource or record by record |
+| ''output'' | ''target'' | The output \\ - ''targets'', the target resources  \\ - ''sources'', the sources resources are passed \\ - ''results'', the [[#result|results]] of the transfer step is passed |
+^ [[#Cross Transfer|Cross Transfer Properties]] ^^^
+| ''source-fetch-size'' | ''10000'' | The number of record from the [[docs:flow:source|source]] for one fetch (ie network message size from the source system) |
+| ''buffer-size'' | 2 x ''target-worker'' x ''fetch-size'' | The maximum number of record from stored in transit between the source and the target |
+| ''target-batch-size'' | ''10000'' | The number of record send to target system at once (ie network message size to the target system) |
+| ''target-commit-frequency'' | <math>2^{31}</math> (Infinite) | The number of batch sends that will trigger a commit to the target system |
+| ''target-worker'' | 1 | The number of thread against the target system that will send batches |
+| ''with-bind-variables'' | true | If the target system is a [[docs:system:database|sql database]], SQL bind variables will be used |
+| ''metrics-data-uri'' | | A [[docs:resource:data_uri|data uri]] where the [[#metrics|transfer metrics]] will be saved |
+^ Transfer Properties ^^^
+| ''transfer-operation'' | ''copy'' for a [[docs:system:file|file system]] \\ ''insert'' otherwise | A [[#transfer-operation|transfer operation]] (copy, insert, upsert, update, ...) |
+| ''transfer-mapping-method'' | ''name'' | how the source and target columns are mapped (by ''name'', ''position'' or ''map'') |
+| ''transfer-column-mapping'' |  | if the mapping method is ''map'', you can define a map of source target column name |
+
+==== Transfer Operation  ====
+
+The ''transfer'' operation supports the following values for the ''transfer-operation'' argument.
+
+^ Name ^ Alias ^ Require Same \\ Source/Target \\ Structure and Data ^ Local Equivalent Metadata Operation ^
+| [[copy|copy]] | | Yes | - |
+| [[move|move]] | | Yes | [[rename|rename]] |
+| [[insert|insert]] | [[insert|append]] | No | - |
+| [[upsert|upsert]] | | No | - |
+| [[update|update]] | | No | - |
+| [[delete|delete]] | | No | - |
+
+
+The default transfer operation is [[docs:system:system|system dependent]]:
+  * [[copy|copy]] is the default for a [[docs:system:file|file system]]
+  * [[insert|insert]] is the default for a [[docs:system:database|database system]] (If the target does not exist, it's always by default created)
+
+==== Resource Operation ====
+
+The following values may be used for the ''target-operation'' and ''source-operation'' arguments.
+
+^ Value ^ Description ^
+| ''truncate'' | Truncate the resource |
+| ''drop'' | Drop the resource |
+| ''replace'' | Replace the resource |
+| ''keep'' | Does not modify the actual resource (ie does not replace the target if it exists) |
+
+==== Result ====
+If you set the ''output'' arguments to ''result'', a ''result data path'' will be returned (in place of targets) and it will contain the following columns:
+  * ''source'': the [[docs:flow:source|source]] [[docs:resource:data_uri|data-uri]]
+  * ''target'': the [[docs:flow:target|target]] [[docs:resource:data_uri|data-uri]]
+  * ''latency'': the latency in ms
+  * ''count'': the [[docs:resource:count|count]] of [[docs:resource:record|record]] transfered.
+  * ''error'' and ''message'': an error and a message if any errors has occured.
+
+==== Metrics ====
+
+If the argument ''metrics-data-uri'' is given, a metrics data resource will be created with the following columns:
+  * ''run'' - the run id
+  * ''timestamp'' - the metrics timestamp
+  * ''metric'' - the name of the metrics
+  * ''value'' - the value of the metrics
+  * ''worker'' - the name of the worker (thread)
+
+The following metrics will be recorded:
+  * ''BufferSize'': the size of the memory buffer between the source and the target
+  * ''BufferMaxSize'': the maximum size of the buffer
+  * ''BufferRatio'': the ratio from ''Buffer Size'' against ''Buffer MaxSize''
+  * ''Commits'': the number of commits
+  * ''Records'': the number of records
+
+
+===== Cross Transfer =====
+A transfer can happen:
+  * on the same [[docs:connection:connection|connection]]
+  * or between two different [[docs:connection:connection|connections]] (called also a ''cross-transfer'')
+
+<note>
+Tabulify Optimization: If two connections share the same credentials and the same system [[docs:connection:uri|URL]], the transfer will be optimized and considered local. This way, the transfer is applied only on the system metadata and it happens faster because the data is not moved.
+</note>

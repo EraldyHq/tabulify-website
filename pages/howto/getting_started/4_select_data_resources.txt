@@ -1,0 +1,121 @@
+====== Learning Tabulify - Step 4 - How to select Data Resources ======
+
+
+===== Concepts =====
+
+To [[docs:op:select|select a data resources]] such as a [[docs:resource:file|file]] or a [[docs:resource:table|database table]], ''Tabulify'' uses the concept of:
+  * [[#data selector]]
+  * and [[#selection_with_dependencies|dependency]] (Do we select also the dependent ''data resources'')
+
+This page goes through this concepts with explanation and examples.
+
+===== Data Selector =====
+
+
+A ''data selector'' is composed of two parts:
+  * a [[docs:common:globbing|glob pattern]]
+  * and a [[docs:connection:connection|connection]]
+  * separated by the ''@'' (at) sign.
+
+A [[docs:resource:data_selector|data selector]] looks like that:
+<code>
+globPattern@connection
+</code>
+
+A [[docs:common:globbing|glob pattern]] permits to define the ''name'' or the ''path'' of the [[docs:resource:resource|data resource]] located in its [[docs:connection:connection#system|system connection]].
+
+
+===== Normal Selection =====
+
+For instance, with the [[docs:system:tpcds|internal TPC-DS data store]], the below [[docs:tabli:data:list|list command]] will select all [[docs:resource:table|tables]] that ends with the term ''sales'' because the ''*'' character matches all characters.
+<unit>
+<code dos>
+tabli data list *sales@tpcds
+</code>
+where:
+  * ''tabli'' is the [[docs:tabli:tabli|main command line utility]]
+  * ''data'' is a [[docs:tabli:module|module]] (ie the [[docs:tabli:data:start|data module]])
+  * ''list'' is a [[docs:tabli:command|command]]
+  * ''*sales@tpcds'' is a [[docs:resource:data_selector|resource data selector]] that select [[docs:resource:resource|data resources]].
+      * ''tpcds'' defines the [[docs:connection:connection|connection]]
+      * ''*sales'' defines the [[docs:resource:table|tables]] to look for with a [[docs:common:globbing|glob pattern]]. In our case all tables that finish with the word ''sales'' because  ''*'' is the [[docs:common:globbing|globbing star]] and select all characters.
+
+Output:
+<console>
+path
+-------------
+catalog_sales
+store_sales
+web_sales
+</console>
+</unit>
+
+<note>
+To get more practice on ''glob pattern'', you can have a look at this page. [[howto:tabli:glob]]
+</note>
+
+
+===== Selection with dependencies =====
+
+When moving data due to [[docs:resource:fkey|foreign-key constraint]], you need to move the data resources and their [[docs:resource:dependency|dependencies]].
+
+That's why ''Tabulify'' offers the  ''%%--with-dependencies%%'' [[docs:tabli:flag|flag]] that will select also the [[docs:resource:dependency|dependent resources]] of the selected [[docs:resource:resource|data resource]]
+
+Example: All ''tables'' that have a name that ends with ''sales'' in the [[docs:system:tpcds|tpcds system]] and their [[docs:resource:dependency|dependent tables]]
+<unit>
+<code dos>
+tabli data list --with-dependencies *sales@tpcds
+</code>
+
+<console>
+path
+----------------------
+call_center
+catalog_page
+catalog_sales
+customer
+customer_address
+customer_demographics
+date_dim
+household_demographics
+income_band
+item
+promotion
+ship_mode
+store
+store_sales
+time_dim
+warehouse
+web_page
+web_sales
+web_site
+</console>
+</unit>
+
+===== Local File System =====
+The connection part of a [[docs:resource:data_selector|data selector]] is not mandatory as the default connection is the [[docs:connection:cd|local file system]].
+
+Therefore, performing the [[docs:tabli:data:list|list command]] with a [[docs:resource:data_selector|data selector]] without ''connection'' will give you a list of the file in your current directory.
+
+<code dos>
+tabli data list *
+</code>
+<console>
+path
+-----------------------
+README.md
+characters.csv
+date_dim--datagen.yml
+sequence--datagen.yml
+</console>
+
+<note>
+This is then the equivalent of the [[wp>Ls|ls command]]
+</note>
+
+===== Next =====
+Now that we know how to select [[docs:resource:resource|data resources]], the next page will show you how to print their content.
+
+<btn>
+[[5_print_data_resource|How to print Data Resources]]
+</btn>

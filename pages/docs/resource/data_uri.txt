@@ -1,0 +1,67 @@
+====== Data Resource - Data URI ======
+
+
+===== About =====
+A ''Data URI'' or ''Data Uniform Resource Identifier'' is [[attribute|data resource attribute]] that identify uniquely a [[docs:resource:resource|data resource]].
+
+<note>
+It's a syntax that extends the notion of [[wp>Uniform%20resource%20identifier|URI]]
+</note>
+
+
+<note tip>
+If you use it as [[data_selector|data selector]], you would select only [[docs:resource:resource|one data resource]].
+</note>
+
+
+
+===== Syntax =====
+==== Content / Container ====
+
+For a [[content|content data resource]] or [[container|container data resource]]
+<code bash>
+path@connection
+</code>
+where:
+  * ''path'' is the [[path|path]]
+  * ''connection'' is the [[docs:connection:name|connection name]]
+
+==== Script ====
+
+For a [[script|script data resource]]
+<code bash>
+(path@connection)@connection
+</code>
+where:
+  * ''path@connection'' is the ''data uri'' of the script
+  * ''connection'' is the [[docs:connection:name|connection name]] where the script is executed
+
+===== Management =====
+==== See ====
+As a ''data uri'' is a [[attribute|data resource attribute]], you can see it with the [[docs:tabli:data:info|data info command]]
+
+<unit>
+<code dos>
+tabli data info characters.csv@howto
+</code>
+<console>
+Information about the data resource (characters.csv@howto)
+ATTRIBUTE      VALUE
+------------   ----------------------------------------------------------
+AbsolutePath   D:\code\bytle-mono\db-website\src\doc\howto\characters.csv
+Characterset   ISO-8859-2
+Connection     howto
+Count          4
+DataUri        characters.csv@howto
+LogicalName    characters
+Name           characters.csv
+Path           characters.csv
+Size           346
+Type           text/csv
+</console>
+</unit>
+
+
+
+
+

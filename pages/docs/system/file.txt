@@ -1,0 +1,10 @@
+====== File System ======
+
+
+===== About =====
+A ''file system'' is a [[system|system]] that manages data by [[docs:resource:file|file]] in a tree of directory.
+
+
+===== Type =====
+  * local
+  * remote (ssh)

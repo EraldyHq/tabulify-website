@@ -1,0 +1,30 @@
+---json
+{
+    "low_quality_page": "false",
+    "name": "Built-In",
+    "page_id": "slajuapev6jxyiaa0lhll"
+}
+---
+====== Built-in Connections ======
+
+
+===== About =====
+''built-in'' ''connections'' are [[docs:system:system|connections]] that are always available and therefore that you don't need to add or create them and you can't delete them.
+
+
+===== List =====
+
+''Tabulify'' comes actually with the following ''built-in'' connections
+
+^ Name ^ Description ^
+| [[cd|cd]] | the current directory of the local file system |
+| [[desktop|desktop]] | the user desktop directory of the local file system |
+| [[smtp|smtp]] | the smtp server (local by default) |
+| [[home|home]] | the user home directory of the local file system |
+| ''mem'' | An internal memory connection used when loading and processing data in memory |
+| [[log|log]] | the location of the tabli logs |
+| [[project|project]] | the directory of the project on the local file system |
+| [[sd|sd]] | the script directory - the directory of the [[:docs:flow:pipeline|pipeline file]] in the local file system |
+| [[tpcds|tpcds]] | the table and data of the ''TPC-DS'' benchmark |
+| [[temp|temp]] | the temporary directory of the local file system |
+

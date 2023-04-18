@@ -1,0 +1,9 @@
+====== Tabulify - Sample Schema ======
+
+===== About =====
+''Tabulify'' supports sample  [[docs:resource:schema|schema]] as [[docs:connection:connection|connection]] (ie a set of data resources that represents one or several process).
+
+
+The main and only sample schema provided is the [[docs:system:tpcds|tpc-ds benchmark schema]]
+
+

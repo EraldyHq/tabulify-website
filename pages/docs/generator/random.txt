@@ -1,0 +1,39 @@
+====== Random Data Generator ======
+
+
+===== About =====
+A ''random generator'' is a [[column|column data generator]] that [[generator|generates]] data randomly inside a range of values.
+
+
+<note tip>
+If you want to extract values from a list at random, you should use the [[histogram|histogram generator]] with a factor of ''1'' for each bucket. Example: [[howto:generator:random_color]]
+</note>
+
+
+This generator will generate the values in an uniform distribution.
+===== Howto =====
+<related pattern="howto:*" />
+
+
+===== Properties =====
+
+^ Key ^ Default Value ^ Description ^ Related HowTo ^
+| ''min'' | See [[#data type|data type]] | The minimum value of the range of values | [[howto:generator:random|random]] |
+| ''max'' | See [[#data type|data type]] | The minimum value of the range of values | [[howto:generator:random|random]] |
+
+===== Data Type =====
+
+The below data type are supported:
+
+^ Data Type ^ Default Min ^ Default Max ^ Precision ^
+| Integer | 1 | 10 | Na |
+| Float / Double / Real | 1.0 | 10.0 | Na |
+| Numeric / Decimal (Rounding Half Down) | 1.0 | 10.0 | Column Scale Property |
+| Date | -10 days | 0 | day |
+| Timestamp | -10 days | 0 | Second |
+| Time | ''00:00:00'' | ''23:59:59'' | Second |
+| Varchar | a | z | Na |
+
+<note important>
+A Timestamp without time zone is not considered an timestamp from the UTC timezone as required by the YAML specification. Read more here: [[docs:common:yaml#timestamp|Timetamp]]
+</note>

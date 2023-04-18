@@ -1,0 +1,10 @@
+====== Data Resource - Record (Row)======
+
+
+===== Record =====
+A ''record'' (or ''row'') is the element unit of a [[docs:resource:tabular|tabular data resource]] (ie a [[docs:resource:tabular|tabular data resource]] is composed of one or more records).
+
+
+<note>
+If the data resource is a [[docs:resource:content|content resource]], the [[count|count attribute]] gives back the number of record that a data resource contains.
+</note>

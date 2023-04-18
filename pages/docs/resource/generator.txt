@@ -1,0 +1,67 @@
+====== Data Resource - Generator ======
+
+
+===== About =====
+A ''data resource generator'' is a [[docs:resource:content|content data resource]] that generates ''data''.
+
+
+
+
+
+
+===== Syntax =====
+A ''generator''  is a [[docs:common:yaml|yaml file]] terminated by the suffix ''--datagen.yml'' that follows the [[docs:resource:data-definition|data definition file]] syntax.
+
+
+It adds:
+  * the [[#maxRecordCount|maxRecordCount]] [[attribute|attribute]] (maximum number of record generated)
+  * and the ''DataGenerator'' node where the [[docs:generator:column|column generator properties]] are set.
+
+<file yaml>
+MaxRecordCount: 30
+Columns:
+  - name: columnName
+    comment: A column with a sequence integer generator and its properties
+    DataGenerator: # the data generator node definition for a column
+      type: sequence
+      start: 3
+      step: 2
+      maxTick: 5
+  - name: columnName2
+    ........
+</file>
+
+<note info>
+See the [[docs:generator:column|column generator page]] to see all type of generations that you can choose for a column.
+</note>
+===== Attribute =====
+==== MaxRecordCount ====
+[[docs:generator:max-record-count|maxRecordCount]] is an [[attribute|attribute]] that defines the maximum number of record generated
+
+
+==== Count ====
+The [[docs:resource:count|count attribute]] is calculated and define how many record a generator would generate.
+
+You can see it with the [[docs:tabli:data:info|data info command]].
+
+Example with a [[docs:generator:sequence|sequence generator]], you would get the maximum value. For an integer, this is ''2147483647''
+<unit >
+<code dos>
+tabli data info  generator_count--datagen.yml@howto
+</code>
+<console>
+Information about the data resource (generator_count--datagen.yml@howto)
+ATTRIBUTE      VALUE
+------------   ------------------------------------------------------------------------
+AbsolutePath   D:\code\bytle-mono\db-website\src\doc\howto\generator_count--datagen.yml
+Characterset   ISO-8859-1
+Connection     howto
+Count          2147483647
+DataUri        generator_count--datagen.yml@howto
+LogicalName    generator_count
+Name           generator_count--datagen.yml
+Path           generator_count--datagen.yml
+Size           227
+Type           datagen
+</console>
+</unit>

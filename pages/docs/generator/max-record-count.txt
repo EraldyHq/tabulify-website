@@ -1,0 +1,21 @@
+====== Generator - MaxRecordCount attribute ======
+
+
+===== About =====
+''maxRecordCount'' is a [[docs:resource:attribute|attribute]] of a [[docs:resource:generator|generator data resource]] (ie the maximum of the [[docs:resource:count|count]] attribute)
+
+It defines the maximum number of [[docs:resource:record|record]] that a [[docs:resource:generator|generator data resource]] can generate.
+
+<note>
+This is a maximum because other columns can generate less data. In this case, the minimum of records is chosen.
+
+Ie if a column cannot generate the ''MaxRecordCount'' due to constraints, this property is discarded.
+</note>
+
+===== Howto =====
+<related pattern="howto:*" />
+
+===== Set =====
+''maxRecordCount'' can be set:
+  * in a [[docs:resource:generator|generator data resource]] 
+  * or at the command line at the [[docs:tabli:data:fill|data fill command]] with the ''--max-record-count'' [[docs:tabli:option|option]].

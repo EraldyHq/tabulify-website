@@ -1,0 +1,11 @@
+====== Tabulify - Configuration ======
+
+
+===== About =====
+The ''Tabulify'' platform  can be configured via:
+  * the [[docs:conf:vault|connection vault]]
+  * the [[docs:conf:variable_file|variable file]]
+  * the [[docs:project:project-file|project file]]
+  * the [[docs:tabli:command|command line]] option and flags
+
+

@@ -1,0 +1,34 @@
+---json
+{
+    "description": "A system connection is a set of properties that defines a connection to a system.",
+    "low_quality_page": "false",
+    "page_id": "urykgvyu794pc7noibkm6",
+    "title": "What is a connection"
+}
+---
+====== Connection ======
+
+
+===== About =====
+A <icon name="mdi:connection" /> ''connection'' (or ''system connection'')  is a set of properties that defines how to connect to a [[docs:system:system|system]].
+
+
+===== Attribute  =====
+A connection has two mandatory [[attribute|attributes]]:  
+  * [[name|name]] - a unique identifier
+  * [[uri|url]] - a connection string that defined the [[docs:system:system|system]] 
+
+===== Type =====
+  * [[built-in|built-in]]: connection that are always available
+  * [[howtos|how-to's]]: connection created at installation used in the ''How-to's''
+
+===== Creation =====
+''connection'' can be created with the [[docs:tabli:connection:start|connection module]] or by manually editing the [[..:conf:vault|connection vault]].
+===== Default =====
+The default connection is the [[cd|current directory]] connection.
+
+
+
+
+
+

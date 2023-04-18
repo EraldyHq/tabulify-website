@@ -1,0 +1,49 @@
+====== Tpcds_query Connection ======
+
+
+===== About =====
+''tpcds_query'' is  a [[docs:system:local|local file system]] [[connection|connection]] that points to the directory where the [[docs:resource:select|queries]] of the [[docs:system:tpcds|TPC-DS]] benchmark.
+
+It's one of the [[howtos|howto's connections]] created at the installation of ''Tabulify''.
+
+
+===== Location =====
+
+This directory is a sub-directory of the [[docs:tabli:home|installation directory]].
+
+With the [[docs:tabli:connection:info|connection info]] command:
+<unit>
+<code dos>
+tabli connection info tpcds_query
+</code>
+<console>
+Information about the connection (tpcds_query)
+Attribute              Value                                                    Description
+--------------------   ------------------------------------------------------   --------------------------------------------------------------------
+MaxConcurrentThread    1                                                        The maximum number of threads that can be created against the system
+MaxNameInPath          2147483647                                               The maximum number of names in a path
+Name                   tpcds_query                                              The name of the connection
+TabBooleanDataType     Native                                                   Boolean data type used to store boolean values
+TabDateDataType        Native                                                   Date data type used to store date values
+TabTimeDataType        Native                                                   Time format data type to store time values
+TabTimestampDataType   Native                                                   Timestamp data type used to store timestamp values
+Url                    file:///D:/code/bytle-mono/db-jdbc/src/main/sql/tpcds/   The url of the connection
+</console>
+</unit>
+
+===== Directory Structure  =====
+
+With the [[docs:tabli:data:list|data list]] command, we can see that the queries are categorized by [[docs:system:database|database]]
+<unit>
+<code dos>
+tabli data list -a count *@tpcds_query
+</code>
+<console>
+count
+-----
+    7
+   99
+  100
+</console>
+</unit>
+

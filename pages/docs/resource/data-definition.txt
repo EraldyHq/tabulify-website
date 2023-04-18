@@ -1,0 +1,108 @@
+====== Data Definition (DataDef.yml) ======
+
+
+===== About =====
+A ''data definition'' is a serie of properties in [[docs:common:yaml|yaml]] format that defines the [[structure|data structure]] and [[attribute|attributes]] of a a [[resource|data resource]].
+
+
+
+===== Usage =====
+==== Data definition file ====
+If you have a [[file|file]] with the [[logicalname|logical name]] ''foo'', you may defined its data definition by creating the yaml file ''foo--datadef.yml'' in the same directory.
+==== Inline Data Definition ====
+The [[docs:op:define|define operation]] uses this format to define inline data resources.
+==== Generator ====
+
+The [[docs:resource:generator|resource generator]] uses this format to define the data generated and their parameters.
+
+===== Structure =====
+
+==== Common ====
+
+The following ''data definition'' file shows the common structure of all data definition file that defines the name of the tabular structure and its columns.
+
+
+<code yaml DataDef.yml>
+LogicalName: LogicalName
+PrimaryColumns: [ "column_name1", "column_name2" ]
+Columns:
+  - name: column_name1
+    Type:
+    Precision:
+    Scale:
+    Comment:
+    Position: 1
+  - name: column_name2
+    Type:
+    Precision:
+    Scale:
+    Comment:
+  .....
+Request:
+    header: X-HTTP-header
+    Accept: ...
+</code>
+where:
+  * ''logicalName'' is the [[logicalname|logical name]] of the [[resource|resource]] (Default to the name of the file without structure information).
+  * ''columns'' defines a list of column
+      * ''name'' is the name of the column
+      * ''type'' is the [[docs:common:data_type|data type]] of a column (Default: ''varchar'')
+      * ''precision'' is the precision of the data type (Default value of the data type)
+      * ''scale'' is the scale of the data type (Default value of the data type)
+      * ''comment'' is a comment on the column
+      * ''position'' is the physical column position 
+  * ''primaryColumns'' defines a list of column names that compose the primary key.
+  * ''request'' are request attributes used when the resource is dynamic (mostly used to defined [[docs:system:http|http resource]])
+
+
+
+Example:
+<code yaml Date.yml>
+LogicalName: Date
+Columns:
+  - name: DATE_ID
+    Type: Date
+  - name: MONTH_ID
+    Type: Varchar
+    Precision: 6
+  - name: MONTH_NUMBER
+    Type: Integer
+  - name: MONTH_NAME
+    Type: Varchar
+    Precision: 20
+  - name: MONTH_DESC
+    Type: Varchar
+    Precision: 20
+  - name: MONTH_DESC_SHORT
+    Type: Varchar
+    Precision: 10
+  - name: YEAR_NUMBER
+    Type: Varchar
+    Precision: 4
+</code>
+
+==== Extra Attribute ====
+
+
+Each action may need additional information about a table or a column. This information can be added at each level (table or column) as a attribute (ie property).
+
+<code yaml DataDefExtra.yml>
+DataResourceAttribute1: value1
+Columns:
+    - name: column_name
+      ColumnProperty1: value1
+....
+</code>
+where:
+  * ''DataResourceAttribute1'' is a [[attribute|resource attribute]]
+  * ''ColumnProperty1'' is a column attribute
+
+A Property value may be:
+  * a scalar (ie single value)
+  * a list
+  * or a mapping
+
+
+<note>
+The [[docs:generator:column|column data generators]] use them to define data generations arguments.
+</note>

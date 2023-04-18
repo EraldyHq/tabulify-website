@@ -1,0 +1,32 @@
+====== Native Engine - Json Template ======
+
+===== Template =====
+A ''Json'' template is a [[docs:templating:native|native template]]:
+  * that is a valid [[docs:resource:json|Json]] text document
+  * that may contain variables in the form ''${name}'' in its properties key and/or value.
+  * that will respect the tree structure (There is no need to add extra processing logic such as loop)
+  * that produces a [[docs:resource:json|json data resource]].
+
+
+
+
+===== Howto =====
+[[howto:templating:create_json_from_tabular_data]]
+
+
+===== Example:  catalog of item =====
+
+The variable name should match the name of a column of the [[docs:flow:source|source]].
+
+<code javascript>
+{
+  "${group}": {
+    "${item_code}": {
+      "price": "${price}",
+      "description": "${description}"
+    }
+  }
+}
+</code>
+where:
+  * ''group'', ''item_code'', ''price'' and ''description'' (from ''${group}}'', ''${item_code}'', ''${price}'' and ''${description}'') are the column names of the [[docs:flow:source|source]].

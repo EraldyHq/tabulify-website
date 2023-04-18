@@ -1,0 +1,116 @@
+---json
+{
+    "description": "Tabulify is a data processing tool that supports more than 100 data operations",
+    "dynamic_quality_monitoring": "false",
+    "json-ld": {
+        "url": "https:\/\/www.yaho!.fr"
+    },
+    "low_quality_page": "false",
+    "name": "Home",
+    "page_id": "nlpsrwxcv7p56r7jojt6i"
+}
+---
+
+
+<slide>
+<container>
+<heading d5 text-align="center">Difficulty analyzing your data with all your tools? </heading>
+<heading d3 text-align="center">Move data around with just SQL</heading>
+
+<text lead text-align="center" spacing="mt-5" line-spacing="lg">
+Data processing and wrangling platform \\
+that helps data ''teams'' and ''professionals'' \\
+to build
+''qualitative'' and ''collaborative'' \\
+data application \\
+with a ''declarative'' and ''interactive'' ''SQL'' workflow.
+</text>
+</container>
+</slide>
+
+
+
+<card-columns>
+<card>
+=== Batch Source Processing ===
+
+''Tabulify'' is the first data processing platform that introduces ''batch source processing'' where all operations can select and process multiple sources at once.
+
+
+<btn secondary>
+[[howto:getting_started:getting_started|Learn how-to]]
+</btn>
+</card>
+
+<card>
+=== A common data vocabulary ===
+''Data'' stays data and with ''Tabulify'', they share a common data vocabulary.
+
+  * You may want to ''drop'' a table
+  * You may want to ''remove'' a file
+  * You may want to ''delete'' a file
+With ''Tabulify'', you will just [[docs:op:drop|drop]] it.
+
+<btn secondary>[[docs:op:op|Op]]</btn>
+</card>
+
+</card-columns>
+<card-columns class="mb-3">
+<card >
+=== Automate, Test and Deploy your scripts with ease  ===
+\\
+  * No need to code, just plain SQL.
+  * Load files where you want
+
+<btn secondary spacing="mt-3" >
+[[howto:getting_started:getting_started|Learn how-to]]
+</btn>
+
+</card>
+
+<card>
+=== Built-in Benchmark ===
+Do you want to known if your ''index'', your new ''model'' or your
+new database will impact your performance.
+
+''Tabulify'' ships built-in with a ''benchmark'' tool.
+
+<btn secondary spacing="mt-3" >
+[[docs:benchmark|Benchmark]]
+</btn>
+
+</card>
+
+<card>
+=== Data Generator included ===
+Every data project needs data to start. Unfortunately, due to privacy law,
+(CPRA, CCPA, GDPR) and procedures, it is difficult to get them.
+\\
+\\
+**The answer: **\\
+Generates your data and starts your project right-away.
+
+<btn secondary spacing="mt-3" >
+[[docs:generator:generator|Data Generator]]
+</btn>
+
+</card>
+
+<card>
+=== Allow interactive programming ===
+
+''SQL'' is a paradigm that allows for quick development based on quick iteration.
+better known as the ''read-eval-print loop''
+
+We like to call it: the ''Write, Execute, Improve, Repeat'' cycle.
+
+''Tabulify'' embraces it and does not force you to visually create flows
+that made your wrist cry.
+
+<btn secondary spacing="mt-3" >
+[[howto:getting_started:getting_started|Learn how-to]]
+</btn>
+</card>
+
+</card-columns>
+

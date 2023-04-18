@@ -1,0 +1,8 @@
+====== Log Connection ======
+
+
+===== About =====
+''log'' is an [[:docs:connection:built-in|built-in connection]] that is used to store ''logs''.
+
+
+By default, this is a [[:docs:system:sqlite:sqlite|sqlite database]] located in the application local data directory.

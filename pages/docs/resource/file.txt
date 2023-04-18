@@ -1,0 +1,26 @@
+====== Data Resource - File ======
+
+
+===== About =====
+A file is a [[resource|data resource]] from a [[docs:system:file|file system]].
+
+
+
+
+
+===== Supported format =====
+You can move any file.
+
+The following ''file'' shows a [[structure|format]] that can be defined via [[attribute|extra attributes]].
+  * [[text|Text]]
+  * [[csv|Csv]]
+  * [[json|Json]]
+  * [[excel|Excel]]
+  * [[xml|Xml]]
+
+===== Attributes =====
+For every file, the following [[attribute|attributes]] are available:
+  * ''absolute path''
+  * ''size''
+  * ''path'' (relative)
+
