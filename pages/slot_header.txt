@@ -1,4 +1,4 @@
-<navbar breakpoint="md" align="center" position="top">
+<menubar breakpoint="md" position="top">
 <brand title="Tabulify">
 <icon name="file-table-box-outline" />
 Tabulify
@@ -17,4 +17,4 @@ Tabulify
 </btn>
 <search class="mr-0 pr-0 pl-3"/>
 </collapse>
-</navbar>
+</menubar>

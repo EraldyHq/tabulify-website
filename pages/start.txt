@@ -2,12 +2,11 @@
 {
     "description": "Tabulify is a data processing tool that supports more than 100 data operations",
     "dynamic_quality_monitoring": "false",
-    "json-ld": {
-        "url": "https:\/\/www.yaho!.fr"
-    },
+    "lead": "Tabulify - Growing data proficiency of the world",
     "low_quality_page": "false",
     "name": "Home",
-    "page_id": "nlpsrwxcv7p56r7jojt6i"
+    "page_id": "nlpsrwxcv7p56r7jojt6i",
+    "title": "Tabulify - Move and process data with confidence"
 }
 ---
 

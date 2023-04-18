@@ -1,17 +1,14 @@
+<bar class="p-3" background-color="gradient-light">
 
-
-<footer class="p-3" background-color="gradient-light">
-<container >
-
-<row class="col-12 justify-content-center">
-<col class="col-12 col-sm-5 col-md-2 text-left">
+<grid>
+<box>
 **HowTo's** \\
 [[howto:getting_started:getting_started|Getting Started]] \\
 [[howto:database:database|Database]] \\
 [[howto:generator:generator|Generator]] \\
 [[howto:tabli:tabli|Tabli]]
-</col>
-<col class="col-12 col-sm-5 col-md-2 text-left">
+</box>
+<box>
 **Products** \\
 [[docs:tabli:start|Tabli]] \\
 [[docs:generator:generator|Data Generator]] \\
@@ -19,23 +16,20 @@
 [[docs:templating:templating|Templating]] \\
 [[docs:project:project|Project]] \\
 [[docs:benchmark|Benchmark]] \\
-</col>
-<col class="col-12 col-sm-5 col-md-2 text-left">
+</box>
+<box>
 **System**\\
 [[docs:system:system|Systems]] \\
 [[docs:connection:connection|Connections]] \\
 [[docs:resource:resource|Data Resources]] \\
 [[docs:op:op|Data Operations]]
-</col>
-<col class="col-12 col-sm-5 col-md-2 text-left">
+</box>
+<box>
 **Contact** \\
- [[support@tabulify.com?subject=Contact via WebSite|support@tabulify.com]] \\
+[[support@tabulify.com?subject=Contact via WebSite|support@tabulify.com]] \\
 [[contact|Contact]]\\
 [[contact|Support]] \\
-</col>
+</box>
+</grid>
 
-
-</row>
-
-</container>
-</footer>
+</bar>

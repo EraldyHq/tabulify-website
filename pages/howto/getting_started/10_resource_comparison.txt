@@ -149,7 +149,7 @@ We can see that:
 
 This page end the learning guide of ''Tabulify'' at the command line with ''Tabli'' where we have learned to perform data operation one command at a time.
 
-<box style="display:none">
+<box display="none">
 ''Tabulify'' supports also the creation of workflows with the ''pipeline'' scripting language where you bind all this operations in pipelines.
 
 To learn more about the ''pipeline'' scripting language, we have create the ''pipeline learning guide'' where you will learn how to create a datawarehouse and analyse weblog event of a website.
