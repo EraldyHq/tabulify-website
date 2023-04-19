@@ -27,8 +27,8 @@ with a ''declarative'' and ''interactive'' ''SQL'' workflow.
 
 
 
-<card-columns>
-<card>
+<masonry>
+<card clickable>
 === Batch Source Processing ===
 
 ''Tabulify'' is the first data processing platform that introduces ''batch source processing'' where all operations can select and process multiple sources at once.
@@ -40,7 +40,7 @@ with a ''declarative'' and ''interactive'' ''SQL'' workflow.
 </card>
 
 
-<card>
+<card clickable>
 === A common data vocabulary ===
 ''Data'' stays data and with ''Tabulify'', they share a common data vocabulary.
 
@@ -52,10 +52,8 @@ With ''Tabulify'', you will just [[docs:op:drop|drop]] it.
 <btn secondary>[[docs:op:op|Op]]</btn>
 </card>
 
-</card-columns>
-<card-columns class="mb-3">
-<card >
-=== Automate, Test and Deploy your scripts with ease  ===
+<card clickable>
+=== Automate, Test, and Deploy your scripts with ease  ===
 \\
   * No need to code, just plain SQL.
   * Load files where you want
@@ -66,10 +64,9 @@ With ''Tabulify'', you will just [[docs:op:drop|drop]] it.
 
 </card>
 
-<card>
+<card clickable>
 === Built-in Benchmark ===
-Do you want to known if your ''index'', your new ''model'' or your
-new database will impact your performance.
+Do you want to know if your ''index'', your new ''model'' or your new database will impact your performance.
 
 ''Tabulify'' ships built-in with a ''benchmark'' tool.
 
@@ -110,5 +107,5 @@ that made your wrist cry.
 </btn>
 </card>
 
-</card-columns>
+</masonry>
 
