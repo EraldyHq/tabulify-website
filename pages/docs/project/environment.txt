@@ -19,7 +19,7 @@ Tabulify knows the following environment by default:
 <note>
 [[:docs:op:op|operations]] may react differently depending on it.
 
-To avoid sending emails in a non-production environment, the [[docs:op:send|send operation]] will send them all
+To avoid sending emails in a non-production environment, the [[docs:op:sendmail|send operation]] will send them all
 to the ''to'' address of the smtp connection.
 </note>
 

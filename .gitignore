@@ -10,3 +10,5 @@
 *.bak.php
 *.bak
 *.dist
+.idea
+

@@ -2,7 +2,7 @@
 
 
 ===== About =====
-''list'' is an [[docs:tabli:command|command]] of the [[docs:tabli:connection:start|connection module]] that shows the [[docs:connection:connection|connections]] ([[docs:connection:built-in|built-in]] and of the [[docs:connection:vault|connection vault]]).
+''list'' is an [[docs:tabli:command|command]] of the [[docs:tabli:connection:start|connection module]] that shows the [[docs:connection:connection|connections]] ([[docs:connection:built-in|built-in]] and of the [[docs:conf:vault|connection vault]]).
 
 
 <note>

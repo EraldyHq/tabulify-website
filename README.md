@@ -6,7 +6,7 @@
 This repository is a submodule of `bytle-mono/db/website`
 
 ```
-git submodule add 
+git submodule add
 ```
 
 ## How to run

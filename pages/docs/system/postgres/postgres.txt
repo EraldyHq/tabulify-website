@@ -20,7 +20,7 @@ To create a ''Postgres'' connection, you have the following possibilities
 </tabs>
 <tabpanels>
 <tabpanel id="connectionVault" spacing="m-3">
-In a [[docs:connection:vault|Connection Vault]], to define a Oracle [[docs:connection:connection|connection]] with the name ''myPostgres'', you would write:
+In a [[docs:conf:vault|Connection Vault]], to define a Oracle [[docs:connection:connection|connection]] with the name ''myPostgres'', you would write:
 \\
 
 <code properties>
@@ -61,7 +61,7 @@ tabli connection add "postgresConnectionName" "jdbc:postgresql://[host]:[port]/[
 When creating a new [[docs:connection:connection|connection]], you may give the following properties.
 ==== URL ====
 
-The [[docs:connection:url|URL]] can take one of this form
+The [[docs:connection:uri|URL]] can take one of this form
 <code>
 jdbc:postgresql:database
 jdbc:postgresql:/

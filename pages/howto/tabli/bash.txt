@@ -6,7 +6,7 @@
 This section helps you to get a ''bash'' based terminal up and running on your Windows computer.  On linux system, there is no installation needed because bash is the default shell (located at ''/bin/bash/'')
 
 <note>
-Tabulify recommends the use of bash as shell because it will not interpret an [[docs:connection:url|URL]]
+Tabulify recommends the use of bash as shell because it will not interpret an [[docs:connection:uri|URL]]
 
 If you want to no more about it, see this page: [[docs:common:bash]]
 </note>

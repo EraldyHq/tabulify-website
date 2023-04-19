@@ -21,7 +21,7 @@ depending on where the ''Tabulify'' is running.
 
 ===== URL =====
 
-To create a local file connection, you can use one of the following [[docs:connection:url|URL]]:
+To create a local file connection, you can use one of the following [[docs:connection:uri|URL]]:
   * the local file URL to define a absolute path
   * a [[#data uri|data uri]] to define a relative path
 

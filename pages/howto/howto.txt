@@ -22,18 +22,18 @@ If you miss an ''HowTo'', don't hesitate to [[:contact|contact us]].
 </note>
 <iterator>
     <data>select where is_home = 1  and path glob ':howto*' and path != ':howto:howto' order by path asc </data>
-<row cells="3">
-        <template>
-        <cell>
-            <card clickable>
-            <page-image path="$path" ratio="16:9"/>
+<grid>
+        <fragment>
+        <box>
+            <card clickable width="300">
+            <page-image ratio="16:9"/>
             === $name ===
 
-            $description [[$path| ]]
+            ${description | head(250,"...")} [[$path| ]]
             </card>
-        </cell>
-        </template>
-</row>
+        </box>
+        </fragment>
+</grid>
 </iterator>
 
 

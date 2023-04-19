@@ -11,12 +11,11 @@
 ---
 
 
-<slide>
-<container>
-<heading d5 text-align="center">Difficulty analyzing your data with all your tools? </heading>
-<heading d3 text-align="center">Move data around with just SQL</heading>
+<bar hero="md">
+<heading d5 align="text-center">Difficulty analyzing your data with all your tools? </heading>
+<heading d3 align="text-center">Move data around with just SQL</heading>
 
-<text lead text-align="center" spacing="mt-5" line-spacing="lg">
+<text lead align="text-center" spacing="mt-5" line-spacing="lg">
 Data processing and wrangling platform \\
 that helps data ''teams'' and ''professionals'' \\
 to build
@@ -24,8 +23,7 @@ to build
 data application \\
 with a ''declarative'' and ''interactive'' ''SQL'' workflow.
 </text>
-</container>
-</slide>
+</bar>
 
 
 
@@ -40,6 +38,7 @@ with a ''declarative'' and ''interactive'' ''SQL'' workflow.
 [[howto:getting_started:getting_started|Learn how-to]]
 </btn>
 </card>
+
 
 <card>
 === A common data vocabulary ===
