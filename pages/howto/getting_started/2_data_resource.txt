@@ -13,7 +13,6 @@ The first job of a data processing platform such as ''Tabulify'' is to work with
   * A [[docs:resource:table|database table]] is a ''data resource''
   * A [[docs:resource:schema|database schema]] is a ''data resource''
 
-
 <note info>
 The ''Tabulify'' platform supports a lot of different ''data resources'' that you can discover in the [[docs:resource:resource|data resources page]].
 </note>

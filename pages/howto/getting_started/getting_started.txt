@@ -1,20 +1,27 @@
 ---json
 {
-    "canonical":"getting_started"
+    "canonical": "getting_started"
 }
 ---
 
 ====== Learn Tabulify in 10 steps ======
 
+\\
+\\
+
+<box width=600 >
+
 The ''tabulify'' platform is a platform specialized in ''business and financial analytics data processing''. 
 ''tabulify'' is a data processing system that is piloted by the command line [[docs:tabli:tabli|tabli]].
 
-
-
+\\
 
 This ''learn'' section is a step-by-step that will:
   * guide you through the data concepts
   * and show you how to perform basic [[docs:op:op|data operations]]
+
+\\
+\\
 
 <card align="center" width="300px">
 Ready to get started ?
@@ -25,3 +32,5 @@ Learn ''tabulify'' in just 10 steps.
 [[1_install|Step 1 - Tabulify Installation]]
 </btn>
 </card>
+
+</box>
