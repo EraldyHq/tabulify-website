@@ -9,8 +9,7 @@ A ''histogram generator'' is a [[column|column data generator]] that [[generator
 This generator is used to generate data that follows a [[howto:generator:histogram_normal_distribution|probability distribution]] where the factor is the probability for the value.
 </note>
 
-===== Howto =====
-<related pattern="howto:*" />
+
 
 ===== Properties =====
 

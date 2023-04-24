@@ -23,9 +23,9 @@ A <icon name="mdi:clock-time-five" width="16"/>  ''date dimension'' is a typical
 ==== Date dimension explained ====
 
 The ''date_dim--datagen.yml'' is a [[docs:resource:generator|generator]] where::
-  * the ''d_date_sk'', a [[datacadamia>surrogate_key|surrogate key]] has a [[docs:generator:sequence|sequence generator]] that generates a ''integer'' in [[docs:generator:sequence|sequence]]
-  * the ''d_date'', a [[datacadamia>business_key|business key]] has a [[docs:generator:expression|expression generator]] that generates a ''date'' in [[docs:generator:sequence|sequence]]
-  * the ''d_date_id'', the [[datacadamia>business_key|business key]] that uses the ''d_date'' column and generates the date in string format
+  * the ''d_date_sk'', a [[kb>surrogate_key|surrogate key]] has a [[docs:generator:sequence|sequence generator]] that generates a ''integer'' in [[docs:generator:sequence|sequence]]
+  * the ''d_date'', a [[kb>business_key|business key]] has a [[docs:generator:expression|expression generator]] that generates a ''date'' in [[docs:generator:sequence|sequence]]
+  * the ''d_date_id'', the [[kb>business_key|business key]] that uses the ''d_date'' column and generates the date in string format
   * the ''d_month_seq'' is also a [[docs:generator:expression|expression generator]] that uses the ''d_date'' column and generates an ascendant sequence for the month. This column demonstrates how you can use a javascript function.
   * the ''d_day_name'' is also a [[docs:generator:expression|expression generator]] that demonstrates how to do a lookup of an array.
   * the last columns have been added as snippet and does not demonstrate any technic.
