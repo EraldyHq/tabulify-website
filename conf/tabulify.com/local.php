@@ -13,4 +13,4 @@ $conf['superuser'] = '@admin';
 $conf['disableactions'] = 'register';
 $conf['plugin']['combo']['mandatoryQualityRules'] = 'internal_backlinks_min,internal_links_min,words_min';
 $conf['plugin']['combo']['outlineNumberingEnable'] = 1;
-$conf['plugin']['combo']['primaryColor'] = '#326e32`;
+$conf['plugin']['combo']['primaryColor'] = '#326e32';
