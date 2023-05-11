@@ -2,12 +2,12 @@
 
 
 ===== About =====
-''sendMail'' is an [[op|operation]] that send one or several emails to a [[docs:system:smtp|SMTP server]].
+''sendMail'' is an [[op|operation]] that sends one or several emails to a [[docs:system:smtp|SMTP server]].
 
 
 <note tip>
-In a development environment on windows, you could install the [[https://github.com/ChangemakerStudios/Papercut-SMTP|PaperCut Test SMTP server]]
-to receive, test and read the emails send.
+In a development environment on Windows, you could install the [[https://github.com/ChangemakerStudios/Papercut-SMTP|PaperCut Test SMTP server]]
+to receive, test, and read the emails sent.
 </note>
 
 ===== Example =====
