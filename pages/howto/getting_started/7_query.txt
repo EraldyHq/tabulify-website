@@ -83,6 +83,8 @@ AAAAAAAAOFCAAAAA   Timothy               Grogan               Timothy.Grogan@pn3
 Don't forget that a [[docs:resource:query|query]] is just a [[docs:resource:resource|data resource]] and therefore can then be used on every command as any other [[docs:resource:resource|data resource]].
 </note>
 
+==== How to copy a query into another table ====
+
 For instance, if you want to [[docs:tabli:data:copy|copy]] its output to a [[docs:resource:table|table]] called ''query_11'', you would issue the following command:
 <unit>
 <code bash>
@@ -93,6 +95,33 @@ And the content of the new [[docs:resource:table|table]] is just the same than t
 <unit>
 <code bash>
 tabli data print query_11@sqlite
+</code>
+<console>
+customer_id        customer_first_name   customer_last_name   customer_email_address
+----------------   -------------------   ------------------   ----------------------------------
+AAAAAAAABMDAAAAA   Jose                  Guzman               Jose.Guzman@stJp.edu
+AAAAAAAAFLAAAAAA   Joseph                Riley                Joseph.Riley@znxF.com
+AAAAAAAAJGBAAAAA   Bonnie                Harrison             Bonnie.Harrison@AKYSOPlHEYkd.com
+AAAAAAAAKMDAAAAA   Alexander             White                Alexander.White@7v2XsptkFrc50K.org
+AAAAAAAAOFCAAAAA   Timothy               Grogan               Timothy.Grogan@pn3NH2BDng.org
+</console>
+</unit>
+
+==== How to download a query as a CSV ====
+
+For instance, if you want to [[docs:tabli:data:copy|copy]] its output:
+  * to a [[:docs:resource:csv|CSV]] called ''query_11.csv''
+  * into the [[:docs:connection:cd|current directory (cd)]]
+you would issue the following command
+<unit>
+<code bash>
+tabli data copy (sqlite/query_11.sql@tpcds_query)@sqlite  query_11.csv@cd
+</code>
+</unit>
+And the content of the new csv is also just the same than the output  of the ''query 11''.
+<unit>
+<code bash>
+tabli data print query_11.csv@cd
 </code>
 <console>
 customer_id        customer_first_name   customer_last_name   customer_email_address
