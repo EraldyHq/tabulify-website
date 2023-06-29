@@ -80,7 +80,7 @@ AAAAAAAAOFCAAAAA   Timothy               Grogan               Timothy.Grogan@pn3
 ===== A query is just a data resource =====
 
 <note important>
-Don't forget that a [[docs:resource:query|query]] is just a [[docs:resource:resource|data resource]] and therefore can then be used on every command as any other [[docs:resource:resource|data resource]].
+Don't forget that a [[docs:resource:query|query]] is just a [[docs:resource:resource|data resource]]. It can therefore be used on every command as any other [[docs:resource:resource|data resource]].
 </note>
 
 ==== How to copy a query into another table ====
