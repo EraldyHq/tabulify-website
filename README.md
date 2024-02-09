@@ -3,7 +3,7 @@
 
 ## Submodule
 
-This repository is a submodule of `bytle-mono/db/website`
+This repository is a submodule of `java-mono/db/website`
 
 ```
 git submodule add
@@ -19,35 +19,39 @@ See the stick.md file in the combo dev repo.
 C:\DokuWikiStick\run.cmd
 ```
 
-### Dev Apache Server
+### Dev Farm Apache Server
 
 Stop the Apache Service
 
 Then
 
-* If Directory (first time)
+* If Directory (first time) where `nico.lan` should be replaced with the name of the host
 ```bash
-rm /S d:\dokuwiki\conf\local.php
-rmdir /S d:\dokuwiki\data\media
-rmdir /S d:\dokuwiki\data\pages
+rm /S D:\dokuwiki-animals\tabulify.nico.lan\conf\local.php
+rmdir /S D:\dokuwiki-animals\tabulify.nico.lan\data\media
+rmdir /S D:\dokuwiki-animals\tabulify.nico.lan\data\pages
 ```
 
 * If symlink
 
 ```bash
-rm d:\dokuwiki\conf\local.php
-rm d:\dokuwiki\data\media
-rm d:\dokuwiki\data\pages
+rm D:\dokuwiki-animals\tabulify.nico.lan\conf\interwiki.local.conf
+rm D:\dokuwiki-animals\tabulify.nico.lan\conf\local.php
+rm D:\dokuwiki-animals\tabulify.nico.lan\data\media
+rm D:\dokuwiki-animals\tabulify.nico.lan\data\pages
 ```
 
-* Then Symlink
+* Then create File Symlink
 ```bash
-mklink /D "d:\dokuwiki\conf\local.php"  "D:\code\bytle-mono\db-website\src\doc\conf\local.php"
-mklink /D "d:\dokuwiki\data\media"  "D:\code\bytle-mono\db-website\src\doc\media"
-mklink /D "d:\dokuwiki\data\pages"  "D:\code\bytle-mono\db-website\src\doc\pages"
+mklink "D:\dokuwiki-animals\tabulify.nico.lan\conf\interwiki.local.conf" "D:\code\java-mono\db-website\src\doc\tabulify.com\conf\interwiki.local.conf"
+mklink "D:\dokuwiki-animals\tabulify.nico.lan\conf\local.php" "D:\code\java-mono\db-website\src\doc\tabulify.com\conf\local.php"
+```
+* Then create Directory Symlink
+```bash
+mklink /D "D:\dokuwiki-animals\tabulify.nico.lan\data\media"  "D:\code\java-mono\db-website\src\doc\tabulify.com\media"
+mklink /D "D:\dokuwiki-animals\tabulify.nico.lan\data\pages"  "D:\code\java-mono\db-website\src\doc\tabulify.com\pages"
 ```
 
 ## Others
 
 Make a [submodule](https://book.git-scm.com/book/en/v2/Git-Tools-Submodules)
-
