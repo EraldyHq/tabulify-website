@@ -1,57 +1,30 @@
 # Tabulify.com
 
 
-## Submodule
+## About
 
-This repository is a submodule of `java-mono/db/website`
 
-```
-git submodule add
-```
 
 ## How to run
 
-### The stick
-
-See the stick.md file in the combo dev repo.
-
-```cmd
-C:\DokuWikiStick\run.cmd
-```
-
-### Dev Farm Apache Server
-
-Stop the Apache Service
-
-Then
-
-* If Directory (first time) where `nico.lan` should be replaced with the name of the host
+* In Dev mode
 ```bash
-rm /S D:\dokuwiki-animals\tabulify.nico.lan\conf\local.php
-rmdir /S D:\dokuwiki-animals\tabulify.nico.lan\data\media
-rmdir /S D:\dokuwiki-animals\tabulify.nico.lan\data\pages
+docker run --name dokuwiki \
+  --rm \
+  -p 8080:80 \
+  -e DOKU_DOCKER_ENV=dev \
+  -e DOKU_DOCKER_GIT=https://github.com/Tabulify/tabulify.com \
+  -v 'c:\temp\dokuwiki':/var/www/html \
+  ghcr.io/combostrap/dokuwiki:php8.3-v1
 ```
 
-* If symlink
+## Note
 
-```bash
-rm D:\dokuwiki-animals\tabulify.nico.lan\conf\interwiki.local.conf
-rm D:\dokuwiki-animals\tabulify.nico.lan\conf\local.php
-rm D:\dokuwiki-animals\tabulify.nico.lan\data\media
-rm D:\dokuwiki-animals\tabulify.nico.lan\data\pages
+### java-mono/website
+
+This repository is also a submodule of `java-mono/website`
 ```
-
-* Then create File Symlink
-```bash
-mklink "D:\dokuwiki-animals\tabulify.nico.lan\conf\interwiki.local.conf" "D:\code\java-mono\db-website\src\doc\tabulify.com\conf\interwiki.local.conf"
-mklink "D:\dokuwiki-animals\tabulify.nico.lan\conf\local.php" "D:\code\java-mono\db-website\src\doc\tabulify.com\conf\local.php"
+git submodule add
 ```
-* Then create Directory Symlink
-```bash
-mklink /D "D:\dokuwiki-animals\tabulify.nico.lan\data\media"  "D:\code\java-mono\db-website\src\doc\tabulify.com\media"
-mklink /D "D:\dokuwiki-animals\tabulify.nico.lan\data\pages"  "D:\code\java-mono\db-website\src\doc\tabulify.com\pages"
-```
-
-## Others
-
 Make a [submodule](https://book.git-scm.com/book/en/v2/Git-Tools-Submodules)
+

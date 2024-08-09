@@ -1,14 +1,14 @@
-/attic
-/cache
-/index
-/locks
-/media_attic
-/media_meta
-/meta
-/tmp
-.env
-*.bak.php
-*.bak
-*.dist
-.idea
+/*
+!/doc/
+!/docs/
+!/conf/
+/conf/*
+!/conf/local.php
+!/conf/*.local.php
+!/data/
+/data/*
+!/data/pages/
+!/data/media/
+!/data/combo/
+!README.md
 
