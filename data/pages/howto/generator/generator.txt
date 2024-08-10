@@ -12,6 +12,7 @@
 \\
 \\
 
+
 {{ :docs:op:undraw_data_processing.svg?600&ratio=16:9 |}}
 
 ===== About =====
@@ -20,16 +21,16 @@ This [[..:howto|how-to]] sections is specific and show you how to generate data 
 
 <iterator>
     <data>select where is_home = 0  and path glob ':howto:generator*' order by path asc </data>
-<row cells="3">
-        <template>
-        <cell>
+<grid max-line="3">
+        <fragment>
+        <box>
             <card clickable>
             <page-image path="$path" ratio="16:9" color="#336699"/>
             === $title ===
 
             $description [[$path| ]]
             </card>
-        </cell>
-        </template>
-</row>
+        </box>
+        </fragment>
+</grid>
 </iterator>
