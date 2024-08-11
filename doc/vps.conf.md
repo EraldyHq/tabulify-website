@@ -10,8 +10,8 @@ This is outdated as we have moved to a dokuwiki docker structure.
 
 ```bash
 FQDN=tabulify.com
-ln -s /opt/www/git/${FQDN}/pages /opt/www/bytle/farmer-animals/${FQDN}/data/pages
-ln -s /opt/www/git/${FQDN}/media /opt/www/bytle/farmer-animals/${FQDN}/data/media
+ln -s /opt/www/git/${FQDN}/data/pages /opt/www/bytle/farmer-animals/${FQDN}/data/pages
+ln -s /opt/www/git/${FQDN}/data/media /opt/www/bytle/farmer-animals/${FQDN}/data/media
 #mkdir -p /opt/www/bytle/farmer-animals/${FQDN}/data/combo/theme/
 #ln -s /opt/www/git/${FQDN}/theme /opt/www/bytle/farmer-animals/${FQDN}/data/combo/theme/combo
 ```

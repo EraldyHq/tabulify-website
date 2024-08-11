@@ -28,3 +28,17 @@ data/*
 !data/media/**
 !data/combo/
 !data/combo/**
+## Interwiki
+## Don't ignore the lib directory
+!lib/
+!lib/*
+## Ignore the whole data directory, except images
+lib/*
+## Don't ignore the images directory
+!lib/images
+!lib/images/*
+## Ignore the whole lib/images data directory, except interwiki
+lib/images/*
+## Don't ignore the interwiki images directory
+!lib/images/interwiki
+!lib/images/interwiki/*
