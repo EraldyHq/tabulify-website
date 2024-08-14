@@ -9,13 +9,17 @@
 
 * In Dev mode
 ```bash
-docker run --name dokuwiki \
+docker run \
+  --name site-com-tabulify \
   --rm \
-  -p 8080:80 \
+  -p 8081:80 \
+  --user 1000:1000 \
   -e DOKU_DOCKER_ENV=dev \
-  -e DOKU_DOCKER_GIT=https://github.com/Tabulify/tabulify.com \
-  -v 'c:\temp\dokuwiki':/var/www/html \
-  ghcr.io/combostrap/dokuwiki:php8.3-v1
+  -e DOKU_DOCKER_ACL_POLICY='public' \
+  -e DOKU_DOCKER_ADMIN_NAME='admin' \
+  -e DOKU_DOCKER_ADMIN_PASSWORD='welcome' \
+  -v $PWD:/var/www/html \
+  ghcr.io/combostrap/dokuwiki:php8.3-latest
 ```
 
 ## Note
