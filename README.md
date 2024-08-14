@@ -3,11 +3,25 @@
 
 ## About
 
+This Git repo contains [tabulify.com](https://tabulify.com) written with the [Combo Site Technology](https://combostrap.com/admin/combostrap-website-5gxpcdgy)  
 
 
-## How to run
+## How
 
-* In Dev mode
+### How to Publish
+
+
+```bash
+docker run \
+  --name site-com-tabulify \
+  --rm \
+  -p 8081:80 \
+  -e DOKU_DOCKER_GIT_SITE='git@github.com:ComboStrap/tabulify.com.git' \
+  ghcr.io/combostrap/dokuwiki:php8.3-latest
+```
+
+### How to start locally in Dev mode
+
 ```bash
 docker run \
   --name site-com-tabulify \
