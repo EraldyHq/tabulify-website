@@ -10,7 +10,17 @@ This Git repo contains [tabulify.com](https://tabulify.com) written with the [Co
 
 ### How to Publish
 
+* Without Git
+```bash
+docker run \
+  --name site-com-tabulify \
+  --rm \
+  -p 8081:80 \
+  -e DOKU_DOCKER_GIT_SITE='https://github.com/ComboStrap/tabulify.com' \
+  ghcr.io/combostrap/dokuwiki:php8.3-latest
+```
 
+* With SSH
 ```bash
 docker run \
   --name site-com-tabulify \
