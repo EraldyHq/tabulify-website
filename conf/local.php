@@ -15,6 +15,7 @@ $conf['sitemap'] = 5;
 $conf['userewrite'] = '1';
 $conf['useslash'] = 1;
 $conf['useacl'] = 1;
+$conf['superuser'] = '@admin';
 $conf['plugin']['combo']['prismTheme'] = 'prism';
 $conf['plugin']['combo']['mandatoryQualityRules'] = 'internal_backlinks_min,internal_links_min,words_min';
 $conf['plugin']['combo']['primaryColor'] = '#326e32';
