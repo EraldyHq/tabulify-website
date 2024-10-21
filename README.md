@@ -42,6 +42,7 @@ docker run \
   -e DOKU_DOCKER_ACL_POLICY='public' \
   -e DOKU_DOCKER_ADMIN_NAME='admin' \
   -e DOKU_DOCKER_ADMIN_PASSWORD='welcome' \
+  -e DOKU_DOCKER_BASE_URL='http://tabulify.dev' \
   -v $PWD:/var/www/html \
   ghcr.io/combostrap/dokuwiki:php8.3-latest
 ```
