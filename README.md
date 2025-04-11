@@ -3,7 +3,7 @@
 
 ## About
 
-This Git repo contains [tabulify.com](https://tabulify.com) written with the [Combo Site Technology](https://combostrap.com/admin/combostrap-website-5gxpcdgy)
+This Git repo contains [tabulify.com](https://tabulify.com) written with the [Combo Site Technology](https://combostrap.com/admin/combostrap-website-yfi22ewn)
 
 
 ## How
@@ -16,7 +16,7 @@ docker run \
   --name site-com-tabulify \
   --rm \
   -p 8081:80 \
-  -e DOKU_DOCKER_GIT_SITE='https://github.com/EraldyHq/tabulify.com' \
+  -e DOKU_DOCKER_GIT_SITE='https://github.com/EraldyHq/tabulify-website' \
   ghcr.io/combostrap/dokuwiki:php8.3-latest
 ```
 
@@ -26,7 +26,7 @@ docker run \
   --name site-com-tabulify \
   --rm \
   -p 8081:80 \
-  -e DOKU_DOCKER_GIT_SITE='git@github.com:EraldyHq/tabulify.com.git' \
+  -e DOKU_DOCKER_GIT_SITE='git@github.com:EraldyHq/tabulify-website.git' \
   ghcr.io/combostrap/dokuwiki:php8.3-latest
 ```
 
