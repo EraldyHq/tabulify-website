@@ -10,7 +10,6 @@ This Git repo contains [tabulify.com](https://tabulify.com) written with the [Co
 
 ### How to Run
 
-* Without Git
 ```bash
 docker run \
   --name site-com-tabulify \
