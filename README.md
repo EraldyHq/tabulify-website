@@ -35,4 +35,4 @@ docker run \
 ## Contribute
 
 
-See [contribute](contribute.md)
+See [contribute](contribute/contribute.md)
