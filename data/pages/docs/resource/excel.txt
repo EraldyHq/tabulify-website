@@ -1,7 +1,8 @@
 ====== Data Resource - Excel ======
 
 ===== About =====
-''xlsx'' is a supported [[tabular_file|tabular file]] [[resource|data resource]].
+
+''xlsx'' or ''xls'' are supported [[tabular_file|tabular file]] [[resource|data resource]].
 
 
 ===== Properties =====
@@ -10,6 +11,6 @@
 ^ Name ^ Default Value ^ Description ^
 | ''headerRowId'' | ''0'' | The row id where the header is located (''0'' means no header and ''1'' the first line) |
 | ''sheetName'' | '''' | The sheet name (Optional, first sheet by default) |
+| ''dateFormat'' | ''dd/mm/yyyy hh:mm:ss'' | The date format (ie Format Cells > Number > Custom)  |
 
-
-
+In Excel, dates are numeric with a format.
