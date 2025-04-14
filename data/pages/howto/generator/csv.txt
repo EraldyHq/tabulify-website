@@ -95,8 +95,8 @@ The below [[docs:tabli:data:fill|data fill]] command will create a [[docs:resour
 tabli data fill --generator-selector date_dim--datagen.yml@howto date_dim.csv@temp
 </code>
 <console>
-Source            Target              Latency (ms)   Row Count   Error   Message   
----------------   -----------------   ------------   ---------   -----   -------   
+Source            Target              Latency (ms)   Row Count   Error   Message
+---------------   -----------------   ------------   ---------   -----   -------
 date_dim@memgen   date_dim.csv@temp   6119           1000
 </console>
 </unit>

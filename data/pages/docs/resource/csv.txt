@@ -3,10 +3,9 @@
 
 
 ===== About =====
-''csv'' is a supported [[tabular_file|tabular file]] [[resource|data resource]].
+<icon name="carbon:csv" /> ''csv'' is a supported [[tabular_file|tabular file]] [[resource|data resource]].
 
-===== Howto =====
-<related pattern="howto:*" />
+
 
 ===== Properties =====
 
