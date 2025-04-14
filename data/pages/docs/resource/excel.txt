@@ -13,4 +13,29 @@
 | ''sheetName'' | '''' | The sheet name (Optional, first sheet by default) |
 | ''dateFormat'' | ''dd/mm/yyyy hh:mm:ss'' | The date format (ie Format Cells > Number > Custom)  |
 
-In Excel, dates are numeric with a format.
+In Excel, dates are numeric cell with an applied date format.
+
+
+==== Example ====
+
+The below [[docs:tabli:data:fill|data fill]] command will create a excel resource named ''d_date.xlsx'' in the [[docs:connection:temp|temporary directory]].
+<unit >
+<code dos>
+tabli data fill --generator-selector date_dim--datagen.yml@howto date_dim.xlsx@temp
+</code>
+<console>
+Source            Target              Latency (ms)   Row Count   Error   Message
+---------------   -----------------   ------------   ---------   -----   -------
+date_dim@memgen   date_dim.xlsx@temp  6119           1000
+</console>
+</unit>
+
+What is the data of the file with the [[docs:tabli:data:head|data head command]]?
+<unit >
+<code dos>
+tabli data head --limit 30 d_date.xlsx@temp
+</code>
+<console>
+
+</console>
+</unit>
