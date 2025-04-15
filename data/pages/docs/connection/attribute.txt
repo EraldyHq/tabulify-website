@@ -1,8 +1,8 @@
 ====== Connection - Variables ======
 
 
-===== Attribute =====
-A ''connection variable'' is a property of a [[connection|connection]] that:
+
+A ''connection variable'' is a [[:docs:conf:variable|variable]] of a [[connection|connection]] that:
   * define how to connect to a [[docs:system:system|system connection]] via its [[uri|URL attribute]] 
   * and configure the behavior of this connection.
 
@@ -20,29 +20,11 @@ Built-in attributes modify the behavior ''Tabulify''. See [[built_in_attribute]]
 ===== Management =====
 
 ==== See ====
-You can see the ''variable'' of your connection with the [[docs:tabli:connection:info|connection info command]].
+You can see the [[:docs:conf:variable|variable]] of your connection with the [[docs:tabli:connection:info|connection info command]].
 
 ==== Set ====
 
-You can set the ''variable'' of your connection:
+You can set the [[:docs:conf:variable|variable]] of your connection:
   * by editing manually the [[..:conf:vault|connection vault]]
   * or with the [[docs:tabli:connection:upsert|connection upsert command]].
-
-
-===== Configuration =====
-==== Automatic Encryption ====
-The ''encrypted-variables'' [[docs:conf:conf|configuration]] lists the ''attributes'' where the value should be automatically [[docs:common:vault|encrypted]].
-
-Example, the [[docs:tabli:variable:set|variable set command]] will encrypt the connection ''user'' and [[uri|uri]] [[docs:conf:variable|variable]] ''value'' 
-<code bash>
-tabli variable set encrypted-variables user,uri
-</code>
-
-<note important>
-The [[password|password]] attribute when present is always encrypted
-</note>
-
-
-
-
 

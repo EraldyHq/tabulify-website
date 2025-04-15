@@ -1,8 +1,8 @@
-====== Environment Variables ======
+====== Variables ======
 
 
 ===== About =====
-''environment variables'' are variables that are used to:
+''variables'' are variables that are used to:
   * configure the behavior of tabulify
   * or as [[template|template variable]] 
 
@@ -16,7 +16,19 @@ Configuration Priority In Descendent Order:
   * Operating System Environment variables
   * [[user|User Variable File]]
 
-===== Management =====
+===== Secret =====
+A variable supports a [[docs:conf:secret|secret]] as value.
+===== Cli Command =====
+
+
+Most advanced user will edit the files manually but for convenience, we provide cli command.
+
+
+
+By default, the file edited is:
+  * if in a project: the [[:docs:project:project-file|project variable file]] 
+  * if not: the [[docs:conf:user|user file]]
+
 
 You can:
   * add, remove variables from [[docs:conf:variable_file|variable files]] with:
@@ -27,7 +39,4 @@ You can:
 
 The file edited is the file given with the ''%%--vars%%'' option. 
 
-By default, the file edited is:
-  * if in a project: the [[:docs:project:project-file|project variable file]] 
-  * if not: the [[docs:conf:user|user file]]
 

@@ -1,0 +1,39 @@
+====== Security Consideration ======
+
+According to the [[wp>Kerckhoffs%27_principle|Kerckhoffs' principle]] ''only secrecy of the key provides security'', you should take great care of your ''secrets''
+
+In Tabulify, they come in 2 forms:
+
+  * [[:docs:conf:secret|secret value]] (for configuration)
+  * [[:docs:common:passphrase|passphrase]] (to decrypt vault secret)
+
+===== Environment =====
+
+==== Development ====
+
+In an development environment, a ''secret'' can be shared broadly because the data should have no secrecy character. 
+
+==== Production ====
+
+In an production environment, the ''secret'' should be manipulated with care and be kept private.
+
+
+How the secrets are distributed depend on your threat model.
+
+There are generally 2 modes of distribution:
+
+  * via the environments (The application reads environment variable)
+  * read at start. The application makes a call at start to an external secret service to retrieve them and is authenticated via passphrase or other mean.
+
+Secret management is to broad to be kept in a single article, if you want more advice [[:contact|contact us]].
+
+===== Note on Wrapper script =====
+If you choose to use a ''wrapper script'' to provide the secret (not recommended), the script should at minimum get the following permissions.
+  * executable (can be executed)
+  * no read (cannot be read by the user)
+
+
+Example:
+<code bash tabliWrapper.sh>
+tabli --passphrase secret "$@"
+</code>

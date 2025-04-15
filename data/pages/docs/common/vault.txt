@@ -2,7 +2,7 @@
 
 
 ===== Vault =====
-''Tabulify'' includes natively a ''vault'' functionality that lets you encrypt or decrypt ''text'' configuration parameters (mostly [[docs:connection:attribute|connection attribute]]) in order to keep sensitive information secret.
+''Tabulify'' includes natively a ''vault'' functionality that lets you encrypt or decrypt [[:docs:conf:secret|secret value]]  (mostly [[docs:connection:attribute|connection attribute]]) in order to keep sensitive information secret.
 
 
 The encryption is done with approved Encryption cipher of the ''NIST'' that takes as input a ''cryptographic key'' that is generated from a [[passphrase|passphrase]]. At every encryption, a ''random salt'' is used and therefore the encrypted output is never the same. On top of this process, we use a ''mac check'' to verify the integrity of the data.
@@ -21,15 +21,10 @@ vaultQVE9PT5kclVidjZCZnYyUUtKMFBvT200UGF3PT0+SmZRZFhXU2dHWEhCZmFpe
 </file>
 
 
-===== Encryption / Decrption =====
+===== Cli Commands (Encryption / Decrption) =====
   * [[docs:tabli:vault:encrypt|Encrypt]]
   * [[docs:tabli:vault:decrypt|Decrypt]] 
 
-===== Mandatory =====
-
-  * The [[docs:connection:password|password]] is the only mandatory encrypted attribute. Ie you can't save a [[docs:connection:password|password]] without giving a [[passphrase|passphrase]].
-
-<note>With the [[docs:connection:attribute#automatic_encryption|automatic attribute encryption]], you can automatically encrypt other attributes.</note>
 
 ===== Technically =====
 

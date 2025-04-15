@@ -1,41 +1,21 @@
 ====== Tabulify - Passphrase ======
 
 
-===== Passphrase =====
-To [[vault|encrypt and decrypt]] [[secret|secret attributes]], ''Tabulify'' uses a ''passphrase''. 
+
+To encrypt and decrypt [[:docs:conf:secret|secret]], [[vault|vault]] uses a ''passphrase''. 
 
 
 This ''passphrase'' is used to generate a cryptographic key for the [[vault|encryption]].
 
-===== Tabli =====
-In [[docs:tabli:tabli|Tabli]], the ''passphrase'' can be given with the ''%%--passphrase%%'' [[docs:tabli:global|global option]].
 
-===== Security Consideration =====
+In [[docs:tabli:tabli|Tabli]], the ''passphrase'' can be given with:
 
-According to the [[wp>Kerckhoffs%27_principle|Kerckhoffs' principle]] ''only secrecy of the key provides security'', you should take great care of your ''passphrase''
-
-==== Developement ====
-
-In an development environment, a ''passphrase'' could be shared broadly because the data should have no secrecy character. 
-
-==== Production ====
-
-In an production environment, the ''passphrase'' should be manipulated with care and be kept private.
-
-You can achieve with several methods. We give two methods below.
-=== Wrapper script ===
-A ''wrapper script'' is a script that wraps the command with the following permissions:
-  * executable
-  * no read (can't be read)
-
-The script can be executed but cannot be read by the user.
-
-Example:
-<code bash tabliWrapper.sh>
-tabli --passphrase secret "$@"
-</code>
+  * the ''%%--passphrase%%'' [[docs:tabli:global|global option]].
+  * or the ''TABLI_PASSPHRASE'' [[:docs:conf:os|Os environment variable]]
 
 
-=== Credentials Vault ===
+See also [[:docs:common:security|security consideration]] on how to handle secrets.
 
-If your environment has a credential vault functionality with SSO, you could retrieve it programmatically based on the credentials of the logged user.
+
+
+

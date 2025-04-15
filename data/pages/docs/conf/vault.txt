@@ -34,34 +34,23 @@ Internal   user.connection-vault   C:\Users\gerardnico\.tabli\connection.ini
 ==== Project ====
 The default path when running in a [[docs:project:project|project]] is ''[[..:connection:project|project home]]/conf/connection.ini''
 
-===== Management =====
+===== Cli Command =====
 
-==== Tabli ====
-
-The [[docs:tabli:connection:start|Tabli Connection module]] permits to manage this file.
+Advanced user will modify the file directly with a text editor but 
+for convenience, we provide also the [[docs:tabli:connection:start|Tabli Connection module]].
 
 In every [[docs:tabli:tabli|tabli command]], you can specify the location of this file with the ''%%--connection-vault%%'' [[docs:tabli:global|global option]].
 
-==== Manually ====
-You can also modify the file  directly with a text editor. 
 
-If you wish to encrypt properties, you can do it:
-  * [[docs:tabli:vault:encrypt|manullay]]
-  * or automatically via the [[..:connection:attribute#automatic_encryption|automatic encryption feature]].
+===== Secret =====
+
+The connection vault supports [[docs:conf:secret|secret]] as value.
 
 
 ===== Format =====
 This file follows the same semantic than ODBC.ini file where each section is a database (ie DSN).
 
 
-===== Encrytion =====
 
-==== Password  ====
-Every password in a connection vault store is encrypted. See [[docs:common:vault]]
-
-
-==== Passphrase ====
-
-When a system connection needs a password, a [[docs:common:passphrase|passphrase]] is mandatory to secure the password. This passphrase should be unique by connection vault file. See [[docs:common:passphrase]]
 
 
