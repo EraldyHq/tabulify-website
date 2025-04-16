@@ -25,6 +25,12 @@ There are generally 2 modes of distribution:
   * via the environments (The application reads environment variable)
   * read at start. The application makes a call at start to an external secret service to retrieve them and is authenticated via passphrase or other mean.
 
+Storing configuration in the environment is one of the tenets of a [[https://12factor.net/config|twelve-factor app]].
+Anything that is likely to change between deployment environments–such as resource handles
+for databases or credentials for external services–should be extracted
+from the code into environment variables.
+
+
 Secret management is to broad to be kept in a single article, if you want more advice [[:contact|contact us]].
 
 ===== Note on Wrapper script =====
