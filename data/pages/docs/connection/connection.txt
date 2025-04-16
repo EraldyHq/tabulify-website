@@ -25,7 +25,9 @@ A connection has two mandatory [[attribute|attributes]]:
 ===== Creation =====
 ''connection'' can be created with the [[docs:tabli:connection:start|connection module]] or by manually editing the [[..:conf:vault|connection vault]].
 ===== Default =====
-The default connection is the [[cd|current directory]] connection.
+The default connection is:
+  * [[:docs:connection:project|project home directory]] in a [[:docs:project:project|project execution]]
+  * otherwise the [[cd|current directory]] connection.
 
 
 

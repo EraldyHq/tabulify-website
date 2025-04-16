@@ -12,8 +12,6 @@
   * [[docs:system:sqlite:howto|sqlite]] and ''sqlite-target'' are [[docs:system:sqlite:sqlite|sqlite]] connection
   * [[docs:system:sqlite:howto|oracle]] is an [[docs:system:oracle:oracle|oracle database]]
   * ''sqlserver'' is an [[docs:system:sqlserver|sqlserver database]]
-  * ''howto'' are the [[howto|howto files]] (ie files used in the [[howto:howto|howto's]])
-  *  ''tpcds_query'' is the location of the [[docs:connection:tpcds_query|Tpcds queries]]
   * ''mysql'' is a [[docs:system:mysql:mysql|mysql database]]
   * [[docs:system:postgres:howto|postgres]] is a [[docs:system:postgres:postgres|postgres database]]
 

@@ -5,7 +5,7 @@
 
 The ''cd'' [[connection|connection]] is a [[built-in|built-in connection]] that points to the current [[docs:resource:directory|directory]] of the [[docs:system:local|local file system]].
 
-This is the [[connection#default|default connection]].
+This is the [[connection#default|default connection]] if this is not a [[:docs:project:project|project]]
 
 ===== Info =====
 To get the path of the current directory, with the [[docs:tabli:connection:info|connection info]] command

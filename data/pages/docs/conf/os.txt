@@ -1,14 +1,22 @@
-====== Os Environment Variable ======
+====== Os Environment Variables ======
 
 
 ===== About =====
-''tabulify'' set the operating system environment variables  as [[docs:conf:variable|tabulify variable]].
+Os Environment Variables are used to configure the Tabulify execution enviroment.
+
+===== Type =====
+
+==== Cli Option ====
+[[:docs:tabli:option|Tabli Cli Option]] may be be set via environment variables.
+
+==== Variables ====
+
+''tabulify'' sets the operating system environment variables  as [[docs:conf:variable|tabulify variable]].
 
 It captures them and and deletes the ''tabli'' prefix if any.
 
-
-===== Example =====
-If you want to set the [[:docs:project:environment|environment]], you can
+Example:
+If you want to set the [[docs:common:environment|environment]], you can
 set it on Linux as:
 
 <code bash>

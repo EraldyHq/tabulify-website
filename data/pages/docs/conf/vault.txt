@@ -39,7 +39,10 @@ The default path when running in a [[docs:project:project|project]] is ''[[..:co
 Advanced user will modify the file directly with a text editor but 
 for convenience, we provide also the [[docs:tabli:connection:start|Tabli Connection module]].
 
-In every [[docs:tabli:tabli|tabli command]], you can specify the location of this file with the ''%%--connection-vault%%'' [[docs:tabli:global|global option]].
+In every [[docs:tabli:tabli|tabli command]], you can specify the location of this file with:
+
+  * the ''%%--connection-vault%%'' [[docs:tabli:global|global option]].
+  * or the ''TABLI_CONNECTION_VAULT'' [[docs:conf:os|OS environment variable]]
 
 
 ===== Secret =====
