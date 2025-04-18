@@ -20,3 +20,20 @@ Name        oracle                                          The name of the conn
 Url         jdbc:oracle:thin:@[host]:[port]/[servicename]   The url of the connection
 </console>
 </unit>
+
+===== Docker =====
+
+You can use start a local database to connect with this connection with the following command:
+<code bash>
+docker run \
+    -e ORACLE_DISABLE_ASYNCH_IO=true \
+    -e ORACLE_ALLOW_REMOTE=true \
+    -e ORACLE_PASSWORD=oracle \
+    -e APP_USER=hr \
+    -e APP_USER_PASSWORD=oracle \
+    -p 1521:1521 \
+    -d \
+    --name oracle \
+    ghcr.io/gvenzl/oracle-free:23.7-slim-faststart
+</code>
+
