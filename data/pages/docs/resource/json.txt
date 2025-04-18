@@ -5,8 +5,6 @@
 A <icon name="carbon:json"/> ''json'' file is a [[text|text file]] that contains one or several ''json object''.
 
 
-===== Howto =====
-<related pattern="howto:*" />
 
 ===== Type =====
 ''Tabulify'' supports the following JSON [[type|type]]:
@@ -19,13 +17,13 @@ The [[attribute|attributes]] of a JSON file are:
 ^ Name ^ Description ^
 | ''structure'' | ''document'' - the whole ''JSON'' document will be stored in [[docs:resource:tabular|tabular format]] with ''1'' column of the ''json'' [[docs:common:data_type|data type]] \\ ''properties'' - the JSON file will be parsed and all first level properties will create several columns in a full [[docs:resource:tabular|tabular format]] |
 ^ Because a ''json'' file is also a [[text|text file]], it inherits all [[text#attributes|text attributes]] ^^
-| [[text#arguments|endOfRecord]] | For a ''JSON'' file, ''end of a file (EOF)''. It expects one JSON object by file \\ For a ''JSONL'' file, ''end of a line (EOL)''. It expects one JSON object by line |
-| [[text#arguments|columnName]] | The name of the column in the case of a ''document'' structure (Default to ''json'') |
+| [[text#arguments|end-of-record]] | For a ''JSON'' file, ''end of a file (EOF)''. It expects one JSON object by file \\ For a ''JSONL'' file, ''end of a line (EOL)''. It expects one JSON object by line |
+| [[text#arguments|column-name]] | The name of the column in the case of a ''document'' structure (Default to ''json'') |
 
 
 
 ===== Creation =====
-With the [[docs:op:template|JSON template]], you can create a JSON file from tabular data.
+With the [[howto:templating:create_json_from_tabular_data|JSON template]], you can create a JSON file from tabular data.
 
 
 ===== How to see the first lines =====
