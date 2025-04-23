@@ -1,7 +1,34 @@
 ====== Sql Server ======
 
 
+SqlServer is in beta. 
 
-===== Varchar =====
+The module pass actually most of the test. It does not pass yet all [[:docs:connection:tpcds_query|tpcds_query]] test.
+
+
+===== How to start a local SqlServer ? =====
+
+To use the [[:docs:connection:howtos|Howto sqlserver connection]], you can start a local SqlServer with the following docker command:
+
+```bash
+docker run \
+    -e MSSQL_SA_PASSWORD=TheSecret1! \
+    -e ACCEPT_EULA=Y \
+    -p 1433:1433 \
+    -d \
+    --name sqlserver \
+    mcr.microsoft.com/mssql/server:2022-CU18-ubuntu-22.04
+```
+
+
+===== Note =====
+
+==== Varchar ====
 ''Tabulify'' modifies the default length for VARCHAR and NVARCHAR from ''1'' to ''max'' which is the default for most database and avoid many problem  when the length is not defined (ie it's never ''1'' that's meant).
+
+==== Upsert ====
+
+SqlServer does not use the SQL standard ''insert on conflict'' statement but a  [[https://learn.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql|merge statement]].
+
+This merge statement requires a ''ON'' condition. Tabulify sets it to the first unique key constraint and if none is found, a standard insert statement is used.
 
