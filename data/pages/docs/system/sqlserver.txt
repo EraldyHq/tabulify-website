@@ -1,10 +1,6 @@
 ====== Sql Server ======
 
 
-SqlServer is in beta. 
-
-The module pass actually most of the test. It does not pass yet all [[:docs:connection:tpcds_query|tpcds_query]] test.
-
 
 ===== How to start a local SqlServer ? =====
 
