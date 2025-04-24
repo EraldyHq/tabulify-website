@@ -19,7 +19,7 @@ docker run \
 ```
 
 
-===== Note =====
+===== Support and Sql Server Features =====
 
 ==== Varchar ====
 ''Tabulify'' modifies the default length for VARCHAR and NVARCHAR from ''1'' to ''max'' 
@@ -52,3 +52,54 @@ You would get this kind of error:
 Cannot truncate table 'master.dbo.d_date' because it is being referenced by a FOREIGN KEY constraint.
 ```
 If you want to truncate, you need to [[:docs:op:drop|drop]] and [[docs:op:create|recreate]]
+
+==== View dependency not supported ====
+
+Sql Server does not support dependencies on view (ie dependent on the table used in the view), meaning any [[:docs:op:with-dependencies|with-dependencies operation]] on view will not see them.
+
+==== Order By Not supported in derived tables  ====
+
+`Order By` is not supported by Sql Server in derived table such as:
+
+  * views, 
+  * inline functions, 
+  * derived tables, 
+  * subqueries, 
+  * and common table expressions
+
+unless `TOP`, `OFFSET` or `FOR XML` is specified.
+
+Example: if you create this view:
+```sql
+create view "error_orderby" as 
+select 
+   "cat_id", 
+   "cat_desc", 
+   "load_timestamp" 
+from "master"."dbo"."d_category" 
+   order by "cat_id"
+```
+You would get this error:
+```
+The ORDER BY clause is invalid in views, inline functions, derived tables, subqueries, 
+and common table expressions, unless TOP, OFFSET or FOR XML is also specified.
+```
+
+==== Aliases in View are mandatory ====
+
+Sql Server requires an alias for each select expression in a query.
+
+For instance:
+  * this query
+```sql
+create view "alias_error" as 
+select 
+   avg(sales_price), 
+   avg(sales_qty) 
+from "f_sales"
+```
+  * would return this error:
+```
+Create View or Function failed because no column name was specified for column 1.
+```
+
