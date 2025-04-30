@@ -28,9 +28,10 @@ log-level: "warning"
   * user: The [[user|user variable file]] is a variable file that stores variable for the logged operating system user.
   * project: The [[project|project variable file]] used in a project run.
   * command line: you can specify a [[docs:conf:command_line_variable_file|command line variable file]] at the command line.
-  * dotenv: With the [[dotenv|dotenv variable]] file you can add project variable that are not in your source version control system.
+
 
 ===== Management =====
+
 ==== Manually ====
 
 You can edit/create the files manually. If you want to encrypt it manually, see [[docs:tabli:vault:encrypt|vault encrypt]]
@@ -44,8 +45,8 @@ You can add, remove and list a variable via the following command:
   * [[docs:tabli:variable:delete]]
   * [[docs:tabli:variable:list]]
 
-The file edited is the file given with the ''%%--vars%%'' option. 
+The file edited is the file given with the ''%%--vars%%'' option.
 
 By default, the file edited is:
-  * if in a project: the [[:docs:project:project-file|project variable file]] 
+  * if in a project: the [[:docs:project:project-file|project variable file]]
   * if not: the [[docs:conf:user|user file]]

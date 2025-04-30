@@ -30,10 +30,10 @@ If you want to export the SQL with one file by SQL, you would choose the ''recor
 
 <webcode name="backlinks" frameborder="0">
 <iterator>
-<data>select from backlinks</data>
-<template>
+<data>select from backlinks where path like ':docs:op:%' </data>
+<fragment>
   * [[$path|$title]]
-</template>
+</fragment>
 </iterator>
 </webcode>
 
