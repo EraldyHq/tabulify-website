@@ -2,7 +2,7 @@
 
 ===== About =====
 Tabulify uses Yaml as the file format of
-  * [[..:conf:variable_file|configuration file]]
+  * [[..:conf:file|configuration vault]]
   * and [[docs:flow:pipeline|pipeline]].
 
 

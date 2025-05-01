@@ -9,5 +9,5 @@
   * ''%%--passphrase%%'' to set the [[docs:common:passphrase|passphrase]]
   * ''%%--log-level%%'' to set the [[log-level|log-level]]
   * ''%%--output-uri%%'', ''%%--output-transfer-operation%%'',''%%--output-operation%%'' to store the [[output|output in a data resource]]
-  * ''%%--connection-vault%%'' to set the path to a [[docs:conf:vault|connection vault]]
+  * ''%%--connection-vault%%'' to set the path to a [[docs:conf:file|connection vault]]
   * ''%%--conf%%'' to set the path to the [[docs:conf:variable_file|configuration file]]

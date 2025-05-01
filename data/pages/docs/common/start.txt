@@ -19,7 +19,7 @@ This section regroups articles that are common to the whole platform.
 
 <iterator>
 <data>select from descendants order by name asc</data>
-<template>
+<fragment>
   * [[$path|$name]]
-</template>
+</fragment>
 </iterator>

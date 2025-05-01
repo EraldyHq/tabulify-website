@@ -42,4 +42,4 @@ Because all data structure are represented logically as a [[docs:resource:resour
 | [[docs:op:transfer|transfer]] | [[docs:op:upload|load]], [[docs:op:upload|upload]], [[docs:op:download|download]] | Move data resource from one system to another  |
 | [[docs:op:fill|fill]] | [[docs:op:fill|generate]] | Generate data for a resource |
 | [[docs:op:print|print]] | [[docs:op:print|tail]], [[docs:op:print|head]] | Print the data of a resource | 
-| [[docs:op:compare|compare]] | [[docs:op:compare|diff]] | Compare two data resources |
+| [[docs:op:compare|diff]] | [[docs:op:compare|compare]] | Compare two data resources |

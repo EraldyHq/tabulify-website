@@ -23,7 +23,7 @@ A connection has two mandatory [[attribute|attributes]]:
   * [[howtos|how-to's]]: connection created at installation used in the ''How-to's''
 
 ===== Creation =====
-''connection'' can be created with the [[docs:tabli:connection:start|connection module]] or by manually editing the [[..:conf:vault|connection vault]].
+''connection'' can be created with the [[docs:tabli:connection:start|connection module]] or by manually editing the [[..:conf:file|connection vault]].
 ===== Default =====
 The default connection is:
   * [[:docs:connection:project|project home directory]] in a [[:docs:project:project|project execution]]

@@ -6,7 +6,7 @@
 
 
 For instance, in:
-  * [[:docs:conf:vault|a connection vault]]
+  * [[docs:conf:file|a connection vault]]
   * [[:docs:flow:pipeline|pipeline file]]
   * [[:docs:resource:logicalname|logical name]] definition
   * [[:docs:resource:target_uri|target uri]] definition
@@ -26,7 +26,7 @@ If you want a file to take as [[:docs:resource:logicalname|logical name]] a part
 cleaned_members_export_d874afd3b7.csv
 </file>
   * If you select this file with the [[:docs:common:globbing|glob selector]] ''*_export_*.csv''
-  * You can set its logical name to ''cleaned_members'' by setting the logical name to ''$1''.
+  * You can set its logical name to ''cleaned_members'' by setting the logical name to ''%%$1%%''.
 
 
 

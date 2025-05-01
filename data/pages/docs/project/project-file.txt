@@ -1,9 +1,0 @@
-====== Project File ======
-
-
-===== About =====
-The project file is a [[docs:conf:conf|configuration file]] named ''.tabli.yml'' that sets the [[docs:connection:project|project home directory]] 
-
-
-When present, the [[:docs:connection:connection#default|default connection]] is the [[:docs:connection:project|project connection (ie project home)]]
-

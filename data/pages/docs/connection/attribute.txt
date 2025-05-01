@@ -25,6 +25,6 @@ You can see the [[:docs:conf:variable|variable]] of your connection with the [[d
 ==== Set ====
 
 You can set the [[:docs:conf:variable|variable]] of your connection:
-  * by editing manually the [[..:conf:vault|connection vault]]
+  * by editing manually the [[..:conf:file|connection vault]]
   * or with the [[docs:tabli:connection:upsert|connection upsert command]].
 
