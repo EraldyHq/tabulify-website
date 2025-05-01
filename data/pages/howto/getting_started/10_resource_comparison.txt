@@ -3,14 +3,14 @@
 
 
 ===== Comparison =====
-''Data comparison'' is the corner stone of every development because it validates the data processing.
+''Data Diff'' is the corner stone of every development because it validates the processing of data.
 
 
-''Tabulify'' ships with a [[docs:op:compare|Data comparison operation]] that allows you to compare:
+''Tabulify'' ships with a [[docs:op:diff|Data diff operation]] that allows you to compare:
   * the [[docs:resource:content|data content]]
   * and the [[docs:resource:structure|data structure]]
 
-The [[docs:op:compare|comparison operation]] is implemented with the [[docs:tabli:data:compare|data compare command]].
+The [[docs:op:diff|diff operation (comparaison)]] is implemented with the [[docs:tabli:data:diff|data diff command]].
 
 ===== Data to compare =====
 
@@ -44,11 +44,11 @@ The fact that a record is missing can be easily spotted but there is a more subt
 
 ===== The comparison report =====
 
-All comparison can be executed with the [[docs:tabli:data:compare|data compare command]] by giving as argument the [[docs:flow:source|source]] and [[docs:flow:target|target]] data resource.
+All comparison can be executed with the [[docs:tabli:data:diff|data compare command]] by giving as argument the [[docs:flow:source|source]] and [[docs:flow:target|target]] data resource.
 
 <unit>
 <code bash>
-tabli data compare characters.csv@howto characters_target.csv@howto
+tabli data diff characters.csv@howto characters_target.csv@howto
 </code>
 <console>
 Comparison Report
@@ -71,7 +71,7 @@ To get a comparison on the record level, you set the ''report-level'' option to 
 
 <unit>
 <code bash>
-tabli data compare --report-level record characters.csv@howto characters_target.csv@howto
+tabli data diff --report-level record characters.csv@howto characters_target.csv@howto
 </code>
 <console>
 Comparison result between source (characters.csv@howto) and target (characters_target.csv@howto).
@@ -121,7 +121,7 @@ This is because the comparison was executed by ''record id'' and not by ''last n
 To improve our comparison, we will define the unique column of our data resource with the ''%%--unique-column%%'' column option.
 <unit>
 <code bash>
-tabli data compare --report-level record --unique-column "Last Name" characters.csv@howto characters_target.csv@howto
+tabli data diff --report-level record --unique-column "Last Name" characters.csv@howto characters_target.csv@howto
 </code>
 <console>
 Comparison result between source (characters.csv@howto) and target (characters_target.csv@howto).
