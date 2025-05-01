@@ -10,9 +10,9 @@
 The same variable can be found in multiple place, we are taking the configuration with the higher priority.
 
 Configuration Priority In Descendent Order:
-  * [[:docs:tabli:option|Command line options]]
+  * [[:docs:tabli:option|Command line options]] (if available)
   * [[file|Configuration Vault]]
-  * [[docs:conf:os|Operating System Environment variables]]
+  * [[docs:conf:os|Operating System Environment variables]] with the ''TABLI_'' prefix
 
 
 ===== Secret =====

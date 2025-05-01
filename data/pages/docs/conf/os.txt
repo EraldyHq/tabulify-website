@@ -2,19 +2,17 @@
 
 
 ===== About =====
-Os Environment Variables are used to configure the Tabulify execution enviroment.
-
-===== Type =====
+Os Environment Variables are used to set the value of [[docs:conf:variable|variable]].
 
 
 
+It search a variable that starts:
 
+  * with ''tabli''
+  * and without
 
-''tabulify'' sets the operating system environment variables  as [[docs:conf:variable|tabulify variable]].
+===== Example =====
 
-It captures them and and deletes the ''tabli'' prefix if any.
-
-Example:
 If you want to set the [[docs:common:environment|execution environment]], you can
 set it on Linux as:
 

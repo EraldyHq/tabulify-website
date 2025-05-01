@@ -19,7 +19,7 @@ email   smtp://localhost:25?from=gerardnico%2540host.docker.internal
 </console>
 </unit>
 
-You can modify the parameters by setting the following [[:docs:conf:variable|environment variable]] on your operating system.
+You can modify the parameters by setting the following [[:docs:conf:variable|variables]].
 
 ^ Name ^ Default ^ Description ^
 | SMTP_HOST | localhost | the smtp host server |

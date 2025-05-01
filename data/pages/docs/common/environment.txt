@@ -2,7 +2,7 @@
 
 
 ===== About =====
-An ''environment'' is a string that permits to see if the execution occurs in production or not.
+''env'' is a [[docs:conf:variable|variable]] that sets the execution environment (ie in production or not).
 
 ===== Built-in =====
 
@@ -17,7 +17,7 @@ Tabulify knows the following environments:
 <note>
 [[:docs:op:op|operations]] may react differently depending on it.
 
-To avoid sending emails in a non-production environment, the [[docs:op:sendmail|send operation]] will send them all
+To avoid sending emails in a dev environment, the [[docs:op:sendmail|send operation]] will send them all
 to the ''to'' address of the smtp connection.
 </note>
 
@@ -32,10 +32,12 @@ tabli --env dev
 <code bash>
 export TABLI_ENV=dev
 </code>
+  * In the [[docs:conf:file|configuration vault]]
+
 
 ===== How to see the environment =====
 
-With the ''env'' internal variable.
+With the ''env'' variable.
 
 Example:
 <code bash>
