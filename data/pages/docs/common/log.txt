@@ -9,7 +9,7 @@
 
 ^ Level Value ^ Description ^
 | ''error'' | Show only the ''error'' log |
-| ''warning'' | Show the ''warning'' log and all level above (ie ''error'')|
+| ''warn'' | Show the ''warning'' log and all level above (ie ''error'')|
 | ''tip'' | Show the ''tip'' log and all log above (ie ''error'' and ''warning'') |
 | ''info'' | Show the ''info'' logs and all level above (ie ''error'', ''warning'' and ''tip'') |
 | ''fine'' | Show all logs |
@@ -19,5 +19,27 @@
 ==== Default ====
 By default, the log level is the ''info'' level.
 
-==== Tabli ====
-  * [[docs:tabli:log-level]]
+''log level'' is a [[docs:conf:global|global attribute]] that sets the [[docs:common:log|log]] level.
+
+
+
+==== Set ====
+
+
+You can change the log level:
+
+  * via the ''log-level'' [[docs:tabli:option|option]].
+<code bash>
+tabli data list --log-level tip 
+</code>
+  * via the [[docs:conf:file|the configuration vault]]
+<code yaml>
+global:
+  log-level: tip
+</code>
+  * via the ''log-level'' [[docs:conf:os|]].
+<code bash>
+export TABLI_LOG_LEVEL=tip
+</code>
+
+

@@ -11,7 +11,7 @@ This page is about global [[docs:conf:attribute|variables]]
 Global parameters variable are:
 
 
-|''LOG_LEVEL'' | the [[:docs:tabli:log-level|log level]] |
+|''LOG_LEVEL'' | the [[:docs:common:log|log level]] |
 | ''CONF'' | the path to the [[docs:conf:file|configuration file]] |
 | ''PROJECT_HOME'' | the [[:docs:connection:project|Project Home path]] |
 |''PASSPHRASE'' | the [[:docs:common:passphrase|vault passphrase]] |
@@ -22,7 +22,7 @@ Global parameters variable are:
  
 ==== List global variable ====
 
-With the [[docs:tabli:variable:list|variable list command]]
+With the [[docs:tabli:attribute:list|variable list command]]
 
 ==== Set global parameters ====
 
@@ -45,6 +45,6 @@ global:
 but for convenience, we provide the following cli commands:
 
   * add, remove variables with:
-      * [[docs:tabli:variable:set]]
-      * [[docs:tabli:variable:delete]]
+      * [[docs:tabli:attribute:set]]
+      * [[docs:tabli:attribute:delete]]
   

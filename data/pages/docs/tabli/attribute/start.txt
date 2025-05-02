@@ -11,14 +11,14 @@
 
 
 ===== About =====
-The ''attribute'' [[docs:tabli:module|module]] manages the [[docs:conf:global|global parameters]] of [[docs:tabli:tabli|tabli]].
+The ''attribute'' [[docs:tabli:module|module]] manages the [[docs:conf:global|global attribute]] of [[docs:tabli:tabli|tabli]].
 
 ===== Commands =====
 
 ^ Actions ^ Description ^
 | [[list|list]] | Show in a list format all attribute |
-| [[..:variable:delete|delete]] | Delete a attribute|
-| [[..:variable:set|set]] | Set a attribute |
+| [[delete|delete]] | Delete a attribute parameter |
+| [[set|set]] | Set a attribute parameter |
 
 ===== Syntax =====
 

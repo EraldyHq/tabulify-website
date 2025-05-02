@@ -7,7 +7,7 @@
     "page_id": "x3wbhq7p80d2ymghwir6i"
 }
 ---
-====== Tabli - Variable Set Command  ======
+====== Tabli - Attribute Set Command  ======
 
 
 ===== About =====

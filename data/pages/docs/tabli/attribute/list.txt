@@ -1,4 +1,4 @@
-====== Tabli - Variable List Command ======
+====== Tabli - Attribute List Command ======
 
 
 ===== About =====

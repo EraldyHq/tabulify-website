@@ -7,7 +7,7 @@
     "page_id": "rt2fbt1z1xtnqhmbqvdib"
 }
 ---
-====== Tabli - Variable Delete Command  ======
+====== Tabli - Attribute Delete Command  ======
 
 
 ===== About =====
