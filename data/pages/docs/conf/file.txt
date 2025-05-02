@@ -23,7 +23,7 @@ The ''configuration vault'' is a [[docs:conf:conf|configuration file]] named ''.
 By default, the file is searched recursively from the working directory and if not found in the user ''%%$HOME\.tabli%%'' directory.
 
 
-You can get the location of the configuration vault with the [[docs:tabli:variable:list|variable list command]].
+You can get the location of the configuration vault with the [[docs:tabli:attribute:list|variable list command]].
 <unit>
 <code bash>
 tabli variable list conf
@@ -43,7 +43,7 @@ Advanced user will modify the file directly with a text editor but
 for convenience, we provide also:
 
   * the [[docs:tabli:connection:start|Tabli Connection module]]
-  * the [[docs:tabli:variable:start|Tabli Variable module]]
+  * the [[docs:tabli:attribute:start|Tabli Variable module]]
 
 
 In every [[docs:tabli:tabli|tabli command]], you can specify the location of this file with:
@@ -62,8 +62,8 @@ You can encrypt any value with [[docs:tabli:vault:encrypt|vault encrypt]]
 
 
 <code yaml .tabli.yml>
-# List of global variables
-variables:
+# List of global attribute
+global:
   key1: value
   key2: value
 # List of connections
@@ -78,7 +78,7 @@ connections:
     # user
     password: ${MY_PASSWORD}
     # Driver extra attributes
-    driver:
+    native-driver:
       # for example, for jdbc sql driver
       applicationName: myName
   connectionName2:
