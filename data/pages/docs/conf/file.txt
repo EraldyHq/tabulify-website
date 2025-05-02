@@ -15,12 +15,12 @@
 The ''configuration vault'' is a [[docs:conf:conf|configuration file]] named ''.tabli.yml'' that stores:
 
   * [[..:connection:connection|connections]]
-  * and [[docs:conf:variable|variables]]
+  * and [[global|global parameters]]
 
 
 ===== Location =====
 
-* By default, the file is searched recursively from the working directory and if not found in the user ''%%$HOME\.tabli%%'' directory.
+By default, the file is searched recursively from the working directory and if not found in the user ''%%$HOME\.tabli%%'' directory.
 
 
 You can get the location of the configuration vault with the [[docs:tabli:variable:list|variable list command]].
@@ -44,6 +44,7 @@ for convenience, we provide also:
 
   * the [[docs:tabli:connection:start|Tabli Connection module]]
   * the [[docs:tabli:variable:start|Tabli Variable module]]
+
 
 In every [[docs:tabli:tabli|tabli command]], you can specify the location of this file with:
 

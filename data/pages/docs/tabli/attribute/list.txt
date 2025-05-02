@@ -2,21 +2,14 @@
 
 
 ===== About =====
-The ''list'' command of the [[start|variable module]] lists the variable values that are:
-  * ''internal'' - configuration that you can't modify
-  * ''user'' - from the [[docs:conf:user|user file]]
-  * ''dotenv'' - from the [[docs:conf:dotenv|dot env variable file]]
-  * ''project'' - from the [[:docs:project:project-file|project variable file]]
-  * ''os'' - from the OS environment variable
-  * ''sys'' - from the Java System Properties
-
+The ''list'' command of the [[..:attribute:start|attribute module]] lists the [[:docs:conf:global|global attributes]]
 ===== Example =====
 
 By default, the listing shows only the ''internal'', ''user'', ''dotenv'' and ''project'' variables
 
 <unit>
 <code dos>
-tabli variable list
+tabli attribute list
 
 </code>
 <console>
@@ -34,10 +27,10 @@ Internal   user.vars                        C:\Users\gerardnico\conf\variables.y
 
 <unit>
 <code dos>
-tabli variable list -h
+tabli attribute list -h
 </code>
 <console>
-Tabli variable list
+Tabli attribute list
 ===================
 
 List the configurations

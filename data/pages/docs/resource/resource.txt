@@ -39,5 +39,6 @@ A ''resource'' is uniquely located by a [[data_uri|data uri]] and has [[attribut
       * [[json]]
       * [[excel]]
       * [[xml]]
+      * [[yaml]]
 
 

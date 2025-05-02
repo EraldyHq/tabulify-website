@@ -1,0 +1,30 @@
+====== Variables ======
+
+
+===== About =====
+''attribute'' are key pair values that are used to:
+  * configure the behavior of tabulify (known as parameter)
+  * or as [[template|template variable]] 
+
+
+
+
+
+===== Type =====
+There is 2 kinds of attributes:
+  * [[parameter|parameters]]: fixed value
+  * derived: value that is:
+      * computed 
+      * or retrieved from a [[:docs:system:system|system]]
+
+===== Case Independent sensitivity =====
+
+Attribute names are ''case independent'' meaning that all these names are equivalent
+  * ''UserCount / userCount'' - Camel Case
+  * ''user_count / USER_COUNT'' - Snake Case
+  * ''user-count / USER-COUNT'' - Kebab/Hyphen Case
+
+
+Note: we detect the word parts with the letter casing (uppercasing) so the following name are not equivalent:
+  * ''uSerCount'' will normalized to the parts `u`, `ser`, `count`
+  * ''userCount'' will normalized to the parts `user`, `count`

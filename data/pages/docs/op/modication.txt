@@ -15,6 +15,6 @@ The ''data modification operations'' are the [[op|data operations]] that modify 
 
 
 <note tip>
-  * In the data storage world, they are known under the [[datacadamia>CRUD|CRUD acronym (Create/Read/Update/Delete)]]. Read is known as [[print|print]] in ''tabulify''
-  * In the SQL world, the are known as the [[datacadamia>DML operation (Data Manipulation Language)]]
+  * In the data storage world, they are known under the [[kb>CRUD|CRUD acronym (Create/Read/Update/Delete)]]. Read is known as [[print|print]] in ''tabulify''
+  * In the SQL world, the are known as the [[kb>DML operation (Data Manipulation Language)]]
 </note>

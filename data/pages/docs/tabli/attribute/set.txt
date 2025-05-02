@@ -11,20 +11,16 @@
 
 
 ===== About =====
-The ''set'' command of the [[start|variable module]] set a variable value in a [[docs:conf:variable_file|variable file]].
+The ''set'' command of the [[..:attribute:start|attribute module]] set a attribute value in a [[:docs:conf:file|configuration file]]
 
-<note>
-The [[docs:conf:variable_file|variable file]] edited is the file:
-  *  given with the ''%%--vars%%'' [[docs:tabli:global|global option]]
-  * and if not present, the [[docs:conf:variable_file#default|default file]]
-</note>
+
 ===== Example =====
 
 To set the [[docs:common:log|loglevel]] to the ''tip'' value
 
 
 <code dos>
-tabli variable set log-level tip
+tabli attribute set log-level tip
 </code>
 
 
@@ -32,7 +28,7 @@ tabli variable set log-level tip
 
 <unit>
 <code dos>
-tabli variable set -h
+tabli attribute set -h
 </code>
 <console>
 Tabli variable set

@@ -7,18 +7,18 @@
     "page_id": "bv0n23zxipve82u6k4uc0"
 }
 ---
-====== Tabli - Variable Module  ======
+====== Tabli - Attribute Module  ======
 
 
 ===== About =====
-The ''variable'' [[docs:tabli:module|module]] manages the [[docs:conf:variable_file|variable environment]] of [[docs:tabli:tabli|tabli]].
+The ''attribute'' [[docs:tabli:module|module]] manages the [[docs:conf:global|global parameters]] of [[docs:tabli:tabli|tabli]].
 
 ===== Commands =====
 
 ^ Actions ^ Description ^
-| [[list|list]] | Show in a list format all variables |
-| [[delete|delete]] | Delete a variable |
-| [[set|set]] | Set a variable |
+| [[list|list]] | Show in a list format all attribute |
+| [[..:variable:delete|delete]] | Delete a attribute|
+| [[..:variable:set|set]] | Set a attribute |
 
 ===== Syntax =====
 

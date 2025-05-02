@@ -2,7 +2,7 @@
 
 
 ===== About =====
-Os Environment Variables are used to set the value of [[docs:conf:variable|variable]].
+Os Environment Variables are used to set the value of [[docs:conf:attribute|variable]].
 
 
 

@@ -2,7 +2,7 @@
 
 
 ===== About =====
-An ''attribute'' is a ''property'' [[metadata|metadata]] for a [[resource|data resources]].
+A resource ''attribute'' is a [[docs:conf:attribute|attribute]] for a [[resource|data resources]].
 
 
 They may be:
@@ -18,12 +18,7 @@ They may be:
 ===== Management  =====
 
 
-<note>
-Attribute name are ''case-insensitive'' meaning that you can type them as you wish in:
-  * ''UPPERCASE'',
-  * ''lowercase''
-  * or ''CamelCase''.
-</note>
+
 ==== See ====
 
 

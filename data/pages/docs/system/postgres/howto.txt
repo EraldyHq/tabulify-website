@@ -30,7 +30,7 @@ docker run \
 </panel>
 <panel>
    <label>CMD / Powershell</label>
-  * [[docs:common:cmd|CMD/Powershell]]
+  * [[docs:common:shell|CMD/Powershell]]
 <code cmd>
 docker run ^
     -e POSTGRES_PASSWORD=welcome ^

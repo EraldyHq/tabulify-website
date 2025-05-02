@@ -81,7 +81,7 @@ Columns:
     Precision: 4
 </code>
 
-==== Extra Attribute ====
+==== Extra Variables ====
 
 
 Each action may need additional information about a table or a column. This information can be added at each level (table or column) as a attribute (ie property).

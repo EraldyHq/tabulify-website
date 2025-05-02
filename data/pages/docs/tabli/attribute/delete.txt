@@ -11,20 +11,16 @@
 
 
 ===== About =====
-The ''delete'' command of the [[start|variable module]] remove a variable in the [[docs:conf:variable_file|variable file]].
+The ''delete'' command of the [[..:attribute:start|attribute module]] remove a [[:docs:conf:global|global attribute]] in a [[:docs:conf:file|configuration vault]].
 
-<note>
-The [[docs:conf:variable_file|configuration file]] edited is the file:
-  *  given with the ''%%--vars%%'' [[docs:tabli:global|global option]]
-  * and if not present, the [[docs:conf:variable_file#default|default file]]
-</note>
+
 ===== Example =====
 
 To remove the [[docs:common:log|loglevel]]
 
 
 <code dos>
-tabli variable delete log-level
+tabli attribute delete log-level
 </code>
 
 
@@ -32,7 +28,7 @@ tabli variable delete log-level
 
 <unit>
 <code dos>
-tabli variable remove -h
+tabli attribute delete -h
 </code>
 <console>
 Tabli variable

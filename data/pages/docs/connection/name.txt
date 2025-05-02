@@ -1,7 +1,7 @@
 ====== Connection - Name attribute ======
 
 ===== Name =====
-A ''connection name'' is a mandatory [[attribute|connection attribute]] as it's the unique identifier of a [[connection|connection]].
+A ''connection name'' is a mandatory [[variable|connection attribute]] as it's the unique identifier of a [[connection|connection]].
 
 
 ===== Usage =====

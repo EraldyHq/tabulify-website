@@ -17,7 +17,7 @@ To create a ''Sqlite'' connection, you have the following possibilities
 <tabs enclosed-tabs>
 <panel>
 <label>Connection Vault</label>
-In a [[docs:conf:vault|Connection Vault]], to define a sqlite [[docs:connection:connection|connection]] with the name ''mySqlite'', you would write:
+In a [[docs:conf:file|Connection Vault]], to define a sqlite [[docs:connection:connection|connection]] with the name ''mySqlite'', you would write:
 \\
   * On Linux
 <code properties>

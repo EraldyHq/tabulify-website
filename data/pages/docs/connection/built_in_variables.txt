@@ -1,27 +1,32 @@
 ====== Built-in Connection Attributes ======
 
 ===== About =====
-''Built-in Attributes'' are [[attribute|connection attributes]] that modifies the behavior of ''tabulify''. 
+''Built-in Connection Attribute'' are [[attribute|connection attribute]] available to all ''connections''. 
 
 
 
-<note important>
-They are not the native driver connection properties
-
-</note>
 
 ===== List =====
+
+
+==== Parameters ====
 
 ^ Name ^ Description ^
 | ''Comment'' | A connection description |
 | ''User'' | The user |
 | ''Password'' | The password |
-| ''Origin'' | The origin of the connection |
 | ''DateDataType'' | Define the text storage format of a ''Date'' data type (''YYYY-MM-DD'') if not supported by the connection . See [[docs:common:time|Time storage]] | 
 | ''TimestampDataType'' | Define the text storage format of a ''Timestamp'' data type (''YYYY-MM-DD HH:MM:SS'') if not supported by the connection . See [[docs:common:time|Time storage]] |
 | ''TimeDataType'' | Define the text storage format of a ''Time'' data type (''HH:MM:SS'') if not supported by the connection . See [[docs:common:time|Time storage]] |
 | ''BooleanDataType'' | Define the text storage format of a ''Boolean''. See [[docs:common:boolean|boolean]] if not supported by the connection |
 | ''MaxNameInPath'' | The maximum name in a path (for instance, Sqlite supports only one) |
 | ''MaxConcurrentThread'' | The maximum number of concurrent thread for the connection (for instance, Sqlite supports only one) |
+| ''NativeDriver'' | The native driver connection properties |
+
 
 If not defined specifically by the connection type (the system), all others are treated as third connection property.
+
+==== Derived ====
+
+^ Name ^ Description ^
+| ''Origin'' | The origin of the connection (ie [[docs:connection:built-in|built-in]] or user) |

@@ -20,14 +20,19 @@ A ''bucket'' is a ''value'' and its ''chance factor''
 
 Example if you want to simulate that people may work the week-end once every 10 weeks, you will define this bucket list
 <code yaml>
-buckets:
-   Monday: 10
-   Tuesday: 10
-   Wednesday: 10
-   Thursday: 10
-   Friday: 10
-   Saturday: 1
-   Sunday: 1
+Columns:
+  - name: bucket_map
+    type: varchar
+    DataGenerator:
+      type: histogram
+      Buckets:
+        Monday: 10
+        Tuesday: 10
+        Wednesday: 10
+        Thursday: 10
+        Friday: 10
+        Saturday: 1
+        Sunday: 1
 </code>
 
 ===== Data Type =====

@@ -8,4 +8,4 @@ A ''entity column generator''  is a [[column|column data generator]] that can [[
   * or a country
 
 ===== Location =====
-The entity data sets are located in the entity connection.
+The entity data sets are located in the [[:docs:connection:built-in|entity connection]].

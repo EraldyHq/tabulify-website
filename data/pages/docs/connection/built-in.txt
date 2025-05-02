@@ -19,6 +19,7 @@
 ^ Name ^ Description ^
 | [[cd|cd]] | the current directory of the local file system |
 | [[desktop|desktop]] | the user desktop directory of the local file system |
+| ''entity'' | the location of the [[:docs:generator:entity|entity data set]] |
 | [[smtp|smtp]] | the smtp server (local by default) |
 | [[home|home]] | the user home directory of the local file system |
 | ''howto'' | the [[howto|howto files]] (ie files used in the [[howto:howto|howto's]]) |

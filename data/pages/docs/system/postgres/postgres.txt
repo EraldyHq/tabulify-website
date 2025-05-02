@@ -20,7 +20,7 @@ To create a ''Postgres'' connection, you have the following possibilities
 </tabs>
 <tabpanels>
 <tabpanel id="connectionVault" spacing="m-3">
-In a [[docs:conf:vault|Connection Vault]], to define a Oracle [[docs:connection:connection|connection]] with the name ''myPostgres'', you would write:
+In a [[docs:conf:file|Connection Vault]], to define a Oracle [[docs:connection:connection|connection]] with the name ''myPostgres'', you would write:
 \\
 
 <code properties>

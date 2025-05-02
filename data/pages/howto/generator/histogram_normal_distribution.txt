@@ -9,7 +9,7 @@
 ====== Tabulify - How to generate a normal distribution with an histogram generator ======
 
 ===== About =====
-This [[..:howto|how-to]] shows you how to generate data that follows a [[datacadamia>normal_distribution|normal distribution]] with the [[docs:generator:histogram|column histogram generator]].
+This [[..:howto|how-to]] shows you how to generate data that follows a [[kb>normal_distribution|normal distribution]] with the [[docs:generator:histogram|column histogram generator]].
 
 ===== Steps =====
 
