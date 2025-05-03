@@ -29,8 +29,8 @@ You can get the location of the configuration vault with the [[docs:tabli:attrib
 tabli variable list conf
 </code>
 <console>
-key                     value                                       
----------------------   -----------------------------------------   
+key                     value
+---------------------   -----------------------------------------
 conf   C:\Users\gerardnico\.tabli\.tabli.yml
 </console>
 </unit>
@@ -39,7 +39,7 @@ conf   C:\Users\gerardnico\.tabli\.tabli.yml
 
 ===== Cli Command =====
 
-Advanced user will modify the file directly with a text editor but 
+Advanced user will modify the file directly with a text editor but
 for convenience, we provide also:
 
   * the [[docs:tabli:connection:start|Tabli Connection module]]
@@ -63,7 +63,7 @@ You can encrypt any value with [[docs:tabli:vault:encrypt|vault encrypt]]
 
 <code yaml .tabli.yml>
 # List of global attribute
-global:
+globals
   key1: value
   key2: value
 # List of connections

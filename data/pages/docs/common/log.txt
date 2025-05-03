@@ -30,11 +30,11 @@ You can change the log level:
 
   * via the ''log-level'' [[docs:tabli:option|option]].
 <code bash>
-tabli data list --log-level tip 
+tabli data list --log-level tip
 </code>
   * via the [[docs:conf:file|the configuration vault]]
 <code yaml>
-global:
+globals
   log-level: tip
 </code>
   * via the ''log-level'' [[docs:conf:os|]].

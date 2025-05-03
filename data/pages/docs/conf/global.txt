@@ -19,7 +19,7 @@ Global parameters variable are:
 
 
 ===== How to =====
- 
+
 ==== List global variable ====
 
 With the [[docs:tabli:attribute:list|variable list command]]
@@ -36,9 +36,9 @@ TABLI_LOG_LEVEL=warning
 
 === Configuration file ===
 
-Most advanced user may edit the [[docs:conf:file|configuration vault]] manually 
+Most advanced user may edit the [[docs:conf:file|configuration vault]] manually
 <code yaml>
-global:
+globals
   log-level: warning
 </code>
 
@@ -47,4 +47,4 @@ but for convenience, we provide the following cli commands:
   * add, remove variables with:
       * [[docs:tabli:attribute:set]]
       * [[docs:tabli:attribute:delete]]
-  
+
