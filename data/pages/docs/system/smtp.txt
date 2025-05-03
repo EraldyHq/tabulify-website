@@ -14,26 +14,27 @@ The default connection is the [[docs:connection:smtp|smtp connection]].
 
 To create a ''smtp'' connection, you have the following possibilities
 <tabs enclosed-tabs>
-<panel>
-<label>Connection Vault</label>
-In a [[docs:conf:vault|Connection Vault]], to define a smtp [[docs:connection:connection|connection]] with the name ''mySmtp'', you could write:
+<panel selected>
+<label>Configuration Vault</label>
+In a [[docs:conf:vault|Configuration Vault]], to define a smtp [[docs:connection:connection|connection]] with the name ''mySmtp'', you could write:
 \\
 
-<code properties>
-[mySmtp]
-uri = smtp://localhost:587
-user = user
-pwd = secret
-to = foo@tabulify.com; bar@tabulify.com
-to-names = foo; bar
-from = tabulify@server.com
-from-name = tabulify
-tls = true
-auth = true
+<code yaml>
+connections:
+  mySmtp:
+    uri: smtp://localhost:587
+    user: user
+    password: ${TABLI_MY_SMTP_PASSWORD}
+    to: foo@tabulify.com; bar@tabulify.com
+    to-names: foo; bar
+    from: tabulify@server.com
+    from-name: tabulify
+    tls: true
+    auth: true
 </code>
 
 </panel>
-<panel selected>
+<panel>
 <label>Tabli</label>
 
 With the [[docs:tabli:connection:add|tabli add command of the connection module]], adding a smtp connection with the name ''smtpConnectionName'':
@@ -46,4 +47,32 @@ Note that you can add all configuration as query properties of the uri.
 
 </panel>
 </tabs>
+
+===== URI =====
+
+```
+smtp://host[:port]
+```
+## Parameters
+
+You can modify the following [[:docs:conf:parameter|parameters]]
+
+In the URI, the host is mandatory.
+
+
+^ Name ^ Default ^ Description ^
+| PORT | 25 | the smtp port |
+| FROM | user@fqdn | the default `from` address if none is provided |
+| FROM_NAME | user@fqdn | the default name `from` address if none is provided |
+| TO | | the default `to` address if none is provided |
+| TO_NAMES | | the default `names` to address if none is provided |
+| AUTH | false |
+| TLS | false | enable secured communication with TLS |
+| DEBUG | false | toggle for debug statement |
+
+Inherited from [[:docs:connection:built_in_variables|built-in connection attributes]]
+^ Name ^ Default ^ Description ^
+| USER | | the connection user |
+| PASSWORD | | the connection password |
+
 

@@ -2,7 +2,7 @@
 
 
 ===== Project =====
-A ''project'' is a directory where the [[docs:conf:file|configuration vault]] is located.
+A ''project'' is a directory where the [[docs:conf:vault|configuration vault]] is located.
 
 When present, the [[:docs:connection:connection#default|default connection]] is the [[:docs:connection:project|project connection (ie project home)]]
 
