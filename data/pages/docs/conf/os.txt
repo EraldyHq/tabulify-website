@@ -2,14 +2,12 @@
 
 
 ===== About =====
-Os Environment Variables are used to set the value of [[docs:conf:attribute|variable]].
+Os Environment Variables can be used:
+  * to set the value of [[docs:conf:attribute|attribute]].
+  * as [[:docs:conf:template|template value]]
 
 
 
-It search a variable that starts:
-
-  * with ''tabli''
-  * and without
 
 ===== Example =====
 

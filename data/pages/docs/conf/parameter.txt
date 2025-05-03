@@ -1,7 +1,9 @@
 ====== Parameter ======
 
 
-Parameters are [[docs:conf:attribute|attribute]] that you can set to change the behavior of Tabulify
+===== About =====
+
+Parameters are [[docs:conf:attribute|attributes]] that you can set to change the behavior of Tabulify
 
 ===== Parameters Order of Precedence =====
 The same parameter can be found in multiple place, we are taking the configuration with the higher priority.
@@ -9,11 +11,13 @@ The same parameter can be found in multiple place, we are taking the configurati
 Configuration Priority In Descendent Order:
   * [[:docs:tabli:option|Command line options]] (if available)
   * File:
-    * [[file|Configuration Vault]] for:
+    * [[vault|Configuration Vault]] for:
       * [[docs:conf:global|global parameters]]
       * [[docs:connection:attribute|connection parameter]]
     * [[:docs:resource:data-definition|data definition]] for data resource parameters
-  * [[docs:conf:os|Operating System Environment variables]] with the ''TABLI_'' prefix
+  * [[docs:conf:os|Operating System Environment variables]] 
+    * with the ''TABLI_'' prefix for [[:docs:conf:global|global attributes]]
+    * with the ''TABLI_CONNECTION_NAME'' prefix for [[docs:connection:attribute|a connection attribute]]
 
 ===== Secret =====
 A parameter supports any [[docs:conf:secret|ciphered secret]] as value.
