@@ -11,7 +11,7 @@
 
 
 ===== About =====
-The ''set'' command of the [[..:attribute:start|attribute module]] set a attribute value in a [[:docs:conf:file|configuration file]]
+The ''set'' command of the [[..:attribute:start|attribute module]] set a global attribute value in a [[docs:conf:vault|configuration file]]
 
 
 ===== Example =====

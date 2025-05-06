@@ -1,18 +1,19 @@
-====== Global Variable ======
+====== Global Attribute ======
 
 
 
 
 
-This page is about global [[docs:conf:attribute|variables]]
+This page is about global [[docs:conf:attribute|attributes]]
+
 ===== Parameters =====
 
 
-Global parameters variable are:
+Global parameters attribute are:
 
 
-|''LOG_LEVEL'' | the [[:docs:common:log|log level]] |
-| ''CONF'' | the path to the [[docs:conf:file|configuration file]] |
+| ''LOG_LEVEL'' | the [[:docs:common:log|log level]] |
+| ''CONF'' | the path to the [[docs:conf:vault|configuration file]] |
 | ''PROJECT_HOME'' | the [[:docs:connection:project|Project Home path]] |
 |''PASSPHRASE'' | the [[:docs:common:passphrase|vault passphrase]] |
 | ''ENV'' | the [[:docs:common:environment|execution environment]] |
@@ -20,23 +21,23 @@ Global parameters variable are:
 
 ===== How to =====
 
-==== List global variable ====
+==== List global attribute ====
 
-With the [[docs:tabli:attribute:list|variable list command]]
+With the [[docs:tabli:attribute:list|attribute list command]]
 
 ==== Set global parameters ====
 
 === Env ===
-With an [[docs:conf:os|operating system variable]].
+With an [[docs:conf:os|operating system attribute]].
 
 Example:
 <code bash>
-TABLI_LOG_LEVEL=warning
+export TABLI_LOG_LEVEL=warning
 </code>
 
 === Configuration file ===
 
-Most advanced user may edit the [[docs:conf:file|configuration vault]] manually
+Most advanced user may edit the [[docs:conf:vault|configuration vault]] manually
 <code yaml>
 globals
   log-level: warning
@@ -44,7 +45,7 @@ globals
 
 but for convenience, we provide the following cli commands:
 
-  * add, remove variables with:
+  * add, remove attributes with:
       * [[docs:tabli:attribute:set]]
       * [[docs:tabli:attribute:delete]]
 

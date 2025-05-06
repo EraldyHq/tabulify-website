@@ -32,12 +32,12 @@ You can change the log level:
 <code bash>
 tabli data list --log-level tip
 </code>
-  * via the [[docs:conf:file|the configuration vault]]
+  * via the [[docs:conf:vault|the configuration vault]]
 <code yaml>
-globals
+globals:
   log-level: tip
 </code>
-  * via the ''log-level'' [[docs:conf:os|]].
+  * via the ''log-level'' [[docs:conf:os|os environment variable]].
 <code bash>
 export TABLI_LOG_LEVEL=tip
 </code>

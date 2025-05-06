@@ -2,7 +2,7 @@
 
 
 ===== About =====
-''info'' is an action of the [[docs:tabli:connection:start|connection module]] that shows the [[docs:connection:variable|connection attributes]] in a form fashion.
+''info'' is an action of the [[docs:tabli:connection:start|connection module]] that shows the [[docs:connection:attribute|connection attributes]] in a form fashion.
 
 <note tip>If you want to get the result in a tabular format, see the [[list|list]] action</note>
 

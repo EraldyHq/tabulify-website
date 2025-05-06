@@ -2,7 +2,7 @@
 
 
 ===== About =====
-''env'' is a [[docs:conf:variable|variable]] that sets the execution environment (ie in production or not).
+''env'' is a [[docs:conf:attribute|attribute]] that sets the execution environment (ie in production or not).
 
 ===== Built-in =====
 
@@ -32,7 +32,7 @@ tabli --env dev
 <code bash>
 export TABLI_ENV=dev
 </code>
-  * In the [[docs:conf:file|configuration vault]]
+  * In the [[docs:conf:vault|configuration vault]]
 
 
 ===== How to see the environment =====
