@@ -23,12 +23,12 @@ Global parameters attribute are:
 
 ==== List global attribute ====
 
-With the [[docs:tabli:attribute:list|attribute list command]]
+With the [[docs:tabli:env:list|env list command]]
 
 ==== Set global parameters ====
 
 === Env ===
-With an [[docs:conf:os|operating system attribute]].
+With an [[docs:conf:os|operating system environment variable]].
 
 Example:
 <code bash>
@@ -39,13 +39,13 @@ export TABLI_LOG_LEVEL=warning
 
 Most advanced user may edit the [[docs:conf:vault|configuration vault]] manually
 <code yaml>
-globals
+env:
   log-level: warning
 </code>
 
-but for convenience, we provide the following cli commands:
+but for convenience, we provide also the following cli commands:
 
   * add, remove attributes with:
-      * [[docs:tabli:attribute:set]]
-      * [[docs:tabli:attribute:delete]]
+      * [[docs:tabli:env:set]]
+      * [[docs:tabli:env:delete]]
 

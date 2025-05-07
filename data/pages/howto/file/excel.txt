@@ -126,9 +126,9 @@ ERROR StatusLogger Could not register mbeans
 	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
 11:54:16 - INFO - The target data operation (CREATE) was executed against the target (date_dim.xlsx@temp)
 
-Source            Target               Latency (ms)   Row Count   Error   Message   
----------------   ------------------   ------------   ---------   -----   -------   
-date_dim@memgen   date_dim.xlsx@temp   1126           1000                          
+Source            Target               Latency (ms)   Row Count   Error   Message
+---------------   ------------------   ------------   ---------   -----   -------
+date_dim@memgen   date_dim.xlsx@temp   1126           1000
 
 11:54:17 - INFO - Latency Time: 0:0:1.248 (hour:minutes:seconds:milli)
 11:54:17 - INFO -        Ie (1248) milliseconds
@@ -158,7 +158,7 @@ tabli data info date_dim.xlsx@temp
 What is the data of the file with the [[docs:tabli:data:head|data head command]]?
 
 <unit>
-<code dos>
+<code bash>
 tabli data head --limit 30 d_date.xlsx@temp
 </code>
 <console>

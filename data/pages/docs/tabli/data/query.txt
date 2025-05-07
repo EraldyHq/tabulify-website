@@ -9,7 +9,7 @@
 
 ===== Syntax =====
 <unit name="default">
-<code dos>
+<code bash>
 tabli data query --help
 </code>
 <console>
@@ -41,7 +41,7 @@ Examples
         tabli data query (dim*.sql@local)@sqlite
 
 
- 2 - Execute the query written in the file `Query1.sql` against the `sqlite` connection and execute the query written in the file `Query2.sql` against the `oracle` connection
+ 2 - Execute the query written in the file `Query1.sql` against the `sqlite` connection and execute the query written in the file `Query2.sql` against the `oracle` connection 
 
 
         tabli data query (Query1.sql)@sqlite (Query2.sql)@oracle
@@ -72,9 +72,9 @@ where:
 
   Global Options:
 
-    -cf,--conf <path>                                       The path to a configuration file
+    -vf,--conf <path>                                       The path to a configuration file
 
-    -cv,--connection-vault <path>                           The path where the connection vault is located
+    -e,--env <env>                                          The name of the environment
 
     -h,--help                                               Print this help
 
@@ -88,7 +88,11 @@ where:
 
     -oop,--output-transfer-operation <transferOperation>    defines the output transfer operation (insert, update, merge, copy). Default to `copy` for a file system and `insert` for a database.
 
-    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted values
+    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted vault values
+
+    -ph,--project-home <path>                               The project home (default to the .tabli.yml file directory)
+
+    -v,--version                                            Print version information
 </console>
 </unit>
 

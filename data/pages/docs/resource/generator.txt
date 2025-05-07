@@ -46,7 +46,7 @@ You can see it with the [[docs:tabli:data:info|data info command]].
 
 Example with a [[docs:generator:sequence|sequence generator]], you would get the maximum value. For an integer, this is ''2147483647''
 <unit >
-<code dos>
+<code bash>
 tabli data info  generator_count--datagen.yml@howto
 </code>
 <console>

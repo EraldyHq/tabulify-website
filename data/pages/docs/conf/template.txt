@@ -13,9 +13,9 @@ For instance, in:
 
 
 You can see the attributes that you can use:
-  * for a connection with the [[:docs:tabli:connection:info|connection info command]] 
+  * for a connection with the [[:docs:tabli:connection:info|connection info command]]
   * for a resource with the [[docs:tabli:data:info|data info command]]
-  * globally with the [[docs:tabli:attribute:list|attribute list command]]
+  * globally with the [[docs:tabli:env:list|attribute list command]]
 
 
 ===== Example =====

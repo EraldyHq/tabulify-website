@@ -11,14 +11,14 @@ The ''data truncate'' [[docs:tabli:command|command]] of the [[start|data module]
 
 
 <unit>
-<code dos>
+<code bash>
 tabli data truncate --help
 </code>
 <console>
 Tabli data truncate
 ===================
 
-Truncate data resources(s) - ie remove all records/content from a data resource
+Truncate data resources(s) - ie remove all records/content from data resources
 
 
 
@@ -78,9 +78,9 @@ where:
 
   Global Options:
 
-    -cf,--conf <path>                                       The path to a configuration file
+    -vf,--conf <path>                                       The path to a configuration file
 
-    -cv,--connection-vault <path>                           The path where the connection vault is located
+    -e,--env <env>                                          The name of the environment
 
     -h,--help                                               Print this help
 
@@ -94,6 +94,10 @@ where:
 
     -oop,--output-transfer-operation <transferOperation>    defines the output transfer operation (insert, update, merge, copy). Default to `copy` for a file system and `insert` for a database.
 
-    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted values
+    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted vault values
+
+    -ph,--project-home <path>                               The project home (default to the .tabli.yml file directory)
+
+    -v,--version                                            Print version information
 </console>
 </unit>

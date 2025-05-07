@@ -9,7 +9,7 @@
 ===== See =====
 ''tabli'' is able to detect your home. You can see it with the [[docs:tabli:variable:list|conf list]] command
 
-<code dos>
+<code bash>
 tabli conf list home.path
 </code>
 <file>

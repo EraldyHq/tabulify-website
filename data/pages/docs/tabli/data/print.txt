@@ -18,7 +18,7 @@ This command is useful to print content of [[docs:resource:resource|data resourc
 ===== Syntax =====
 
 <unit>
-<code dos>
+<code bash>
 tabli data print -h
 </code>
 <console>
@@ -63,37 +63,50 @@ where:
 
   Arguments:
 
-    <data-selector...>                                      One or more data or script selectors
+    <data-selector...>                                         One or more data or script selectors
 
 
   Data Definition Options:
 
-    -a,--attribute <attributeName=value>                    Set specific data resource attributes
+    -a,--attribute <attributeName=value>                       Set specific data resource attributes
+
+
+  Options:
+
+    --is-strict <value>                                        If set the selection will return an error if no data resources have been selected
+
+    -t,--type <mediaType|mimeType|extensionFile>               The type of the resource
+
+    -vc,--virtual-column <columnName=resourceAttributeName>    Add a virtual column with the value of a data resource attribute
 
 
   Selection Options:
 
-    -wd,--with-dependencies                                 If set, the dependencies will be also selected
+    -wd,--with-dependencies                                    If set, the dependencies will be also selected
 
 
   Global Options:
 
-    -cf,--conf <path>                                       The path to a configuration file
+    -vf,--conf <path>                                          The path to a configuration file
 
-    -cv,--connection-vault <path>                           The path where the connection vault is located
+    -e,--env <env>                                             The name of the environment
 
-    -h,--help                                               Print this help
+    -h,--help                                                  Print this help
 
-    -l,--log-level <error|warning|tip|info|fine>            Set the log level
+    -l,--log-level <error|warning|tip|info|fine>               Set the log level
 
-    -ns,--not-strict                                        A minor error will not stop the process.
+    -ns,--not-strict                                           A minor error will not stop the process.
 
-    -odu,--output-data-uri <outputDataUri>                  defines the output data uri for the feedback data (default: console)
+    -odu,--output-data-uri <outputDataUri>                     defines the output data uri for the feedback data (default: console)
 
-    -oo,--output-operation <dataOperation>                  defines the data operations (replace, truncate) on an existing output resource before transfer.
+    -oo,--output-operation <dataOperation>                     defines the data operations (replace, truncate) on an existing output resource before transfer.
 
-    -oop,--output-transfer-operation <transferOperation>    defines the output transfer operation (insert, update, merge, copy). Default to `copy` for a file system and `insert` for a database.
+    -oop,--output-transfer-operation <transferOperation>       defines the output transfer operation (insert, update, merge, copy). Default to `copy` for a file system and `insert` for a database.
 
-    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted values
+    -pp,--passphrase <passphrase>                              A passphrase (master password) to decrypt the encrypted vault values
+
+    -ph,--project-home <path>                                  The project home (default to the .tabli.yml file directory)
+
+    -v,--version                                               Print version information
 </console>
 </unit>

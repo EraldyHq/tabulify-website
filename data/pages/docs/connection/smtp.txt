@@ -15,9 +15,9 @@ It defaults to the local smtp server as you can see with the [[docs:tabli:connec
 tabli connection list smtp
 </code>
 <console>
-Name    Uri
------   ------------------------------------------------------------
-smtp    smtp://localhost:25
+NAME   URI                
+----   ----------------   
+smtp   smtp://localhost
 </console>
 </unit>
 

@@ -21,7 +21,7 @@ Therefore, this is mandatory to use the [[docs:op:fill|fill operation]]
 ==== Prerequisites ====
   * [[howto:getting_started:1_install|A Tabulify Installation]]
 <unit display="none">
-<code dos>
+<code bash>
 tabli data drop --not-strict date_dim.csv@temp
 </code>
 </unit>
@@ -91,7 +91,7 @@ Columns:
 
 The below [[docs:tabli:data:fill|data fill]] command will create a [[docs:resource:csv|CSV file]] named ''d_date.csv'' in the [[docs:connection:temp|temporary directory]].
 <unit >
-<code dos>
+<code bash>
 tabli data fill --generator-selector date_dim--datagen.yml@howto date_dim.csv@temp
 </code>
 <console>
@@ -105,7 +105,7 @@ date_dim@memgen   date_dim.csv@temp   6119           1000
 
 What is the data of the CSV file with the [[docs:tabli:data:head|data head command]]?
 <unit >
-<code dos>
+<code bash>
 tabli data head --limit 30 d_date.csv@temp
 </code>
 <console>

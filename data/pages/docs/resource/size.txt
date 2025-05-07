@@ -9,7 +9,7 @@
 
 With the [[docs:connection:howto|howto file]] ''characters.csv'' and the [[docs:tabli:data:list|data list command]]
 <unit>
-<code dos>
+<code bash>
 tabli data list --attribute size characters.csv@howto
 </code>
 <console>

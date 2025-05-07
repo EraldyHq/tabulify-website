@@ -27,7 +27,7 @@ tabli data head --type text xml/relation.xml@howto
 With the [[docs:tabli:data:info|tabli data info]] command, we can see that a [[csv|csv file]] has the type ''text/csv''.
 
 <unit>
-<code dos>
+<code bash>
 tabli data info characters.csv@howto
 </code>
 <console>

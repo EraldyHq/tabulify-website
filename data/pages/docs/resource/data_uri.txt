@@ -41,7 +41,7 @@ where:
 As a ''data uri'' is a [[attribute|data resource attribute]], you can see it with the [[docs:tabli:data:info|data info command]]
 
 <unit>
-<code dos>
+<code bash>
 tabli data info characters.csv@howto
 </code>
 <console>

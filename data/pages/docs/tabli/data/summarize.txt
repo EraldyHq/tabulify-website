@@ -13,14 +13,14 @@ You got the following summaries:
 The important notions for this command are the [[docs:resource:data_selector|data selector]] that helps you [[howto:getting_started:4_select_data_resources|select data resources]]
 
 <unit>
-<code dos>
+<code bash>
 tabli data summarize --help
 </code>
 <console>
-Tabli data count
-================
+Tabli data
+==========
 
-Count the number of data resources
+Data operations against data resources (table, file, ...).
 
 
 
@@ -28,41 +28,62 @@ Syntax
 ------
 
 
-    tabli data count [options|flags] <data-selector...>
+    tabli data <command> [-h,--help]
 
 
 where:
 
 
-  Arguments:
+  Commands:
 
-    <data-selector...>                                      One or more data or script selectors
+    copy          Copy a data resource
+
+    create        Create a data resource
+
+    delete        Delete data from a data resource
+
+    dependency    Show the data dependencies
+
+    diff          Perform a diff operation against two data resources
+
+    drop          Drop data resources
+
+    fill          Fill a data resource with generated data
+
+    head          Print the first content of data resources
+
+    info          Show the attributes of a data resource in a form fashion
+
+    insert        Insert data into a data resource
+
+    list          List data resources
+
+    move          Move a data resource
+
+    print         Print the content of data resources
+
+    query         Test load your system with queries and fetch data resources (ie query, view, ...)
+
+    structure     Show the data structure of data resources
+
+    summary       Count the number of data resources
+
+    tail          Print the last content of data resources
+
+    template      Create data resources from a template and a data source
+
+    transfer      Transfer a data resource (insert, update, delete, upsert, merge, move, copy)
+
+    truncate      Truncate data resources
+
+    update        Update data from a data resource
+
+    upsert        Merge data into a data resource
 
 
-  Selection Options:
+  Option:
 
-    -wd,--with-dependencies                                 If set, the dependencies will be also selected
-
-
-  Global Options:
-
-    -cf,--conf <path>                                       The path to a configuration file
-
-    -cv,--connection-vault <path>                           The path where the connection vault is located
-
-    -h,--help                                               Print this help
-
-    -l,--log-level <error|warning|tip|info|fine>            Set the log level
-
-    -ns,--not-strict                                        A minor error will not stop the process.
-
-    -odu,--output-data-uri <outputDataUri>                  defines the output data uri for the feedback data (default: console)
-
-    -oo,--output-operation <dataOperation>                  defines the data operations (replace, truncate) on an existing output resource before transfer.
-
-    -oop,--output-transfer-operation <transferOperation>    defines the output transfer operation (insert, update, merge, copy). Default to `copy` for a file system and `insert` for a database.
-
-    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted values
+    -h,--help     Print this help
 </console>
 </unit>
 

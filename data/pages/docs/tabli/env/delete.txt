@@ -1,35 +1,50 @@
-====== Tabli - Connection List Command ======
+---json
+{
+    "aliases": [
+        { "path": ":docs:tabli:conf:delete" }
+    ],
+    "low_quality_page": "false",
+    "page_id": "rt2fbt1z1xtnqhmbqvdib"
+}
+---
+====== Tabli - Env Delete Command  ======
 
 
 ===== About =====
-''list'' is an [[docs:tabli:command|command]] of the [[docs:tabli:connection:start|connection module]] that shows the [[docs:connection:connection|connections]] ([[docs:connection:built-in|built-in]] and of the [[docs:conf:vault|connection vault]]).
+The ''delete'' command of the [[..:env:start|env module]] remove a [[:docs:conf:global|global attribute]] in a [[docs:conf:vault|configuration vault]].
 
 
-<note>
-For examples on how to list connections, see [[howto:tabli:connection_list|How to list connections]]
-</note>
+===== Example =====
+
+To remove the [[docs:common:log|loglevel]]
+
+
+<code bash>
+tabli env delete log-level
+</code>
 
 
 ===== Syntax =====
+
 <unit>
 <code bash>
-tabli connection list --help
+tabli env delete -h
 </code>
 <console>
-Tabli connection list
-=====================
+Tabli env delete
+================
 
-List the connections attributes in a tabular format
+Delete a tabulify attribute from the conf file
 
 
 
 Example
 -------
 
- 1 - List all connections that starts with `sql` and add the `name` and `user` connection attributes to the output
+ 1 - To remove the `log-level` attribute, you would use the following command:
 
 
-    tabli connection list --attribute name --attribute user sql*
+    tabli env delete log-level
 
 
 
@@ -38,7 +53,7 @@ Syntax
 ------
 
 
-    tabli connection list [options|flags] <name-selector...>
+    tabli env delete <key>
 
 
 where:
@@ -46,12 +61,7 @@ where:
 
   Arguments:
 
-    <name-selector...>                                      One ore several glob pattern that select connections by name
-
-
-  Data Definition Options:
-
-    -a,--attribute <value>                                  A connection attribute to add to the output
+    <key>                                                   The attribute to delete (globbing works too)
 
 
   Global Options:

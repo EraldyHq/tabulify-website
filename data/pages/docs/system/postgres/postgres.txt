@@ -42,7 +42,7 @@ With the [[docs:tabli:connection:add|tabli add command of the connection module]
 
   * With the Windows CMD console
 
-<code dos>
+<code bash>
 tabli connection add "postgresConnectionName" "jdbc:postgresql://[host]:[port]/[database]" ^
     --user login ^
     --password password

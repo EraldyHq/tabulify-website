@@ -62,7 +62,7 @@ Columns:
 
 With the [[docs:tabli:data:print|data print command]], we can print the ''values'' generated.
 <unit>
-<code dos>
+<code bash>
 tabli data print sequence_time--datagen.yml@howto
 </code>
 <note tip>

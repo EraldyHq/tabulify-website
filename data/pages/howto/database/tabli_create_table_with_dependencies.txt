@@ -34,7 +34,7 @@ The trick to copy a star/snowflake schema is:
 
 <unit display="none">
 Delete the target destination
-<code dos>
+<code bash>
 tabli data drop --not-strict *@sqlite
 </code>
 </unit>
@@ -46,7 +46,7 @@ The below command will [[docs:op:create|create]]:
   * into the [[docs:connection:default|Sqlite Howto connection]] with the prefix ''tpc_'' using [[docs:resource:target_uri|wildcard back referencing in the target]]
   * with the [[docs:tabli:data:create|tabli data create]] command.
 <unit>
-<code dos>
+<code bash>
 tabli data create --with-dependencies store_sales@tpcds tpc_$0@sqlite
 </code>
 <console>
@@ -73,7 +73,7 @@ tpc_time_dim@sqlite
 With the [[docs:tabli:data:list|tabli data list]] command, we can list the tables created with the ''tpc'' prefix.
 
 <unit>
-<code dos>
+<code bash>
 tabli data list -a name -a count tpc*@sqlite
 </code>
 <console>

@@ -45,14 +45,14 @@ where:
 
 Example:
 <unit>
-<code dos>
+<code bash>
 tabli data list *sales@tpcds
 </code>
 <console>
-PATH            
--------------   
-catalog_sales   
-store_sales     
+PATH
+-------------
+catalog_sales
+store_sales
 web_sales
 </console>
 </unit>
@@ -63,59 +63,59 @@ A question mark, ''?'', matches exactly one character.
 Example:
   * ''????'' - Matches all data resources with exactly four letters or digits
 <unit>
-<code dos>
+<code bash>
 tabli data list ????@tpcds
 </code>
 <console>
-PATH   
-----   
+PATH
+----
 item
 </console>
 </unit>
   * ''w?*sales'' - Matches any string beginning with ''w'', followed by at least one letter or digit, and ending with ''sales''
 <unit>
-<code dos>
+<code bash>
 tabli data list w?*sales@tpcds
 </code>
 <console>
-PATH        
----------   
+PATH
+---------
 web_sales
 </console>
 </unit>
 
 ==== Braces ====
 
-''Braces {}'' specify a collection of subpatterns. 
+''Braces {}'' specify a collection of subpatterns.
 
 For example:
 
   * ''{item,store}'' matches ''item'' or ''store''
 <unit>
-<code dos>
+<code bash>
 tabli data list {item,store}@tpcds
 </code>
 <console>
-PATH    
------   
-item    
+PATH
+-----
+item
 store
 </console>
 </unit>
   * ''{web*,store*}'' matches all [[docs:resource:resource|data resource]] names that begins with ''web'' or ''store''.
 <unit>
-<code dos>
+<code bash>
 tabli data list {web*,store*}@tpcds
 </code>
 <console>
-PATH            
--------------   
-store           
-store_returns   
-store_sales     
-web_page        
-web_returns     
-web_sales       
+PATH
+-------------
+store
+store_returns
+store_sales
+web_page
+web_returns
+web_sales
 web_site
 </console>
 </unit>
@@ -123,7 +123,7 @@ web_site
 ==== Square brackets ====
 
 ''Square brackets []'' convey:
-  * a set of single characters 
+  * a set of single characters
   * or a range of characters when the hyphen character (-) is used
 that matches a single character.
 Within the square brackets, the wildcard ''*'', ''?'', and ''\'' match themselves.
@@ -139,24 +139,24 @@ Example:
 Example:
   * all data resource that  does not have a ''wy'' in their name
 <unit>
-<code dos>
+<code bash>
 tabli data list *[wy]*@tpcds
 </code>
 <console>
-PATH                   
---------------------   
-inventory              
-s_inventory            
-s_warehouse            
-s_web_order            
-s_web_order_lineitem   
-s_web_page             
-s_web_returns          
-s_web_site             
-warehouse              
-web_page               
-web_returns            
-web_sales              
+PATH
+--------------------
+inventory
+s_inventory
+s_warehouse
+s_web_order
+s_web_order_lineitem
+s_web_page
+s_web_returns
+s_web_site
+warehouse
+web_page
+web_returns
+web_sales
 web_site
 </console>
 </unit>
@@ -167,14 +167,14 @@ You can also search [[docs:resource:container|container]] such as [[docs:resourc
 
 For instance, the below patter will search the file that starts with ''RE'' in the current directory and all sub-directories of the [[docs:connection:howto|howto connection directory]]
 <unit>
-<code dos>
+<code bash>
 tabli data list **/RE*@howto
 </code>
   * And there is two ''README.md'' files found that match the pattern
 <console>
-PATH                  
--------------------   
-README.md             
+PATH
+-------------------
+README.md
 recursive\README.md
 </console>
 </unit>

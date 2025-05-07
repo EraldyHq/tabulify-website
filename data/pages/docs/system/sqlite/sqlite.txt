@@ -40,11 +40,11 @@ With the [[docs:tabli:connection:add|tabli add command of the connection module]
 
 
   * On Windows
-<code dos>
+<code bash>
 tabli connection add "sqliteConnectionName" "jdbc:sqlite:C:/work/mydatabase.db"
 </code>
   * On Linux
-<code dos>
+<code bash>
 tabli connection add "sqliteConnectionName" "jdbc:sqlite:/home/leo/work/mydatabase.db"
 </code>
 

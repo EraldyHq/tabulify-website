@@ -84,7 +84,7 @@ Columns:
 
 With the [[docs:tabli:data:print|data print command]], we can print the ''14 values'' generated.
 <unit>
-<code dos>
+<code bash>
 tabli data print sequence_number--datagen.yml@howto
 </code>
 <note tip>

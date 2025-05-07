@@ -84,7 +84,7 @@ Columns:
 
 With the [[docs:tabli:data:print|data print command]], we can print the ''30 values'' generated.
 <unit>
-<code dos>
+<code bash>
 tabli data print histogram_normal_distribution--datagen.yml@howto
 </code>
 <note tip>

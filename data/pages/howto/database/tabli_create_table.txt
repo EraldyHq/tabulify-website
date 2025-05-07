@@ -30,7 +30,7 @@ You should have ''Tabulify'' installed on your computer.
 
 <unit display="none">
 Delete the target destination
-<code dos>
+<code bash>
 tabli data drop --not-strict *@sqlite
 </code>
 </unit>
@@ -40,7 +40,7 @@ The below command will create:
   * from the data definition of the [[docs:system:tpcds|tpcds]] ''store_sales'' table
   * with the [[docs:tabli:data:create|tabli data create]] command.
 <unit>
-<code dos>
+<code bash>
 tabli data create store_sales@tpcds tpcds_sales@sqlite
 </code>
 <note tip>
@@ -60,7 +60,7 @@ tpcds_sales@sqlite
 
 Check the metadata with the [[docs:tabli:data:struct|tabli data meta]] command
 <unit>
-<code dos>
+<code bash>
 tabli data struct tpcds_sales@sqlite
 </code>
 <console>

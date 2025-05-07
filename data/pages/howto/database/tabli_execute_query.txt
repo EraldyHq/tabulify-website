@@ -27,7 +27,7 @@ The file containing this query is located below the [[docs:connection:tpcds_quer
 To get the absolute path and other information, you can use the [[docs:tabli:data:info|data info]]. Example:
 
 <unit>
-<code dos>
+<code bash>
 tabli data info sqlite/query_11.sql@tpcds_query
 </code>
 <console>
@@ -52,7 +52,7 @@ Type           text/plain
 This query shows customers that have generated growing sales from one year to another in the ''s'' and ''w'' sales type. Below is an excerpt.
 
 <unit>
-<code dos>
+<code bash>
 tabli data head --limit 20 sqlite/query_11.sql@tpcds_query
 </code>
 <console>
@@ -84,13 +84,13 @@ with year_total as (
 
 To prevent any conflict, you can execute the below command to drop all tables from the [[docs:connection:howtos|sqlite howto connection]]
 <unit>
-<code dos>
+<code bash>
 tabli data drop *@sqlite
 </code>
 </unit>
 Loading the data with the [[docs:tabli:data:transfer|transfer command]]. The ''query_11'' is a sales query, we are then loading the ''sales'' data and their [[docs:resource:dependency|dependencies]]
 <unit>
-<code dos>
+<code bash>
 tabli data transfer --with-dependencies *sales@tpcds @sqlite
 </code>
 where:
@@ -140,7 +140,7 @@ A ''query data uri'' can be used with all [[docs:tabli:data:start|command]].
 
 Example with the [[docs:tabli:data:print|data print]] command.
 <unit>
-<code dos db_query_execute.cmd>
+<code bash db_query_execute.cmd>
 tabli data print (sqlite/query_11.sql@tpcds_query)@sqlite
 </code>
 <console>

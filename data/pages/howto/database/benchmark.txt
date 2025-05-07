@@ -24,7 +24,7 @@ For the purpose of this howto, we will use the [[docs:connection:howtos|Sqlite h
 
 To be sure to start in a clean schema, the below [[docs:tabli:data:drop|data drop command]] will [[docs:op:drop|drop]] all [[docs:resource:table|tables]] in the [[docs:connection:howtos|Sqlite howto connection]]
 <unit>
-<code dos>
+<code bash>
 tabli data drop *@sqlite
 </code>
 </unit>
@@ -34,7 +34,7 @@ tabli data drop *@sqlite
 
 With the [[docs:tabli:data:copy|data copy command]], we will [[docs:op:copy|copy]] the [[docs:system:tpcds#store_sales|TPCDS store schema]] into the [[docs:connection:howtos|Sqlite howto connection]].
 <unit>
-<code dos>
+<code bash>
 tabli data copy --with-dependencies store*@tpcds @sqlite
 </code>
 <console>
@@ -58,7 +58,7 @@ time_dim@tpcds                 time_dim@sqlite                 1218           86
 
 <note>
 We copy only the store star schema to make it quicker but you can try to load all the ''TPC-DS'' data
-<code dos>
+<code bash>
 tabli data copy --with-dependencies store*@tpcds @sqlite
 </code>
 </note>
@@ -68,7 +68,7 @@ tabli data copy --with-dependencies store*@tpcds @sqlite
 
 The below [[docs:tabli:data:query|data query command]] will select all ''Tpcds'' queries located in the [[docs:connection:tpcds_query|tpcds-query connection]] below the ''sqlite'' directory and run them.
 <unit>
-<code dos>
+<code bash>
 tabli data query --not-strict (sqlite/query_*.sql@tpcds_query)@sqlite
 </code>
 The output gives you latency data that you can then analyse.

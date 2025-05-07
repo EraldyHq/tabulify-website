@@ -25,7 +25,7 @@ You should have ''Tabulify'' installed on your computer: [[howto:getting_started
 
 <unit display="none">
 Delete the target destination
-<code dos>
+<code bash>
 tabli data drop --not-strict *@sqlite
 </code>
 </unit>
@@ -49,7 +49,7 @@ With the [[docs:tabli:data:create|tabli data create]] command, if you use a [[do
 
 To execute the previous SQL script, the below the command should be executed:
 <unit>
-<code dos>
+<code bash>
 tabli data create (create_foo.sql@howto)@sqlite
 </code>
 where:
@@ -57,8 +57,8 @@ where:
   * ''(create_foo.sql@howto)@sqlite'' is a [[docs:resource:script_selector|script selector]] that select the ''create_foo.sql'' in the [[docs:connection:howto|howto]] connection and executes it in the [[docs:connection:howtos|Sqlite howtos connection]]
 <console>
 The list of create script data resources executed:
-uri                             
------------------------------   
+uri
+-----------------------------
 (create_foo.sql@howto)@sqlite
 </console>
 </unit>
@@ -69,12 +69,12 @@ uri
 
 Check the metadata with the [[docs:tabli:data:struct|tabli data meta]] command
 <unit>
-<code dos>
+<code bash>
 tabli data struct foo@sqlite
 </code>
 <console>
-Position   Column Name   Data Type   Primary Key   Not Null   Auto Increment   Description   
---------   -----------   ---------   -----------   --------   --------------   -----------   
+Position   Column Name   Data Type   Primary Key   Not Null   Auto Increment   Description
+--------   -----------   ---------   -----------   --------   --------------   -----------
 1          bar           integer                   x          false
 </console>
 </unit>

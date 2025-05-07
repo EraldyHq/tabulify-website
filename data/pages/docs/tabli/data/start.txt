@@ -6,7 +6,7 @@ The ''tabli'' ''data'' [[docs:tabli:module|module]] helps you to perform [[docs:
 
 ===== Command =====
   * [[summarize|summarize]] - summarize a list of data resources (count, size, ...)
-  * [[create|create]] - create a resource definition (table, ...) 
+  * [[create|create]] - create a resource definition (table, ...)
   * [[dep|dependency]] - show the data dependencies
   * [[compare|diff]] - perform a diff operation between two data resources
   * [[drop|drop]] - drop data resources (table, file, ...)
@@ -24,7 +24,7 @@ The ''tabli'' ''data'' [[docs:tabli:module|module]] helps you to perform [[docs:
 ===== Syntax =====
 
 <unit>
-<code dos>
+<code bash>
 tabli data --help
 </code>
 <console>
@@ -47,17 +47,15 @@ where:
 
   Commands:
 
-    compare       Perform a diff operation against two data resources
-
     copy          Copy a data resource
-
-    count         Count the number of data resources
 
     create        Create a data resource
 
     delete        Delete data from a data resource
 
     dependency    Show the data dependencies
+
+    diff          Perform a diff operation against two data resources
 
     drop          Drop data resources
 
@@ -79,7 +77,11 @@ where:
 
     structure     Show the data structure of data resources
 
+    summary       Count the number of data resources
+
     tail          Print the last content of data resources
+
+    template      Create data resources from a template and a data source
 
     transfer      Transfer a data resource (insert, update, delete, upsert, merge, move, copy)
 

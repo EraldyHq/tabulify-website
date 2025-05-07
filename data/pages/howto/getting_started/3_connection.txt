@@ -32,7 +32,7 @@ In this ''learning guide'', we used mostly:
 You can see the full list with the [[docs:tabli:connection:list|connection list]] command.
 
 <unit>
-<code dos>
+<code bash>
 tabli connection list
 </code>
 <console>

@@ -29,7 +29,7 @@ A [[docs:common:globbing|glob pattern]] permits to define the ''name'' or the ''
 
 For instance, with the [[docs:system:tpcds|internal TPC-DS data store]], the below [[docs:tabli:data:list|list command]] will select all [[docs:resource:table|tables]] that ends with the term ''sales'' because the ''*'' character matches all characters.
 <unit>
-<code dos>
+<code bash>
 tabli data list *sales@tpcds
 </code>
 where:
@@ -63,7 +63,7 @@ That's why ''Tabulify'' offers the  ''%%--with-dependencies%%'' [[docs:tabli:fla
 
 Example: All ''tables'' that have a name that ends with ''sales'' in the [[docs:system:tpcds|tpcds system]] and their [[docs:resource:dependency|dependent tables]]
 <unit>
-<code dos>
+<code bash>
 tabli data list --with-dependencies *sales@tpcds
 </code>
 
@@ -97,7 +97,7 @@ The connection part of a [[docs:resource:data_selector|data selector]] is not ma
 
 Therefore, performing the [[docs:tabli:data:list|list command]] with a [[docs:resource:data_selector|data selector]] without ''connection'' will give you a list of the file in your current directory.
 
-<code dos>
+<code bash>
 tabli data list *
 </code>
 <console>

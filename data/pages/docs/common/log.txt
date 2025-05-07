@@ -34,7 +34,7 @@ tabli data list --log-level tip
 </code>
   * via the [[docs:conf:vault|the configuration vault]]
 <code yaml>
-globals:
+env:
   log-level: tip
 </code>
   * via the ''log-level'' [[docs:conf:os|os environment variable]].

@@ -2,7 +2,7 @@
 
 
 ===== Tabli =====
-To learn ''Tabulify'', you need to install the [[docs:tabli:tabli|Tabli command line tool]]. 
+To learn ''Tabulify'', you need to install the [[docs:tabli:tabli|Tabli command line tool]].
 
 This pages will guide you through the installation steps.
 
@@ -36,7 +36,7 @@ If this is not the case, you can download it and install it at the [[https://www
 Create a directory called the [[docs:tabli:home|Tabulify Home]] where you will unzip the content of the installation file. <inote>A path without space is recommended</inote>
 
   * Windows
-<code dos>
+<code bash>
 :: Below c:\tabulify is the Tabulify Home.
 mkdir c:\tabulify
 </code>
@@ -59,8 +59,8 @@ You need to [[https://tabulify.com/tabulify.zip]] download the zipped file for y
 Unzip the downloaded file into the [[docs:tabli:home|Tabulify Home]]
 
 At the command line:
-  * Windows 
-<code dos>
+  * Windows
+<code bash>
 unzip tabulify.zip -d c:\tabulify
 </code>
   * Linux
@@ -70,11 +70,11 @@ unzip tabulify.zip -d /opt/tabulify
 ==== Symlink ====
 
   * Optionally, create a symlink into your bin directory to be able to call [[docs:tabli:tabli|Tabulify]] from everywhere.
-<code dos>
+<code bash>
 mklink c:\tabulify\tabli.cmd %USERPROFILE%\bin\tabli.cmd
 </code>
   * This local ''bin'' directory should be added to the ''PATH'' environment variable.
-<code dos>
+<code bash>
 setx PATH=%PATH%,%USERPROFILE%\bin
 </code>
 
@@ -86,7 +86,7 @@ If you can call the ''tabli'' command line, your installation is validated.
   * Open a console
   * Call [[docs:tabli:tabli|tabli]] with the ''help'' option
 <unit>
-<code dos>
+<code bash>
 tabli --help
 :: or if you didn't have the directory in your PATH environment variable
 :: TABULIFY_HOME\tabli.cmd --help

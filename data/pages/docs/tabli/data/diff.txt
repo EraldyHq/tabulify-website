@@ -19,12 +19,12 @@ Howto : [[howto:getting_started:10_resource_comparison]]
 
 
 <unit>
-<code dos>
+<code bash>
 tabli data diff -h
 </code>
 <console>
-Tabli data compare
-==================
+Tabli data diff
+===============
 
 Performs a comparison (diff) between data resources.
 
@@ -40,26 +40,26 @@ By default, this is
   * the record id (ie row id, line id) for a data comparison
   * the column name for a data structure comparison
 
-With the `--report-level` option, you can control the output:
-  * `resource` will return a data comparison reported resource by resource (default),
-  * `record` will return a data comparison reported record by record (A diff),
-  * `all` will return them both
+With the `--report-level` option, you can control the output: 
+  * `RESOURCE` will return a data comparison reported resource by resource (default), 
+  * `RECORD` will return a data comparison reported record by record (A diff),
+  * `ALL` will return them both
 
-With the `--data-source` option, you can control the compared data:
-  * `content` will perform a comparison on the content of the data resource,
-  * `content` will perform a comparison on the structure of the data resource (by attribute name)
-  * `attribute` will perform a comparison on the attributes of the data resource (by attribute key)
+With the `--data-source` option, you can control the compared data: 
+  * `CONTENT` will perform a comparison on the content of the data resource, 
+  * `STRUCTURE` will perform a comparison on the structure of the data resource (by attribute name) 
+  * `ATTRIBUTE` will perform a comparison on the attributes of the data resource (by attribute key) 
 
 Exit:
 If there is a non-equality (ie a diff), the process will exist with an error status.
 
 Data Comparison Row by Row Report:
 The row by row report adds the following columns:
-  * `comp_id`: a row id of the comparison report
-  * `comp_origin `: the origin of the record (the source, the target or both)
-  * `comp_comment`: a high level comment that explains the difference
-  * `comp_diff_id`: the id of a difference - not null if a difference has been seen. Two records with the same diff id have been compared
-  * `comp_origin_id`: the record id if the comparison can not determine an unique column
+  * `COMP_ID`: a row id of the comparison report
+  * `COMP_ORIGIN `: the origin of the record (the source, the target or both)
+  * `COMP_COMMENT`: a high level comment that explains the difference
+  * `COMP_DIFF_ID`: the id of a difference - not null if a difference has been seen. Two records with the same diff id have been compared
+  * `COMP_ORIGIN_ID`: the record id if the comparison can not determine an unique column
 
 
 
@@ -69,13 +69,13 @@ Examples
  1 - Data comparison between two different queries:
 
 
-    tabli data compare (queryFile1.sql)@sqlite (queryFile2.sql)@sqlite
+    tabli data diff (queryFile1.sql)@sqlite (queryFile2.sql)@sqlite
 
 
  2 - Data comparison between a query and a table on two different systems
 
 
-    tabli data compare (queryFile.sql)@sqlite table@postgres
+    tabli data diff (queryFile.sql)@sqlite table@postgres
 
 
 
@@ -84,7 +84,7 @@ Syntax
 ------
 
 
-    tabli data compare [options|flags] <source-selector> <target-data-uri>
+    tabli data diff [options|flags] <source-selector> <target-data-uri>
 
 
 where:
@@ -99,9 +99,9 @@ where:
 
   Options:
 
-    -ds,--data-source <content|structure>                   Set the origin of data to use for the comparison
+    -ds,--data-source <CONTENT|STRUCTURE|ATTRIBUTE>         Set the origin of data to use for the comparison
 
-    -rl,--report-level <resource|record|all>                Set the report level returned
+    -rl,--report-level <RESOURCE|RECORD|ALL>                Set the report level returned
 
     --unique-column <columnName>                            The unique column name of the data resource (Default to record id for data comparison and to `name` for a structure comparison)
 
@@ -120,9 +120,9 @@ where:
 
   Global Options:
 
-    -cf,--conf <path>                                       The path to a configuration file
+    -vf,--conf <path>                                       The path to a configuration file
 
-    -cv,--connection-vault <path>                           The path where the connection vault is located
+    -e,--env <env>                                          The name of the environment
 
     -h,--help                                               Print this help
 
@@ -136,6 +136,10 @@ where:
 
     -oop,--output-transfer-operation <transferOperation>    defines the output transfer operation (insert, update, merge, copy). Default to `copy` for a file system and `insert` for a database.
 
-    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted values
+    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted vault values
+
+    -ph,--project-home <path>                               The project home (default to the .tabli.yml file directory)
+
+    -v,--version                                            Print version information
 </console>
 </unit>

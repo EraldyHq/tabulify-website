@@ -8,7 +8,7 @@ The [[..:tabli|Tabli]] ''data fill'' [[docs:tabli:command|command]] from the [[s
 
 ===== Syntax =====
 <unit>
-<code dos>
+<code bash>
 tabli data fill --help
 </code>
 <console>
@@ -73,68 +73,77 @@ where:
 
   Arguments:
 
-    <target-selector...>                                    One or more data selectors that will select the target data resources to be filled.
+    <target-selector...>                                        One or more data selectors that will select the target data resources to be filled.
 
 
   Cross Data Transfer Options:
 
-    -bs,--buffer-size <bufferSize>                          defines the size of the memory buffer between the source and target threads
+    -bs,--buffer-size <BUFFER_SIZE>                             defines the size of the memory buffer between the source and target threads
 
-    -mdu,--metrics-data-uri <metricsDataUri>                defines a target data uri where the data metrics should be exported
+    -mdu,--metrics-data-uri <METRICS_DATA_URI>                  defines a target data uri where the data metrics should be exported
 
-    -sfs,--source-fetch-size <fetchSize>                    defines the fetch size against the source connection
+    -sfs,--source-fetch-size <SOURCE_FETCH_SIZE>                defines the size of the network message from the source to fetch the data
 
-    -tbs,--target-batch-size <batchSize>                    defines the batch size against the target data resource
+    -sg,--step-granularity <STEP_GRANULARITY>                   defines the granularity of the transfer
 
-    -tcf,--target-commit-frequency <commitFrequency>        defines the commit frequency in number of batches against the target data resource
+    -out,--step-output <STEP_OUTPUT>                            The resource that is passed as output
 
-    -tw,--target-worker <targetWorkerCount>                 defines the target number of thread against the target connection
+    -tbs,--target-batch-size <TARGET_BATCH_SIZE>                defines the batch size against the target data resource
 
-    -wbv,--with-bind-variables                              defines if bind variables are used in the SQL statement
+    -tcf,--target-commit-frequency <TARGET_COMMIT_FREQUENCY>    defines the commit frequency in number of batches against the target data resource
+
+    -to,--target-operation <TARGET_OPERATION>                   defines the data operations (replace, truncate) on the existing target before transfer.
+
+    -twc,--target-worker-count <TARGET_WORKER_COUNT>            defines the target number of thread against the target datastore
+
+    -tcm,--transfer-column-mapping <TRANSFER_COLUMN_MAPPING>    defines the column mapping between the source and the target
+
+    -tmm,--transfer-mapping-method <TRANSFER_MAPPING_METHOD>    defines the method used to map the source columns to the target columns
+
+    -op,--transfer-operation <TRANSFER_OPERATION>               defines the transfer operation (insert, update, delete, upsert, merge, move, copy). Default to `copy` for a file system and `insert` for a database.
+
+    -wbv,--with-bind-variables                                  defines if bind variables are used in the SQL statement
 
 
   Fill Options:
 
-    -gs,--generator-selector <generatorSelector...>         One or more data selector that selects one or more data resource generator ( --datagen.yml )
+    -gs,--generator-selector <generatorSelector...>             One or more data selector that selects one or more data resource generator ( --datagen.yml )
 
-    -mrc,--max-record-count <maxRecordCount>                This option defines the maximum total number of record that the data resource(s) must have when no data resource generator was found.
+    -mrc,--max-record-count <maxRecordCount>                    This option defines the maximum total number of record that the data resource(s) must have when no data resource generator was found.
 
 
   Data Definition Options:
 
-    -ta,--target-attribute <attributeName=value>            Set a target data resource attribute
-
-
-  Transfer Operation Options:
-
-    -to,--target-operation <targetDataOperation>            defines the data operations (replace, truncate) on the existing target before transfer.
-
-    -op,--transfer-operation <transferOperation>            defines the transfer operation (insert, update, delete, upsert, merge, move, copy). Default to `copy` for a file system and `insert` for a database.
+    -ta,--target-attribute <attributeName=value>                Set a target data resource attribute
 
 
   Selection Options:
 
-    -wd,--with-dependencies                                 If this flag is present, the dependencies of the selected target tables (ie parent/foreign tables) will be also be filled with data
+    -wd,--with-dependencies                                     If this flag is present, the dependencies of the selected target tables (ie parent/foreign tables) will be also be filled with data
 
 
   Global Options:
 
-    -cf,--conf <path>                                       The path to a configuration file
+    -vf,--conf <path>                                           The path to a configuration file
 
-    -cv,--connection-vault <path>                           The path where the connection vault is located
+    -e,--env <env>                                              The name of the environment
 
-    -h,--help                                               Print this help
+    -h,--help                                                   Print this help
 
-    -l,--log-level <error|warning|tip|info|fine>            Set the log level
+    -l,--log-level <error|warning|tip|info|fine>                Set the log level
 
-    -ns,--not-strict                                        A minor error will not stop the process.
+    -ns,--not-strict                                            A minor error will not stop the process.
 
-    -odu,--output-data-uri <outputDataUri>                  defines the output data uri for the feedback data (default: console)
+    -odu,--output-data-uri <outputDataUri>                      defines the output data uri for the feedback data (default: console)
 
-    -oo,--output-operation <dataOperation>                  defines the data operations (replace, truncate) on an existing output resource before transfer.
+    -oo,--output-operation <dataOperation>                      defines the data operations (replace, truncate) on an existing output resource before transfer.
 
-    -oop,--output-transfer-operation <transferOperation>    defines the output transfer operation (insert, update, merge, copy). Default to `copy` for a file system and `insert` for a database.
+    -oop,--output-transfer-operation <transferOperation>        defines the output transfer operation (insert, update, merge, copy). Default to `copy` for a file system and `insert` for a database.
 
-    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted values
+    -pp,--passphrase <passphrase>                               A passphrase (master password) to decrypt the encrypted vault values
+
+    -ph,--project-home <path>                                   The project home (default to the .tabli.yml file directory)
+
+    -v,--version                                                Print version information
 </console>
 </unit>

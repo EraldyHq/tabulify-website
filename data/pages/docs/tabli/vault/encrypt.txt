@@ -11,14 +11,16 @@ For the [[docs:connection:attribute|connection attributes]], you may also config
 </note>
 ===== Example =====
 <unit>
-<code dos>
+<code bash>
 tabli --passphrase hardToGuess vault encrypt secret
 </code>
 <console>
+
 The encryption result
-plaintext   ciphertext
----------   -----------------------------------------------------------------------------------------------------------------------------------------
-secret      vaultQVE9PT5meE5YdGljNzdCVjNsNzVaN0J3cVJnPT0+dFU5T0M3ZVdtWWljMm9CODdOR2I2c00wN3BFdVg4YWVyUkJZUEprcHhlaz0+NHVRYis2S29vU1dIeTdpV3dmbFppZz09
+plaintext   ciphertext                                                                                                                                   
+---------   ------------------------------------------------------------------------------------------------------------------------------------------   
+secret      tvaultQVE9PT5iV0lPSHA3MDJWM3ZBTm9sYmF4Lzd3PT0+RHVNUTdEV2NndGFhSHhnNHhwUnVWNUlzc0d1ZkhnbENYNkRXckhKaFp0WT0+R2tWYXllclZpTU9WbTZXTWxSNFdUQT09
+
 </console>
 </unit>
 
@@ -28,10 +30,11 @@ secret      vaultQVE9PT5meE5YdGljNzdCVjNsNzVaN0J3cVJnPT0+dFU5T0M3ZVdtWWljMm9CODd
 
 
 <unit>
-<code dos>
+<code bash>
 tabli vault encrypt -h
 </code>
 <console>
+
 Tabli vault encrypt
 ===================
 
@@ -67,9 +70,9 @@ where:
 
   Global Options:
 
-    -cf,--conf <path>                                       The path to a configuration file
+    -vf,--conf <path>                                       The path to a configuration file
 
-    -cv,--connection-vault <path>                           The path where the connection vault is located
+    -e,--env <env>                                          The name of the environment
 
     -h,--help                                               Print this help
 
@@ -83,6 +86,11 @@ where:
 
     -oop,--output-transfer-operation <transferOperation>    defines the output transfer operation (insert, update, merge, copy). Default to `copy` for a file system and `insert` for a database.
 
-    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted values
+    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted vault values
+
+    -ph,--project-home <path>                               The project home (default to the .tabli.yml file directory)
+
+    -v,--version                                            Print version information
+
 </console>
 </unit>

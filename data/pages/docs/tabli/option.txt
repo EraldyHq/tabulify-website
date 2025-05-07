@@ -19,7 +19,7 @@ An ''option'' is used to passed parameters to the [[docs:tabli:command|command]]
 The long ''option'' format start with ''%%--%%'' followed by the option name.
 
 Example: the option ''longOptionName'' will got the value ''value''
-<code dos>
+<code bash>
 tabli module command --longOptionName value
 </code>
 
@@ -27,7 +27,7 @@ tabli module command --longOptionName value
 
 The short option format start with ''-'' followed by one letter.
 
-<code dos>
+<code bash>
 tabli module command -l [value]
 </code>
 
@@ -39,7 +39,7 @@ If the option is a [[docs:tabli:flag|flag]], the value is ''true'' by default an
 ==== Long format ====
 
 <unit>
-<code dos>
+<code bash>
 tabli --help
 </code>
 </unit>
@@ -47,7 +47,7 @@ tabli --help
 ==== Short format ====
 
 <unit>
-<code dos>
+<code bash>
 tabli -h
 </code>
 </unit>

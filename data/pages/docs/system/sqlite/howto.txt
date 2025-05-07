@@ -7,7 +7,7 @@ A [[docs:connection:howtos|default howto sqlite connection]] is provided after a
 ===== Info =====
 
 <unit>
-<code dos>
+<code bash>
 tabli connection info sqlite
 </code>
 <console>

@@ -9,7 +9,7 @@ A [[docs:connection:howtos|default howto oracle connection]] is provided after a
 ===== Info =====
 
 <unit>
-<code dos>
+<code bash>
 tabli connection info oracle
 </code>
 <console>

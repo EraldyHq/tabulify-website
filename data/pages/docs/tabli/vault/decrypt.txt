@@ -8,14 +8,16 @@
 ===== Example =====
 Every ''ciphertext'' (text encrypted) starts with the ''vault'' prefix. This cipher comes from the [[encrypt#example|vault encrypt example]]
 <unit>
-<code dos>
-tabli --passphrase hardToGuess vault decrypt vaultQVE9PT4vRUloRGI4cU83c1cvS0orOGU0cmJnPT0+UTc4NVFqWWdDZ3hoTmp3WXRPNjJsMmJhWS9lb2dSNE8wNllHM29WYjFVWT0+eGp5aUcxdnA0RkZ6TkhwQWU3Y3B1UT09
+<code bash>
+tabli --passphrase hardToGuess vault decrypt tvaultQVE9PT5sSWtUZDY3ZE1zYTlGb3ordFAwYTVRPT0+MUtrMXJZdGxLdTRXT25aZXhua2xFajNCWnd5Y1RlQ1RzWW5ZR012VXJTTT0+VWx0am1vZ0xXcWJQT3BSL3oxajdWUT09
 </code>
 <console>
+
 The cipher decryption:
-plaintext   ciphertext
----------   -----------------------------------------------------------------------------------------------------------------------------------------
-secret      vaultQVE9PT4vRUloRGI4cU83c1cvS0orOGU0cmJnPT0+UTc4NVFqWWdDZ3hoTmp3WXRPNjJsMmJhWS9lb2dSNE8wNllHM29WYjFVWT0+eGp5aUcxdnA0RkZ6TkhwQWU3Y3B1UT09
+plaintext   ciphertext                                                                                                                                   
+---------   ------------------------------------------------------------------------------------------------------------------------------------------   
+secret      tvaultQVE9PT5sSWtUZDY3ZE1zYTlGb3ordFAwYTVRPT0+MUtrMXJZdGxLdTRXT25aZXhua2xFajNCWnd5Y1RlQ1RzWW5ZR012VXJTTT0+VWx0am1vZ0xXcWJQT3BSL3oxajdWUT09
+
 </console>
 </unit>
 
@@ -25,10 +27,11 @@ secret      vaultQVE9PT4vRUloRGI4cU83c1cvS0orOGU0cmJnPT0+UTc4NVFqWWdDZ3hoTmp3WXR
 
 
 <unit>
-<code dos>
+<code bash>
 tabli vault decrypt -h
 </code>
 <console>
+
 Tabli vault decrypt
 ===================
 
@@ -64,9 +67,9 @@ where:
 
   Global Options:
 
-    -cf,--conf <path>                                       The path to a configuration file
+    -vf,--conf <path>                                       The path to a configuration file
 
-    -cv,--connection-vault <path>                           The path where the connection vault is located
+    -e,--env <env>                                          The name of the environment
 
     -h,--help                                               Print this help
 
@@ -80,6 +83,11 @@ where:
 
     -oop,--output-transfer-operation <transferOperation>    defines the output transfer operation (insert, update, merge, copy). Default to `copy` for a file system and `insert` for a database.
 
-    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted values
+    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted vault values
+
+    -ph,--project-home <path>                               The project home (default to the .tabli.yml file directory)
+
+    -v,--version                                            Print version information
+
 </console>
 </unit>

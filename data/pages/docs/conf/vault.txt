@@ -21,14 +21,14 @@ The ''configuration vault'' is a [[docs:conf:conf|configuration file]] named ''.
 ===== Location =====
 
 By default:
-  * the file is searched recursively from the working directory 
+  * the file is searched recursively from the working directory
   * if not found, the path is in the user ''%%$HOME\.tabli%%'' directory.
 
 
-You can get the location of the configuration vault with the [[docs:tabli:attribute:list|variable list command]].
+You can get the location of the configuration vault with the [[docs:tabli:env:list|variable list command]].
 <unit>
 <code bash>
-tabli attribute list conf
+tabli env list conf
 </code>
 <console>
 key                     value
@@ -45,7 +45,7 @@ Advanced user will modify the file directly with a text editor but
 for convenience, we provide also:
 
   * the [[docs:tabli:connection:start|Tabli Connection module]]
-  * the [[docs:tabli:attribute:start|Tabli Attribute module]]
+  * the [[docs:tabli:env:start|Tabli Env module]]
 
 
 In every [[docs:tabli:tabli|tabli command]], you can specify the location of this file with:
@@ -67,7 +67,7 @@ You can:
 
 <code yaml .tabli.yml>
 # List of global attributes
-globals:
+env:
   key1: value
   key2: value
 # List of connections

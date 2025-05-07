@@ -22,42 +22,42 @@ A <icon name="mdi:cog" /> [[docs:resource:generator|generator]] is just a [[docs
 
 The [[docs:tabli:data:head|head command]]  will print the generated data.
 <unit >
-<code dos>
-tabli data head --limit 30 sequence--datagen.yml@howto 
+<code bash>
+tabli data head --limit 30 sequence--datagen.yml@howto
 </code>
 <console>
-The first 30 rows of the data resource (sequence--datagen.yml@howto): 
-seq_int   seq_char   
--------   --------   
-      1   a          
-      2   b          
-      3   c          
-      4   d          
-      5   e          
-      6   f          
-      7   g          
-      8   h          
-      9   i          
-     10   j          
-     11   k          
-     12   l          
-     13   m          
-     14   n          
-     15   o          
-     16   p          
-     17   q          
-     18   r          
-     19   s          
-     20   t          
-     21   u          
-     22   v          
-     23   w          
-     24   x          
-     25   y          
-     26   z          
-     27   ba         
-     28   bb         
-     29   bc         
+The first 30 rows of the data resource (sequence--datagen.yml@howto):
+seq_int   seq_char
+-------   --------
+      1   a
+      2   b
+      3   c
+      4   d
+      5   e
+      6   f
+      7   g
+      8   h
+      9   i
+     10   j
+     11   k
+     12   l
+     13   m
+     14   n
+     15   o
+     16   p
+     17   q
+     18   r
+     19   s
+     20   t
+     21   u
+     22   v
+     23   w
+     24   x
+     25   y
+     26   z
+     27   ba
+     28   bb
+     29   bc
      30   bd
 </console>
 </unit>
@@ -68,12 +68,12 @@ seq_int   seq_char
 
 You can [[docs:tabli:data:insert|insert]] the generated data into a [[docs:resource:table|table]] in the [[docs:connection:howtos|sqlite database]]
 <unit >
-<code dos>
+<code bash>
 tabli data insert sequence--datagen.yml@howto sequence@sqlite
 </code>
 <console>
-Source                        Target            Latency (ms)   Row Count   Error   Message   
----------------------------   ---------------   ------------   ---------   -----   -------   
+Source                        Target            Latency (ms)   Row Count   Error   Message
+---------------------------   ---------------   ------------   ---------   -----   -------
 sequence--datagen.yml@howto   sequence@sqlite   58             30
 </console>
 </unit>

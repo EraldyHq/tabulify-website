@@ -66,7 +66,7 @@ docker start mysql
 ===== Info =====
 
 <unit>
-<code dos>
+<code bash>
 tabli connection info mysql
 </code>
 <console>

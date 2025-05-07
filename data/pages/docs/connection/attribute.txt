@@ -27,7 +27,7 @@ You can see the [[docs:conf:attribute|attributes]] of your connection with the [
 ==== Set ====
 
 You can set connection parameters:
-  * by editing manually the [[..:conf:file|configuration vault]]
+  * by editing manually the [[..:conf:vault|configuration vault]]
 <code yaml>
 connections:
   connectionName:

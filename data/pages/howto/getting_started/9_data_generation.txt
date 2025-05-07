@@ -28,7 +28,7 @@ The [[docs:op:fill|fill operation]] is supported by the [[docs:tabli:data:fill|d
 
 Let's first delete all data with the [[docs:tabli:data:truncate|data truncate command]] to get a clean schema.
 <unit >
-<code dos>
+<code bash>
 tabli data truncate *@sqlite
 </code>
 </unit>
@@ -36,7 +36,7 @@ tabli data truncate *@sqlite
 The below [[docs:tabli:data:fill|fill command]] will fill all [[docs:resource:table|tables]] with auto-generated data
 
 <unit >
-<code dos>
+<code bash>
 tabli data fill *@sqlite
 </code>
 
@@ -74,7 +74,7 @@ The [[docs:tabli:data:fill|data fill command]] loads ''1000'' records for each [
 
 By running the [[howto:getting_started:7_query|query 11 (of the query lesson)]], we don't get any data back.
 <unit >
-<code dos>
+<code bash>
 tabli data print (sqlite/query_11.sql@tpcds_query)@sqlite
 </code>
 <console>
@@ -87,7 +87,7 @@ customer_id   customer_first_name   customer_last_name   customer_email_address
 Why ? Because the [[howto:getting_started:7_query|query 11]] is based on time data of the year ''2001'' and unfortunately the auto-generated data does not contain ''2001'' in the ''d_year'' column.
 
 <unit >
-<code dos>
+<code bash>
 tabli data head --limit 10 date_dim@sqlite
 </code>
 <console>
@@ -168,7 +168,7 @@ d_date       d_year
 
 After having created a generator for the ''date_dim'' [[docs:resource:table|table]], we can pass it to the [[docs:tabli:data:fill|data fill command]] with the ''--generator-selector'' option to make the data generation more controled.
 <unit >
-<code dos>
+<code bash>
 tabli data fill --generator-selector date_dim_2001--datagen.yml@howto   *@sqlite
 </code>
 <note>
@@ -203,7 +203,7 @@ web_site@memgen                 web_site@sqlite                 122            1
 And the ''query 11'' is now giving back a result. The generated data is minimal and should be further defined.
 
 <unit >
-<code dos>
+<code bash>
 tabli data print (sqlite/query_11.sql@tpcds_query)@sqlite
 </code>
 

@@ -11,7 +11,7 @@ The ''data drop'' [[docs:tabli:command|action]] of the [[start|data module]] per
 
 
 <unit>
-<code dos>
+<code bash>
 tabli data drop --help
 </code>
 <console>
@@ -26,19 +26,27 @@ Examples
 --------
 
  1 - To drop the tables D_TIME and F_SALES in the Oracle connection:
-tabli data drop D_TIME@oracle F_SALES@oracle
+
+
+    tabli data drop D_TIME@oracle F_SALES@oracle
 
 
  2 - To drop only the table D_TIME with force (ie deleting the foreign keys constraint):
-tabli data drop --force D_TIME@sqlite
+
+
+    tabli data drop --force D_TIME@sqlite
 
 
  3 - To drop all dimension tables that begins with (D_):
-tabli data drop D_*@sql-server
+
+
+    tabli data drop D_*@sql-server
 
 
  4 - To drop all tables from the current schema:
-tabli data drop *@database
+
+
+    tabli data drop *@database
 
 
 
@@ -70,9 +78,9 @@ where:
 
   Global Options:
 
-    -cf,--conf <path>                                       The path to a configuration file
+    -vf,--conf <path>                                       The path to a configuration file
 
-    -cv,--connection-vault <path>                           The path where the connection vault is located
+    -e,--env <env>                                          The name of the environment
 
     -h,--help                                               Print this help
 
@@ -86,6 +94,10 @@ where:
 
     -oop,--output-transfer-operation <transferOperation>    defines the output transfer operation (insert, update, merge, copy). Default to `copy` for a file system and `insert` for a database.
 
-    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted values
+    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted vault values
+
+    -ph,--project-home <path>                               The project home (default to the .tabli.yml file directory)
+
+    -v,--version                                            Print version information
 </console>
 </unit>

@@ -95,7 +95,7 @@ Columns:
 
 With the [[docs:tabli:data:head|data head command]], we can print the ''values'' generated.
 <unit>
-<code dos>
+<code bash>
 tabli data head --limit 101 sequence_odometer--datagen.yml@howto
 </code>
 <note tip>

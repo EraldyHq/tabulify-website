@@ -31,13 +31,13 @@ This [[..:howto|how-to]] will show you how to use the [[docs:tabli:data:fill|tab
 If you have followed the prerequisites, you should seen now in the [[docs:system:sqlite:howto|Sqlite HowTo connection]] the following tables.
 
 <unit display="none">
-<code dos >
+<code bash >
 tabli data create --with-dependencies store_sales@tpcds tpc_$0@sqlite
 </code>
 </unit>
 
 <unit>
-<code dos>
+<code bash>
 tabli data list *@sqlite
 </code>
 <console>

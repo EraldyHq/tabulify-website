@@ -9,7 +9,7 @@ A ''module'' is a [[tabli|tabli]] command that contains:
 ===== Syntax =====
 A module is called by adding its name after the [[docs:tabli:tabli|tabli]] word.
 
-<code dos>
+<code bash>
 tabli module1 module2 ...
 </code>
 
@@ -27,10 +27,11 @@ To get [[docs:tabli:help|help]] on the console for a module, just add the ''%%--
 
 Example:
 <unit>
-<code dos table_help.cmd>
+<code bash table_help.cmd>
 tabli data --help
 </code>
 <console>
+
 Tabli data
 ==========
 
@@ -50,17 +51,15 @@ where:
 
   Commands:
 
-    compare       Perform a diff operation against two data resources
-
     copy          Copy a data resource
-
-    count         Count the number of data resources
 
     create        Create a data resource
 
     delete        Delete data from a data resource
 
     dependency    Show the data dependencies
+
+    diff          Perform a diff operation against two data resources
 
     drop          Drop data resources
 
@@ -82,7 +81,11 @@ where:
 
     structure     Show the data structure of data resources
 
+    summary       Count the number of data resources
+
     tail          Print the last content of data resources
+
+    template      Create data resources from a template and a data source
 
     transfer      Transfer a data resource (insert, update, delete, upsert, merge, move, copy)
 
@@ -96,5 +99,6 @@ where:
   Option:
 
     -h,--help     Print this help
+
 </console>
 </unit>

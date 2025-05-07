@@ -46,7 +46,7 @@ tabli connection delete --not-strict "oracleConnectionName"
 
 
   * With the Windows CMD console
-<code dos>
+<code bash>
 tabli connection add "oracleConnectionName" "jdbc:oracle:thin:@[host]:[port]/[servicename]" ^
     --user login ^
     --password password

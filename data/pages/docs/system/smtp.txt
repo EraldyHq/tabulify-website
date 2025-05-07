@@ -39,7 +39,7 @@ connections:
 
 With the [[docs:tabli:connection:add|tabli add command of the connection module]], adding a smtp connection with the name ''smtpConnectionName'':
 
-<code dos>
+<code bash>
 tabli connection add "smtpConnectionName" "smtp://localhost:587"
 </code>
 

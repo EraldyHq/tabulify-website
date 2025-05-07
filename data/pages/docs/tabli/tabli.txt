@@ -2,7 +2,7 @@
 
 
 ===== Introduction =====
-''tabli'' is the command line client of ''tabulify''. 
+''tabli'' is the command line client of ''tabulify''.
 
 
 
@@ -10,21 +10,22 @@
 ===== Syntax =====
 
 
-<code dos>
+<code bash>
 tabli [options] module action
 </code>
 where:
    * [[docs:tabli:module|module]] is a group of command
-   * [[docs:tabli:command|command]] is an action performed 
+   * [[docs:tabli:command|command]] is an action performed
    * [[docs:tabli:option|option]] are optional words that configure an command.
 
 ===== Help =====
 
 <unit>
-<code dos>
+<code bash>
 tabli --help
 </code>
 <console>
+
 Tabli
 =====
 
@@ -55,17 +56,22 @@ where:
 
   Commands:
 
-    conf          Management and configuration of the tabli environment.
+    connection      Management and configuration of the connections to systems.
 
-    connection    Management and configuration of the connections to systems.
+    data            Data operations against data resources (table, file, ...).
 
-    data          Data operations against data resources (table, file, ...).
+    env             Management and configuration of the tabli execution environment
 
-    vault         Encrypt and decrypt sensitive information
+    flow            Execute Flow
+
+    vault           Encrypt and decrypt sensitive information
 
 
   Option:
 
-    -h,--help     Print this help
+    -h,--help       Print this help
+
+    -v,--version    Print version information
+
 </console>
 </unit>

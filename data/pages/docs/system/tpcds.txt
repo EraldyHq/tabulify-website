@@ -65,6 +65,21 @@ The ''store-sales'' schema has  the ''store_sales'' and ''store_return'' star sc
 tabli data list --with-dependencies store*@tpcds
 </code>
 <console>
+path                     
+----------------------   
+customer                 
+customer_address         
+customer_demographics    
+date_dim                 
+household_demographics   
+income_band              
+item                     
+promotion                
+reason                   
+store                    
+store_returns            
+store_sales              
+time_dim
 </console>
 </unit>
 

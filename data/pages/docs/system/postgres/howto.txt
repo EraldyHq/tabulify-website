@@ -64,7 +64,7 @@ docker start postgres
 ===== Info =====
 
 <unit>
-<code dos>
+<code bash>
 tabli connection info postgres
 </code>
 <console>

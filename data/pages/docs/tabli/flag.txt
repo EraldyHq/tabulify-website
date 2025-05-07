@@ -9,6 +9,6 @@ A ''flag'' is an [[docs:tabli:option|option]] that set a variable to ''true'' if
 
 
 You can set one ''flag option''
-<code dos>
+<code bash>
 db module action -f
 </code>

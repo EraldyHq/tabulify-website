@@ -18,16 +18,22 @@ tabli --project-home  tabli-project@user connection info project
 </code>
 <console>
 Information about the connection (project)
-Attribute              Value                                        Description                                                            
---------------------   ------------------------------------------   --------------------------------------------------------------------   
-Comment                The project home directory                   A connection description                                               
-MaxConcurrentThread    1                                            The maximum number of threads that can be created against the system   
-MaxNameInPath          2147483647                                   The maximum number of names in a path                                  
-Name                   project                                      The name of the connection                                             
-TabBooleanDataType     Native                                       Boolean data type used to store boolean values                         
-TabDateDataType        Native                                       Date data type used to store date values                               
-TabTimeDataType        Native                                       Time format data type to store time values                             
-TabTimestampDataType   Native                                       Timestamp data type used to store timestamp values                     
-Url                    file:///C:/Users/gerardnico/tabli-project/   The url of the connection
+Attribute               Value                                                              Description                                                            
+---------------------   ----------------------------------------------------------------   --------------------------------------------------------------------   
+Working Path            /home/admin/code/tabulify/tabulify-cli/tabli-project@user          Schema for database, directory for file system                         
+boolean-data-type       Native                                                             Boolean data type used to store boolean values                         
+date-data-type          NATIVE                                                             Date data type used to store date values                               
+description             The project home path                                              A connection description                                               
+driver                                                                                     The driver class                                                       
+max-concurrent-thread                                                                      The maximum number of threads that can be created against the system   
+max-name-in-path                                                                           The maximum number of names in a path                                  
+name                    project                                                            The name of the connection                                             
+natives                                                                                    Native Driver attributes (jdbc properties, ...)                        
+origin                                                                                     The origin of the connection                                           
+password                                                                                   The user password to login                                             
+timestamp-data-type     NATIVE                                                             Timestamp data type used to store timestamp values                     
+time-data-type          NATIVE                                                             Time format data type to store time values                             
+uri                     file:///home/admin/code/tabulify/tabulify-cli/tabli-project@user   The uri of the connection                                              
+user                                                                                       The user name to login
 </console>
 </unit>

@@ -10,7 +10,7 @@ To get the [[docs:resource:attribute|attributes]] in a tabular format, you can u
 
 ===== Syntax =====
 <unit>
-<code dos>
+<code bash>
 tabli data info --help
 </code>
 <console>
@@ -26,7 +26,7 @@ Tip: To get the attributes in a list fashion, check the `list` command
 Examples
 --------
 
- 1 - Show the information on all files in the current directory
+ 1 - Show the information on all files in the current directory 
 
 
     tabli data info *
@@ -61,6 +61,11 @@ where:
     <data-selector...>                                      One or more name data resource selectors (ie pattern[@connection])
 
 
+  Options:
+
+    -t,--type <mediaType|mimeType|extensionFile>            The type of the resource
+
+
   Selection Options:
 
     -wd,--with-dependencies                                 If set, the dependencies will be also selected
@@ -68,9 +73,9 @@ where:
 
   Global Options:
 
-    -cf,--conf <path>                                       The path to a configuration file
+    -vf,--conf <path>                                       The path to a configuration file
 
-    -cv,--connection-vault <path>                           The path where the connection vault is located
+    -e,--env <env>                                          The name of the environment
 
     -h,--help                                               Print this help
 
@@ -84,7 +89,11 @@ where:
 
     -oop,--output-transfer-operation <transferOperation>    defines the output transfer operation (insert, update, merge, copy). Default to `copy` for a file system and `insert` for a database.
 
-    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted values
+    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted vault values
+
+    -ph,--project-home <path>                               The project home (default to the .tabli.yml file directory)
+
+    -v,--version                                            Print version information
 </console>
 </unit>
 where:

@@ -18,41 +18,46 @@ How to list <icon name="mdi:connection"/> [[docs:connection:connection|connectio
 ==== Listing all connections ====
 
 <unit>
-<code dos>
+<code bash>
 tabli connection list *
 </code>
 <console>
-Name            Url
--------------   -----------------------------------------------------------------------
-cd              file:///D:/code/bytle-mono/ansible/
-entity          file:///D:/code/bytle-mono/db-gen-entities/src/main/resources/entity/
-howto           file:///D:/code/bytle-mono/db-website/src/doc/howto/
+NAME            URI
+-------------   ----------------------------------------------------------------------------------------------------
+cd              file:///home/admin/code/tabulify/tabulify-cli/
+desktop         file:///home/admin/Desktop/
+entity          file:///home/admin/opt/tabulify/resources/entity/
+home            file:///home/admin/
+howto           file:///home/admin/opt/tabulify/resources/howto/
+log             jdbc:sqlite:////home/admin/.tabli/log.db
 memory          mem
-mysql           jdbc:mysql://[host]:[port]/[database]
-oracle          jdbc:oracle:thin:@[host]:[port]/[servicename]
+mysql           jdbc:mysql://localhost:3306/howto
+noop            noop
+oracle          jdbc:oracle:thin:@localhost:1521/freepdb1
 postgres        jdbc:postgresql://localhost:5432/postgres
-sqlite          jdbc:sqlite:///C:/Users/gerardnico/AppData/Local/tabli/sqlite.db
-sqlite_target   jdbc:sqlite:///C:/Users/gerardnico/AppData/Local/tabli/sqlite_target.db
-sqlserver       jdbc:sqlserver://localhost;databaseName=AdventureWorks;
-temp            file:///C:/Users/GERARD~1/AppData/Local/Temp/
+smtp            smtp://localhost
+sqlite          jdbc:sqlite:////home/admin/.tabli/sqlite.db
+sqlite_target   jdbc:sqlite:////home/admin/.tabli/sqlite_target.db
+sqlserver       jdbc:sqlserver://localhost:1433;databaseName=AdventureWorks;encrypt=true;trustServerCertificate=true
+temp            file:///tmp/
 tpcds           tpcds
-tpcds_query     file:///D:/code/bytle-mono/db-jdbc/src/main/sql/tpcds/
+tpcds_query     file:///home/admin/opt/tabulify/resources/tpcds_query/
 </console>
 </unit>
 ==== Listing a subset with globbing ====
 
   * List only the connections with ''sql'' in their name by using a [[docs:common:globbing|glob pattern]]
 <unit>
-<code dos>
+<code bash>
 tabli connection list *sql*
 </code>
 <console>
-Name            Url
--------------   -----------------------------------------------------------------------
-mysql           jdbc:mysql://[host]:[port]/[database]
-sqlite          jdbc:sqlite:///C:/Users/gerardnico/AppData/Local/tabli/sqlite.db
-sqlite_target   jdbc:sqlite:///C:/Users/gerardnico/AppData/Local/tabli/sqlite_target.db
-sqlserver       jdbc:sqlserver://localhost;databaseName=AdventureWorks;
+NAME            URI
+-------------   ----------------------------------------------------------------------------------------------------
+mysql           jdbc:mysql://localhost:3306/howto
+sqlite          jdbc:sqlite:////home/admin/.tabli/sqlite.db
+sqlite_target   jdbc:sqlite:////home/admin/.tabli/sqlite_target.db
+sqlserver       jdbc:sqlserver://localhost:1433;databaseName=AdventureWorks;encrypt=true;trustServerCertificate=true
 </console>
 </unit>
 
@@ -60,14 +65,14 @@ sqlserver       jdbc:sqlserver://localhost;databaseName=AdventureWorks;
 
   * List only the connections with the name [[docs:system:oracle:howto|oracle]] and [[docs:system:sqlite:howto|sqlite]]
 <unit>
-<code dos>
+<code bash>
 tabli connection list oracle sqlite
 </code>
 <console>
-Name     Url
-------   ----------------------------------------------------------------
-oracle   jdbc:oracle:thin:@[host]:[port]/[servicename]
-sqlite   jdbc:sqlite:///C:/Users/gerardnico/AppData/Local/tabli/sqlite.db
+NAME     URI
+------   -------------------------------------------
+oracle   jdbc:oracle:thin:@localhost:1521/freepdb1
+sqlite   jdbc:sqlite:////home/admin/.tabli/sqlite.db
 </console>
 </unit>
 
@@ -75,24 +80,29 @@ sqlite   jdbc:sqlite:///C:/Users/gerardnico/AppData/Local/tabli/sqlite.db
 
 List the connections with the [[docs:connection:name|name]], ''user'' and [[docs:connection:uri|url]] [[docs:connection:attribute|connection attribute]]
 <unit>
-<code dos>
+<code bash>
 tabli connection list -a name -a user -a url *
 </code>
 <console>
 name            user       url
--------------   --------   -----------------------------------------------------------------------
-cd                         file:///D:/code/bytle-mono/ansible/
-entity                     file:///D:/code/bytle-mono/db-gen-entities/src/main/resources/entity/
-howto                      file:///D:/code/bytle-mono/db-website/src/doc/howto/
-memory                     mem
-mysql                      jdbc:mysql://[host]:[port]/[database]
-oracle                     jdbc:oracle:thin:@[host]:[port]/[servicename]
-postgres        postgres   jdbc:postgresql://localhost:5432/postgres
-sqlite                     jdbc:sqlite:///C:/Users/gerardnico/AppData/Local/tabli/sqlite.db
-sqlite_target              jdbc:sqlite:///C:/Users/gerardnico/AppData/Local/tabli/sqlite_target.db
-sqlserver       sa         jdbc:sqlserver://localhost;databaseName=AdventureWorks;
-temp                       file:///C:/Users/GERARD~1/AppData/Local/Temp/
-tpcds                      tpcds
-tpcds_query                file:///D:/code/bytle-mono/db-jdbc/src/main/sql/tpcds/
+-------------   --------   ---
+cd
+desktop
+entity
+home
+howto
+log
+memory
+mysql           root
+noop
+oracle          hr
+postgres        postgres
+smtp
+sqlite
+sqlite_target
+sqlserver       sa
+temp
+tpcds
+tpcds_query
 </console>
 </unit>

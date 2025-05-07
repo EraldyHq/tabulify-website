@@ -7,11 +7,11 @@
     "page_id": "x3wbhq7p80d2ymghwir6i"
 }
 ---
-====== Tabli - Attribute Set Command  ======
+====== Tabli - Env Set Command  ======
 
 
 ===== About =====
-The ''set'' command of the [[..:attribute:start|attribute module]] set a global attribute value in a [[docs:conf:vault|configuration file]]
+The ''set'' command of the [[..:env:start|env module]] set a [[:docs:conf:global|global attribute value]] in a [[docs:conf:vault|configuration file]]
 
 
 ===== Example =====
@@ -19,20 +19,21 @@ The ''set'' command of the [[..:attribute:start|attribute module]] set a global 
 To set the [[docs:common:log|loglevel]] to the ''tip'' value
 
 
-<code dos>
-tabli attribute set log-level tip
+<code bash>
+tabli env set log-level tip
 </code>
 
 
 ===== Syntax =====
 
 <unit>
-<code dos>
-tabli attribute set -h
+<code bash>
+tabli env set -h
 </code>
 <console>
-Tabli variable set
-==================
+
+Tabli env set
+=============
 
 Set a configuration
 
@@ -44,7 +45,7 @@ Example
  1 - To set the `log-level` configuration to the value `tip`, you would use the following command:
 
 
-    tabli variable set log-level tip
+    tabli env set log-level tip
 
 
 
@@ -53,7 +54,7 @@ Syntax
 ------
 
 
-    tabli variable set <key> <value>
+    tabli env set <key> <value>
 
 
 where:
@@ -68,11 +69,15 @@ where:
 
   Global Options:
 
-    -cv,--connection-vault <path>                           The path where a connection vault is located
+    -vf,--conf <path>                                       The path to a configuration file
+
+    -e,--env <env>                                          The name of the environment
 
     -h,--help                                               Print this help
 
     -l,--log-level <error|warning|tip|info|fine>            Set the log level
+
+    -ns,--not-strict                                        A minor error will not stop the process.
 
     -odu,--output-data-uri <outputDataUri>                  defines the output data uri for the feedback data (default: console)
 
@@ -80,12 +85,11 @@ where:
 
     -oop,--output-transfer-operation <transferOperation>    defines the output transfer operation (insert, update, merge, copy). Default to `copy` for a file system and `insert` for a database.
 
-    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted values
+    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted vault values
 
-    -ph,--project-home <dataUri>                            A data uri to the project directory (ie a path)
-
-    -cf,--vars <path>                                       The path to a configuration file
+    -ph,--project-home <path>                               The project home (default to the .tabli.yml file directory)
 
     -v,--version                                            Print version information
+
 </console>
 </unit>

@@ -42,7 +42,7 @@ With the [[docs:tabli:data:fill|tabli data fill operation]], insert ''10'' rows 
 
 
 <unit>
-<code dos>
+<code bash>
 tabli data fill --max-record-count 10 date_dim@sqlite
 </code>
 <console>
@@ -55,7 +55,7 @@ date_dim@memgen   date_dim@sqlite   30             10
 
 With the [[docs:tabli:data:print|data print command]], we can see the content of the ''date_dim'' table in the [[docs:connection:howtos|sqlite connection]]
 <unit>
-<code dos>
+<code bash>
 tabli data print date_dim@sqlite
 </code>
 <console>
@@ -76,7 +76,7 @@ d_date_sk   d_date_id   d_date       d_month_seq   d_week_seq   d_quarter_seq   
 ==== Fill the ''date_dim'' table with ''10.000'' rows ====
 
 <unit>
-<code dos>
+<code bash>
 tabli data fill --max-record-count 10000 date_dim@sqlite
 </code>
 <console>
@@ -89,7 +89,7 @@ date_dim@memgen   date_dim@sqlite   1180           10000
 
 And we got ''10.000'' rows
 <unit>
-<code dos>
+<code bash>
 tabli data list -a count date_dim@sqlite
 </code>
 <console>

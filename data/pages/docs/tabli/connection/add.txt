@@ -8,22 +8,22 @@ The ''connection add'' operations will add a connection to the [[docs:conf:vault
 ===== Example =====
 Adding a [[docs:system:sqlite:sqlite|Sqlite database]] with the name ''sqliteDbName'':
 <unit display="none">
-<code dos>
+<code bash>
 tabli connection delete --not-strict "sqliteDbName"
 </code>
 </unit>
 
 <unit>
-<code dos>
-tabli connection add "sqliteDbName" "jdbc:sqlite://%TMP%/db.db"
+<code bash>
+tabli connection add "sqliteDbName" "jdbc:sqlite:///tmp/db.db"
 </code>
 <console>
-The connection (sqliteDbName) was saved into the connection vault (C:\Users\gerardnico\.tabli\dns.ini)
+
 </console>
 </unit>
 ===== Syntax =====
 <unit>
-<code dos>
+<code bash>
 tabli connection add --help
 </code>
 <console>
@@ -37,10 +37,10 @@ Add a connection
 Example
 -------
 
- 1 - To add the connection `name` with the URL `url`:
+ 1 - To add the connection `name` with the URI `uri`:
 
 
-    tabli connection add name url
+    tabli connection add name uri
 
 
 
@@ -49,7 +49,7 @@ Syntax
 ------
 
 
-    tabli connection add [options|flags] <name> <url>
+    tabli connection add [options|flags] <name> <uri>
 
 
 where:
@@ -59,28 +59,32 @@ where:
 
     <name>                                                  the connection name
 
-    <url>                                                   The system connection string (a JDBC Url for a database or a file system URL)
+    <uri>                                                   The system connection string (a JDBC Uri for a database or a file system URI).
 
 
   Data Definition Options:
 
-    -a,--attribute <key=value>                              A attribute (known also as connection properties)
+    -a,--attribute <key=value>                              A tabulify connection attribute
 
 
-  Options:
+  Connection Properties:
+
+    -a,--attribute <key=value>                              A tabulify connection attribute
 
     -d,--driver <tld.package.driverClass>                   The jdbc driver (JDBC URL only)
 
-    -p,--password <password>                                The user password (A passphrase is then mandatory because password should be encrypted)
+    --native-attribute <key=value>                          A native connection attribute (Example: JDBC driver property
+
+    -p,--password <password>                                The user password (Clear password is encrypted only if a passphrase is provided)
 
     -u,--user <user>                                        The user name (ie the login name)
 
 
   Global Options:
 
-    -cf,--conf <path>                                       The path to a configuration file
+    -vf,--conf <path>                                       The path to a configuration file
 
-    -cv,--connection-vault <path>                           The path where the connection vault is located
+    -e,--env <env>                                          The name of the environment
 
     -h,--help                                               Print this help
 
@@ -94,6 +98,10 @@ where:
 
     -oop,--output-transfer-operation <transferOperation>    defines the output transfer operation (insert, update, merge, copy). Default to `copy` for a file system and `insert` for a database.
 
-    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted values
+    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted vault values
+
+    -ph,--project-home <path>                               The project home (default to the .tabli.yml file directory)
+
+    -v,--version                                            Print version information
 </console>
 </unit>

@@ -20,7 +20,7 @@ The [[docs:tabli:data:transfer|transfer command]] is the most powerfull command 
 In this learning guide, we will use as target connection, the [[docs:connection:howtos|local sqlite how-to connection]]
 
 <unit>
-<code dos>
+<code bash>
 tabli connection info sqlite
 </code>
 <console>
@@ -56,7 +56,7 @@ Url                      jdbc:sqlite:///C:/Users/gerardnico/AppData/Local/tabli/
 
 <unit display="none">
 Just drop all tables
-<code dos>
+<code bash>
 tabli data drop --not-strict *@sqlite
 </code>
 </unit>
@@ -66,7 +66,7 @@ For the purpose of this learning guide, we will [[docs:op:copy|copy]] the ''sale
 
 
 <unit>
-<code dos>
+<code bash>
 tabli data copy --with-dependencies *sales@tpcds @sqlite
 </code>
 where:
@@ -109,7 +109,7 @@ To check the ''copy'', we will list the [[docs:resource:table|tables]] in the [[
 
 
 <unit>
-<code dos>
+<code bash>
 tabli data list -a name --attribute count  *@sqlite
 </code>
 <console>

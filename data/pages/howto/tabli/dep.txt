@@ -19,7 +19,7 @@ The below output shows you the [[docs:resource:fkey|foreign key dependencies]] b
 
 Example with the [[docs:connection:tpcds|Tpcds]] connection.
 <unit>
-<code dos>
+<code bash>
 tabli data dep *@tpcds
 </code>
 where:

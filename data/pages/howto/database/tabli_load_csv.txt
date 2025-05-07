@@ -19,7 +19,7 @@ How to [[docs:op:upload|load]] a [[docs:connection:cd|local]] <icon name="carbon
 You should have ''Tabulify'' installed on your computer. [[howto:getting_started:1_install]]
 
 <unit display="none">
-<code dos>
+<code bash>
 tabli data drop --not-strict characters@sqlite
 </code>
 </unit>
@@ -27,7 +27,7 @@ tabli data drop --not-strict characters@sqlite
 
 We will load the ''characters.csv'' file of the [[docs:connection:howto|HowTo connection]]. The file can be seen with the [[docs:tabli:data:head|head command]].
 <unit>
-<code dos>
+<code bash>
 tabli data head characters.csv@howto
 </code>
 <console>
@@ -45,8 +45,8 @@ Kahneman            Daniel       1934-03-05   https://en.wikipedia.org/wiki/Dani
 If you want to change a [[docs:resource:csv|CSV property]], use the ''a'' attribute
 
 Example with:
-  * a text file extension, 
-  * another separator 
+  * a text file extension,
+  * another separator
   * and no header
 <code bash>
 tabli data head -a "type=csv" -a 'delimiterCharacter=;' -a 'headerRowId=0' characters.txt@howto
@@ -57,7 +57,7 @@ tabli data head -a "type=csv" -a 'delimiterCharacter=;' -a 'headerRowId=0' chara
 
 We can load the above data using the [[docs:tabli:data:transfer|transfer command]] and the [[docs:connection:howtos#sqlite|sqlite built-in database]]
 <unit>
-<code dos>
+<code bash>
 tabli data transfer characters.csv@howto @sqlite
 </code>
 <console>
@@ -71,7 +71,7 @@ characters.csv@howto   characters@sqlite   25             4
 
 We can check with the [[docs:tabli:data:struct|structure command]] that the process has created a table with the same [[docs:resource:structure|structure]].
 <unit >
-<code dos>
+<code bash>
 tabli data struct characters@sqlite
 </code>
 <console>
@@ -88,7 +88,7 @@ Position   Column Name      Data Type   Primary Key   Not Null   Auto Increment 
 
 We can check with the [[docs:tabli:data:print|print command]] that the same data was loaded
 <unit>
-<code dos>
+<code bash>
 tabli data print characters@sqlite
 </code>
 <console>

@@ -16,16 +16,16 @@ Within the [[docs:connection:connection|connection]] module, you can:
 
 ===== Syntax =====
 <unit>
-<code dos>
+<code bash>
 tabli connection --help
 </code>
 <console>
 Tabli connection
 ================
 
-Management of the Connection Vault
+Management of the Datastore Vault
 
-(Location: C:\Users\gerardnico\.tabli\dns.ini)
+(Location: /home/admin/.tabli/.tabli.yml)
 
 
 
@@ -48,6 +48,8 @@ where:
     info         Show the attributes of a connection
 
     list         List the connections
+
+    ping         Ping a connection
 
     upsert       Update or add a connection if it does't exist
 
