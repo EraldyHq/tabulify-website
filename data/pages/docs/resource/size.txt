@@ -13,9 +13,9 @@ With the [[docs:connection:howto|howto file]] ''characters.csv'' and the [[docs:
 tabli data list --attribute size characters.csv@howto
 </code>
 <console>
-size
-----
- 346
+size   
+----   
+ 432
 </console>
 </unit>
 

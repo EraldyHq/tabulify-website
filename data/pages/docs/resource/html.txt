@@ -34,18 +34,18 @@ The first [[https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes|10 languages c
 tabli data head  https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 </code>
 <console>
-The first 10 rows of the data resource (List_of_ISO_639-1_codes@en.wikipedia.org>wiki):
-ISO language name   639-1   639-2/T   639-2/B   639-3      Notes
------------------   -----   -------   -------   --------   ----------------------------------------------------------------------------------------------------------
-Abkhazian           ab      abk       abk       abk        also known as Abkhaz
-Afar                aa      aar       aar       aar
-Afrikaans           af      afr       afr       afr
-Akan                ak      aka       aka       aka + 2    macrolanguage, Twi is tw/twi, Fanti is fat
-Albanian            sq      sqi       alb       sqi + 4    macrolanguage, called "Albanian Phylozone" in 639-6
-Amharic             am      amh       amh       amh
-Arabic              ar      ara       ara       ara + 29   macrolanguage, Standard Arabic is arb
-Aragonese           an      arg       arg       arg
-Armenian            hy      hye       arm       hye        ISO 639-3 code hye is for Eastern Armenian, hyw is for Western Armenian, and xcl is for Classical Armenian
-Assamese            as      asm       asm       asm
+The first 10 rows of the data resource (List_of_ISO_639-1_codes@en.wikipedia.org\wiki): 
+ISO Language Names   Set 1   Set 2   Set 3      Scope           Type            Endonym(s)                        Other Name(s) [note 1]   Notes                                  
+------------------   -----   -----   --------   -------------   -------------   -------------------------------   ----------------------   ------------------------------------   
+                                                                                                                                                                                  
+Abkhazian            ab      abk     abk        Individual      Living          Аҧсуа; Apsua; აფსუა               Abkhaz                                                          
+Afar                 aa      aar     aar        Individual      Living          Qafar af                                                                                          
+Afrikaans            af      afr     afr        Individual      Living          Afrikaans                                                                                         
+Akan                 ak      aka     aka + 2    Macrolanguage   Living          Ákán                                                       Twi is tw/twi, Fante is fat            
+Albanian             sq      sqi     alb        sqi + 4         Macrolanguage   Living                            Shqip                    called "Albanian Phylozone" in 639-6   
+Amharic              am      amh     amh        Individual      Living          አማርኛ (Amarəñña)                                                                                   
+Arabic               ar      ara     ara + 28   Macrolanguage   Living          اَلْعَرَبِيَّةُ (al-ʿarabiyyah)                            Standard Arabic is arb                 
+Aragonese            an      arg     arg        Individual      Living          Aragonés                                                                                          
+Armenian             hy      hye     arm        hye             Individual      Living                            Հայերեն (Hayeren)
 </console>
 </unit>

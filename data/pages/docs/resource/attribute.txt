@@ -30,53 +30,77 @@ tabli data info characters.csv@howto
 </code>
 <console>
 Information about the data resource (characters.csv@howto)
-ATTRIBUTE      VALUE
-------------   ----------------------------------------------------------
-AbsolutePath   D:\code\bytle-mono\db-website\src\doc\howto\characters.csv
-Characterset   ISO-8859-2
-Connection     howto
-Count          4
-DataUri        characters.csv@howto
-LogicalName    characters
-Name           characters.csv
-Path           characters.csv
-Size           346
-Type           text/csv
+attribute             value                                                                  description                                                              
+-------------------   --------------------------------------------------------------------   ----------------------------------------------------------------------   
+character-set         UTF-8                                                                  The character set of the file                                            
+column-name           lines                                                                  The name of the column when the text content is returned on one column   
+comment-character     #                                                                      The comment character                                                    
+delimiter-character   ,                                                                      The delimiter character                                                  
+end-of-record         \n, \r, \r\n                                                           The End Of Record string sequence                                        
+header-row-id         1                                                                      The id of the header row                                                 
+ignore-empty-line     true                                                                   Ignore empty line                                                        
+quote-character       "                                                                      The quote character                                                      
+uri                   file:///home/admin/code/tabulify/tabulify-cli/characters.csv           The URI of the file                                                      
+absolute-path         /home/admin/code/tabulify/tabulify-cli/src/main/howto/characters.csv   The absolute path on the data system                                     
+connection            howto                                                                  The connection name                                                      
+count                 5                                                                      The number of records                                                    
+data-uri              characters.csv@howto                                                   The data uri                                                             
+logical-name          characters                                                             The logical name                                                         
+md5                                                                                          The Md5 hash                                                             
+name                  characters.csv                                                         The name of the data resource                                            
+parent                                                                                       The parent                                                               
+path                  characters.csv                                                         The relative path to the default connection path                         
+sha384                                                                                       The Sha384 hash                                                          
+sha384-integrity                                                                             The sha384 value used in the html integrity attribute                    
+size                  432                                                                    The number of byte                                                       
+subtype               csv                                                                    The media subType                                                        
+type                  text/csv                                                               The media type
 </console>
 </unit>
+
 ==== List ====
 
 You can get them in a tabular format with the [[docs:tabli:data:list|tabli data list]] command
 
 <unit>
 <code bash>
-tabli data list -a count -a size *@howto
+tabli data list -a name -a count -a size *@howto
 </code>
 <console>
-count   size
--------------------   ----
-                  6    132
-                  4    346
-                  3    268
-                  5     70
-         2147483647   1446
-9223372036854775807    479
-         2147483647    227
-                 30    501
-                 10    623
-                 30   1512
-                  1      0
-                 30    313
-                 10    589
-                  5   1031
-               1000   1027
-                 30    601
-                 30    321
-                  1     17
-                  4     65
-                  1    301
-                  7    230
-                  2    420
+name                                         count   size   
+------------------------------------------   -----   ----   
+README.md                                        3    132   
+books.csv                                        6    386   
+books_template.json                              1    112   
+characters.csv                                   5    432   
+characters_target.csv                            3    268   
+create_foo.sql                                   2     70   
+date_dim--datagen.yml                          100          
+date_dim_2001--datagen.yml                     100          
+email                                            2          
+generator_count--datagen.yml                   100          
+histogram_normal_distribution--datagen.yml      30          
+histogram_random--datagen.yml                   10          
+json                                             1          
+pebble                                           2          
+pipeline                                         4          
+postgres                                         1          
+random--datagen.yml                             30          
+recursive                                        1          
+select.yml                                       1    332   
+sequence--datagen.yml                           30          
+sequence_color--datagen.yml                     10          
+sequence_number--datagen.yml                    14          
+sequence_odometer--datagen.yml                 100          
+sequence_time--datagen.yml                      30          
+sequence_varchar--datagen.yml                   30          
+sqlite                                           1          
+warehouse_delete.csv                             1     17   
+warehouse_delete.sql                             1     65   
+warehouse_original.csv                           1    301   
+warehouse_update.sql                             1    230   
+warehouse_upsert.csv                             2    420   
+xml                                              1
 </console>
 </unit>
 

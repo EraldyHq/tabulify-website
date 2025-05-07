@@ -51,17 +51,26 @@ tabli data info  generator_count--datagen.yml@howto
 </code>
 <console>
 Information about the data resource (generator_count--datagen.yml@howto)
-ATTRIBUTE      VALUE
-------------   ------------------------------------------------------------------------
-AbsolutePath   D:\code\bytle-mono\db-website\src\doc\howto\generator_count--datagen.yml
-Characterset   ISO-8859-1
-Connection     howto
-Count          2147483647
-DataUri        generator_count--datagen.yml@howto
-LogicalName    generator_count
-Name           generator_count--datagen.yml
-Path           generator_count--datagen.yml
-Size           227
-Type           datagen
+attribute          value                                                                                description                                                              
+----------------   ----------------------------------------------------------------------------------   ----------------------------------------------------------------------   
+character-set      UTF-8                                                                                The character set of the file                                            
+column-name        lines                                                                                The name of the column when the text content is returned on one column   
+end-of-record      \n, \r, \r\n                                                                         The End Of Record string sequence                                        
+max-record-count   100                                                                                  The maximum of records generated                                         
+size-not-capped    9223372036854775807                                                                  The number of records without max                                        
+uri                file:///home/admin/code/tabulify/tabulify-cli/generator_count--datagen.yml           The URI of the file                                                      
+absolute-path      /home/admin/code/tabulify/tabulify-cli/src/main/howto/generator_count--datagen.yml   The absolute path on the data system                                     
+connection         howto                                                                                The connection name                                                      
+count              100                                                                                  The number of records                                                    
+data-uri           generator_count--datagen.yml@howto                                                   The data uri                                                             
+logical-name       generator_count                                                                      The logical name                                                         
+md5                                                                                                     The Md5 hash                                                             
+name               generator_count--datagen.yml                                                         The name of the data resource                                            
+parent                                                                                                  The parent                                                               
+path               generator_count--datagen.yml                                                         The relative path to the default connection path                         
+sha384                                                                                                  The Sha384 hash                                                          
+sha384-integrity                                                                                        The sha384 value used in the html integrity attribute                    
+subtype            gen                                                                                  The media subType                                                        
+type               relation/gen                                                                         The media type
 </console>
 </unit>

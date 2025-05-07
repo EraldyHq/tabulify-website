@@ -19,6 +19,19 @@ Example:
 tabli data head --type text xml/relation.xml@howto
 </code>
 <console>
+The first 10 rows of the data resource (xml/relation.xml@howto): 
+lines                                                                                                                                             
+-----------------------------------------------------------------------------------------------------------------------------------------------   
+<?xml version="1.0"?>                                                                                                                             
+<api batchcomplete="">                                                                                                                            
+  <query>                                                                                                                                         
+    <normalized>                                                                                                                                  
+      <n from="Relation_(database)" to="Relation (database)"/>                                                                                    
+    </normalized>                                                                                                                                 
+    <pages>                                                                                                                                       
+      <page _idx="23720058" pageid="23720058" ns="0" title="Relation (database)" description="The base data structure of relational databases">   
+        <categories>                                                                                                                              
+          <cl ns="14" title="Category:Articles with example SQL code"/>
 </console>
 </unit>
 
@@ -32,17 +45,30 @@ tabli data info characters.csv@howto
 </code>
 <console>
 Information about the data resource (characters.csv@howto)
-ATTRIBUTE      VALUE
-------------   ----------------------------------------------------------
-AbsolutePath   D:\code\bytle-mono\db-website\src\doc\howto\characters.csv
-Characterset   ISO-8859-2
-Connection     howto
-Count          4
-DataUri        characters.csv@howto
-LogicalName    characters
-Name           characters.csv
-Path           characters.csv
-Size           346
-Type           text/csv
+attribute             value                                                                  description                                                              
+-------------------   --------------------------------------------------------------------   ----------------------------------------------------------------------   
+character-set         UTF-8                                                                  The character set of the file                                            
+column-name           lines                                                                  The name of the column when the text content is returned on one column   
+comment-character     #                                                                      The comment character                                                    
+delimiter-character   ,                                                                      The delimiter character                                                  
+end-of-record         \n, \r, \r\n                                                           The End Of Record string sequence                                        
+header-row-id         1                                                                      The id of the header row                                                 
+ignore-empty-line     true                                                                   Ignore empty line                                                        
+quote-character       "                                                                      The quote character                                                      
+uri                   file:///home/admin/code/tabulify/tabulify-cli/characters.csv           The URI of the file                                                      
+absolute-path         /home/admin/code/tabulify/tabulify-cli/src/main/howto/characters.csv   The absolute path on the data system                                     
+connection            howto                                                                  The connection name                                                      
+count                 5                                                                      The number of records                                                    
+data-uri              characters.csv@howto                                                   The data uri                                                             
+logical-name          characters                                                             The logical name                                                         
+md5                                                                                          The Md5 hash                                                             
+name                  characters.csv                                                         The name of the data resource                                            
+parent                                                                                       The parent                                                               
+path                  characters.csv                                                         The relative path to the default connection path                         
+sha384                                                                                       The Sha384 hash                                                          
+sha384-integrity                                                                             The sha384 value used in the html integrity attribute                    
+size                  432                                                                    The number of byte                                                       
+subtype               csv                                                                    The media subType                                                        
+type                  text/csv                                                               The media type
 </console>
 </unit>
