@@ -13,8 +13,9 @@ Global parameters attribute are:
 
 
 | ''LOG_LEVEL'' | the [[:docs:common:log|log level]] |
-| ''CONF'' | the path to the [[docs:conf:vault|configuration file]] |
-| ''PROJECT_HOME'' | the [[:docs:connection:project|Project Home path]] |
+| ''CONF'' | the [[docs:conf:vault|configuration vault path]] |
+| ''PROJECT_HOME'' | the [[:docs:connection:project|Project Home directory]] |
+| ''USER_HOME'' | the [[user_directory|user directory]] |
 |''PASSPHRASE'' | the [[:docs:common:passphrase|vault passphrase]] |
 | ''ENV'' | the [[:docs:common:environment|execution environment]] |
 

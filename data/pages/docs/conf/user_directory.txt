@@ -1,0 +1,17 @@
+====== User Directory (USER_HOME) ======
+
+
+===== About =====
+The ''user directory'' is directory that stores user information such as:
+
+  * the [[docs:conf:vault|configuration vault]] if the [[:docs:project:project|execution is not a project]]
+  * the [[:docs:system:sqlite:howto|default location for sqlite howto database]]
+
+
+===== How to change it? =====
+
+You can change it by setting the [[:docs:conf:global|global attribute USER_HOME]] with the ''TABLI_USER_HOME'' [[:docs:conf:os|environment variable]]
+
+<code bash>
+export TABLI_USER_HOME=/home/tabli/.user
+</code>

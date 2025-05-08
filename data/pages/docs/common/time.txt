@@ -27,7 +27,7 @@ This list is not exhaustive but below are the most known pattern.
 ===== Configuration =====
 ==== Storage ====
  
-The following [[docs:connection:built_in_attribute|built-in connection attribute]] changes the storage format of ''time'' data type (ie ''date'', ''timestamp'' and ''time'').
+The following [[docs:connection:built_in_variables|built-in connection attribute]] changes the storage format of ''time'' data type (ie ''date'', ''timestamp'' and ''time'').
 
 <note warning>
 Changing this value may lead to unpredictable transformation. If you change the value from ''epochSec'' to ''epochMs'', the same number will not have the same time value. Once this settings has been set, it's not recommended to change it.

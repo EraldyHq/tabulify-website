@@ -10,7 +10,7 @@ By default, ''Tabulify'' stores ''boolean'' data natively in the target system a
 
 For [[docs:system:system|system]], that does not support the ''boolean'' as data type, ''Tabulify'' may save them as binary integer (ie 0 or 1)
 
-This behavior is controllable with the  ''tabBooleanDataType'' [[docs:connection:built_in_attribute|tabulify connection attribute]]
+This behavior is controllable with the  ''tabBooleanDataType'' [[docs:connection:built_in_variables|tabulify connection attribute]]
 
 ^ Possible Values ^ Description ^
 | ''Native'' (Default) | Save the boolean in the data type of the system |
