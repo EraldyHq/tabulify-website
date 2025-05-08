@@ -35,6 +35,7 @@ description                 The sqlite default connection                 A conn
 driver                      org.sqlite.JDBC                               The driver class                                                       
 driver-name                 SQLite JDBC                                   The driver name                                                        
 driver-version              3.43.0.0                                      The driver version                                                     
+host                                                                      Host Server                                                            
 jdbc-major-version          4                                             The major version number of JDBC                                       
 jdbc-minor-version          2                                             The minor version number of JDBC                                       
 max-concurrent-thread                                                     The maximum number of threads that can be created against the system   
@@ -43,6 +44,7 @@ name                        sqlite                                        The na
 natives                                                                   Native Driver attributes (jdbc properties, ...)                        
 origin                      CONF                                          The origin of the connection                                           
 password                                                                  The user password to login                                             
+port                        -1                                            Host Port                                                              
 support-batch-updates       true                                          If the system supports batch SQL updates                               
 support-named-parameters    true                                          If the system supports named parameters in the SQL statement           
 timestamp-data-type         SQL_LITERAL                                   Timestamp data type used to store timestamp values                     
@@ -130,7 +132,7 @@ where:
 
     -oop,--output-transfer-operation <transferOperation>    defines the output transfer operation (insert, update, merge, copy). Default to `copy` for a file system and `insert` for a database.
 
-    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted vault values
+    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted vault values (Env: TABLI_PASSPHRASE)
 
     -ph,--project-home <path>                               The project home (default to the .tabli.yml file directory)
 

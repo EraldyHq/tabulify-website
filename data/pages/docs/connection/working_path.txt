@@ -8,7 +8,7 @@ The ''working path'' is a path from where the relative [[docs:resource:path|path
   * In a [[docs:system:database|database]], this is the [[docs:resource:schema|schema]]
   * In a [[docs:system:file|file system]], this is a [[docs:resource:directory|directory]] 
 
-This working path is set by the [[docs:connection:uri|connection url]].
+This working path is set by the [[docs:connection:uri|connection uri]].
 
 
 

@@ -32,9 +32,9 @@ NAME            URI
 -------------   ----------------------------------------------------------------------------------------------------   
 cd              file:///home/admin/code/tabulify/tabulify-cli/                                                         
 desktop         file:///home/admin/Desktop/                                                                            
-entity          file:///home/admin/code/tabulify/tabulify-gen-entities/src/main/resources/entity/                      
+entity          file:///home/admin/opt/tabulify/resources/entity/                                                      
 home            file:///home/admin/                                                                                    
-howto           file:///home/admin/code/tabulify/tabulify-cli/src/main/howto/                                          
+howto           file:///home/admin/opt/tabulify/resources/howto/                                                       
 log             jdbc:sqlite:////home/admin/.tabli/log.db                                                               
 memory          mem                                                                                                    
 mysql           jdbc:mysql://localhost:3306/howto                                                                      
@@ -47,7 +47,7 @@ sqlite_target   jdbc:sqlite:////home/admin/.tabli/sqlite_target.db
 sqlserver       jdbc:sqlserver://localhost:1433;databaseName=AdventureWorks;encrypt=true;trustServerCertificate=true   
 temp            file:///tmp/                                                                                           
 tpcds           tpcds                                                                                                  
-tpcds_query     file:///home/admin/code/tabulify/tabulify-jdbc/src/main/sql/tpcds_query/
+tpcds_query     file:///home/admin/opt/tabulify/resources/tpcds_query/
 </console>
 </unit>
 

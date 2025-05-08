@@ -25,12 +25,14 @@ boolean-data-type       Native                                                  
 date-data-type          NATIVE                                                             Date data type used to store date values                               
 description             The project home path                                              A connection description                                               
 driver                                                                                     The driver class                                                       
+host                                                                                       Host Server                                                            
 max-concurrent-thread                                                                      The maximum number of threads that can be created against the system   
 max-name-in-path                                                                           The maximum number of names in a path                                  
 name                    project                                                            The name of the connection                                             
 natives                                                                                    Native Driver attributes (jdbc properties, ...)                        
 origin                                                                                     The origin of the connection                                           
 password                                                                                   The user password to login                                             
+port                    -1                                                                 Host Port                                                              
 timestamp-data-type     NATIVE                                                             Timestamp data type used to store timestamp values                     
 time-data-type          NATIVE                                                             Time format data type to store time values                             
 uri                     file:///home/admin/code/tabulify/tabulify-cli/tabli-project@user   The uri of the connection                                              

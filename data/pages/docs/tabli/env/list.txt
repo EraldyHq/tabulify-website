@@ -13,7 +13,6 @@ tabli env list
 
 </code>
 <console>
-
 key                                value                      origin           description                                        
 --------------------------------   ------------------------   --------------   ------------------------------------------------   
 conf                                                          Calculated       The path to the conf file                          
@@ -25,7 +24,6 @@ native-driver                                                 Calculated       N
 passphrase                                                    Calculated       The passphrase                                     
 project-home                                                  Calculated       The project home path                              
 sqlite-home                        /home/admin/.tabli         Calculated       Sqlite home (Where to store the sqlite database)
-
 </console>
 </unit>
 
@@ -36,7 +34,6 @@ sqlite-home                        /home/admin/.tabli         Calculated       S
 tabli env list -h
 </code>
 <console>
-
 Tabli env list
 ==============
 
@@ -87,7 +84,7 @@ where:
 
   Options:
 
-    -t,--type <mediaType|mimeType|extensionFile>            The type of the configurations to return ('all, command-line, conf, dotenv, os, runtime, sys' or `all`)
+    -t,--type <mediaType|mimeType|extensionFile>            The type of the configurations to return ('all, command-line, conf, dotenv, os, runtime, sys, uri' or `all`)
 
 
   Global Options:
@@ -108,11 +105,10 @@ where:
 
     -oop,--output-transfer-operation <transferOperation>    defines the output transfer operation (insert, update, merge, copy). Default to `copy` for a file system and `insert` for a database.
 
-    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted vault values
+    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted vault values (Env: TABLI_PASSPHRASE)
 
     -ph,--project-home <path>                               The project home (default to the .tabli.yml file directory)
 
     -v,--version                                            Print version information
-
 </console>
 </unit>

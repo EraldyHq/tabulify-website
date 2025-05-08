@@ -22,12 +22,14 @@ boolean-data-type       Native                                           Boolean
 date-data-type          NATIVE                                           Date data type used to store date values                               
 description             The local file system                            A connection description                                               
 driver                                                                   The driver class                                                       
+host                                                                     Host Server                                                            
 max-concurrent-thread                                                    The maximum number of threads that can be created against the system   
 max-name-in-path                                                         The maximum number of names in a path                                  
 name                    cd                                               The name of the connection                                             
 natives                                                                  Native Driver attributes (jdbc properties, ...)                        
 origin                  BUILT_IN                                         The origin of the connection                                           
 password                                                                 The user password to login                                             
+port                    -1                                               Host Port                                                              
 timestamp-data-type     NATIVE                                           Timestamp data type used to store timestamp values                     
 time-data-type          NATIVE                                           Time format data type to store time values                             
 uri                     file:///home/admin/code/tabulify/tabulify-cli/   The uri of the connection                                              

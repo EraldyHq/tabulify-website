@@ -18,23 +18,25 @@ tabli connection info tpcds_query
 </code>
 <console>
 Information about the connection (tpcds_query)
-Attribute               Value                                                                      Description                                                            
----------------------   ------------------------------------------------------------------------   --------------------------------------------------------------------   
-Working Path            /home/admin/code/tabulify/tabulify-jdbc/src/main/sql/tpcds_query           Schema for database, directory for file system                         
-boolean-data-type       Native                                                                     Boolean data type used to store boolean values                         
-date-data-type          NATIVE                                                                     Date data type used to store date values                               
-description             The location of the Tpc Ds queries                                         A connection description                                               
-driver                                                                                             The driver class                                                       
-max-concurrent-thread                                                                              The maximum number of threads that can be created against the system   
-max-name-in-path                                                                                   The maximum number of names in a path                                  
-name                    tpcds_query                                                                The name of the connection                                             
-natives                                                                                            Native Driver attributes (jdbc properties, ...)                        
-origin                                                                                             The origin of the connection                                           
-password                                                                                           The user password to login                                             
-timestamp-data-type     NATIVE                                                                     Timestamp data type used to store timestamp values                     
-time-data-type          NATIVE                                                                     Time format data type to store time values                             
-uri                     file:///home/admin/code/tabulify/tabulify-jdbc/src/main/sql/tpcds_query/   The uri of the connection                                              
-user                                                                                               The user name to login
+Attribute               Value                                                    Description                                                            
+---------------------   ------------------------------------------------------   --------------------------------------------------------------------   
+Working Path            /home/admin/opt/tabulify/resources/tpcds_query           Schema for database, directory for file system                         
+boolean-data-type       Native                                                   Boolean data type used to store boolean values                         
+date-data-type          NATIVE                                                   Date data type used to store date values                               
+description             The location of the Tpc Ds queries                       A connection description                                               
+driver                                                                           The driver class                                                       
+host                                                                             Host Server                                                            
+max-concurrent-thread                                                            The maximum number of threads that can be created against the system   
+max-name-in-path                                                                 The maximum number of names in a path                                  
+name                    tpcds_query                                              The name of the connection                                             
+natives                                                                          Native Driver attributes (jdbc properties, ...)                        
+origin                                                                           The origin of the connection                                           
+password                                                                         The user password to login                                             
+port                    -1                                                       Host Port                                                              
+timestamp-data-type     NATIVE                                                   Timestamp data type used to store timestamp values                     
+time-data-type          NATIVE                                                   Time format data type to store time values                             
+uri                     file:///home/admin/opt/tabulify/resources/tpcds_query/   The uri of the connection                                              
+user                                                                             The user name to login
 </console>
 </unit>
 

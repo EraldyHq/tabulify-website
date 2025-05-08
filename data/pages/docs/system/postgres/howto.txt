@@ -31,7 +31,7 @@ docker run \
 <panel>
    <label>CMD / Powershell</label>
   * [[docs:common:shell|CMD/Powershell]]
-<code cmd>
+<code bash>
 docker run ^
     -e POSTGRES_PASSWORD=welcome ^
     -p 5432:5432 ^
@@ -68,31 +68,28 @@ docker start postgres
 tabli connection info postgres
 </code>
 <console>
+[31m09:25:04 - SEVERE - Unable to connect to the database (postgres) with the following URL (URI = jdbc:postgresql://localhost:5432/postgres). Error: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+[0m
 Information about the connection (postgres)
-Attribute                Value                                       Description
-----------------------   -----------------------------------------   --------------------------------------------------------------------
-Comment                  The default postgres data store             A connection description
-DatabaseMajorVersion     9                                           The major version number of the database
-DatabaseMinorVersion     5                                           The minor version number of the database
-DatabaseProductName      PostgreSQL                                  The name of the database
-DatabaseProductVersion   9.5.23                                      The version of the database
-Driver                   org.postgresql.Driver                       The driver class
-Driver                   org.postgresql.Driver                       The driver class
-DriverName               PostgreSQL JDBC Driver                      The driver name
-DriverVersion            42.2.16                                     The driver version
-JdbcMajorVersion         4                                           The major version number of JDBC
-JdbcMinorVersion         2                                           The minor version number of JDBC
-MaxConcurrentThread      8192                                        The maximum number of threads that can be created against the system
-MaxNameInPath            3                                           The maximum number of names in a path
-Name                     postgres                                    The name of the connection
-Password                 xxxxxxxxx                                   The user password to login
-SupportBatchUpdates      true                                        If the system supports batch SQL updates
-SupportNamedParameters   false                                       If the system supports named parameters in the SQL statement
-TabBooleanDataType       Native                                      Boolean data type used to store boolean values
-TabDateDataType          Native                                      Date data type used to store date values
-TabTimeDataType          Native                                      Time format data type to store time values
-TabTimestampDataType     Native                                      Timestamp data type used to store timestamp values
-Url                      jdbc:postgresql://localhost:5432/postgres   The url of the connection
-User                     postgres                                    The user name to login
+Attribute                   Value                                       Description                                                            
+-------------------------   -----------------------------------------   --------------------------------------------------------------------   
+boolean-data-type           Native                                      Boolean data type used to store boolean values                         
+connection-closing-script                                               A script that runs before a connection is closed                       
+connection-init-script                                                  A script that runs after a connection has been established             
+date-data-type              NATIVE                                      Date data type used to store date values                               
+description                 The default postgres data store             A connection description                                               
+driver                      org.postgresql.Driver                       The driver class                                                       
+host                                                                    Host Server                                                            
+max-concurrent-thread                                                   The maximum number of threads that can be created against the system   
+max-name-in-path                                                        The maximum number of names in a path                                  
+name                        postgres                                    The name of the connection                                             
+natives                                                                 Native Driver attributes (jdbc properties, ...)                        
+origin                      CONF                                        The origin of the connection                                           
+password                    welcome                                     The user password to login                                             
+port                        -1                                          Host Port                                                              
+timestamp-data-type         NATIVE                                      Timestamp data type used to store timestamp values                     
+time-data-type              NATIVE                                      Time format data type to store time values                             
+uri                         jdbc:postgresql://localhost:5432/postgres   The uri of the connection                                              
+user                        postgres                                    The user name to login
 </console>
 </unit>

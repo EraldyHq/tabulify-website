@@ -37,20 +37,19 @@ This is a first step (known as the [[docs:flow:supplier|supplier step]]) because
 Example: A ''color'' data resource with two columns and 3 records.
 
 <unit>
-<file yaml pipeline/define_single.yml>
+<file yaml pipeline/define_single_inline.yml>
 pipeline:
   - name: "Define"
     comment: "This operation define the tabular data resource named 'colors' with two columns"
     operation: "define"
     args:
-      data-resource:
-        data-definition:
-          logicalName: "colors"
-          columns: ["id","color"]
-        data:
-          - ["1", "blue"]
-          - ["2", "red"]
-          - ["3", "yellow"]
+      data-definition:
+        logicalName: "colors"
+        columns: ["id","color"]
+      data:
+        - ["1", "blue"]
+        - ["2", "red"]
+        - ["3", "yellow"]
   - name: "Print"
     comment: "Print the colors resource"
     operation: "print"
@@ -58,15 +57,14 @@ pipeline:
 </file>
 If you [[docs:tabli:flow:execute|execute this pipeline]]
 <code bash>
-tabli flow execute pipeline/define_single.yml@howto
+tabli flow execute pipeline/define_single_inline.yml@howto
 </code>
 you will get the data of the ''colors'' data resource [[docs:tabli:data:print|printed]] in a tabular format.
 <console>
-id   color
---   ------
-1    blue
-2    red
-3    yellow
+List of executions
+ExecutionId   OperationName   DataPathsCount   DataPathsList   
+-----------   -------------   --------------   -------------   
+1             define          0
 </console>
 </unit>
 ==== Multiple Inline Data Resources ====

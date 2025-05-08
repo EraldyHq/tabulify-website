@@ -39,7 +39,7 @@ The [[docs:connection:password|password]] will be [[docs:common:vault|encrypted]
 With the [[docs:tabli:connection:add|tabli add command of the connection module]], adding a Oracle connection with the name ''oracleConnectionName'':
 
 <unit display="none">
-<code cmd>
+<code bash>
 tabli connection delete --not-strict "oracleConnectionName"
 </code>
 </unit>

@@ -42,15 +42,15 @@ tabli flow execute pipeline/email_resources.yml@howto
 </code>
 Output:
 <console>
-########
-Executing the pipeline email_resources
-########
+[38;2;255;153;0m09:24:32 - WARNING - The class for the sql type (null (0,null)@log) was null, we have returned a string
+[0m[38;2;255;153;0m09:24:32 - WARNING - The class for the sql type (null (0,null)@log) was null, we have returned a string
+[0mjakarta.mail.event.TransportEvent[source=smtps://admin@mailpit-bcf52bfa.nip.io]
 
 List of executions
 ExecutionId   OperationName   DataPathsCount   DataPathsList               
 -----------   -------------   --------------   -------------------------   
-1             select          1                email\analytics.csv@howto   
-2             send            1                email\analytics.csv@howto
+1             select          1                email/analytics.csv@howto   
+2             sendmail        1                email/analytics.csv@howto
 </console>
 </unit>
 
@@ -74,7 +74,7 @@ pipeline:
     operation: "sendmail"
     args:
       target-uri: "@smtp" # smtp is the default smtp connection and is therefore optional
-      granularity: "record"
+      step-granularity: "record"
 
 </file>
 If you [[docs:tabli:flow:execute|execute this pipeline]]
@@ -83,15 +83,16 @@ tabli flow execute pipeline/email_list.yml@howto
 </code>
 Output:
 <console>
-########
-Executing the pipeline email_list
-########
+[38;2;255;153;0m09:24:34 - WARNING - The class for the sql type (null (0,null)@log) was null, we have returned a string
+[0m[38;2;255;153;0m09:24:34 - WARNING - The class for the sql type (null (0,null)@log) was null, we have returned a string
+[0mjakarta.mail.event.TransportEvent[source=smtps://admin@mailpit-bcf52bfa.nip.io]
+jakarta.mail.event.TransportEvent[source=smtps://admin@mailpit-bcf52bfa.nip.io]
 
 List of executions
-ExecutionId   OperationName   DataPathsCount   DataPathsList                                 
------------   -------------   --------------   -------------------------------------------   
-1             define          1                12b25b90-3b0e-4005-8119-c2c9cd69cca9@memory   
-2             send            1                12b25b90-3b0e-4005-8119-c2c9cd69cca9@memory
+ExecutionId   OperationName   DataPathsCount   DataPathsList      
+-----------   -------------   --------------   ----------------   
+1             define          1                h9dbef894@memory   
+2             sendmail        1                h9dbef894@memory
 </console>
 </unit>
 
