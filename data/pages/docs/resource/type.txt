@@ -45,30 +45,30 @@ tabli data info characters.csv@howto
 </code>
 <console>
 Information about the data resource (characters.csv@howto)
-attribute             value                                                          description                                                              
--------------------   ------------------------------------------------------------   ----------------------------------------------------------------------   
-character-set         UTF-8                                                          The character set of the file                                            
-column-name           lines                                                          The name of the column when the text content is returned on one column   
-comment-character     #                                                              The comment character                                                    
-delimiter-character   ,                                                              The delimiter character                                                  
-end-of-record         \n, \r, \r\n                                                   The End Of Record string sequence                                        
-header-row-id         1                                                              The id of the header row                                                 
-ignore-empty-line     true                                                           Ignore empty line                                                        
-quote-character       "                                                              The quote character                                                      
-uri                   file:///home/admin/code/tabulify/tabulify-cli/characters.csv   The URI of the file                                                      
-absolute-path         /opt/tabulify/resources/howto/characters.csv                   The absolute path on the data system                                     
-connection            howto                                                          The connection name                                                      
-count                 5                                                              The number of records                                                    
-data-uri              characters.csv@howto                                           The data uri                                                             
-logical-name          characters                                                     The logical name                                                         
-md5                                                                                  The Md5 hash                                                             
-name                  characters.csv                                                 The name of the data resource                                            
-parent                                                                               The parent                                                               
-path                  characters.csv                                                 The relative path to the default connection path                         
-sha384                                                                               The Sha384 hash                                                          
-sha384-integrity                                                                     The sha384 value used in the html integrity attribute                    
-size                  432                                                            The number of byte                                                       
-subtype               csv                                                            The media subType                                                        
-type                  text/csv                                                       The media type
+attribute             value                                          description                                                              
+-------------------   --------------------------------------------   ----------------------------------------------------------------------   
+character-set         UTF-8                                          The character set of the file                                            
+column-name           lines                                          The name of the column when the text content is returned on one column   
+comment-character     #                                              The comment character                                                    
+delimiter-character   ,                                              The delimiter character                                                  
+end-of-record         \n, \r, \r\n                                   The End Of Record string sequence                                        
+header-row-id         1                                              The id of the header row                                                 
+ignore-empty-line     true                                           Ignore empty line                                                        
+quote-character       "                                              The quote character                                                      
+uri                   file:///home/tabulify/characters.csv           The URI of the file                                                      
+absolute-path         /opt/tabulify/resources/howto/characters.csv   The absolute path on the data system                                     
+connection            howto                                          The connection name                                                      
+count                 5                                              The number of records                                                    
+data-uri              characters.csv@howto                           The data uri                                                             
+logical-name          characters                                     The logical name                                                         
+md5                                                                  The Md5 hash                                                             
+name                  characters.csv                                 The name of the data resource                                            
+parent                                                               The parent                                                               
+path                  characters.csv                                 The relative path to the default connection path                         
+sha384                                                               The Sha384 hash                                                          
+sha384-integrity                                                     The sha384 value used in the html integrity attribute                    
+size                  432                                            The number of byte                                                       
+subtype               csv                                            The media subType                                                        
+type                  text/csv                                       The media type
 </console>
 </unit>

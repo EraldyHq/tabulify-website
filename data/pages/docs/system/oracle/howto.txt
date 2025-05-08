@@ -13,30 +13,27 @@ A [[docs:connection:howtos|default howto oracle connection]] is provided after a
 tabli connection info oracle
 </code>
 <console>
-[31m16:35:59 - SEVERE - Unable to connect to the database (oracle) with the following URL (URI = jdbc:oracle:thin:@localhost:1521/freepdb1). Error: ORA-12541: Cannot connect. No listener at host localhost port 1521. (CONNECTION_ID=m/R11D/zR/Wm+Eu/K2Y/CQ==)
-https://docs.oracle.com/error-help/db/ora-12541/
-[0m
 Information about the connection (oracle)
-Attribute                   Value                                       Description                                                            
--------------------------   -----------------------------------------   --------------------------------------------------------------------   
-boolean-data-type           Native                                      Boolean data type used to store boolean values                         
-comment                     The default oracle connection               A connection description                                               
-connection-closing-script                                               A script that runs before a connection is closed                       
-connection-init-script                                                  A script that runs after a connection has been established             
-date-data-type              NATIVE                                      Date data type used to store date values                               
-driver                      oracle.jdbc.OracleDriver                    The driver class                                                       
-host                                                                    Host Server                                                            
-max-concurrent-thread                                                   The maximum number of threads that can be created against the system   
-max-name-in-path                                                        The maximum number of names in a path                                  
-name                        oracle                                      The name of the connection                                             
-natives                                                                 Native Driver attributes (jdbc properties, ...)                        
-origin                      CONF                                        The origin of the connection                                           
-password                    oracle                                      The user password                                                      
-port                        -1                                          Host Port                                                              
-timestamp-data-type         NATIVE                                      Timestamp data type used to store timestamp values                     
-time-data-type              NATIVE                                      Time format data type to store time values                             
-uri                         jdbc:oracle:thin:@localhost:1521/freepdb1   The uri of the connection                                              
-user                        hr                                          The user name
+Attribute                   Value                                       Description
+-------------------------   -----------------------------------------   --------------------------------------------------------------------
+BOOLEAN_DATA_TYPE           Native                                      Boolean data type used to store boolean values
+COMMENT                     The default oracle connection               A connection description
+CONNECTION_CLOSING_SCRIPT                                               A script that runs before a connection is closed
+CONNECTION_INIT_SCRIPT                                                  A script that runs after a connection has been established
+DATE_DATA_TYPE              NATIVE                                      Date data type used to store date values
+DRIVER                      oracle.jdbc.OracleDriver                    The driver class
+HOST                                                                    Host Server
+MAX_CONCURRENT_THREAD                                                   The maximum number of threads that can be created against the system
+MAX_NAME_IN_PATH                                                        The maximum number of names in a path
+NAME                        oracle                                      The name of the connection
+NATIVES                                                                 Native Driver attributes (jdbc properties, ...)
+ORIGIN                      CONF                                        The origin of the connection
+PASSWORD                    oracle                                      The user password
+PORT                        -1                                          Host Port
+TIMESTAMP_DATA_TYPE         NATIVE                                      Timestamp data type used to store timestamp values
+TIME_DATA_TYPE              NATIVE                                      Time format data type to store time values
+URI                         jdbc:oracle:thin:@localhost:1521/freepdb1   The uri of the connection
+USER                        hr                                          The user name
 </console>
 </unit>
 

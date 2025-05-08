@@ -69,26 +69,26 @@ tabli connection info postgres
 </code>
 <console>
 Information about the connection (postgres)
-Attribute                   Value                                       Description
--------------------------   -----------------------------------------   --------------------------------------------------------------------
-boolean-data-type           Native                                      Boolean data type used to store boolean values
-comment                     The default postgres data store             A connection description
-connection-closing-script                                               A script that runs before a connection is closed
-connection-init-script                                                  A script that runs after a connection has been established
-date-data-type              NATIVE                                      Date data type used to store date values
-driver                      org.postgresql.Driver                       The driver class
-host                                                                    Host Server
-max-concurrent-thread                                                   The maximum number of threads that can be created against the system
-max-name-in-path                                                        The maximum number of names in a path
-name                        postgres                                    The name of the connection
-natives                                                                 Native Driver attributes (jdbc properties, ...)
-origin                      CONF                                        The origin of the connection
-password                    welcome                                     The user password
-port                        -1                                          Host Port
-timestamp-data-type         NATIVE                                      Timestamp data type used to store timestamp values
-time-data-type              NATIVE                                      Time format data type to store time values
-uri                         jdbc:postgresql://localhost:5432/postgres   The uri of the connection
-user                        postgres                                    The user name
-working-path                public.                                     The working path (Schema for database, directory for file system)
+Attribute                   Value                                       Description                                                            
+-------------------------   -----------------------------------------   --------------------------------------------------------------------   
+BOOLEAN_DATA_TYPE           Native                                      Boolean data type used to store boolean values                         
+COMMENT                     The default postgres data store             A connection description                                               
+CONNECTION_CLOSING_SCRIPT                                               A script that runs before a connection is closed                       
+CONNECTION_INIT_SCRIPT                                                  A script that runs after a connection has been established             
+DATE_DATA_TYPE              NATIVE                                      Date data type used to store date values                               
+DRIVER                      org.postgresql.Driver                       The driver class                                                       
+HOST                                                                    Host Server                                                            
+MAX_CONCURRENT_THREAD                                                   The maximum number of threads that can be created against the system   
+MAX_NAME_IN_PATH                                                        The maximum number of names in a path                                  
+NAME                        postgres                                    The name of the connection                                             
+NATIVES                                                                 Native Driver attributes (jdbc properties, ...)                        
+ORIGIN                      CONF                                        The origin of the connection                                           
+PASSWORD                    welcome                                     The user password                                                      
+PORT                        -1                                          Host Port                                                              
+TIMESTAMP_DATA_TYPE         NATIVE                                      Timestamp data type used to store timestamp values                     
+TIME_DATA_TYPE              NATIVE                                      Time format data type to store time values                             
+URI                         jdbc:postgresql://localhost:5432/postgres   The uri of the connection                                              
+USER                        postgres                                    The user name                                                          
+WORKING_PATH                public.                                     The working path (Schema for database, directory for file system)
 </console>
 </unit>

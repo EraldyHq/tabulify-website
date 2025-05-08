@@ -18,7 +18,7 @@ tabli --passphrase hardToGuess vault encrypt secret
 The encryption result
 plaintext   ciphertext                                                                                                                                   
 ---------   ------------------------------------------------------------------------------------------------------------------------------------------   
-secret      tvaultQVE9PT5rZE16blI1TTlzdHFQa2IzU21ydVR3PT0+QjM1Qkk4RXZFcGQ2RjQyUndqeGVNSVpqQ3hYQjJ3SEFrRmVPb1d2SktTYz0+VjBBd05CUVB2SjBuUCtQb2hicE1Cdz09
+secret      tvaultQVE9PT5QSjFYVmpzOGtpQVlyckNVejY4VXNBPT0+ZFpoVGZSQTd3MUJRTkhIelFjZXNIc0FkVGVIbUhFNE1Pc2tsdzhjVkNhbz0+NEZFU1U4SEpqM0wzWWY4VnlCK3BBQT09
 </console>
 </unit>
 

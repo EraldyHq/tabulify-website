@@ -24,10 +24,10 @@ tabli connection list *
 <console>
 name            uri                                                                                                    
 -------------   ----------------------------------------------------------------------------------------------------   
-cd              file:///home/admin/code/tabulify/tabulify-cli/                                                         
-desktop         file:///home/admin/Desktop/                                                                            
+cd              file:///home/tabulify/                                                                                 
+desktop         file:///home/tabulify/Desktop                                                                          
 entity          file:///opt/tabulify/resources/entity/                                                                 
-home            file:///home/admin/                                                                                    
+home            file:///home/tabulify/                                                                                 
 howto           file:///opt/tabulify/resources/howto/                                                                  
 log             file:///home/tabulify/.tabli/logs                                                                      
 memory          mem                                                                                                    

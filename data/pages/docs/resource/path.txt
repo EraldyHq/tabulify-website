@@ -36,7 +36,7 @@ character-set      UTF-8                                                        
 column-name        sql                                                                                        The name of the column when the text content is returned on one column   
 end-of-record      ;\r, ;\r\n, ;\n, /\r, /\r\n, /\n, \rgo\r, \r\ngo\r\n, \ngo\n, \rGO\r, \r\nGO\r\n, \nGO\n   The End Of Record string sequence                                        
 parsing-mode       SQL                                                                                        How to parse the SQL files                                               
-uri                file:///home/admin/code/tabulify/tabulify-cli/sqlite/query_11.sql                          The URI of the file                                                      
+uri                file:///home/tabulify/sqlite/query_11.sql                                                  The URI of the file                                                      
 absolute-path      /opt/tabulify/resources/tpcds_query/sqlite/query_11.sql                                    The absolute path on the data system                                     
 connection         tpcds_query                                                                                The connection name                                                      
 count              1                                                                                          The number of records                                                    

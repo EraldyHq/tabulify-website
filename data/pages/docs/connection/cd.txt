@@ -15,25 +15,25 @@ tabli connection info cd
 </code>
 <console>
 Information about the connection (cd)
-Attribute               Value                                            Description                                                            
----------------------   ----------------------------------------------   --------------------------------------------------------------------   
-boolean-data-type       Native                                           Boolean data type used to store boolean values                         
-comment                 The local file system                            A connection description                                               
-date-data-type          NATIVE                                           Date data type used to store date values                               
-driver                                                                   The driver class                                                       
-host                                                                     Host Server                                                            
-max-concurrent-thread                                                    The maximum number of threads that can be created against the system   
-max-name-in-path                                                         The maximum number of names in a path                                  
-name                    cd                                               The name of the connection                                             
-natives                                                                  Native Driver attributes (jdbc properties, ...)                        
-origin                  BUILT_IN                                         The origin of the connection                                           
-password                                                                 The user password                                                      
-port                    -1                                               Host Port                                                              
-tabular-file-type       text/csv                                         The default file type when downloading tabular data                    
-timestamp-data-type     NATIVE                                           Timestamp data type used to store timestamp values                     
-time-data-type          NATIVE                                           Time format data type to store time values                             
-uri                     file:///home/admin/code/tabulify/tabulify-cli/   The uri of the connection                                              
-user                                                                     The user name                                                          
-working-path            /home/admin/code/tabulify/tabulify-cli           The working path (Schema for database, directory for file system)
+Attribute               Value                    Description                                                            
+---------------------   ----------------------   --------------------------------------------------------------------   
+BOOLEAN_DATA_TYPE       Native                   Boolean data type used to store boolean values                         
+COMMENT                 The local file system    A connection description                                               
+DATE_DATA_TYPE          NATIVE                   Date data type used to store date values                               
+DRIVER                                           The driver class                                                       
+HOST                                             Host Server                                                            
+MAX_CONCURRENT_THREAD                            The maximum number of threads that can be created against the system   
+MAX_NAME_IN_PATH                                 The maximum number of names in a path                                  
+NAME                    cd                       The name of the connection                                             
+NATIVES                                          Native Driver attributes (jdbc properties, ...)                        
+ORIGIN                  BUILT_IN                 The origin of the connection                                           
+PASSWORD                                         The user password                                                      
+PORT                    -1                       Host Port                                                              
+TABULAR_FILE_TYPE       text/csv                 The default file type when downloading tabular data                    
+TIMESTAMP_DATA_TYPE     NATIVE                   Timestamp data type used to store timestamp values                     
+TIME_DATA_TYPE          NATIVE                   Time format data type to store time values                             
+URI                     file:///home/tabulify/   The uri of the connection                                              
+USER                                             The user name                                                          
+WORKING_PATH            /home/tabulify           The working path (Schema for database, directory for file system)
 </console>
 </unit>

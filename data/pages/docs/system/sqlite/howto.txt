@@ -14,24 +14,24 @@ tabli connection info sqlite
 Information about the connection (sqlite)
 Attribute                   Value                                            Description                                                            
 -------------------------   ----------------------------------------------   --------------------------------------------------------------------   
-boolean-data-type           Native                                           Boolean data type used to store boolean values                         
-comment                     The sqlite default connection                    A connection description                                               
-connection-closing-script                                                    A script that runs before a connection is closed                       
-connection-init-script                                                       A script that runs after a connection has been established             
-date-data-type              NATIVE                                           Date data type used to store date values                               
-driver                      org.sqlite.JDBC                                  The driver class                                                       
-host                                                                         Host Server                                                            
-max-concurrent-thread                                                        The maximum number of threads that can be created against the system   
-max-name-in-path                                                             The maximum number of names in a path                                  
-name                        sqlite                                           The name of the connection                                             
-natives                                                                      Native Driver attributes (jdbc properties, ...)                        
-origin                      CONF                                             The origin of the connection                                           
-password                                                                     The user password                                                      
-port                        -1                                               Host Port                                                              
-timestamp-data-type         NATIVE                                           Timestamp data type used to store timestamp values                     
-time-data-type              NATIVE                                           Time format data type to store time values                             
-uri                         jdbc:sqlite:////home/tabulify/.tabli/sqlite.db   The uri of the connection                                              
-user                                                                         The user name                                                          
-working-path                                                                 The working path (Schema for database, directory for file system)
+BOOLEAN_DATA_TYPE           Native                                           Boolean data type used to store boolean values                         
+COMMENT                     The sqlite default connection                    A connection description                                               
+CONNECTION_CLOSING_SCRIPT                                                    A script that runs before a connection is closed                       
+CONNECTION_INIT_SCRIPT                                                       A script that runs after a connection has been established             
+DATE_DATA_TYPE              NATIVE                                           Date data type used to store date values                               
+DRIVER                      org.sqlite.JDBC                                  The driver class                                                       
+HOST                                                                         Host Server                                                            
+MAX_CONCURRENT_THREAD                                                        The maximum number of threads that can be created against the system   
+MAX_NAME_IN_PATH                                                             The maximum number of names in a path                                  
+NAME                        sqlite                                           The name of the connection                                             
+NATIVES                                                                      Native Driver attributes (jdbc properties, ...)                        
+ORIGIN                      CONF                                             The origin of the connection                                           
+PASSWORD                                                                     The user password                                                      
+PORT                        -1                                               Host Port                                                              
+TIMESTAMP_DATA_TYPE         NATIVE                                           Timestamp data type used to store timestamp values                     
+TIME_DATA_TYPE              NATIVE                                           Time format data type to store time values                             
+URI                         jdbc:sqlite:////home/tabulify/.tabli/sqlite.db   The uri of the connection                                              
+USER                                                                         The user name                                                          
+WORKING_PATH                                                                 The working path (Schema for database, directory for file system)
 </console>
 </unit>
