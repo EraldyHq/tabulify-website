@@ -42,9 +42,7 @@ tabli flow execute pipeline/email_resources.yml@howto
 </code>
 Output:
 <console>
-[38;2;255;153;0m09:24:32 - WARNING - The class for the sql type (null (0,null)@log) was null, we have returned a string
-[0m[38;2;255;153;0m09:24:32 - WARNING - The class for the sql type (null (0,null)@log) was null, we have returned a string
-[0mjakarta.mail.event.TransportEvent[source=smtps://admin@mailpit-bcf52bfa.nip.io]
+jakarta.mail.event.TransportEvent[source=smtps://admin@mailpit-bcf52bfa.nip.io]
 
 List of executions
 ExecutionId   OperationName   DataPathsCount   DataPathsList               
@@ -83,16 +81,14 @@ tabli flow execute pipeline/email_list.yml@howto
 </code>
 Output:
 <console>
-[38;2;255;153;0m09:24:34 - WARNING - The class for the sql type (null (0,null)@log) was null, we have returned a string
-[0m[38;2;255;153;0m09:24:34 - WARNING - The class for the sql type (null (0,null)@log) was null, we have returned a string
-[0mjakarta.mail.event.TransportEvent[source=smtps://admin@mailpit-bcf52bfa.nip.io]
+jakarta.mail.event.TransportEvent[source=smtps://admin@mailpit-bcf52bfa.nip.io]
 jakarta.mail.event.TransportEvent[source=smtps://admin@mailpit-bcf52bfa.nip.io]
 
 List of executions
 ExecutionId   OperationName   DataPathsCount   DataPathsList      
 -----------   -------------   --------------   ----------------   
-1             define          1                h9dbef894@memory   
-2             sendmail        1                h9dbef894@memory
+1             define          1                j0c11fc46@memory   
+2             sendmail        1                j0c11fc46@memory
 </console>
 </unit>
 

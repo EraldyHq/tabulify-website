@@ -56,7 +56,7 @@ header-row-id         1                                                         
 ignore-empty-line     true                                                           Ignore empty line                                                        
 quote-character       "                                                              The quote character                                                      
 uri                   file:///home/admin/code/tabulify/tabulify-cli/characters.csv   The URI of the file                                                      
-absolute-path         /home/admin/opt/tabulify/resources/howto/characters.csv        The absolute path on the data system                                     
+absolute-path         /opt/tabulify/resources/howto/characters.csv                   The absolute path on the data system                                     
 connection            howto                                                          The connection name                                                      
 count                 5                                                              The number of records                                                    
 data-uri              characters.csv@howto                                           The data uri                                                             

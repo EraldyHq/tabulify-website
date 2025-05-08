@@ -20,35 +20,25 @@ tabli connection info "dbConnectionName"
 Information about the connection (dbConnectionName)
 Attribute                   Value                      Description                                                            
 -------------------------   ------------------------   --------------------------------------------------------------------   
-Working Path                                           Schema for database, directory for file system                         
-boolean-data-type           Binary                     Boolean data type used to store boolean values                         
+boolean-data-type           Native                     Boolean data type used to store boolean values                         
+comment                                                A connection description                                               
 connection-closing-script                              A script that runs before a connection is closed                       
 connection-init-script                                 A script that runs after a connection has been established             
-database-major-version      3                          The major version number of the database                               
-database-minor-version      43                         The minor version number of the database                               
-database-product-name       SQLite                     The name of the database                                               
-database-product-version    3.43.0                     The version of the database                                            
-date-data-type              SQL_LITERAL                Date data type used to store date values                               
-description                                            A connection description                                               
+date-data-type              NATIVE                     Date data type used to store date values                               
 driver                                                 The driver class                                                       
-driver-name                 SQLite JDBC                The driver name                                                        
-driver-version              3.43.0.0                   The driver version                                                     
 host                                                   Host Server                                                            
-jdbc-major-version          4                          The major version number of JDBC                                       
-jdbc-minor-version          2                          The minor version number of JDBC                                       
 max-concurrent-thread                                  The maximum number of threads that can be created against the system   
 max-name-in-path                                       The maximum number of names in a path                                  
 name                        dbConnectionName           The name of the connection                                             
 natives                                                Native Driver attributes (jdbc properties, ...)                        
 origin                      CONF                       The origin of the connection                                           
-password                                               The user password to login                                             
+password                                               The user password                                                      
 port                        -1                         Host Port                                                              
-support-batch-updates       true                       If the system supports batch SQL updates                               
-support-named-parameters    true                       If the system supports named parameters in the SQL statement           
-timestamp-data-type         SQL_LITERAL                Timestamp data type used to store timestamp values                     
-time-data-type              SQL_LITERAL                Time format data type to store time values                             
+timestamp-data-type         NATIVE                     Timestamp data type used to store timestamp values                     
+time-data-type              NATIVE                     Time format data type to store time values                             
 uri                         jdbc:sqlite:///tmp/db.db   The uri of the connection                                              
-user                                                   The user name to login
+user                                                   The user name                                                          
+working-path                                           The working path (Schema for database, directory for file system)
 </console>
 </unit>
   * Delete it

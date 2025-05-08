@@ -96,12 +96,12 @@ connection         en.wikipedia.org\w                                           
 count              1                                                                                                  The number of records                                                    
 data-uri           api.php@en.wikipedia.org\w                                                                         The data uri                                                             
 logical-name       api                                                                                                The logical name                                                         
-md5                86237386c018bd9ce0399e8ac238403b                                                                   The Md5 hash                                                             
+md5                75066d186c1cab97f5f282aab952f440                                                                   The Md5 hash                                                             
 name               api.php                                                                                            The name of the data resource                                            
 parent                                                                                                                The parent                                                               
 path               api.php                                                                                            The relative path to the default connection path                         
-sha384             b196678c2a5c09d5267188d2369433305f56268acd93f48c0997d956646d5dde104bacae90a8cfdab36a9751e4d4779c   The Sha384 hash                                                          
-sha384-integrity   sha384-6VxdYDo/XBPYBlpRfrFrwDiUH7o1WWJzYLC1Xn0qeX/qBCyuwxNM47HW9Rcgkx7b                            The sha384 value used in the html integrity attribute                    
+sha384             f004d0973a391ddd4371f2c7b23546255566c6505886c877c0080ebe1f8e8b246a892e1c501811e98fdc71ebff2d4bc3   The Sha384 hash                                                          
+sha384-integrity   sha384-+J8ud0+JK4RkStFV8+lbaBccMlEOcv/H1h9QknfI1Z8FiLV654KmnglOs8KxyCC1                            The sha384 value used in the html integrity attribute                    
 size               -1                                                                                                 The number of byte                                                       
 subtype            xml                                                                                                The media subType                                                        
 type               text/xml                                                                                           The media type

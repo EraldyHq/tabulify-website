@@ -22,25 +22,25 @@ After a [[howto:getting_started:1_install|fresh installation]], you should see t
 tabli connection list *
 </code>
 <console>
-NAME            URI                                                                                                    
+name            uri                                                                                                    
 -------------   ----------------------------------------------------------------------------------------------------   
 cd              file:///home/admin/code/tabulify/tabulify-cli/                                                         
 desktop         file:///home/admin/Desktop/                                                                            
-entity          file:///home/admin/opt/tabulify/resources/entity/                                                      
+entity          file:///opt/tabulify/resources/entity/                                                                 
 home            file:///home/admin/                                                                                    
-howto           file:///home/admin/opt/tabulify/resources/howto/                                                       
-log             jdbc:sqlite:////home/admin/.tabli/log.db                                                               
+howto           file:///opt/tabulify/resources/howto/                                                                  
+log             file:///home/tabulify/.tabli/logs                                                                      
 memory          mem                                                                                                    
 mysql           jdbc:mysql://localhost:3306/howto                                                                      
 noop            noop                                                                                                   
 oracle          jdbc:oracle:thin:@localhost:1521/freepdb1                                                              
 postgres        jdbc:postgresql://localhost:5432/postgres                                                              
 smtp            smtp://localhost                                                                                       
-sqlite          jdbc:sqlite:////home/admin/.tabli/sqlite.db                                                            
-sqlite_target   jdbc:sqlite:////home/admin/.tabli/sqlite_target.db                                                     
+sqlite          jdbc:sqlite:////home/tabulify/.tabli/sqlite.db                                                         
+sqlite_target   jdbc:sqlite:////home/tabulify/.tabli/sqlite_target.db                                                  
 sqlserver       jdbc:sqlserver://localhost:1433;databaseName=AdventureWorks;encrypt=true;trustServerCertificate=true   
 temp            file:///tmp/                                                                                           
 tpcds           tpcds                                                                                                  
-tpcds_query     file:///home/admin/opt/tabulify/resources/tpcds_query/
+tpcds_query     file:///opt/tabulify/resources/tpcds_query/
 </console>
 </unit>

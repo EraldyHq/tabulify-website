@@ -59,7 +59,7 @@ end-of-record      \n, \r, \r\n                                                 
 max-record-count   100                                                                          The maximum of records generated                                         
 size-not-capped    9223372036854775807                                                          The number of records without max                                        
 uri                file:///home/admin/code/tabulify/tabulify-cli/generator_count--datagen.yml   The URI of the file                                                      
-absolute-path      /home/admin/opt/tabulify/resources/howto/generator_count--datagen.yml        The absolute path on the data system                                     
+absolute-path      /opt/tabulify/resources/howto/generator_count--datagen.yml                   The absolute path on the data system                                     
 connection         howto                                                                        The connection name                                                      
 count              100                                                                          The number of records                                                    
 data-uri           generator_count--datagen.yml@howto                                           The data uri                                                             

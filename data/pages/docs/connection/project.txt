@@ -20,10 +20,9 @@ tabli --project-home  tabli-project@user connection info project
 Information about the connection (project)
 Attribute               Value                                                              Description                                                            
 ---------------------   ----------------------------------------------------------------   --------------------------------------------------------------------   
-Working Path            /home/admin/code/tabulify/tabulify-cli/tabli-project@user          Schema for database, directory for file system                         
 boolean-data-type       Native                                                             Boolean data type used to store boolean values                         
+comment                 The project home path                                              A connection description                                               
 date-data-type          NATIVE                                                             Date data type used to store date values                               
-description             The project home path                                              A connection description                                               
 driver                                                                                     The driver class                                                       
 host                                                                                       Host Server                                                            
 max-concurrent-thread                                                                      The maximum number of threads that can be created against the system   
@@ -31,11 +30,13 @@ max-name-in-path                                                                
 name                    project                                                            The name of the connection                                             
 natives                                                                                    Native Driver attributes (jdbc properties, ...)                        
 origin                                                                                     The origin of the connection                                           
-password                                                                                   The user password to login                                             
+password                                                                                   The user password                                                      
 port                    -1                                                                 Host Port                                                              
+tabular-file-type       text/csv                                                           The default file type when downloading tabular data                    
 timestamp-data-type     NATIVE                                                             Timestamp data type used to store timestamp values                     
 time-data-type          NATIVE                                                             Time format data type to store time values                             
 uri                     file:///home/admin/code/tabulify/tabulify-cli/tabli-project@user   The uri of the connection                                              
-user                                                                                       The user name to login
+user                                                                                       The user name                                                          
+working-path            /home/admin/code/tabulify/tabulify-cli/tabli-project@user          The working path (Schema for database, directory for file system)
 </console>
 </unit>

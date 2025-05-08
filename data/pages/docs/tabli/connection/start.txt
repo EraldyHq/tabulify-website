@@ -25,7 +25,7 @@ Tabli connection
 
 Management of the Datastore Vault
 
-(Location: /home/admin/.tabli/.tabli.yml)
+(Location: /home/tabulify/.tabli/.tabli.yml)
 
 
 

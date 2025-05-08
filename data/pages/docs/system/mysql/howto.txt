@@ -70,7 +70,7 @@ docker start mysql
 tabli connection info mysql
 </code>
 <console>
-[31m09:25:02 - SEVERE - Unable to connect to the database (mysql) with the following URL (URI = jdbc:mysql://localhost:3306/howto). Error: Communications link failure
+[31m16:36:00 - SEVERE - Unable to connect to the database (mysql) with the following URL (URI = jdbc:mysql://localhost:3306/howto). Error: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
 [0m
@@ -78,22 +78,22 @@ Information about the connection (mysql)
 Attribute                   Value                               Description                                                            
 -------------------------   ---------------------------------   --------------------------------------------------------------------   
 boolean-data-type           Native                              Boolean data type used to store boolean values                         
+comment                     The default mysql data store        A connection description                                               
 connection-closing-script                                       A script that runs before a connection is closed                       
 connection-init-script                                          A script that runs after a connection has been established             
 date-data-type              NATIVE                              Date data type used to store date values                               
-description                 The default mysql data store        A connection description                                               
-driver                      com.mysql.jdbc.Driver               The driver class                                                       
+driver                      com.mysql.cj.jdbc.Driver            The driver class                                                       
 host                                                            Host Server                                                            
 max-concurrent-thread                                           The maximum number of threads that can be created against the system   
 max-name-in-path                                                The maximum number of names in a path                                  
 name                        mysql                               The name of the connection                                             
 natives                                                         Native Driver attributes (jdbc properties, ...)                        
 origin                      CONF                                The origin of the connection                                           
-password                    my-secret-pw                        The user password to login                                             
+password                    my-secret-pw                        The user password                                                      
 port                        -1                                  Host Port                                                              
 timestamp-data-type         NATIVE                              Timestamp data type used to store timestamp values                     
 time-data-type              NATIVE                              Time format data type to store time values                             
 uri                         jdbc:mysql://localhost:3306/howto   The uri of the connection                                              
-user                        root                                The user name to login
+user                        root                                The user name
 </console>
 </unit>

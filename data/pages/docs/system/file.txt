@@ -6,5 +6,12 @@ A ''file system'' is a [[system|system]] that manages data by [[docs:resource:fi
 
 
 ===== Type =====
-  * local
-  * remote (ssh)
+  * [[docs:system:local|local]]
+  * remote ([[:docs:system:ssh|ssh]])
+
+===== Parameters =====
+
+All file system connections have the following [[:docs:connection:attribute|connection attributes]].
+
+^ Name ^ Description ^ Default ^ 
+| ''TABULAR_FILE_TYPE'' | The default file extension when downloading tabular data | [[:docs:resource:csv|text/csv]] |

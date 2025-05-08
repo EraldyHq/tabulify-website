@@ -13,17 +13,15 @@ tabli env list
 
 </code>
 <console>
-key                                value                      origin           description                                        
---------------------------------   ------------------------   --------------   ------------------------------------------------   
-conf                                                          Calculated       The path to the conf file                          
-default-file-system-tabular-type   csv                        Calculated       The default file extension for tabular data        
-env                                DEV                        Os environment   The execution environment                          
-home                               /home/admin/opt/tabulify   Calculated       The directory home of the Tabulify installation    
-log-level                          WARN                       Os environment   The log level                                      
-native-driver                                                 Calculated       Native Drivers Properties                          
-passphrase                                                    Calculated       The passphrase                                     
-project-home                                                  Calculated       The project home path                              
-sqlite-home                        /home/admin/.tabli         Calculated       Sqlite home (Where to store the sqlite database)
+attribute      value                              origin           description                                  
+------------   --------------------------------   --------------   ------------------------------------------   
+CONF           /home/tabulify/.tabli/.tabli.yml   Default          The conf vault file path                     
+ENV            DEV                                Os environment   The execution environment                    
+HOME           /opt/tabulify                      Default          The directory of the Tabulify installation   
+LOG_LEVEL      WARN                               Os environment   The log level                                
+PASSPHRASE                                        Default          The passphrase                               
+PROJECT_HOME                                      Default          The project home directory                   
+USER_HOME      /home/tabulify/.tabli              Os environment   User home Directory
 </console>
 </unit>
 
@@ -84,7 +82,7 @@ where:
 
   Options:
 
-    -t,--type <mediaType|mimeType|extensionFile>            The type of the configurations to return ('all, command-line, conf, dotenv, os, runtime, sys, uri' or `all`)
+    -t,--type <mediaType|mimeType|extensionFile>            The type of the configurations to return ('all, command-line, conf, default, dotenv, os, sys, uri' or `all`)
 
 
   Global Options:
