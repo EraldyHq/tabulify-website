@@ -8,7 +8,7 @@ The ''tabli'' ''data'' [[docs:tabli:module|module]] helps you to perform [[docs:
   * [[summarize|summarize]] - summarize a list of data resources (count, size, ...)
   * [[create|create]] - create a resource definition (table, ...)
   * [[dep|dependency]] - show the data dependencies
-  * [[compare|diff]] - perform a diff operation between two data resources
+  * [[diff|diff]] - perform a diff operation between two data resources
   * [[drop|drop]] - drop data resources (table, file, ...)
   * [[fill|fill]] - fill a resource (table, csv,...) with generated data
   * [[head|head]] - show the first pieces of content of a data resource

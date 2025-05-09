@@ -121,7 +121,7 @@ The result in [[https://github.com/ChangemakerStudios/Papercut-SMTP|PaperCut]].
 When running the send operation by record, the send operation except the following [[:docs:resource:column|columns]]:
 
 ^ Column Name ^ Optionality ^ Default ^ Description ^
-| ''to'' | In [[:docs:project:environment|production]], ''mandatory'', \\ in other environment, the ''to'' property of the smtp connection is used || The ''to'' address(es) |
+| ''to'' | In [[docs:common:environment|production]], ''mandatory'', \\ in other environment, the ''to'' property of the smtp connection is used || The ''to'' address(es) |
 | ''to_names'' | yes | ''from'' property of the smtp connection | The ''to'' address names |
 | ''from'' | yes | ''from'' property of the smtp connection | The ''from'' address (only one) |
 | ''from_name'' | yes | The name of the ''from'' address | The ''from'' address name |

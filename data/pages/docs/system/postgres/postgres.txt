@@ -13,26 +13,29 @@ otherwise you can also browser the [[howto:database:database|relational database
 
 ===== Connection =====
 
-To create a ''Postgres'' connection, you have the following possibilities
+To create a ''Postgres'' connection, you have the following possibilities:
 <tabs skin="tabs">
-<tab panel="connectionVault" >Connection Vault</tab>
-<tab panel="tabli" selected="true">Tabli</tab>
+<tab panel="confVault" selected="true">Configuration Vault</tab>
+<tab panel="tabli">Tabli</tab>
 </tabs>
 <tabpanels>
-<tabpanel id="connectionVault" spacing="m-3">
-In a [[docs:conf:vault|Connection Vault]], to define a Oracle [[docs:connection:connection|connection]] with the name ''myPostgres'', you would write:
+<tabpanel id="confVault" spacing="m-3">
+In a [[docs:conf:vault|Configuration Vault]], to define a Postgres [[docs:connection:connection|connection]] with the name ''myPostgres'', you would write:
 \\
 
-<code properties>
-[myPostgres]
-[postgres]
-url = jdbc\:postgresql\://host\:[port]/[databse]
-user = postgres
-password = xxx
-driver = org.postgresql.Driver
+<code yaml>
+connections:
+   myPostgres:
+      uri: jdbc:postgresql://host:[port]/[databse]
+      user: postgres
+      password: ${MY_PASSWORD_ENV}
+      driver: org.postgresql.Driver
+      natives:
+        # any postgres jdbc connection parameters
+        ssl: true
 </code>
 <note>
-The [[docs:connection:password|password]] will be [[docs:common:vault|encrypted]] the next time that you start a Tabulify product such as [[docs:tabli:tabli|Tabli]]
+The [[docs:connection:password|password value]] will be retrieved from the ''MY_PASSWORD_ENV''  [[:docs:conf:os|environment variable]]
 </note>
 </tabpanel>
 <tabpanel id="tabli" spacing="m-3">
@@ -76,17 +79,23 @@ where:
   * ''database'' is the database name. Defaults to the same name as the user name.
 
 
-==== Attributes ====
-All possible [[docs:connection:attribute|attributes]] can be found in the [[https://jdbc.postgresql.org/documentation/head/connect.html|Postgres connection documentation]].
-===== Technical =====
+==== Native Attributes ====
+All possible [[docs:connection:natives|natives attributes]] (known as connection parameters in Postgres documentation) can be found in the [[https://jdbc.postgresql.org/documentation/use/#connection-parameters|Postgres connection documentation]].
 
-==== Version Supported ====
-  * Driver 42.2.16 that supports PostgreSQL 8.2 or newer
-  * Database: 9.5 or above
+==== Driver ====
+
+We use the driver 42.2.16 that supports PostgreSQL 8.2 or newer
+
+==== Version ====
+
+Database: 9.5 or above
 
 
 <code sql>
 SELECT version();
 </code>
+===== Technical =====
+
+
 ==== DataType ====
   * [[clob]]

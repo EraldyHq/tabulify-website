@@ -20,7 +20,7 @@ Because a ''xml'' file is a [[text|text file]], you can also set [[text#attribut
 You can create XML file with the [[docs:templating:templating|templating module]].
 
 ===== Loading =====
-Tabulify supports the loading of XML file into a database. See [[howto:database:xml]]
+Tabulify supports the loading of XML file into a database. See [[howto:xml:load_db]]
 ===== How to see the first lines =====
 By default, ''Tabulify'' treats one XML document as one record (line). By printing it, you would see then always the whole document.
 

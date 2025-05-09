@@ -17,7 +17,7 @@ In general, if you need to ''move'' or ''process'' data, you will ''transfer'' i
 
 The ''data transfer'' action permits you to
   * [[download|download]] a [[docs:resource:table|Sql table]] into a [[docs:resource:tabular_file|file]] ([[docs:resource:csv|CSV]], [[docs:resource:excel|Excel file]], ...)
-  * [[howto:database:tabli_load_csv|load a local CSV file into a relational table]]
+  * [[howto:csv:database_load|load a local CSV file into a relational table]]
   * [[copy|copy]] a local file to a [[docs:system:ssh|sftp server]]
   * and more
 

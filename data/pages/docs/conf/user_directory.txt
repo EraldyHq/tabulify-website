@@ -5,7 +5,7 @@
 The ''user directory'' is directory that stores user information such as:
 
   * the [[docs:conf:vault|configuration vault]] if the [[:docs:project:project|execution is not a project]]
-  * the [[:docs:system:sqlite:howto|default location for sqlite howto database]]
+  * the [[howto:sqlite:connection|default location for sqlite howto database]]
 
 
 ===== How to change it? =====

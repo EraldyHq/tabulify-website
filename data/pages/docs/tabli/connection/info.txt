@@ -12,7 +12,7 @@
 
 ==== Showing information about one database ====
 
-This command will show the information of the [[docs:system:sqlite:howto|Sqlite HowTo Connection]]
+This command will show the information of the [[howto:sqlite:connection|Sqlite HowTo Connection]]
 
 <unit>
 <code bash>
@@ -55,7 +55,7 @@ tabli connection info *sql*
 
 ==== Listing only  a set of databases ====
 
-  * List only the databases with the database name [[docs:system:postgres:howto|postgres]] and [[docs:system:sqlite:howto|sqlite]]
+  * List only the databases with the database name [[howto:postgres:connection|postgres]] and [[howto:sqlite:connection|sqlite]]
 <unit>
 <code bash>
 tabli connection info postgres sqlite

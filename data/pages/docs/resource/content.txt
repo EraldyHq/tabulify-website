@@ -24,7 +24,7 @@ The following data operations have impact on the content of stored data resource
   * [[docs:op:update|update]]
   * [[docs:op:delete|delete]]
 
-The [[docs:op:compare|compare operation]] can show the difference in content.
+The [[docs:op:diff|compare operation]] can show the difference in content.
 
 ==== Runtime ====
 

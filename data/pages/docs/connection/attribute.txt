@@ -7,8 +7,8 @@ A ''connection attribute'' is a [[docs:conf:attribute|attribute]] of a [[connect
 
 ===== Parameter =====
 
-The connection parameters:
-  * define how to connect to a [[docs:system:system|system connection]] via its [[uri|URI attribute]] 
+The connection attribute of type parameters:
+  * define how to connect to a [[docs:system:system|system connection]] via its [[uri|URI attribute]]
   * and configure the behavior of this connection.
 
 
@@ -16,7 +16,7 @@ The only mandatory parameter variable is the [[uri|URI]].
 
 
 [[#base parameters|Base parameters]] are parameters used for all connections.
-Each connection type may add its own parameters variable.
+Each connection type has its own parameters variable.
 
 
 ===== Management =====
@@ -46,27 +46,27 @@ export TABLI_CONNECTION_NAME_PARAMETER1=value1
 
 ===== Base Parameters =====
 
-''Base Connection Attribute'' are [[attribute|connection attributes]] available to all ''connections''. 
+''Base Connection Attribute'' are [[attribute|connection attributes]] available to all ''connections''.
 
 
 ^ Name ^ Description ^
-| ''Uri'' | The connection URI |
-| ''Comment'' | A connection description |
-| ''User'' | The user |
-| ''Password'' | The password |
-| ''Host'' | The host (derived from the env and if absent from URI) |
-| ''Port'' | The port (derived from the env and if absent from URI) |
-| ''DateDataType'' | Define the text storage format of a ''Date'' data type (''YYYY-MM-DD'') if not supported by the connection . See [[docs:common:time|Time storage]] | 
-| ''TimestampDataType'' | Define the text storage format of a ''Timestamp'' data type (''YYYY-MM-DD HH:MM:SS'') if not supported by the connection . See [[docs:common:time|Time storage]] |
-| ''TimeDataType'' | Define the text storage format of a ''Time'' data type (''HH:MM:SS'') if not supported by the connection . See [[docs:common:time|Time storage]] |
-| ''BooleanDataType'' | Define the text storage format of a ''Boolean''. See [[docs:common:boolean|boolean]] if not supported by the connection |
-| ''MaxNameInPath'' | The maximum name in a path (for instance, Sqlite supports only one) |
-| ''MaxConcurrentThread'' | The maximum number of concurrent thread for the connection (for instance, Sqlite supports only one) |
-| ''natives'' | The native driver connection properties as map of key value (jdbc driver properties, ...) |
+| ''URI'' | The connection URI |
+| ''COMMENT'' | A connection description |
+| ''USER'' | The user |
+| ''PASSWORD'' | The password |
+| ''HOST'' | The host (derived from the env and if absent from URI) |
+| ''PORT'' | The port (derived from the env and if absent from URI) |
+| ''DATE_DATA_TYPE'' | Define the text storage format of a ''Date'' data type (''YYYY-MM-DD'') if not supported by the connection . See [[docs:common:time|Time storage]] |
+| ''TIMESTAMP_DATA_TYPE'' | Define the text storage format of a ''Timestamp'' data type (''YYYY-MM-DD HH:MM:SS'') if not supported by the connection . See [[docs:common:time|Time storage]] |
+| ''TIME_DATA_TYPE'' | Define the text storage format of a ''Time'' data type (''HH:MM:SS'') if not supported by the connection . See [[docs:common:time|Time storage]] |
+| ''BOOLEAN_DATA_TYPE'' | Define the text storage format of a ''Boolean''. See [[docs:common:boolean|boolean]] if not supported by the connection |
+| ''MAX_NAME_IN_PATH'' | The maximum name in a path (for instance, Sqlite supports only one) |
+| ''MAX_CONCURRENT_THREAD'' | The maximum number of concurrent thread for the connection (for instance, Sqlite supports only one) |
+| ''NATIVES'' | The [[docs:connection:natives|native driver connection properties]] as map of key value (jdbc driver properties, ...) |
 
 
 
 Derived: You can't change it
 
 ^ Name ^ Description ^
-| ''Origin'' | The origin of the connection data (ie [[docs:connection:built-in|built-in]] or user) |
+| ''ORIGIN'' | The origin of the connection data (ie [[docs:connection:built-in|built-in]] or user) |

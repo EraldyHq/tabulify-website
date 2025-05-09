@@ -1,8 +1,12 @@
 ---json
 {
-    "canonical": "howto:database:benchmark",
+    "aliases": [
+        { "path": ":howto:database:benchmark" }
+    ],
+    "canonical": ":howto:database:benchmark",
     "description": "This howto will show you how to load a relational database schema in order to create a benchmark with the data query command",
-    "name": "Loading the TPCDS benchmark data",
+    "name": "TPCDS benchmark",
+    "page_id": "pwp5v8ztbr31zv6afaw05",
     "title": "How to load your database with the TPCDS benchmark"
 }
 ---

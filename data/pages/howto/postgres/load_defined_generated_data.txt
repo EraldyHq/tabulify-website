@@ -1,0 +1,108 @@
+---json
+{
+    "description": "This how-to will show you how to define the generation of data via a data definition file and load it into a table via the tabli data fill operation.",
+    "low_quality_page": "false",
+    "name": "Defined Data Generation",
+    "page_id": "ez3z31b5oz5o3v3uxsujz"
+}
+---
+====== Tabli - How to fill a table with a data generation file ======
+
+===== About =====
+This [[..:howto|how-to]] will show you how to:
+  * define the <icon name="mdi:cog"/> [[docs:generator:generator|generation of data]] via a [[docs:resource:data-definition|data definition file]]
+  * and [[docs:op:fill|load it]] into a <icon name="mdi:table-large" /> [[docs:resource:table|table]] via the [[docs:tabli:data:fill|tabli data fill operation]].
+
+===== Steps =====
+==== Prerequisites ====
+You should have ''Tabulify'' installed on your computer: [[howto:getting_started:1_install]]
+==== Create the Data Generation file ====
+The below file is a [[docs:resource:data-definition|data definition file]] that defines the structure of the data and the data generators
+<unit>
+<file yaml date_dim--datagen.yml>
+Comment: An example of date dimension generator based on the `date_dim` table of TPCDS
+Columns:
+  - name: d_date_sk
+    comment: A surrogate key
+    Type: integer
+    DataGenerator:
+      type: sequence
+  - name: d_date
+    comment: A business key in date format
+    Type: date
+    DataGenerator:
+      type: sequence
+  - name: d_date_id
+    comment: A business key in string
+    Type: varchar
+    DataGenerator:
+      type: expression
+      ColumnParents: d_date
+      expression: "x.toISOString().substring(0,10)"
+  - name: d_month_seq
+    comment: An ascendant sequence for the month
+    Type: integer
+    DataGenerator:
+      type: expression
+      ColumnParents: d_date
+      expression: "function pad(number) {if (number < 10) { return '0' + number; } return number; }; x.getFullYear()+''+(pad(x.getMonth()+1))"
+  - name: d_day_name
+    comment: The name of the day
+    Type: varchar
+    DataGenerator:
+      type: expression
+      ColumnParents: d_date
+      expression: "var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']; days[x.getDay()]"
+  - name: d_moy
+    comment: the month number in year
+    Type: Integer
+    DataGenerator:
+      type: expression
+      ColumnParents: d_date
+      expression: "x.getMonth()+1"
+  - name: d_year
+    comment: The year number
+    Type: Varchar
+    Precision: 4
+    DataGenerator:
+      type: expression
+      ColumnParents: d_date
+      expression: "x.getFullYear()"
+
+</file>
+</unit>
+==== Fill the table ====
+The [[docs:tabli:data:fill|tabli data fill]] command takes the data definition as input and can load it into a table.
+<unit>
+<code bash>
+tabli data fill --generator-selector date_dim--datagen.yml@howto date_dim@postgres
+</code>
+<console>
+Source            Target              Latency (ms)   Row Count   Error   Message
+---------------   -----------------   ------------   ---------   -----   -------
+date_dim@memgen   date_dim@postgres   748            100
+</console>
+</unit>
+==== Verify ====
+
+The table ''date_dim'' was filled with generated data
+<unit>
+<code bash>
+tabli data head date_dim@postgres
+</code>
+<console>
+The first 10 rows of the data resource (date_dim@postgres):
+d_date_sk   d_date       d_date_id    d_month_seq   d_day_name   d_moy   d_year
+---------   ----------   ----------   -----------   ----------   -----   ------
+        1   2025-05-08   2025-05-08        202505   Thursday         5   2025
+        2   2025-05-07   2025-05-07        202505   Wednesday        5   2025
+        3   2025-05-06   2025-05-06        202505   Tuesday          5   2025
+        4   2025-05-05   2025-05-05        202505   Monday           5   2025
+        5   2025-05-04   2025-05-04        202505   Sunday           5   2025
+        6   2025-05-03   2025-05-03        202505   Saturday         5   2025
+        7   2025-05-02   2025-05-02        202505   Friday           5   2025
+        8   2025-05-01   2025-05-01        202505   Thursday         5   2025
+        9   2025-04-30   2025-04-30        202504   Wednesday        4   2025
+       10   2025-04-29   2025-04-29        202504   Tuesday          4   2025
+</console>
+</unit>

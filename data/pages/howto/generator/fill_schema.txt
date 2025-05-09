@@ -28,7 +28,7 @@ This [[..:howto|how-to]] will show you how to use the [[docs:tabli:data:fill|tab
 </btn>
 
 ==== Schema Listing ====
-If you have followed the prerequisites, you should seen now in the [[docs:system:sqlite:howto|Sqlite HowTo connection]] the following tables.
+If you have followed the prerequisites, you should seen now in the [[howto:sqlite:connection|Sqlite HowTo connection]] the following tables.
 
 <unit display="none">
 <code bash >

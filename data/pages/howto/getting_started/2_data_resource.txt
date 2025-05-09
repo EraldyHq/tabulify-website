@@ -20,7 +20,7 @@ The ''Tabulify'' platform supports a lot of different ''data resources'' that yo
 <note important>
 The big strength and innovation of the ''Tabulify'' platform is that all data are uniformly named and manipulated as ''Data Resource''.
 
-It means that you can copy a ''csv'' file into a database ''table'' and vice-versa with the same ''command'' as if you were copying a ''file'' to another ''directory''.
+It means that you can copy a ''csv'' file into a database ''table'' and vice-versa with the same ''command'' as if you were copying a ''file'' to another ''directory'', following the [[wp>Everything_is_a_file|Everything is a file mantra]].
 </note>
 ===== Next =====
 

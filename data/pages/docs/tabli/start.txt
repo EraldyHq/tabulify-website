@@ -21,7 +21,7 @@ This sections regroups the reference documentation of each [[command|command]].
   * [[docs:tabli:connection:start]]
   * [[docs:tabli:data:start]]
   * [[docs:tabli:flow:start|flow]]
-  * [[docs:tabli:variable:start|]]
+  * [[docs:tabli:env:start|]]
   * [[docs:tabli:vault:start|]]
 
 

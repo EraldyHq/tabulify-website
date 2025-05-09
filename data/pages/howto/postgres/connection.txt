@@ -71,24 +71,42 @@ tabli connection info postgres
 Information about the connection (postgres)
 Attribute                   Value                                       Description                                                            
 -------------------------   -----------------------------------------   --------------------------------------------------------------------   
-BOOLEAN_DATA_TYPE           Native                                      Boolean data type used to store boolean values                         
+BOOLEAN_DATA_TYPE                                                       Boolean data type used to store boolean values                         
 COMMENT                     The default postgres data store             A connection description                                               
 CONNECTION_CLOSING_SCRIPT                                               A script that runs before a connection is closed                       
 CONNECTION_INIT_SCRIPT                                                  A script that runs after a connection has been established             
-DATE_DATA_TYPE              NATIVE                                      Date data type used to store date values                               
+DATE_DATA_TYPE                                                          Date data type used to store date values                               
 DRIVER                      org.postgresql.Driver                       The driver class                                                       
 HOST                                                                    Host Server                                                            
 MAX_CONCURRENT_THREAD                                                   The maximum number of threads that can be created against the system   
 MAX_NAME_IN_PATH                                                        The maximum number of names in a path                                  
 NAME                        postgres                                    The name of the connection                                             
 NATIVES                                                                 Native Driver attributes (jdbc properties, ...)                        
-ORIGIN                      CONF                                        The origin of the connection                                           
+ORIGIN                                                                  The origin of the connection                                           
 PASSWORD                    welcome                                     The user password                                                      
-PORT                        -1                                          Host Port                                                              
-TIMESTAMP_DATA_TYPE         NATIVE                                      Timestamp data type used to store timestamp values                     
-TIME_DATA_TYPE              NATIVE                                      Time format data type to store time values                             
+PORT                                                                    Host Port                                                              
+TIMESTAMP_DATA_TYPE                                                     Timestamp data type used to store timestamp values                     
+TIME_DATA_TYPE                                                          Time format data type to store time values                             
 URI                         jdbc:postgresql://localhost:5432/postgres   The uri of the connection                                              
 USER                        postgres                                    The user name                                                          
-WORKING_PATH                public.                                     The working path (Schema for database, directory for file system)
+WORKING_PATH                                                            The working path (Schema for database, directory for file system)
 </console>
 </unit>
+
+===== Support =====
+
+==== Docker WSL2: Connection to localhost:5432 refused ====
+
+If you get this message using Docker WSL2 on windows:
+```
+Connection to localhost:5432 refused 
+Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+```
+get the IP of the wsl machine
+```bash
+ip -br a
+```
+and use it in place of localhost. Example:
+```bash
+tabli connection upsert --uri "jdbc:postgresql://172.31.112.26:5432/postgres" postgres
+```

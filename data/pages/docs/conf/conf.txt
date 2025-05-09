@@ -4,7 +4,7 @@
 ===== About =====
 The ''Tabulify'' platform  can be configured in order via:
   * the [[docs:tabli:command|command line]] option and flags
-  * the [[docs:conf:file|configuration vault]]
+  * the [[docs:conf:vault|configuration vault]]
   * the [[docs:conf:os|operating system environment variables]]
 
 

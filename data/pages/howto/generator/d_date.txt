@@ -113,5 +113,5 @@ d_date_sk   d_date       d_date_id    d_month_seq   d_day_name   d_moy   d_year
 If you want to know how to create a CSV from it, check the below page
 
 <btn>
-[[csv]]
+[[..:csv:generate]]
 </btn>

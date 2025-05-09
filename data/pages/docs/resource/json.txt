@@ -23,7 +23,7 @@ The [[attribute|attributes]] of a JSON file are:
 
 
 ===== Creation =====
-With the [[howto:templating:create_json_from_tabular_data|JSON template]], you can create a JSON file from tabular data.
+With the [[howto:json:create_json_from_tabular_data|JSON template]], you can create a JSON file from tabular data.
 
 
 ===== How to see the first lines =====

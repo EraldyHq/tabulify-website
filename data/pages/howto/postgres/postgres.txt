@@ -4,18 +4,14 @@
 
 This section regroups howto that are specific to the [[:docs:system:postgres:postgres|Postgres System]].
 
-===== General Database =====
 
-You can also follow all [[:howto:database:database|general database howTo]] by:
-  * starting the [[howto:postgres:connection|howTo Postgres Docker Image]]
-  * and using the connection ''@postgres'' in place of ''@sqlite''
 
 
 ===== Full List =====
 
 
 <iterator>
-    <data>select where is_home = 0  and (path glob ':howto:database*' or path glob ':howto:postgres*') order by path asc </data>
+    <data>select where is_home = 0  and (path glob ':howto:postgres*') order by path asc </data>
 <grid>
     <fragment>
         <box>

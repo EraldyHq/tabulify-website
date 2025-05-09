@@ -6,6 +6,6 @@
   * with the same [[docs:resource:metadata|metadata (properties and structure)]] 
   * and with the same [[docs:resource:content|data content]].
 
-A [[compare|diff]] operation should show no difference.
+A [[diff|diff]] operation should show no difference.
 
 The [[docs:tabli:data:copy|data copy operation]] supports the ''copy'' operation.

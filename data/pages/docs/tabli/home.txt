@@ -7,7 +7,7 @@
 
 
 ===== See =====
-''tabli'' is able to detect your home. You can see it with the [[docs:tabli:variable:list|conf list]] command
+''tabli'' is able to detect your home. You can see it with the [[docs:tabli:env:list|conf list]] command
 
 <code bash>
 tabli conf list home.path

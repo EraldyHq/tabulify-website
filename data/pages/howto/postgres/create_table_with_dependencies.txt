@@ -1,0 +1,104 @@
+---json
+{
+    "canonical": ":howto:database:table_create_with_dependencies",
+    "description": "This howto will show you how to copy the data definition of all SQL tables from a star\/snowflake schema.",
+    "name": "Duplicate a schema ",
+    "page_id": "zjtli95npp4fy9pry569a",
+    "title": "How to copy the data definition of all tables from a star\/snowflake schema"
+}
+---
+
+====== Tabli - How to copy the data definition of all tables from a star/snowflake schema ======
+
+
+===== About =====
+This [[..:howto|Howto]] will show you how to copy the [[docs:resource:structure|data definition]] of all [[docs:resource:table|SQL tables]] from a <icon name="twemoji:snowflake"/> star/snowflake schema by using the [[docs:tabli:data:create|Tabli data create command]].
+
+
+<note important>
+This command does not copy the data. It just [[docs:op:create|create]] the structure (ie it performs a SQL ''CREATE'' statement). If you want to copy the data, use the [[docs:tabli:data:transfer|tabli data transfer command]] instead.
+</note>
+
+
+===== Steps =====
+==== Prerequisites ====
+You should have ''Tabulify'' installed on your computer. [[howto:getting_started:1_install]]
+
+==== Select the fact table ====
+
+The trick to copy a star/snowflake schema is:
+  * to give the fact table (ie the table at the center of the star/snowflake schema) to the [[docs:tabli:data:create|Tabli table create command]]
+  * and to ask to create it with its dependencies.
+
+
+==== Create the fact table with its dependencies   ====
+
+<unit display="none">
+Delete the target destination
+<code bash>
+tabli data drop --not-strict *@postgres
+</code>
+</unit>
+
+
+The below command will [[docs:op:create|create]]:
+  * the table ''store_sales'' from the [[docs:system:tpcds|tpcds]] system. This is the fact table of the tpcds store schema.
+  * with all its dependencies (all the foreign tables)
+  * into the [[connection|Postgres Howto connection]] with the prefix ''tpc_'' using the [[:docs:resource:logicalname|logical name]] of the source
+    * in bash, you need to escape the ''$'' sign so that it's not seen as a bash variable
+  * with the [[docs:tabli:data:create|tabli data create]] command.
+<unit>
+<code bash>
+tabli data create --with-dependencies store_sales@tpcds tpc_\${logicalName}@postgres
+</code>
+<console>
+source                         target
+----------------------------   -----------------------------------
+date_dim@tpcds                 tpc_date_dim@postgres
+household_demographics@tpcds   tpc_household_demographics@postgres
+item@tpcds                     tpc_item@postgres
+income_band@tpcds              tpc_income_band@postgres
+customer_demographics@tpcds    tpc_customer_demographics@postgres
+store_sales@tpcds              tpc_store_sales@postgres
+customer_address@tpcds         tpc_customer_address@postgres
+customer@tpcds                 tpc_customer@postgres
+promotion@tpcds                tpc_promotion@postgres
+time_dim@tpcds                 tpc_time_dim@postgres
+store@tpcds                    tpc_store@postgres    
+</console>
+</unit>
+
+==== List the created tables ====
+
+
+With the [[docs:tabli:data:list|tabli data list]] command, we can list the tables created with the ''tpc'' prefix.
+
+<unit>
+<code bash>
+tabli data list -a name -a count tpc*@postgres
+</code>
+<console>
+name                         count
+--------------------------   -----
+tpc_customer                     0
+tpc_customer_address             0
+tpc_customer_demographics        0
+tpc_date_dim                     0
+tpc_household_demographics       0
+tpc_income_band                  0
+tpc_item                         0
+tpc_promotion                    0
+tpc_store                        0
+tpc_store_sales                  0
+tpc_time_dim                     0
+</console>
+</unit>
+
+==== Next ====
+
+You can fill them with generated data.
+
+
+[[howto:generator:fill_schema|How to fill a schema with generated data]]
+
+
