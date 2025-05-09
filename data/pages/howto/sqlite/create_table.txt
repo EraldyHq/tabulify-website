@@ -28,8 +28,8 @@ You should have ''Tabulify'' installed on your computer.
 
 ==== Create a table from another table  ====
 
-<unit display="none">
-Delete the target destination
+<unit>
+Let's start with a clean state and delete all tables
 <code bash>
 tabli data drop --not-strict *@sqlite
 </code>
@@ -101,6 +101,6 @@ You can also create a table and its dependencies (foreign tables) at once with t
 \\
 \\
 <btn>
-[[tabli_create_table_with_dependencies|How to copy a star/snowflake schema ?]]
+[[create_table_with_dependencies|How to copy a star/snowflake schema ?]]
 </btn>
 </note>

@@ -88,6 +88,6 @@ You can also create a table and its dependencies (foreign tables) at once with t
 \\
 \\
 
-[[howto:database:tabli_create_table_with_dependencies|How to copy a star/snowflake schema ?]]
+[[howto:sqlite:create_table_with_dependencies|How to copy a star/snowflake schema ?]]
 
 </note>

@@ -6,7 +6,7 @@
     "page_id": "e1q33212r4wh9vrmo6ikr"
 }
 ---
-====== Tabli - How to fill a table with auto generated data ======
+====== SQLite - How to fill a table with auto generated data ======
 
 
 ===== About =====
@@ -104,5 +104,5 @@ count
 The generated data follows a default definition but you can define the generated data that you want with the help of a ''data definition'' file.
 
 
-[[howto:database:tabli_load_defined_generated_data|Learn how to fill a table with defined generated data]]
+[[howto:sqlite:defined_generated_data|Learn how to fill a table with defined generated data]]
 

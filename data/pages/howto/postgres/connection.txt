@@ -102,7 +102,7 @@ If you get this message using Docker WSL2 on windows:
 Connection to localhost:5432 refused 
 Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
 ```
-get the IP of the wsl machine
+You can try get the IP of the wsl machine
 ```bash
 ip -br a
 ```
@@ -110,3 +110,13 @@ and use it in place of localhost. Example:
 ```bash
 tabli connection upsert --uri "jdbc:postgresql://172.31.112.26:5432/postgres" postgres
 ```
+
+Other user have reported that the following steps may help:
+  * Settings another docker network space in `Docker > Settings > Docker Engine configuration`:
+```json
+{
+  "bip": "192.168.200.1/24",
+}
+```
+  * restart your computer
+

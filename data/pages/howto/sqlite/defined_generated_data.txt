@@ -6,7 +6,7 @@
     "page_id": "ez3z31b5oz5o3v3uxsujz"
 }
 ---
-====== Tabli - How to fill a table with a data generation file ======
+====== SQLite - How to fill a table with a data generation file ======
 
 ===== About =====
 This [[..:howto|how-to]] will show you how to:

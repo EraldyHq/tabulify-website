@@ -44,27 +44,28 @@ tabli data drop --not-strict *@sqlite
 The below command will [[docs:op:create|create]]:
   * the table ''store_sales'' from the [[docs:system:tpcds|tpcds]] system. This is the fact table of the tpcds store schema.
   * with all its dependencies (all the foreign tables)
-  * into the [[docs:connection:default|Sqlite Howto connection]] with the prefix ''tpc_'' using [[docs:resource:target_uri|wildcard back referencing in the target]]
+  * into the [[docs:connection:default|Sqlite Howto connection]] with the prefix ''tpc_'' using the [[:docs:resource:logicalname|logical name]] of the source
+
   * with the [[docs:tabli:data:create|tabli data create]] command.
 <unit>
 <code bash>
-tabli data create --with-dependencies store_sales@tpcds tpc_$0@sqlite
+# in bash, you need to escape the $ with \ sign so that it's not seen as a bash variable
+tabli data create --with-dependencies store_sales@tpcds tpc_\${logicalName}@sqlite
 </code>
 <console>
-The list of data resources created
-uri
----------------------------------
-tpc_customer@sqlite
-tpc_customer_address@sqlite
-tpc_customer_demographics@sqlite
-tpc_date_dim@sqlite
-tpc_household_demographics@sqlite
-tpc_income_band@sqlite
-tpc_item@sqlite
-tpc_promotion@sqlite
-tpc_store@sqlite
-tpc_store_sales@sqlite
-tpc_time_dim@sqlite
+source                         target
+----------------------------   ---------------------------------
+date_dim@tpcds                 tpc_date_dim@sqlite
+household_demographics@tpcds   tpc_household_demographics@sqlite
+item@tpcds                     tpc_item@sqlite
+income_band@tpcds              tpc_income_band@sqlite
+customer_demographics@tpcds    tpc_customer_demographics@sqlite
+store_sales@tpcds              tpc_store_sales@sqlite
+customer_address@tpcds         tpc_customer_address@sqlite
+customer@tpcds                 tpc_customer@sqlite
+promotion@tpcds                tpc_promotion@sqlite
+time_dim@tpcds                 tpc_time_dim@sqlite
+store@tpcds                    tpc_store@sqlite
 </console>
 </unit>
 
@@ -78,19 +79,19 @@ With the [[docs:tabli:data:list|tabli data list]] command, we can list the table
 tabli data list -a name -a count tpc*@sqlite
 </code>
 <console>
-count
------
-    0
-    0
-    0
-    0
-    0
-    0
-    0
-    0
-    0
-    0
-    0
+name                         count
+--------------------------   -----
+tpc_customer                     0
+tpc_customer_address             0
+tpc_customer_demographics        0
+tpc_date_dim                     0
+tpc_household_demographics       0
+tpc_income_band                  0
+tpc_item                         0
+tpc_promotion                    0
+tpc_store                        0
+tpc_store_sales                  0
+tpc_time_dim                     0
 </console>
 </unit>
 

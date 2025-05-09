@@ -45,10 +45,10 @@ The below command will [[docs:op:create|create]]:
   * the table ''store_sales'' from the [[docs:system:tpcds|tpcds]] system. This is the fact table of the tpcds store schema.
   * with all its dependencies (all the foreign tables)
   * into the [[connection|Postgres Howto connection]] with the prefix ''tpc_'' using the [[:docs:resource:logicalname|logical name]] of the source
-    * in bash, you need to escape the ''$'' sign so that it's not seen as a bash variable
   * with the [[docs:tabli:data:create|tabli data create]] command.
 <unit>
 <code bash>
+# in bash, you need to escape the $ sign with \ so that it's not seen as a bash variable
 tabli data create --with-dependencies store_sales@tpcds tpc_\${logicalName}@postgres
 </code>
 <console>
@@ -64,7 +64,7 @@ customer_address@tpcds         tpc_customer_address@postgres
 customer@tpcds                 tpc_customer@postgres
 promotion@tpcds                tpc_promotion@postgres
 time_dim@tpcds                 tpc_time_dim@postgres
-store@tpcds                    tpc_store@postgres    
+store@tpcds                    tpc_store@postgres
 </console>
 </unit>
 
