@@ -9,7 +9,7 @@
 
 
 ===== Howto =====
-This [[database|database howto]] will show you how to load <icon name="mdi:xml"/> [[docs:resource:xml|Xml file and document]] into a [[docs:system:database|database]].
+This [[..:database:database|database howto]] will show you how to load <icon name="mdi:xml"/> [[docs:resource:xml|Xml file and document]] into a [[docs:system:database|database]].
 
 
 ===== Steps =====
@@ -21,12 +21,12 @@ tabli data drop --not-strict wikipedia@postgres
 </unit>
 
 
-==== Checking that Postgres is up ====
-Normally our [[database|standard database howto]] are created with [[docs:system:sqlite:sqlite|Sqlite]] but because ''Sqlite'' does not support any SQL XML function, nor native XML [[docs:common:data_type|data type]], we have created this ''howto'' with the [[docs:system:postgres:postgres|Postgres database]].
+==== Start Postgres ====
+Normally our [[..:database:database|standard database howto]] are created with [[docs:system:sqlite:sqlite|Sqlite]] but because ''Sqlite'' does not support any SQL XML function, nor native XML [[docs:common:data_type|data type]], we have created this ''howto'' with the [[docs:system:postgres:postgres|Postgres database]].
 
-The next steps will be using the [[docs:system:postgres:howto|postgres howto connection]].
+The next steps will be using the [[howto:postgres:connection|postgres howto connection]].
 
-  * You need to [[docs:system:postgres:howto#docker|start the postgres docker image]].
+  * You need to [[howto:postgres:connection#docker|start the postgres docker image]].
   * [[docs:tabli:connection:ping|Ping]] your connection to check that the database is up.
 <unit>
 <code bash>
@@ -253,5 +253,5 @@ from
     wikipedia;
 </code>
 
-or you can also try to [[howto:database:load_json|load JSON document]].
+or you can also try to [[howto:json:load_json|load JSON document]].
 

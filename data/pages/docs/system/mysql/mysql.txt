@@ -25,7 +25,7 @@ To known about the historic of it, check this [[https://dev.mysql.com/doc/connec
 MySql is tested against version [[https://dev.mysql.com/doc/refman/5.7/en/|5.7]].
 
 ===== Howto =====
-To follow the [[howto:howto|Howto]], you need to start a MySql container database. The steps by steps are available on this page: [[howto]]
+To follow the [[howto:howto|Howto]], you need to start a MySql container database. The steps by steps are available on this page: [[howto:mysql:connection]]
 
 ===== Note =====
 

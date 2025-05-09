@@ -21,7 +21,7 @@ On Windows, luckily, if you have [[https://gitforwindows.org/|Git For Windows]],
 
 Set the width size of you terminal to a big enough number. We recommend 9000.
 
-When [[docs:tabli:variable:list|listing some configuration]], you may get a lengthy output (such as a list of a path) and the output will then not render nicely.
+When [[docs:tabli:env:list|listing some configuration]], you may get a lengthy output (such as a list of a path) and the output will then not render nicely.
 
 To avoid this inconvenient, our advice is to increase the width size of your terminal.
 

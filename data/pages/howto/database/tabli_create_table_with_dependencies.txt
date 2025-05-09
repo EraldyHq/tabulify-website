@@ -1,9 +1,10 @@
 ---json
 {
-   "name":"Duplicate a snowflake schema ",
-    "canonical":"howto:database:table_create_with_dependencies",
-    "title":"How to copy the data definition of all tables from a star/snowflake schema",
-     "description":"This howto will show you how to copy the data definition of all SQL tables from a star/snowflake schema."
+    "canonical": ":howto:database:table_create_with_dependencies",
+    "description": "This howto will show you how to copy the data definition of all SQL tables from a star\/snowflake schema.",
+    "name": "Duplicate a schema ",
+    "page_id": "zjtli95npp4fy9pry569a",
+    "title": "How to copy the data definition of all tables from a star\/snowflake schema"
 }
 ---
 

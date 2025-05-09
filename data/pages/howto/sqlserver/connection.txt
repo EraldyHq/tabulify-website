@@ -1,0 +1,101 @@
+====== Sql Server - How-to Connection ======
+
+
+
+===== About =====
+A [[docs:connection:howtos|default howto sqlserver connection]] is provided after a fresh installation that is used in the [[howto:howto|howto's]]. To use this connection, you need to start the [[#docker|docker image]]
+
+
+
+===== Docker =====
+
+
+
+
+==== Download and run the image ====
+
+This connection is based on the [[https://hub.docker.com/r/microsoft/mssql-server|Official Ms SQLServer Docker image]].
+
+  * You can download and start the image with the following command:
+<tabs enclosed-tabs>
+<panel selected>
+   <label>Bash</label>
+
+  * [[docs:common:bash|Bash]]
+<code bash>
+docker run \
+    -e MSSQL_SA_PASSWORD=TheSecret1! \
+    -e ACCEPT_EULA=Y \
+    -p 1433:1433 \
+    -d \
+    --name sqlserver \
+    mcr.microsoft.com/mssql/server:2022-CU18-ubuntu-22.04
+</code>
+</panel>
+<panel>
+   <label>CMD / Powershell</label>
+  * [[docs:common:shell|CMD/Powershell]]
+<code dos>
+docker run ^
+    -e MSSQL_SA_PASSWORD=TheSecret1! ^
+    -e ACCEPT_EULA=Y ^
+    -p 1433:1433 ^
+    -d ^
+    --name sqlserver ^
+    mcr.microsoft.com/mssql/server:2022-CU18-ubuntu-22.04
+</code>
+</panel>
+</tabs>
+
+  * [[docs:tabli:connection:ping|Ping]] your connection to check that the database is up.
+<unit>
+<code bash>
+tabli connection ping sqlserver
+</code>
+<console>
+The connection (sqlserver) has been pinged successfully
+</console>
+</unit>
+
+
+==== Start / Stop ====
+You can then start and stop the image with the following command:
+
+<code bash>
+docker stop sqlserver
+docker start sqlserver
+</code>
+
+===== Info =====
+
+<unit>
+<code bash>
+tabli connection info sqlserver
+</code>
+<console>
+Information about the connection (sqlserver)
+Attribute                   Value                                       Description                                                            
+-------------------------   -----------------------------------------   --------------------------------------------------------------------   
+BOOLEAN_DATA_TYPE           Native                                      Boolean data type used to store boolean values                         
+COMMENT                     The default postgres data store             A connection description                                               
+CONNECTION_CLOSING_SCRIPT                                               A script that runs before a connection is closed                       
+CONNECTION_INIT_SCRIPT                                                  A script that runs after a connection has been established             
+DATE_DATA_TYPE              NATIVE                                      Date data type used to store date values                               
+DRIVER                      org.postgresql.Driver                       The driver class                                                       
+HOST                                                                    Host Server                                                            
+MAX_CONCURRENT_THREAD                                                   The maximum number of threads that can be created against the system   
+MAX_NAME_IN_PATH                                                        The maximum number of names in a path                                  
+NAME                        postgres                                    The name of the connection                                             
+NATIVES                                                                 Native Driver attributes (jdbc properties, ...)                        
+ORIGIN                      CONF                                        The origin of the connection                                           
+PASSWORD                    welcome                                     The user password                                                      
+PORT                        -1                                          Host Port                                                              
+TIMESTAMP_DATA_TYPE         NATIVE                                      Timestamp data type used to store timestamp values                     
+TIME_DATA_TYPE              NATIVE                                      Time format data type to store time values                             
+URI                         jdbc:postgresql://localhost:5432/postgres   The uri of the connection                                              
+USER                        postgres                                    The user name                                                          
+WORKING_PATH                public.                                     The working path (Schema for database, directory for file system)
+</console>
+</unit>
+
+

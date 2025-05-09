@@ -1,7 +1,11 @@
 ---json
 {
+    "aliases": [
+        { "path": ":howto:generator:csv" }
+    ],
     "description": "This article shows you how to generate a csv file from a generator tabular file.",
     "low_quality_page": "false",
+    "name": "Generate a CSV",
     "page_id": "dldtsswriy1bmcinb28vy",
     "title": "How to create a CSV File with generated data"
 }
@@ -31,7 +35,7 @@ You first need to create your [[docs:resource:generator|generator data resource]
 
 We will take as example the ''d_date--datagen.yml'' generator that generates a ''date dimension''.
 <note info>
-This generator is explained in this [[d_date|howto]]
+This generator is explained in this [[..:generator:d_date|howto]]
 </note>
 
 <unit >

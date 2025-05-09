@@ -1,12 +1,15 @@
 ---json
 {
+    "aliases": [
+        { "path": ":howto:database:load_json" }
+    ],
     "canonical": ":howto:database:json:load",
     "description": "This howto will show you how to load json document (files) into your relational database.",
     "images": [
         { "path": ":combostrap:icons:codicon:json.svg" }
     ],
     "low_quality_page": "false",
-    "name": "Loading Json documents",
+    "name": "Load JSON in DB",
     "page_id": "a8z097oexo9em70mdaha6",
     "title": "How to load a JSON documents in a database"
 }

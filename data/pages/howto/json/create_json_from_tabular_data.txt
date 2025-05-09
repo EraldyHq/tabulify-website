@@ -68,10 +68,10 @@ The [[docs:templating:json|JSON template]] is a [[docs:templating:templating|tem
 </file>
 </unit>
 where:
-  * the variable ''${group}'' matches the ''group'' column of the ''books.csv'' source
-  * the variable ''${asin}'' matches the ''asin'' column of the ''books.csv'' source
-  * the variable ''${price}'' matches the ''price'' column of the ''books.csv'' source
-  * the variable ''${description}'' matches the ''description'' column of the ''books.csv'' source
+  * the variable ''%%${group}%%'' matches the ''group'' column of the ''books.csv'' source
+  * the variable ''%%${asin}%%'' matches the ''asin'' column of the ''books.csv'' source
+  * the variable ''%%${price}%%'' matches the ''price'' column of the ''books.csv'' source
+  * the variable ''%%${description}%%'' matches the ''description'' column of the ''books.csv'' source
 
 ==== The template operation ====
 

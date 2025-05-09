@@ -31,7 +31,7 @@ docker run \
 </panel>
 <panel>
    <label>CMD / Powershell</label>
-  * [[docs:common:cmd|CMD/Powershell]]
+  * [[docs:common:shell|CMD/Powershell]]
 <code bash>
 docker run ^
     -e MYSQL_DATABASE=howto ^

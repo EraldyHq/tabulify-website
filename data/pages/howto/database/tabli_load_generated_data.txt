@@ -2,6 +2,7 @@
 {
     "description": "This how-to will show you how to fill a table with auto-generated data and the Tabli fill action.",
     "low_quality_page": "false",
+    "name": "Auto Data Generation",
     "page_id": "e1q33212r4wh9vrmo6ikr"
 }
 ---

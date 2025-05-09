@@ -12,7 +12,7 @@ A ''Json'' template is a [[docs:templating:native|native template]]:
 
 
 ===== Howto =====
-[[howto:templating:create_json_from_tabular_data]]
+[[howto:json:create_json_from_tabular_data]]
 
 
 ===== Example:  catalog of item =====

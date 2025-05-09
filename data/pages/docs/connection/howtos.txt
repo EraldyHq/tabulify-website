@@ -9,11 +9,11 @@
 
 ===== List =====
 
-  * [[docs:system:sqlite:howto|sqlite]] and ''sqlite-target'' are [[docs:system:sqlite:sqlite|sqlite]] connection
-  * [[docs:system:sqlite:howto|oracle]] is an [[docs:system:oracle:oracle|oracle database]]
-  * ''sqlserver'' is an [[docs:system:sqlserver|sqlserver database]]
-  * ''mysql'' is a [[docs:system:mysql:mysql|mysql database]]
-  * [[docs:system:postgres:howto|postgres]] is a [[docs:system:postgres:postgres|postgres database]]
+  * [[:howto:sqlite:connection|sqlite]] and ''sqlite-target'' are [[docs:system:sqlite:sqlite|sqlite]] connection
+  * [[:howto:sqlite:connection|oracle]] is an [[docs:system:oracle:oracle|oracle database]]
+  * [[:howto:sqlserver:connection|sqlserver]] is an [[docs:system:sqlserver|sqlserver database]]
+  * [[:howto:mysql:connection|mysql]] is a [[docs:system:mysql:mysql|mysql database]]
+  * [[:howto:postgres:connection|postgres]] is a [[docs:system:postgres:postgres|postgres database]]
 
 After a [[howto:getting_started:1_install|fresh installation]], you should see them by listing the [[connection|connection]].
 
