@@ -63,7 +63,7 @@ sqlserver       jdbc:sqlserver://localhost:1433;databaseName=AdventureWorks;encr
 
 ==== Listing only  a set of connections ====
 
-  * List only the connections with the name [[docs:system:oracle:howto|oracle]] and [[docs:system:sqlite:howto|sqlite]]
+  * List only the connections with the name [[howto:oracle:connection|oracle]] and [[howto:sqlite:connection|sqlite]]
 <unit>
 <code bash>
 tabli connection list oracle sqlite
