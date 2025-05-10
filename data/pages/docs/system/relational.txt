@@ -9,7 +9,7 @@ You can:
   * [[docs:tabli:connection:start|add/create/update database connections parameters]]
   * [[docs:tabli:data:query|perform operation on a SQL query]]
   * [[docs:tabli:data:start|perform operation on a table]]
-  * [[howto:database:tabli_create_table_with_dependencies|perform operation on a schema]]
+  * [[howto:sqlite:create_table_with_dependencies|perform operation on a schema]]
   * [[docs:resource:dependency|manage foreign keys (ie relation between tables)]]
 
 
@@ -30,7 +30,16 @@ For the supported database, ''Tabulify'' introduces a layer that:
   * [[docs:system:postgres:postgres]]
   * [[docs:system:oracle:oracle]]
   * [[docs:system:mysql:mysql]]
+  * [[:docs:system:sqlserver|]]
+
+===== Parameters =====
 
 
+^ Name ^ Description ^ Default value ^ 
+| BUILDER_CACHE_ENABLED | A builder cache | true |
+
+The builder cache is used to cache the building of table.
+Why? Because a relation object (table, views, ...) may have [[:docs:resource:dependency|dependencies]], 
+building them each time, we need them has a significative impact as it's a recursive process.
 
 
