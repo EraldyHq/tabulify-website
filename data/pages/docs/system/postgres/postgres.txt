@@ -7,7 +7,7 @@
 
 <note>
 If you don't have any knowledge of ''Tabulify'', you can start with the [[howto:getting_started:getting_started|Learning Guide]],
-otherwise you can also browser the [[howto:database:database|relational database Howto's]]
+otherwise you can also browser the [[howto:sqlite:sqlite|relational database Howto's]]
 </note>
 
 
@@ -88,8 +88,9 @@ We use the driver 42.2.16 that supports PostgreSQL 8.2 or newer
 
 ==== Version ====
 
-Database: 9.5 or above
+We support the version supported of the [[https://www.postgresql.org/support/versioning/|postgres versioning scheme]].
 
+For version no more supported, [[:contact|contact us]]
 
 <code sql>
 SELECT version();

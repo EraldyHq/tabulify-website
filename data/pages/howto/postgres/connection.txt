@@ -25,7 +25,7 @@ docker run \
     -p 5432:5432 \
     -d \
     --name postgres \
-    postgres:9.5
+    postgres:13.21
 </code>
 </panel>
 <panel>
@@ -37,7 +37,7 @@ docker run ^
     -p 5432:5432 ^
     -d ^
     --name postgres ^
-    postgres:9.5
+    postgres:13.21
 </code>
 </panel>
 </tabs>
