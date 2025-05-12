@@ -14,26 +14,42 @@ You can:
 
 
 <note tip>
-[[docs:system:sample_schema|Sample relational schema]] are also available to showcase or test rapidly a development
+[[docs:system:sample_schema|Sample relational schema]] are also available to showcase or test rapidly a development environment.
 </note>
 
-===== Supported Relational Database =====
-
-All relational database that provides a mature JDBC driver and supports [[wp>SQL#Interoperability_and_standardization|ANSI SQL]] for the creation of data structure should work out of the box.
+===== Supported Relational Databases =====
 
 For the supported database, ''Tabulify'' introduces a layer that:
   * corrects the driver mistake
   * and/or implements the database SQL dialect
 
-===== List =====
+List:
   * [[docs:system:sqlite:sqlite]]
   * [[docs:system:postgres:postgres]]
   * [[docs:system:oracle:oracle]]
   * [[docs:system:mysql:mysql]]
   * [[:docs:system:sqlserver|]]
+  * all relational databases that:
+    * provides a JDBC driver, 
+    * supports [[wp>SQL#Interoperability_and_standardization|ANSI SQL]]
 
-===== Parameters =====
 
+The most controversial part being the [[:docs:op:upsert|upsert sql statement]]:
+```sql
+insert into "howto"."d_category" ("cat_id", "cat_desc", "load_timestamp")
+values (?, ?, ?) 
+on duplicate key update "load_timestamp" = values ("load_timestamp")
+```
+If you want a relational database that does not support this syntax, [[:contact|contact us]].
+
+
+
+
+
+===== Attribute / Parameters =====
+
+All relational database system supports the [[:docs:connection:attribute|standard connection attributes]] 
+and the following attributes:
 
 ^ Name ^ Description ^ Default value ^ 
 | BUILDER_CACHE_ENABLED | A builder cache | true |
