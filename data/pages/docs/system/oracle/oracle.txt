@@ -64,3 +64,31 @@ tabli connection add "oracleConnectionName" "jdbc:oracle:thin:@[host]:[port]/[se
 ===== Version =====
 
 The [[https://www.oracle.com/database/technologies/appdev/jdbc-downloads.html|driver version]] used is the ''23.7.0.25.01''
+
+
+===== Parameters =====
+
+==== Quoted identifier is disabled by default ====
+
+We disable quoted identifier by setting by default the [[:docs:system:relational#NAME_QUOTING_ENABLED|NAME_QUOTING_ENABLED]] parameter to false for Oracle.
+
+Why ? 
+  * Because it requires you to put always the quotation mark even in a `SQL SELECT` which is crazy. 
+  * You can't write `select cat_id`, you need to write `select "cat_id"`
+  * Why it requires it? The quotes are part of the `name` and are not an escape feature, meaning that when you get the table name, you don't get `cat_id`, you get `"cat_id"`
+
+<blockquote>
+If you name a schema object using a quoted identifier, then you must use the double quotation marks whenever you refer to that object.
+<cite>[[https://docs.oracle.com/en/database/oracle/oracle-database/18/sqlrf/Database-Object-Names-and-Qualifiers.html|Oracle Ref]]</cite>
+</blockquote>
+
+===== Type =====
+
+==== Integer ====
+
+The `SQL Integer` type does not exist in Oracle. 
+We create them with 
+```sql
+NUMERIC(p)
+```
+and we infer them when the scale of a `Oracle NUMERIC` type is empty.
