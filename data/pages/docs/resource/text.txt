@@ -7,8 +7,9 @@ A ''text'' file is a [[file|file]] [[resource|data resource]] that contains ''ch
 
 ===== Transfer =====
 
-  * as [[:docs:flow:source|source]], it has only one column
-  * as [[docs:flow:target|target]], it's the only free form structure that accepts any number of columns.
+In a [[:docs:op:transfer|transfer]]:
+  * as a [[:docs:flow:source|source]], it has only one column
+  * as a [[docs:flow:target|target]], it's the only free form structure that accepts any number of columns.
 
 ===== Attributes =====
 

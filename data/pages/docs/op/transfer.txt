@@ -76,7 +76,7 @@ The ''transfer'' operation is performed by the [[docs:tabli:data:transfer|tabli 
 | ''metrics-data-uri'' | | A [[docs:resource:data_uri|data uri]] where the [[#metrics|transfer metrics]] will be saved |
 ^ Transfer Properties ^^^
 | ''transfer-operation'' | ''copy'' for a [[docs:system:file|file system]] \\ ''insert'' otherwise | A [[#transfer-operation|transfer operation]] (copy, insert, upsert, update, ...) |
-| ''transfer-mapping-method'' | ''position'' if \\   * the structure does not exists \\   * or it has only one column \\ ''name'' otherwise | how the source and target columns are mapped (by ''name'', ''position'' or ''map'') |
+| ''transfer-mapping-method'' | ''position'' if the target structure does not exists \\ ''name'' otherwise | how the source and target columns are mapped (by ''name'', ''position'' or ''map'') |
 | ''transfer-column-mapping'' |  | if the mapping method is ''map'', you can define a map of source target column name |
 
 ==== Transfer Operation  ====
