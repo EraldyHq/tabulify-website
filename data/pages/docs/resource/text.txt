@@ -5,16 +5,19 @@
 A ''text'' file is a [[file|file]] [[resource|data resource]] that contains ''characters'' data.
 
 
+===== Transfer =====
 
+  * as [[:docs:flow:source|source]], it has only one column
+  * as [[docs:flow:target|target]], it's the only free form structure that accepts any number of columns.
 
 ===== Attributes =====
 
 A ''text file'' allows to specifies the following [[attribute|attributes]].
 
 ^ Name ^ Default Values ^ Description ^
-| ''endOfRecords'' | ''\r\n'', ''\n'' or ''\r''  on Read \\  ''\r\n'' (Windows) or ''\n'' (Linux) on Write | The ''end of record (EOR)'' are the characters that design the end of a [[record|record]] (by default the end of line) |
-| ''characterSet'' | Detected on Read \\ ''UTF-8'' on Creation | The character set that maps bits data to characters.  |
-| ''columnName'' | ''Lines'' | The name of the column when loaded in a [[docs:system:relational|relational database]]. \\ A text file is then processed as [[tabular|tabular data]] with one column of [[docs:common:data_type|type]] text. |
+| ''END_OF_RECORDS'' | ''\r\n'', ''\n'' or ''\r''  on Read \\  ''\r\n'' (Windows) or ''\n'' (Linux) on Write | The ''end of record (EOR)'' are the characters that design the end of a [[record|record]] (by default the end of line) |
+| ''CHARACTER_SET'' | Detected on Read \\ ''UTF-8'' on Creation | The character set that maps bits data to characters.  |
+| ''COLUMN_NAME'' | ''Lines'' | The name of the column when loaded in a [[docs:system:relational|relational database]]. \\ A text file is then processed as [[tabular|tabular data]] with one column of [[docs:common:data_type|type]] text. |
 
 <note>
 Note also that the [[count|count common attribute]] gives you the number of record (line by default).
