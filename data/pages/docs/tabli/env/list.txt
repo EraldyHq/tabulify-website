@@ -18,10 +18,10 @@ attribute      value                              origin           description
 CONF           /home/tabulify/.tabli/.tabli.yml   Default          The conf vault file path                     
 ENV            DEV                                Os environment   The execution environment                    
 HOME           /opt/tabulify                      Default          The directory of the Tabulify installation   
-LOG_LEVEL      WARN                               Os environment   The log level                                
+LOG_LEVEL      ERROR                              Os environment   The log level                                
 PASSPHRASE                                        Default          The passphrase                               
 PROJECT_HOME                                      Default          The project home directory                   
-USER_HOME      /home/tabulify/.tabli              Os environment   User home Directory
+USER_HOME      /home/tabulify/.tabli              Os environment   Tabulify User home Directory
 </console>
 </unit>
 

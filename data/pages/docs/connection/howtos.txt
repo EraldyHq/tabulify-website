@@ -19,7 +19,7 @@ After a [[howto:getting_started:1_install|fresh installation]], you should see t
 
 <unit>
 <code bash>
-tabli connection list *
+tabli connection list
 </code>
 <console>
 name            uri                                                                                                    
@@ -30,7 +30,7 @@ entity          file:///opt/tabulify/resources/entity/
 home            file:///home/tabulify/                                                                                 
 howto           file:///opt/tabulify/resources/howto/                                                                  
 log             file:///home/tabulify/.tabli/logs                                                                      
-memory          mem                                                                                                    
+memory          mem:/                                                                                                  
 mysql           jdbc:mysql://localhost:3306/howto                                                                      
 noop            noop                                                                                                   
 oracle          jdbc:oracle:thin:@localhost:1521/freepdb1                                                              

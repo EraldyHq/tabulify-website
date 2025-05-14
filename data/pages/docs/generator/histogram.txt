@@ -36,6 +36,7 @@ Columns:
 Example of normal distribution over time
 <unit>
 <file yaml histogram_normal_distribution--datagen.yml>
+MaxRecordCount: 30
 Columns:
   - name: id
     type: integer
@@ -55,6 +56,7 @@ Columns:
         "9:05": 0.22
         "9:10": 0.5
         "9:15": 0.05
+
 </file>
 </unit>
 ===== Properties =====
