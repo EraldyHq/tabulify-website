@@ -35,12 +35,14 @@ We will load the ''characters.csv'' file of the [[docs:connection:howto|HowTo co
 tabli data head characters.csv@howto
 </code>
 <console>
-Last Name           First Name   Birth Date   Wikipedia Page
------------------   ----------   ----------   ---------------------------------------------------
-Schwarzenegger      Arnold       1947-07-30   https://en.wikipedia.org/wiki/Arnold_Schwarzenegger
-Norman              Don          1935-12-25   https://en.wikipedia.org/wiki/Don_Norman
-Harbison Carnagey   Dale         1888-11-24   https://en.wikipedia.org/wiki/Dale_Carnegie
-Kahneman            Daniel       1934-03-05   https://en.wikipedia.org/wiki/Daniel_Kahneman
+The first 10 rows of the data resource (characters.csv@howto): 
+last_name           first_name   birth_date   wikipedia_page                                                   
+-----------------   ----------   ----------   --------------------------------------------------------------   
+Schwarzenegger      Arnold       1947-07-30   https://en.wikipedia.org/wiki/Arnold_Schwarzenegger              
+Norman              Don          1935-12-25   https://en.wikipedia.org/wiki/Don_Norman                         
+Harbison Carnagey   Dale         1888-11-24   https://en.wikipedia.org/wiki/Dale_Carnegie                      
+Kahneman            Daniel       1934-03-05   https://en.wikipedia.org/wiki/Daniel_Kahneman                    
+Pittman             Bob          1953-12-28   https://en.wikipedia.org/wiki/Robert_Pittman_(media_executive)
 </console>
 </unit>
 
@@ -65,9 +67,9 @@ We can load the above data using the [[docs:tabli:data:transfer|transfer command
 tabli data transfer characters.csv@howto @sqlite
 </code>
 <console>
-Source                 Target              Latency (ms)   Row Count   Error   Message
---------------------   -----------------   ------------   ---------   -----   -------
-characters.csv@howto   characters@sqlite   25             4
+Source                 Target              Latency (ms)   Row Count   Error   Message   
+--------------------   -----------------   ------------   ---------   -----   -------   
+characters.csv@howto   characters@sqlite   64             5
 </console>
 </unit>
 
@@ -79,12 +81,13 @@ We can check with the [[docs:tabli:data:struct|structure command]] that the proc
 tabli data struct characters@sqlite
 </code>
 <console>
-Position   Column Name      Data Type   Primary Key   Not Null   Auto Increment   Description
---------   --------------   ---------   -----------   --------   --------------   -----------
-1          Last Name        text                      x          false
-2          First Name       text                      x          false
-3          Birth Date       text                      x          false
-4          Wikipedia Page   text                      x          false
+Structure of the resource characters@sqlite
+position   name             type      precision   scale   primary_key   nullable   autoincrement   comment   
+--------   --------------   -------   ---------   -----   -----------   --------   -------------   -------   
+1          last_name        varchar                                     x          false                     
+2          first_name       varchar                                     x          false                     
+3          birth_date       varchar                                     x          false                     
+4          wikipedia_page   varchar                                     x          false
 </console>
 </unit>
 
@@ -96,11 +99,12 @@ We can check with the [[docs:tabli:data:print|print command]] that the same data
 tabli data print characters@sqlite
 </code>
 <console>
-Last Name           First Name   Birth Date   Wikipedia Page
------------------   ----------   ----------   ---------------------------------------------------
-Schwarzenegger      Arnold       1947-07-30   https://en.wikipedia.org/wiki/Arnold_Schwarzenegger
-Norman              Don          1935-12-25   https://en.wikipedia.org/wiki/Don_Norman
-Harbison Carnagey   Dale         1888-11-24   https://en.wikipedia.org/wiki/Dale_Carnegie
-Kahneman            Daniel       1934-03-05   https://en.wikipedia.org/wiki/Daniel_Kahneman
+last_name           first_name   birth_date   wikipedia_page                                                   
+-----------------   ----------   ----------   --------------------------------------------------------------   
+Schwarzenegger      Arnold       1947-07-30   https://en.wikipedia.org/wiki/Arnold_Schwarzenegger              
+Norman              Don          1935-12-25   https://en.wikipedia.org/wiki/Don_Norman                         
+Harbison Carnagey   Dale         1888-11-24   https://en.wikipedia.org/wiki/Dale_Carnegie                      
+Kahneman            Daniel       1934-03-05   https://en.wikipedia.org/wiki/Daniel_Kahneman                    
+Pittman             Bob          1953-12-28   https://en.wikipedia.org/wiki/Robert_Pittman_(media_executive)
 </console>
 </unit>
