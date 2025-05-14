@@ -22,21 +22,22 @@ This list is not exhaustive but below are the most known pattern.
 | ''yyyy-MM-dd'' | Date |
 | ''yyyy-MM-dd HH:mm:ss.SSS'' | Sql Timestamp |
 | ''yyyy-MM-ddTHH:mm:ss.SSS'' | Iso Timestamp |
+| ''HH:mm'', ''HH:mm:ss'' or `HH:mm:ss.SSS` | Time |
 
 
 ===== Configuration =====
 ==== Storage ====
- 
-The following [[docs:connection:built_in_variables|built-in connection attribute]] changes the storage format of ''time'' data type (ie ''date'', ''timestamp'' and ''time'').
+
+The following [[docs:connection:attribute|built-in connection attribute]] changes the storage format of ''time'' data type (ie ''date'', ''timestamp'' and ''time'').
 
 <note warning>
 Changing this value may lead to unpredictable transformation. If you change the value from ''epochSec'' to ''epochMs'', the same number will not have the same time value. Once this settings has been set, it's not recommended to change it.
 </note>
 
-^ Built-in Connection Attribute ^ Default Value ^ Description ^ 
-| ''DateDataType'' | ''SqlObject'' | Define the storage format of a ''Date'' data type (''YYYY-MM-DD'') | 
-| ''TimestampDataType'' | ''SqlObject'' | Define the storage format of a ''Timestamp'' data type (''YYYY-MM-DD HH:MM:SS'') |
-| ''TimeDataType'' | ''SqlObject'' | Define the storage format of a ''Time'' data type (''HH:MM:SS'') |
+^ Built-in Connection Attribute ^ Default Value ^ Description ^
+| ''DATE_DATA_TYPE'' | ''SqlObject'' | Define the storage format of a ''Date'' data type (''YYYY-MM-DD'') |
+| ''TIMESTAMP_DATA_TYPE'' | ''SqlObject'' | Define the storage format of a ''Timestamp'' data type (''YYYY-MM-DD HH:MM:SS'') |
+| ''TIME_DATA_TYPE'' | ''SqlObject'' | Define the storage format of a ''Time'' data type (''HH:MM:SS'') |
 
 The value can be chosen with any of the following values:
   * ''Native'' (Default) to store the time value in the data type of the target system.
