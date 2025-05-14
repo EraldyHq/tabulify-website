@@ -5,6 +5,14 @@
 The [[..:tabli|Tabli]] ''data fill'' [[docs:tabli:command|command]] from the [[start|table module]] insert [[docs:generator:generator|generated]] data into a [[docs:resource:content|content resource (file, sql table)]].
 
 
+===== How do the fill command map generators to target ? =====
+
+If you specify the `--generator-selector`, you may select more than one [[:docs:resource:generator|generator]].
+
+These generators are mapped to the target:
+  * by their [[:docs:resource:logicalname|logical name]] for a multi-fill operation
+  * by position for a mono-fill operation (one generator, one target)
+
 
 ===== Syntax =====
 <unit>
