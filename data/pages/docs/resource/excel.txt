@@ -9,14 +9,28 @@
 
 ===== Attributes =====
 
-An excel file has the following [[docs:resource:attribute|attributes]].
+An Excel file has the following [[docs:resource:attribute|attributes]].
 
 
 ^ Name ^ Default Value ^ Description ^
-| ''headerRowId'' | ''0'' | The row id where the header is located (''0'' means no header and ''1'' the first line) |
-| ''sheetName'' |  | The sheet name (Optional, first sheet by default) |
-| ''dateFormat'' | ''dd/mm/yyyy hh:mm:ss'' | The date format (ie Format Cells > Number > Custom)  |
+| ''HEADER_ROW_ID'' | ''0'' | The row id where the header is located (''0'' means no header and ''1'' the first line) |
+| ''SHEET_NAME'' |  | The sheet name (Optional, first sheet by default if not set) |
+| ''DATE_FORMAT'' | ''dd/mm/yyyy hh:mm:ss'' | The date format (ie Format Cells > Number > Custom)  |
 
 In Excel, dates are numeric cell with an applied date format.
 
+===== Type supported =====
 
+Excel files supports natively the following SQL data type:
+
+    * Double (not integer)
+    * Timestamp (numeric with date format)
+    * Varchar
+    * Boolean
+
+
+We enforce the type on the whole column even if Excel supports the type by column.
+
+During a [[:docs:op:transfer|transfer]], we support all data type. Ie if the target column is:
+  * a `Integer`, the `Decimal` value will be transformed into a `Integer`
+  * a [[:docs:common:time|Time]], the `Varchar` value `08:00` will be transformed in `Time`
