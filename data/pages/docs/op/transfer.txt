@@ -38,7 +38,7 @@ pipeline:
   - name: "Store"
     operation: transfer
     args:
-      target-uri: 'build/${logicalName}.csv@cd'
+      target-uri: '${logicalName}.csv@temp'
       transfer-operation: insert
       target-operation: replace
 </code>
