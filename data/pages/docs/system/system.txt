@@ -10,7 +10,7 @@
 {{ :docs:system:undraw_circuit_board.svg?600&ratio=21:9 |}}
 
 ===== About =====
-For ''Tabulify'', a ''system'' is a service where you can:
+For ''Tabulify'', a ''system'' is where you can:
   * store [[docs:resource:resource|data resources]]
   * and execute [[docs:resource:script|scripts]] (optionally)
 
