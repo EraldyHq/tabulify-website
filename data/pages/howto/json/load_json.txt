@@ -23,7 +23,7 @@
 This [[howto:howto|howto]] will show you how to load <icon name="codicon:json"/> [[docs:resource:json|json document (files)]] into a [[docs:system:relational|relational database]].
 
 <note>
-This example uses the [[docs:system:sqlite:howto|sqlite howto database]] but you may use any other [[docs:system:relational|relational database]]
+This example uses the [[howto:sqlite:connection|sqlite howto database]] but you may use any other [[docs:system:relational|relational database]]
 </note>
 
 ===== Steps =====
@@ -94,7 +94,7 @@ position   name   data_type   precision   scale   primary_key   nullable   autoi
 
 ==== Loading the JSON files ====
 
-The below [[docs:tabli:data:insert|data insert command]] will load the JSON files into the ''phones'' [[docs:resource:table|table]] of the [[docs:system:sqlite:howto|sqlite howto]] database.
+The below [[docs:tabli:data:insert|data insert command]] will load the JSON files into the ''phones'' [[docs:resource:table|table]] of the [[howto:sqlite:connection|sqlite howto]] database.
 <unit>
 <code bash>
 tabli data insert json/phone/*.json@howto  user@sqlite
