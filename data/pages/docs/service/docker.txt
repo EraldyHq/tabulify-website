@@ -1,0 +1,10 @@
+====== Docker Services ======
+
+
+Docker is a [[docs:service:service|service]].
+
+===== Attributes =====
+
+The name of the service is the `container name`.
+
+
