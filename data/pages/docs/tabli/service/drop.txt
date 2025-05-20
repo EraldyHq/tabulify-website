@@ -1,69 +1,49 @@
 ---json
 {
-    "page_id": "ss2t4c5mywmlmprargoh3"
+    "page_id": "j7w50kraud9a1e0d4v5qv"
 }
 ---
-====== Tabli - Service List Command ======
-
+====== Tabli - Drop a Service ======
 
 ===== About =====
-''list'' is a [[docs:tabli:command|command]] of the [[docs:tabli:service:start|service module]] that shows the [[:docs:service:service|services]] stored in the [[docs:conf:vault|connection vault]].
+''drop'' is a [[docs:tabli:command|command]] of the [[docs:tabli:service:start|service module]] that will drop a [[:docs:service:service|service]]
+from the service provider (not from the [[:docs:conf:vault|configuration vault]])
+
 
 
 ===== Example =====
+To drop the [[:howto:postgres:connection_service|howto postgres docker container]]:
 
-  * List all services 
-
-<unit>
 <code bash>
-tabli service list 
+tabli service drop postgres
 </code>
-<console>
-
-
-4 services were found in the configuration vault (/home/tabulify/.tabli/.tabli.yml)
-name        type     
----------   ------   
-oracle      docker   
-sqlserver   docker   
-mysql       docker   
-postgres    docker
-
-
-</console>
-</unit>
-
-
-
 
 ===== Syntax =====
 <unit>
 <code bash>
-tabli service list --help
+tabli service drop --help
 </code>
 <console>
-
-
-Tabli service list
+Tabli service drop
 ==================
 
-List the services
+Stop one or more services
 
 
 
 Examples
 --------
 
- 1 - List all services
+ 1 - Stop the service sqlserver
 
 
-    tabli service list
+    tabli service drop sqlserver
 
 
- 2 - Start all services that starts with sql
+ 2 - Stop all services that starts with sql
 
 
-    tabli service list sql*
+    tabli service drop sql*
 
 
 
@@ -72,7 +52,7 @@ Syntax
 ------
 
 
-    tabli service list [options|flags] <name-selector...>
+    tabli service drop <name-selector...>
 
 
 where:
@@ -81,11 +61,6 @@ where:
   Arguments:
 
     <name-selector...>                                      One ore several glob pattern that select services by name
-
-
-  Data Definition Options:
-
-    -a,--attribute <value>                                  A connection attribute to add to the output
 
 
   Global Options:
@@ -111,7 +86,5 @@ where:
     -ph,--project-home <path>                               The project home (default to the .tabli.yml file directory)
 
     -v,--version                                            Print version information
-
-
 </console>
 </unit>

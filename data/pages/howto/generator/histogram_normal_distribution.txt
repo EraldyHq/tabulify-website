@@ -2,7 +2,8 @@
 {
     "description": "This how-to shows you how to generate data that follows a normal distribution with the column histogram generator",
     "low_quality_page": "false",
-    "page_id": "wllpdo8jabagb71rrlmkp"
+    "page_id": "wllpdo8jabagb71rrlmkp",
+    "title": "How to generate a normal distribution with an histogram generator"
 }
 ---
 ====== Tabulify - How to generate a normal distribution with an histogram generator ======

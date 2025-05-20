@@ -2,7 +2,8 @@
 {
     "description": "This how-to will show you how to use the tabli fill command to  fill all the tables of a schema with generated data.",
     "low_quality_page": "false",
-    "page_id": "i8wii619uui2h456ddwwf"
+    "page_id": "i8wii619uui2h456ddwwf",
+    "title": "How to fill a database relational schema with generated data and tabli"
 }
 ---
 ====== Tabulify - How to fill a database relational schema with generated data and Tabli ======

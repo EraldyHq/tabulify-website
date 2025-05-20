@@ -3,7 +3,8 @@
     "canonical": ":howto:generator",
     "description": "A collection of how-to's to get the in and out of the Tabulify Data Generator",
     "name": "Data Generation",
-    "page_id": "df1obk3i8a2rbog7dne36"
+    "page_id": "df1obk3i8a2rbog7dne36",
+    "title": "How to generate data with the Tabulify Data Generator"
 }
 ---
 

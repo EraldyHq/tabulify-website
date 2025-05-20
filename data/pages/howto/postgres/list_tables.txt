@@ -3,7 +3,8 @@
     "canonical": ":howto:postgres:list_tables",
     "description": "This howto will show you how to list SQL Tables",
     "name": "List SQL Tables",
-    "page_id": "7wqxxuxxcf7acuoms9ufh"
+    "page_id": "7wqxxuxxcf7acuoms9ufh",
+    "title": "How to list SQL Tables"
 }
 ---
 

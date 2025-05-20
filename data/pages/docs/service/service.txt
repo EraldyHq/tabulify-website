@@ -37,4 +37,15 @@ As for any value in the configuration vault, you can use:
 
 ===== Tabli Service: List/Info =====
 
-The [[:docs:tabli:service:start|tabli service module]] permits to manage the services from the command line.
+The [[:docs:tabli:service:start|tabli service module]] permits to manage the services at the command line.
+
+===== Attributes =====
+
+All services will have the following [[:docs:conf:attribute|attributes]]
+
+^ Name ^ Description ^ 
+| ''NAME'' | The name of the service |
+| ''TYPE'' | The type of the service (ie the provider name) |
+| ''IS_STARTED'' | Boolean that returns true if the service is started, false otherwise |
+
+Each [[#provider|service provider]] may bring its own attributes.

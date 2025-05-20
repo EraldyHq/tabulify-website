@@ -8,7 +8,8 @@
         { "path": ":docs:system:tpc.png" }
     ],
     "name": "Tpc-ds",
-    "page_id": "yr3zjjle8idlp03w04k09"
+    "page_id": "yr3zjjle8idlp03w04k09",
+    "title": "How to execute the TPC-DS benchmark data and query"
 }
 ---
 

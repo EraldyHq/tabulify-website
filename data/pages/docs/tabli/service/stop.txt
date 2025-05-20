@@ -1,43 +1,49 @@
-====== Tabli - Start a Service ======
+---json
+{
+    "page_id": "ptgxw0zchlbyemqdgpso0"
+}
+---
+====== Tabli - Stop a Service ======
 
 ===== About =====
-The ''service start'' operation will start a [[:docs:service:service|service]] and create it if non-existent.
+''stop'' is a [[docs:tabli:command|command]] of the [[docs:tabli:service:start|service module]] that will stop a [[:docs:service:service|service]].
 
-<note tip>If the service is already started, this operation has no effect and does not return any error.</note>
+<note tip>If the service is not started, this operation has no effect and does not return any error.</note>
 
 ===== Example =====
-To start the [[:howto:postgres:connection|howto postgres docker container]]:
+To stop the [[:howto:postgres:connection_service|howto postgres docker container]]:
 
 <code bash>
-tabli service start postgres
+tabli service stop postgres
 </code>
 
 ===== Syntax =====
 <unit>
 <code bash>
-tabli service start --help
+tabli service stop --help
 </code>
 <console>
-Tabli service start
-===================
 
-Start one or more services
+Tabli service stop
+==================
+
+Stop one or more services
 
 
 
 Examples
 --------
 
- 1 - Start the service sqlserver
+ 1 - Stop the service sqlserver
 
 
-    tabli service start sqlserver
+    tabli service stop sqlserver
 
 
- 2 - Start all services that starts with sql
+ 2 - Stop all services that starts with sql
 
 
-    tabli service start sql*
+    tabli service stop sql*
 
 
 
@@ -46,7 +52,7 @@ Syntax
 ------
 
 
-    tabli service start <name-selector...>
+    tabli service stop <name-selector...>
 
 
 where:
@@ -80,5 +86,6 @@ where:
     -ph,--project-home <path>                               The project home (default to the .tabli.yml file directory)
 
     -v,--version                                            Print version information
+
 </console>
 </unit>

@@ -3,7 +3,8 @@
     "description": "A date dimension is a typical case for data generation and this article shows you how to generate it.\n",
     "low_quality_page": "false",
     "name": "Date Dimension",
-    "page_id": "sbo5vdkk4k03u1lu74dzn"
+    "page_id": "sbo5vdkk4k03u1lu74dzn",
+    "title": "How to generate a date dimension ?"
 }
 ---
 ====== Data Generator - How to generate a date dimension ? ======

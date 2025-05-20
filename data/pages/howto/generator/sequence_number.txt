@@ -2,7 +2,8 @@
 {
     "description": "This how-to shows you how to generate an  integer sequence (1,2,3,\u2026) with the column sequence generator.",
     "low_quality_page": "false",
-    "page_id": "eh9fj9ievp326r6c0s8sk"
+    "page_id": "eh9fj9ievp326r6c0s8sk",
+    "title": "How to generate a sequence of numbers"
 }
 ---
 ====== Tabulify - How to generate a sequence of numbers ======

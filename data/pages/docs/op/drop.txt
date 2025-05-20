@@ -15,6 +15,6 @@ Example:
   * A ''drop'' operation on a [[docs:resource:table|sql table]] is equivalent to a ''drop table''.
 
 <note important>
-As there is no way to retrieve the data or metadata, you should use this operations with care and don't forget your backups.
+As there is no way to retrieve the data or metadata, you should use this operations with care and don't forget to backup your data.
 </note>
 
