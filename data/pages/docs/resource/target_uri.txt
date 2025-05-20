@@ -105,20 +105,20 @@ tabli data info web_page@tpcds
 Information about the data resource (web_page@tpcds)
 attribute          value                                                                                              description                                             
 ----------------   ------------------------------------------------------------------------------------------------   -----------------------------------------------------   
-absolute-path      web_page                                                                                           The absolute path on the data system                    
-connection         tpcds                                                                                              The connection name                                     
-count                                                                                                                 The number of records                                   
-data-uri           web_page@tpcds                                                                                     The data uri                                            
-logical-name       web_page                                                                                           The logical name                                        
-md5                2d3f08a0ad007e5236ed694250e89721                                                                   The Md5 hash                                            
-name               web_page                                                                                           The name of the data resource                           
-parent             /                                                                                                  The parent                                              
-path               web_page                                                                                           The relative path to the default connection path        
-sha384             0d3fcd0bd2dc1aa6c14a6ce4a4c8acff06a6194a4f56f4730bbb371aaf490da1fe318f9f11ba44157ffd53d501e2f551   The Sha384 hash                                         
-sha384-integrity   sha384-DT/NC9LcGqbBSmzkpMis/wamGUpPVvRzC7s3Gq9JDaH+MY+fEbpEFX/9U9UB4vVR                            The sha384 value used in the html integrity attribute   
-size                                                                                                                  The number of byte                                      
-subtype            relation                                                                                           The media subType                                       
-type               sql/relation                                                                                       The media type
+ABSOLUTE_PATH      web_page                                                                                           The absolute path on the data system                    
+CONNECTION         tpcds                                                                                              The connection name                                     
+COUNT                                                                                                                 The number of records                                   
+DATA_URI           web_page@tpcds                                                                                     The data uri                                            
+LOGICAL_NAME       web_page                                                                                           The logical name                                        
+MD5                2d3f08a0ad007e5236ed694250e89721                                                                   The Md5 hash                                            
+NAME               web_page                                                                                           The name of the data resource                           
+PARENT             /                                                                                                  The parent                                              
+PATH               web_page                                                                                           The relative path to the default connection path        
+SHA384             0d3fcd0bd2dc1aa6c14a6ce4a4c8acff06a6194a4f56f4730bbb371aaf490da1fe318f9f11ba44157ffd53d501e2f551   The Sha384 hash                                         
+SHA384_INTEGRITY   sha384-DT/NC9LcGqbBSmzkpMis/wamGUpPVvRzC7s3Gq9JDaH+MY+fEbpEFX/9U9UB4vVR                            The sha384 value used in the html integrity attribute   
+SIZE                                                                                                                  The number of byte                                      
+SUBTYPE            relation                                                                                           The media subType                                       
+TYPE               sql/relation                                                                                       The media type
 </console>
 </unit>
 

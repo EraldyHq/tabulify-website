@@ -68,6 +68,8 @@ where:
 
   Options:
 
+    -ea,--excluded-attribute <value>                        Attribute name to be excluded (Mostly computational attributes such as digest, md5, count, size, ...)
+
     -t,--type <mediaType|mimeType|extensionFile>            The type of the resource
 
 

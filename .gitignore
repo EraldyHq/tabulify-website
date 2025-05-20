@@ -7,6 +7,8 @@
 # Don't ignore contribute
 !contribute
 !contribute/**
+# Robots
+!robots.txt
 # Don't ignore the doc/docs directories
 !doc/
 !doc/**

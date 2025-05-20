@@ -59,6 +59,7 @@ and the following attributes:
 ^ Name ^ Description ^ Default value ^ 
 | BUILDER_CACHE_ENABLED | A builder cache | true |
 | NAME_QUOTING_ENABLED | Enable quoting of SQL name identifier | true |
+| DRIVER | The Jdbc Driver Class |  |
 
 ==== BUILDER_CACHE_ENABLED ====
 

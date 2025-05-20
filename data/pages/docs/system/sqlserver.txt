@@ -6,14 +6,17 @@
 ====== Sql Server ======
 
 
+===== About =====
+
 
 Tabulify supports [[https://learn.microsoft.com/en-us/sql/|Sql Server]] as [[[[:docs:flow:source|source]] and [[:docs:flow:target|target]].
 
+It inherits the attributes of the [[:docs:system:relational|relational system]].
 
 ===== Support and Sql Server Features =====
 
 ==== Varchar ====
-''Tabulify'' modifies the default length for VARCHAR and NVARCHAR from ''1'' to ''max'' 
+''Tabulify'' modifies the default length for VARCHAR and NVARCHAR from ''1'' to ''max''
 
 `max` is the default for most database and avoid many problem when the length is not defined (ie nobody wants to store `1` character in a `varchar`).
 
@@ -52,27 +55,27 @@ Sql Server does not support dependencies on view (ie dependent on the table used
 
 `Order By` is not supported by Sql Server in derived table such as:
 
-  * views, 
-  * inline functions, 
-  * derived tables, 
-  * subqueries, 
+  * views,
+  * inline functions,
+  * derived tables,
+  * subqueries,
   * and common table expressions
 
 unless `TOP`, `OFFSET` or `FOR XML` is specified.
 
 Example: if you create this view:
 ```sql
-create view "error_orderby" as 
-select 
-   "cat_id", 
-   "cat_desc", 
-   "load_timestamp" 
-from "master"."dbo"."d_category" 
+create view "error_orderby" as
+select
+   "cat_id",
+   "cat_desc",
+   "load_timestamp"
+from "master"."dbo"."d_category"
    order by "cat_id"
 ```
 You would get this error:
 ```
-The ORDER BY clause is invalid in views, inline functions, derived tables, subqueries, 
+The ORDER BY clause is invalid in views, inline functions, derived tables, subqueries,
 and common table expressions, unless TOP, OFFSET or FOR XML is also specified.
 ```
 
@@ -83,10 +86,10 @@ Sql Server requires an alias for each select expression in a query.
 For instance:
   * this query
 ```sql
-create view "alias_error" as 
-select 
-   avg(sales_price), 
-   avg(sales_qty) 
+create view "alias_error" as
+select
+   avg(sales_price),
+   avg(sales_qty)
 from "f_sales"
 ```
   * would return this error:

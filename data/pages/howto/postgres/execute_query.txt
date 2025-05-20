@@ -75,7 +75,7 @@ SQL_STATEMENT
 
 ==== Loading the sales data ====
 
-To prevent any conflict, you can execute the below command to drop all tables from the [[connection|postgres howto connection]]
+To prevent any conflict, you can execute the below command to drop all tables from the [[connection_service|postgres howto connection]]
 <unit>
 <code bash>
 tabli data drop --not-strict *@postgres
@@ -91,7 +91,7 @@ where:
       * selects all tables that finish with the word sales (ie ''*sales'')
       * in the [[docs:system:tpcds|TPC-DS]] connection (ie ''tpcds'')
   * ''%%--with-dependencies%%'' add the dependencies of the selection.
-  * ''@postgres'' defines the target connection (the [[connection|postgres howto connection]])
+  * ''@postgres'' defines the target connection (the [[connection_service|postgres howto connection]])
 <console>
 Source                         Target                            Latency (ms)   Row Count   Error   Message
 ----------------------------   -------------------------------   ------------   ---------   -----   -------

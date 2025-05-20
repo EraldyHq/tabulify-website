@@ -56,26 +56,27 @@ tabli data info  generator_count--datagen.yml@howto
 </code>
 <console>
 Information about the data resource (generator_count--datagen.yml@howto)
-attribute          value                                                        description                                                              
-----------------   ----------------------------------------------------------   ----------------------------------------------------------------------   
-character-set      UTF-8                                                        The character set of the file                                            
-column-name        lines                                                        The name of the column when the text content is returned on one column   
-end-of-record      [Ljava.lang.String;@3aa078fd                                 The End Of Record string sequence                                        
-max-record-count   100                                                          The maximum of records generated                                         
-size-not-capped    9223372036854775807                                          The number of records without max                                        
-uri                file:///home/tabulify/generator_count--datagen.yml           The URI of the file                                                      
-absolute-path      /opt/tabulify/resources/howto/generator_count--datagen.yml   The absolute path on the data system                                     
-connection         howto                                                        The connection name                                                      
-count              100                                                          The number of records                                                    
-data-uri           generator_count--datagen.yml@howto                           The data uri                                                             
-logical-name       generator_count                                              The logical name                                                         
-md5                                                                             The Md5 hash                                                             
-name               generator_count--datagen.yml                                 The name of the data resource                                            
-parent                                                                          The parent                                                               
-path               generator_count--datagen.yml                                 The relative path to the default connection path                         
-sha384                                                                          The Sha384 hash                                                          
-sha384-integrity                                                                The sha384 value used in the html integrity attribute                    
-subtype            gen                                                          The media subType                                                        
-type               relation/gen                                                 The media type
+attribute          value                                                                                              description                                                              
+----------------   ------------------------------------------------------------------------------------------------   ----------------------------------------------------------------------   
+CHARACTER_SET      UTF-8                                                                                              The character set of the file                                            
+COLUMN_NAME        lines                                                                                              The name of the column when the text content is returned on one column   
+END_OF_RECORD      \n, \r, \r\n                                                                                       The End Of Record string sequence                                        
+MAX_RECORD_COUNT   100                                                                                                The maximum of records generated                                         
+SIZE                                                                                                                  The size                                                                 
+SIZE_NOT_CAPPED    9223372036854775807                                                                                The number of records without max                                        
+URI                file:///opt/tabulify/resources/howto/generator_count--datagen.yml                                  The URI of the file                                                      
+ABSOLUTE_PATH      /opt/tabulify/resources/howto/generator_count--datagen.yml                                         The absolute path on the data system                                     
+CONNECTION         howto                                                                                              The connection name                                                      
+COUNT              100                                                                                                The number of records                                                    
+DATA_URI           generator_count--datagen.yml@howto                                                                 The data uri                                                             
+LOGICAL_NAME       generator_count                                                                                    The logical name                                                         
+MD5                c0de1b283600f703cad09bb900a8ea3f                                                                   The Md5 hash                                                             
+NAME               generator_count--datagen.yml                                                                       The name of the data resource                                            
+PARENT                                                                                                                The parent                                                               
+PATH               generator_count--datagen.yml                                                                       The relative path to the default connection path                         
+SHA384             82114cff365a8cc4449509c7815c7ed0bfa25225602081efde458eb1e699c421ff359c4cc7fa078a585127fc84a6813f   The Sha384 hash                                                          
+SHA384_INTEGRITY   sha384-ghFM/zZajMRElQnHgVx+0L+iUiVgIIHv3kWOseaZxCH/NZxMx/oHilhRJ/yEpoE/                            The sha384 value used in the html integrity attribute                    
+SUBTYPE            gen                                                                                                The media subType                                                        
+TYPE               relation/gen                                                                                       The media type
 </console>
 </unit>

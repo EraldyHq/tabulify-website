@@ -43,6 +43,8 @@ tabli flow execute pipeline/email_resources.yml@howto
 </code>
 Output:
 <console>
+jakarta.mail.event.TransportEvent[source=smtps://admin@mailpit-bcf52bfa.nip.io]
+
 List of executions
 ExecutionId   OperationName   DataPathsCount   DataPathsList               
 -----------   -------------   --------------   -------------------------   
@@ -86,8 +88,8 @@ jakarta.mail.event.TransportEvent[source=smtps://admin@mailpit-bcf52bfa.nip.io]
 List of executions
 ExecutionId   OperationName   DataPathsCount   DataPathsList      
 -----------   -------------   --------------   ----------------   
-1             define          1                r31efeff9@memory   
-2             sendmail        1                r31efeff9@memory
+1             define          1                ace9e56e2@memory   
+2             sendmail        1                ace9e56e2@memory
 </console>
 </unit>
 

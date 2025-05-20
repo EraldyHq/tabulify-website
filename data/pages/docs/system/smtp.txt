@@ -75,7 +75,7 @@ In the URI, the host is mandatory.
 | TLS | false | enable secured communication with TLS |
 | DEBUG | false | toggle for debug statement |
 
-Inherited from [[:docs:connection:built_in_variables|built-in connection attributes]]
+Inherited from [[:docs:connection:attribute|built-in connection attributes]]
 ^ Name ^ Default ^ Description ^
 | USER | | the connection user |
 | PASSWORD | | the connection password |
