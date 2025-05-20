@@ -30,7 +30,6 @@ where:
 tabli --help
 </code>
 <console>
-
 Tabli
 =====
 
@@ -69,6 +68,10 @@ where:
 
     flow            Execute Flow
 
+    init            Create a project/configuration file
+
+    service         Start and stop services
+
     vault           Encrypt and decrypt sensitive information
 
 
@@ -77,6 +80,5 @@ where:
     -h,--help       Print this help
 
     -v,--version    Print version information
-
 </console>
 </unit>

@@ -35,27 +35,27 @@ tabli data info sqlite/query_11.sql@tpcds_query
 </code>
 <console>
 Information about the data resource (sqlite/query_11.sql@tpcds_query)
-attribute          value                                                                                      description                                                              
-----------------   ----------------------------------------------------------------------------------------   ----------------------------------------------------------------------   
-character-set      UTF-8                                                                                      The character set of the file                                            
-column-name        sql                                                                                        The name of the column when the text content is returned on one column   
-end-of-record      ;\r, ;\r\n, ;\n, /\r, /\r\n, /\n, \rgo\r, \r\ngo\r\n, \ngo\n, \rGO\r, \r\nGO\r\n, \nGO\n   The End Of Record string sequence                                        
-parsing-mode       SQL                                                                                        How to parse the SQL files                                               
-uri                file:///home/tabulify/sqlite/query_11.sql                                                  The URI of the file                                                      
-absolute-path      /opt/tabulify/resources/tpcds_query/sqlite/query_11.sql                                    The absolute path on the data system                                     
-connection         tpcds_query                                                                                The connection name                                                      
-count              1                                                                                          The number of records                                                    
-data-uri           sqlite/query_11.sql@tpcds_query                                                            The data uri                                                             
-logical-name       query_11                                                                                   The logical name                                                         
-md5                                                                                                           The Md5 hash                                                             
-name               query_11.sql                                                                               The name of the data resource                                            
-parent             sqlite                                                                                     The parent                                                               
-path               sqlite/query_11.sql                                                                        The relative path to the default connection path                         
-sha384                                                                                                        The Sha384 hash                                                          
-sha384-integrity                                                                                              The sha384 value used in the html integrity attribute                    
-size               2819                                                                                       The number of byte                                                       
-subtype            sql                                                                                        The media subType                                                        
-type               text/sql                                                                                   The media type
+attribute          value                                                     description                                                              
+----------------   -------------------------------------------------------   ----------------------------------------------------------------------   
+character-set      UTF-8                                                     The character set of the file                                            
+column-name        sql                                                       The name of the column when the text content is returned on one column   
+end-of-record      [Ljava.lang.String;@6cd24612                              The End Of Record string sequence                                        
+parsing-mode       SQL                                                       How to parse the SQL files                                               
+uri                file:///home/tabulify/sqlite/query_11.sql                 The URI of the file                                                      
+absolute-path      /opt/tabulify/resources/tpcds_query/sqlite/query_11.sql   The absolute path on the data system                                     
+connection         tpcds_query                                               The connection name                                                      
+count              1                                                         The number of records                                                    
+data-uri           sqlite/query_11.sql@tpcds_query                           The data uri                                                             
+logical-name       query_11                                                  The logical name                                                         
+md5                                                                          The Md5 hash                                                             
+name               query_11.sql                                              The name of the data resource                                            
+parent             sqlite                                                    The parent                                                               
+path               sqlite/query_11.sql                                       The relative path to the default connection path                         
+sha384                                                                       The Sha384 hash                                                          
+sha384-integrity                                                             The sha384 value used in the html integrity attribute                    
+size               2819                                                      The number of byte                                                       
+subtype            sql                                                       The media subType                                                        
+type               text/sql                                                  The media type
 </console>
 </unit>
 

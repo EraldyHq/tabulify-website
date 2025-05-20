@@ -28,7 +28,6 @@ Attribute               Value                                         Descriptio
 BOOLEAN_DATA_TYPE       Native                                        Boolean data type used to store boolean values                         
 COMMENT                 The location of the Tpc Ds queries            A connection description                                               
 DATE_DATA_TYPE          NATIVE                                        Date data type used to store date values                               
-DRIVER                                                                The driver class                                                       
 HOST                                                                  Host Server                                                            
 MAX_CONCURRENT_THREAD                                                 The maximum number of threads that can be created against the system   
 MAX_NAME_IN_PATH                                                      The maximum number of names in a path                                  

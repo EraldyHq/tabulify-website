@@ -94,19 +94,19 @@ attribute          value                                                        
 ----------------   ------------------------------------------------------------------------------------------------   ----------------------------------------------------------------------   
 character-set      UTF-8                                                                                              The character set of the file                                            
 column-name        xml                                                                                                The name of the column when the text content is returned on one column   
-end-of-record                                                                                                        The End Of Record string sequence                                        
+end-of-record      [Ljava.lang.String;@35fe2125                                                                       The End Of Record string sequence                                        
 uri                https://en.wikipedia.org/w/api.php                                                                 The URI of the file                                                      
 absolute-path      /w/api.php                                                                                         The absolute path on the data system                                     
 connection         en.wikipedia.org\w                                                                                 The connection name                                                      
 count              1                                                                                                  The number of records                                                    
 data-uri           api.php@en.wikipedia.org\w                                                                         The data uri                                                             
 logical-name       api                                                                                                The logical name                                                         
-md5                e11c5e6bdb254880fb387225c017d3bc                                                                   The Md5 hash                                                             
+md5                21bcd56b0e641255815727c4eb74cf33                                                                   The Md5 hash                                                             
 name               api.php                                                                                            The name of the data resource                                            
 parent                                                                                                                The parent                                                               
 path               api.php                                                                                            The relative path to the default connection path                         
-sha384             07e093d0030a83900a479aee9d0742f16fb190df15e441be01055f45d1007adcd320f3bad709d95fc9746da348b8ae2d   The Sha384 hash                                                          
-sha384-integrity   sha384-rUCXSYCUuH9PlmDRvI3o5df6ewlkBYJWlCVly1DXY252hrNai49xUp1kz/Th1OQk                            The sha384 value used in the html integrity attribute                    
+sha384             9dd8b55030023ca56d38da274b87d69c902ab6ee8eb0b2dbd7deb096eabd77af926b0754cc47cbb3d628da4f15d319e9   The Sha384 hash                                                          
+sha384-integrity   sha384-xfdqJDsEex9IqxV04IhoAqkL5Ix+Bp3fBg+2uXrFMhEBpZ4lv5erthhjz1Vo6ier                            The sha384 value used in the html integrity attribute                    
 size               -1                                                                                                 The number of byte                                                       
 subtype            xml                                                                                                The media subType                                                        
 type               text/xml                                                                                           The media type

@@ -57,7 +57,7 @@ character-set         UTF-8                                          The charact
 column-name           lines                                          The name of the column when the text content is returned on one column   
 comment-character     #                                              The comment character                                                    
 delimiter-character   ,                                              The delimiter character                                                  
-end-of-record         \n, \r, \r\n                                   The End Of Record string sequence                                        
+end-of-record         [Ljava.lang.String;@626abbd0                   The End Of Record string sequence                                        
 header-row-id         1                                              The id of the header row                                                 
 ignore-empty-line     true                                           Ignore empty line                                                        
 quote-character       "                                              The quote character                                                      

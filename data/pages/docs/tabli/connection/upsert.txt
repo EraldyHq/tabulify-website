@@ -48,7 +48,7 @@ DATABASE_MINOR_VERSION                                  The minor version number
 DATABASE_PRODUCT_NAME                                   The name of the database                                               
 DATABASE_PRODUCT_VERSION                                The version of the database                                            
 DATE_DATA_TYPE               NATIVE                     Date data type used to store date values                               
-DRIVER                                                  The driver class                                                       
+DRIVER                                                  The jdbc driver class                                                  
 DRIVER_NAME                                             The driver name                                                        
 DRIVER_VERSION                                          The driver version                                                     
 HOST                                                    Host Server                                                            

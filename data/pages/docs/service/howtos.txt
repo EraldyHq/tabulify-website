@@ -26,7 +26,7 @@ After a [[howto:getting_started:1_install|fresh installation]], you should see t
 tabli service list
 </code>
 <console>
-4 services were found
+4 services were found in the configuration vault (/home/tabulify/.tabli/.tabli.yml)
 name        type     
 ---------   ------   
 oracle      docker   

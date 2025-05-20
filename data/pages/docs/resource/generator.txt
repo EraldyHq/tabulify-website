@@ -60,7 +60,7 @@ attribute          value                                                        
 ----------------   ----------------------------------------------------------   ----------------------------------------------------------------------   
 character-set      UTF-8                                                        The character set of the file                                            
 column-name        lines                                                        The name of the column when the text content is returned on one column   
-end-of-record      \n, \r, \r\n                                                 The End Of Record string sequence                                        
+end-of-record      [Ljava.lang.String;@3aa078fd                                 The End Of Record string sequence                                        
 max-record-count   100                                                          The maximum of records generated                                         
 size-not-capped    9223372036854775807                                          The number of records without max                                        
 uri                file:///home/tabulify/generator_count--datagen.yml           The URI of the file                                                      
