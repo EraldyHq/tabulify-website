@@ -1,5 +1,8 @@
 ---json
 {
+    "aliases": [
+        { "path": ":howto:database:tabli_load_generated_data" }
+    ],
     "description": "This how-to will show you how to fill a table with auto-generated data and the Tabli fill action.",
     "low_quality_page": "false",
     "name": "Auto Data Generation",

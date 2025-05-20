@@ -2,8 +2,7 @@
 {
     "description": "This how-to shows you how to generate a digital Odometer with the column sequence generator.",
     "low_quality_page": "false",
-    "page_id": "upklbuyki3z05zffuz2sm",
-    "title": "How to create an odometer with a sequence generator"
+    "page_id": "upklbuyki3z05zffuz2sm"
 }
 ---
 ====== Tabulify - How to create an odometer with a sequence generator ======

@@ -1,3 +1,11 @@
+---json
+{
+    "aliases": [
+        { "path": ":docs:system:sqlite:howto" }
+    ],
+    "page_id": "ax73n2xjyu8kdwlgu6to6"
+}
+---
 ====== Sqlite - HowTo Connection ======
 
 ===== About =====

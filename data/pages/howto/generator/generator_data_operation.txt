@@ -2,8 +2,7 @@
 {
     "description": "This how-to shows you how to use a data generator as data source",
     "low_quality_page": "false",
-    "page_id": "98nvmw9ig8chcrlp7n7yb",
-    "title": "How to use a data generator in a data operation"
+    "page_id": "98nvmw9ig8chcrlp7n7yb"
 }
 ---
 ====== Tabulify - How to use a data generator in a data operation ======

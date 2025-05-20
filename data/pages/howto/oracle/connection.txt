@@ -1,3 +1,11 @@
+---json
+{
+    "aliases": [
+        { "path": ":docs:system:oracle:howto" }
+    ],
+    "page_id": "l2f9lqci85g7mrwvrj9a7"
+}
+---
 ====== Oracle - How-to Connection ======
 
 

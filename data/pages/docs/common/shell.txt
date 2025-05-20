@@ -1,3 +1,11 @@
+---json
+{
+    "aliases": [
+        { "path": ":docs:common:cmd" }
+    ],
+    "page_id": "0t8cbwh7yxbe202801mlm"
+}
+---
 ====== Tabulify - CMD/Powershell Shell ======
 
 

@@ -1,9 +1,9 @@
 ---json
 {
-    "name":"Tabli",
-    "canonical":"howto:tabli",
-    "title":"Howto's for the tabli command line",
-     "description":"This sections regroups all howto's dedicated to the tabli command line"
+    "canonical": ":howto:tabli",
+    "description": "This sections regroups all howto's dedicated to the tabli command line",
+    "page_id": "lidl06dpsbmlpa9naen99",
+    "title": "Howto's for the tabli command line"
 }
 ---
 

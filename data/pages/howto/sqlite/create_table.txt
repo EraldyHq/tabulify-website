@@ -1,5 +1,8 @@
 ---json
 {
+    "aliases": [
+        { "path": ":howto:sqlite:tabli_create_table" }
+    ],
     "canonical": ":howto:database:create_table_from_another",
     "description": "This Howto will show you how to copy the data definition of a SQL table from another SQL table",
     "low_quality_page": "false",

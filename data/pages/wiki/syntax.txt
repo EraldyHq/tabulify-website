@@ -1,3 +1,8 @@
+---json
+{
+    "page_id": "nrbj0e55mpkxq8fz1z0xt"
+}
+---
 ====== Formatting Syntax ======
 
 [[doku>DokuWiki]] supports some simple markup language, which tries to make the datafiles to be as readable as possible. This page contains all possible syntax you may use when editing the pages. Simply have a look at the source of this page by pressing "Edit this page". If you want to try something, just use the [[playground:playground|playground]] page. The simpler markup is easily accessible via [[doku>toolbar|quickbuttons]], too.

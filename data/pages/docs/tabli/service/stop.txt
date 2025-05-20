@@ -1,57 +1,43 @@
----json
-{
-    "page_id": "g64f5r2haziv50arwsa1t"
-}
----
-====== Tabli - Data Drop command ======
-
+====== Tabli - Start a Service ======
 
 ===== About =====
-The ''data drop'' [[docs:tabli:command|action]] of the [[start|data module]] permits to [[docs:op:drop|drop]] one or more [[docs:resource:resource|data resources]].
+The ''service start'' operation will start a [[:docs:service:service|service]] and create it if non-existent.
 
-===== How-to's =====
-<related pattern="howto:*" />
+<note tip>If the service is already started, this operation has no effect and does not return any error.</note>
+
+===== Example =====
+To start the [[:howto:postgres:connection|howto postgres docker container]]:
+
+<code bash>
+tabli service start postgres
+</code>
 
 ===== Syntax =====
-
-
 <unit>
 <code bash>
-tabli data drop --help
+tabli service start --help
 </code>
 <console>
-Tabli data drop
-===============
+Tabli service start
+===================
 
-Drop data resource(s)
+Start one or more services
 
 
 
 Examples
 --------
 
- 1 - To drop the tables D_TIME and F_SALES in the Oracle connection:
+ 1 - Start the service sqlserver
 
 
-    tabli data drop D_TIME@oracle F_SALES@oracle
+    tabli service start sqlserver
 
 
- 2 - To drop only the table D_TIME with force (ie deleting the foreign keys constraint):
+ 2 - Start all services that starts with sql
 
 
-    tabli data drop --force D_TIME@sqlite
-
-
- 3 - To drop all dimension tables that begins with (D_):
-
-
-    tabli data drop D_*@sql-server
-
-
- 4 - To drop all tables from the current schema:
-
-
-    tabli data drop *@database
+    tabli service start sql*
 
 
 
@@ -60,7 +46,7 @@ Syntax
 ------
 
 
-    tabli data drop [options|flags] <data-selector...>
+    tabli service start <name-selector...>
 
 
 where:
@@ -68,17 +54,7 @@ where:
 
   Arguments:
 
-    <data-selector...>                                      One or more data or script selectors
-
-
-  Options:
-
-    --force                                                 if set, the foreign keys referencing the tables to drop will be dropped
-
-
-  Selection Options:
-
-    -wd,--with-dependencies                                 if set, the foreign table referencing the tables will be dropped
+    <name-selector...>                                      One ore several glob pattern that select services by name
 
 
   Global Options:

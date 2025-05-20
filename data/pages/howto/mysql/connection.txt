@@ -1,3 +1,11 @@
+---json
+{
+    "aliases": [
+        { "path": ":docs:system:mysql:howto" }
+    ],
+    "page_id": "78sbwubp3pa8i48p716cq"
+}
+---
 ====== MySQL - How-to Connection ======
 
 

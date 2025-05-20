@@ -1,8 +1,13 @@
 ---json
 {
-    "canonical": "howto:database:list_tables",
+    "aliases": [
+        { "path": ":howto:postgres:list" },
+        { "path": ":howto:sqlite:tabli_list" }
+    ],
+    "canonical": ":howto:database:list_tables",
     "description": "This howto will show you how to list SQL Tables",
     "name": "List SQL Tables",
+    "page_id": "ti042d7ozr9x2d92q3r5g",
     "title": "How to list SQL Tables"
 }
 ---

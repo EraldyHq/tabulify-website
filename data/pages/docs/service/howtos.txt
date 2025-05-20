@@ -1,3 +1,11 @@
+---json
+{
+    "aliases": [
+        { "path": ":howto:postgres:docs:service:howtos" }
+    ],
+    "page_id": "ewoxvx1gm9gl50igq6l9z"
+}
+---
 ====== HowTo's  Services ======
 
 

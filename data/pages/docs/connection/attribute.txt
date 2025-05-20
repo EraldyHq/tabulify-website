@@ -1,3 +1,12 @@
+---json
+{
+    "aliases": [
+        { "path": ":docs:connection:attribute" },
+        { "path": ":docs:connection:variable" }
+    ],
+    "page_id": "f1t46y4qr9efw7xob0gyv"
+}
+---
 ====== Connection - Attributes (Parameters) ======
 
 

@@ -1,3 +1,11 @@
+---json
+{
+    "aliases": [
+        { "path": ":docs:tabli:data:compare" }
+    ],
+    "page_id": "vky10xrtqhc7d0te81bi4"
+}
+---
 ====== Tabli - Data Compare Command (Diff)======
 
 

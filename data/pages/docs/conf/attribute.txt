@@ -1,3 +1,11 @@
+---json
+{
+    "aliases": [
+        { "path": ":docs:conf:variable" }
+    ],
+    "page_id": "v30lma93q6qbikqzefk50"
+}
+---
 ====== Variables ======
 
 

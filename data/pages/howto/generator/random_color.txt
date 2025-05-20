@@ -2,8 +2,7 @@
 {
     "description": "This how-to shows you how to generate data from a list of values at random data with the column histogram generator.",
     "low_quality_page": "false",
-    "page_id": "79stz1t3n9kfnabmfb8dm",
-    "title": "How to get data from a list of values at random"
+    "page_id": "79stz1t3n9kfnabmfb8dm"
 }
 ---
 ====== Tabulify - How to get data from a list of values at random ======

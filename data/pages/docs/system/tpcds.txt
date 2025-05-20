@@ -1,13 +1,14 @@
 ---json
 {
-    "canonical": "tpcds",
+    "canonical": ":tpcds",
     "description": "This page talks about the TPC-DS benchmark and how you can use it with Tabulify",
+    "featured-raster-image": ":docs:system:tpc.png",
     "images": [
         { "path": ":docs:system:tpc.ico" },
         { "path": ":docs:system:tpc.png" }
     ],
     "name": "Tpc-ds",
-    "title": "How to execute the TPC-DS benchmark data and query"
+    "page_id": "yr3zjjle8idlp03w04k09"
 }
 ---
 

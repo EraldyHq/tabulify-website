@@ -1,3 +1,11 @@
+---json
+{
+    "aliases": [
+        { "path": ":docs:tabli:variable:docs:conf:global" }
+    ],
+    "page_id": "j04ifgu25upf36d17ul61"
+}
+---
 ====== Global Attributes ======
 
 

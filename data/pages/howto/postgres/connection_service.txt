@@ -1,3 +1,13 @@
+---json
+{
+    "aliases": [
+        { "path": ":docs:howto:connection" },
+        { "path": ":docs:system:postgres:howto" },
+        { "path": ":howto:postgres:connection" }
+    ],
+    "page_id": "qz5o6cyeba81k6l2in3pr"
+}
+---
 ====== Postgres - How-to Connection ======
 
 

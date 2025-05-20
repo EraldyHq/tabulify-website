@@ -1,5 +1,8 @@
 ---json
 {
+    "aliases": [
+        { "path": ":howto:sqlite:tabli_create_table_with_dependencies" }
+    ],
     "canonical": ":howto:database:table_create_with_dependencies",
     "description": "This howto will show you how to copy the data definition of all SQL tables from a star\/snowflake schema.",
     "name": "Duplicate a schema ",

@@ -1,3 +1,11 @@
+---json
+{
+    "aliases": [
+        { "path": ":docs:project:environment" }
+    ],
+    "page_id": "1t3exq6kn08inms2cg5yk"
+}
+---
 ====== Execution environment ======
 
 

@@ -1,3 +1,8 @@
+---json
+{
+    "page_id": "wt5zet0z99msmhqniljgi"
+}
+---
 ====== Learning Tabulify - Step 8 - How to modify the content of a table ======
 
 <note important>

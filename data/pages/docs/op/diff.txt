@@ -1,3 +1,11 @@
+---json
+{
+    "aliases": [
+        { "path": ":docs:op:compare" }
+    ],
+    "page_id": "xh2mvotwt2ky7k4pjza6x"
+}
+---
 ====== Data Operation - Diff (Comparison) ======
 
 

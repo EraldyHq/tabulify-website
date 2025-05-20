@@ -1,5 +1,8 @@
 ---json
 {
+    "aliases": [
+        { "path": ":howto:templating:create_json_from_tabular_data" }
+    ],
     "description": "This howto will show you how to create a  JSON file\nfrom tabular data with the template operation and a JSON template",
     "low_quality_page": "false",
     "page_id": "sn8nysvwhcy6we0r2a2ec",

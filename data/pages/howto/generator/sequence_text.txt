@@ -2,8 +2,7 @@
 {
     "description": "This how-to shows you how to generate an string,varchar, text sequence with the column sequence generator.",
     "low_quality_page": "false",
-    "page_id": "dmt70cbrkzmxrnyyrgign",
-    "title": "How to generate a sequence of letters"
+    "page_id": "dmt70cbrkzmxrnyyrgign"
 }
 ---
 ====== Tabulify - How to generate a sequence of letters ======

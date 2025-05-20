@@ -1,3 +1,11 @@
+---json
+{
+    "aliases": [
+        { "path": ":docs:system:postgres:docs:connection:natives" }
+    ],
+    "page_id": "ajnj6g0acm4mlonwu3i0n"
+}
+---
 ====== Connection Natives Attribute  ======
 
 

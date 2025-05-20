@@ -1,6 +1,7 @@
 ---json
 {
-    "canonical":"beta"
+    "canonical": ":beta",
+    "page_id": "z1eie4epbglbblofgi5by"
 }
 ---
 ====== Beta ======

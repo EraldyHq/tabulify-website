@@ -1,5 +1,8 @@
 ---json
 {
+    "aliases": [
+        { "path": ":howto:database:xml" }
+    ],
     "description": "This database howto will show you how to load Xml file and document into a database.",
     "low_quality_page": "false",
     "page_id": "k9z63dibggq5kin4ubajf"

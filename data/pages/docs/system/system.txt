@@ -1,7 +1,8 @@
 ---json
 {
-    "canonical":"system",
-    "low_quality_page":"false"
+    "canonical": ":system",
+    "low_quality_page": "false",
+    "page_id": "wx0b4edrl915vyjd3egek"
 }
 ---
 

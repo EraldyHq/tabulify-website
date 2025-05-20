@@ -1,5 +1,8 @@
 ---json
 {
+    "aliases": [
+        { "path": ":howto:sqlite:tabli_create_table_script" }
+    ],
     "canonical": ":howto:database:table_create_from_script",
     "description": "This Howto will show you how to create a SQL table with a SQL file that contains a ''CREATE'' SQL statement",
     "low_quality_page": "false",

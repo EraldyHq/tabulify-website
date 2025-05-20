@@ -2,8 +2,7 @@
 {
     "description": "This how-to shows you how to generate random data with the column random generator.",
     "low_quality_page": "false",
-    "page_id": "bi8ermzs2ogeyim4vvnxd",
-    "title": "How to generate random data"
+    "page_id": "bi8ermzs2ogeyim4vvnxd"
 }
 ---
 ====== Tabulify - How to generate random data ======

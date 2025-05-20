@@ -2,8 +2,7 @@
 {
     "description": "This how-to shows you how to generate a sequence based on provided values with the column sequence generator.",
     "low_quality_page": "false",
-    "page_id": "eog6re1g6g9n88i9tggw2",
-    "title": "How to generate a sequence based on provided values"
+    "page_id": "eog6re1g6g9n88i9tggw2"
 }
 ---
 ====== Tabulify - How to generate a sequence based on provided values ======

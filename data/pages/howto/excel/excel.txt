@@ -1,3 +1,13 @@
+---json
+{
+    "aliases": [
+        { "path": ":howto:execl:excel" },
+        { "path": ":howto:file:excel" }
+    ],
+    "page_id": "eyn35yu1tiz84yzwjz8k3",
+    "template": "holy"
+}
+---
 ====== How to read and write an Excel file? ======
 
 ===== About =====

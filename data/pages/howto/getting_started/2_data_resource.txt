@@ -1,3 +1,8 @@
+---json
+{
+    "page_id": "dwa025s8ao6ncxw2wf9j1"
+}
+---
 ====== Learning Tabulify - Step 2 - What's a Data Resource ? ======
 
 
