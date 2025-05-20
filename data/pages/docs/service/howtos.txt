@@ -1,0 +1,34 @@
+====== HowTo's  Services ======
+
+
+===== About =====
+''Tabulify'' comes with pre-configured [[service|services]] that are used in the [[howto:howto|How-to's]]
+
+
+
+
+===== List =====
+
+
+
+After a [[howto:getting_started:1_install|fresh installation]], you should see them by listing the [[service|service]].
+
+<unit>
+<code bash>
+tabli service list
+</code>
+<console>
+4 services were found
+name        type     
+---------   ------   
+oracle      docker   
+sqlserver   docker   
+mysql       docker   
+postgres    docker
+</console>
+</unit>
+
+  * [[:howto:oracle:connection|oracle]] is an [[docs:system:oracle:oracle|oracle database]]
+  * [[:howto:sqlserver:connection|sqlserver]] is an [[docs:system:sqlserver|sqlserver database]]
+  * [[:howto:mysql:connection|mysql]] is a [[docs:system:mysql:mysql|mysql database]]
+  * [[howto:postgres:connection_service|postgres]] is a [[docs:system:postgres:postgres|postgres database]]

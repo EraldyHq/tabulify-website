@@ -4,6 +4,32 @@
 ''Services'' represents processes that start and stop [[:docs:system:system|systems]].
 
 
-===== List =====
+===== Provider =====
 
-  * [[docker|Docker services]]
+  * [[docker|Docker services]] - Create/Start/Drop docker container
+
+===== Storage =====
+
+The service metadata is stored in the [[:docs:conf:vault|configuration vault]]
+
+
+Example with the [[:howto:mysql:connection|howto mysql service]] in [[docs:service:docker|docker]] format
+<code yaml .tabli.yaml>
+services:
+  sqlserver:
+    type: docker
+    image: mcr.microsoft.com/mssql/server:2022-CU18-ubuntu-22.04
+    ports:
+      - 1433:1433
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: TheSecret1!
+</code>
+
+As for any value in the configuration vault, you can use:
+  *  plain value 
+  * or any [[:docs:conf:secret|secret format]].
+
+===== Tabli Service: List/Info =====
+
+The [[:docs:tabli:service:start|tabli service module]] permits to manage the services from the command line.

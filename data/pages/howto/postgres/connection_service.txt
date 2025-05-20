@@ -3,7 +3,9 @@
 
 
 ===== About =====
-A [[docs:connection:howtos|default howto postgres connection]] is provided after a fresh installation that is used in the [[howto:howto|howto's]]. To use this connection, you need to start the [[#docker|docker image]]
+A [[docs:connection:howtos|default howto postgres connection]] and [[docs:service:howtos|howto service]] are provided after a fresh installation that is used in the [[howto:howto|howto's]]. 
+
+To use this connection, you need to start the service (ie a [[#docker|docker image]])
 
 
 

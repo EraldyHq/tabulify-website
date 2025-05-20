@@ -1,7 +1,7 @@
 ====== Tabli - Add a Connection ======
 
 ===== About =====
-The ''connection add'' operations will add a connection to the [[docs:conf:vault|connection vault]].
+The ''connection add'' operation will add a connection to the [[docs:conf:vault|connection vault]].
 
 <note tip>If the connection already exists, this operations will return an error whereas the [[upsert|upsert operation]] will not.</note>
 
