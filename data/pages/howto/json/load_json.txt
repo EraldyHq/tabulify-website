@@ -47,11 +47,11 @@ tabli data list json/phone/*.json@howto
 <console>
 path
 ----------------------
-json\phone\Arnold.json
-json\phone\Bob.json
-json\phone\Dale.json
-json\phone\Daniel.json
-json\phone\Don.json
+json/phone/Arnold.json
+json/phone/Bob.json
+json/phone/Dale.json
+json/phone/Daniel.json
+json/phone/Don.json
 </console>
 </unit>
 
@@ -240,7 +240,8 @@ To see the result of this [[docs:resource:select|SQL query]], we will use the [[
 
 <unit>
 <code bash>
-tabli data print (sqlite/user_phone_json.sql@howto)@sqlite
+# The quote are mandatory because parenthesis have a meaning in Bash (ie subshell)
+tabli data print "(sqlite/user_phone_json.sql@howto)"@sqlite
 </code>
 <console>
 name
