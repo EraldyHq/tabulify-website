@@ -36,7 +36,7 @@ tabli data drop --not-strict *@postgres
 </unit>
 
 The below command will create:
-  * the table ''tpcds_sales'' into the [[connection|Postgres Howto connection]]
+  * the table ''tpcds_sales'' into the [[connection_service|Postgres Howto connection]]
   * from the data definition of the [[docs:system:tpcds|tpcds]] ''store_sales'' table
   * with the [[docs:tabli:data:create|tabli data create]] command.
 <unit>

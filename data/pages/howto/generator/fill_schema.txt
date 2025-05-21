@@ -27,7 +27,7 @@ You should have ''Tabulify'' installed on your computer.
 
 You could:
   * follow this howto:  [[howto:sqlite:create_table_with_dependencies|How to copy a schema]]
- * or execute the following statements:
+  * or execute the following statements:
 <unit>
 <code bash >
 # drop all tables in sqlite
@@ -45,7 +45,7 @@ You should now see in the [[howto:sqlite:connection|Sqlite HowTo connection]] th
 <code bash>
 tabli data list --with-dependencies tpc_store_sales@sqlite
 </code>
-<console 
+<console>
 path              
 ---------------   
 tpc_store_sales
