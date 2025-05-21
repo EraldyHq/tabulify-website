@@ -88,7 +88,7 @@ By running the below [[docs:tabli:data:template|tabli data template operation]],
       * and the [[docs:flow:source|source]] [[docs:resource:csv|csv file]] ''books.csv'' located in the [[docs:connection:howto|howto directory]]
 <unit>
 <code bash>
-tabli data template --template-selector books_template.json@howto books.csv@howto books.json@temp
+tabli data template --template-selectors books_template.json@howto books.csv@howto books.json@temp
 </code>
 <console>
 Source         Target            Latency (ms)   Row Count   Error   Message
@@ -101,7 +101,8 @@ books@memory   books.json@temp   6              0
 With the [[docs:tabli:data:print|data print command]], you can see the [[docs:resource:json|json file content]] created.
 <unit>
 <code bash>
-tabli data print books.json@temp
+# type text because by default, one JSON document, one record, one line
+tabli data print --type text books.json@temp
 </code>
 <console javascript>
 {
