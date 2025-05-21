@@ -31,28 +31,30 @@ To get the absolute path and other information, you can use the [[docs:tabli:dat
 tabli data info sqlite/query_11.sql@tpcds_query
 </code>
 <console>
+
 Information about the data resource (sqlite/query_11.sql@tpcds_query)
-attribute          value                                                                                              description
-----------------   ------------------------------------------------------------------------------------------------   ----------------------------------------------------------------------
-CHARACTER_SET      UTF-8                                                                                              The character set of the file
-COLUMN_NAME        sql                                                                                                The name of the column when the text content is returned on one column
-END_OF_RECORD      ;\r, ;\r\n, ;\n, /\r, /\r\n, /\n, \rgo\r, \r\ngo\r\n, \ngo\n, \rGO\r, \r\nGO\r\n, \nGO\n           The End Of Record string sequence
-PARSING_MODE       SQL                                                                                                How to parse the SQL files
-URI                file:///opt/tabulify/resources/tpcds_query/sqlite/query_11.sql                                     The URI of the file
-ABSOLUTE_PATH      /opt/tabulify/resources/tpcds_query/sqlite/query_11.sql                                            The absolute path on the data system
-CONNECTION         tpcds_query                                                                                        The connection name
-COUNT              1                                                                                                  The number of records
-DATA_URI           sqlite/query_11.sql@tpcds_query                                                                    The data uri
-LOGICAL_NAME       query_11                                                                                           The logical name
-MD5                25d9c65fe0726c0d7b6e23655379e00d                                                                   The Md5 hash
-NAME               query_11.sql                                                                                       The name of the data resource
-PARENT             sqlite                                                                                             The parent
-PATH               sqlite/query_11.sql                                                                                The relative path to the default connection path
-SHA384             ab8b87103f126f50388a56d6da667840599b7aaadef0a6fbb1340f3764ffb2169d1e4f8ff471c3ebcbe4a4b944970e83   The Sha384 hash
-SHA384_INTEGRITY   sha384-q4uHED8Sb1A4ilbW2mZ4QFmbeqre8Kb7sTQPN2T/shadHk+P9HHD68vkpLlElw6D                            The sha384 value used in the html integrity attribute
-SIZE               2819                                                                                               The number of byte
-SUBTYPE            sql                                                                                                The media subType
+attribute          value                                                                                              description                                                              
+----------------   ------------------------------------------------------------------------------------------------   ----------------------------------------------------------------------   
+CHARACTER_SET      UTF-8                                                                                              The character set of the file                                            
+COLUMN_NAME        sql                                                                                                The name of the column when the text content is returned on one column   
+END_OF_RECORD      ;\r, ;\r\n, ;\n, /\r, /\r\n, /\n, \rgo\r, \r\ngo\r\n, \ngo\n, \rGO\r, \r\nGO\r\n, \nGO\n           The End Of Record string sequence                                        
+PARSING_MODE       SQL                                                                                                How to parse the SQL files                                               
+URI                file:///opt/tabulify/resources/tpcds_query/sqlite/query_11.sql                                     The URI of the file                                                      
+ABSOLUTE_PATH      /opt/tabulify/resources/tpcds_query/sqlite/query_11.sql                                            The absolute path on the data system                                     
+CONNECTION         tpcds_query                                                                                        The connection name                                                      
+COUNT              1                                                                                                  The number of records                                                    
+DATA_URI           sqlite/query_11.sql@tpcds_query                                                                    The data uri                                                             
+LOGICAL_NAME       query_11                                                                                           The logical name                                                         
+MD5                25d9c65fe0726c0d7b6e23655379e00d                                                                   The Md5 hash                                                             
+NAME               query_11.sql                                                                                       The name of the data resource                                            
+PARENT             sqlite                                                                                             The parent                                                               
+PATH               sqlite/query_11.sql                                                                                The relative path to the default connection path                         
+SHA384             ab8b87103f126f50388a56d6da667840599b7aaadef0a6fbb1340f3764ffb2169d1e4f8ff471c3ebcbe4a4b944970e83   The Sha384 hash                                                          
+SHA384_INTEGRITY   sha384-q4uHED8Sb1A4ilbW2mZ4QFmbeqre8Kb7sTQPN2T/shadHk+P9HHD68vkpLlElw6D                            The sha384 value used in the html integrity attribute                    
+SIZE               2819                                                                                               The number of byte                                                       
+SUBTYPE            sql                                                                                                The media subType                                                        
 TYPE               text/sql                                                                                           The media type
+
 </console>
 </unit>
 
@@ -65,10 +67,29 @@ This query shows customers that have generated growing sales from one year to an
 tabli data head --type text --limit 20 sqlite/query_11.sql@tpcds_query
 </code>
 <console>
-The first 20 rows of the data resource (sqlite/query_11.sql@tpcds_query):
-sql
--------------
-SQL_STATEMENT
+The first 20 rows of the data resource (sqlite/query_11.sql@tpcds_query): 
+lines                                                           
+-------------------------------------------------------------   
+                                                                
+with year_total as (                                            
+ select c_customer_id customer_id                               
+       ,c_first_name customer_first_name                        
+       ,c_last_name customer_last_name                          
+       ,c_preferred_cust_flag customer_preferred_cust_flag      
+       ,c_birth_country customer_birth_country                  
+       ,c_login customer_login                                  
+       ,c_email_address customer_email_address                  
+       ,d_year dyear                                            
+       ,sum(ss_ext_list_price-ss_ext_discount_amt) year_total   
+       ,'s' sale_type                                           
+ from customer                                                  
+     ,store_sales                                               
+     ,date_dim                                                  
+ where c_customer_sk = ss_customer_sk                           
+   and ss_sold_date_sk = d_date_sk                              
+ group by c_customer_id                                         
+         ,c_first_name                                          
+         ,c_last_name
 </console>
 </unit>
 
@@ -93,27 +114,27 @@ where:
   * ''%%--with-dependencies%%'' add the dependencies of the selection.
   * ''@sqlite'' defines the target connection (the [[docs:connection:howtos|sqlite howto connection]])
 <console>
-Source                         Target                          Latency (ms)   Row Count   Error   Message
-----------------------------   -----------------------------   ------------   ---------   -----   -------
-call_center@tpcds              call_center@sqlite              17             2
-catalog_page@tpcds             catalog_page@sqlite             145            11718
-catalog_sales@tpcds            catalog_sales@sqlite            3630           89807
-customer@tpcds                 customer@sqlite                 42             1000
-customer_address@tpcds         customer_address@sqlite         35             1000
-customer_demographics@tpcds    customer_demographics@sqlite    10437          1920800
-date_dim@tpcds                 date_dim@sqlite                 2449           73049
-household_demographics@tpcds   household_demographics@sqlite   46             7200
-income_band@tpcds              income_band@sqlite              18             20
-item@tpcds                     item@sqlite                     191            2000
-promotion@tpcds                promotion@sqlite                19             3
-ship_mode@tpcds                ship_mode@sqlite                19             20
-store@tpcds                    store@sqlite                    20             2
-store_sales@tpcds              store_sales@sqlite              3141           120527
-time_dim@tpcds                 time_dim@sqlite                 605            86400
-warehouse@tpcds                warehouse@sqlite                66             1
-web_page@tpcds                 web_page@sqlite                 17             2
-web_sales@tpcds                web_sales@sqlite                505            11876
-web_site@tpcds                 web_site@sqlite                 57             2
+Source                         Target                          Latency (ms)   Row Count   Error   Message   
+----------------------------   -----------------------------   ------------   ---------   -----   -------   
+call_center@tpcds              call_center@sqlite              18             2                             
+catalog_page@tpcds             catalog_page@sqlite             145            11718                         
+catalog_sales@tpcds            catalog_sales@sqlite            3667           89807                         
+customer@tpcds                 customer@sqlite                 47             1000                          
+customer_address@tpcds         customer_address@sqlite         34             1000                          
+customer_demographics@tpcds    customer_demographics@sqlite    10296          1920800                       
+date_dim@tpcds                 date_dim@sqlite                 2449           73049                         
+household_demographics@tpcds   household_demographics@sqlite   46             7200                          
+income_band@tpcds              income_band@sqlite              18             20                            
+item@tpcds                     item@sqlite                     190            2000                          
+promotion@tpcds                promotion@sqlite                17             3                             
+ship_mode@tpcds                ship_mode@sqlite                17             20                            
+store@tpcds                    store@sqlite                    19             2                             
+store_sales@tpcds              store_sales@sqlite              3135           120527                        
+time_dim@tpcds                 time_dim@sqlite                 601            86400                         
+warehouse@tpcds                warehouse@sqlite                54             1                             
+web_page@tpcds                 web_page@sqlite                 17             2                             
+web_sales@tpcds                web_sales@sqlite                492            11876                         
+web_site@tpcds                 web_site@sqlite                 56             2
 </console>
 </unit>
 ==== Executing the query ====
@@ -138,12 +159,12 @@ tabli data print "(sqlite/query_11.sql@tpcds_query)"@sqlite
 # The quotes are mandatory because parenthesis are a word in bash (ie subshell)
 </code>
 <console>
-customer_id        customer_first_name   customer_last_name   customer_email_address
-----------------   -------------------   ------------------   ----------------------------------
-AAAAAAAABMDAAAAA   Jose                  Guzman               Jose.Guzman@stJp.edu
-AAAAAAAAFLAAAAAA   Joseph                Riley                Joseph.Riley@znxF.com
-AAAAAAAAJGBAAAAA   Bonnie                Harrison             Bonnie.Harrison@AKYSOPlHEYkd.com
-AAAAAAAAKMDAAAAA   Alexander             White                Alexander.White@7v2XsptkFrc50K.org
+customer_id        customer_first_name   customer_last_name   customer_email_address               
+----------------   -------------------   ------------------   ----------------------------------   
+AAAAAAAABMDAAAAA   Jose                  Guzman               Jose.Guzman@stJp.edu                 
+AAAAAAAAFLAAAAAA   Joseph                Riley                Joseph.Riley@znxF.com                
+AAAAAAAAJGBAAAAA   Bonnie                Harrison             Bonnie.Harrison@AKYSOPlHEYkd.com     
+AAAAAAAAKMDAAAAA   Alexander             White                Alexander.White@7v2XsptkFrc50K.org   
 AAAAAAAAOFCAAAAA   Timothy               Grogan               Timothy.Grogan@pn3NH2BDng.org
 </console>
 </unit>
