@@ -37,9 +37,9 @@ tabli data drop --not-strict date_dim.xlsx@temp
 tabli data fill --generator-selector date_dim--datagen.yml@howto date_dim.xlsx@temp
 </code>
 <console>
-Source            Target               Latency (ms)   Row Count   Error   Message
----------------   ------------------   ------------   ---------   -----   -------
-date_dim@memgen   date_dim.xlsx@temp   1307           100
+Source            Target               Latency (ms)   Row Count   Error   Message   
+---------------   ------------------   ------------   ---------   -----   -------   
+date_dim@memgen   date_dim.xlsx@temp   1332           100
 </console>
 </unit>
 
@@ -54,25 +54,26 @@ tabli data info date_dim.xlsx@temp
 </code>
 <console>
 Information about the data resource (date_dim.xlsx@temp)
-attribute          value                                                                                              description
-----------------   ------------------------------------------------------------------------------------------------   ---------------------------------------------------------------------
-date-format        dd/mm/yyyy hh:mm:ss                                                                                The default date format string (Format Cells > Number > Custom)
-header-row-id      1                                                                                                  The row id of the header row - (0 means no header, 1 the first line)
-uri                file:///home/tabulify/date_dim.xlsx                                                                The URI of the file
-absolute-path      /tmp/date_dim.xlsx                                                                                 The absolute path on the data system
-connection         temp                                                                                               The connection name
-count              100                                                                                                The number of records
-data-uri           date_dim.xlsx@temp                                                                                 The data uri
-logical-name       date_dim                                                                                           The logical name
-md5                40852f884a18d3024d2f6b6e087ddd58                                                                   The Md5 hash
-name               date_dim.xlsx                                                                                      The name of the data resource
-parent                                                                                                                The parent
-path               date_dim.xlsx                                                                                      The relative path to the default connection path
-sha384             576f3857584403bc1b27951828d5a3a7a838c179b0621c756fae8bd3a1747bae47cb6c5675d48176c4eb5a6ac07e55a0   The Sha384 hash
-sha384-integrity   sha384-V284V1hEA7wbJ5UYKNWjp6g4wXmwYhx1b66L06F0e65Hy2xWddSBdsTrWmrAflWg                            The sha384 value used in the html integrity attribute
-size               7160                                                                                               The number of byte
-subtype            application                                                                                        The media subType
-type               com.tabulify.excel.ExcelManagerProvider$1@105b693d                                                 The media type
+attribute          value                                                                                              description                                                             
+----------------   ------------------------------------------------------------------------------------------------   ---------------------------------------------------------------------   
+DATE_FORMAT        dd/mm/yyyy hh:mm:ss                                                                                The default date format string (Format Cells > Number > Custom)         
+HEADER_ROW_ID      1                                                                                                  The row id of the header row - (0 means no header, 1 the first line)    
+SHEET_NAME                                                                                                            The name of the sheet (By default, the first one)                       
+URI                file:///tmp/date_dim.xlsx                                                                          The URI of the file                                                     
+ABSOLUTE_PATH      /tmp/date_dim.xlsx                                                                                 The absolute path on the data system                                    
+CONNECTION         temp                                                                                               The connection name                                                     
+COUNT              100                                                                                                The number of records                                                   
+DATA_URI           date_dim.xlsx@temp                                                                                 The data uri                                                            
+LOGICAL_NAME       date_dim                                                                                           The logical name                                                        
+MD5                3872fa261c6232ae09ef67e083c571ea                                                                   The Md5 hash                                                            
+NAME               date_dim.xlsx                                                                                      The name of the data resource                                           
+PARENT                                                                                                                The parent                                                              
+PATH               date_dim.xlsx                                                                                      The relative path to the default connection path                        
+SHA384             7fb6d4c3fb4444dcfa923606137e870df7cf83971076246070ddb4171b9284c04dc9b56b12606ff433f5eab993aa5e0e   The Sha384 hash                                                         
+SHA384_INTEGRITY   sha384-f7bUw/tERNz6kjYGE36HDffPg5cQdiRgcN20FxuShMBNybVrEmBv9DP16rmTql4O                            The sha384 value used in the html integrity attribute                   
+SIZE               7157                                                                                               The number of byte                                                      
+SUBTYPE            application                                                                                        The media subType                                                       
+TYPE               com.tabulify.excel.ExcelManagerProvider$1@4d774249                                                 The media type
 </console>
 </unit>
 
@@ -85,19 +86,19 @@ What is the data of the file with the [[docs:tabli:data:head|data head command]]
 tabli data head date_dim.xlsx@temp
 </code>
 <console>
-The first 10 rows of the data resource (date_dim.xlsx@temp):
-d_date_sk   d_date             d_date_id    d_month_seq   d_day_name   d_moy   d_year
----------   ----------------   ----------   -----------   ----------   -----   ------
-      1.0   2025-05-13T00:00   2025-05-13      202505.0   Tuesday        5.0   2025
-      2.0   2025-05-12T00:00   2025-05-12      202505.0   Monday         5.0   2025
-      3.0   2025-05-11T00:00   2025-05-11      202505.0   Sunday         5.0   2025
-      4.0   2025-05-10T00:00   2025-05-10      202505.0   Saturday       5.0   2025
-      5.0   2025-05-09T00:00   2025-05-09      202505.0   Friday         5.0   2025
-      6.0   2025-05-08T00:00   2025-05-08      202505.0   Thursday       5.0   2025
-      7.0   2025-05-07T00:00   2025-05-07      202505.0   Wednesday      5.0   2025
-      8.0   2025-05-06T00:00   2025-05-06      202505.0   Tuesday        5.0   2025
-      9.0   2025-05-05T00:00   2025-05-05      202505.0   Monday         5.0   2025
-     10.0   2025-05-04T00:00   2025-05-04      202505.0   Sunday         5.0   2025
+The first 10 rows of the data resource (date_dim.xlsx@temp): 
+d_date_sk   d_date             d_date_id    d_month_seq   d_day_name   d_moy   d_year   
+---------   ----------------   ----------   -----------   ----------   -----   ------   
+      1.0   2025-05-19T00:00   2025-05-19      202505.0   Monday         5.0   2025     
+      2.0   2025-05-18T00:00   2025-05-18      202505.0   Sunday         5.0   2025     
+      3.0   2025-05-17T00:00   2025-05-17      202505.0   Saturday       5.0   2025     
+      4.0   2025-05-16T00:00   2025-05-16      202505.0   Friday         5.0   2025     
+      5.0   2025-05-15T00:00   2025-05-15      202505.0   Thursday       5.0   2025     
+      6.0   2025-05-14T00:00   2025-05-14      202505.0   Wednesday      5.0   2025     
+      7.0   2025-05-13T00:00   2025-05-13      202505.0   Tuesday        5.0   2025     
+      8.0   2025-05-12T00:00   2025-05-12      202505.0   Monday         5.0   2025     
+      9.0   2025-05-11T00:00   2025-05-11      202505.0   Sunday         5.0   2025     
+     10.0   2025-05-10T00:00   2025-05-10      202505.0   Saturday       5.0   2025
 </console>
 </unit>
 
