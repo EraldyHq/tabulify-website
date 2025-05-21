@@ -15,91 +15,53 @@ This [[..:howto|how-to]] will show you how to use the [[docs:tabli:data:fill|tab
 
 ===== Steps =====
 ==== Prerequisites ====
-  * You should have ''Tabulify'' installed on your computer.
+
+You should have ''Tabulify'' installed on your computer.
 
 <btn>
 [[howto:getting_started:1_install]]
 </btn>
 
-  * You should have followed this ''howto''
+==== Creation of the schema ====
 
-<btn>
-[[howto:database:tabli_create_table_with_dependencies|How to copy a schema]]
-</btn>
 
-==== Schema Listing ====
-If you have followed the prerequisites, you should seen now in the [[howto:sqlite:connection|Sqlite HowTo connection]] the following tables.
-
-<unit display="none">
+You could:
+  * follow this howto:  [[howto:sqlite:create_table_with_dependencies|How to copy a schema]]
+ * or execute the following statements:
+<unit>
 <code bash >
-tabli data create --with-dependencies store_sales@tpcds tpc_$0@sqlite
+# drop all tables in sqlite
+tabli data drop --not-strict *@sqlite
+# Create the store_sales star schema (ie the store_sales and its dependencies tables)
+tabli data create --with-dependencies store_sales@tpcds tpc_\${logicalName}@sqlite
 </code>
 </unit>
 
+==== Schema Listing ====
+
+You should now see in the [[howto:sqlite:connection|Sqlite HowTo connection]] the following tables.
+
 <unit>
 <code bash>
-tabli data list *@sqlite
+tabli data list --with-dependencies tpc_store_sales@sqlite
+</code>
+<console 
+path              
+---------------   
+tpc_store_sales
+</console>
+</unit>
+
+==== Schema Filling ====
+
+Let's fill the table with the [[:docs:tabli:data:fill|tabli data fill]] command that applies the [[:docs:op:fill|fill operation]].
+<unit>
+<code bash>
+tabli data fill --with-dependencies tpc_store_sales@sqlite
 </code>
 <console>
-PATH
---------------------------
-call_center
-catalog_page
-catalog_returns
-catalog_sales
-customer
-customer_address
-customer_demographics
-date_dim
-date_insert_stream
-dbgen_version
-household_demographics
-income_band
-inventory
-item
-promotion
-reason
-s_call_center
-s_catalog_order
-s_catalog_order_lineitem
-s_catalog_page
-s_catalog_returns
-s_customer
-s_customer_address
-s_inventory
-s_item
-s_promotion
-s_purchase
-s_purchase_lineitem
-s_store
-s_store_returns
-s_warehouse
-s_web_order
-s_web_order_lineitem
-s_web_page
-s_web_returns
-s_web_site
-s_zip_to_gmt
-ship_mode
-store
-store_returns
-store_sales
-time_dim
-tpc_customer
-tpc_customer_address
-tpc_customer_demographics
-tpc_date_dim
-tpc_household_demographics
-tpc_income_band
-tpc_item
-tpc_promotion
-tpc_store
-tpc_store_sales
-tpc_time_dim
-warehouse
-web_page
-web_returns
-web_sales
-web_site
+Source                   Target                   Latency (ms)   Row Count   Error   Message   
+----------------------   ----------------------   ------------   ---------   -----   -------   
+tpc_store_sales@memgen   tpc_store_sales@sqlite   82             100
 </console>
 </unit>

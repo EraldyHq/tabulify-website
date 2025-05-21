@@ -72,17 +72,17 @@ tabli data print sequence_color--datagen.yml@howto
 [[docs:connection:howto|howto]] is the connection that contains the files used in the [[..:howto|HowTo's]].
 </note>
 <console>
-id   seq_color
---   ---------
- 1   blue
- 2   red
- 3   green
- 4   cyan
- 5   magenta
- 6   yellow
- 7   black
- 8   blue
- 9   red
+id   seq_color   
+--   ---------   
+ 1   blue        
+ 2   red         
+ 3   green       
+ 4   cyan        
+ 5   magenta     
+ 6   yellow      
+ 7   black       
+ 8   blue        
+ 9   red         
 10   green
 </console>
 </unit>

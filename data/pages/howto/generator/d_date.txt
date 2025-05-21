@@ -92,19 +92,19 @@ With the [[docs:tabli:data:head|data head command]] and the [[docs:connection:ho
 tabli data head date_dim--datagen.yml@howto
 </code>
 <console>
-The first 10 rows of the data resource (date_dim--datagen.yml@howto):
-d_date_sk   d_date       d_date_id    d_month_seq   d_day_name   d_moy   d_year
----------   ----------   ----------   -----------   ----------   -----   ------
-        1   2020-12-11   2020-12-11        202012   Friday          12   2020
-        2   2020-12-10   2020-12-10        202012   Thursday        12   2020
-        3   2020-12-09   2020-12-09        202012   Wednesday       12   2020
-        4   2020-12-08   2020-12-08        202012   Tuesday         12   2020
-        5   2020-12-07   2020-12-07        202012   Monday          12   2020
-        6   2020-12-06   2020-12-06        202012   Sunday          12   2020
-        7   2020-12-05   2020-12-05        202012   Saturday        12   2020
-        8   2020-12-04   2020-12-04        202012   Friday          12   2020
-        9   2020-12-03   2020-12-03        202012   Thursday        12   2020
-       10   2020-12-02   2020-12-02        202012   Wednesday       12   2020
+The first 10 rows of the data resource (date_dim--datagen.yml@howto): 
+d_date_sk   d_date       d_date_id    d_month_seq   d_day_name   d_moy   d_year   
+---------   ----------   ----------   -----------   ----------   -----   ------   
+        1   2025-05-20   2025-05-20        202505   Tuesday          5   2025     
+        2   2025-05-19   2025-05-19        202505   Monday           5   2025     
+        3   2025-05-18   2025-05-18        202505   Sunday           5   2025     
+        4   2025-05-17   2025-05-17        202505   Saturday         5   2025     
+        5   2025-05-16   2025-05-16        202505   Friday           5   2025     
+        6   2025-05-15   2025-05-15        202505   Thursday         5   2025     
+        7   2025-05-14   2025-05-14        202505   Wednesday        5   2025     
+        8   2025-05-13   2025-05-13        202505   Tuesday          5   2025     
+        9   2025-05-12   2025-05-12        202505   Monday           5   2025     
+       10   2025-05-11   2025-05-11        202505   Sunday           5   2025
 </console>
 </unit>
 
