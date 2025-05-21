@@ -139,6 +139,9 @@ The following attributes are common:
   * [[type|type]] -  the resource media type (ie "text/html")
   * [[type|subtype]] -  the resource media subtype (ie "html")
   * ''parent'' - the parent logical name
+
+==== Digest ====
+
   * ''md5'' - the ''MD5'' digest
   * ''sha384'' - the ''SHA384'' digest
   * ''sha384_integrity'' - the ''SHA384'' integrity digest used in a integrity HTML attribute.

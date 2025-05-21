@@ -22,14 +22,17 @@ A ''stored data resource'' is a ''data resource'' that is stored on disk in a [[
 
 The following data operations have impact on the content of stored data resources:
   * [[docs:op:drop|drop]]
-  * [[docs:op:insert|drop]]
   * [[docs:op:truncate|truncate]]
   * [[docs:op:upsert|upsert]]
   * [[docs:op:insert|insert]]
   * [[docs:op:update|update]]
   * [[docs:op:delete|delete]]
 
-The [[docs:op:diff|compare operation]] can show the difference in content.
+==== Diff ====
+
+Difference in content can been seen via:
+  * the [[docs:op:diff|diff operation]] 
+  * the [[docs:resource:attribute#digest|digest attributes]] such as MD5.
 
 ==== Runtime ====
 

@@ -9,6 +9,9 @@
 ===== About =====
 A ''insert'' operation will insert [[docs:resource:content|data into a content resource]].
 
+It is an alias command of the [[transfer|data transfer command]] where the ''transfer-operation'' has been set to ''insert''.
+
+===== Tabli Cli =====
 
 The [[docs:tabli:data:insert|data insert operation]] supports the ''insert'' operation.
 

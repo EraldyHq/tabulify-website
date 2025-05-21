@@ -42,13 +42,13 @@ With the [[docs:tabli:data:print|data print]] command, we can see the content.
 tabli data print books.csv@howto
 </code>
 <console>
-asin            description                                   price   group
--------------   -------------------------------------------   -----   ----------
-B007US9NA8      The New Encyclopedia of Modern Bodybuilding   27.18   Sports
-1439199191      How To Win Friends And Influence People       27.18   Psychology
-9780465050659   The Design of Everyday Things                 9.99    Design
-9780465050659   The Design of Everyday Things                 9.99    Psychology
-B00555X8OA      Thinking, Fast and Slow                       8.85    Decision
+asin            description                                   price   group        
+-------------   -------------------------------------------   -----   ----------   
+B007US9NA8      The New Encyclopedia of Modern Bodybuilding   27.18   Sports       
+1439199191      How To Win Friends And Influence People       27.18   Psychology   
+9780465050659   The Design of Everyday Things                 9.99    Design       
+9780465050659   The Design of Everyday Things                 9.99    Psychology   
+B00555X8OA      Thinking, Fast and Slow                       8.85    Decision     
 B00555X8OA      Thinking, Fast and Slow                       8.85    Psychology
 </console>
 </unit>
@@ -91,9 +91,9 @@ By running the below [[docs:tabli:data:template|tabli data template operation]],
 tabli data template --template-selectors books_template.json@howto books.csv@howto books.json@temp
 </code>
 <console>
-Source         Target            Latency (ms)   Row Count   Error   Message
-------------   ---------------   ------------   ---------   -----   -------
-books@memory   books.json@temp   6              0
+Source          Target            Latency (ms)   Row Count   Error   Message   
+-------------   ---------------   ------------   ---------   -----   -------   
+output@memory   books.json@temp   10             1
 </console>
 </unit>
 
@@ -101,43 +101,43 @@ books@memory   books.json@temp   6              0
 With the [[docs:tabli:data:print|data print command]], you can see the [[docs:resource:json|json file content]] created.
 <unit>
 <code bash>
-# type text because by default, one JSON document, one record, one line
+# type text because by default, a json file is seen as one JSON document, one record, one line
 tabli data print --type text books.json@temp
 </code>
 <console javascript>
-{
-  "Sports": {
-    "B007US9NA8": {
-      "price": "27.18",
-      "description": "The New Encyclopedia of Modern Bodybuilding"
-    }
-  },
-  "Psychology": {
-    "1439199191": {
-      "price": "27.18",
-      "description": "How To Win Friends And Influence People"
-    },
-    "9780465050659": {
-      "price": "9.99",
-      "description": "The Design of Everyday Things"
-    },
-    "B00555X8OA": {
-      "price": "8.85",
-      "description": "Thinking, Fast and Slow"
-    }
-  },
-  "Design": {
-    "9780465050659": {
-      "price": "9.99",
-      "description": "The Design of Everyday Things"
-    }
-  },
-  "Decision": {
-    "B00555X8OA": {
-      "price": "8.85",
-      "description": "Thinking, Fast and Slow"
-    }
-  }
+{                                                                    
+  "Sports": {                                                        
+    "B007US9NA8": {                                                  
+      "price": "27.18",                                              
+      "description": "The New Encyclopedia of Modern Bodybuilding"   
+    }                                                                
+  },                                                                 
+  "Psychology": {                                                    
+    "1439199191": {                                                  
+      "price": "27.18",                                              
+      "description": "How To Win Friends And Influence People"       
+    },                                                               
+    "9780465050659": {                                               
+      "price": "9.99",                                               
+      "description": "The Design of Everyday Things"                 
+    },                                                               
+    "B00555X8OA": {                                                  
+      "price": "8.85",                                               
+      "description": "Thinking, Fast and Slow"                       
+    }                                                                
+  },                                                                 
+  "Design": {                                                        
+    "9780465050659": {                                               
+      "price": "9.99",                                               
+      "description": "The Design of Everyday Things"                 
+    }                                                                
+  },                                                                 
+  "Decision": {                                                      
+    "B00555X8OA": {                                                  
+      "price": "8.85",                                               
+      "description": "Thinking, Fast and Slow"                       
+    }                                                                
+  }                                                                  
 }
 </console>
 </unit>
