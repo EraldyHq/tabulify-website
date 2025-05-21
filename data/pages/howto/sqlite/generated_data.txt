@@ -35,10 +35,9 @@ For the purpose of this ''how-to'', we will work with the ''date_dim'' [[docs:sy
 tabli data create date_dim@tpcds @sqlite
 </code>
 <console>
-The list of data resources created
-uri
----------------
-date_dim@sqlite
+source           target            
+--------------   ---------------   
+date_dim@tpcds   date_dim@sqlite
 </console>
 </unit>
 ==== Fill the date_dim table with 10 rows ====
@@ -50,9 +49,9 @@ With the [[docs:tabli:data:fill|tabli data fill operation]], insert ''10'' rows 
 tabli data fill --max-record-count 10 date_dim@sqlite
 </code>
 <console>
-Source            Target            Latency (ms)   Row Count   Error   Message
----------------   ---------------   ------------   ---------   -----   -------
-date_dim@memgen   date_dim@sqlite   30             10
+Source            Target            Latency (ms)   Row Count   Error   Message   
+---------------   ---------------   ------------   ---------   -----   -------   
+date_dim@memgen   date_dim@sqlite   48             10
 </console>
 </unit>
 ==== Check the result ====
@@ -63,18 +62,18 @@ With the [[docs:tabli:data:print|data print command]], we can see the content of
 tabli data print date_dim@sqlite
 </code>
 <console>
-d_date_sk   d_date_id   d_date       d_month_seq   d_week_seq   d_quarter_seq   d_year   d_dow   d_moy   d_dom   d_qoy   d_fy_year   d_fy_quarter_seq   d_fy_week_seq   d_day_name   d_quarter_name   d_holiday   d_weekend   d_following_holiday   d_first_dom   d_last_dom   d_same_day_ly   d_same_day_lq   d_current_day   d_current_week   d_current_month   d_current_quarter   d_current_year
----------   ---------   ----------   -----------   ----------   -------------   ------   -----   -----   -----   -----   ---------   ----------------   -------------   ----------   --------------   ---------   ---------   -------------------   -----------   ----------   -------------   -------------   -------------   --------------   ---------------   -----------------   --------------
-        1   a           2020-12-07             1            1               6        4       7       8       9       8           5                  1               9   s            p                y           f           x                               7            0               5              10   r               c                o                 c                   h
-        2   b           2020-12-04             1            6               4        8       7       5      10       4           7                  0               4   l            u                b           i           l                              10            1               9               0   g               w                r                 s                   j
-        3   c           2020-12-12             0            1               6        8       2       2       7       8           5                  3              10   i            b                i           i           z                               2            6               3               5   t               w                a                 b                   t
-        4   d           2020-12-02             2            4               7        4      10       9      10       6           7                  0               3   k            t                f           l           n                               1            6               4               4   i               l                g                 u                   n
-        5   e           2020-12-12             9            2               4        9       7       2       4       8           3                  7               9   j            b                g           n           o                              10            9               0              10   w               i                w                 o                   l
-        6   f           2020-12-03             2            8              10        9       0       5       0       5           3                  0              10   r            y                e           g           u                               7            5               6              10   a               o                o                 d                   f
-        7   g           2020-12-06             6           10               7        3      10       9       6       8           3                  2               4   o            h                d           l           w                              10            3               1               2   k               t                o                 k                   o
-        8   h           2020-12-05             1            3               4        1       5       6       0       1           7                  9               2   q            m                w           w           p                               6            2               0               9   y               h                y                 a                   l
-        9   i           2020-12-05             0            4               5       10       6       1       5       7           4                  2              10   k            f                s           o           c                               4            5               9               2   o               q                f                 y                   e
-       10   j           2020-12-08             7            5               6        6       9       6       6       0           3                  8               4   m            r                s           a           u                               9            9              10               9   l               j                l                 a                   v
+d_date_sk   d_date_id   d_date       d_month_seq   d_week_seq   d_quarter_seq   d_year   d_dow   d_moy   d_dom   d_qoy   d_fy_year   d_fy_quarter_seq   d_fy_week_seq   d_day_name   d_quarter_name   d_holiday   d_weekend   d_following_holiday   d_first_dom   d_last_dom   d_same_day_ly   d_same_day_lq   d_current_day   d_current_week   d_current_month   d_current_quarter   d_current_year   
+---------   ---------   ----------   -----------   ----------   -------------   ------   -----   -----   -----   -----   ---------   ----------------   -------------   ----------   --------------   ---------   ---------   -------------------   -----------   ----------   -------------   -------------   -------------   --------------   ---------------   -----------------   --------------   
+        1   a           2025-05-17             4            3               3        8       2       7       9       7           3                  9               8   x            f                p           z           s                               7            4               5               3   x               u                j                 z                   q                
+        2   b           2025-05-19             4            9               5        8      10       6       4       0           6                 10              10   g            t                w           u           d                               0            3               1               2   l               c                s                 q                   p                
+        3   c           2025-05-16            10            3               7        1       3      10       8       9           4                 10               2   d            l                x           d           x                               1            3               3               9   k               g                n                 q                   p                
+        4   d           2025-05-13             0           10               7       10       1       2       1       3          10                 10               0   r            h                r           o           w                               7           10               8               7   h               m                o                 j                   w                
+        5   e           2025-05-11             5            7               5        7       4       3       4       2           5                 10               9   r            v                p           b           k                              10            1               9               9   p               s                f                 j                   i                
+        6   f           2025-05-13             1            8               0        7       2      10       3       5           7                  9               6   h            b                p           d           s                               8            2               9               6   w               l                v                 t                   s                
+        7   g           2025-05-16             0            1               2        9       3       1       6       0           2                  1               2   n            p                w           r           v                               4            1               8               1   k               g                t                 n                   e                
+        8   h           2025-05-12             8           10               4        2       4      10       4       2           4                  5               8   k            p                r           i           q                               4            0               1               0   c               z                j                 u                   p                
+        9   i           2025-05-21             6            4               7        3       2       2       8       3          10                  1               9   n            h                r           k           a                               6            3               3               8   s               q                b                 n                   x                
+       10   j           2025-05-14             1            4               4       10       8       6       6       2          10                  7               8   k            k                r           q           n                              10            8               6               5   l               a                q                 d                   o
 </console>
 </unit>
 ==== Fill the ''date_dim'' table with ''10.000'' rows ====
@@ -84,9 +83,9 @@ d_date_sk   d_date_id   d_date       d_month_seq   d_week_seq   d_quarter_seq   
 tabli data fill --max-record-count 10000 date_dim@sqlite
 </code>
 <console>
-Source            Target            Latency (ms)   Row Count   Error   Message
----------------   ---------------   ------------   ---------   -----   -------
-date_dim@memgen   date_dim@sqlite   1180           10000
+Source            Target            Latency (ms)   Row Count   Error   Message   
+---------------   ---------------   ------------   ---------   -----   -------   
+date_dim@memgen   date_dim@sqlite   513            10000
 </console>
 </unit>
 ==== Check the result ====
@@ -97,8 +96,8 @@ And we got ''10.000'' rows
 tabli data list -a count date_dim@sqlite
 </code>
 <console>
-count
------
+count   
+-----   
 10000
 </console>
 </unit>

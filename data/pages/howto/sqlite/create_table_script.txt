@@ -53,15 +53,16 @@ With the [[docs:tabli:data:create|tabli data create]] command, if you use a [[do
 To execute the previous SQL script, the below the command should be executed:
 <unit>
 <code bash>
-tabli data create (create_foo.sql@howto)@sqlite
+tabli data create "(create_foo.sql@howto)"@sqlite
+# The quotes are mandatory because parenthesis are a word in bash (ie subshell)
 </code>
 where:
   * ''data create'' is the [[docs:tabli:data:create|data create]] command
   * ''(create_foo.sql@howto)@sqlite'' is a [[docs:resource:script_selector|script selector]] that select the ''create_foo.sql'' in the [[docs:connection:howto|howto]] connection and executes it in the [[docs:connection:howtos|Sqlite howtos connection]]
 <console>
-The list of create script data resources executed:
-uri
------------------------------
+The scripts executed
+data_uri                        
+-----------------------------   
 (create_foo.sql@howto)@sqlite
 </console>
 </unit>
@@ -76,9 +77,10 @@ Check the metadata with the [[docs:tabli:data:struct|tabli data meta]] command
 tabli data struct foo@sqlite
 </code>
 <console>
-Position   Column Name   Data Type   Primary Key   Not Null   Auto Increment   Description
---------   -----------   ---------   -----------   --------   --------------   -----------
-1          bar           integer                   x          false
+Structure of the resource foo@sqlite
+position   name   type      precision   scale   primary_key   nullable   autoincrement   comment   
+--------   ----   -------   ---------   -----   -----------   --------   -------------   -------   
+1          bar    integer                                     x          false
 </console>
 </unit>
 

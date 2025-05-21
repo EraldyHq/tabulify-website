@@ -7,14 +7,14 @@
 
 
 ===== About =====
-''sql file'' are [[text|text file data resource]] that contains ''sql statement'' as [[docs:resource:record|record]].
+''sql files'' are [[text|text file data resource]] that contains ''sql statement'' as [[docs:resource:record|record]].
 
 
 
 ===== Arguments =====
 
 ^ Argument ^ Values ^ Default  ^ Description ^
-| [[#parsing]] | ''sql'' \\ ''text'' | ''sql'' | The parsing mode |
+| [[#parsing]] | ''sql'' or ''text'' | ''sql'' | The parsing mode |
 | [[#EndOfRecords]] | See [[#endOfRecords]] | See [[#endOfRecords]] | The end of records for a sql statement |
 | [[text#arguments|columnName]] | - | ''sql'' | The name of the column that stores the SQL statement |
 | You can also set the other [[text#arguments|text arguments]] |||
