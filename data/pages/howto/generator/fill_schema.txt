@@ -46,9 +46,19 @@ You should now see in the [[howto:sqlite:connection|Sqlite HowTo connection]] th
 tabli data list --with-dependencies tpc_store_sales@sqlite
 </code>
 <console>
-path              
----------------   
-tpc_store_sales
+path                         
+--------------------------   
+tpc_customer                 
+tpc_customer_address         
+tpc_customer_demographics    
+tpc_date_dim                 
+tpc_household_demographics   
+tpc_income_band              
+tpc_item                     
+tpc_promotion                
+tpc_store                    
+tpc_store_sales              
+tpc_time_dim
 </console>
 </unit>
 
@@ -60,8 +70,18 @@ Let's fill the table with the [[:docs:tabli:data:fill|tabli data fill]] command 
 tabli data fill --with-dependencies tpc_store_sales@sqlite
 </code>
 <console>
-Source                   Target                   Latency (ms)   Row Count   Error   Message   
-----------------------   ----------------------   ------------   ---------   -----   -------   
-tpc_store_sales@memgen   tpc_store_sales@sqlite   82             100
+Source                              Target                              Latency (ms)   Row Count   Error   Message   
+---------------------------------   ---------------------------------   ------------   ---------   -----   -------   
+tpc_customer@memgen                 tpc_customer@sqlite                 11             100                           
+tpc_customer_address@memgen         tpc_customer_address@sqlite         17             100                           
+tpc_customer_demographics@memgen    tpc_customer_demographics@sqlite    13             100                           
+tpc_date_dim@memgen                 tpc_date_dim@sqlite                 29             100                           
+tpc_household_demographics@memgen   tpc_household_demographics@sqlite   9              100                           
+tpc_income_band@memgen              tpc_income_band@sqlite              26             100                           
+tpc_item@memgen                     tpc_item@sqlite                     20             100                           
+tpc_promotion@memgen                tpc_promotion@sqlite                13             100                           
+tpc_store@memgen                    tpc_store@sqlite                    20             100                           
+tpc_store_sales@memgen              tpc_store_sales@sqlite              15             100                           
+tpc_time_dim@memgen                 tpc_time_dim@sqlite                 19             100
 </console>
 </unit>
