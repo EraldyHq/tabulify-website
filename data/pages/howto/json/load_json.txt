@@ -84,10 +84,10 @@ For instance, for the ''Don.json'' file, there is one column:
 tabli data struct json/phone/Don.json@howto
 </code>
 <console>
-Structure of the resource json\phone\Don.json@howto
-position   name   data_type   precision   scale   primary_key   nullable   autoincrement   comment
---------   ----   ---------   ---------   -----   -----------   --------   -------------   -------
-1          json   json                                          x          false
+Structure of the resource json/phone/Don.json@howto
+position   name   type   precision   scale   primary_key   nullable   autoincrement   comment
+--------   ----   ----   ---------   -----   -----------   --------   -------------   -------
+1          json   json                                     x          false
 </console>
 </unit>
 
@@ -95,6 +95,11 @@ position   name   data_type   precision   scale   primary_key   nullable   autoi
 ==== Loading the JSON files ====
 
 The below [[docs:tabli:data:insert|data insert command]] will load the JSON files into the ''phones'' [[docs:resource:table|table]] of the [[howto:sqlite:connection|sqlite howto]] database.
+<unit display="none">
+<code bash>
+tabli data drop --not-strict user@sqlite
+</code>
+</unit>
 <unit>
 <code bash>
 tabli data insert json/phone/*.json@howto  user@sqlite
@@ -102,11 +107,11 @@ tabli data insert json/phone/*.json@howto  user@sqlite
 <console>
 Source                         Target        Latency (ms)   Row Count   Error   Message
 ----------------------------   -----------   ------------   ---------   -----   -------
-json\phone\Arnold.json@howto   user@sqlite   10             1
-json\phone\Bob.json@howto      user@sqlite   12             1
-json\phone\Dale.json@howto     user@sqlite   11             1
-json\phone\Daniel.json@howto   user@sqlite   11             1
-json\phone\Don.json@howto      user@sqlite   29             1
+json/phone/Arnold.json@howto   user@sqlite   6              1
+json/phone/Bob.json@howto      user@sqlite   7              1
+json/phone/Dale.json@howto     user@sqlite   77             1
+json/phone/Daniel.json@howto   user@sqlite   8              1
+json/phone/Don.json@howto      user@sqlite   8              1
 </console>
 </unit>
 
@@ -120,11 +125,11 @@ tabli data head user@sqlite
 The first 10 rows of the data resource (user@sqlite):
 json
 -----------------------------------------------
-["470-293-7517"]
-["323-423-2238","747-444-3222","475-202-7142"]
-["704-555-0150","202-555-0150"]
-["425-898-3481","360-637-7972", "205-533-8271"]
 ["731-414-7236","256-233-3557","409-645-3618"]
+["425-898-3481","360-637-7972", "205-533-8271"]
+["704-555-0150","202-555-0150"]
+["323-423-2238","747-444-3222","475-202-7142"]
+["470-293-7517"]
 </console>
 </unit>
 
@@ -137,7 +142,7 @@ After running the below [[docs:tabli:data:head|head command]], we can see that t
 tabli data head --attribute columnName=phone json/phone/Don.json@howto
 </code>
 <console>
-The first 10 rows of the data resource (json\phone\Don.json@howto):
+The first 10 rows of the data resource (json/phone/Don.json@howto):
 phone
 ----------------
 ["470-293-7517"]
@@ -177,6 +182,13 @@ phone                                            name
 
 ==== Reloading the JSON files with the virtual column name ====
 
+First, we will drop the old structure with the `json` column
+<unit>
+<code bash>
+tabli data drop --not-strict user@sqlite
+</code>
+</unit>
+
 To reload the JSON files:
   * with the extra column ''name'' and the [[docs:resource:logicalname|file logical name]]
   * with a column ''phones'' containing the ''JSON document''
@@ -196,11 +208,11 @@ Output:
 <console>
 Source                         Target        Latency (ms)   Row Count   Error   Message
 ----------------------------   -----------   ------------   ---------   -----   -------
-json\phone\Arnold.json@howto   user@sqlite   15             1
-json\phone\Bob.json@howto      user@sqlite   14             1
-json\phone\Dale.json@howto     user@sqlite   16             1
-json\phone\Daniel.json@howto   user@sqlite   14             1
-json\phone\Don.json@howto      user@sqlite   37             1
+json/phone/Arnold.json@howto   user@sqlite   7              1
+json/phone/Bob.json@howto      user@sqlite   8              1
+json/phone/Dale.json@howto     user@sqlite   75             1
+json/phone/Daniel.json@howto   user@sqlite   7              1
+json/phone/Don.json@howto      user@sqlite   5              1
 </console>
 </unit>
 
@@ -214,11 +226,11 @@ tabli data print user@sqlite
 <console>
 phone                                             name
 -----------------------------------------------   ------
-["470-293-7517"]                                  Don
-["323-423-2238","747-444-3222","475-202-7142"]    Bob
-["704-555-0150","202-555-0150"]                   Arnold
-["425-898-3481","360-637-7972", "205-533-8271"]   Daniel
 ["731-414-7236","256-233-3557","409-645-3618"]    Dale
+["425-898-3481","360-637-7972", "205-533-8271"]   Daniel
+["704-555-0150","202-555-0150"]                   Arnold
+["323-423-2238","747-444-3222","475-202-7142"]    Bob
+["470-293-7517"]                                  Don
 </console>
 </unit>
 
