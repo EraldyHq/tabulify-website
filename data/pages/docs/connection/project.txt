@@ -10,7 +10,7 @@
 ''project'' is a [[built-in|built-in connection]] that points to the [[docs:project:project|project]] directory.
 
 It is automatically created when:
-  * a [[docs:project:project-file|project file]] is detected
+  * a [[:docs:conf:vault|project file (ie configuration vault)]] is detected
   * the ''%%--project-home%%'' is passed as an [[docs:tabli:option|option]]
   * or the ''%%TABLI_PROJECT_HOME%%'' [[:docs:conf:os|OS environment variable]] is set
 

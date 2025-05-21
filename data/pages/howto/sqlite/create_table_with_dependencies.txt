@@ -6,7 +6,7 @@
     "canonical": ":howto:database:table_create_with_dependencies",
     "description": "This howto will show you how to copy the data definition of all SQL tables from a star\/snowflake schema.",
     "name": "Duplicate a schema ",
-    "page_id": "zjtli95npp4fy9pry569a",
+    "page_id": "9ufbppuf8y3ivtqt863n1",
     "title": "How to copy the data definition of all tables from a star\/snowflake schema"
 }
 ---
@@ -19,7 +19,7 @@ This [[..:howto|Howto]] will show you how to copy the [[docs:resource:structure|
 
 
 <note important>
-This command does not copy the data. It just [[docs:op:create|create]] the structure (ie it performs a SQL ''CREATE'' statement). If you want to copy the data, use the [[docs:tabli:data:transfer|tabli data transfer command]] instead.
+This command does not copy the data. It just [[docs:op:create|creates]] the structure (ie it performs a SQL ''CREATE'' statement). If you want to copy the data, use the [[docs:tabli:data:transfer|tabli data transfer command]] instead.
 </note>
 
 

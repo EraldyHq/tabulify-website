@@ -19,18 +19,18 @@ Welcome to the documentation of Tabulify. This section regroups all reference do
 
 <iterator>
     <data>select from descendants where is_home = 1  and depth = 1 order by path asc </data>
-<row >
-        <template>
-        <cell>
+<grid>
+        <fragment>
+        <box>
             <card clickable>
             <page-image path="$path" ratio="16:9" color="#336699"/>
             === $title ===
 
             $description [[$path| ]]
             </card>
-        </cell>
-        </template>
-</row>
+        </box>
+        </fragment>
+</grid>
 </iterator>
 
 

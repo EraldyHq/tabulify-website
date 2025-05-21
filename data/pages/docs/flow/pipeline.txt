@@ -6,7 +6,7 @@
 ====== Tabulify - Pipeline Flow ======
 
 ===== Pipeline =====
-A ''pipeline'' is a [[docs:common:yaml|yaml]] file that defines a serie of [[docs:flow:step|step]] where:
+A ''pipeline'' defines a serie of [[docs:flow:step|step]] where:
   * the first step called the [[docs:flow:supplier|supplier step]]:
       * selects [[docs:resource:resource|data resources]]
       * and send them to the next step
@@ -16,7 +16,7 @@ A ''pipeline'' is a [[docs:common:yaml|yaml]] file that defines a serie of [[doc
 
 
 ===== Syntax =====
-The syntax of a pipeline script is the following
+The syntax of a pipeline [[docs:common:yaml|yaml]] script is the following
 
 
 <code yaml  pipeline.yml>

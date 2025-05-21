@@ -13,7 +13,7 @@
 Within the service module, you can:
   * [[start_command|start]] - Start a service (optionally creating it)
   * [[stop|stop]] - stop a service
-  * [[drop]] - delete a service from the service system (not from the [[:docs:conf:vault|configuration vault]])
+  * [[drop|drop]] - delete a service from the service system (not from the [[:docs:conf:vault|configuration vault]])
   * [[:docs:tabli:connection:ping|ping]] - verify if a service can be reached with a connection name
   * [[list|list]] - list the services in a table format
   * [[info|info]] - get information on a service in a forms format.
