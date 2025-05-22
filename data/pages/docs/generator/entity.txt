@@ -6,11 +6,38 @@
 ====== Generator - Entity Column Generator ======
 
 
-===== Entity =====
+===== About =====
 
-A ''entity column generator''  is a [[column|column data generator]] that can [[generator|generate]] data created from provided data set such as:
-  * a person
-  * or a country
+A ''entity column generator''  is a [[column|column data generator]] that [[generator|generates]] data from 
+a specific provided csv file located in the [[:docs:connection:built-in|entity connection]].
 
-===== Location =====
-The entity data sets are located in the [[:docs:connection:built-in|entity connection]].
+===== List =====
+
+<unit>
+<code bash>
+tabli data list *@entity
+</code>
+<console>
+path
+---------
+country
+firstname
+gender
+lastname
+prefix
+region
+subregion
+</console>
+</unit>
+
+===== What are Entities? =====
+
+An entity is [[:docs:resource:csv|CSV file]]:
+  * with a name that contains the entity and locale: `entityName_locale`
+    * Example: `firstname_en.csv` are English first names.
+    * The locale defaults to `en` if not provided
+  * where the first column as the same name as the file
+  * that 
+    * contains the value to return as first column
+    * contains optionally a numeric weight factor column called `probability`, `weight` or `factor`
+    * contains optionally other meta column (for example ''gender'' for a ''firstname'')
