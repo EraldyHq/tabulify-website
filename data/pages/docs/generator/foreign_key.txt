@@ -1,0 +1,9 @@
+====== Foreign Key Generator ======
+
+
+===== About =====
+[[:docs:resource:fkey|Foreign key constraint]] are enforced automatically.
+
+If a column reference a foreign column via a foreign key, the data is generated based on the foreign key column data.
+
+

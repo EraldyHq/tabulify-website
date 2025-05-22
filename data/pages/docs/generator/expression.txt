@@ -10,10 +10,21 @@
 A ''expression generator'' is a [[column|column data generator]] that can [[generator|generate]] data created from:
   * other columns (known as ''parent columns'') 
   * by giving an ''expression (or formula)''.
-===== Howto =====
-<related pattern="howto:*" />
 
 
+===== Example =====
+
+<unit>
+With the following [[:docs:resource:generator|generator resource]]
+<file yaml generator/expression--datagen.yml>
+</file>
+You would get the following data:
+<code bash>
+tabli data print generator/expression--datagen.yml@howto
+</code>
+<console>
+</console>
+</unit>
 ===== Syntax =====
 
 <code yaml>
@@ -49,10 +60,49 @@ Example:
 </code>
 
 
+
+===== How to write Expression (Javascript) =====
+
+Expressions are written in Javascript.
+
+
+Tabulify pass the data as native javascript [[:docs:common:data_type|data type]] in the variable `x`.
+You don't need to instantiate `x`, tabulify do.
+
+If the expression depends:
+  * on a second column, the variable `y` is created, 
+  * on a third, the variable `z` is created
+  * and so on.
+
+Note:
+  * For [[:docs:common:time|date/timestamp/time data type]], we create a [[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date|Date]] as this is the only temporal data type of javascript.
+  * For all numbers (Double, Integer, ...) , we create a [[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number|Number]] as this is also the only number data type of javascript.
+
+Example for ''2009/10/01'', Tabulify would create the `x` variable like this:
+<code javascript>
+x = new Date("2009","10","01")
+</code>
+And if you want the month, you expression would use [[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getMonth|getMonth]] :
+<code javascript>
+x.getMonth()+1
+</code>
+
+
+
+
 ===== Snippet of expression =====
+
+
+
 This section is showing snippet of expression (Javascript).
 
+You can test your expression quickly with:
+  * your browser (F12 > Console)
+  * Node
+
 ==== Time ====
+
+
 
   * Month where ''x'' represents the ''date'' value of the first parent columns
 <code javascript>
@@ -78,15 +128,15 @@ x+'@'+y+'.'+z
 
 ===== Data Type =====
 
-The below data type are supported:
+The below [[:docs:common:data_type|data type]] are supported:
 
-^ Data Type ^
-| Integer |
-| Float |
-| Double | 
-| Numeric | 
-| Decimal |
-| Date |
-| Timestamp |
-| Varchar |
+^ Data Type ^ Java script ^
+| Integer | [[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number|Number]] |
+| Float | [[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number|Number]] |
+| Double | [[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number|Number]] |
+| Numeric | [[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number|Number]] |
+| Decimal | [[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number|Number]] |
+| Date | [[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date|Date]] |
+| Timestamp | [[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date|Date]] |
+| Varchar | [[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String|String]] |
 

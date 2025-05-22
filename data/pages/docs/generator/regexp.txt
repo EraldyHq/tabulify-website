@@ -1,0 +1,64 @@
+====== Regular Expression Generator ======
+
+
+===== About =====
+You can generate data based on a regular expression [[docs:generator:generator|generator]].
+
+===== Example =====
+
+==== Expression example ====
+
+Generate a number of:
+  * 3 digits before the point
+  * 3 digits after the point
+```
+[0-9]{3}\.[0-9]{3}
+```
+
+==== Generator Resource example ====
+
+Example with a [[:docs:resource:generator|generator resources]] that generates a double.
+<unit>
+<file generator/regexp--datagen.yml>
+</file>
+<code bash>
+tabli data print generator/regexp--datagen.yml
+</code>
+<console>
+</console>
+</unit>
+
+===== Supported Syntax =====
+
+
+^                        Pattern ^ Description  ^                                                                                                                        
+|                            `.` | Any symbol. See below details - `Dot pattern generated symbols` section.                                                             |
+|                            `?` | One or zero occurrences                                                                                                              |
+|                            `+` | One or more occurrences                                                                                                              |
+|                            `*` | Zero or more occurrences                                                                                                             |
+|                           `\r` | Carriage return `CR` character                                                                                                       |
+|                           `\t` | Tab `	` character                                                                                                                    |
+|                           `\n` | Line feed `LF` character.                                                                                                            |
+|                           `\d` | A digit. Equivalent to `[0-9]`                                                                                                       |
+|                           `\D` | Not a digit. Equivalent to `[^0-9]`                                                                                                  |
+|                           `\s` | Configurable. By default: Space or Tab. See `WHITESPACE_DEFINITION` property.                                                        |
+|                           `\S` | Anything, but Carriage Return, Space, Tab, Newline, Vertical Tab, Form Feed                                                          |
+|                           `\w` | Any word character. Equivalent to `[a-zA-Z0-9_]`                                                                                     |
+|                           `\W` | Anything but a word character. Equivalent to `[^a-zA-Z0-9_]`                                                                         |
+|                           `\i` | Places same value as capture group with index `i`. `i` is any integer number.                                                        |
+|                  `\Q` and `\E` | Any characters between `\Q` and `\E`, including metacharacters, will be treated as literals.                                         |
+|                  `\b` and `\B` | These characters are ignored. No validation is performed!                                                                            |
+|          `\xXX` and `\x{XXXX}` | Hexadecimal value of unicode characters 2 or 4 hexadecimal digits                                                                    |
+|                       `\uXXXX` | Hexadecimal value of unicode characters 4 hexadecimal digits                                                                         |
+|                      `\p{...}` | Any character in class. See details below before use.                                                                                |
+|                      `\P{...}` | Any character not in class. See details below before use.                                                                            |
+|              `{a}` and `{a,b}` | Repeat a; or min a max b times. Use {n,} to repeat at least n times.                                                                 |
+|                        `[...]` | Single character from ones that are inside brackets. `[a-zA-Z]` (dash) also supported                                                |
+|                       `[^...]` | Single character except the ones in brackets. `[^a]` - any symbol except 'a'                                                         |
+|                           `()` | To group multiple characters for the repetitions                                                                                     |
+|                             %%\\%% | Escape character (use %%\\\\%% (double backslash) to generate single %\% character)                                                        |
+
+
+===== More information =====
+
+More information can be found on the [[https://github.com/curious-odd-man/RgxGen|RxGen Library]]

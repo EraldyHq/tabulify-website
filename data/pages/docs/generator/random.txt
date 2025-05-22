@@ -16,8 +16,10 @@ If you want to extract values from a list at random, you should use the [[histog
 
 
 This generator will generate the values in an uniform distribution.
-===== Howto =====
-<related pattern="howto:*" />
+
+===== Example =====
+
+[[howto/generator/random]]
 
 
 ===== Properties =====

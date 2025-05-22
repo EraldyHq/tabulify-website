@@ -12,7 +12,11 @@ A ''column generator'' defines how data is [[generator|generated]] for a column.
 They are used in a [[docs:resource:generator|resource generator (aka generator)]] to define the data generated for each columns.
 
 
-===== List =====
-  * [[sequence]]
-  * [[random]]
-  * [[histogram]]
+
+^ Name ^ Description ^
+| [[sequence|sequence]] | Generate data in sequence |
+| [[random|Random]] | Generate data randomly |
+| [[histogram|Histogram]] | Generate a distribution of data |
+| [[docs:generator:expression|Expression]] | Generate derived data (expression from other data) |
+| [[docs:generator:entity|Entity]] | Generate data from a data set |
+

@@ -24,9 +24,9 @@ If the data type is not supported by the [[docs:system:system|system]], ''Tabuli
       * fixed point number: ''numeric'', ''decimal''
       * floating point number: ''real'', ''float'', ''double''
   * [[time]]
-      * ''date''
-      * ''timestamp''
-      * ''time''
+      * ''date'' (YYYY/mm/dd)
+      * ''timestamp'' (YYYY/mm/dd hh:mm:ss)
+      * ''time'' (hh:mm:ss)
   * [[boolean]]
       * ''boolean''
 

@@ -13,8 +13,12 @@ A ''sequence generator'' is a [[column|column data generator]] that [[generator|
   * ''2011-11-10, 2011-11-09, ...''
   * ''blue, red, ...''
 
-===== Howto =====
-<related pattern="howto:*" />
+
+===== Example =====
+
+  * [[howto/generator/sequence_number]]
+  * [[howto/generator/sequence_odometer]]
+
 
 ===== Glossary =====
 ==== Tick ====
