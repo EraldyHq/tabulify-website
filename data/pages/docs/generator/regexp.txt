@@ -4,27 +4,73 @@
 ===== About =====
 You can generate data based on a regular expression [[docs:generator:generator|generator]].
 
-===== Example =====
+===== Example: How to generate a number ?=====
 
-==== Expression example ====
 
-Generate a number of:
-  * 3 digits before the point
-  * 3 digits after the point
+
+Example with a [[:docs:resource:generator|generator resources]] that generates a double with the following expression:
 ```
 [0-9]{3}\.[0-9]{3}
 ```
+where:
+  * `[0-9]{3}` asks for 3 digits
+  * `\.` print a point 
+    * Note: `\` is the escape character that tells the generator to take the dot character and not the [[kb>lang:regexp:dot|regular expression dot matcher]].
+  * `[0-9]{3}` asks for 3 digits
 
-==== Generator Resource example ====
 
-Example with a [[:docs:resource:generator|generator resources]] that generates a double.
+
+The [[:docs:resource:generator|generator]] would be then:
 <unit>
-<file generator/regexp--datagen.yml>
+<file yml generator/regexp--datagen.yml>
+maxRecordCount: 30
+columns:
+  - name: regexp_double
+    type: Double
+    precision: 6
+    scale: 3
+    dataGenerator:
+      type: regexp
+      expression: '[0-9]{3}\.[0-9]{3}'
+
 </file>
+ that would yield the following data:
 <code bash>
-tabli data print generator/regexp--datagen.yml
+tabli data print generator/regexp--datagen.yml@howto
 </code>
-<console>
+<console height="300px" scroll="toggle">
+regexp_double   
+-------------   
+      112.682   
+      660.396   
+      984.383   
+      186.461   
+      288.091   
+      552.447   
+        73.44   
+      916.136   
+      535.481   
+      299.578   
+      283.111   
+      821.063   
+      546.346   
+       348.24   
+      283.066   
+      960.848   
+      461.116   
+      141.916   
+       897.38   
+       92.589   
+      119.747   
+      233.942   
+      978.063   
+      269.027   
+      738.911   
+      899.065   
+      785.454   
+      698.703   
+      132.742   
+       304.08
 </console>
 </unit>
 
@@ -59,6 +105,6 @@ tabli data print generator/regexp--datagen.yml
 |                             %%\\%% | Escape character (use %%\\\\%% (double backslash) to generate single %\% character)                                                        |
 
 
-===== More information =====
+===== Limitations =====
 
-More information can be found on the [[https://github.com/curious-odd-man/RgxGen|RxGen Library]]
+Limitations and syntax information can be found on the [[https://github.com/curious-odd-man/RgxGen|RxGen Library]]

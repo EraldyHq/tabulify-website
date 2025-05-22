@@ -14,9 +14,10 @@ They are used in a [[docs:resource:generator|resource generator (aka generator)]
 
 
 ^ Name ^ Description ^
-| [[sequence|sequence]] | Generate data in sequence |
+| [[sequence|Sequence]] | Generate data in sequence |
 | [[random|Random]] | Generate data randomly |
 | [[histogram|Histogram]] | Generate a distribution of data |
 | [[docs:generator:expression|Expression]] | Generate derived data (expression from other data) |
-| [[docs:generator:entity|Entity]] | Generate data from a data set |
+| [[docs:generator:entity|Entity]] | Generate data from predefined data set |
+| [[docs:generator:regexp|Regular Expression]] | Generate data from a regular expression |
 

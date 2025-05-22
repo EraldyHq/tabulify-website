@@ -11,22 +11,164 @@
 A ''entity column generator''  is a [[column|column data generator]] that [[generator|generates]] data from 
 a specific provided csv file located in the [[:docs:connection:built-in|entity connection]].
 
-===== List =====
+===== Example =====
 
+==== Basic ====
+
+Example of a basic entity [[:docs:resource:generator|generator resource]] that uses the `firstname` entity to fill a `firstname` column
+<unit>
+<file yaml generator/entity-basic--datagen.yml>
+MaxRecordCount: 10
+Columns:
+  - name: firstname
+    Type: varchar
+    DataGenerator:
+      type: entity
+
+
+</file>
+  * You can see the output with [[:docs:tabli:data:print|tabli print]]
+<code bash>
+tabli data print generator/entity-basic--datagen.yml@howto
+</code>
+<console>
+firstname   
+---------   
+Phoebe      
+Penelope    
+Reggie      
+Cathleen    
+Reina       
+Dorthea     
+Lannie      
+Josephina   
+Wade        
+Ethelyn
+</console>
+</unit>
+
+==== Meta Column Dependency ====
+
+A `firstname` depends on the `gender`. Each entity may have one or more meta columns such as `gender`.
+
+To express this dependency, you can use the ''meta_columns'' attribute to map:
+  * a local column (ie from the generator)
+  * to a entity column (ie from the data set)
+
+<unit>
+<file yaml generator/entity-meta-columns--datagen.yml>
+MaxRecordCount: 30
+Columns:
+  - name: gender
+    Type: Varchar
+    DataGenerator:
+      type: histogram
+      Buckets:
+        M: 1.0
+        F: 2.0
+  - name: firstname
+    Type: Varchar
+    DataGenerator:
+      type: entity
+      name: firstname
+      locale: en
+      metaColumns:
+        gender: gender
+
+
+</file>
+  * You can see the output with [[:docs:tabli:data:print|tabli print]]
+<code bash>
+tabli data print generator/entity-meta-columns--datagen.yml@howto
+</code>
+<console height="300px" scroll="toggle">
+gender   firstname   
+------   ---------   
+M        Arnold      
+F        Beatris     
+M        Amado       
+F        Amanda      
+M        Alvin       
+F        Ashlie      
+F        Bettina     
+F        Alvera      
+F        Althea      
+F        Beatris     
+F        Bridgette   
+F        Ashlie      
+F        Alverta     
+F        Alyce       
+F        Britt       
+F        Alverta     
+F        Bettina     
+F        Amalia      
+M        Allan       
+F        Bettina     
+F        Amalia      
+F        Ashlie      
+M        Alphonso    
+M        Alvaro      
+M        Alphonso    
+M        Brice       
+M        Brandon     
+F        Alysa       
+F        Brittani    
+F        Britta
+</console>
+</unit>
+
+===== DataGenerator Attributes =====
+
+The list of [[:docs:conf:attribute|attributes]] that you can use in the [[:docs:resource:generator#Data_Generator|DataGenerator]] property are:
+
+^ Attribute Name ^ Description ^ Default ^ 
+| ''NAME'' | The name of the entity | Name of the column |
+| ''LOCALE'' | The locale of the entity for entity localization | ''en'' |
+| ''META_COLUMNS'' | A map that links a local column to a metadata entity column  | Empty |
+
+===== List and storage =====
+
+All entities are stored under the [[:docs:connection:built-in|entity built-in connection]]
 <unit>
 <code bash>
 tabli data list *@entity
 </code>
 <console>
-path
----------
-country
-firstname
-gender
-lastname
-prefix
-region
+path        
+---------   
+country     
+firstname   
+gender      
+lastname    
+prefix      
+region      
 subregion
+</console>
+</unit>
+
+And every entity may have one or more locale
+
+Example for the `firstname` entity
+<unit>
+<code bash>
+tabli data list firstname/*@entity
+</code>
+<console>
+path                         
+--------------------------   
+firstname/firstname_ca.csv   
+firstname/firstname_de.csv   
+firstname/firstname_en.csv   
+firstname/firstname_es.csv   
+firstname/firstname_fr.csv   
+firstname/firstname_gd.csv   
+firstname/firstname_hu.csv   
+firstname/firstname_it.csv   
+firstname/firstname_nl.csv   
+firstname/firstname_pl.csv   
+firstname/firstname_pt.csv   
+firstname/firstname_sk.csv   
+firstname/firstname_tr.csv
 </console>
 </unit>
 
@@ -39,5 +181,28 @@ An entity is [[:docs:resource:csv|CSV file]]:
   * where the first column as the same name as the file
   * that 
     * contains the value to return as first column
-    * contains optionally a numeric weight factor column called `probability`, `weight` or `factor`
-    * contains optionally other meta column (for example ''gender'' for a ''firstname'')
+    * contains optionally a numeric weight factor column called `probability`, `weight` or `factor` to create a [[:docs:generator:histogram|histogram (distribution)]]
+    * contains optionally other meta columns (for example ''gender'' for a ''firstname'')
+    * is located under the [[:docs:connection:built-in|entity connection]]
+
+Example with the `firstname_fr.csv` entity file
+<unit>
+<code bash>
+tabli data head firstname/firstname_fr.csv@entity
+</code>
+<console>
+The first 10 rows of the data resource (firstname/firstname_fr.csv@entity): 
+firstname   gender   probability                  
+---------   ------   --------------------------   
+Aadam       M        3.14396359513727576E-7       
+Aadel       M        6.52081338250694231E-7       
+Aadil       M        0.000002142552968537995330   
+Aahil       M        2.44530501844010337E-7       
+Aakash      M        3.02752049902108036E-7       
+Aalia       F        4.77416694076401133E-7       
+Aaliya      F        0.000002422016399216864286   
+Aaliyah     F        0.000028086074783226330085   
+Aalya       F        0.000001490471630287301099   
+Aalyah      F        0.000002585036733779537844
+</console>
+</unit>

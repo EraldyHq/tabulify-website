@@ -6,11 +6,11 @@
     "page_id": "v30lma93q6qbikqzefk50"
 }
 ---
-====== Variables ======
+====== Attribute ======
 
 
 ===== About =====
-''attribute'' are key pair values that are used to:
+''attributes'' are key pair values that are used to:
   * configure the behavior of tabulify (known as parameter)
   * or as [[template|template variable]] 
 

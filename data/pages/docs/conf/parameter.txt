@@ -19,7 +19,7 @@ Configuration Priority In Descendent Order:
     * [[vault|Configuration Vault]] for:
       * [[docs:conf:global|global parameters]]
       * [[docs:connection:attribute|connection parameter]]
-    * [[:docs:resource:data-definition|data definition]] for data resource parameters
+    * [[:docs:resource:data-definition|data definition]] for data resource parameters or [[:docs:resource:generator|data generation file]]
   * [[docs:conf:os|Operating System Environment variables]] 
     * with the ''TABLI_'' prefix for [[:docs:conf:global|global attributes]]
     * with the ''TABLI_CONNECTION_NAME'' prefix for [[docs:connection:attribute|a connection attribute]]
