@@ -93,10 +93,8 @@ If you can call the ''tabli'' command line, your installation is validated.
 <unit>
 <code bash>
 tabli --help
-:: or if you didn't have the directory in your PATH environment variable
-:: TABULIFY_HOME\tabli.cmd --help
-:: in our installation documentation
-:: c:\tabulify\tabli.cmd
+# or if you didn't have the directory in your PATH environment variable
+# TABULIFY_HOME\bin\tabli --help
 </code>
   * The [[docs:tabli:help|help]] should shows up.
 <console>
@@ -130,18 +128,26 @@ where:
 
   Commands:
 
-    conf          Management and configuration of the tabli environment.
+    connection      Management and configuration of the connections to systems.
 
-    connection    Management and configuration of the connections to systems.
+    data            Data operations against data resources (table, file, ...).
 
-    data          Data operations against data resources (table, file, ...).
+    env             Management and configuration of the tabli execution environment
 
-    vault         Encrypt and decrypt sensitive information
+    flow            Execute Flow
+
+    init            Create a project/configuration file
+
+    service         Start and stop services
+
+    vault           Encrypt and decrypt sensitive information
 
 
   Option:
 
-    -h,--help     Print this help
+    -h,--help       Print this help
+
+    -v,--version    Print version information
 </console>
 </unit>
 
