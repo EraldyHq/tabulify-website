@@ -86,3 +86,10 @@ The below data type are supported:
 
 Why the time must be quoted? Yaml does not [[https://yaml.org/spec/1.2.2/|support time as a type]]. The time string should be quoted.
 
+
+===== How to define a Bucket definition in a data set =====
+
+Note that the [[docs:generator:data-set|data set]] and the [[entity|entity]] generator creates histogram from [[:docs:resource:resource|resources]].
+
+  * The data being defined by the ''column'' attribute
+  * the chance factor being defined by the `probability`, `weight` or `factor` column

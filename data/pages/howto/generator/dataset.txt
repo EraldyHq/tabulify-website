@@ -1,0 +1,153 @@
+====== How to generate data with a data set? ======
+
+
+===== About =====
+This howto will show you how to generate data with an [[:docs:generator:data-set|data set generator]].
+
+In this examples, we use a predefined csv [[:docs:generator:entity|entity file]] but you could any [[:docs:resource:resource|data resource]] such as :
+  * a [[docs:resource:table|sql table]]
+  * a [[:docs:resource:select|sql query]]
+
+This [[:docs:resource:generator|generator resource]] uses 
+  * the `firstname` entity [[:docs:resource:csv|csv]] file
+  * to fill a `firstname` column
+
+
+
+===== Example =====
+
+==== Basic ====
+
+In this basic example, the data set is located by the [[:docs:resource:data_uri|data URI]] value.
+
+This value ''firstname/firstname_fr.csv@entity'' locates:
+  * the ''firstname_fr.csv'' file
+  * stored in the [[:docs:connection:built-in|entity]] directory
+  * under the ''firstname/'' directory
+
+The content of the data set is
+<unit>
+<code bash>
+tabli data head firstname/firstname_fr.csv@entity
+</code>
+<console>
+The first 10 rows of the data resource (firstname/firstname_fr.csv@entity): 
+firstname   gender   probability                  
+---------   ------   --------------------------   
+Aadam       M        3.14396359513727576E-7       
+Aadel       M        6.52081338250694231E-7       
+Aadil       M        0.000002142552968537995330   
+Aahil       M        2.44530501844010337E-7       
+Aakash      M        3.02752049902108036E-7       
+Aalia       F        4.77416694076401133E-7       
+Aaliya      F        0.000002422016399216864286   
+Aaliyah     F        0.000028086074783226330085   
+Aalya       F        0.000001490471630287301099   
+Aalyah      F        0.000002585036733779537844
+</console>
+</unit>
+
+Using this dataset, we can generate generates 10 `firstnames` with this [[:docs:resource:generator|generator file]].
+<unit>
+<file yaml generator/dataset-basic--datagen.yml>
+MaxRecordCount: 10
+Columns:
+  - name: firstname
+    Type: varchar
+    DataGenerator:
+      type: data-set
+      dataUri: firstname/firstname_fr.csv@entity
+      column: firstname # for demo purpose as this is the default value
+
+
+</file>
+  * You can see the output with [[:docs:tabli:data:print|tabli print]]
+<code bash>
+tabli data print generator/dataset-basic--datagen.yml@howto
+</code>
+<console>
+firstname   
+---------   
+Yvonnet     
+Wladyslaw   
+Slimane     
+Vaishnavi   
+Léyan       
+M'hammed    
+Trinida     
+Yumna       
+Évelyne     
+Eloé
+</console>
+</unit>
+
+==== Meta Column Dependency ====
+
+A `firstname` depends on the `gender`. Each entity may have one or more meta columns such as `gender`.
+
+To express this dependency, you can use the ''meta_columns'' attribute to map:
+  * a local column (ie from the generator)
+  * to a entity column (ie from the data set)
+
+<unit>
+<file yaml generator/dataset-meta-columns--datagen.yml>
+maxRecordCount: 30
+columns:
+  - name: gender
+    type: varchar
+    dataGenerator:
+      type: histogram
+      buckets:
+        M: 1.0
+        F: 2.0
+  - name: firstname
+    type: varchar
+    dataGenerator:
+      type: data-set
+      dataUri: firstname/firstname_fr.csv@entity
+      column: firstname # for demo purpose as this is the default value
+      metaColumns:
+        gender: gender
+
+
+</file>
+  * You can see the output with [[:docs:tabli:data:print|tabli print]]
+<code bash>
+tabli data print generator/dataset-meta-columns--datagen.yml@howto
+</code>
+<console height="300px" scroll="toggle">
+gender   firstname     
+------   -----------   
+F        Dinna         
+F        Aura          
+M        Edilbert      
+F        Alayna        
+F        Lise-anne     
+M        Wejdi         
+M        Jean-lin      
+M        Jacopo        
+M        Nouam         
+M        Wisley        
+F        Nayéli        
+F        Housnati      
+F        Marlene       
+F        Kiyomi        
+F        Mihya         
+F        Aurele        
+F        Anisa         
+M        Rouan         
+F        Marie-serge   
+F        Kinaya        
+F        Lihanna       
+F        So            
+F        Cassandre     
+F        Rimah         
+F        Kim-lien      
+M        Radjy         
+F        Méissa        
+M        Livan         
+F        Maximine      
+F        Eliane
+</console>
+</unit>
+

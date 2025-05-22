@@ -18,6 +18,7 @@ They are used in a [[docs:resource:generator|resource generator (aka generator)]
 | [[random|Random]] | Generate data randomly |
 | [[histogram|Histogram]] | Generate a distribution of data |
 | [[docs:generator:expression|Expression]] | Generate derived data (expression from other data) |
-| [[docs:generator:entity|Entity]] | Generate data from predefined data set |
+| [[docs:generator:entity|Entity]] | Generate data from entity data set |
+| [[docs:generator:data-set|Data Set]] | Generate data from a data set |
 | [[docs:generator:regexp|Regular Expression]] | Generate data from a regular expression |
 

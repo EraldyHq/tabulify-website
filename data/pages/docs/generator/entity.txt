@@ -11,6 +11,10 @@
 A ''entity column generator''  is a [[column|column data generator]] that [[generator|generates]] data from 
 a specific provided csv file located in the [[:docs:connection:built-in|entity connection]].
 
+
+If you want to provide your own data set, you can use the [[data-set|data set generator]].
+
+
 ===== Example =====
 
 [[:howto:generator:entity|]]
@@ -21,6 +25,7 @@ The list of [[:docs:conf:attribute|attributes]] that you can use in the [[:docs:
 
 ^ Attribute Name ^ Description ^ Default ^ 
 | ''NAME'' | The name of the entity | Name of the column |
+| ''COLUMN'' | The name of the column to the data from the entity | Name of the column |
 | ''LOCALE'' | The locale of the entity for entity localization | ''en'' |
 | ''META_COLUMNS'' | A map that links a local column to a metadata entity column  | Empty |
 
