@@ -1,0 +1,116 @@
+====== How to generate data with an entity? ======
+
+
+===== About ====
+This howto will show you how to generate data with an [[:docs:generator:entity|entity generator]].
+
+
+
+===== Example =====
+
+
+
+==== Basic ====
+
+Example of a basic entity [[:docs:resource:generator|generator resource]] that uses the `firstname` entity to fill a `firstname` column
+<unit>
+<file yaml generator/entity-basic--datagen.yml>
+MaxRecordCount: 10
+Columns:
+  - name: firstname
+    Type: varchar
+    DataGenerator:
+      type: entity
+
+
+</file>
+  * You can see the output with [[:docs:tabli:data:print|tabli print]]
+<code bash>
+tabli data print generator/entity-basic--datagen.yml@howto
+</code>
+<console>
+firstname   
+---------   
+Phoebe      
+Penelope    
+Reggie      
+Cathleen    
+Reina       
+Dorthea     
+Lannie      
+Josephina   
+Wade        
+Ethelyn
+</console>
+</unit>
+
+==== Meta Column Dependency ====
+
+A `firstname` depends on the `gender`. Each entity may have one or more meta columns such as `gender`.
+
+To express this dependency, you can use the ''meta_columns'' attribute to map:
+  * a local column (ie from the generator)
+  * to a entity column (ie from the data set)
+
+<unit>
+<file yaml generator/entity-meta-columns--datagen.yml>
+MaxRecordCount: 30
+Columns:
+  - name: gender
+    Type: Varchar
+    DataGenerator:
+      type: histogram
+      Buckets:
+        M: 1.0
+        F: 2.0
+  - name: firstname
+    Type: Varchar
+    DataGenerator:
+      type: entity
+      name: firstname
+      locale: en
+      metaColumns:
+        gender: gender
+
+
+</file>
+  * You can see the output with [[:docs:tabli:data:print|tabli print]]
+<code bash>
+tabli data print generator/entity-meta-columns--datagen.yml@howto
+</code>
+<console height="300px" scroll="toggle">
+gender   firstname   
+------   ---------   
+M        Arnold      
+F        Beatris     
+M        Amado       
+F        Amanda      
+M        Alvin       
+F        Ashlie      
+F        Bettina     
+F        Alvera      
+F        Althea      
+F        Beatris     
+F        Bridgette   
+F        Ashlie      
+F        Alverta     
+F        Alyce       
+F        Britt       
+F        Alverta     
+F        Bettina     
+F        Amalia      
+M        Allan       
+F        Bettina     
+F        Amalia      
+F        Ashlie      
+M        Alphonso    
+M        Alvaro      
+M        Alphonso    
+M        Brice       
+M        Brandon     
+F        Alysa       
+F        Brittani    
+F        Britta
+</console>
+</unit>
+

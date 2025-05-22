@@ -25,7 +25,7 @@ The [[docs:tabli:data:head|head command]]  will print the generated data.
 <code bash>
 tabli data head --limit 30 sequence--datagen.yml@howto
 </code>
-<console>
+<console height="300px"  scroll="toggle">
 The first 30 rows of the data resource (sequence--datagen.yml@howto):
 seq_int   seq_char
 -------   --------
@@ -78,6 +78,6 @@ sequence--datagen.yml@howto   sequence@sqlite   58             30
 </console>
 </unit>
 
-==== Create a CSV File ====
+==== Create any type of File ====
 
 [[..:csv:generate]]
