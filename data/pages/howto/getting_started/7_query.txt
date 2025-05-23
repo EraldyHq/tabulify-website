@@ -69,7 +69,8 @@ with year_total as (
 
 <unit>
 <code bash>
-tabli data print (sqlite/query_11.sql@tpcds_query)@sqlite
+tabli data print "(sqlite/query_11.sql@tpcds_query)"@sqlite
+# The quotes are only mandatory in bash because parenthesis are a bash token (ie subshell)
 </code>
 <console>
 customer_id        customer_first_name   customer_last_name   customer_email_address
@@ -90,10 +91,18 @@ Don't forget that a [[docs:resource:query|query]] is just a [[docs:resource:reso
 
 ==== How to copy a query into another table ====
 
+<unit display="none">
+In case of resume, we need to be sure that the target does not exist
+<code bash>
+tabli data drop --not-strict query_11@sqlite
+</code>
+</unit>
+
 For instance, if you want to [[docs:tabli:data:copy|copy]] its output to a [[docs:resource:table|table]] called ''query_11'', you would issue the following command:
 <unit>
 <code bash>
-tabli data copy (sqlite/query_11.sql@tpcds_query)@sqlite  query_11@sqlite
+tabli data copy "(sqlite/query_11.sql@tpcds_query)"@sqlite  query_11@sqlite
+# The quotes are only mandatory in bash because parenthesis are a bash token (ie subshell)
 </code>
 </unit>
 And the content of the new [[docs:resource:table|table]] is just the same than the output  of the ''query 11''.
@@ -120,7 +129,8 @@ For instance, if you want to [[docs:tabli:data:copy|copy]] its output:
 you would issue the following command
 <unit>
 <code bash>
-tabli data copy (sqlite/query_11.sql@tpcds_query)@sqlite  query_11.csv@cd
+tabli data copy "(sqlite/query_11.sql@tpcds_query)"@sqlite  query_11.csv@cd
+# The quotes are only mandatory in bash because parenthesis are a bash token (ie subshell)
 </code>
 </unit>
 And the content of the new csv is also just the same than the output  of the ''query 11''.
