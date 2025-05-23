@@ -11,6 +11,12 @@
 
 A ''sql view'' can be:
   * [[docs:op:create|created]]
+<code bash>
+# example creating a view from the select query query_11.sql called query_11 (default)
+tabli data create "(sqlite/query_11.sql@tpcds_query)@sqlite" @sqlite
+# example creating a view from the select query query_11.sql called view_query_11
+tabli data create "(sqlite/query_11.sql@tpcds_query)@sqlite" view_query_11@sqlite
+</code>
   * [[docs:op:drop|dropped]]
   * [[docs:op:transfer|transfered]]
 
