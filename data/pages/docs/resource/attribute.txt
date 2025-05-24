@@ -112,7 +112,7 @@ xml                                              1
 
 ==== Set ====
 You can set the attributes via:
-  * a [[data-definition#attribute|data definition]]
+  * a [[data-definition|data definition file or fragment]]
   * the [[docs:tabli:option|tabli options]]
       * ''source-attribute'' or ''target-attribute'' in a [[docs:tabli:data:transfer|transfer command]]
       * ''attribute'' for others [[docs:tabli:data:start|data command]]

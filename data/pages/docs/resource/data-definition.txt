@@ -7,28 +7,59 @@
 
 
 ===== About =====
-A ''data definition'' is a serie of properties in [[docs:common:yaml|yaml]] format that defines the [[structure|data structure]] and [[attribute|attributes]] of a a [[resource|data resource]].
+A ''data definition'' is a [[docs:common:yaml|yaml]] file or fragment that defines the [[attribute|attributes]] of a [[resource|data resource]] ( [[structure|data structure]], ...)
 
 
 
-===== Usage =====
-==== Data definition file ====
-If you have a [[file|file]] with the [[logicalname|logical name]] ''foo'', you may defined its data definition by creating the yaml file ''foo--datadef.yml'' in the same directory.
-==== Inline Data Definition ====
-The [[docs:op:define|define operation]] uses this format to define inline data resources.
-==== Generator ====
+
+===== Example =====
+
+
+
+<code yaml Date.yml>
+LogicalName: Date
+Columns:
+  - name: DATE_ID
+    Type: Date
+  - name: MONTH_NUMBER
+    Type: Integer
+  - name: MONTH_DESC
+    Type: Varchar
+    Precision: 20
+</code>
 
 The [[docs:resource:generator|resource generator]] uses this format to define the data generated and their parameters.
 
-===== Structure =====
+===== Usage =====
+==== File ====
+If you have a [[file|file]] with the [[logicalname|logical name]] ''foo'', you may defined its data definition by creating the yaml file ''foo--datadef.yml'' in the same directory.
 
-==== Common ====
+==== Fragment ====
+This format is used in [[:docs:flow:supplier|data supplier pipeline step]] such as:
+  * the [[docs:op:define|define operation]] 
+  * or the [[docs:op:select|select operation]]
+
+
+===== Format =====
+
 
 The following ''data definition'' file shows the common structure of all data definition file that defines the name of the tabular structure and its columns.
 
+==== Scalar ====
 
+At the root, you can set any scalar attributes such as the [[docs:resource:attribute|common attributes]]
+
+Example:
 <code yaml DataDef.yml>
 LogicalName: LogicalName
+</code>
+where
+  * ''logicalName'' is the [[logicalname|logical name]] of the [[resource|resource]] (Default to the name of the file without structure information).
+
+==== Relational Structure ====
+
+
+<code yaml DataDef.yml>
 PrimaryColumns: [ "column_name1", "column_name2" ]
 Columns:
   - name: column_name1
@@ -42,13 +73,8 @@ Columns:
     Precision:
     Scale:
     Comment:
-  .....
-Request:
-    header: X-HTTP-header
-    Accept: ...
 </code>
 where:
-  * ''logicalName'' is the [[logicalname|logical name]] of the [[resource|resource]] (Default to the name of the file without structure information).
   * ''columns'' defines a list of column
       * ''name'' is the name of the column
       * ''type'' is the [[docs:common:data_type|data type]] of a column (Default: ''varchar'')
@@ -57,39 +83,25 @@ where:
       * ''comment'' is a comment on the column
       * ''position'' is the physical column position 
   * ''primaryColumns'' defines a list of column names that compose the primary key.
+
+
+
+==== Request ====
+
+<code yaml DataDef.yml>
+Request:
+    header: X-HTTP-header
+    Accept: ...
+</code>
   * ''request'' are request attributes used when the resource is dynamic (mostly used to defined [[docs:system:http|http resource]])
 
 
 
-Example:
-<code yaml Date.yml>
-LogicalName: Date
-Columns:
-  - name: DATE_ID
-    Type: Date
-  - name: MONTH_ID
-    Type: Varchar
-    Precision: 6
-  - name: MONTH_NUMBER
-    Type: Integer
-  - name: MONTH_NAME
-    Type: Varchar
-    Precision: 20
-  - name: MONTH_DESC
-    Type: Varchar
-    Precision: 20
-  - name: MONTH_DESC_SHORT
-    Type: Varchar
-    Precision: 10
-  - name: YEAR_NUMBER
-    Type: Varchar
-    Precision: 4
-</code>
 
-==== Extra Variables ====
+===== Extra Attributes =====
 
 
-Each action may need additional information about a table or a column. This information can be added at each level (table or column) as a attribute (ie property).
+Each data resource type may need additional information about a table or a column. This information can be added at each level (table or column) as a attribute (ie property).
 
 <code yaml DataDefExtra.yml>
 DataResourceAttribute1: value1

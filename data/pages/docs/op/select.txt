@@ -7,7 +7,7 @@
 
 
 ===== About =====
-''select'' is a [[docs:op:op|data operation]] that selects [[docs:resource:resource|data Resources]].
+''select'' is a [[:docs:flow:supplier|supplier]] [[docs:op:op|data operation]] that selects [[docs:resource:resource|data Resources]].
 
 
 
@@ -34,9 +34,7 @@ The ''select'' operations has the following arguments.
 | ''strict'' | false | If set to true, the ''select'' operation will throw an error if the selection does not return any data resource |
 | ''type'' | Optional, detected by default | The [[:docs:resource:type|media type]] of the selected resources |
 | ''logical-name'' | Optional | A [[:docs:conf:template|template logical name]] |
-^ Data Definition ^^^
-| ''data-definition'' | Optional | A inline [[:docs:resource:data-definition|data definition]] |
-| ''attributes'' | a map of key value | The attributes of the data path |
+| ''data-definition'' | Optional | The data attributes defined in a [[:docs:resource:data-definition|data definition]] format |
 
 ===== Usage =====
 

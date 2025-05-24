@@ -27,7 +27,7 @@ The ''define'' operations accept the following arguments.
 ^ Arguments ^ Mandatory ^ Definition ^
 | ''data-uri'' | only if ''data'' is not defined | The [[docs:resource:data_uri|data uri]] is the location of the resource |
 | ''data'' | only if ''data-uri'' is not defined | The ''data'' as a list of [[docs:resource:record|records]] (the data are in the inline) |
-| ''data-definition'' | no | The [[docs:resource:data-definition|data definition]] |
+| ''data-definition'' | no | The attributes in a [[docs:resource:data-definition|data definition]] |
 | ''data-resources'' | | to define more than one data resource (a list of inline data resources) |
 
 ===== Usage =====
