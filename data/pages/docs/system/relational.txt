@@ -25,7 +25,7 @@ You can:
 ===== Supported Relational Databases =====
 
 For the supported database, ''Tabulify'' introduces a layer that:
-  * corrects the driver mistake
+  * corrects the driver mistakes
   * and/or implements the database SQL dialect
 
 List:
@@ -34,7 +34,10 @@ List:
   * [[docs:system:oracle:oracle]]
   * [[docs:system:mysql:mysql]]
   * [[:docs:system:sqlserver|]]
-  * all relational databases that:
+
+===== Other databases =====
+
+We support all relational databases that:
     * provides a JDBC driver, 
     * supports [[wp>SQL#Interoperability_and_standardization|ANSI SQL]]
 
@@ -45,9 +48,29 @@ insert into "howto"."d_category" ("cat_id", "cat_desc", "load_timestamp")
 values (?, ?, ?) 
 on duplicate key update "load_timestamp" = values ("load_timestamp")
 ```
-If you want a relational database that does not support this syntax, [[:contact|contact us]].
+If you want a relational database that does not support this syntax, you can always:
+  * add the driver in the ''jars'' directory
+  * and use the other standard operations (ie [[:docs:op:query|query]], [[:docs:tabli:data:insert|insert]], or [[:docs:op:update|update]])
 
 
+If you still want the ''upsert'' operation and or support for a third SQL database, [[:contact|contact us]].
+
+
+===== Media Type =====
+
+We supports the following type:
+  * ''sql/schema'', ''sql/catalog'': [[:docs:resource:schema|schema/catalog]]
+  * ''sql/table'': [[:docs:resource:table|table]]
+  * ''sql/view'': [[docs:resource:view|view]]
+  * ''sql/script'': [[:docs:resource:query|query]]
+
+If a [[:docs:resource:type|type]] is not specified, the default type is ''table''.
+
+We also can read the following SQL type object:
+  * ''sql/system-view'': System View
+  * ''sql/system-table'': System Table
+  * ''sql/alias'': Alias
+  * ''sql/synonym'': Synonym
 
 
 
