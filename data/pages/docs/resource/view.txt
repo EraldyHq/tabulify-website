@@ -27,6 +27,8 @@ It has the same URI than a [[docs:resource:table|table]]
 catalog.schema.view@connection
 </code>
 
+===== Media Type =====
 
+The [[docs:resource:type|media type]] for a view is ''sql/view''
 
 

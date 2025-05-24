@@ -10,7 +10,9 @@ A ''table'' is a [[docs:resource:content|content resource]] located in a [[docs:
 
 
 
+===== MediaType =====
 
+The [[:docs:resource:type|media type]] for a table is ''sql/table''
 ===== Data URI =====
 The [[docs:resource:data_uri|data URI]] for SQL table looks like:
 

@@ -10,7 +10,9 @@
 ''sql files'' are [[text|text file data resource]] that contains ''sql statement'' as [[docs:resource:record|record]].
 
 
+===== Media Type =====
 
+The [[docs:resource:type|media type]] for a sql file is ''text/sql''
 ===== Arguments =====
 
 ^ Argument ^ Values ^ Default  ^ Description ^
