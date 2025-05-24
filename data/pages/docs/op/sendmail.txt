@@ -46,9 +46,9 @@ Output:
 jakarta.mail.event.TransportEvent[source=smtps://admin@mailpit-bcf52bfa.nip.io]
 
 List of executions
-ExecutionId   OperationName   DataPathsCount   DataPathsList               
------------   -------------   --------------   -------------------------   
-1             select          1                email/analytics.csv@howto   
+ExecutionId   OperationName   DataPathsCount   DataPathsList
+-----------   -------------   --------------   -------------------------
+1             select          1                email/analytics.csv@howto
 2             sendmail        1                email/analytics.csv@howto
 </console>
 </unit>
@@ -63,7 +63,7 @@ pipeline:
     operation: "define"
     args:
       data-resource:
-        data-definition:
+        data-attributes:
           columns: ["to","from","subject","txt","html"]
         data:
           - [ "foo@tabulify.com", "support@tabulify.com", "Email for foo", "A textual email body", "<html><body><h1>A html email body</h1></body></html>"]
@@ -86,9 +86,9 @@ jakarta.mail.event.TransportEvent[source=smtps://admin@mailpit-bcf52bfa.nip.io]
 jakarta.mail.event.TransportEvent[source=smtps://admin@mailpit-bcf52bfa.nip.io]
 
 List of executions
-ExecutionId   OperationName   DataPathsCount   DataPathsList      
------------   -------------   --------------   ----------------   
-1             define          1                ace9e56e2@memory   
+ExecutionId   OperationName   DataPathsCount   DataPathsList
+-----------   -------------   --------------   ----------------
+1             define          1                ace9e56e2@memory
 2             sendmail        1                ace9e56e2@memory
 </console>
 </unit>
@@ -127,9 +127,9 @@ When running the send operation by record, the send operation except the followi
 | ''from'' | yes | ''from'' property of the smtp connection | The ''from'' address (only one) |
 | ''from_name'' | yes | The name of the ''from'' address | The ''from'' address name |
 | ''cc'' | yes | The ''cc'' property of the smtp connection | The ''cc'' address (separated by a ;) |
-| ''cc_names'' | yes | The ''cc_names'' property of the smtp connection | The names of the ''cc'' address | 
+| ''cc_names'' | yes | The ''cc_names'' property of the smtp connection | The names of the ''cc'' address |
 | ''bcc'' | yes | The ''bcc'' property of the smtp connection | The ''bcc'' address (separated by a ;) |
-| ''bcc_names'' | yes | The ''bcc_names'' property of the smtp connection | The names of the ''bcc'' address | 
+| ''bcc_names'' | yes | The ''bcc_names'' property of the smtp connection | The names of the ''bcc'' address |
 | ''subject'' | yes | [[docs:resource:logicalname|logical name]] of the resource and record id |
 | ''txt'' | Mandatory if html is not present | none | The email text body |
 | ''html'' | Mandatory if txt is not present | none | The email html body |

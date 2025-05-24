@@ -7,7 +7,7 @@
 
 
 ===== Define =====
-''define'' is an [[op|operation]] that defines a [[docs:resource:resource|data resource]].
+''define'' is a [[:docs:flow:supplier|supplier]] [[op|operation]] that defines one or more [[docs:resource:resource|data resources]].
 
 
 A [[select|select operation]] may not return any [[docs:resource:resource|data resources]] but the ''define'' operation returns always the data resource that it defines.
@@ -27,7 +27,7 @@ The ''define'' operations accept the following arguments.
 ^ Arguments ^ Mandatory ^ Definition ^
 | ''data-uri'' | only if ''data'' is not defined | The [[docs:resource:data_uri|data uri]] is the location of the resource |
 | ''data'' | only if ''data-uri'' is not defined | The ''data'' as a list of [[docs:resource:record|records]] (the data are in the inline) |
-| ''data-definition'' | no | The attributes in a [[docs:resource:data-definition|data definition]] |
+| ''data-attributes'' | no | The data attributes in a [[docs:resource:data-definition|data definition format]] |
 | ''data-resources'' | | to define more than one data resource (a list of inline data resources) |
 
 ===== Usage =====
@@ -48,7 +48,7 @@ pipeline:
     comment: "This operation define the tabular data resource named 'colors' with two columns"
     operation: "define"
     args:
-      data-definition:
+      data-attributes:
         logicalName: "colors"
         columns: ["id","color"]
       data:
@@ -67,8 +67,8 @@ tabli flow execute pipeline/define_single_inline.yml@howto
 you will get the data of the ''colors'' data resource [[docs:tabli:data:print|printed]] in a tabular format.
 <console>
 List of executions
-ExecutionId   OperationName   DataPathsCount   DataPathsList   
------------   -------------   --------------   -------------   
+ExecutionId   OperationName   DataPathsCount   DataPathsList
+-----------   -------------   --------------   -------------
 1             define          0
 </console>
 </unit>
@@ -81,14 +81,14 @@ pipeline:
     operation: 'define'
     args:
       data-resources:
-        - data-definition:
+        - data-attributes:
             logicalName: "colors"
             columns: ["id","color"]
           data:
             - ["1", "blue"]
             - ["2", "red"]
             - ["3", "yellow"]
-        - data-definition:
+        - data-attributes:
             logicalName: "characters"
             columns:
               - name: "id"
