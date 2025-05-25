@@ -20,18 +20,24 @@ An Excel file has the following [[docs:resource:attribute|attributes]].
 ^ Name ^ Default Value ^ Description ^
 | ''HEADER_ROW_ID'' | ''0'' | The row id where the header is located (''0'' means no header and ''1'' the first line) |
 | ''SHEET_NAME'' |  | The sheet name (Optional, first sheet by default if not set) |
-| ''DATE_FORMAT'' | ''dd/mm/yyyy hh:mm:ss'' | The date format (ie Format Cells > Number > Custom)  |
+| ''TIMESTAMP_FORMAT'' | ''yyyy-MM-dd HH:mm:ss'' | The [[:docs:common:time|timestamp]] format (ie Format Cells > Number > Custom)  |
+| ''DATE_FORMAT'' | ''yyyy-MM-dd'' | The [[:docs:common:time|date]] format (ie Format Cells > Number > Custom)  |
 
-In Excel, dates are numeric cell with an applied date format.
+In Excel, dates are numeric cell with an applied format, when we write:
+  * [[:docs:common:time|date]]: we apply the ''DATE_FORMAT'' format
+  * [[:docs:common:time|timestamp]]: we apply the ''TIMESTAMP_FORMAT'' format
 
 ===== Type supported =====
 
-Excel files supports natively the following SQL data type:
+Excel files supports natively the following [[:docs:common:data_type|SQL data type]]:
 
     * Double (not integer)
-    * Timestamp (numeric with date format)
     * Varchar
     * Boolean
+
+We returns
+    * a [[:docs:common:time|Date]] if the format is at the day level (ie ''YYYY/MM/DD'')
+    * and [[docs:common:time|Timestamp]] otherwise
 
 
 We enforce the type on the whole column even if Excel supports the type by column.

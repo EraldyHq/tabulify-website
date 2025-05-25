@@ -10,14 +10,25 @@
 ===== About =====
 This page contains the documentation about how ''Tabulify'' is managing ''time'' [[data_type|data type]] (ie ''date'', ''timestamp'', ''time'').
 
+
+===== List =====
+
+
+Note that we follow the sql type specification, therefore, we use the following time data type:
+
+^ Name ^ Example ^ Definition  ^
+| Date | ''YYYY-MM-DD'' | hours, minutes, seconds, and milliseconds are set to zero (day level) |
+| Timestamp | ''YYYY-MM-DD HH:MM:SS'' | A full Date Time  (ie instant) |
+| Time | ''HH:MM:SS'' | year, month and day are set to zero |
+
 ===== Conversion =====
-==== Number ====
+==== To Number ====
 
 An integer or a long is considered:
       * for a ''date'' as the number of day since Epoch (''1970-01-01'')
       * for a ''timestamp'' as the number of Millisecond since Epoch (''1970-01-01 00:00:00'')
       * for a ''time'' as the number of second (since the beginning of the day)
-==== String ====
+==== To String ====
 
 ''Tabulify'' will translate automatically a date/time string in a native date/time when loading data.
 
