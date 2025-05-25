@@ -7,40 +7,20 @@
 
 
 ===== About =====
-''sql files'' are [[text|text file data resource]] that contains ''sql statement'' as [[docs:resource:record|record]].
+''sql files'' are [[text|text file data resource]] that:
+  * contains ''sql statement'' as [[docs:resource:record|record]].
+  * have the ''text/sql'' [[docs:resource:type|media type]].
+===== Attributes =====
 
-
-===== Media Type =====
-
-The [[docs:resource:type|media type]] for a sql file is ''text/sql''
-===== Arguments =====
+A sql file accepts the following [[docs:resource:attribute|attributes parameter]]
 
 ^ Argument ^ Values ^ Default  ^ Description ^
-| [[#parsing]] | ''sql'' or ''text'' | ''sql'' | The parsing mode |
-| [[#EndOfRecords]] | See [[#endOfRecords]] | See [[#endOfRecords]] | The end of records for a sql statement |
-| [[text#arguments|columnName]] | - | ''sql'' | The name of the column that stores the SQL statement |
-| You can also set the other [[text#arguments|text arguments]] |||
-
-==== Parsing ====
-The ''parsing'' argument as two values:
-  * [[#sql]]
-  * [[#text]]
+| [[#parsing|PARSING]] | ''sql'' or ''text'' | ''sql'' | The parsing mode |
+| [[#EndOfRecords|END_OF_RECORDS]] | See [[#endOfRecords]] | See [[#endOfRecords]] | The end of records for a sql statement |
+| [[text#arguments|COLUMN_NAME]] | - | ''sql'' | The name of the column that stores the SQL statement |
 
 
-
-=== SQL ===
-The ''sql'' value will extract the SQL statement with a SQL parser that is aware of the SQL language such as:
-  * block of code (ie procedural code) 
-  * comment
-
-In this mode, the returned data path has two columns:
-  * ''type'' that return the type of the statement ("sql","plsql","comment",...)
-  * and a column for the SQL statement with the name specified by the [[#arguments|columnName argument]] and a [[docs:common:data_type|clob data type]].
-
-=== Text ===
-The ''text'' mode will extract the SQL statement with the [[#EndOfRecords|end Of Records]] values on text level.
-
-In this mode, the returned data path has only one column that stores the SQL statement with the name specified by the [[#arguments|columnName argument]] and a [[docs:common:data_type|clob data type]].
+Because a SQL file is a [[docs:resource:text|text file]], you can also set  [[text#attributes|text attributes]]
 
 ==== EndOfRecords ====
 
@@ -52,3 +32,41 @@ When the [[#parsing|parsing mode]] is set to text, the following default [[text#
 | '';'' followed by an ''end of line character'' | '';\n'', '';\r\n'', '';\r'' |
 | ''/'' followed by an ''end of line character'' | ''/\n'', ''/\r\n'', ''/\r'' |
 | the word ''GO'' or ''go'' on one line | ''\ngo\n'', ''\r\ngo\r\n'', ''\rgo\r'' \\ ''\nGO\n'', ''\r\nGO\r\n'', ''\rGO\r'' |
+
+
+
+
+===== Parsing =====
+The ''parsing'' attribute has two values:
+  * [[#sql]]
+  * [[#text]]
+
+
+
+==== SQL ====
+The ''sql'' value will extract the SQL statement with a SQL parser that is aware of the SQL language such as:
+  * block of code (ie procedural code)
+  * comment
+
+In this mode, the returned data path has two columns:
+  * ''type'' that return the type of the statement ("sql","plsql","comment",...)
+  * and a column for the SQL statement with the name specified by the [[#arguments|columnName argument]] and a [[docs:common:data_type|clob data type]].
+
+==== Text ====
+
+The ''text'' mode will extract the SQL statement with the [[#EndOfRecords|end Of Records]] values on text level.
+
+In this mode, the returned data path has only one column that stores the SQL statement with the name specified by the [[#arguments|columnName argument]] and a [[docs:common:data_type|clob data type]].
+
+
+===== Transfer =====
+
+
+
+==== Structure Source / Target ====
+
+In a [[:docs:op:transfer|transfer]]:
+  * as a [[:docs:flow:source|source]], in:
+    * [[#text|text mode]]: one column
+    * [[#sql|sql mode]]: 2 columns (type and sql)
+  * as a [[docs:flow:target|target]], it's considered a free form structure that accepts any number of columns.
