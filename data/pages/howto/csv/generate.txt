@@ -6,8 +6,7 @@
     "description": "This article shows you how to generate a csv file from a generator tabular file.",
     "low_quality_page": "false",
     "name": "Generate a CSV",
-    "page_id": "dldtsswriy1bmcinb28vy",
-    "title": "How to create a CSV File with generated data"
+    "page_id": "dldtsswriy1bmcinb28vy"
 }
 ---
 ====== Tabulify - How to create a CSV File with generated data ======

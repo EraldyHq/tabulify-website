@@ -5,14 +5,14 @@
     ],
     "description": "This database howto will show you how to load Xml file and document into a database.",
     "low_quality_page": "false",
-    "page_id": "k9z63dibggq5kin4ubajf"
+    "page_id": "34iuu3zqfjqop1ssuirl3"
 }
 ---
 ====== HowTo - How to load XML files into a database with Tabulify ======
 
 
 ===== Howto =====
-This [[..:database:database|database howto]] will show you how to load <icon name="mdi:xml"/> [[docs:resource:xml|Xml file and document]] into a [[docs:system:database|database]].
+This Howto will show you how to load <icon name="mdi:xml"/> [[docs:resource:xml|Xml file and document]] into a [[docs:system:database|database]].
 
 
 ===== Steps =====
@@ -25,14 +25,15 @@ tabli data drop --not-strict wikipedia@postgres
 
 
 ==== Start Postgres ====
-Normally our [[..:database:database|standard database howto]] are created with [[docs:system:sqlite:sqlite|Sqlite]] but because ''Sqlite'' does not support any SQL XML function, nor native XML [[docs:common:data_type|data type]], we have created this ''howto'' with the [[docs:system:postgres:postgres|Postgres database]].
+Normally our database howto are created with [[docs:system:sqlite:sqlite|Sqlite]] but because ''Sqlite'' does not support any SQL XML function, nor native XML [[docs:common:data_type|data type]], we have created this ''howto'' with the [[docs:system:postgres:postgres|Postgres database]].
 
-The next steps will be using the [[howto:postgres:connection|postgres howto connection]].
+The next steps will be using the [[howto:postgres:connection_service|postgres howto connection]].
 
-  * You need to [[howto:postgres:connection#docker|start the postgres docker image]].
+  * You need to [[howto:postgres:connection_service#docker|start the postgres docker image]].
   * [[docs:tabli:connection:ping|Ping]] your connection to check that the database is up.
 <unit>
 <code bash>
+tabli service start postgres
 tabli connection ping postgres
 </code>
 <console>

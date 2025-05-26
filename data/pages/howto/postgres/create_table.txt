@@ -4,8 +4,7 @@
     "description": "This Howto will show you how to copy the data definition of a SQL table from another SQL table",
     "low_quality_page": "false",
     "name": "Create a table from a table",
-    "page_id": "qotxtxkjlhw885z3nse6b",
-    "title": "How to create a table from the definition of another SQL table"
+    "page_id": "qotxtxkjlhw885z3nse6b"
 }
 ---
 

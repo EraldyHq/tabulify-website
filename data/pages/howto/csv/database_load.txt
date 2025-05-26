@@ -6,8 +6,7 @@
     "canonical": ":howto:database:load_csv",
     "description": "How to upload a CSV file into a SQL table in two steps",
     "name": "Load a CSV into a DB",
-    "page_id": "01qgahm9kkzmqm0x9bndc",
-    "title": "How to load a CSV file into a SQL table"
+    "page_id": "01qgahm9kkzmqm0x9bndc"
 }
 ---
 

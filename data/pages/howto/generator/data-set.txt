@@ -1,4 +1,12 @@
-====== How to generate data with a data set? ======
+---json
+{
+    "aliases": [
+        { "path": ":howto:generator:dataset" }
+    ],
+    "page_id": "k57166jzaaj85t6rnd7z3"
+}
+---
+====== How to generate data with a  data set? ======
 
 
 

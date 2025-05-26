@@ -1,3 +1,8 @@
+---json
+{
+    "page_id": "ujk216ops1lf8nqp7qqoe"
+}
+---
 ====== Generator - DataSet Generator ======
 
 
@@ -13,7 +18,8 @@ A ''data set generator''  is a [[column|column data generator]] that [[generator
 ===== Example =====
 
 
-[[:howto:generator:dataset|]]
+  * [[:howto:generator:data-set|]]
+
 
 ===== DataGenerator Attributes =====
 

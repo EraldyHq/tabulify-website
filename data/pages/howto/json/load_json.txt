@@ -10,8 +10,7 @@
     ],
     "low_quality_page": "false",
     "name": "Load JSON in DB",
-    "page_id": "a8z097oexo9em70mdaha6",
-    "title": "How to load a JSON documents in a database"
+    "page_id": "a8z097oexo9em70mdaha6"
 }
 ---
 
