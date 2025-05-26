@@ -7,7 +7,7 @@
 
 
 ===== About =====
-A ''Sql Select statement'' or ''Sql query'' is a [[query|query]] performed against a [[docs:system:database|database system]].
+A ''Sql Select statement'' is a ''SQL'' [[query|query]] performed against a [[docs:system:database|database system]].
 
 A ''Sql Query'' will return [[tabular|tabular data]]
 and is therefore considered as a [[content|content data resource]].

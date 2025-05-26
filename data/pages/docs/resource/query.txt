@@ -7,7 +7,7 @@
 
 ===== Query =====
 
-A ''query'' is a [[script|script]] that returns a [[docs:resource:content|content resource]].
+A ''query'' is a [[script|script]] that returns a [[docs:resource:content|content resource]] (ie  retrieves data)
 
 That's why we called them also ''runtime'' [[resource|data resource]] because the [[docs:resource:content|content]] is created when the ''query'' is running.
 
