@@ -1,0 +1,41 @@
+====== How to create a SQL View ======
+
+
+===== About =====
+
+This ''howto'' shows you how to create a [[:docs:resource:view|sql view]] with a  [[:docs:resource:sql|SQL file]]
+
+===== The Select Query =====
+
+We are going to use the [[:docs:connection:tpcds_query|tpcds]] ''query_11.sql'' to create this view.
+
+<file sql sqlite/query_11.sql>
+</file>
+
+===== The creation =====
+
+<unit display="none">
+Drop the view if it exists
+<code bash>
+tabli data drop --not-strict query_11@sqlite
+</code>
+</unit>
+
+With the [[:docs:tabli:data:create|tabli create]] command, to create view called ''query_11'' from the ''query_11.sql'' file, you would execute the following command:
+<unit>
+<code bash>
+tabli data create \
+  --target-attribute type=view \
+  sqlite/query_11.sql@tpcds_query \
+  @sqlite
+</code>
+where:
+  * ''--target-attribute type=view'' specifies the [[:docs:resource:type|media type]] as [[:docs:resource:view|view]]. 
+    * It means that we want to create a sql view and not a [[:docs:resource:table|sql table]] (the default, for the [[:docs:op:create|create operation]] in a relational system)
+  * ''sqlite/query_11.sql@tpcds_query'' is a [[:docs:resource:data_selector|data selector]] that selects the ''query_11.sql'' [[:docs:connection:tpcds_query|tpcds]] [[:docs:resource:sql|sql file]]  as [[:docs:flow:source|source]]
+  * ''@sqlite'' select the [[:howto:sqlite:connection|sql howto connection]] as [[:docs:flow:target|target]]
+
+Output:
+<console>
+</console>
+</unit>

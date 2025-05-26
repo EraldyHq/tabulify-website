@@ -9,29 +9,31 @@
 ''view'' is a [[resource|data resource]] that represents a ''SQL view'' of a [[docs:system:relational|relational database]].
 
 
-A ''sql view'' can be:
-  * [[docs:op:create|created]]
-<code bash>
-# example creating a view from the select query query_11.sql called query_11 (default)
-tabli data create "(sqlite/query_11.sql@tpcds_query)@sqlite"
-# example creating a view from the select query query_11.sql called view_query_11
-# the type target attribute is mandatory
-tabli data create --target-attribute type=view "(sqlite/query_11.sql@tpcds_query)@sqlite" view_query_11@sqlite
-# example creating a view from a sql text file
-tabli data create --target-attribute type=view sqlite/query_11.sql@tpcds_query view_query_11@sqlite
-</code>
-  * [[docs:op:drop|dropped]]
-  * [[docs:op:transfer|transfered]]
+
+===== Example =====
+
+  * [[:howto:sqlite:create_view|]]
+
+===== Operations =====
+
+A ''sql view'' supports the following [[docs:op:op|data operations]]:
+  * [[:howto:sqlite:create_view|create]]
+  * [[docs:op:drop|drop]]
+  * [[docs:op:transfer|transfer]] (copy, ...)
+
+and has a [[:docs:resource:structure|structure]] only if the select query is valid (a view can be created with an invalid query).
 
 
-It has the same URI than a [[docs:resource:table|table]]
+===== Data Uri =====
+
+It has the same [[:docs:resource:data_uri|URI]] as any relation object such as a [[docs:resource:table|table]]
 
 <code sql>
-catalog.schema.view@connection
+catalog.schema.viewName@connection
 </code>
 
 ===== Media Type =====
 
-The [[docs:resource:type|media type]] for a view is ''sql/view''
+The [[docs:resource:type|media type]] for a view is ''sql/view'' or ''view'' for short against a [[:docs:system:relational|relational system]]
 
 

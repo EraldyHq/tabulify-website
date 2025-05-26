@@ -33,7 +33,8 @@ Example with the below [[data_selector|data selector]]
 D?*@sqlite
 </code>
 and the below target data uri
-<code>
+<code bash>
+# 2 for the second glob pattern (ie for the *), 1 being for the first ?
 $2@sqlite
 </code>
   * if the source table name were ''D_TIME'', ''D_CUSTOMERS'',

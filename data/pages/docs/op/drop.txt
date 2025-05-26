@@ -18,3 +18,12 @@ Example:
 As there is no way to retrieve the data or metadata, you should use this operations with care and don't forget to backup your data.
 </note>
 
+
+===== Arguments =====
+
+^ Name ^ Description ^
+| ''with-force'' | Drop the foreign keys for a table, don't check the structure for [[:docs:resource:view|view]] |
+
+===== Execution =====
+
+See the [[:docs:tabli:data:drop|tabli data drop]] cli command
