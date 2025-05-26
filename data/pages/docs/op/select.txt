@@ -31,10 +31,10 @@ The ''select'' operations has the following arguments.
 ^ Argument ^ Default ^ Description ^
 | [[docs:resource:data_selector|data selector]] | - | It will select [[docs:resource:resource|data resources]] by [[docs:resource:name|name]] |
 | the [[docs:op:with-dependencies|with-dependencies]] option | false | If set to true, the [[docs:resource:dependency|dependencies]] will be added |
-| ''strict'' | false | If set to true, the ''select'' operation will throw an error if the selection does not return any data resource |
+| ''strict'' | false | If set to true, the ''select'' operation will throw an error if \\ * the selection does not return any data resource \\ * or any view is invalid |
 | ''type'' | Optional, detected by default | The [[:docs:resource:type|media type]] of the selected resources |
 | ''logical-name'' | Optional | A [[:docs:conf:template|template logical name]] |
-| ''data-attributes'' | Optional | The data attributes defined in a [[:docs:resource:data-definition|data definition]] format |
+| ''data-attributes'' | Optional | The [[docs:resource:attribute|data attributes]] defined in a [[:docs:resource:data-definition|data definition]] format |
 
 ===== Usage =====
 
@@ -68,6 +68,8 @@ Example:
 <code bash>
 tabli data command [--not-strict] [--with-dependency] dataSelector
 </code>
+
+You can verify the selected data resources with the [[:docs:tabli:data:list|tabli data list command]].
 </tabpanel>
 </tabpanels>
 
