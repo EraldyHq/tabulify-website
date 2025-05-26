@@ -3,12 +3,12 @@
     "page_id": "o3xebattvtoblu88ies4q"
 }
 ---
-====== How to create a SQL View ======
+====== How to create a SQL View with a SELECT query ======
 
 
 ===== About =====
 
-This ''howto'' shows you how to create a [[:docs:resource:view|sql view]] with a  [[:docs:resource:sql|SQL file]]
+This ''howto'' shows you how to create a [[:docs:resource:view|sql view]] with a [[:docs:resource:select|select query]] stored in [[:docs:resource:sql|SQL file]]
 
 ===== The Select Query =====
 

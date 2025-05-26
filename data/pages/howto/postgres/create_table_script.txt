@@ -1,10 +1,10 @@
 ---json
 {
-    "canonical": ":howto:database:table_create_from_script",
     "description": "This Howto will show you how to create a SQL table with a SQL file that contains a ''CREATE'' SQL statement",
     "low_quality_page": "false",
     "name": "Create a table From SQL",
-    "page_id": "2y8to1aqf22td1go8fy0d"
+    "page_id": "2y8to1aqf22td1go8fy0d",
+    "title": "How to create a table with a CREATE Sql statement  file"
 }
 ---
 

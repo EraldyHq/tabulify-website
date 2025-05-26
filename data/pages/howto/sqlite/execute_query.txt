@@ -1,6 +1,5 @@
 ---json
 {
-    "canonical": ":howto:database:query_execution",
     "description": "This howto will shows you to execute and shows the result of a SQL Query against the tpcds data",
     "name": "Execute a query",
     "page_id": "dbj2xsbmhfu56qbw9urom"
