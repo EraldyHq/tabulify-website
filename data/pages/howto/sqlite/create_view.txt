@@ -135,6 +135,8 @@ sqlite/query_11.sql@tpcds_query   query_11@sqlite
 
 ===== How to create multiple views from multiple SQL files? =====
 
+==== The Create command ====
+
 Because Tabulify is capable to process multiple files at once, we can also create for all [[:docs:connection:tpcds_query|TpcsDs query]], a view.
 
 <unit>
@@ -158,18 +160,27 @@ where:
       * as [[:docs:flow:target|target]]
 </unit>
 
+==== Listing the views ====
 
 With the [[:docs:tabli:data:list|data list command]], we can see all of them as been created:
 
 <unit>
 <code bash>
-tabli data list --not-strict *@sqlite
+tabli data list *@sqlite
 </code>
 <console height="300px" scroll="toggle">
 path             type   
 --------------   ----   
 query_11         VIEW   
 tpcds_query_1    VIEW   
+tpcds_query_2    VIEW   
+tpcds_query_3    VIEW   
+tpcds_query_4    VIEW   
+tpcds_query_5    VIEW   
+tpcds_query_6    VIEW   
+tpcds_query_7    VIEW   
+tpcds_query_8    VIEW   
+tpcds_query_9    VIEW   
 tpcds_query_10   VIEW   
 tpcds_query_11   VIEW   
 tpcds_query_12   VIEW   
@@ -178,7 +189,6 @@ tpcds_query_14   VIEW
 tpcds_query_15   VIEW   
 tpcds_query_18   VIEW   
 tpcds_query_19   VIEW   
-tpcds_query_2    VIEW   
 tpcds_query_20   VIEW   
 tpcds_query_21   VIEW   
 tpcds_query_22   VIEW   
@@ -189,7 +199,6 @@ tpcds_query_26   VIEW
 tpcds_query_27   VIEW   
 tpcds_query_28   VIEW   
 tpcds_query_29   VIEW   
-tpcds_query_3    VIEW   
 tpcds_query_30   VIEW   
 tpcds_query_31   VIEW   
 tpcds_query_32   VIEW   
@@ -199,7 +208,6 @@ tpcds_query_35   VIEW
 tpcds_query_36   VIEW   
 tpcds_query_37   VIEW   
 tpcds_query_38   VIEW   
-tpcds_query_4    VIEW   
 tpcds_query_40   VIEW   
 tpcds_query_41   VIEW   
 tpcds_query_42   VIEW   
@@ -210,7 +218,6 @@ tpcds_query_46   VIEW
 tpcds_query_47   VIEW   
 tpcds_query_48   VIEW   
 tpcds_query_49   VIEW   
-tpcds_query_5    VIEW   
 tpcds_query_50   VIEW   
 tpcds_query_52   VIEW   
 tpcds_query_53   VIEW   
@@ -220,7 +227,6 @@ tpcds_query_56   VIEW
 tpcds_query_57   VIEW   
 tpcds_query_58   VIEW   
 tpcds_query_59   VIEW   
-tpcds_query_6    VIEW   
 tpcds_query_60   VIEW   
 tpcds_query_61   VIEW   
 tpcds_query_62   VIEW   
@@ -231,7 +237,6 @@ tpcds_query_66   VIEW
 tpcds_query_67   VIEW   
 tpcds_query_68   VIEW   
 tpcds_query_69   VIEW   
-tpcds_query_7    VIEW   
 tpcds_query_70   VIEW   
 tpcds_query_71   VIEW   
 tpcds_query_72   VIEW   
@@ -242,7 +247,6 @@ tpcds_query_76   VIEW
 tpcds_query_77   VIEW   
 tpcds_query_78   VIEW   
 tpcds_query_79   VIEW   
-tpcds_query_8    VIEW   
 tpcds_query_80   VIEW   
 tpcds_query_81   VIEW   
 tpcds_query_82   VIEW   
@@ -252,7 +256,6 @@ tpcds_query_85   VIEW
 tpcds_query_86   VIEW   
 tpcds_query_88   VIEW   
 tpcds_query_89   VIEW   
-tpcds_query_9    VIEW   
 tpcds_query_90   VIEW   
 tpcds_query_91   VIEW   
 tpcds_query_92   VIEW   
