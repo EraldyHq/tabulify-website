@@ -13,8 +13,7 @@ The [[..:tabli|Tabli]] ''data structure'' [[docs:tabli:command|command]] from th
 <note tip>
 If you want to create the structure, you need to use the [[create|create command]]
 </note>
-===== Howto =====
-<related pattern="howto:*" />
+
 
 ===== Syntax =====
 <unit>

@@ -16,7 +16,7 @@
   * the [[docs:resource:content|data content]]
   * and the [[docs:resource:structure|data structure]]
 
-The [[docs:op:diff|diff operation (comparaison)]] is implemented with the [[docs:tabli:data:diff|data diff command]].
+The [[docs:op:diff|diff operation (comparison)]] is implemented with the [[docs:tabli:data:diff|data diff command]].
 
 ===== Data to compare =====
 
