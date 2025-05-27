@@ -6,20 +6,32 @@
 ====== Tabli - Data Create command ======
 
 ===== About =====
-''data create'' is a [[docs:tabli:command|command]] of the [[start|data operations module]] that creates one or more [[docs:resource:resource|data resources]]. (ie  creates an empty data resource and its [[docs:resource:metadata|metadata]])
+''data create'' is a [[docs:tabli:command|command]] of the [[start|data operations module]] that creates one or more [[docs:resource:resource|data resources]]. (ie  it creates an empty data resource and its [[docs:resource:metadata|metadata]])
 
-
-If the [[docs:flow:target|target data resource]] is:
-  * specified, the [[docs:resource:metadata|metadata definition]] of the [[docs:op:select|selected data resources]] will be copied
-  * not specified,
-      * if the [[docs:resource:data_selector|data selector]] is a [[docs:resource:script_selector|script selector]], the [[docs:resource:script|script]] (DDL, ..) will be executed
-      * otherwise the ''data resource'' specified by the ''data selector'' will be created.
 
 <note>
-  * This command does not create any data. It creates only the [[docs:resource:metadata|metadata]].
+This command does not create any data. It creates only the [[docs:resource:metadata|metadata]].
+</note>
+
+===== Usage =====
+
+
+
+If the [[:docs:resource:target_uri|target data uri]] is:
+  * specified. If the target is:
+    * a [[:docs:resource:view|view]], a [[:docs:resource:select|sql select query]] has source is expected
+    * otherwise the [[docs:resource:metadata|metadata definition]] of the [[docs:op:select|selected data resources]] is copied
+  * not specified,
+      * if the [[docs:resource:data_selector|data selector]] is a [[docs:resource:script_selector|script selector]], the [[docs:resource:script|script]] (DDL, ..) is executed
+      * otherwise the ''data resource'' specified by the ''data selector'' is created.
+
+
+
+
+===== Other commands that creates data resources =====
+
   * By default, a [[transfer|transfer command]] will create the [[docs:flow:target|target data resource]] from the source if it does not exist
   * The [[template|template command]] can also create data resources.
-</note>
 
 ===== Syntax =====
 <unit>

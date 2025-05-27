@@ -9,7 +9,7 @@
 ===== About =====
 ''http'' is a system of URL. 
 
-A URL when requested returns always a [[docs:resource:content|content resource]]  (document) with a [[docs:resource:type|media type]].
+A URL when requested returns a [[:docs:resource:query|query resource]]  (document) with a [[docs:resource:type|media type]].
 
 
 ===== Characteristic =====

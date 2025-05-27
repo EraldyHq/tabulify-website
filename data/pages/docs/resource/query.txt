@@ -13,7 +13,7 @@ That's why we called them also ''runtime'' [[resource|data resource]] because th
 
 ''Tabulify'' supports actually two queries:
   * the [[docs:resource:select|Sql query]].
-  * and the HTTP get query.
+  * and the [[:docs:system:http|HTTP get query]].
 
 
 

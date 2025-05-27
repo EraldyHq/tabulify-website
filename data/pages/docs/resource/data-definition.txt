@@ -89,11 +89,11 @@ where:
 ==== Request ====
 
 <code yaml DataDef.yml>
-Request:
+Requests:
     header: X-HTTP-header
     Accept: ...
 </code>
-  * ''request'' are request attributes used when the resource is dynamic (mostly used to defined [[docs:system:http|http resource]])
+''request'' are request attributes used when the resource is dynamic (mostly used to defined [[docs:system:http|http resource]])
 
 
 
