@@ -9,8 +9,6 @@
 ===== About =====
 The ''data truncate'' [[docs:tabli:command|command]] of the [[start|data module]] permits to [[docs:op:truncate|truncate]] one or more [[docs:resource:resource|data resources]].
 
-===== How-to's =====
-<related pattern="howto:*" />
 
 ===== Syntax =====
 

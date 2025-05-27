@@ -11,7 +11,7 @@
 
 
 ===== About =====
-A [[docs:connection:howtos|default howto oracle connection]] is provided after a fresh installation that is used in the [[howto:howto|howto's]].
+A [[docs:connection:howtos|default howto oracle connection]] is provided after a fresh installation that you can use in the [[howto:howto|howto's]].
 
 ===== Docker =====
 
