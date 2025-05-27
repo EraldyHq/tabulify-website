@@ -1,0 +1,80 @@
+---json
+{
+    "low_quality_page": "false",
+    "name": "Create a view From a CREATE statement"
+}
+---
+
+====== How to create a SQL view with a CREATE statement file ======
+
+
+
+===== About =====
+This [[..:howto|Howto]] will show you how to create a [[docs:resource:view|SQL View]] with a <icon name="carbon:SQL"/> SQL file that contains a ''CREATE'' SQL statement with the [[docs:tabli:data:create|Tabli table create command]].
+
+===== Steps =====
+==== Prerequisites ====
+You should have ''Tabulify'' installed on your computer: [[howto:getting_started:1_install]]
+
+
+==== The CREATE View statement ====
+
+<unit display="none">
+Delete the target destination
+<code bash>
+tabli data drop --not-strict *@sqlite
+</code>
+</unit>
+
+
+We will execute the below [[docs:resource:script|SQL Script]] that is located in the [[docs:connection:howto|howto connection]].
+<unit>
+<file sql create_view_foo.sql>
+create view foo as select "bar"
+
+</file>
+</unit>
+
+==== The data create command ====
+
+With the [[docs:tabli:data:create|tabli data create]] command, if you use a [[docs:resource:script_selector|script selector]] as first argument, the selected [[docs:resource:script|script]] are executed.
+
+To execute the previous SQL script, the below the command should be executed:
+<unit>
+<code bash>
+tabli data create '(create_view_foo.sql@howto)'@sqlite
+# The quotes are only mandatory in bash because parenthesis are a bash token (ie subshell)
+</code>
+where:
+  * ''data create'' is the [[docs:tabli:data:create|data create]] command
+  * ''(create_view_foo.sql)@sqlite'' is a [[docs:resource:script_selector|script selector]] that:
+    * select the ''create_view_foo.sql'' in the [[docs:connection:howto|howto]] connection 
+    * and executes it in the [[howto:sqlite:howto_connection|Sqlite howtos connection]]
+<console>
+The scripts executed
+data_uri                             
+----------------------------------   
+(create_view_foo.sql@howto)@sqlite
+</console>
+</unit>
+
+
+
+==== Check the metadata ====
+
+Check the metadata with the [[docs:tabli:data:struct|tabli data meta]] command
+<unit>
+<code bash>
+tabli data struct foo@sqlite
+</code>
+<console>
+Structure of the resource foo@sqlite
+position   name    type      precision   scale   primary_key   nullable   autoincrement   comment   
+--------   -----   -------   ---------   -----   -----------   --------   -------------   -------   
+1          "bar"   varchar                                     x          false
+</console>
+</unit>
+
+
+
+
