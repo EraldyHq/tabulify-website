@@ -123,7 +123,7 @@ where:
   * ''--target-attribute type=view'' specifies the [[:docs:resource:type|media type]] as [[:docs:resource:view|view]].
     * It means that we want to create a sql view and not a [[:docs:resource:table|sql table]] (the default, for the [[:docs:op:create|create operation]] in a relational system)
   * ''sqlite/query_11.sql@tpcds_query'' is a [[:docs:resource:data_selector|data selector]] that selects the ''query_11.sql'' [[:docs:connection:tpcds_query|tpcds]] [[:docs:resource:sql|sql file]]  as [[:docs:flow:source|source]]
-  * ''@sqlite'' select the [[:howto:sqlite:connection|sql howto connection]] as [[:docs:flow:target|target]]
+  * ''@sqlite'' select the [[howto:sqlite:howto_connection|sql howto connection]] as [[:docs:flow:target|target]]
 
 Output:
 <console>

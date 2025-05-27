@@ -12,12 +12,12 @@
 
 ===== Example =====
 
-  * [[:howto:sqlite:create_view|]]
+  * [[howto:sql_view:create|]]
 
 ===== Operations =====
 
 A ''sql view'' supports the following [[docs:op:op|data operations]]:
-  * [[:howto:sqlite:create_view|create]]
+  * [[howto:sql_view:create|create]]
   * [[docs:op:drop|drop]]
   * [[docs:op:transfer|transfer]] (copy, ...)
 

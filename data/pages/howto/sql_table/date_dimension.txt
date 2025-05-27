@@ -1,8 +1,11 @@
 ---json
 {
+    "aliases": [
+        { "path": ":howto:generator:d_date" }
+    ],
     "description": "A date dimension is a typical case for data generation and this article shows you how to generate it.\n",
     "low_quality_page": "false",
-    "name": "Date Dimension",
+    "name": "Create a Date Dimension",
     "page_id": "sbo5vdkk4k03u1lu74dzn",
     "title": "How to generate a date dimension ?"
 }

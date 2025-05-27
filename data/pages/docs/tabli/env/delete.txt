@@ -11,7 +11,7 @@
 
 
 ===== About =====
-The ''delete'' command of the [[..:env:start|env module]] remove a [[:docs:conf:global|global attribute]] in a [[docs:conf:vault|configuration vault]].
+The ''delete'' command of the [[..:env:start|env module]] remove a [[docs:conf:env|global attribute]] in a [[docs:conf:vault|configuration vault]].
 
 
 ===== Example =====

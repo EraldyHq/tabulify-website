@@ -1,0 +1,50 @@
+---json
+{
+    "name": "Create a connection",
+    "page_id": "5b9h73gts8250gd86qb4k"
+}
+---
+====== How to create a SQLite connection? ======
+
+
+
+
+To create a [[:docs:system:sqlite:sqlite|Sqlite]] connection, you have the following possibilities
+<tabs enclosed-tabs>
+<panel>
+<label>Connection Vault</label>
+In a [[docs:conf:vault|Configuration Vault]], to define a sqlite [[docs:connection:connection|connection]] with the name ''mySqlite'', you would write:
+\\
+  * On Linux
+<code yaml>
+connections:
+  mySqlite:
+    uri: jdbc\:sqlite\:////home/leo/work/mydatabase.db
+    driver: org.sqlite.JDBC
+</code>
+   * On Windows
+<code yaml>
+connections: 
+  mySqlite: 
+    url: jdbc\:sqlite\:///C\:/Users/user/AppData/Local/tabulify/sqlite.db
+    driver: org.sqlite.JDBC
+</code>
+
+</panel>
+<panel selected>
+<label>Tabli</label>
+
+With the [[docs:tabli:connection:add|tabli add command of the connection module]], adding a Sqlite connection with the name ''sqliteConnectionName'':
+
+
+  * On Windows
+<code bash>
+tabli connection add "sqliteConnectionName" "jdbc:sqlite:C:/work/mydatabase.db"
+</code>
+  * On Linux
+<code bash>
+tabli connection add "sqliteConnectionName" "jdbc:sqlite:/home/leo/work/mydatabase.db"
+</code>
+
+</panel>
+</tabs>

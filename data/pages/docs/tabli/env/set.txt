@@ -11,7 +11,7 @@
 
 
 ===== About =====
-The ''set'' command of the [[..:env:start|env module]] set a [[:docs:conf:global|global attribute value]] in a [[docs:conf:vault|configuration file]]
+The ''set'' command of the [[..:env:start|env module]] set a [[docs:conf:env|global attribute value]] in a [[docs:conf:vault|configuration file]]
 
 
 ===== Example =====

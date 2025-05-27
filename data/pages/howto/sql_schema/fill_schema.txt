@@ -26,7 +26,7 @@ You should have ''Tabulify'' installed on your computer.
 
 
 You could:
-  * follow this howto:  [[howto:sqlite:create_table_with_dependencies|How to copy a schema]]
+  * follow this howto:  [[howto:sql_schema:create_table_with_dependencies|How to copy a schema]]
   * or execute the following statements:
 <unit>
 <code bash >
@@ -39,7 +39,7 @@ tabli data create --with-dependencies store_sales@tpcds tpc_\${logicalName}@sqli
 
 ==== Schema Listing ====
 
-You should now see in the [[howto:sqlite:connection|Sqlite HowTo connection]] the following tables.
+You should now see in the [[howto:sqlite:howto_connection|Sqlite HowTo connection]] the following tables.
 
 <unit>
 <code bash>

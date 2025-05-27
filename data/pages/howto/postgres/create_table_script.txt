@@ -53,7 +53,7 @@ tabli data create (create_foo.sql@howto)@postgres
 </code>
 where:
   * ''data create'' is the [[docs:tabli:data:create|data create]] command
-  * ''(create_foo.sql@howto)@postgres'' is a [[docs:resource:script_selector|script selector]] that select the ''create_foo.sql'' in the [[docs:connection:howto|howto]] connection and executes it in the [[connection|postgres connection]]
+  * ''(create_foo.sql@howto)@postgres'' is a [[docs:resource:script_selector|script selector]] that select the ''create_foo.sql'' in the [[docs:connection:howto|howto]] connection and executes it in the [[connection_service|postgres connection]]
 <console>
 The scripts executed
 data_uri

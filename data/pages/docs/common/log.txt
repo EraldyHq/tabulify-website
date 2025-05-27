@@ -24,7 +24,7 @@
 ==== Default ====
 By default, the log level is the ''info'' level.
 
-''log level'' is a [[docs:conf:global|global attribute]] that sets the [[docs:common:log|log]] level.
+''log level'' is a [[docs:conf:env|global attribute]] that sets the [[docs:common:log|log]] level.
 
 
 

@@ -11,7 +11,7 @@
 
 
 ===== About =====
-The ''list'' command of the [[..:env:start|env module]] that lists the [[:docs:conf:global|global attributes]]
+The ''list'' command of the [[..:env:start|env module]] that lists the [[docs:conf:env|global attributes]]
 ===== Example =====
 
 By default, the listing shows only the ''internal'', ''user'', ''dotenv'' and ''project'' variables

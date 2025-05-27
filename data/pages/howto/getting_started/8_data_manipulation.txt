@@ -116,7 +116,7 @@ w_warehouse_sk   w_warehouse_id     w_warehouse_name          w_warehouse_sq_ft 
 
 
 
-===== Warehouse Update with a SQL query as Source ======
+===== Warehouse Update with a SQL query as Source =====
 
 ==== The source query for the update ====
 

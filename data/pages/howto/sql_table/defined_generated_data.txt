@@ -1,8 +1,11 @@
 ---json
 {
+    "aliases": [
+        { "path": ":howto:sqlite:defined_generated_data" }
+    ],
     "description": "This how-to will show you how to define the generation of data via a data definition file and load it into a table via the tabli data fill operation.",
     "low_quality_page": "false",
-    "name": "Defined Data Generation",
+    "name": "Fill a table with Defined Data Generation",
     "page_id": "lvcdrwjg8g0x0q2xsiy6c"
 }
 ---

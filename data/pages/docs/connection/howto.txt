@@ -10,8 +10,7 @@
 ''howto'' is a [[docs:system:local|local file system]] [[connection|connection]] that points to a [[docs:resource:directory|directory]] where all [[docs:resource:file|files]] used in the [[howto:howto|howto's]] are stored.
 
 
-===== Howto =====
-<related pattern="howto:*" />
+
 
 ===== How to know the files location ? =====
 With the [[docs:tabli:connection:info|tabli connection info]] command

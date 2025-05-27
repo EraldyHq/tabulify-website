@@ -1,6 +1,7 @@
 ---json
 {
-    "page_id": "rvnpuho35qi8sqbj2aj2p"
+    "page_id": "rvnpuho35qi8sqbj2aj2p",
+    "template": "holy"
 }
 ---
 ====== Sqlite ======
@@ -11,50 +12,14 @@
 ''Tabulify'' supports the [[https://www.sqlite.org/index.html|sqlite]] [[docs:system:relational|relational database]] as a [[docs:system:system|system]]
 
 <note>
-If you don't have any knowledge of ''Tabulify'', you can start with the [[howto:getting_started:getting_started|Learning Guide]],
-otherwise you can also browser the [[howto:sqlite:sqlite|relational database Howto's]]
+If you don't have any knowledge of ''Tabulify'', you can start with the [[howto:getting_started:getting_started|Learning Guide]].
 </note>
 
 
 ===== Connection =====
 
-To create a ''Sqlite'' connection, you have the following possibilities
-<tabs enclosed-tabs>
-<panel>
-<label>Connection Vault</label>
-In a [[docs:conf:vault|Connection Vault]], to define a sqlite [[docs:connection:connection|connection]] with the name ''mySqlite'', you would write:
-\\
-  * On Linux
-<code properties>
-[mySqlite]
-url = jdbc\:sqlite\:////home/leo/work/mydatabase.db
-driver = org.sqlite.JDBC
-</code>
-   * On Windows
-<code properties>
-[mySqlite]
-url = jdbc\:sqlite\:///C\:/Users/user/AppData/Local/tabulify/sqlite.db
-driver = org.sqlite.JDBC
-</code>
+See [[howto:sqlite:create]]
 
-</panel>
-<panel selected>
-<label>Tabli</label>
-
-With the [[docs:tabli:connection:add|tabli add command of the connection module]], adding a Sqlite connection with the name ''sqliteConnectionName'':
-
-
-  * On Windows
-<code bash>
-tabli connection add "sqliteConnectionName" "jdbc:sqlite:C:/work/mydatabase.db"
-</code>
-  * On Linux
-<code bash>
-tabli connection add "sqliteConnectionName" "jdbc:sqlite:/home/leo/work/mydatabase.db"
-</code>
-
-</panel>
-</tabs>
 ===== Data Type =====
 ''Sqlite'' does not support natively the following data types.
 

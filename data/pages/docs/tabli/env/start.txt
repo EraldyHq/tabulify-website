@@ -11,14 +11,14 @@
 
 
 ===== About =====
-The ''env'' [[docs:tabli:module|module]] manages the tabli environment and in particular the [[docs:conf:global|global attributes]] of [[docs:tabli:tabli|tabli]].
+The ''env'' [[docs:tabli:module|module]] manages the tabli environment and in particular the [[docs:conf:env|global attributes]] of [[docs:tabli:tabli|tabli]].
 
 ===== Commands =====
 
 ^ Actions ^ Description ^
-| [[list|list]] | Show in a list format all [[docs:conf:global|global attributes]] |
-| [[delete|delete]] | Delete a [[docs:conf:global|global attribute]] in the [[:docs:conf:vault|conf vault]] |
-| [[set|set]] | Set a [[docs:conf:global|global attribute]] in the [[:docs:conf:vault|conf vault]] |
+| [[list|list]] | Show in a list format all [[docs:conf:env|global attributes]] |
+| [[delete|delete]] | Delete a [[docs:conf:env|global attribute]] in the [[:docs:conf:vault|conf vault]] |
+| [[set|set]] | Set a [[docs:conf:env|global attribute]] in the [[:docs:conf:vault|conf vault]] |
 | ''diagnostic''  | Print environment diagnostic information |
 
 ===== Syntax =====

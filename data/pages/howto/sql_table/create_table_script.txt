@@ -6,7 +6,7 @@
     "canonical": ":howto:database:table_create_from_script",
     "description": "This Howto will show you how to create a SQL table with a SQL file that contains a ''CREATE'' SQL statement",
     "low_quality_page": "false",
-    "name": "Create a table From SQL",
+    "name": "Create a table From a CREATE statement",
     "page_id": "56k9l707e3p1y037kmu44",
     "title": "How to create a table with a CREATE Sql statement  file"
 }
@@ -93,6 +93,6 @@ You can also create a table and its dependencies (foreign tables) at once with t
 \\
 \\
 
-[[howto:sqlite:create_table_with_dependencies|How to copy a star/snowflake schema ?]]
+[[howto:sql_schema:create_table_with_dependencies|How to copy a star/snowflake schema ?]]
 
 </note>

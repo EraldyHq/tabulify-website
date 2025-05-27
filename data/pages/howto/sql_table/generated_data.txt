@@ -5,7 +5,8 @@
     ],
     "description": "This how-to will show you how to fill a table with auto-generated data and the Tabli fill action.",
     "low_quality_page": "false",
-    "name": "Auto Data Generation"
+    "name": "Fill a table with Auto Data Generation",
+    "page_id": "jdsfx82vgfkzalqpn6pcm"
 }
 ---
 ====== SQLite - How to fill a table with auto generated data ======
@@ -105,5 +106,5 @@ count
 The generated data follows a default definition but you can define the generated data that you want with the help of a ''data definition'' file.
 
 
-[[howto:sqlite:defined_generated_data|Learn how to fill a table with defined generated data]]
+[[howto:sql_table:defined_generated_data|Learn how to fill a table with defined generated data]]
 

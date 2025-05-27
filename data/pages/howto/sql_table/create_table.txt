@@ -6,7 +6,7 @@
     "canonical": ":howto:database:create_table_from_another",
     "description": "This Howto will show you how to copy the data definition of a SQL table from another SQL table",
     "low_quality_page": "false",
-    "name": "Create a table from a table",
+    "name": "Create a table from a table or view",
     "page_id": "2t3hp19xnajogs73xf0lp",
     "title": "How to create a table from the definition of another SQL table"
 }
@@ -104,6 +104,6 @@ You can also create a table and its dependencies (foreign tables) at once with t
 \\
 \\
 <btn>
-[[create_table_with_dependencies|How to copy a star/snowflake schema ?]]
+[[..:sql_schema:create_table_with_dependencies|How to copy a star/snowflake schema ?]]
 </btn>
 </note>

@@ -98,6 +98,6 @@ tpc_time_dim                     0
 You can fill them with generated data.
 
 
-[[howto:generator:fill_schema|How to fill a schema with generated data]]
+[[howto:sql_schema:fill_schema|How to fill a schema with generated data]]
 
 

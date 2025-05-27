@@ -14,7 +14,7 @@ You can:
   * [[docs:tabli:connection:start|add/create/update database connections parameters]]
   * [[docs:tabli:data:query|perform operation on a SQL query]]
   * [[docs:tabli:data:start|perform operation on a table]]
-  * [[howto:sqlite:create_table_with_dependencies|perform operation on a schema]]
+  * [[howto:sql_schema:create_table_with_dependencies|perform operation on a schema]]
   * [[docs:resource:dependency|manage foreign keys (ie relation between tables)]]
 
 

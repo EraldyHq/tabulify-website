@@ -11,8 +11,7 @@
 
 
 <note>
-If you don't have any knowledge of ''Tabulify'', you can start with the [[howto:getting_started:getting_started|Learning Guide]],
-otherwise you can also browser the [[howto:sqlite:sqlite|relational database Howto's]]
+If you don't have any knowledge of ''Tabulify'', you can start with the [[howto:getting_started:getting_started|Learning Guide]].
 </note>
 
 

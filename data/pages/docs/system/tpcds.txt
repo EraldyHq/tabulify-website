@@ -20,7 +20,7 @@
 
 ===== About =====
 ''Tabulify'' supports the [[http://www.tpc.org/tpcds/|Tpc-Ds]] [[database|database]] benchmark on the following points:
-  * the [[howto:sqlite:create_table_with_dependencies|creation of schema]]
+  * the [[howto:sql_schema:create_table_with_dependencies|creation of schema]]
   * the [[howto:getting_started:6_transfer_data_resource|transfer of data]]
   * the execution of [[docs:connection:tpcds_query|TPC-DS queries]]
 
@@ -95,7 +95,7 @@ tabli data copy --with-dependencies store*@tpcds @targetConnection
 </code>
 
 <note tip>
-This article explains this technic: [[howto:sqlite:create_table_with_dependencies|how to select a star schema]]
+This article explains this technic: [[howto:sql_schema:create_table_with_dependencies|how to select a star schema]]
 </note>
 
 ==== Note on the schema ====

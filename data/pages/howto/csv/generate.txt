@@ -34,7 +34,7 @@ You first need to create your [[docs:resource:generator|generator data resource]
 
 We will take as example the ''d_date--datagen.yml'' generator that generates a ''date dimension''.
 <note info>
-This generator is explained in this [[..:generator:d_date|howto]]
+This generator is explained in this [[..:sql_table:date_dimension|howto]]
 </note>
 
 <unit >

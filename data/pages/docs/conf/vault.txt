@@ -15,7 +15,7 @@
 The ''configuration vault'' is a [[docs:conf:conf|configuration file]] named ''.tabli.yml'' that stores:
 
   * [[..:connection:connection|connections]]
-  * and [[global|global parameters]]
+  * and [[env|global parameters]]
 
 
 ===== Location =====
