@@ -40,7 +40,7 @@ tabli data update warehouse_original.csv@howto warehouse@sqlite
 </code>
 </unit>
 
-The ''warehouse'' table will be our [[docs:flow:target|target data resource]] for this page.
+The [[:docs:system:tpcds|tpc-ds]] ''warehouse'' table will be our [[docs:flow:target|target data resource]] for this page.
 
 The ''warehouse'' [[docs:resource:table|table]] has one row that we can see with the [[docs:tabli:data:print|data print command]]
 <unit>

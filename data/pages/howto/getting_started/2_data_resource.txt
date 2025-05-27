@@ -29,7 +29,7 @@ It means that you can copy a ''csv'' file into a database ''table'' and vice-ver
 </note>
 ===== Next =====
 
-The ''data resources'' are stored in [[docs:system:system|systems]] that we can reach with a connection.
+The ''data resources'' are stored in [[docs:system:system|systems]] that we can reach via a connection.
 
 <btn>
 [[3_connection|What is a connection ?]]

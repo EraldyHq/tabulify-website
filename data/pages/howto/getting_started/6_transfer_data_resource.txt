@@ -28,7 +28,7 @@ In this learning guide, we will use as target connection, the [[docs:connection:
 <code bash>
 tabli connection info sqlite
 </code>
-<console>
+<console height="300px" scroll="toggle">
 Information about the connection (sqlite)
 Attribute                    Value                                            Description                                                            
 --------------------------   ----------------------------------------------   --------------------------------------------------------------------   
@@ -127,7 +127,9 @@ To check the ''copy'', we will list the [[docs:resource:table|tables]] in the [[
 
 <unit>
 <code bash>
-tabli data list -a name --attribute count  *@sqlite
+tabli data list --attribute name --attribute count  *@sqlite
+# or with short options
+# tabli data list -a name -a count  *@sqlite
 </code>
 <console>
 name                       count   

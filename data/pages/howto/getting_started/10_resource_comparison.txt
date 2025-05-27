@@ -20,7 +20,7 @@ The [[docs:op:diff|diff operation (comparison)]] is implemented with the [[docs:
 
 ===== Data to compare =====
 
-For the sake of simplicty, we will compare two [[docs:resource:csv|csv data resource]] but you may compare any [[docs:resource:content|content data resource]] such as a [[docs:resource:table|SQL table]] or [[docs:resource:select|SQL query]]
+For the sake of simplicty, we will compare two [[docs:resource:csv|csv data resources]] but you may compare any [[docs:resource:content|content data resources]] such as a [[docs:resource:table|SQL table]] or [[docs:resource:select|SQL query]]
 
 
   * The ''source'' data resource (also known as the ''left'' resource)
@@ -46,11 +46,11 @@ Kahneman,Daniel,1934-03-05,https://en.wikipedia.org/wiki/Daniel_Kahneman
 </unit>
 
 
-The fact that a record is missing can be easily spotted but there is a more subtle difference.
+The fact that a record is missing can be easily spotted but there is a more subtle differences.
 
 ===== The comparison report =====
 
-All comparison can be executed with the [[docs:tabli:data:diff|data compare command]] by giving as argument the [[docs:flow:source|source]] and [[docs:flow:target|target]] data resource.
+All comparison can be executed with the [[docs:tabli:data:diff|data diff command]] by giving as argument the [[docs:flow:source|source]] and [[docs:flow:target|target]] data resource.
 
 <unit>
 <code bash>
@@ -142,7 +142,7 @@ comp_id   comp_origin   comp_comment                 comp_diff_id   Last Name   
 </console>
 </unit>
 
-This time the comparison has:
+This time, the comparison has:
   * not compared the source record ''Harbison Carnagey'' with the target record ''Kahneman''
   * compared the source record ''Kahneman'' with the target record ''Kahneman''
 
@@ -153,7 +153,7 @@ We can see that:
 
 ===== Conclusion =====
 
-This page end the learning guide of ''Tabulify'' at the command line with ''Tabli'' where we have learned to perform data operation one command at a time.
+This page ends the learning guide of ''Tabulify'' at the command line with ''Tabli'' where we have learned to perform data operation one command at a time.
 
 <box display="none">
 ''Tabulify'' supports also the creation of workflows with the ''pipeline'' scripting language where you bind all this operations in pipelines.
