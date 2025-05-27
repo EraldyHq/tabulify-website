@@ -12,7 +12,7 @@
 <note tip>If the service is already started, this operation has no effect and does not return any error.</note>
 
 ===== Example =====
-To start the [[:howto:postgres:connection_service|howto postgres docker container]]:
+To start the [[howto:postgres:howto_connection_service|howto postgres docker container]]:
 
 <code bash>
 tabli service start postgres

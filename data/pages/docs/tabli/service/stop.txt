@@ -11,7 +11,7 @@
 <note tip>If the service is not started, this operation has no effect and does not return any error.</note>
 
 ===== Example =====
-To stop the [[:howto:postgres:connection_service|howto postgres docker container]]:
+To stop the [[howto:postgres:howto_connection_service|howto postgres docker container]]:
 
 <code bash>
 tabli service stop postgres

@@ -12,12 +12,12 @@
 
 ===== Example =====
 
-  * [[howto:sql_view:create|]]
+  * [[howto:sql_view:create_from_select|]]
 
 ===== Operations =====
 
 A ''sql view'' supports the following [[docs:op:op|data operations]]:
-  * [[howto:sql_view:create|create]]
+  * [[howto:sql_view:create_from_select|create]]
   * [[docs:op:drop|drop]]
   * [[docs:op:transfer|transfer]] (copy, ...)
 

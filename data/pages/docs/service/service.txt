@@ -18,7 +18,7 @@
 The service metadata is stored in the [[:docs:conf:vault|configuration vault]]
 
 
-Example with the [[:howto:mysql:connection|howto mysql service]] in [[docs:service:docker|docker]] format
+Example with the [[howto:mysql:howto_connection|howto mysql service]] in [[docs:service:docker|docker]] format
 <code yaml .tabli.yaml>
 services:
   sqlserver:

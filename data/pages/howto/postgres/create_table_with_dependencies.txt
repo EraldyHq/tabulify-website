@@ -43,7 +43,7 @@ tabli data drop --not-strict *@postgres
 The below command will [[docs:op:create|create]]:
   * the table ''store_sales'' from the [[docs:system:tpcds|tpcds]] system. This is the fact table of the tpcds store schema.
   * with all its dependencies (all the foreign tables)
-  * into the [[connection_service|Postgres Howto connection]] with the prefix ''tpc_'' using the [[:docs:resource:logicalname|logical name]] of the source
+  * into the [[howto_connection_service|Postgres Howto connection]] with the prefix ''tpc_'' using the [[:docs:resource:logicalname|logical name]] of the source
   * with the [[docs:tabli:data:create|tabli data create]] command.
 <unit>
 <code bash>

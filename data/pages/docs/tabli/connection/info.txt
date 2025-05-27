@@ -73,7 +73,7 @@ tabli connection info *sql*
 
 ==== Listing only  a set of databases ====
 
-  * List only the databases with the database name [[:howto:postgres:connection_service|postgres]] and [[howto:sqlite:howto_connection|sqlite]]
+  * List only the databases with the database name [[howto:postgres:howto_connection_service|postgres]] and [[howto:sqlite:howto_connection|sqlite]]
 <unit>
 <code bash>
 tabli connection info postgres sqlite

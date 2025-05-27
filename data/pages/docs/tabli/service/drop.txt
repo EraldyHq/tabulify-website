@@ -12,7 +12,7 @@ from the service provider (not from the [[:docs:conf:vault|configuration vault]]
 
 
 ===== Example =====
-To drop the [[:howto:postgres:connection_service|howto postgres docker container]]:
+To drop the [[howto:postgres:howto_connection_service|howto postgres docker container]]:
 
 <code bash>
 tabli service drop postgres

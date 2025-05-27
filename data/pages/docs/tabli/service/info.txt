@@ -13,7 +13,7 @@
 
 ===== Example =====
 
-All attributes of the [[howto:postgres:connection_service|how-to postgres docker container]]
+All attributes of the [[howto:postgres:howto_connection_service|how-to postgres docker container]]
 
 
 <unit>
