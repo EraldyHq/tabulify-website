@@ -70,7 +70,7 @@ tabli data head -a "type=csv" -a 'delimiterCharacter=;' -a 'headerRowId=0' chara
 </code>
 </note>
 
-==== Loading the CSV file with the transfer command ====
+==== Loading the CSV file with the upsert command ====
 
 We can load the above data using the [[:docs:op:upsert|upsert]] [[docs:tabli:data:transfer|transfer command]] and the [[docs:connection:howtos#sqlite|sqlite built-in database]]
 <unit>
