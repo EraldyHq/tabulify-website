@@ -19,6 +19,7 @@ You can load
   * any [[:docs:resource:file|files]]
     * a [[:howto:json:load_json|Json file]]
     * a [[:howto:xml:load_db|XML file]]
+    * a [[:howto:html:load|HTML table]]
     * a [[:docs:resource:excel|Excel file]]
     * a [[:docs:resource:text|text file]]
     * ...

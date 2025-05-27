@@ -17,7 +17,7 @@ If you want the whole content, you can set the [[docs:resource:type|resource typ
 If there is no table element in the html page, the created resource has one cell with the whole content.
 ===== Example =====
 
-[[:howto:html:html|]]
+[[howto:html:read|]]
 ===== Attributes =====
 
 The [[docs:resource:attribute|data attributes]]  for an HTML file are:
