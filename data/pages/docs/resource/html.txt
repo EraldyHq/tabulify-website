@@ -8,28 +8,11 @@
 
 
 ===== About =====
-The ''html'' file are supported. Tabulify will extract by default the first ''html'' table (ie [[tabular_file|tabular file]] [[resource|data resource]]).
+The ''html'' files are supported. Tabulify will extract by default the first ''html'' table (ie [[tabular_file|tabular file]] [[resource|data resource]]).
 
 <note>
 If you want the whole content, you can set the [[docs:resource:type|resource type]] to ''text''.
 </note>
-
-
-===== Properties =====
-
-
-^ Name ^ Default Value ^ Description ^
-| ''tableSelector'' | ''%%table%%'' | The Css selector to obtain the table element |
-| ''headerSelector'' | ''%%th%%'' | The Css selector to obtain the headers elements |
-| ''rowSelector'' | ''tr'' | The Css selector to obtain the rows |
-| ''dataSelector'' | ''th, td'' | The Css selector to obtain the data cell |
-
-<note tip>
-Because a ''html'' file is also a [[text|text file]], you can also set [[text#properties|text properties]] such as the character set.
-</note>
-
-If there is no table element in the html page, the created resource has one cell with the whole content.
-
 
 ===== Example =====
 
@@ -39,18 +22,38 @@ The first [[https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes|10 languages c
 tabli data head  https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 </code>
 <console>
-The first 10 rows of the data resource (List_of_ISO_639-1_codes@en.wikipedia.org\wiki): 
-ISO Language Names   Set 1   Set 2   Set 3      Scope           Type            Endonym(s)                        Other Name(s) [note 1]   Notes                                  
-------------------   -----   -----   --------   -------------   -------------   -------------------------------   ----------------------   ------------------------------------   
-                                                                                                                                                                                  
-Abkhazian            ab      abk     abk        Individual      Living          Аҧсуа; Apsua; აფსუა               Abkhaz                                                          
-Afar                 aa      aar     aar        Individual      Living          Qafar af                                                                                          
-Afrikaans            af      afr     afr        Individual      Living          Afrikaans                                                                                         
-Akan                 ak      aka     aka + 2    Macrolanguage   Living          Ákán                                                       Twi is tw/twi, Fante is fat            
-Albanian             sq      sqi     alb        sqi + 4         Macrolanguage   Living                            Shqip                    called "Albanian Phylozone" in 639-6   
-Amharic              am      amh     amh        Individual      Living          አማርኛ (Amarəñña)                                                                                   
-Arabic               ar      ara     ara + 28   Macrolanguage   Living          اَلْعَرَبِيَّةُ (al-ʿarabiyyah)                            Standard Arabic is arb                 
-Aragonese            an      arg     arg        Individual      Living          Aragonés                                                                                          
+The first 10 rows of the data resource (List_of_ISO_639-1_codes@en.wikipedia.org\wiki):
+ISO Language Names   Set 1   Set 2   Set 3      Scope           Type            Endonym(s)                        Other Name(s) [note 1]   Notes
+------------------   -----   -----   --------   -------------   -------------   -------------------------------   ----------------------   ------------------------------------
+
+Abkhazian            ab      abk     abk        Individual      Living          Аҧсуа; Apsua; აფსუა               Abkhaz
+Afar                 aa      aar     aar        Individual      Living          Qafar af
+Afrikaans            af      afr     afr        Individual      Living          Afrikaans
+Akan                 ak      aka     aka + 2    Macrolanguage   Living          Ákán                                                       Twi is tw/twi, Fante is fat
+Albanian             sq      sqi     alb        sqi + 4         Macrolanguage   Living                            Shqip                    called "Albanian Phylozone" in 639-6
+Amharic              am      amh     amh        Individual      Living          አማርኛ (Amarəñña)
+Arabic               ar      ara     ara + 28   Macrolanguage   Living          اَلْعَرَبِيَّةُ (al-ʿarabiyyah)                            Standard Arabic is arb
+Aragonese            an      arg     arg        Individual      Living          Aragonés
 Armenian             hy      hye     arm        hye             Individual      Living                            Հայերեն (Hayeren)
 </console>
 </unit>
+
+
+
+===== Attributes =====
+
+The [[docs:resource:attribute|data attributes]]  for an HTML file are:
+
+^ Name ^ Default Value ^ Description ^
+| ''TABLE_SELECTOR'' | ''%%table%%'' | The Css selector to obtain the table element |
+| ''HEADER_SELECTOR'' | ''%%th%%'' | The Css selector to obtain the headers elements |
+| ''ROW_SELECTOR'' | ''tr'' | The Css selector to obtain the rows |
+| ''DATA_SELECTOR'' | ''th, td'' | The Css selector to obtain the data cell |
+
+<note tip>
+Because a ''html'' file is also a [[text|text file]], you can also set [[text#properties|text properties]] such as the character set.
+</note>
+
+If there is no table element in the html page, the created resource has one cell with the whole content.
+
+

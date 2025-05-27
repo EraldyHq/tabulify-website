@@ -1,0 +1,65 @@
+---json
+{
+    "aliases": [
+        { "path": ":docs:system:sqlserver" }
+    ],
+    "page_id": "rchn9ucsx70qzhaefw9e3",
+    "template": "holy"
+}
+---
+====== Sql Server ======
+
+
+===== About =====
+
+
+Tabulify supports [[https://learn.microsoft.com/en-us/sql/|Sql Server]] as [[[[:docs:flow:source|source]] and [[:docs:flow:target|target]].
+
+It inherits the attributes of the [[:docs:system:relational|relational system]].
+
+===== Support  =====
+
+==== Varchar ====
+''Tabulify'' modifies the default length for VARCHAR and NVARCHAR from ''1'' to ''max''
+
+`max` is the default for most database and avoid many problem when the length is not defined (ie nobody wants to store `1` character in a `varchar`).
+
+==== Upsert ====
+
+Over the [[:docs:op:upsert|upsert operation]], SqlServer does not use the SQL standard ''insert on conflict'' statement but a  [[https://learn.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql|merge statement]].
+
+This merge statement requires a ''ON'' condition. 
+
+Tabulify sets it:
+  * to the first unique key constraint 
+  * and if none is found, a standard insert statement is used.
+
+
+
+==== Date/Time Sql Type ====
+
+Over the [[:docs:common:time|time data type]], we map:
+
+  * the standard sql `timestamp` type to the [[https://learn.microsoft.com/en-us/sql/t-sql/data-types/datetime2-transact-sql?view=sql-server-ver16|datetime2]] sql server type
+  * the standard sql `timestamp with timezone` type to the [[https://learn.microsoft.com/en-us/sql/t-sql/data-types/datetimeoffset-transact-sql|datetimeoffset]] sql server type
+
+Because Sql Server does not support `time with time zone`, we translate it to the [[https://learn.microsoft.com/en-us/sql/t-sql/data-types/time-transact-sql|time]] sql server type when creating a table from a third database.
+
+==== Unable to truncate a table with a foreign key ====
+
+Sql Server does not allow to [[docs:op:truncate|truncate]] a table that has a foreign key even if the foreign table is empty.
+
+You would get this kind of error:
+```
+Cannot truncate table 'master.dbo.d_date' because it is being referenced by a FOREIGN KEY constraint.
+```
+If you want to truncate, you need to use the ''force'' option to delete the foreign keys beforehands.
+
+```bash
+tabli data truncate --force mytable
+```
+
+
+==== Views ====
+
+Views have so much constraint in SqlServer that we have created a dedicated page. [[view]]

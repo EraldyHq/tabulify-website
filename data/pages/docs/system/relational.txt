@@ -33,7 +33,7 @@ List:
   * [[docs:system:postgres:postgres]]
   * [[docs:system:oracle:oracle]]
   * [[docs:system:mysql:mysql]]
-  * [[:docs:system:sqlserver|]]
+  * [[docs:system:sqlserver:sqlserver|]]
 
 ===== Other databases =====
 

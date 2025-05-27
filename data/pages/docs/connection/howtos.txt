@@ -18,7 +18,7 @@ After a [[howto:getting_started:1_install|fresh installation]], you should see t
 
   * [[howto:sqlite:howto_connection|sqlite]] and ''sqlite-target'' are [[docs:system:sqlite:sqlite|sqlite]] connection
   * [[:howto:oracle:connection|oracle]] is an [[docs:system:oracle:oracle|oracle database]]
-  * [[:howto:sqlserver:connection|sqlserver]] is an [[docs:system:sqlserver|sqlserver database]]
+  * [[:howto:sqlserver:connection|sqlserver]] is an [[docs:system:sqlserver:sqlserver|sqlserver database]]
   * [[:howto:mysql:connection|mysql]] is a [[docs:system:mysql:mysql|mysql database]]
   * [[howto:postgres:connection_service|postgres]] is a [[docs:system:postgres:postgres|postgres database]]
 
