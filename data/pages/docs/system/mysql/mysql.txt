@@ -21,6 +21,9 @@ To follow the [[howto:howto|Howto]], you need to start a MySql container databas
 
 The steps by steps are available on this page: [[howto:mysql:howto_connection]]
 
+===== Creation =====
+
+See [[:howto:mysql:create_connection|]]
 ===== Support =====
 
 

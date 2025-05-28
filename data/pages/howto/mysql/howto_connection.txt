@@ -147,7 +147,7 @@ By default, the [[:docs:conf:vault|user configuration vault]] is created with th
 
 <tabs>
     <panel>
-       <label>Tabli Service Info</label>
+       <label>Tabli Connection Info</label>
 You can check the service with the [[:docs:tabli:service:info|tabli service info]] command
 <unit>
 <code bash>
