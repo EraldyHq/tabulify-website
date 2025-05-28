@@ -74,7 +74,7 @@ We also can read the following SQL type object:
 
 
 
-===== Attribute / Parameters =====
+===== Attributes =====
 
 All relational database system supports the [[:docs:connection:attribute|standard connection attributes]] 
 and the following attributes:

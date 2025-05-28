@@ -1,0 +1,111 @@
+====== How to create an oracle connection? ======
+
+
+===== About =====
+This howto shows you how to create a [[:docs:connection:connection|connection]] to an [[:docs:system:oracle:oracle|oracle database]].
+
+===== Attributes =====
+
+
+An oracle connection supports :
+  * all [[:docs:connection:attribute|common connection attributes]]
+    * [[:docs:connection:uri|Uri]], 
+    * user,
+    * [[:docs:connection:password|password]]
+    * ...
+  * and all [[:docs:system:relational#attributes|relational connection attributes]]
+    * Driver (Jdbc Class)
+    * ...
+
+===== Example =====
+
+Here are the attributes of the [[howto:oracle:howto_connection|howto connection]]
+<unit>
+<code bash display="none">
+tabli data print --type text .tabli/.tabli.yml@home | yq '.connections.oracle'
+</code>
+<console yaml>
+
+comment: The default oracle connection
+driver: oracle.jdbc.OracleDriver
+name-quoting-enabled: false
+password: oracle
+uri: jdbc:oracle:thin:@localhost:1521/freepdb1
+user: hr
+
+</console>
+</unit>
+
+
+
+
+
+===== How to create =====
+
+You can  create an ''Oracle'' connection:
+  * by directly modifying the [[#Configuration vault]]
+  * or by using the [[#tabli command]]
+
+<note>
+=== Secret ===
+In this howto, the password is expected to be stored in the ''MY_ORACLE_PASSWORD'' [[:docs:conf:os|OS environment variable]] but there is more way to provide secrets. 
+
+To know how to pass and and handle secrets, read more at [[:docs:conf:secret]]
+</note>
+==== Configuration Vault ====
+
+
+In a [[docs:conf:vault|Configuration Vault]], to define a Oracle [[docs:connection:connection|connection]] with the name ''myOracle'', you would write:
+\\
+
+<code yaml>
+connections:
+   myOracle:
+     uri: jdbc:oracle:thin:@[host]:[port]/[servicename]
+     # driver is optional
+     driver: oracle.jdbc.OracleDriver
+     user: loginUser
+     password: ${MY_ORACLE_PASSWORD}
+     natives:
+       # https://docs.oracle.com/en/database/oracle/oracle-database/23/odpnt/ConnectionProperties.html
+       clientId: tabulify
+</code>
+
+
+
+==== Tabli Command ====
+
+With the [[docs:tabli:connection:add|tabli add command of the connection module]], you can add a Oracle connection with the name ''oracleConnectionName'':
+
+<unit display="none">
+<code bash>
+tabli connection delete --not-strict "oracleConnectionName"
+</code>
+</unit>
+
+<tabs>
+   <panel selected>
+      <label>Bash</label>
+<unit>
+<code bash>
+tabli connection add "oracleConnectionName" \
+    "jdbc:oracle:thin:@[host]:[port]/[servicename]" \
+    --user login \
+    --password '${MY_ORACLE_PASSWORD}'
+</code>
+<console>
+</console>
+</unit>
+   </panel>
+
+  <panel>
+    <label>Windows CMD console</label>
+<code bash>
+tabli connection add "oracleConnectionName" "jdbc:oracle:thin:@[host]:[port]/[servicename]" ^
+    --user login ^
+    --password '${MY_ORACLE_PASSWORD}'
+</code>
+   </panel>
+</tabs>
+
+
