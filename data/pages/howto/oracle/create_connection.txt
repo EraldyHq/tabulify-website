@@ -1,8 +1,8 @@
-====== How to create an oracle connection? ======
+====== How to create an Oracle connection? ======
 
 
 ===== About =====
-This howto shows you how to create a [[:docs:connection:connection|connection]] to an [[:docs:system:oracle:oracle|oracle database]].
+This howto shows you how to create a [[:docs:connection:connection|connection]] to an <icon name="logos:oracle"/> [[:docs:system:oracle:oracle|oracle database]].
 
 ===== Attributes =====
 
@@ -25,14 +25,12 @@ Here are the attributes of the [[howto:oracle:howto_connection|howto connection]
 tabli data print --type text .tabli/.tabli.yml@home | yq '.connections.oracle'
 </code>
 <console yaml>
-
-comment: The default oracle connection
+comment: The howto oracle connection
 driver: oracle.jdbc.OracleDriver
 name-quoting-enabled: false
 password: oracle
 uri: jdbc:oracle:thin:@localhost:1521/freepdb1
 user: hr
-
 </console>
 </unit>
 

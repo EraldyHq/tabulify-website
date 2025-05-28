@@ -7,7 +7,7 @@
 
 
 ===== About =====
-''SSH''  is a [[system|system]] driven by the ''Secure Shell protocol (SSH)'' and offers:
+''SSH''  is a [[docs:system:file|file system]] driven by the ''Secure Shell protocol (SSH)'' and offers:
   * a remote [[docs:system:file|file system]] via the ''Secure File Transfer Protocol (SFTP)''
   * and [[docs:resource:script|code execution]]
 

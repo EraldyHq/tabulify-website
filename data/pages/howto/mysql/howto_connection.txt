@@ -12,7 +12,7 @@
 
 ===== About =====
 This howto shows you how to:
-  * start an [[:docs:system:mysql:mysql|mysql database]] with the ''mysql'' howto [[:docs:service:docker|docker service]]
+  * start an [[:docs:system:mysql:mysql|mysql database]] with the <icon name="logos:mysql" />  ''mysql'' howto [[:docs:service:docker|docker service]]
   * and use the  ''@mysql'' [[docs:connection:howtos|default howto mysql connection]] in tabli commands.
 
 

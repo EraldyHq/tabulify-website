@@ -1,6 +1,7 @@
 ---json
 {
-    "page_id": "88rp4963wpmmp4biqwmps"
+    "page_id": "88rp4963wpmmp4biqwmps",
+    "template": "holy"
 }
 ---
 ====== Oracle Database ======
@@ -8,7 +9,7 @@
 
 
 ===== About =====
-''Tabulify'' supports the [[https://www.oracle.com/database/|Oracle]] [[docs:system:relational|relational database]] as a [[docs:system:system|system]]
+''Tabulify'' supports the <icon name="logos:oracle"/> [[https://www.oracle.com/database/|Oracle]] [[docs:system:relational|relational database]] as a [[docs:system:system|system]]
 
 <note>
 If you don't have any knowledge of ''Tabulify'', you can start with the [[howto:getting_started:getting_started|Learning Guide]].

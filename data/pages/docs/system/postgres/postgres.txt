@@ -1,13 +1,14 @@
 ---json
 {
-    "page_id": "kcuerl92exisiakgspypp"
+    "page_id": "kcuerl92exisiakgspypp",
+    "template": "holy"
 }
 ---
 ====== PostgreSQL ======
 
 
 ===== About =====
-''Tabulify'' supports the [[..:relational|relational database]] [[https://www.postgresql.org/|Postgresql]]
+''Tabulify'' supports the [[..:relational|relational database]] <icon name="logos:postgresql"/> [[https://www.postgresql.org/|Postgresql]]
 
 
 <note>

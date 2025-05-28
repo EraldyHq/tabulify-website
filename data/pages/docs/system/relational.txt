@@ -1,5 +1,6 @@
 ---json
 {
+    "featured-icon": ":combostrap:icons:mdi:database.svg",
     "page_id": "5511e5w1igdqspp7khunj"
 }
 ---
@@ -7,7 +8,7 @@
 
 
 ===== About =====
-''Tabulify'' supports ''relational'' [[database|database]] as a [[docs:system:system|system]] type.
+''Tabulify'' supports <icon name="mdi:database" /> ''relational'' [[database|database]] as a [[docs:system:system|system]] type.
 
 
 You can:
@@ -28,13 +29,14 @@ For the supported database, ''Tabulify'' introduces a layer that:
   * corrects the driver mistakes
   * and/or implements the database SQL dialect
 
-List:
-  * [[docs:system:sqlite:sqlite]]
-  * [[docs:system:postgres:postgres]]
-  * [[docs:system:oracle:oracle]]
-  * [[docs:system:mysql:mysql]]
-  * [[docs:system:sqlserver:sqlserver|]]
-
+<grid spacing="m-3 mb-5" max-line="3" align="y-center-children">
+  <box align="center-children"><box width="100px" align="text-center"><icon name="logos:sqlite" width="60" /> \\ \\ [[docs:system:sqlite:sqlite]]</box></box>
+  <box align="center-children"><box width="100px" align="text-center"><icon name="logos:postgresql" width="60"/> \\ \\ [[docs:system:postgres:postgres]]</box></box>
+  <box align="center-children"><box width="100px" align="text-center"><icon name="logos:oracle" width="80"/> \\ \\ [[docs:system:oracle:oracle]]</box></box>
+  <box align="center-children"><box width="100px" align="text-center"><icon name="logos:mysql" width="60"/> \\ \\ [[docs:system:mysql:mysql]]</box></box>
+  <box align="center-children"><box width="100px" align="text-center"><icon name="logos:microsoft-icon" width="30"/> \\ \\ 
+ [[docs:system:sqlserver:sqlserver|]]</box></box>
+</grid>
 ===== Other databases =====
 
 We support all relational databases that:

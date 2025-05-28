@@ -11,21 +11,10 @@ The ''connection add'' operation will add a connection to the [[docs:conf:vault|
 <note tip>If the connection already exists, this operations will return an error whereas the [[upsert|upsert operation]] will not.</note>
 
 ===== Example =====
-Adding a [[docs:system:sqlite:sqlite|Sqlite database]] with the name ''sqliteDbName'':
-<unit display="none">
-<code bash>
-tabli connection delete --not-strict "sqliteDbName"
-</code>
-</unit>
 
-<unit>
-<code bash>
-tabli connection add "sqliteDbName" "jdbc:sqlite:///tmp/db.db"
-</code>
-<console>
+  * [[:howto:sqlite:create|]]
+  * [[:howto:oracle:create_connection]]
 
-</console>
-</unit>
 ===== Syntax =====
 <unit>
 <code bash>

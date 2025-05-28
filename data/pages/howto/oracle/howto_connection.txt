@@ -12,7 +12,7 @@
 
 ===== About =====
 This howto shows you how to:
-  * start an [[:docs:system:oracle:oracle|oracle database]] with the [[:docs:service:docker|oracle docker service]]
+  * start an <icon name="logos:oracle"/> [[:docs:system:oracle:oracle|oracle database]] with the [[:docs:service:docker|oracle docker service]]
   * and use the  ''@oracle'' [[docs:connection:howtos|default howto oracle connection]] in tabli command.
 
 
