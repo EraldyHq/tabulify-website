@@ -13,10 +13,15 @@
 ===== About =====
 
 
-Tabulify supports [[https://learn.microsoft.com/en-us/sql/|Sql Server]] as [[[[:docs:flow:source|source]] and [[:docs:flow:target|target]].
+Tabulify supports <icon name="logos:microsoft-icon" width=16 /> [[https://learn.microsoft.com/en-us/sql/|Sql Server]] as [[[[:docs:flow:source|source]] and [[:docs:flow:target|target]].
 
 It inherits the attributes of the [[:docs:system:relational|relational system]].
 
+
+===== How to  =====
+
+  * [[:howto:sqlserver:create_connection|]]
+  * [[howto:sqlserver:howto_connection|]]
 ===== Support  =====
 
 ==== Varchar ====

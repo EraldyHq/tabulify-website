@@ -48,7 +48,7 @@ You can  create an ''mysql'' connection:
 === Secret ===
 In this howto, the password is expected to be stored in the ''MY_MYSQL_PASSWORD'' [[:docs:conf:os|OS environment variable]] but there is more way to provide secrets.
 
-To know how to pass and and handle secrets, read more at [[:docs:conf:secret]]
+To know how to pass and handle secrets, read more at [[:docs:conf:secret]]
 </note>
 ==== Configuration Vault ====
 
