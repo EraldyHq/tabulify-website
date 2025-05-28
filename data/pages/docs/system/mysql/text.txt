@@ -1,0 +1,45 @@
+---json
+{
+    "page_id": "ceosuk4eji8z78yhd5c3y"
+}
+---
+====== MySql - Text Data Type ======
+
+
+
+
+===== No national data type =====
+MySql encodes all string (([[https://dev.mysql.com/doc/refman/5.7/en/string-type-syntax.html|MySql String]])) in unicode, therefore there is no national data type and we translate them:
+  * ''NVARCHAR'' as ''VARCHAR''
+  * ''NCHAR'' as ''CHAR''
+
+
+===== Varchar Default precision of 2000  =====
+
+We set the [[:docs:system:relational#VARCHAR_DEFAULT_PRECISION|VARCHAR_DEFAULT_PRECISION]]  to ''2000'' by default to avoid the `Row size too large` error.
+
+
+Example, 4 [[:docs:common:data_type|varchar]] with the maximum allowed of `21844` by `varchar` will yield this error:
+```sql
+create table `howto`.`characters` (
+`last_name` varchar(21844),
+`first_name` varchar(21844),
+`birth_date` varchar(21844),
+`wikipedia_page` varchar(21844)
+ )
+```
+```
+Row size too large: The maximum row size for the used table type, 
+not counting BLOBs, is 65535. 
+This includes storage overhead, check the manual. 
+You have to change some columns to TEXT or BLOBs
+```
+==== Why does MySql as a max size? ====
+
+ Because:
+  * MySQL stores the entire row data together in fixed-size pages
+  * All VARCHAR columns are counted toward this limit based on their maximum declared size
+
+This applies to both MyISAM and InnoDB storage engines
+==== Why TEXT or BLOBs ====
+TEXT and BLOB columns don't count toward the row size limit because MySQL stores them separately from the main table data.

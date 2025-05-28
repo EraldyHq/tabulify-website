@@ -75,6 +75,7 @@ export TABLI_CONNECTION_CONNECTION_NAME_PARAMETER1=value1
 | ''TIMESTAMP_DATA_TYPE'' | Define the text storage format of a ''Timestamp'' data type (''YYYY-MM-DD HH:MM:SS'') if not supported by the connection . See [[docs:common:time|Time storage]] |
 | ''TIME_DATA_TYPE'' | Define the text storage format of a ''Time'' data type (''HH:MM:SS'') if not supported by the connection . See [[docs:common:time|Time storage]] |
 | ''BOOLEAN_DATA_TYPE'' | Define the text storage format of a ''Boolean''. See [[docs:common:boolean|boolean]] if not supported by the connection |
+| ''VARCHAR_DEFAULT_PRECISION'' | Define the [[#varchar_default_precision|default precision of a Varchar]] |
 | ''MAX_NAME_IN_PATH'' | The maximum name in a path (for instance, Sqlite supports only one) |
 | ''MAX_CONCURRENT_THREAD'' | The maximum number of concurrent thread for the connection (for instance, Sqlite supports only one) |
 | ''NATIVES'' | The [[docs:connection:natives|native driver connection properties]] as map of key value (jdbc driver properties, ...) |
@@ -85,3 +86,12 @@ Derived: You can't change it
 
 ^ Name ^ Description ^
 | ''ORIGIN'' | The origin of the connection data (ie [[docs:connection:built-in|built-in]] or user) |
+
+
+==== VARCHAR_DEFAULT_PRECISION ====
+
+Not data system are alike and handle data differently. 
+
+By default, when creating a data resource, if no precision (ie [[:docs:common:data_type|data type length]]) is specified, we use the maximum allowed. Unfortunately, [[:docs:system:mysql:text#varchar_default_precision_of_2000|handling of MySql]] makes it difficult to use this rule.
+
+That's why this attribute was introduced. With this attribute you can define the default precision applied when no precision is specified for a `varchar`
