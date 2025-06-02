@@ -20,7 +20,13 @@ If you don't have any knowledge of ''Tabulify'', you can start with the [[howto:
 
 See [[howto:sqlite:create]]
 
-===== Data Type =====
+===== Driver =====
+The driver used is the [[https://github.com/xerial/sqlite-jdbc|Xerial one]]
+
+
+===== Support =====
+
+==== Data Type ====
 ''Sqlite'' does not support natively the following data types.
 
 ''Tabulify'' supports them with an added layer of  functionalities and you can read on this pages how they are managed by ''Tabulify'':
@@ -33,6 +39,15 @@ Due to the data type affinity system of Sqlite that defined the data type by cel
 If this is the case, the data type of the column is null and we infer it then to be a string (''varchar'').
 </note>
 
-===== Driver =====
-The driver used is the [[https://github.com/xerial/sqlite-jdbc|Xerial one]]
 
+==== SQLite does not support the creation and drop of constraint in the alter statement (primary, unique and foreign key) ====
+
+Unfortunately, SQLite does not support the creation and dropping of constraints [[https://www.sqlite.org/lang_altertable.html|as we can see in the alter table statement]].
+
+You can't drop any primary key, unique key and foreign keys.
+
+You need to:
+  * [[:howto:sql_schema:create_table_with_dependencies|create a new schema]]
+  * and to copy or move the data
+
+We still support the constraint creation with the `CREATE TABLE` statement.
