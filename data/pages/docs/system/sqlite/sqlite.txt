@@ -26,7 +26,7 @@ The driver used is the [[https://github.com/xerial/sqlite-jdbc|Xerial one]]
 
 ===== Support =====
 
-==== Data Type ====
+==== Time and Boolean Data Type ====
 ''Sqlite'' does not support natively the following data types.
 
 ''Tabulify'' supports them with an added layer of  functionalities and you can read on this pages how they are managed by ''Tabulify'':
@@ -40,11 +40,11 @@ If this is the case, the data type of the column is null and we infer it then to
 </note>
 
 
-==== SQLite does not support the creation and drop of constraint in the alter statement (primary, unique and foreign key) ====
+==== SQLite does not support the creation and drop of constraints in the alter statement (primary, unique and foreign key) ====
 
-Unfortunately, SQLite does not support the creation and dropping of constraints [[https://www.sqlite.org/lang_altertable.html|as we can see in the alter table statement]].
+Unfortunately, SQLite does not support the creation and dropping of constraints [[https://www.sqlite.org/lang_altertable.html|in the alter table statement]].
 
-You can't drop any primary key, unique key and foreign keys.
+Therefore, you can't drop any primary key, unique key and foreign keys once the tables have been created.
 
 You need to:
   * [[:howto:sql_schema:create_table_with_dependencies|create a new schema]]

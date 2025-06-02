@@ -53,5 +53,13 @@ on duplicate key update `load_timestamp` = values(`load_timestamp`)
 ==== Text Data Type ====
 See [[docs:system:mysql:text|]]
 
+==== TimeZone ====
+
+
+Timezone data type does exist as MySQL [[https://dev.mysql.com/doc/refman/8.4/en/datetime.html|converts TIMESTAMP values from the current time zone to UTC for storage, and back from UTC to the current time zone for retrieval]].
+
+We transform then automatically:
+  * ''timestamp with timezone'' to ''timestamp'' utc
+  * ''time with timezone'' to ''time'' utc 
 ==== Version ====
 MySql is tested against version [[https://dev.mysql.com/doc/refman/5.7/en/|5.7]].
