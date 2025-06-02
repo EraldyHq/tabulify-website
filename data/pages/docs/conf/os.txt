@@ -22,9 +22,9 @@ set it on Linux as:
 <code bash>
 env=prod
 # or
-tabli_env=prod
+tabul_env=prod
 # or
-TABLI_ENV=prod
+TABUL_ENV=prod
 </code>
 
 

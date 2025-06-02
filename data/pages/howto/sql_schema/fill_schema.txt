@@ -1,16 +1,19 @@
 ---json
 {
-    "description": "This how-to will show you how to use the tabli fill command to  fill all the tables of a schema with generated data.",
+    "aliases": [
+        { "path": ":howto:generator:fill_schema" },
+        { "path": ":howto:schema:fill_schema" }
+    ],
+    "description": "This how-to will show you how to use the tabul fill command to  fill all the tables of a schema with generated data.",
     "low_quality_page": "false",
-    "page_id": "i8wii619uui2h456ddwwf",
-    "title": "How to fill a database relational schema with generated data and tabli"
+    "page_id": "i8wii619uui2h456ddwwf"
 }
 ---
-====== Tabulify - How to fill a database relational schema with generated data and Tabli ======
+====== Tabulify - How to fill a database relational schema with generated data and Tabul ======
 
 
 ===== About =====
-This [[..:howto|how-to]] will show you how to use the [[docs:tabli:data:fill|tabli fill]] command to <icon name="mdi:format-color-fill"/> [[docs:op:fill|fill]] all the [[docs:resource:table|tables]] of a [[docs:resource:schema|schema]] with generated data.
+This [[..:howto|how-to]] will show you how to use the [[docs:tabul:data:fill|tabul fill]] command to <icon name="mdi:format-color-fill"/> [[docs:op:fill|fill]] all the [[docs:resource:table|tables]] of a [[docs:resource:schema|schema]] with generated data.
 
 
 ===== Steps =====
@@ -31,9 +34,9 @@ You could:
 <unit>
 <code bash >
 # drop all tables in sqlite
-tabli data drop --not-strict *@sqlite
+tabul data drop --not-strict *@sqlite
 # Create the store_sales star schema (ie the store_sales and its dependencies tables)
-tabli data create --with-dependencies store_sales@tpcds tpc_\${logicalName}@sqlite
+tabul data create --with-dependencies store_sales@tpcds tpc_\${logicalName}@sqlite
 </code>
 </unit>
 
@@ -43,45 +46,45 @@ You should now see in the [[howto:sqlite:howto_connection|Sqlite HowTo connectio
 
 <unit>
 <code bash>
-tabli data list --with-dependencies tpc_store_sales@sqlite
+tabul data list --with-dependencies tpc_store_sales@sqlite
 </code>
 <console>
-path                         
---------------------------   
-tpc_customer                 
-tpc_customer_address         
-tpc_customer_demographics    
-tpc_date_dim                 
-tpc_household_demographics   
-tpc_income_band              
-tpc_item                     
-tpc_promotion                
-tpc_store                    
-tpc_store_sales              
+path
+--------------------------
+tpc_customer
+tpc_customer_address
+tpc_customer_demographics
+tpc_date_dim
+tpc_household_demographics
+tpc_income_band
+tpc_item
+tpc_promotion
+tpc_store
+tpc_store_sales
 tpc_time_dim
 </console>
 </unit>
 
 ==== Schema Filling  ====
 
-Let's fill the table with the [[:docs:tabli:data:fill|tabli data fill]] command that applies the [[:docs:op:fill|fill operation]].
+Let's fill the table with the [[:docs:tabul:data:fill|tabul data fill]] command that applies the [[:docs:op:fill|fill operation]].
 <unit>
 <code bash>
-tabli data fill --with-dependencies tpc_store_sales@sqlite
+tabul data fill --with-dependencies tpc_store_sales@sqlite
 </code>
 <console>
-Source                              Target                              Latency (ms)   Row Count   Error   Message   
----------------------------------   ---------------------------------   ------------   ---------   -----   -------   
-tpc_customer@memgen                 tpc_customer@sqlite                 11             100                           
-tpc_customer_address@memgen         tpc_customer_address@sqlite         17             100                           
-tpc_customer_demographics@memgen    tpc_customer_demographics@sqlite    13             100                           
-tpc_date_dim@memgen                 tpc_date_dim@sqlite                 29             100                           
-tpc_household_demographics@memgen   tpc_household_demographics@sqlite   9              100                           
-tpc_income_band@memgen              tpc_income_band@sqlite              26             100                           
-tpc_item@memgen                     tpc_item@sqlite                     20             100                           
-tpc_promotion@memgen                tpc_promotion@sqlite                13             100                           
-tpc_store@memgen                    tpc_store@sqlite                    20             100                           
-tpc_store_sales@memgen              tpc_store_sales@sqlite              15             100                           
+Source                              Target                              Latency (ms)   Row Count   Error   Message
+---------------------------------   ---------------------------------   ------------   ---------   -----   -------
+tpc_customer@memgen                 tpc_customer@sqlite                 11             100
+tpc_customer_address@memgen         tpc_customer_address@sqlite         17             100
+tpc_customer_demographics@memgen    tpc_customer_demographics@sqlite    13             100
+tpc_date_dim@memgen                 tpc_date_dim@sqlite                 29             100
+tpc_household_demographics@memgen   tpc_household_demographics@sqlite   9              100
+tpc_income_band@memgen              tpc_income_band@sqlite              26             100
+tpc_item@memgen                     tpc_item@sqlite                     20             100
+tpc_promotion@memgen                tpc_promotion@sqlite                13             100
+tpc_store@memgen                    tpc_store@sqlite                    20             100
+tpc_store_sales@memgen              tpc_store_sales@sqlite              15             100
 tpc_time_dim@memgen                 tpc_time_dim@sqlite                 19             100
 </console>
 </unit>
@@ -94,7 +97,7 @@ The [[:docs:op:fill|fill operation]] will by default enforce:
 
 <unit >
 <code bash>
-tabli data head --limit 10 date_dim@sqlite
+tabul data head --limit 10 date_dim@sqlite
 </code>
 <console>
 The first 10 rows of the data resource (date_dim@sqlite):
@@ -151,7 +154,7 @@ This [[docs:resource:generator|generator]] is also a [[docs:resource:content|con
 
 <unit>
 <code bash>
-tabli data head date_dim_2001--datagen.yml@howto
+tabul data head date_dim_2001--datagen.yml@howto
 </code>
 <console>
 The first 10 rows of the data resource (date_dim_2001--datagen.yml@howto):
@@ -172,10 +175,10 @@ d_date       d_year
 
 ==== Fill with generators ====
 
-After having created a generator for the ''date_dim'' [[docs:resource:table|table]], we can pass it to the [[docs:tabli:data:fill|data fill command]] with the ''--generator-selector'' option to make the data generation more controled.
+After having created a generator for the ''date_dim'' [[docs:resource:table|table]], we can pass it to the [[docs:tabul:data:fill|data fill command]] with the ''--generator-selector'' option to make the data generation more controled.
 <unit >
 <code bash>
-tabli data fill --generator-selector date_dim_2001--datagen.yml@howto   *@sqlite
+tabul data fill --generator-selector date_dim_2001--datagen.yml@howto   *@sqlite
 </code>
 <note>
 As the option ''generator-selector'' is a [[docs:resource:selector|resource selector]], you can create a [[docs:resource:generator|generator]] for each table where you want to customize the generated data and select them with the [[docs:common:globbing|glob pattern]].

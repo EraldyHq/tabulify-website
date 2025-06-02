@@ -21,7 +21,7 @@ If you don't have any knowledge of ''Tabulify'', you can start with the [[howto:
 To create a ''Postgres'' connection, you have the following possibilities:
 <tabs skin="tabs">
 <tab panel="confVault" selected="true">Configuration Vault</tab>
-<tab panel="tabli">Tabli</tab>
+<tab panel="tabul">Tabul</tab>
 </tabs>
 <tabpanels>
 <tabpanel id="confVault" spacing="m-3">
@@ -43,21 +43,21 @@ connections:
 The [[docs:connection:password|password value]] will be retrieved from the ''MY_PASSWORD_ENV''  [[:docs:conf:os|environment variable]]
 </note>
 </tabpanel>
-<tabpanel id="tabli" spacing="m-3">
+<tabpanel id="tabul" spacing="m-3">
 
-With the [[docs:tabli:connection:add|tabli add command of the connection module]], adding a Postgres connection with the name ''postgresConnectionName'':
+With the [[docs:tabul:connection:add|tabul add command of the connection module]], adding a Postgres connection with the name ''postgresConnectionName'':
 
 
   * With the Windows CMD console
 
 <code bash>
-tabli connection add "postgresConnectionName" "jdbc:postgresql://[host]:[port]/[database]" ^
+tabul connection add "postgresConnectionName" "jdbc:postgresql://[host]:[port]/[database]" ^
     --user login ^
     --password password
 </code>
   * With Linux Bash
 <code bash>
-tabli connection add "postgresConnectionName" "jdbc:postgresql://[host]:[port]/[database]" \
+tabul connection add "postgresConnectionName" "jdbc:postgresql://[host]:[port]/[database]" \
     --user login \
     --password password
 </code>

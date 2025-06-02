@@ -16,9 +16,9 @@ The Windows ''CMD'' or ''Powershell'' shell see the ''&'' ampersand character of
 For instance, if you want to copy:
   * the content of the following URL [[https://en.wikipedia.org/w/api.php?action=query&titles=SQL|https://en.wikipedia.org/w/api.php?action=query&titles=SQL]]
   * in a CMD/DOS/Powershell terminal
-  * with the [[docs:tabli:data:copy|data copy command]]
+  * with the [[docs:tabul:data:copy|data copy command]]
 <code bash>
-tabli data copy "https://en.wikipedia.org/w/api.php?action=query&titles=SQL" sql.xml
+tabul data copy "https://en.wikipedia.org/w/api.php?action=query&titles=SQL" sql.xml
 </code>
 Because of the ''ampersand'', you will get the following error.
 <console>
@@ -33,4 +33,4 @@ Because of the ''ampersand'', you will get the following error.
 
 ===== How to get Bash  ? =====
 
-If you does not have bash, we have created [[howto:tabli:bash|a step-by-step tutorial on how to install it]].
+If you does not have bash, we have created [[howto:tabul:bash|a step-by-step tutorial on how to install it]].

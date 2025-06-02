@@ -22,5 +22,5 @@ In every [[docs:op:transfer|transfer operation]]:
       * ''truncate''
 
 <note>
-The ''target operation'' in ''tabli'' is set with the ''target-operation'' [[docs:tabli:option|option]]
+The ''target operation'' in ''tabul'' is set with the ''target-operation'' [[docs:tabul:option|option]]
 </note>

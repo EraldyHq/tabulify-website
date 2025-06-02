@@ -25,7 +25,7 @@ Therefore, this is mandatory to use the [[docs:op:fill|fill operation]]
   * [[howto:getting_started:1_install|A Tabulify Installation]]
 <unit display="none">
 <code bash>
-tabli data drop --not-strict date_dim.csv@temp
+tabul data drop --not-strict date_dim.csv@temp
 </code>
 </unit>
 
@@ -92,58 +92,58 @@ Columns:
 </unit>
 ==== Run the fill command ====
 
-The below [[docs:tabli:data:fill|data fill]] command will create a [[docs:resource:csv|CSV file]] named ''d_date.csv'' in the [[docs:connection:temp|temporary directory]].
+The below [[docs:tabul:data:fill|data fill]] command will create a [[docs:resource:csv|CSV file]] named ''d_date.csv'' in the [[docs:connection:temp|temporary directory]].
 <unit >
 <code bash>
-tabli data fill --generator-selector date_dim--datagen.yml@howto date_dim.csv@temp
+tabul data fill --generator-selector date_dim--datagen.yml@howto date_dim.csv@temp
 </code>
 <console>
-Source            Target              Latency (ms)   Row Count   Error   Message   
----------------   -----------------   ------------   ---------   -----   -------   
+Source            Target              Latency (ms)   Row Count   Error   Message
+---------------   -----------------   ------------   ---------   -----   -------
 date_dim@memgen   date_dim.csv@temp   677            100
 </console>
 </unit>
 
 ==== Check the result ====
 
-What is the data of the CSV file with the [[docs:tabli:data:head|data head command]]?
+What is the data of the CSV file with the [[docs:tabul:data:head|data head command]]?
 <unit >
 <code bash>
-tabli data head --limit 30 date_dim.csv@temp
+tabul data head --limit 30 date_dim.csv@temp
 </code>
 <console>
-The first 30 rows of the data resource (date_dim.csv@temp): 
-d_date_sk   d_date       d_date_id    d_month_seq   d_day_name   d_moy   d_year   
----------   ----------   ----------   -----------   ----------   -----   ------   
-1           2025-05-13   2025-05-13   202505        Tuesday      5       2025     
-2           2025-05-12   2025-05-12   202505        Monday       5       2025     
-3           2025-05-11   2025-05-11   202505        Sunday       5       2025     
-4           2025-05-10   2025-05-10   202505        Saturday     5       2025     
-5           2025-05-09   2025-05-09   202505        Friday       5       2025     
-6           2025-05-08   2025-05-08   202505        Thursday     5       2025     
-7           2025-05-07   2025-05-07   202505        Wednesday    5       2025     
-8           2025-05-06   2025-05-06   202505        Tuesday      5       2025     
-9           2025-05-05   2025-05-05   202505        Monday       5       2025     
-10          2025-05-04   2025-05-04   202505        Sunday       5       2025     
-11          2025-05-03   2025-05-03   202505        Saturday     5       2025     
-12          2025-05-02   2025-05-02   202505        Friday       5       2025     
-13          2025-05-01   2025-05-01   202505        Thursday     5       2025     
-14          2025-04-30   2025-04-30   202504        Wednesday    4       2025     
-15          2025-04-29   2025-04-29   202504        Tuesday      4       2025     
-16          2025-04-28   2025-04-28   202504        Monday       4       2025     
-17          2025-04-27   2025-04-27   202504        Sunday       4       2025     
-18          2025-04-26   2025-04-26   202504        Saturday     4       2025     
-19          2025-04-25   2025-04-25   202504        Friday       4       2025     
-20          2025-04-24   2025-04-24   202504        Thursday     4       2025     
-21          2025-04-23   2025-04-23   202504        Wednesday    4       2025     
-22          2025-04-22   2025-04-22   202504        Tuesday      4       2025     
-23          2025-04-21   2025-04-21   202504        Monday       4       2025     
-24          2025-04-20   2025-04-20   202504        Sunday       4       2025     
-25          2025-04-19   2025-04-19   202504        Saturday     4       2025     
-26          2025-04-18   2025-04-18   202504        Friday       4       2025     
-27          2025-04-17   2025-04-17   202504        Thursday     4       2025     
-28          2025-04-16   2025-04-16   202504        Wednesday    4       2025     
-29          2025-04-15   2025-04-15   202504        Tuesday      4       2025     
+The first 30 rows of the data resource (date_dim.csv@temp):
+d_date_sk   d_date       d_date_id    d_month_seq   d_day_name   d_moy   d_year
+---------   ----------   ----------   -----------   ----------   -----   ------
+1           2025-05-13   2025-05-13   202505        Tuesday      5       2025
+2           2025-05-12   2025-05-12   202505        Monday       5       2025
+3           2025-05-11   2025-05-11   202505        Sunday       5       2025
+4           2025-05-10   2025-05-10   202505        Saturday     5       2025
+5           2025-05-09   2025-05-09   202505        Friday       5       2025
+6           2025-05-08   2025-05-08   202505        Thursday     5       2025
+7           2025-05-07   2025-05-07   202505        Wednesday    5       2025
+8           2025-05-06   2025-05-06   202505        Tuesday      5       2025
+9           2025-05-05   2025-05-05   202505        Monday       5       2025
+10          2025-05-04   2025-05-04   202505        Sunday       5       2025
+11          2025-05-03   2025-05-03   202505        Saturday     5       2025
+12          2025-05-02   2025-05-02   202505        Friday       5       2025
+13          2025-05-01   2025-05-01   202505        Thursday     5       2025
+14          2025-04-30   2025-04-30   202504        Wednesday    4       2025
+15          2025-04-29   2025-04-29   202504        Tuesday      4       2025
+16          2025-04-28   2025-04-28   202504        Monday       4       2025
+17          2025-04-27   2025-04-27   202504        Sunday       4       2025
+18          2025-04-26   2025-04-26   202504        Saturday     4       2025
+19          2025-04-25   2025-04-25   202504        Friday       4       2025
+20          2025-04-24   2025-04-24   202504        Thursday     4       2025
+21          2025-04-23   2025-04-23   202504        Wednesday    4       2025
+22          2025-04-22   2025-04-22   202504        Tuesday      4       2025
+23          2025-04-21   2025-04-21   202504        Monday       4       2025
+24          2025-04-20   2025-04-20   202504        Sunday       4       2025
+25          2025-04-19   2025-04-19   202504        Saturday     4       2025
+26          2025-04-18   2025-04-18   202504        Friday       4       2025
+27          2025-04-17   2025-04-17   202504        Thursday     4       2025
+28          2025-04-16   2025-04-16   202504        Wednesday    4       2025
+29          2025-04-15   2025-04-15   202504        Tuesday      4       2025
 30          2025-04-14   2025-04-14   202504        Monday       4       2025
 </console>
 </unit>

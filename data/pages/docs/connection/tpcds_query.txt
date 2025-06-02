@@ -14,52 +14,52 @@ It's one of the [[howtos|howto's connections]] created at the installation of ''
 
 ===== Location =====
 
-This directory is a subdirectory of the [[docs:tabli:home|installation directory]].
+This directory is a subdirectory of the [[docs:tabul:home|installation directory]].
 
-With the [[docs:tabli:connection:info|connection info]] command:
+With the [[docs:tabul:connection:info|connection info]] command:
 <unit>
 <code bash>
-tabli connection info tpcds_query
+tabul connection info tpcds_query
 </code>
 <console>
 Information about the connection (tpcds_query)
-Attribute               Value                                         Description                                                            
----------------------   -------------------------------------------   --------------------------------------------------------------------   
-BOOLEAN_DATA_TYPE       Native                                        Boolean data type used to store boolean values                         
-COMMENT                 The location of the Tpc Ds queries            A connection description                                               
-DATE_DATA_TYPE          NATIVE                                        Date data type used to store date values                               
-HOST                                                                  Host Server                                                            
-MAX_CONCURRENT_THREAD                                                 The maximum number of threads that can be created against the system   
-MAX_NAME_IN_PATH                                                      The maximum number of names in a path                                  
-NAME                    tpcds_query                                   The name of the connection                                             
-NATIVES                                                               Native Driver attributes (jdbc properties, ...)                        
-ORIGIN                                                                The origin of the connection                                           
-PASSWORD                                                              The user password                                                      
-PORT                    -1                                            Host Port                                                              
-TABULAR_FILE_TYPE       text/csv                                      The default file type when downloading tabular data                    
-TIMESTAMP_DATA_TYPE     NATIVE                                        Timestamp data type used to store timestamp values                     
-TIME_DATA_TYPE          NATIVE                                        Time format data type to store time values                             
-URI                     file:///opt/tabulify/resources/tpcds_query/   The uri of the connection                                              
-USER                                                                  The user name                                                          
+Attribute               Value                                         Description
+---------------------   -------------------------------------------   --------------------------------------------------------------------
+BOOLEAN_DATA_TYPE       Native                                        Boolean data type used to store boolean values
+COMMENT                 The location of the Tpc Ds queries            A connection description
+DATE_DATA_TYPE          NATIVE                                        Date data type used to store date values
+HOST                                                                  Host Server
+MAX_CONCURRENT_THREAD                                                 The maximum number of threads that can be created against the system
+MAX_NAME_IN_PATH                                                      The maximum number of names in a path
+NAME                    tpcds_query                                   The name of the connection
+NATIVES                                                               Native Driver attributes (jdbc properties, ...)
+ORIGIN                                                                The origin of the connection
+PASSWORD                                                              The user password
+PORT                    -1                                            Host Port
+TABULAR_FILE_TYPE       text/csv                                      The default file type when downloading tabular data
+TIMESTAMP_DATA_TYPE     NATIVE                                        Timestamp data type used to store timestamp values
+TIME_DATA_TYPE          NATIVE                                        Time format data type to store time values
+URI                     file:///opt/tabulify/resources/tpcds_query/   The uri of the connection
+USER                                                                  The user name
 WORKING_PATH            /opt/tabulify/resources/tpcds_query           The working path (Schema for database, directory for file system)
 </console>
 </unit>
 
 ===== Directory Structure  =====
 
-With the [[docs:tabli:data:list|data list]] command, we can see that the queries are categorized by [[docs:system:database|database]]
+With the [[docs:tabul:data:list|data list]] command, we can see that the queries are categorized by [[docs:system:database|database]]
 <unit>
 <code bash>
-tabli data list -a count *@tpcds_query
+tabul data list -a count *@tpcds_query
 </code>
 <console>
-count   
------   
-   32   
-   99   
-   99   
-   99   
-  100   
+count
+-----
+   32
+   99
+   99
+   99
+  100
    99
 </console>
 </unit>

@@ -15,4 +15,4 @@
 ===== Support =====
 ==== data delete operation ====
 
-The [[docs:tabli:data:delete|data delete operation]] supports the ''delete'' operation at a record level
+The [[docs:tabul:data:delete|data delete operation]] supports the ''delete'' operation at a record level

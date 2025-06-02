@@ -8,7 +8,7 @@
 
 ===== About =====
 
-A ''entity column generator''  is a [[column|column data generator]] that [[generator|generates]] data from 
+A ''entity column generator''  is a [[column|column data generator]] that [[generator|generates]] data from
 a specific provided csv file located in the [[:docs:connection:built-in|entity connection]].
 
 
@@ -23,7 +23,7 @@ If you want to provide your own data set, you can use the [[data-set|data set ge
 
 The list of [[:docs:conf:attribute|attributes]] that you can use in the [[:docs:resource:generator#Data_Generator|DataGenerator]] property are:
 
-^ Attribute Name ^ Description ^ Default ^ 
+^ Attribute Name ^ Description ^ Default ^
 | ''NAME'' | The name of the entity | Name of the column |
 | ''COLUMN'' | The name of the column to the data from the entity | Name of the column |
 | ''LOCALE'' | The locale of the entity for entity localization | ''en'' |
@@ -34,17 +34,17 @@ The list of [[:docs:conf:attribute|attributes]] that you can use in the [[:docs:
 All entities are stored under the [[:docs:connection:built-in|entity built-in connection]]
 <unit>
 <code bash>
-tabli data list *@entity
+tabul data list *@entity
 </code>
 <console>
-path        
----------   
-country     
-firstname   
-gender      
-lastname    
-prefix      
-region      
+path
+---------
+country
+firstname
+gender
+lastname
+prefix
+region
 subregion
 </console>
 </unit>
@@ -54,23 +54,23 @@ And every entity may have one or more locale
 Example for the `firstname` entity
 <unit>
 <code bash>
-tabli data list firstname/*@entity
+tabul data list firstname/*@entity
 </code>
 <console>
-path                         
---------------------------   
-firstname/firstname_ca.csv   
-firstname/firstname_de.csv   
-firstname/firstname_en.csv   
-firstname/firstname_es.csv   
-firstname/firstname_fr.csv   
-firstname/firstname_gd.csv   
-firstname/firstname_hu.csv   
-firstname/firstname_it.csv   
-firstname/firstname_nl.csv   
-firstname/firstname_pl.csv   
-firstname/firstname_pt.csv   
-firstname/firstname_sk.csv   
+path
+--------------------------
+firstname/firstname_ca.csv
+firstname/firstname_de.csv
+firstname/firstname_en.csv
+firstname/firstname_es.csv
+firstname/firstname_fr.csv
+firstname/firstname_gd.csv
+firstname/firstname_hu.csv
+firstname/firstname_it.csv
+firstname/firstname_nl.csv
+firstname/firstname_pl.csv
+firstname/firstname_pt.csv
+firstname/firstname_sk.csv
 firstname/firstname_tr.csv
 </console>
 </unit>
@@ -82,7 +82,7 @@ An entity is [[:docs:resource:csv|CSV file]]:
     * Example: `firstname_en.csv` are English first names.
     * The locale defaults to `en` if not provided
   * where the first column as the same name as the file
-  * that 
+  * that
     * contains the value to return as first column
     * contains optionally a numeric weight factor column called `probability`, `weight` or `factor` to create a [[:docs:generator:histogram|histogram (distribution)]]
     * contains optionally other meta columns (for example ''gender'' for a ''firstname'')
@@ -91,21 +91,21 @@ An entity is [[:docs:resource:csv|CSV file]]:
 Example with the `firstname_fr.csv` entity file
 <unit>
 <code bash>
-tabli data head firstname/firstname_fr.csv@entity
+tabul data head firstname/firstname_fr.csv@entity
 </code>
 <console>
-The first 10 rows of the data resource (firstname/firstname_fr.csv@entity): 
-firstname   gender   probability                  
----------   ------   --------------------------   
-Aadam       M        3.14396359513727576E-7       
-Aadel       M        6.52081338250694231E-7       
-Aadil       M        0.000002142552968537995330   
-Aahil       M        2.44530501844010337E-7       
-Aakash      M        3.02752049902108036E-7       
-Aalia       F        4.77416694076401133E-7       
-Aaliya      F        0.000002422016399216864286   
-Aaliyah     F        0.000028086074783226330085   
-Aalya       F        0.000001490471630287301099   
+The first 10 rows of the data resource (firstname/firstname_fr.csv@entity):
+firstname   gender   probability
+---------   ------   --------------------------
+Aadam       M        3.14396359513727576E-7
+Aadel       M        6.52081338250694231E-7
+Aadil       M        0.000002142552968537995330
+Aahil       M        2.44530501844010337E-7
+Aakash      M        3.02752049902108036E-7
+Aalia       F        4.77416694076401133E-7
+Aaliya      F        0.000002422016399216864286
+Aaliyah     F        0.000028086074783226330085
+Aalya       F        0.000001490471630287301099
 Aalyah      F        0.000002585036733779537844
 </console>
 </unit>

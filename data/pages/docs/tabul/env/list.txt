@@ -1,0 +1,121 @@
+---json
+{
+    "aliases": [
+        { "path": ":docs:tabul:attribute:list" },
+        { "path": ":docs:tabul:variable:list" }
+    ],
+    "page_id": "0x3oeuiayk97qos6bedi0"
+}
+---
+====== Tabul - Env List Command ======
+
+
+===== About =====
+The ''list'' command of the [[..:env:start|env module]] that lists the [[docs:conf:env|global attributes]]
+===== Example =====
+
+By default, the listing shows only the ''internal'', ''user'', ''dotenv'' and ''project'' variables
+
+<unit>
+<code bash>
+tabul env list
+
+</code>
+<console>
+attribute      value                              origin           description
+------------   --------------------------------   --------------   ------------------------------------------
+CONF           /home/tabulify/.tabul/.tabul.yml   Default          The conf vault file path
+ENV            DEV                                Os environment   The execution environment
+HOME           /opt/tabulify                      Default          The directory of the Tabulify installation
+LOG_LEVEL      ERROR                              Os environment   The log level
+PASSPHRASE                                        Default          The passphrase
+PROJECT_HOME                                      Default          The project home directory
+USER_HOME      /home/tabulify/.tabul              Os environment   Tabulify User home Directory
+</console>
+</unit>
+
+===== Syntax =====
+
+<unit>
+<code bash>
+tabul env list -h
+</code>
+<console>
+Tabul env list
+==============
+
+List the configurations
+
+
+Tip:To have a nice output because a value may be very lengthy, you should set the width of your terminal to a big number (such as 10000)
+
+
+
+Examples
+--------
+
+ 1 - List all `tabul` configurations
+
+
+    tabul env list *
+
+
+ 2 - List all Home configurations
+
+
+    tabul env list  *home*
+
+
+ 3 - List all attributes set by OS Environment variables
+
+
+    tabul env list --type OS
+
+
+
+
+Syntax
+------
+
+
+    tabul env list [options|flags] <name-selector...>
+
+
+where:
+
+
+  Arguments:
+
+    <name-selector...>                                      One or more glob selector(s) that will filter the output by the key name
+
+
+  Options:
+
+    -t,--type <mediaType|mimeType|extensionFile>            The type of the configurations to return ('all, command-line, conf, default, dotenv, os, sys, uri' or `all`)
+
+
+  Global Options:
+
+    -vf,--conf <path>                                       The path to a configuration file
+
+    -e,--env <env>                                          The name of the environment
+
+    -h,--help                                               Print this help
+
+    -l,--log-level <error|warning|tip|info|fine>            Set the log level
+
+    -ns,--not-strict                                        A minor error will not stop the process.
+
+    -odu,--output-data-uri <outputDataUri>                  defines the output data uri for the feedback data (default: console)
+
+    -oo,--output-operation <dataOperation>                  defines the data operations (replace, truncate) on an existing output resource before transfer.
+
+    -oop,--output-transfer-operation <transferOperation>    defines the output transfer operation (insert, update, merge, copy). Default to `copy` for a file system and `insert` for a database.
+
+    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted vault values (Env: TABUL_PASSPHRASE)
+
+    -ph,--project-home <path>                               The project home (default to the .tabul.yml file directory)
+
+    -v,--version                                            Print version information
+</console>
+</unit>

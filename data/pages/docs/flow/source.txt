@@ -9,7 +9,7 @@
 ===== About =====
 A ''source data resource'' is a [[docs:resource:resource|data resource]] used as a ''source'':
   * in a [[step|pipeline step]].
-  * or  in a [[docs:tabli:data:start|tabli data operations]]
+  * or  in a [[docs:tabul:data:start|tabul data operations]]
 
 
 

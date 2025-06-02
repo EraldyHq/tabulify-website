@@ -2,8 +2,7 @@
 {
     "description": "This how-to shows you how to generate random data with the column random generator.",
     "low_quality_page": "false",
-    "page_id": "bi8ermzs2ogeyim4vvnxd",
-    "title": "How to generate random data"
+    "page_id": "bi8ermzs2ogeyim4vvnxd"
 }
 ---
 ====== Tabulify - How to generate random data ======
@@ -99,10 +98,10 @@ Columns:
 </unit>
 ==== Printing the data ====
 
-With the [[docs:tabli:data:print|data print command]], we can print the ''30 values'' generated.
+With the [[docs:tabul:data:print|data print command]], we can print the ''30 values'' generated.
 <unit>
 <code bash>
-tabli data print random--datagen.yml@howto
+tabul data print random--datagen.yml@howto
 </code>
 <note tip>
 [[docs:connection:howto|howto]] is the connection that contains the files used in the [[..:howto|HowTo's]].

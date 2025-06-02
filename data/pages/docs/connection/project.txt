@@ -11,36 +11,36 @@
 
 It is automatically created when:
   * a [[:docs:conf:vault|project file (ie configuration vault)]] is detected
-  * the ''%%--project-home%%'' is passed as an [[docs:tabli:option|option]]
-  * or the ''%%TABLI_PROJECT_HOME%%'' [[:docs:conf:os|OS environment variable]] is set
+  * the ''%%--project-home%%'' is passed as an [[docs:tabul:option|option]]
+  * or the ''%%TABUL_PROJECT_HOME%%'' [[:docs:conf:os|OS environment variable]] is set
 
 ===== Example =====
 
-By setting the [[docs:tabli:global|global option]] ''%%--project-home%%'', we are defining a [[docs:project:project|project run]] in the ''tabli-project'' directory from the [[docs:connection:home|user home directory (@user)]]. We can therefore see its [[attribute|attributes]] with the [[docs:tabli:connection:info|info command]].
+By setting the [[docs:tabul:global|global option]] ''%%--project-home%%'', we are defining a [[docs:project:project|project run]] in the ''tabul-project'' directory from the [[docs:connection:home|user home directory (@user)]]. We can therefore see its [[attribute|attributes]] with the [[docs:tabul:connection:info|info command]].
 <unit>
 <code bash>
-tabli --project-home  tabli-project@user connection info project
+tabul --project-home  tabul-project@user connection info project
 </code>
 <console>
 Information about the connection (project)
-Attribute               Value                                      Description                                                            
----------------------   ----------------------------------------   --------------------------------------------------------------------   
-BOOLEAN_DATA_TYPE       Native                                     Boolean data type used to store boolean values                         
-COMMENT                 The project home path                      A connection description                                               
-DATE_DATA_TYPE          NATIVE                                     Date data type used to store date values                               
-HOST                                                               Host Server                                                            
-MAX_CONCURRENT_THREAD                                              The maximum number of threads that can be created against the system   
-MAX_NAME_IN_PATH                                                   The maximum number of names in a path                                  
-NAME                    project                                    The name of the connection                                             
-NATIVES                                                            Native Driver attributes (jdbc properties, ...)                        
-ORIGIN                                                             The origin of the connection                                           
-PASSWORD                                                           The user password                                                      
-PORT                    -1                                         Host Port                                                              
-TABULAR_FILE_TYPE       text/csv                                   The default file type when downloading tabular data                    
-TIMESTAMP_DATA_TYPE     NATIVE                                     Timestamp data type used to store timestamp values                     
-TIME_DATA_TYPE          NATIVE                                     Time format data type to store time values                             
-URI                     file:///home/tabulify/tabli-project@user   The uri of the connection                                              
-USER                                                               The user name                                                          
-WORKING_PATH            /home/tabulify/tabli-project@user          The working path (Schema for database, directory for file system)
+Attribute               Value                                      Description
+---------------------   ----------------------------------------   --------------------------------------------------------------------
+BOOLEAN_DATA_TYPE       Native                                     Boolean data type used to store boolean values
+COMMENT                 The project home path                      A connection description
+DATE_DATA_TYPE          NATIVE                                     Date data type used to store date values
+HOST                                                               Host Server
+MAX_CONCURRENT_THREAD                                              The maximum number of threads that can be created against the system
+MAX_NAME_IN_PATH                                                   The maximum number of names in a path
+NAME                    project                                    The name of the connection
+NATIVES                                                            Native Driver attributes (jdbc properties, ...)
+ORIGIN                                                             The origin of the connection
+PASSWORD                                                           The user password
+PORT                    -1                                         Host Port
+TABULAR_FILE_TYPE       text/csv                                   The default file type when downloading tabular data
+TIMESTAMP_DATA_TYPE     NATIVE                                     Timestamp data type used to store timestamp values
+TIME_DATA_TYPE          NATIVE                                     Time format data type to store time values
+URI                     file:///home/tabulify/tabul-project@user   The uri of the connection
+USER                                                               The user name
+WORKING_PATH            /home/tabulify/tabul-project@user          The working path (Schema for database, directory for file system)
 </console>
 </unit>

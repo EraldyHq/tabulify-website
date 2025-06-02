@@ -3,7 +3,7 @@
     "aliases": [
         { "path": ":howto:sqlite:defined_generated_data" }
     ],
-    "description": "This how-to will show you how to define the generation of data via a data definition file and load it into a table via the tabli data fill operation.",
+    "description": "This how-to will show you how to define the generation of data via a data definition file and load it into a table via the tabul data fill operation.",
     "low_quality_page": "false",
     "name": "Fill a table with Defined Data Generation",
     "page_id": "lvcdrwjg8g0x0q2xsiy6c"
@@ -14,7 +14,7 @@
 ===== About =====
 This [[..:howto|how-to]] will show you how to:
   * define the <icon name="mdi:cog"/> [[docs:generator:generator|generation of data]] via a [[docs:resource:data-definition|data definition file]]
-  * and [[docs:op:fill|load it]] into a <icon name="mdi:table-large" /> [[docs:resource:table|table]] via the [[docs:tabli:data:fill|tabli data fill operation]].
+  * and [[docs:op:fill|load it]] into a <icon name="mdi:table-large" /> [[docs:resource:table|table]] via the [[docs:tabul:data:fill|tabul data fill operation]].
 
 ===== Steps =====
 ==== Prerequisites ====
@@ -79,26 +79,26 @@ Columns:
 ==== Drop the target table if it exists ====
 
 
-With [[:docs:tabli:data:drop|tabli drop]], we will:
+With [[:docs:tabul:data:drop|tabul drop]], we will:
   * drop the `date_dim` table from `sqlite`
   * not fail if there is no table found
   * drop the foreign keys thanks to the `--force` if any exists
 
 <unit>
 <code bash>
-tabli data drop --not-strict --force date_dim@sqlite
+tabul data drop --not-strict --force date_dim@sqlite
 </code>
 </unit>
 
 ==== Fill the table ====
-The [[docs:tabli:data:fill|tabli data fill]] command takes the data definition as input and can load it into a table.
+The [[docs:tabul:data:fill|tabul data fill]] command takes the data definition as input and can load it into a table.
 <unit>
 <code bash>
-tabli data fill --generator-selector date_dim--datagen.yml@howto date_dim@sqlite
+tabul data fill --generator-selector date_dim--datagen.yml@howto date_dim@sqlite
 </code>
 <console>
-Source            Target            Latency (ms)   Row Count   Error   Message   
----------------   ---------------   ------------   ---------   -----   -------   
+Source            Target            Latency (ms)   Row Count   Error   Message
+---------------   ---------------   ------------   ---------   -----   -------
 date_dim@memgen   date_dim@sqlite   695            100
 </console>
 </unit>
@@ -107,21 +107,21 @@ date_dim@memgen   date_dim@sqlite   695            100
 The table ''date_dim'' was filled with generated data
 <unit>
 <code bash>
-tabli data head date_dim@sqlite
+tabul data head date_dim@sqlite
 </code>
 <console>
-The first 10 rows of the data resource (date_dim@sqlite): 
-d_date_sk   d_date       d_date_id    d_month_seq   d_day_name   d_moy   d_year   
----------   ----------   ----------   -----------   ----------   -----   ------   
-        1   2025-05-20   2025-05-20        202505   Tuesday          5   2025     
-        2   2025-05-19   2025-05-19        202505   Monday           5   2025     
-        3   2025-05-18   2025-05-18        202505   Sunday           5   2025     
-        4   2025-05-17   2025-05-17        202505   Saturday         5   2025     
-        5   2025-05-16   2025-05-16        202505   Friday           5   2025     
-        6   2025-05-15   2025-05-15        202505   Thursday         5   2025     
-        7   2025-05-14   2025-05-14        202505   Wednesday        5   2025     
-        8   2025-05-13   2025-05-13        202505   Tuesday          5   2025     
-        9   2025-05-12   2025-05-12        202505   Monday           5   2025     
+The first 10 rows of the data resource (date_dim@sqlite):
+d_date_sk   d_date       d_date_id    d_month_seq   d_day_name   d_moy   d_year
+---------   ----------   ----------   -----------   ----------   -----   ------
+        1   2025-05-20   2025-05-20        202505   Tuesday          5   2025
+        2   2025-05-19   2025-05-19        202505   Monday           5   2025
+        3   2025-05-18   2025-05-18        202505   Sunday           5   2025
+        4   2025-05-17   2025-05-17        202505   Saturday         5   2025
+        5   2025-05-16   2025-05-16        202505   Friday           5   2025
+        6   2025-05-15   2025-05-15        202505   Thursday         5   2025
+        7   2025-05-14   2025-05-14        202505   Wednesday        5   2025
+        8   2025-05-13   2025-05-13        202505   Tuesday          5   2025
+        9   2025-05-12   2025-05-12        202505   Monday           5   2025
        10   2025-05-11   2025-05-11        202505   Sunday           5   2025
 </console>
 </unit>

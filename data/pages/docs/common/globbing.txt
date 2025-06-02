@@ -14,7 +14,7 @@
 
 
 <note info>
-If you are new to ''glob pattern'', see this page [[howto:tabli:glob]]
+If you are new to ''glob pattern'', see this page [[howto:tabul:glob]]
 </note>
 
 
@@ -41,20 +41,20 @@ You can use this extra variable in:
   * a [[docs:conf:template|template name]]
   * a [[:docs:resource:target_uri|target uri]]
 
-Example with the [[:docs:tabli:data:list|data list command]] that:
+Example with the [[:docs:tabul:data:list|data list command]] that:
   * selects the table that starts with ''web'' on a [[:docs:system:tpcds|tpcds schema]]
   * shows the [[:docs:resource:logicalname|logical]] and the ''1'' first back-reference value
 
 <unit>
 <code bash>
-tabli data list -a logicalName -a 1 web_*@tpcds
+tabul data list -a logicalName -a 1 web_*@tpcds
 </code>
 <console>
-logicalName   1         
------------   -------   
-web_page      page      
-web_returns   returns   
-web_sales     sales     
+logicalName   1
+-----------   -------
+web_page      page
+web_returns   returns
+web_sales     sales
 web_site      site
 </console>
 </unit>

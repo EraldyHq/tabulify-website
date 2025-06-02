@@ -27,85 +27,85 @@ They may be:
 ==== See ====
 
 
-You can see this attributes with the [[docs:tabli:data:info|tabli data info]] command
+You can see this attributes with the [[docs:tabul:data:info|tabul data info]] command
 
 <unit>
 <code bash>
-tabli data info characters.csv@howto
+tabul data info characters.csv@howto
 </code>
 <console>
 Information about the data resource (characters.csv@howto)
-attribute             value                                                                                              description                                                              
--------------------   ------------------------------------------------------------------------------------------------   ----------------------------------------------------------------------   
-CHARACTER_SET         UTF-8                                                                                              The character set of the file                                            
-COLUMN_NAME           lines                                                                                              The name of the column when the text content is returned on one column   
-COMMENT_CHARACTER     #                                                                                                  The comment character                                                    
-DELIMITER_CHARACTER   ,                                                                                                  The delimiter character                                                  
-END_OF_RECORD         \n, \r, \r\n                                                                                       The End Of Record string sequence                                        
-ESCAPE_CHARACTER                                                                                                         The escape character                                                     
-HEADER_ROW_ID         1                                                                                                  The id of the header row                                                 
-IGNORE_EMPTY_LINE     true                                                                                               Ignore empty line                                                        
-QUOTE_CHARACTER       "                                                                                                  The quote character                                                      
-URI                   file:///opt/tabulify/resources/howto/characters.csv                                                The URI of the file                                                      
-ABSOLUTE_PATH         /opt/tabulify/resources/howto/characters.csv                                                       The absolute path on the data system                                     
-CONNECTION            howto                                                                                              The connection name                                                      
-COUNT                 5                                                                                                  The number of records                                                    
-DATA_URI              characters.csv@howto                                                                               The data uri                                                             
-LOGICAL_NAME          characters                                                                                         The logical name                                                         
-MD5                   d0d7f020d834cde13d0a14733520d4d6                                                                   The Md5 hash                                                             
-NAME                  characters.csv                                                                                     The name of the data resource                                            
-PARENT                                                                                                                   The parent                                                               
-PATH                  characters.csv                                                                                     The relative path to the default connection path                         
-SHA384                6e96667d1306abb445b5608ec36d193a6dc775a6adc74844531906bf4691eee5f32ce7c423e38c9c072692f459c57d5f   The Sha384 hash                                                          
-SHA384_INTEGRITY      sha384-bpZmfRMGq7RFtWCOw20ZOm3Hdaatx0hEUxkGv0aR7uXzLOfEI+OMnAcmkvRZxX1f                            The sha384 value used in the html integrity attribute                    
-SIZE                  432                                                                                                The number of byte                                                       
-SUBTYPE               csv                                                                                                The media subType                                                        
+attribute             value                                                                                              description
+-------------------   ------------------------------------------------------------------------------------------------   ----------------------------------------------------------------------
+CHARACTER_SET         UTF-8                                                                                              The character set of the file
+COLUMN_NAME           lines                                                                                              The name of the column when the text content is returned on one column
+COMMENT_CHARACTER     #                                                                                                  The comment character
+DELIMITER_CHARACTER   ,                                                                                                  The delimiter character
+END_OF_RECORD         \n, \r, \r\n                                                                                       The End Of Record string sequence
+ESCAPE_CHARACTER                                                                                                         The escape character
+HEADER_ROW_ID         1                                                                                                  The id of the header row
+IGNORE_EMPTY_LINE     true                                                                                               Ignore empty line
+QUOTE_CHARACTER       "                                                                                                  The quote character
+URI                   file:///opt/tabulify/resources/howto/characters.csv                                                The URI of the file
+ABSOLUTE_PATH         /opt/tabulify/resources/howto/characters.csv                                                       The absolute path on the data system
+CONNECTION            howto                                                                                              The connection name
+COUNT                 5                                                                                                  The number of records
+DATA_URI              characters.csv@howto                                                                               The data uri
+LOGICAL_NAME          characters                                                                                         The logical name
+MD5                   d0d7f020d834cde13d0a14733520d4d6                                                                   The Md5 hash
+NAME                  characters.csv                                                                                     The name of the data resource
+PARENT                                                                                                                   The parent
+PATH                  characters.csv                                                                                     The relative path to the default connection path
+SHA384                6e96667d1306abb445b5608ec36d193a6dc775a6adc74844531906bf4691eee5f32ce7c423e38c9c072692f459c57d5f   The Sha384 hash
+SHA384_INTEGRITY      sha384-bpZmfRMGq7RFtWCOw20ZOm3Hdaatx0hEUxkGv0aR7uXzLOfEI+OMnAcmkvRZxX1f                            The sha384 value used in the html integrity attribute
+SIZE                  432                                                                                                The number of byte
+SUBTYPE               csv                                                                                                The media subType
 TYPE                  text/csv                                                                                           The media type
 </console>
 </unit>
 
 ==== List ====
 
-You can get them in a tabular format with the [[docs:tabli:data:list|tabli data list]] command
+You can get them in a tabular format with the [[docs:tabul:data:list|tabul data list]] command
 
 <unit>
 <code bash>
-tabli data list -a name -a count -a size *@howto
+tabul data list -a name -a count -a size *@howto
 </code>
 <console>
-name                                         count   size   
-------------------------------------------   -----   ----   
-README.md                                        3    132   
-books.csv                                        6    386   
-books_template.json                              1    112   
-characters.csv                                   5    432   
-characters_target.csv                            3    268   
-create_foo.sql                                   2     70   
-date_dim--datagen.yml                          100          
-date_dim_2001--datagen.yml                     100          
-email                                            2          
-generator_count--datagen.yml                   100          
-histogram_normal_distribution--datagen.yml      30          
-histogram_random--datagen.yml                   10          
-json                                             1          
-pebble                                           2          
-pipeline                                         4          
-postgres                                         1          
-random--datagen.yml                             30          
-recursive                                        1          
-select.yml                                       1    332   
-sequence--datagen.yml                           30          
-sequence_color--datagen.yml                     10          
-sequence_number--datagen.yml                    14          
-sequence_odometer--datagen.yml                 100          
-sequence_time--datagen.yml                      30          
-sequence_varchar--datagen.yml                   30          
-sqlite                                           1          
-warehouse_delete.csv                             1     17   
-warehouse_delete.sql                             1     65   
-warehouse_original.csv                           1    301   
-warehouse_update.sql                             1    230   
-warehouse_upsert.csv                             2    420   
+name                                         count   size
+------------------------------------------   -----   ----
+README.md                                        3    132
+books.csv                                        6    386
+books_template.json                              1    112
+characters.csv                                   5    432
+characters_target.csv                            3    268
+create_foo.sql                                   2     70
+date_dim--datagen.yml                          100
+date_dim_2001--datagen.yml                     100
+email                                            2
+generator_count--datagen.yml                   100
+histogram_normal_distribution--datagen.yml      30
+histogram_random--datagen.yml                   10
+json                                             1
+pebble                                           2
+pipeline                                         4
+postgres                                         1
+random--datagen.yml                             30
+recursive                                        1
+select.yml                                       1    332
+sequence--datagen.yml                           30
+sequence_color--datagen.yml                     10
+sequence_number--datagen.yml                    14
+sequence_odometer--datagen.yml                 100
+sequence_time--datagen.yml                      30
+sequence_varchar--datagen.yml                   30
+sqlite                                           1
+warehouse_delete.csv                             1     17
+warehouse_delete.sql                             1     65
+warehouse_original.csv                           1    301
+warehouse_update.sql                             1    230
+warehouse_upsert.csv                             2    420
 xml                                              1
 </console>
 </unit>
@@ -113,9 +113,9 @@ xml                                              1
 ==== Set ====
 You can set the attributes via:
   * a [[data-definition|data definition file or fragment]]
-  * the [[docs:tabli:option|tabli options]]
-      * ''source-attribute'' or ''target-attribute'' in a [[docs:tabli:data:transfer|transfer command]]
-      * ''attribute'' for others [[docs:tabli:data:start|data command]]
+  * the [[docs:tabul:option|tabul options]]
+      * ''source-attribute'' or ''target-attribute'' in a [[docs:tabul:data:transfer|transfer command]]
+      * ''attribute'' for others [[docs:tabul:data:start|data command]]
 
 ==== Add as virtual column ====
 You can add the data resource attribute as extra-column via the [[virtual_column|virtual columns]].

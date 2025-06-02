@@ -25,7 +25,7 @@ The creation of a data structure in ''Tabulify'' is done via:
   * or during any [[:docs:op:transfer|transfer]] if the [[:docs:flow:target|target]] does not exist
 
 ==== View ====
-The data structure is viewable via the [[docs:tabli:data:struct|struct operations]]
+The data structure is viewable via the [[docs:tabul:data:struct|struct operations]]
 
 ===== Logical Structure =====
 

@@ -29,7 +29,7 @@ connections:
   mySmtp:
     uri: smtp://localhost:587
     user: user
-    password: ${TABLI_MY_SMTP_PASSWORD}
+    password: ${TABUL_MY_SMTP_PASSWORD}
     to: foo@tabulify.com; bar@tabulify.com
     to-names: foo; bar
     from: tabulify@server.com
@@ -40,12 +40,12 @@ connections:
 
 </panel>
 <panel>
-<label>Tabli</label>
+<label>Tabul</label>
 
-With the [[docs:tabli:connection:add|tabli add command of the connection module]], adding a smtp connection with the name ''smtpConnectionName'':
+With the [[docs:tabul:connection:add|tabul add command of the connection module]], adding a smtp connection with the name ''smtpConnectionName'':
 
 <code bash>
-tabli connection add "smtpConnectionName" "smtp://localhost:587"
+tabul connection add "smtpConnectionName" "smtp://localhost:587"
 </code>
 
 Note that you can add all configuration as query properties of the uri.

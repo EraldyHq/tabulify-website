@@ -24,7 +24,7 @@
 | [[home|home]] | the user home directory of the local file system |
 | ''howto'' | the [[howto|howto files]] (ie files used in the [[howto:howto|howto's]]) |
 | ''mem'' | An internal memory connection used when loading and processing data in memory |
-| [[log|log]] | the location of the tabli logs |
+| [[log|log]] | the location of the tabul logs |
 | [[project|project]] | the directory of the project on the local file system |
 | [[sd|sd]] | the script directory - the directory of the [[:docs:flow:pipeline|pipeline file]] in the local file system |
 | [[tpcds|tpcds]] | the table and data of the ''TPC-DS'' benchmark |

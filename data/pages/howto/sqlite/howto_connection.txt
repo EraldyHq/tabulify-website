@@ -16,43 +16,43 @@ A [[docs:connection:howtos|default howto sqlite connection]] is provided after a
 
 <unit>
 <code bash>
-tabli connection info sqlite
+tabul connection info sqlite
 </code>
 <console>
 Information about the connection (sqlite)
-Attribute                    Value                                            Description                                                            
---------------------------   ----------------------------------------------   --------------------------------------------------------------------   
-BOOLEAN_DATA_TYPE            Native                                           Boolean data type used to store boolean values                         
-BUILDER_CACHE_ENABLED        true                                             Enable or disable the builder cache                                    
-COMMENT                      The sqlite default connection                    A connection description                                               
-CONNECTION_CLOSING_SCRIPT                                                     A script that runs before a connection is closed                       
-CONNECTION_INIT_SCRIPT                                                        A script that runs after a connection has been established             
-DATABASE_MAJOR_VERSION                                                        The major version number of the database                               
-DATABASE_MINOR_VERSION                                                        The minor version number of the database                               
-DATABASE_PRODUCT_NAME                                                         The name of the database                                               
-DATABASE_PRODUCT_VERSION                                                      The version of the database                                            
-DATE_DATA_TYPE               NATIVE                                           Date data type used to store date values                               
-DRIVER                       org.sqlite.JDBC                                  The jdbc driver class                                                  
-DRIVER_NAME                                                                   The driver name                                                        
-DRIVER_VERSION                                                                The driver version                                                     
-HOST                                                                          Host Server                                                            
-JDBC_MAJOR_VERSION                                                            The major version number of JDBC                                       
-JDBC_MINOR_VERSION                                                            The minor version number of JDBC                                       
-MAX_CONCURRENT_THREAD                                                         The maximum number of threads that can be created against the system   
-MAX_NAME_IN_PATH                                                              The maximum number of names in a path                                  
-NAME                         sqlite                                           The name of the connection                                             
-NAME_QUOTING_DISABLED_CASE   UPPERCASE                                        The case to apply when quoting is disabled                             
-NAME_QUOTING_ENABLED         true                                             Enable quoting of names                                                
-NATIVES                                                                       Native Driver attributes (jdbc properties, ...)                        
-ORIGIN                       CONF                                             The origin of the connection                                           
-PASSWORD                                                                      The user password                                                      
-PORT                                                                          Host Port                                                              
-SUPPORT_BATCH_UPDATES                                                         If the system supports batch SQL updates                               
-SUPPORT_NAMED_PARAMETERS                                                      If the system supports named parameters in the SQL statement           
-TIMESTAMP_DATA_TYPE          NATIVE                                           Timestamp data type used to store timestamp values                     
-TIME_DATA_TYPE               NATIVE                                           Time format data type to store time values                             
-URI                          jdbc:sqlite:////home/tabulify/.tabli/sqlite.db   The uri of the connection                                              
-USER                                                                          The user name                                                          
+Attribute                    Value                                            Description
+--------------------------   ----------------------------------------------   --------------------------------------------------------------------
+BOOLEAN_DATA_TYPE            Native                                           Boolean data type used to store boolean values
+BUILDER_CACHE_ENABLED        true                                             Enable or disable the builder cache
+COMMENT                      The sqlite default connection                    A connection description
+CONNECTION_CLOSING_SCRIPT                                                     A script that runs before a connection is closed
+CONNECTION_INIT_SCRIPT                                                        A script that runs after a connection has been established
+DATABASE_MAJOR_VERSION                                                        The major version number of the database
+DATABASE_MINOR_VERSION                                                        The minor version number of the database
+DATABASE_PRODUCT_NAME                                                         The name of the database
+DATABASE_PRODUCT_VERSION                                                      The version of the database
+DATE_DATA_TYPE               NATIVE                                           Date data type used to store date values
+DRIVER                       org.sqlite.JDBC                                  The jdbc driver class
+DRIVER_NAME                                                                   The driver name
+DRIVER_VERSION                                                                The driver version
+HOST                                                                          Host Server
+JDBC_MAJOR_VERSION                                                            The major version number of JDBC
+JDBC_MINOR_VERSION                                                            The minor version number of JDBC
+MAX_CONCURRENT_THREAD                                                         The maximum number of threads that can be created against the system
+MAX_NAME_IN_PATH                                                              The maximum number of names in a path
+NAME                         sqlite                                           The name of the connection
+NAME_QUOTING_DISABLED_CASE   UPPERCASE                                        The case to apply when quoting is disabled
+NAME_QUOTING_ENABLED         true                                             Enable quoting of names
+NATIVES                                                                       Native Driver attributes (jdbc properties, ...)
+ORIGIN                       CONF                                             The origin of the connection
+PASSWORD                                                                      The user password
+PORT                                                                          Host Port
+SUPPORT_BATCH_UPDATES                                                         If the system supports batch SQL updates
+SUPPORT_NAMED_PARAMETERS                                                      If the system supports named parameters in the SQL statement
+TIMESTAMP_DATA_TYPE          NATIVE                                           Timestamp data type used to store timestamp values
+TIME_DATA_TYPE               NATIVE                                           Time format data type to store time values
+URI                          jdbc:sqlite:////home/tabulify/.tabul/sqlite.db   The uri of the connection
+USER                                                                          The user name
 WORKING_PATH                                                                  The working path (Schema for database, directory for file system)
 </console>
 </unit>

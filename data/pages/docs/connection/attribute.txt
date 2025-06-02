@@ -31,7 +31,7 @@ Each connection type has its own parameters variable.
 ===== Management =====
 
 ==== See ====
-You can see the [[docs:conf:attribute|attributes]] of your connection with the [[docs:tabli:connection:info|connection info command]].
+You can see the [[docs:conf:attribute|attributes]] of your connection with the [[docs:tabul:connection:info|connection info command]].
 
 ==== Set ====
 
@@ -42,16 +42,16 @@ connections:
   connectionName:
     parameter1: value1
 </code>
-  * with the [[docs:tabli:connection:upsert|connection upsert command]].
+  * with the [[docs:tabul:connection:upsert|connection upsert command]].
   * with a [[docs:conf:os|operating system variable]]
 <code bash>
-export TABLI_CONNECTION_{{connection_Name}_{{parameter}=value
+export TABUL_CONNECTION_{{connection_Name}_{{parameter}=value
 </code>
 
 Note: if you use a camel case connection name, you need to add an underscore `_` because of the [[:docs:conf:attribute#case_independent_sensitivity|name case independency]]
 Example with the name `connectionName`, you need to use the following environment variable
 <code bash>
-export TABLI_CONNECTION_CONNECTION_NAME_PARAMETER1=value1
+export TABUL_CONNECTION_CONNECTION_NAME_PARAMETER1=value1
 </code>
 
 
@@ -90,7 +90,7 @@ Derived: You can't change it
 
 ==== VARCHAR_DEFAULT_PRECISION ====
 
-Not data system are alike and handle data differently. 
+Not data system are alike and handle data differently.
 
 By default, when creating a data resource, if no precision (ie [[:docs:common:data_type|data type length]]) is specified, we use the maximum allowed. Unfortunately, [[:docs:system:mysql:text#varchar_default_precision_of_2000|handling of MySql]] makes it difficult to use this rule.
 

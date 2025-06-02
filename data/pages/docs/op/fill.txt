@@ -10,7 +10,7 @@
 ''fill'' is an [[op|data operation]] that creates or loads [[docs:generator:generator|generated data]] into a [[docs:resource:resource|data resource]].
 
 <note>
-This ''data operation'' can be performed with the [[docs:tabli:data:fill|tabli data fill command]] that pilots the [[docs:generator:generator|data generator]].
+This ''data operation'' can be performed with the [[docs:tabul:data:fill|tabul data fill command]] that pilots the [[docs:generator:generator|data generator]].
 </note>
 
 

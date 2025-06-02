@@ -2,8 +2,7 @@
 {
     "description": "This how-to shows you how to generate a sequence based on provided values with the column sequence generator.",
     "low_quality_page": "false",
-    "page_id": "eog6re1g6g9n88i9tggw2",
-    "title": "How to generate a sequence based on provided values"
+    "page_id": "eog6re1g6g9n88i9tggw2"
 }
 ---
 ====== Tabulify - How to generate a sequence based on provided values ======
@@ -63,26 +62,26 @@ Columns:
 </unit>
 ==== Printing the data ====
 
-With the [[docs:tabli:data:print|data print command]], we can print the ''values'' generated.
+With the [[docs:tabul:data:print|data print command]], we can print the ''values'' generated.
 <unit>
 <code bash>
-tabli data print sequence_color--datagen.yml@howto
+tabul data print sequence_color--datagen.yml@howto
 </code>
 <note tip>
 [[docs:connection:howto|howto]] is the connection that contains the files used in the [[..:howto|HowTo's]].
 </note>
 <console>
-id   seq_color   
---   ---------   
- 1   blue        
- 2   red         
- 3   green       
- 4   cyan        
- 5   magenta     
- 6   yellow      
- 7   black       
- 8   blue        
- 9   red         
+id   seq_color
+--   ---------
+ 1   blue
+ 2   red
+ 3   green
+ 4   cyan
+ 5   magenta
+ 6   yellow
+ 7   black
+ 8   blue
+ 9   red
 10   green
 </console>
 </unit>

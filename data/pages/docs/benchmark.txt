@@ -25,5 +25,5 @@
 ==== Manual ====
 
 You can also create your own benchmark with the following command:
-  * [[docs:tabli:data:query|data query]] - to measure query performance
-  * [[docs:tabli:data:transfer|data transfer]] (update, insert, merge, ...) - to measure crud operation
+  * [[docs:tabul:data:query|data query]] - to measure query performance
+  * [[docs:tabul:data:transfer|data transfer]] (update, insert, merge, ...) - to measure crud operation

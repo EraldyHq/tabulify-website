@@ -31,21 +31,21 @@ We put the warehouse table to the same state than before:
   * We delete the row added
   * We update the first row to the original
 <code bash>
-tabli data delete warehouse_delete.csv@howto warehouse@sqlite
+tabul data delete warehouse_delete.csv@howto warehouse@sqlite
 </code>
 </unit>
 <unit display="none">
 <code bash>
-tabli data update warehouse_original.csv@howto warehouse@sqlite
+tabul data update warehouse_original.csv@howto warehouse@sqlite
 </code>
 </unit>
 
 The [[:docs:system:tpcds|tpc-ds]] ''warehouse'' table will be our [[docs:flow:target|target data resource]] for this page.
 
-The ''warehouse'' [[docs:resource:table|table]] has one row that we can see with the [[docs:tabli:data:print|data print command]]
+The ''warehouse'' [[docs:resource:table|table]] has one row that we can see with the [[docs:tabul:data:print|data print command]]
 <unit>
 <code bash>
-tabli data print warehouse@sqlite
+tabul data print warehouse@sqlite
 </code>
 <console>
 w_warehouse_sk   w_warehouse_id     w_warehouse_name      w_warehouse_sq_ft   w_street_number   w_street_name   w_street_type   w_suite_number   w_city   w_county            w_state   w_zip   w_country       w_gmt_offset
@@ -57,7 +57,7 @@ w_warehouse_sk   w_warehouse_id     w_warehouse_name      w_warehouse_sq_ft   w_
 
 
 ===== Warehouse Upsert with a CSV file as Source =====
-The [[docs:op:upsert|upsert data operation]] is supported by the [[docs:tabli:data:upsert|data upsert command]].
+The [[docs:op:upsert|upsert data operation]] is supported by the [[docs:tabul:data:upsert|data upsert command]].
 
 This upsert operation:
   * will try to insert data
@@ -71,10 +71,10 @@ We will:
 
 The data to upsert is defined in the ''warehouse_upsert.csv'' [[docs:resource:csv|Csv data resource]] in the [[docs:connection:howto|howto connection]].
 
-We take a look at its content with the [[docs:tabli:data:print|data print command]]:
+We take a look at its content with the [[docs:tabul:data:print|data print command]]:
 <unit>
 <code bash>
-tabli data print warehouse_upsert.csv@howto
+tabul data print warehouse_upsert.csv@howto
 </code>
 <console>
 w_warehouse_sk   w_warehouse_id     w_warehouse_name          w_warehouse_sq_ft   w_street_number   w_street_name   w_street_type   w_suite_number   w_city      w_county            w_state   w_zip      w_country       w_gmt_offset
@@ -85,12 +85,12 @@ w_warehouse_sk   w_warehouse_id     w_warehouse_name          w_warehouse_sq_ft 
 </unit>
 ==== The upsert command ====
 
-  * The [[docs:tabli:data:upsert|upsert command]] is a [[docs:tabli:data:transfer|transfer command]] and takes as argument:
+  * The [[docs:tabul:data:upsert|upsert command]] is a [[docs:tabul:data:transfer|transfer command]] and takes as argument:
       * a [[docs:flow:source|source]] - the [[docs:resource:csv|csv file]] in the [[docs:connection:howto|howto connection]]
       * a [[docs:flow:target|target]] - the [[docs:resource:table|sql table]] in the [[docs:connection:howtos|sqlite connection]]
 <unit>
 <code bash>
-tabli data upsert warehouse_upsert.csv@howto warehouse@sqlite
+tabul data upsert warehouse_upsert.csv@howto warehouse@sqlite
 </code>
   * Run it and  you get the below output:
 <console>
@@ -99,12 +99,12 @@ Source                       Target             Latency (ms)   Row Count   Error
 warehouse_upsert.csv@howto   warehouse@sqlite   24             2
 </console>
 </unit>
-  * You can verify that the [[docs:flow:target|target data resource]] has been changed with the [[docs:tabli:data:print|data print command]] and check that:
+  * You can verify that the [[docs:flow:target|target data resource]] has been changed with the [[docs:tabul:data:print|data print command]] and check that:
       * there is a second new record
       * the new name of the first warehouse is now ''Modified Warehouse Name''
 <unit>
 <code bash>
-tabli data print warehouse@sqlite
+tabul data print warehouse@sqlite
 </code>
 <console>
 w_warehouse_sk   w_warehouse_id     w_warehouse_name          w_warehouse_sq_ft   w_street_number   w_street_name   w_street_type   w_suite_number   w_city      w_county            w_state   w_zip      w_country       w_gmt_offset
@@ -129,7 +129,7 @@ The [[docs:flow:source|source]] [[docs:resource:select|query]] needs to include:
 Example with the ''warehouse_update.sql'' [[docs:resource:file|file]] in the [[docs:connection:howto|howto]] connection
 <unit>
 <code bash>
-tabli data print warehouse_update.sql@howto
+tabul data print warehouse_update.sql@howto
 </code>
 <console>
 select
@@ -141,10 +141,10 @@ from
 ;
 </console>
 </unit>
-  * The result of the [[docs:resource:select|select query]] can be seen with the [[docs:tabli:data:print|print command]]
+  * The result of the [[docs:resource:select|select query]] can be seen with the [[docs:tabul:data:print|print command]]
 <unit>
 <code bash>
-tabli data print (warehouse_update.sql@howto)@sqlite
+tabul data print (warehouse_update.sql@howto)@sqlite
 </code>
 <console>
 w_warehouse_sk   w_warehouse_sq_ft   w_warehouse_sq_ft_old_value
@@ -155,10 +155,10 @@ w_warehouse_sk   w_warehouse_sq_ft   w_warehouse_sq_ft_old_value
 </unit>
 
 ==== The update command ====
-  * Calling the [[docs:tabli:data:update|data update command]] with the [[docs:resource:select|query]] as [[docs:flow:source|source]] will update the ''warehouse'' table ''w_warehouse_sq_ft'' columns by ''10'' square meters.
+  * Calling the [[docs:tabul:data:update|data update command]] with the [[docs:resource:select|query]] as [[docs:flow:source|source]] will update the ''warehouse'' table ''w_warehouse_sq_ft'' columns by ''10'' square meters.
 <unit>
 <code bash>
-tabli data update (warehouse_update.sql@howto)@sqlite warehouse@sqlite
+tabul data update (warehouse_update.sql@howto)@sqlite warehouse@sqlite
 </code>
 <console>
 Source                                Target             Latency (ms)   Row Count   Error   Message
@@ -166,10 +166,10 @@ Source                                Target             Latency (ms)   Row Coun
 (warehouse_update.sql@howto)@sqlite   warehouse@sqlite   15             2
 </console>
 </unit>
-  * We can verify it by [[docs:tabli:data:print|printing]] the ''warehouse'' table
+  * We can verify it by [[docs:tabul:data:print|printing]] the ''warehouse'' table
 <unit>
 <code bash>
-tabli data print warehouse@sqlite
+tabul data print warehouse@sqlite
 </code>
 <console>
 w_warehouse_sk   w_warehouse_id     w_warehouse_name          w_warehouse_sq_ft   w_street_number   w_street_name   w_street_type   w_suite_number   w_city      w_county            w_state   w_zip      w_country       w_gmt_offset
@@ -182,12 +182,12 @@ w_warehouse_sk   w_warehouse_id     w_warehouse_name          w_warehouse_sq_ft 
 ===== Warehouse Delete =====
 
 ==== The source CSV file for the delete ====
-The [[docs:tabli:data:delete|delete command]] takes as input a [[docs:flow:source|source data resource]] that contains the primary or unique key of a [[docs:flow:target|target table]].
+The [[docs:tabul:data:delete|delete command]] takes as input a [[docs:flow:source|source data resource]] that contains the primary or unique key of a [[docs:flow:target|target table]].
 
 We want to delete the second record, the CSV file contains then the primary key with the value ''2''
 <unit>
 <code bash>
-tabli data print warehouse_delete.csv@howto
+tabul data print warehouse_delete.csv@howto
 </code>
   * Run it. You get the below output:
 <console>
@@ -199,10 +199,10 @@ w_warehouse_sk
 
 ==== Warehouse Delete ====
 
-  * You give the ''CSV'' [[docs:flow:source|source]] and the [[docs:flow:target|target]] as argument to the [[docs:tabli:data:delete|data delete command]] to delete the second row
+  * You give the ''CSV'' [[docs:flow:source|source]] and the [[docs:flow:target|target]] as argument to the [[docs:tabul:data:delete|data delete command]] to delete the second row
 <unit>
 <code bash>
-tabli data delete warehouse_delete.csv@howto warehouse@sqlite
+tabul data delete warehouse_delete.csv@howto warehouse@sqlite
 </code>
 <console>
 Source                       Target             Latency (ms)   Row Count   Error   Message
@@ -213,7 +213,7 @@ warehouse_delete.csv@howto   warehouse@sqlite   14             1
   * How [[docs:resource:count|many rows]] do we have ?
 <unit>
 <code bash>
-tabli data list -a name -a count warehouse@sqlite
+tabul data list -a name -a count warehouse@sqlite
 </code>
 <console>
 name        count
@@ -224,7 +224,7 @@ warehouse       1
   * Do we still see the first row ?
 <unit>
 <code bash>
-tabli data print warehouse@sqlite
+tabul data print warehouse@sqlite
 </code>
 <console>
 w_warehouse_sk   w_warehouse_id     w_warehouse_name          w_warehouse_sq_ft   w_street_number   w_street_name   w_street_type   w_suite_number   w_city   w_county            w_state   w_zip   w_country       w_gmt_offset

@@ -12,9 +12,9 @@
 
 
 You can:
-  * [[docs:tabli:connection:start|add/create/update database connections parameters]]
-  * [[docs:tabli:data:query|perform operation on a SQL query]]
-  * [[docs:tabli:data:start|perform operation on a table]]
+  * [[docs:tabul:connection:start|add/create/update database connections parameters]]
+  * [[docs:tabul:data:query|perform operation on a SQL query]]
+  * [[docs:tabul:data:start|perform operation on a table]]
   * [[howto:sql_schema:create_table_with_dependencies|perform operation on a schema]]
   * [[docs:resource:dependency|manage foreign keys (ie relation between tables)]]
 
@@ -34,25 +34,25 @@ For the supported database, ''Tabulify'' introduces a layer that:
   <box align="center-children"><box width="100px" align="text-center"><icon name="logos:postgresql" width="60"/> \\ \\ [[docs:system:postgres:postgres]]</box></box>
   <box align="center-children"><box width="100px" align="text-center"><icon name="logos:oracle" width="80"/> \\ \\ [[docs:system:oracle:oracle]]</box></box>
   <box align="center-children"><box width="100px" align="text-center"><icon name="logos:mysql" width="60"/> \\ \\ [[docs:system:mysql:mysql]]</box></box>
-  <box align="center-children"><box width="100px" align="text-center"><icon name="logos:microsoft-icon" width="30"/> \\ \\ 
+  <box align="center-children"><box width="100px" align="text-center"><icon name="logos:microsoft-icon" width="30"/> \\ \\
  [[docs:system:sqlserver:sqlserver|]]</box></box>
 </grid>
 ===== Other databases =====
 
 We support all relational databases that:
-    * provides a JDBC driver, 
+    * provides a JDBC driver,
     * supports [[wp>SQL#Interoperability_and_standardization|ANSI SQL]]
 
 
 The most controversial part being the [[:docs:op:upsert|upsert sql statement]]:
 ```sql
 insert into "howto"."d_category" ("cat_id", "cat_desc", "load_timestamp")
-values (?, ?, ?) 
+values (?, ?, ?)
 on duplicate key update "load_timestamp" = values ("load_timestamp")
 ```
 If you want a relational database that does not support this syntax, you can always:
   * add the driver in the ''jars'' directory
-  * and use the other standard operations (ie [[:docs:op:query|query]], [[:docs:tabli:data:insert|insert]], or [[:docs:op:update|update]])
+  * and use the other standard operations (ie [[:docs:op:query|query]], [[:docs:tabul:data:insert|insert]], or [[:docs:op:update|update]])
 
 
 If you still want the ''upsert'' operation and or support for a third SQL database, [[:contact|contact us]].
@@ -78,10 +78,10 @@ We also can read the following SQL type object:
 
 ===== Attributes =====
 
-All relational database system supports the [[:docs:connection:attribute|standard connection attributes]] 
+All relational database system supports the [[:docs:connection:attribute|standard connection attributes]]
 and the following attributes:
 
-^ Name ^ Description ^ Default value ^ 
+^ Name ^ Description ^ Default value ^
 | BUILDER_CACHE_ENABLED | A builder cache | true |
 | NAME_QUOTING_ENABLED | Enable quoting of SQL name identifier | true |
 | DRIVER | The Jdbc Driver Class |  |
@@ -92,7 +92,7 @@ and the following attributes:
 
 The builder cache is used to cache the building of relation object such as table, view.
 
-Why? Because a relation object (table, views, ...) may have [[:docs:resource:dependency|dependencies]], 
+Why? Because a relation object (table, views, ...) may have [[:docs:resource:dependency|dependencies]],
 building them each time as a significative impact as it's a recursive process.
 
 
@@ -104,14 +104,14 @@ Name quoting of quoted identifier is adding a quotation marks at the end and the
     * characters such as space, number at first position
 
 
-Relational databases have different behavior around it. By default, we enable it so 
+Relational databases have different behavior around it. By default, we enable it so
 that SQL Developer does not have to type in uppercase.
 
 With `NAME_QUOTING_ENABLED`, you can disable this feature.
 
-Remark that we may disable this feature by database. 
+Remark that we may disable this feature by database.
 
-For instance, we do for [[docs:system:oracle:oracle|Oracle]]. Why ? 
+For instance, we do for [[docs:system:oracle:oracle|Oracle]]. Why ?
 Because it requires you to put always the quotation mark even in a `SQL SELECT` which is crazy. You can't write `select cat_id`, you need to write `select "cat_id"`
 <blockquote>
 If you name a schema object using a quoted identifier, then you must use the double quotation marks whenever you refer to that object.

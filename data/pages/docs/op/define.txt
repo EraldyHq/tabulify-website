@@ -31,7 +31,7 @@ The ''define'' operations accept the following arguments.
 | ''data-resources'' | | to define more than one data resource (a list of inline data resources) |
 
 ===== Usage =====
-This operation is only available as [[docs:flow:step|step]] in a [[docs:flow:pipeline|pipeline pipeline]] (ie not in a [[docs:tabli:data:start|tabli data command]])
+This operation is only available as [[docs:flow:step|step]] in a [[docs:flow:pipeline|pipeline pipeline]] (ie not in a [[docs:tabul:data:start|tabul data command]])
 
 
 This is a first step (known as the [[docs:flow:supplier|supplier step]]) because it supplies [[docs:resource:resource|data resources]] to the others operations in the pipeline.
@@ -60,11 +60,11 @@ pipeline:
     operation: "print"
 
 </file>
-If you [[docs:tabli:flow:execute|execute this pipeline]]
+If you [[docs:tabul:flow:execute|execute this pipeline]]
 <code bash>
-tabli flow execute pipeline/define_single_inline.yml@howto
+tabul flow execute pipeline/define_single_inline.yml@howto
 </code>
-you will get the data of the ''colors'' data resource [[docs:tabli:data:print|printed]] in a tabular format.
+you will get the data of the ''colors'' data resource [[docs:tabul:data:print|printed]] in a tabular format.
 <console>
 List of executions
 ExecutionId   OperationName   DataPathsCount   DataPathsList

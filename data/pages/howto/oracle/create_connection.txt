@@ -1,3 +1,12 @@
+---json
+{
+    "aliases": [
+        { "path": ":docs:system:oracle:howto:oracle:connection" },
+        { "path": ":howto:oracle:connection" }
+    ],
+    "page_id": "hzub6m2cimgheh048u0vk"
+}
+---
 ====== How to create an Oracle connection? ======
 
 
@@ -22,7 +31,7 @@ An oracle connection supports :
 Here are the attributes of the [[howto:oracle:howto_connection|howto connection]]
 <unit>
 <code bash display="none">
-tabli data print --type text .tabli/.tabli.yml@home | yq '.connections.oracle'
+tabul data print --type text .tabul/.tabul.yml@home | yq '.connections.oracle'
 </code>
 <console yaml>
 comment: The howto oracle connection
@@ -42,7 +51,7 @@ user: hr
 
 You can  create an ''Oracle'' connection:
   * by directly modifying the [[#Configuration vault]]
-  * or by using the [[#tabli command]]
+  * or by using the [[#tabul command]]
 
 <note>
 === Secret ===
@@ -71,13 +80,13 @@ connections:
 
 
 
-==== Tabli Command ====
+==== Tabul Command ====
 
-With the [[docs:tabli:connection:add|tabli add command of the connection module]], you can add a Oracle connection with the name ''oracleConnectionName'':
+With the [[docs:tabul:connection:add|tabul add command of the connection module]], you can add a Oracle connection with the name ''oracleConnectionName'':
 
 <unit display="none">
 <code bash>
-tabli connection delete --not-strict "oracleConnectionName"
+tabul connection delete --not-strict "oracleConnectionName"
 </code>
 </unit>
 
@@ -86,7 +95,7 @@ tabli connection delete --not-strict "oracleConnectionName"
       <label>Bash</label>
 <unit>
 <code bash>
-tabli connection add "oracleConnectionName" \
+tabul connection add "oracleConnectionName" \
     "jdbc:oracle:thin:@[host]:[port]/[servicename]" \
     --user login \
     --password '${MY_ORACLE_PASSWORD}'
@@ -99,7 +108,7 @@ tabli connection add "oracleConnectionName" \
   <panel>
     <label>Windows CMD console</label>
 <code bash>
-tabli connection add "oracleConnectionName" "jdbc:oracle:thin:@[host]:[port]/[servicename]" ^
+tabul connection add "oracleConnectionName" "jdbc:oracle:thin:@[host]:[port]/[servicename]" ^
     --user login ^
     --password '${MY_ORACLE_PASSWORD}'
 </code>

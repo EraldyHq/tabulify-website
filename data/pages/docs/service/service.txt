@@ -19,7 +19,7 @@ The service metadata is stored in the [[:docs:conf:vault|configuration vault]]
 
 
 Example with the [[howto:mysql:howto_connection|howto mysql service]] in [[docs:service:docker|docker]] format
-<code yaml .tabli.yaml>
+<code yaml .tabul.yaml>
 services:
   sqlserver:
     type: docker
@@ -32,18 +32,18 @@ services:
 </code>
 
 As for any value in the configuration vault, you can use:
-  *  plain value 
+  *  plain value
   * or any [[:docs:conf:secret|secret format]].
 
-===== Tabli Service: List/Info =====
+===== Tabul Service: List/Info =====
 
-The [[:docs:tabli:service:start|tabli service module]] permits to manage the services at the command line.
+The [[:docs:tabul:service:start|tabul service module]] permits to manage the services at the command line.
 
 ===== Attributes =====
 
 All services will have the following [[:docs:conf:attribute|attributes]]
 
-^ Name ^ Description ^ 
+^ Name ^ Description ^
 | ''NAME'' | The name of the service |
 | ''TYPE'' | The type of the service (ie the provider name) |
 | ''IS_STARTED'' | Boolean that returns true if the service is started, false otherwise |

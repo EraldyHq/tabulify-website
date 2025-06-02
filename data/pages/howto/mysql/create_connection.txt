@@ -1,3 +1,8 @@
+---json
+{
+    "page_id": "x61c7prx5um2kgtvuqrgz"
+}
+---
 ====== How to create an MySQL connection? ======
 
 
@@ -22,7 +27,7 @@ An mysql connection supports :
 Here are the attributes of the [[howto:mysql:howto_connection|howto connection]]
 <unit>
 <code bash display="none">
-tabli data print --type text .tabli/.tabli.yml@home | yq '.connections.mysql'
+tabul data print --type text .tabul/.tabul.yml@home | yq '.connections.mysql'
 </code>
 <console yaml>
 comment: The default mysql data store
@@ -42,7 +47,7 @@ varchar-default-precision: 2000
 
 You can  create an ''mysql'' connection:
   * by directly modifying the [[#Configuration vault]]
-  * or by using the [[#tabli command]]
+  * or by using the [[#tabul command]]
 
 <note>
 === Secret ===
@@ -71,13 +76,13 @@ connections:
 
 
 
-==== Tabli Command ====
+==== Tabul Command ====
 
-With the [[docs:tabli:connection:add|tabli add command of the connection module]], you can add a mysql connection with the name ''mysqlConnectionName'':
+With the [[docs:tabul:connection:add|tabul add command of the connection module]], you can add a mysql connection with the name ''mysqlConnectionName'':
 
 <unit display="none">
 <code bash>
-tabli connection delete --not-strict "mysqlConnectionName"
+tabul connection delete --not-strict "mysqlConnectionName"
 </code>
 </unit>
 
@@ -86,7 +91,7 @@ tabli connection delete --not-strict "mysqlConnectionName"
       <label>Bash</label>
 <unit>
 <code bash>
-tabli connection add "mysqlConnectionName" \
+tabul connection add "mysqlConnectionName" \
     "jdbc:mysql://<hostname>:<port>/<dbname>" \
     --user login \
     --password '${MY_MYSQL_PASSWORD}'
@@ -99,7 +104,7 @@ tabli connection add "mysqlConnectionName" \
   <panel>
     <label>Windows CMD console</label>
 <code bash>
-tabli connection add "mysqlConnectionName" "jdbc:mysql://<hostname>:<port>/<dbname>" ^
+tabul connection add "mysqlConnectionName" "jdbc:mysql://<hostname>:<port>/<dbname>" ^
     --user login ^
     --password '${MY_MYSQL_PASSWORD}'
 </code>

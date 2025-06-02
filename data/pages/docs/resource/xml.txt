@@ -34,21 +34,21 @@ If you want to see the first text lines of a document, you need to set the [[typ
 Example:
 <unit>
 <code bash>
-tabli data head --type text xml/relation.xml@howto
+tabul data head --type text xml/relation.xml@howto
 </code>
 <console>
-The first 10 rows of the data resource (xml/relation.xml@howto): 
-lines                                                                                                                                             
------------------------------------------------------------------------------------------------------------------------------------------------   
-<?xml version="1.0"?>                                                                                                                             
-<api batchcomplete="">                                                                                                                            
-  <query>                                                                                                                                         
-    <normalized>                                                                                                                                  
-      <n from="Relation_(database)" to="Relation (database)"/>                                                                                    
-    </normalized>                                                                                                                                 
-    <pages>                                                                                                                                       
-      <page _idx="23720058" pageid="23720058" ns="0" title="Relation (database)" description="The base data structure of relational databases">   
-        <categories>                                                                                                                              
+The first 10 rows of the data resource (xml/relation.xml@howto):
+lines
+-----------------------------------------------------------------------------------------------------------------------------------------------
+<?xml version="1.0"?>
+<api batchcomplete="">
+  <query>
+    <normalized>
+      <n from="Relation_(database)" to="Relation (database)"/>
+    </normalized>
+    <pages>
+      <page _idx="23720058" pageid="23720058" ns="0" title="Relation (database)" description="The base data structure of relational databases">
+        <categories>
           <cl ns="14" title="Category:Articles with example SQL code"/>
 </console>
 </unit>

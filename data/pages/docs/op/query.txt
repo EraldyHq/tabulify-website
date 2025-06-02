@@ -12,6 +12,6 @@
 
 
 <note tip>
-By executing a lot of query with the [[docs:tabli:data:query|query command]], you can send a [[docs:benchmark|benchmark workload]] to your [[docs:connection:connection|connection]] and collect performance metrics.
+By executing a lot of query with the [[docs:tabul:data:query|query command]], you can send a [[docs:benchmark|benchmark workload]] to your [[docs:connection:connection|connection]] and collect performance metrics.
 </note>
 

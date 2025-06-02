@@ -1,0 +1,72 @@
+---json
+{
+    "aliases": [
+        { "path": ":docs:tabli:flow:execute" }
+    ],
+    "page_id": "3kwyjx7isakmhyn8ybjlj"
+}
+---
+====== Tabul - Flow Execute ======
+
+
+===== About =====
+''flow execute'' is a [[docs:tabul:command|tabul command]] that executes one or more [[docs:flow:pipeline|pipeline]]
+
+
+
+===== Syntax =====
+
+<unit>
+<code bash>
+tabul flow execute --help
+</code>
+<console>
+Tabul flow execute
+==================
+
+Run one or more pipeline scripts
+
+
+
+Syntax
+------
+
+
+    tabul flow execute <pipeline-selectors>
+
+
+where:
+
+
+  Arguments:
+
+    <pipeline-selectors>                                    One or several data selectors that select(s) pipeline file(s)
+
+
+  Global Options:
+
+    -vf,--conf <path>                                       The path to a configuration file
+
+    -e,--env <env>                                          The name of the environment
+
+    -h,--help                                               Print this help
+
+    -l,--log-level <error|warning|tip|info|fine>            Set the log level
+
+    -ns,--not-strict                                        When present no error will be raised, if no flow file has been selected
+
+    -odu,--output-data-uri <outputDataUri>                  defines the output data uri for the feedback data (default: console)
+
+    -oo,--output-operation <dataOperation>                  defines the data operations (replace, truncate) on an existing output resource before transfer.
+
+    -oop,--output-transfer-operation <transferOperation>    defines the output transfer operation (insert, update, merge, copy). Default to `copy` for a file system and `insert` for a database.
+
+    -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted vault values (Env: TABUL_PASSPHRASE)
+
+    -ph,--project-home <path>                               The project home (default to the .tabul.yml file directory)
+
+    -v,--version                                            Print version information
+</console>
+</unit>
+
+

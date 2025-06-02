@@ -1,0 +1,132 @@
+---json
+{
+    "aliases": [
+        { "path": ":docs:tabli:data:template" }
+    ],
+    "page_id": "ezsxvfqb0x1e0ar7rbmv8"
+}
+---
+====== Tabul - Data Template command ======
+
+
+===== template =====
+''tabul data template'' is a [[docs:tabul:command|command]] from the [[start|data operations module]] that supports the [[docs:op:template|template operation]] where you creates [[docs:resource:resource|data resource]] from [[docs:templating:template|template]].
+
+===== Howto =====
+<related pattern="howto:*" />
+
+===== Syntax =====
+
+<unit>
+<code bash>
+tabul data template --help
+</code>
+<console>
+Tabul data template
+===================
+
+Create data resources from a template and the values of the source data resource.
+
+
+
+Syntax
+------
+
+
+    tabul data template [options|flags] <source-selector> <target-data-uri>
+
+
+where:
+
+
+  Arguments:
+
+    <source-selector>                                           A data selector that select the data resources to transfer
+
+    <target-data-uri>                                           defines the target data URI destination (Example: [table]@connection). If the target data uri has no name, the name will be the name of the source.
+
+
+  Data Definition Options:
+
+    -a,--attribute <attributeName=value>                        Set specific data resource attributes
+
+    -sa,--source-attribute <attributeName=value>                Set a source data resource attribute
+
+    -ta,--target-attribute <attributeName=value>                Set a target data resource attribute
+
+
+  Cross Data Transfer Options:
+
+    -bs,--buffer-size <BUFFER_SIZE>                             defines the size of the memory buffer between the source and target threads
+
+    -mdu,--metrics-data-uri <METRICS_DATA_URI>                  defines a target data uri where the data metrics should be exported
+
+    -sfs,--source-fetch-size <SOURCE_FETCH_SIZE>                defines the size of the network message from the source to fetch the data
+
+    -so,--source-operation <SOURCE_OPERATION>                   defines the data operation (drop or truncate) on the source after transfer. Note: A `move` operation will drop the source.
+
+    -sg,--step-granularity <STEP_GRANULARITY>                   defines the granularity of the transfer
+
+    -out,--step-output <STEP_OUTPUT>                            The resource that is passed as output
+
+    -tbs,--target-batch-size <TARGET_BATCH_SIZE>                defines the batch size against the target data resource
+
+    -tcf,--target-commit-frequency <TARGET_COMMIT_FREQUENCY>    defines the commit frequency in number of batches against the target data resource
+
+    -to,--target-operation <TARGET_OPERATION>                   defines the data operations (replace, truncate) on the existing target before transfer.
+
+    -twc,--target-worker-count <TARGET_WORKER_COUNT>            defines the target number of thread against the target datastore
+
+    -tcm,--transfer-column-mapping <TRANSFER_COLUMN_MAPPING>    defines the column mapping between the source and the target
+
+    -tmm,--transfer-mapping-method <TRANSFER_MAPPING_METHOD>    defines the method used to map the source columns to the target columns
+
+    -op,--transfer-operation <TRANSFER_OPERATION>               defines the transfer operation (insert, update, delete, upsert, merge, move, copy). Default to `copy` for a file system and `insert` for a database.
+
+    -wbv,--with-bind-variables                                  defines if bind variables are used in the SQL statement
+
+
+  Template Options:
+
+    --template-engine <templateEngine>                          No Description available
+
+    --template-selectors <pattern@connection>                   No Description available
+
+
+  Options:
+
+    -t,--type <mediaType|mimeType|extensionFile>                The type of the resource
+
+    -vc,--virtual-column <columnName=resourceAttributeName>     Add a virtual column with the value of a data resource attribute
+
+
+  Selection Options:
+
+    -wd,--with-dependencies                                     If set, the dependencies will be also selected
+
+
+  Global Options:
+
+    -vf,--conf <path>                                           The path to a configuration file
+
+    -e,--env <env>                                              The name of the environment
+
+    -h,--help                                                   Print this help
+
+    -l,--log-level <error|warning|tip|info|fine>                Set the log level
+
+    -ns,--not-strict                                            A minor error will not stop the process.
+
+    -odu,--output-data-uri <outputDataUri>                      defines the output data uri for the feedback data (default: console)
+
+    -oo,--output-operation <dataOperation>                      defines the data operations (replace, truncate) on an existing output resource before transfer.
+
+    -oop,--output-transfer-operation <transferOperation>        defines the output transfer operation (insert, update, merge, copy). Default to `copy` for a file system and `insert` for a database.
+
+    -pp,--passphrase <passphrase>                               A passphrase (master password) to decrypt the encrypted vault values (Env: TABUL_PASSPHRASE)
+
+    -ph,--project-home <path>                                   The project home (default to the .tabul.yml file directory)
+
+    -v,--version                                                Print version information
+</console>
+</unit>

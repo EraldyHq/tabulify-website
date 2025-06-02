@@ -8,11 +8,11 @@
     "page_id": "tolx54t1e4mfb0i75vixb"
 }
 ---
-====== Tabulify - Configuration Vault (.tabli.yml) ======
+====== Tabulify - Configuration Vault (.tabul.yml) ======
 
 
 ===== About =====
-The ''configuration vault'' is a [[docs:conf:conf|configuration file]] named ''.tabli.yml'' that stores:
+The ''configuration vault'' is a [[docs:conf:conf|configuration file]] named ''.tabul.yml'' that stores:
 
   * [[..:connection:connection|connections]]
   * and [[env|global env parameters]]
@@ -22,18 +22,18 @@ The ''configuration vault'' is a [[docs:conf:conf|configuration file]] named ''.
 
 By default:
   * the file is searched recursively from the working directory
-  * if not found, the path is in the user ''%%$HOME\.tabli%%'' directory.
+  * if not found, the path is in the user ''%%$HOME\.tabul%%'' directory.
 
 
-You can get the location of the configuration vault with the [[docs:tabli:env:list|variable list command]].
+You can get the location of the configuration vault with the [[docs:tabul:env:list|variable list command]].
 <unit>
 <code bash>
-tabli env list conf
+tabul env list conf
 </code>
 <console>
-attribute   value                              origin    description                
----------   --------------------------------   -------   ------------------------   
-CONF        /home/tabulify/.tabli/.tabli.yml   Default   The conf vault file path
+attribute   value                              origin    description
+---------   --------------------------------   -------   ------------------------
+CONF        /home/tabulify/.tabul/.tabul.yml   Default   The conf vault file path
 </console>
 </unit>
 
@@ -44,14 +44,14 @@ CONF        /home/tabulify/.tabli/.tabli.yml   Default   The conf vault file pat
 Advanced user will modify the file directly with a text editor but
 for convenience, we provide also:
 
-  * the [[docs:tabli:connection:start|Tabli Connection module]]
-  * the [[docs:tabli:env:start|Tabli Env module]]
+  * the [[docs:tabul:connection:start|Tabul Connection module]]
+  * the [[docs:tabul:env:start|Tabul Env module]]
 
 
-In every [[docs:tabli:tabli|tabli command]], you can specify the location of this file with:
+In every [[docs:tabul:tabul|tabul command]], you can specify the location of this file with:
 
-  * the ''%%--conf%%'' [[docs:tabli:global|global option]].
-  * or the ''TABLI_CONF'' [[docs:conf:os|OS environment variable]]
+  * the ''%%--conf%%'' [[docs:tabul:global|global option]].
+  * or the ''TABUL_CONF'' [[docs:conf:os|OS environment variable]]
 
 
 ===== Secret =====
@@ -60,12 +60,12 @@ The configuration vault supports [[docs:conf:secret|secrets]] as value.
 
 
 You can:
-  * encrypt any value with [[docs:tabli:vault:encrypt|vault encrypt]]
+  * encrypt any value with [[docs:tabul:vault:encrypt|vault encrypt]]
   * or define environment variables as value
 ===== Format =====
 
 
-<code yaml .tabli.yml>
+<code yaml .tabul.yml>
 # List of global attributes
 env:
   key1: value

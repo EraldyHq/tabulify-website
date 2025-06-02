@@ -32,13 +32,13 @@ to the ''to'' address of the smtp connection.
 ===== How to set the environment ? =====
 
 You can set the environment :
-  * at the command line with the ''--env'' option of tabli.
+  * at the command line with the ''--env'' option of tabul.
 <code bash>
-tabli --env dev
+tabul --env dev
 </code>
-  * via a [[docs:conf:os|tabli os environment variable]]
+  * via a [[docs:conf:os|tabul os environment variable]]
 <code bash>
-export TABLI_ENV=dev
+export TABUL_ENV=dev
 </code>
   * In the [[docs:conf:vault|configuration vault]]
 
@@ -49,5 +49,5 @@ With the ''env'' variable.
 
 Example:
 <code bash>
-tabli variable list env
+tabul variable list env
 </code>

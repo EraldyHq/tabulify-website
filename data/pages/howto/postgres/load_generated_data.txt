@@ -1,16 +1,16 @@
 ---json
 {
-    "description": "This how-to will show you how to fill a table with auto-generated data and the Tabli fill action.",
+    "description": "This how-to will show you how to fill a table with auto-generated data and the Tabul fill action.",
     "low_quality_page": "false",
     "name": "Auto Data Generation",
     "page_id": "e1q33212r4wh9vrmo6ikr"
 }
 ---
-====== Tabli - How to fill a table with auto generated data ======
+====== Tabul - How to fill a table with auto generated data ======
 
 
 ===== About =====
-This [[..:howto|how-to]] will show you how to <icon name="mdi:format-color-fill"/> [[docs:op:fill|fill]] a [[docs:resource:table|table]] with auto-[[docs:generator:generator|generated data]] and the [[docs:tabli:data:fill|Tabli fill action]].
+This [[..:howto|how-to]] will show you how to <icon name="mdi:format-color-fill"/> [[docs:op:fill|fill]] a [[docs:resource:table|table]] with auto-[[docs:generator:generator|generated data]] and the [[docs:tabul:data:fill|Tabul fill action]].
 
 ===== Steps =====
 ==== Prerequisites ====
@@ -19,7 +19,7 @@ You should have ''Tabulify'' installed on your computer. [[howto:getting_started
 
 <unit display="none">
 <code bash>
-tabli data drop *@postgres
+tabul data drop *@postgres
 </code>
 </unit>
 
@@ -29,7 +29,7 @@ For the purpose of this ''how-to'', we will work with the ''date_dim'' [[docs:sy
 
 <unit>
 <code bash>
-tabli data create date_dim@tpcds @postgres
+tabul data create date_dim@tpcds @postgres
 </code>
 <console>
 source              target
@@ -38,12 +38,12 @@ date_dim@postgres   date_dim@tpcds
 </console>
 </unit>
 ==== Fill the date_dim table with 10 rows ====
-With the [[docs:tabli:data:fill|tabli data fill operation]], insert ''10'' rows automatically generated into the [[docs:resource:table|table]] ''date_dim''
+With the [[docs:tabul:data:fill|tabul data fill operation]], insert ''10'' rows automatically generated into the [[docs:resource:table|table]] ''date_dim''
 
 
 <unit>
 <code bash>
-tabli data fill --max-record-count 10 date_dim@postgres
+tabul data fill --max-record-count 10 date_dim@postgres
 </code>
 <console>
 Source            Target              Latency (ms)   Row Count   Error   Message
@@ -53,10 +53,10 @@ date_dim@memgen   date_dim@postgres   55             10
 </unit>
 ==== Check the result ====
 
-With the [[docs:tabli:data:print|data print command]], we can see the content of the ''date_dim'' table in the [[howto_connection_service|postgres connection]]
+With the [[docs:tabul:data:print|data print command]], we can see the content of the ''date_dim'' table in the [[howto_connection_service|postgres connection]]
 <unit>
 <code bash>
-tabli data print date_dim@postgres
+tabul data print date_dim@postgres
 </code>
 <console>
 d_date_sk   d_date_id          d_date       d_month_seq   d_week_seq   d_quarter_seq   d_year   d_dow   d_moy   d_dom   d_qoy   d_fy_year   d_fy_quarter_seq   d_fy_week_seq   d_day_name   d_quarter_name   d_holiday   d_weekend   d_following_holiday   d_first_dom   d_last_dom   d_same_day_ly   d_same_day_lq   d_current_day   d_current_week   d_current_month   d_current_quarter   d_current_year
@@ -77,7 +77,7 @@ d_date_sk   d_date_id          d_date       d_month_seq   d_week_seq   d_quarter
 
 <unit>
 <code bash>
-tabli data fill --max-record-count 10000 date_dim@postgres
+tabul data fill --max-record-count 10000 date_dim@postgres
 </code>
 <console>
 Source            Target              Latency (ms)   Row Count   Error   Message
@@ -90,7 +90,7 @@ date_dim@memgen   date_dim@postgres   1215           10000
 And we got ''10.000'' rows
 <unit>
 <code bash>
-tabli data list -a count date_dim@postgres
+tabul data list -a count date_dim@postgres
 </code>
 <console>
 count

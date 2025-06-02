@@ -1,5 +1,8 @@
 ---json
 {
+    "aliases": [
+        { "path": ":docs:system:mysql:datatype" }
+    ],
     "page_id": "ceosuk4eji8z78yhd5c3y"
 }
 ---

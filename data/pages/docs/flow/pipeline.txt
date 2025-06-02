@@ -29,5 +29,5 @@ pipeline:
 where each name is the name of a [[step|step]]
 
 ===== Execution =====
-You can execute a pipeline with the [[docs:tabli:flow:execute|flow execute command]]
+You can execute a pipeline with the [[docs:tabul:flow:execute|flow execute command]]
 

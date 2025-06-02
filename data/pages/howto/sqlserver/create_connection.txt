@@ -1,3 +1,8 @@
+---json
+{
+    "page_id": "ef5ibxh79arplhq4hozrb"
+}
+---
 ====== How to create an Microsoft SqlServer connection? ======
 
 
@@ -22,7 +27,7 @@ An sqlserver connection supports :
 Here are the attributes of the [[howto:sqlserver:howto_connection|howto connection]]
 <unit>
 <code bash display="none">
-tabli data print --type text .tabli/.tabli.yml@home | yq '.connections.sqlserver'
+tabul data print --type text .tabul/.tabul.yml@home | yq '.connections.sqlserver'
 </code>
 <console yaml>
 comment: The default sqlserver connection
@@ -41,7 +46,7 @@ user: sa
 
 You can  create an ''sqlserver'' connection:
   * by directly modifying the [[#Configuration vault]]
-  * or by using the [[#tabli command]]
+  * or by using the [[#tabul command]]
 
 <note>
 === Secret ===
@@ -65,18 +70,18 @@ connections:
      password: ${MY_MYSQL_PASSWORD}
      natives:
        # https://learn.microsoft.com/en-us/sql/connect/jdbc/setting-the-connection-properties?view=sql-server-ver17#properties
-       applicationName: tabli
+       applicationName: tabulify
 </code>
 
 
 
-==== Tabli Command ====
+==== Tabul Command ====
 
-With the [[docs:tabli:connection:add|tabli add command of the connection module]], you can add a sqlserver connection with the name ''sqlserverConnectionName'':
+With the [[docs:tabul:connection:add|tabul add command of the connection module]], you can add a sqlserver connection with the name ''sqlserverConnectionName'':
 
 <unit display="none">
 <code bash>
-tabli connection delete --not-strict "sqlserverConnectionName"
+tabul connection delete --not-strict "sqlserverConnectionName"
 </code>
 </unit>
 
@@ -85,7 +90,7 @@ tabli connection delete --not-strict "sqlserverConnectionName"
       <label>Bash</label>
 <unit>
 <code bash>
-tabli connection add "sqlserverConnectionName" \
+tabul connection add "sqlserverConnectionName" \
     "jdbc:sqlserver://localhost:1433;databaseName=AdventureWorks" \
     --user login \
     --password '${MY_MYSQL_PASSWORD}'
@@ -98,7 +103,7 @@ tabli connection add "sqlserverConnectionName" \
   <panel>
     <label>Windows CMD console</label>
 <code bash>
-tabli connection add "sqlserverConnectionName" "jdbc:sqlserver://localhost:1433;databaseName=AdventureWorks" ^
+tabul connection add "sqlserverConnectionName" "jdbc:sqlserver://localhost:1433;databaseName=AdventureWorks" ^
     --user login ^
     --password '${MY_MYSQL_PASSWORD}'
 </code>

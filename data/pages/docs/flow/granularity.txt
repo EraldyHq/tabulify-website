@@ -7,15 +7,15 @@
 
 
 ===== About =====
-''step-granularity'' is a [[docs:tabli:option|step property]] that tells if the step is performed:
+''step-granularity'' is a [[docs:tabul:option|step property]] that tells if the step is performed:
   * on each resource (default)
   * or on each record of the resource
 
-  
-  
-  
-  
-  
+
+
+
+
+
 
 ===== Example =====
 ==== Resource Granularity: Table to Csv file ====
@@ -43,4 +43,3 @@ If you want to export the SQL with one file by SQL, you would choose the ''recor
 </webcode>
 
 
- 

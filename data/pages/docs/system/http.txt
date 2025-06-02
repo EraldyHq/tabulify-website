@@ -7,7 +7,7 @@
 
 
 ===== About =====
-''http'' is a system of URL. 
+''http'' is a system of URL.
 
 A URL when requested returns a [[:docs:resource:query|query resource]]  (document) with a [[docs:resource:type|media type]].
 
@@ -15,6 +15,6 @@ A URL when requested returns a [[:docs:resource:query|query resource]]  (documen
 ===== Characteristic =====
 
 As a [[file|file system]]:
-  * a document can be seen as a file with its URL as path. 
-  * ''http'' does not have the notion of directory and therefore cannot be traversed as a file tree system, therefore the [[howto:tabli:glob|glob selections]] are not available. 
+  * a document can be seen as a file with its URL as path.
+  * ''http'' does not have the notion of directory and therefore cannot be traversed as a file tree system, therefore the [[howto:tabul:glob|glob selections]] are not available.
   * A URL has a hierarchical structure where we can give a parent to a document.

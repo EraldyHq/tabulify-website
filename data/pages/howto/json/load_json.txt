@@ -10,8 +10,7 @@
     ],
     "low_quality_page": "false",
     "name": "Load JSON in Sql Table",
-    "page_id": "a8z097oexo9em70mdaha6",
-    "title": "How to load a JSON documents in a database"
+    "page_id": "a8z097oexo9em70mdaha6"
 }
 ---
 
@@ -30,7 +29,7 @@ This example uses the [[howto:sqlite:howto_connection|sqlite howto database]] bu
 
 <unit display="none">
 <code bash>
-tabli data drop --not-strict user@sqlite
+tabul data drop --not-strict user@sqlite
 </code>
 </unit>
 
@@ -39,10 +38,10 @@ To be able to follow along the [[https://www.sqlite.org/json1.html|SQLite exampl
 
 The [[docs:resource:json|JSON files]] are located in the subdirectory ''json/phone'' of the [[docs:connection:howto|howto directory]] where there is one file by ''user'' containing a JSON array of phones.
 
-With the [[docs:tabli:data:list|data list command]], we can list them.
+With the [[docs:tabul:data:list|data list command]], we can list them.
 <unit>
 <code bash>
-tabli data list json/phone/*.json@howto
+tabul data list json/phone/*.json@howto
 </code>
 <console>
 path
@@ -56,10 +55,10 @@ json/phone/Don.json
 </unit>
 
 
-With the [[docs:tabli:data:print|data print command]], we can see for instance the JSON array of phones in the ''Bob.json'' file
+With the [[docs:tabul:data:print|data print command]], we can see for instance the JSON array of phones in the ''Bob.json'' file
 <unit>
 <code bash>
-tabli data print json/phone/Bob.json@howto
+tabul data print json/phone/Bob.json@howto
 </code>
 <console>
 ["323-423-2238","747-444-3222","475-202-7142"]
@@ -73,7 +72,7 @@ tabli data print json/phone/Bob.json@howto
 By default, a [[docs:resource:json|json file]] is seen as a [[docs:resource:tabular|relation]] with one column called ''json''
 
 
-The [[docs:resource:structure|structure]] of the JSON file can be seen with the [[docs:tabli:data:struct|data struct command]].
+The [[docs:resource:structure|structure]] of the JSON file can be seen with the [[docs:tabul:data:struct|data struct command]].
 
 For instance, for the ''Don.json'' file, there is one column:
   * at the ''position 1''
@@ -81,7 +80,7 @@ For instance, for the ''Don.json'' file, there is one column:
   * with the ''json'' [[docs:common:data_type|data type]]
 <unit>
 <code bash>
-tabli data struct json/phone/Don.json@howto
+tabul data struct json/phone/Don.json@howto
 </code>
 <console>
 Structure of the resource json/phone/Don.json@howto
@@ -94,15 +93,15 @@ position   name   type   precision   scale   primary_key   nullable   autoincrem
 
 ==== Loading the JSON files ====
 
-The below [[docs:tabli:data:insert|data insert command]] will load the JSON files into the ''phones'' [[docs:resource:table|table]] of the [[howto:sqlite:howto_connection|sqlite howto]] database.
+The below [[docs:tabul:data:insert|data insert command]] will load the JSON files into the ''phones'' [[docs:resource:table|table]] of the [[howto:sqlite:howto_connection|sqlite howto]] database.
 <unit display="none">
 <code bash>
-tabli data drop --not-strict user@sqlite
+tabul data drop --not-strict user@sqlite
 </code>
 </unit>
 <unit>
 <code bash>
-tabli data insert json/phone/*.json@howto  user@sqlite
+tabul data insert json/phone/*.json@howto  user@sqlite
 </code>
 <console>
 Source                         Target        Latency (ms)   Row Count   Error   Message
@@ -115,11 +114,11 @@ json/phone/Don.json@howto      user@sqlite   8              1
 </console>
 </unit>
 
-You can inspect the content with the [[docs:tabli:data:head|head command]]
+You can inspect the content with the [[docs:tabul:data:head|head command]]
 
 <unit>
 <code bash>
-tabli data head user@sqlite
+tabul data head user@sqlite
 </code>
 <console>
 The first 10 rows of the data resource (user@sqlite):
@@ -136,10 +135,10 @@ json
 ==== Changing the name of the JSON column ====
 The name of the JSON column is by default ''json'' but we can change it by setting the [[docs:resource:json#attribute|columnName json attribute]]
 
-After running the below [[docs:tabli:data:head|head command]], we can see that the column name has changed to ''phones''
+After running the below [[docs:tabul:data:head|head command]], we can see that the column name has changed to ''phones''
 <unit>
 <code bash>
-tabli data head --attribute columnName=phone json/phone/Don.json@howto
+tabul data head --attribute columnName=phone json/phone/Don.json@howto
 </code>
 <console>
 The first 10 rows of the data resource (json/phone/Don.json@howto):
@@ -154,7 +153,7 @@ Because the ''JSON'' content of files does not have any kind of identifier, we c
 
 To be able to add context to file loaded, ''Tabulify'' supports the concept of [[docs:resource:virtual_column|virtual columns]] where it's possible to add [[docs:resource:attribute|any attribute information about the file loaded]].
 
-The [[docs:resource:virtual_column|virtual columns]] are specified with the ''--virtual-column'' [[docs:tabli:option|option]] that has the following syntax:
+The [[docs:resource:virtual_column|virtual columns]] are specified with the ''--virtual-column'' [[docs:tabul:option|option]] that has the following syntax:
 <code bash>
 --virtual-column virtualColumnName=resourceAttributeName
 </code>
@@ -168,10 +167,10 @@ For instance, if we want to add:
   * into a column called ''name'',
 we would add ''--virtual-column name=logical_name''
 
-With the [[docs:tabli:data:print|print command]], the full command would look like below.
+With the [[docs:tabul:data:print|print command]], the full command would look like below.
 <unit>
 <code bash>
-tabli data print --attribute columnName=phone --virtual-column name=logical_name json/phone/Bob.json@howto
+tabul data print --attribute columnName=phone --virtual-column name=logical_name json/phone/Bob.json@howto
 </code>
 <console>
 phone                                            name
@@ -185,17 +184,17 @@ phone                                            name
 First, we will drop the old structure with the `json` column
 <unit>
 <code bash>
-tabli data drop --not-strict user@sqlite
+tabul data drop --not-strict user@sqlite
 </code>
 </unit>
 
 To reload the JSON files:
   * with the extra column ''name'' and the [[docs:resource:logicalname|file logical name]]
   * with a column ''phones'' containing the ''JSON document''
-the syntax of the [[docs:tabli:data:insert|tabli data insert]] would be:
+the syntax of the [[docs:tabul:data:insert|tabul data insert]] would be:
 <unit>
 <code bash>
-tabli data insert --target-operation replace --source-attribute columnName=phone --virtual-column name=logical_name json/phone/*@howto  user@sqlite
+tabul data insert --target-operation replace --source-attribute columnName=phone --virtual-column name=logical_name json/phone/*@howto  user@sqlite
 </code>
 where:
   * ''%%--target-operation%%'' will ''replace'' the target ''phones@sqlite''
@@ -221,7 +220,7 @@ json/phone/Don.json@howto      user@sqlite   5              1
 The JSON data loaded has now the ''name'' column as identifier.
 <unit>
 <code bash>
-tabli data print user@sqlite
+tabul data print user@sqlite
 </code>
 <console>
 phone                                             name
@@ -248,12 +247,12 @@ SELECT DISTINCT user.name
 </file>
 </unit>
 
-To see the result of this [[docs:resource:select|SQL query]], we will use the [[docs:tabli:data:print|print command]] and see that ''Arnold'' is the user that have a phone number that starts with ''704''.
+To see the result of this [[docs:resource:select|SQL query]], we will use the [[docs:tabul:data:print|print command]] and see that ''Arnold'' is the user that have a phone number that starts with ''704''.
 
 <unit>
 <code bash>
 # The quote are mandatory because parenthesis have a meaning in Bash (ie subshell)
-tabli data print "(sqlite/user_phone_json.sql@howto)"@sqlite
+tabul data print "(sqlite/user_phone_json.sql@howto)"@sqlite
 </code>
 <console>
 name

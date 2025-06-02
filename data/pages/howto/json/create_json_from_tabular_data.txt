@@ -5,8 +5,7 @@
     ],
     "description": "This howto will show you how to create a  JSON file\nfrom tabular data with the template operation and a JSON template",
     "low_quality_page": "false",
-    "page_id": "sn8nysvwhcy6we0r2a2ec",
-    "title": "How to create JSON files from Tabular data with a JSON template"
+    "page_id": "sn8nysvwhcy6we0r2a2ec"
 }
 ---
 ====== Tabulify HowTo - How to create JSON file(s) from Tabular data with a JSON template ======
@@ -23,7 +22,7 @@ This [[howto:howto|howto]] will show you:
 
 <unit display="none">
 <code bash>
-tabli data drop --not-strict books.json@temp
+tabul data drop --not-strict books.json@temp
 </code>
 </unit>
 
@@ -36,19 +35,19 @@ In this [[howto:howto|howto]], we will use as source ''books catalog data'' that
 You can also used any other [[docs:resource:tabular|tabular data resources]].
 </note>
 
-With the [[docs:tabli:data:print|data print]] command, we can see the content.
+With the [[docs:tabul:data:print|data print]] command, we can see the content.
 <unit>
 <code bash>
-tabli data print books.csv@howto
+tabul data print books.csv@howto
 </code>
 <console>
-asin            description                                   price   group        
--------------   -------------------------------------------   -----   ----------   
-B007US9NA8      The New Encyclopedia of Modern Bodybuilding   27.18   Sports       
-1439199191      How To Win Friends And Influence People       27.18   Psychology   
-9780465050659   The Design of Everyday Things                 9.99    Design       
-9780465050659   The Design of Everyday Things                 9.99    Psychology   
-B00555X8OA      Thinking, Fast and Slow                       8.85    Decision     
+asin            description                                   price   group
+-------------   -------------------------------------------   -----   ----------
+B007US9NA8      The New Encyclopedia of Modern Bodybuilding   27.18   Sports
+1439199191      How To Win Friends And Influence People       27.18   Psychology
+9780465050659   The Design of Everyday Things                 9.99    Design
+9780465050659   The Design of Everyday Things                 9.99    Psychology
+B00555X8OA      Thinking, Fast and Slow                       8.85    Decision
 B00555X8OA      Thinking, Fast and Slow                       8.85    Psychology
 </console>
 </unit>
@@ -78,9 +77,9 @@ where:
 
 ==== The template operation ====
 
-=== Tabli Data Template Command ===
+=== Tabul Data Template Command ===
 
-By running the below [[docs:tabli:data:template|tabli data template operation]], we will:
+By running the below [[docs:tabul:data:template|tabul data template operation]], we will:
   * create a ''books.json'' [[docs:resource:json|json file]]
   * into the [[docs:connection:temp|temp connection directory]]
   * that has been created:
@@ -88,56 +87,56 @@ By running the below [[docs:tabli:data:template|tabli data template operation]],
       * and the [[docs:flow:source|source]] [[docs:resource:csv|csv file]] ''books.csv'' located in the [[docs:connection:howto|howto directory]]
 <unit>
 <code bash>
-tabli data template --template-selectors books_template.json@howto books.csv@howto books.json@temp
+tabul data template --template-selectors books_template.json@howto books.csv@howto books.json@temp
 </code>
 <console>
-Source          Target            Latency (ms)   Row Count   Error   Message   
--------------   ---------------   ------------   ---------   -----   -------   
+Source          Target            Latency (ms)   Row Count   Error   Message
+-------------   ---------------   ------------   ---------   -----   -------
 output@memory   books.json@temp   10             1
 </console>
 </unit>
 
 ==== The JSON file created ====
-With the [[docs:tabli:data:print|data print command]], you can see the [[docs:resource:json|json file content]] created.
+With the [[docs:tabul:data:print|data print command]], you can see the [[docs:resource:json|json file content]] created.
 <unit>
 <code bash>
 # type text because by default, a json file is seen as one JSON document, one record, one line
-tabli data print --type text books.json@temp
+tabul data print --type text books.json@temp
 </code>
 <console javascript>
-{                                                                    
-  "Sports": {                                                        
-    "B007US9NA8": {                                                  
-      "price": "27.18",                                              
-      "description": "The New Encyclopedia of Modern Bodybuilding"   
-    }                                                                
-  },                                                                 
-  "Psychology": {                                                    
-    "1439199191": {                                                  
-      "price": "27.18",                                              
-      "description": "How To Win Friends And Influence People"       
-    },                                                               
-    "9780465050659": {                                               
-      "price": "9.99",                                               
-      "description": "The Design of Everyday Things"                 
-    },                                                               
-    "B00555X8OA": {                                                  
-      "price": "8.85",                                               
-      "description": "Thinking, Fast and Slow"                       
-    }                                                                
-  },                                                                 
-  "Design": {                                                        
-    "9780465050659": {                                               
-      "price": "9.99",                                               
-      "description": "The Design of Everyday Things"                 
-    }                                                                
-  },                                                                 
-  "Decision": {                                                      
-    "B00555X8OA": {                                                  
-      "price": "8.85",                                               
-      "description": "Thinking, Fast and Slow"                       
-    }                                                                
-  }                                                                  
+{
+  "Sports": {
+    "B007US9NA8": {
+      "price": "27.18",
+      "description": "The New Encyclopedia of Modern Bodybuilding"
+    }
+  },
+  "Psychology": {
+    "1439199191": {
+      "price": "27.18",
+      "description": "How To Win Friends And Influence People"
+    },
+    "9780465050659": {
+      "price": "9.99",
+      "description": "The Design of Everyday Things"
+    },
+    "B00555X8OA": {
+      "price": "8.85",
+      "description": "Thinking, Fast and Slow"
+    }
+  },
+  "Design": {
+    "9780465050659": {
+      "price": "9.99",
+      "description": "The Design of Everyday Things"
+    }
+  },
+  "Decision": {
+    "B00555X8OA": {
+      "price": "8.85",
+      "description": "Thinking, Fast and Slow"
+    }
+  }
 }
 </console>
 </unit>

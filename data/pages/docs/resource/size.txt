@@ -12,14 +12,14 @@
 
 ===== Example =====
 
-With the [[docs:connection:howto|howto file]] ''characters.csv'' and the [[docs:tabli:data:list|data list command]]
+With the [[docs:connection:howto|howto file]] ''characters.csv'' and the [[docs:tabul:data:list|data list command]]
 <unit>
 <code bash>
-tabli data list --attribute size characters.csv@howto
+tabul data list --attribute size characters.csv@howto
 </code>
 <console>
-size   
-----   
+size
+----
  432
 </console>
 </unit>

@@ -6,8 +6,7 @@
     "description": "A date dimension is a typical case for data generation and this article shows you how to generate it.\n",
     "low_quality_page": "false",
     "name": "Create a Date Dimension",
-    "page_id": "sbo5vdkk4k03u1lu74dzn",
-    "title": "How to generate a date dimension ?"
+    "page_id": "sbo5vdkk4k03u1lu74dzn"
 }
 ---
 ====== Data Generator - How to generate a date dimension ? ======
@@ -88,25 +87,25 @@ Columns:
 </unit>
 
 ==== Output ====
-With the [[docs:tabli:data:head|data head command]] and the [[docs:connection:howto|howto directory]] connection, you can test your [[docs:resource:generator|generator]] and see the data.
+With the [[docs:tabul:data:head|data head command]] and the [[docs:connection:howto|howto directory]] connection, you can test your [[docs:resource:generator|generator]] and see the data.
 
 <unit>
 <code bash>
-tabli data head date_dim--datagen.yml@howto
+tabul data head date_dim--datagen.yml@howto
 </code>
 <console>
-The first 10 rows of the data resource (date_dim--datagen.yml@howto): 
-d_date_sk   d_date       d_date_id    d_month_seq   d_day_name   d_moy   d_year   
----------   ----------   ----------   -----------   ----------   -----   ------   
-        1   2025-05-20   2025-05-20        202505   Tuesday          5   2025     
-        2   2025-05-19   2025-05-19        202505   Monday           5   2025     
-        3   2025-05-18   2025-05-18        202505   Sunday           5   2025     
-        4   2025-05-17   2025-05-17        202505   Saturday         5   2025     
-        5   2025-05-16   2025-05-16        202505   Friday           5   2025     
-        6   2025-05-15   2025-05-15        202505   Thursday         5   2025     
-        7   2025-05-14   2025-05-14        202505   Wednesday        5   2025     
-        8   2025-05-13   2025-05-13        202505   Tuesday          5   2025     
-        9   2025-05-12   2025-05-12        202505   Monday           5   2025     
+The first 10 rows of the data resource (date_dim--datagen.yml@howto):
+d_date_sk   d_date       d_date_id    d_month_seq   d_day_name   d_moy   d_year
+---------   ----------   ----------   -----------   ----------   -----   ------
+        1   2025-05-20   2025-05-20        202505   Tuesday          5   2025
+        2   2025-05-19   2025-05-19        202505   Monday           5   2025
+        3   2025-05-18   2025-05-18        202505   Sunday           5   2025
+        4   2025-05-17   2025-05-17        202505   Saturday         5   2025
+        5   2025-05-16   2025-05-16        202505   Friday           5   2025
+        6   2025-05-15   2025-05-15        202505   Thursday         5   2025
+        7   2025-05-14   2025-05-14        202505   Wednesday        5   2025
+        8   2025-05-13   2025-05-13        202505   Tuesday          5   2025
+        9   2025-05-12   2025-05-12        202505   Monday           5   2025
        10   2025-05-11   2025-05-11        202505   Sunday           5   2025
 </console>
 </unit>

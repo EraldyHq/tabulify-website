@@ -27,7 +27,7 @@ Howto: [[howto:getting_started:10_resource_comparison]]
 
 ===== Command and Arguments =====
 
-The ''compare'' operation is supported by the [[docs:tabli:data:diff|data compare command]]
+The ''compare'' operation is supported by the [[docs:tabul:data:diff|data compare command]]
 ==== Data Selector (Source) ====
 The [[docs:resource:data_selector|data selector]] can choose any [[docs:resource:content|content resource]] such as:
   * [[docs:resource:table|table]]

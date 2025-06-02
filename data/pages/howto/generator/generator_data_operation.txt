@@ -2,8 +2,7 @@
 {
     "description": "This how-to shows you how to use a data generator as data source",
     "low_quality_page": "false",
-    "page_id": "98nvmw9ig8chcrlp7n7yb",
-    "title": "How to use a data generator in a data operation"
+    "page_id": "98nvmw9ig8chcrlp7n7yb"
 }
 ---
 ====== Tabulify - How to use a data generator in a data operation ======
@@ -20,10 +19,10 @@ A <icon name="mdi:cog" /> [[docs:resource:generator|generator]] is just a [[docs
 ==== Printing the generator will print the generated data ====
 
 
-The [[docs:tabli:data:head|head command]]  will print the generated data.
+The [[docs:tabul:data:head|head command]]  will print the generated data.
 <unit >
 <code bash>
-tabli data head --limit 30 sequence--datagen.yml@howto
+tabul data head --limit 30 sequence--datagen.yml@howto
 </code>
 <console height="300px"  scroll="toggle">
 The first 30 rows of the data resource (sequence--datagen.yml@howto):
@@ -66,10 +65,10 @@ seq_int   seq_char
 ==== Insert in a Sql Table ====
 
 
-You can [[docs:tabli:data:insert|insert]] the generated data into a [[docs:resource:table|table]] in the [[docs:connection:howtos|sqlite database]]
+You can [[docs:tabul:data:insert|insert]] the generated data into a [[docs:resource:table|table]] in the [[docs:connection:howtos|sqlite database]]
 <unit >
 <code bash>
-tabli data insert sequence--datagen.yml@howto sequence@sqlite
+tabul data insert sequence--datagen.yml@howto sequence@sqlite
 </code>
 <console>
 Source                        Target            Latency (ms)   Row Count   Error   Message

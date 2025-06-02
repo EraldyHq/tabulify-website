@@ -19,7 +19,7 @@ Example with a [[:docs:resource:generator|generator resources]] that generates a
 ```
 where:
   * `[0-9]{3}` asks for 3 digits
-  * `\.` print a point 
+  * `\.` print a point
     * Note: `\` is the escape character that tells the generator to take the dot character and not the [[kb>lang:regexp:dot|regular expression dot matcher]].
   * `[0-9]{3}` asks for 3 digits
 
@@ -41,40 +41,40 @@ columns:
 </file>
  that would yield the following data:
 <code bash>
-tabli data print generator/regexp--datagen.yml@howto
+tabul data print generator/regexp--datagen.yml@howto
 </code>
 <console height="300px" scroll="toggle">
-regexp_double   
--------------   
-      112.682   
-      660.396   
-      984.383   
-      186.461   
-      288.091   
-      552.447   
-        73.44   
-      916.136   
-      535.481   
-      299.578   
-      283.111   
-      821.063   
-      546.346   
-       348.24   
-      283.066   
-      960.848   
-      461.116   
-      141.916   
-       897.38   
-       92.589   
-      119.747   
-      233.942   
-      978.063   
-      269.027   
-      738.911   
-      899.065   
-      785.454   
-      698.703   
-      132.742   
+regexp_double
+-------------
+      112.682
+      660.396
+      984.383
+      186.461
+      288.091
+      552.447
+        73.44
+      916.136
+      535.481
+      299.578
+      283.111
+      821.063
+      546.346
+       348.24
+      283.066
+      960.848
+      461.116
+      141.916
+       897.38
+       92.589
+      119.747
+      233.942
+      978.063
+      269.027
+      738.911
+      899.065
+      785.454
+      698.703
+      132.742
        304.08
 </console>
 </unit>
@@ -82,7 +82,7 @@ regexp_double
 ===== Supported Syntax =====
 
 
-^                        Pattern ^ Description  ^                                                                                                                        
+^                        Pattern ^ Description  ^
 |                            `.` | Any symbol. See below details - `Dot pattern generated symbols` section.                                                             |
 |                            `?` | One or zero occurrences                                                                                                              |
 |                            `+` | One or more occurrences                                                                                                              |

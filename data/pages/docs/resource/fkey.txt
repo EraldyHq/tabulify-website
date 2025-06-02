@@ -9,6 +9,6 @@
 ===== About =====
 A ''foreign key'' represent a [[docs:resource:dependency|dependency relationship]] between [[docs:resource:table|tables]]. It's a [[docs:system:relational|relational concept]].
 
-The [[docs:tabli:data:dep|data dep command]] show you the ''foreign key'' dependency.
+The [[docs:tabul:data:dep|data dep command]] show you the ''foreign key'' dependency.
 
 

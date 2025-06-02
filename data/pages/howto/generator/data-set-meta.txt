@@ -14,7 +14,7 @@ This howto will show you how to use the [[:docs:generator:data-set-meta|data set
 
 
 ==== Data Set ====
- 
+
 In this example, the data set is the [[:docs:generator:entity|region entity]]
 
 We want to generate the data
@@ -24,16 +24,16 @@ We want to generate the data
 The content of the data set is:
 <unit>
 <code bash>
-tabli data head region/region.csv@entity
+tabul data head region/region.csv@entity
 </code>
 <console>
-The first 10 rows of the data resource (region/region.csv@entity): 
-region     code   
---------   ----   
-Africa     2      
-Americas   19     
-Asia       142    
-Europe     150    
+The first 10 rows of the data resource (region/region.csv@entity):
+region     code
+--------   ----
+Africa     2
+Americas   19
+Asia       142
+Europe     150
 Oceania    9
 </console>
 </unit>
@@ -62,24 +62,24 @@ Columns:
 
 ==== Printing the data ====
 
-You can see/generate the output with [[:docs:tabli:data:print|tabli print]]
+You can see/generate the output with [[:docs:tabul:data:print|tabul print]]
 
 <unit>
 <code bash>
-tabli data print generator/dataset-meta-type--datagen.yml@howto
+tabul data print generator/dataset-meta-type--datagen.yml@howto
 </code>
 <console>
-region     code   
---------   ----   
-Asia       142    
-Africa     2      
-Africa     2      
-Asia       142    
-Asia       142    
-Americas   19     
-Oceania    9      
-Oceania    9      
-Africa     2      
+region     code
+--------   ----
+Asia       142
+Africa     2
+Africa     2
+Asia       142
+Asia       142
+Americas   19
+Oceania    9
+Oceania    9
+Africa     2
 Europe     150
 </console>
 </unit>

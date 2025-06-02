@@ -33,10 +33,10 @@ It inherits the attributes of the [[:docs:system:relational|relational system]].
 
 Over the [[:docs:op:upsert|upsert operation]], SqlServer does not use the SQL standard ''insert on conflict'' statement but a  [[https://learn.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql|merge statement]].
 
-This merge statement requires a ''ON'' condition. 
+This merge statement requires a ''ON'' condition.
 
 Tabulify sets it:
-  * to the first unique key constraint 
+  * to the first unique key constraint
   * and if none is found, a standard insert statement is used.
 
 
@@ -61,7 +61,7 @@ Cannot truncate table 'master.dbo.d_date' because it is being referenced by a FO
 If you want to truncate, you need to use the ''force'' option to delete the foreign keys beforehands.
 
 ```bash
-tabli data truncate --force mytable
+tabul data truncate --force mytable
 ```
 
 

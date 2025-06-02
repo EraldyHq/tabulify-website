@@ -1,0 +1,110 @@
+---json
+{
+    "aliases": [
+        { "path": ":howto:tabli:connection_list" }
+    ],
+    "description": "This How-To shows you how to list  connections with the tabul connection list command",
+    "low_quality_page": "false",
+    "page_id": "imxef4iap2hhrt634j3o7"
+}
+---
+====== Tabul - How to list connections ======
+
+
+===== About =====
+How to list <icon name="mdi:connection"/> [[docs:connection:connection|connection]] with the [[docs:tabul:connection:list|tabul connection list]] command
+
+===== Steps =====
+
+
+==== Listing all connections ====
+
+<unit>
+<code bash>
+tabul connection list *
+</code>
+<console>
+NAME            URI
+-------------   ----------------------------------------------------------------------------------------------------
+cd              file:///home/admin/code/tabulify/tabulify-cli/
+desktop         file:///home/admin/Desktop/
+entity          file:///home/admin/opt/tabulify/resources/entity/
+home            file:///home/admin/
+howto           file:///home/admin/opt/tabulify/resources/howto/
+log             jdbc:sqlite:////home/admin/.tabul/log.db
+memory          mem
+mysql           jdbc:mysql://localhost:3306/howto
+noop            noop
+oracle          jdbc:oracle:thin:@localhost:1521/freepdb1
+postgres        jdbc:postgresql://localhost:5432/postgres
+smtp            smtp://localhost
+sqlite          jdbc:sqlite:////home/admin/.tabul/sqlite.db
+sqlite_target   jdbc:sqlite:////home/admin/.tabul/sqlite_target.db
+sqlserver       jdbc:sqlserver://localhost:1433;databaseName=AdventureWorks;encrypt=true;trustServerCertificate=true
+temp            file:///tmp/
+tpcds           tpcds
+tpcds_query     file:///home/admin/opt/tabulify/resources/tpcds_query/
+</console>
+</unit>
+==== Listing a subset with globbing ====
+
+  * List only the connections with ''sql'' in their name by using a [[docs:common:globbing|glob pattern]]
+<unit>
+<code bash>
+tabul connection list *sql*
+</code>
+<console>
+NAME            URI
+-------------   ----------------------------------------------------------------------------------------------------
+mysql           jdbc:mysql://localhost:3306/howto
+sqlite          jdbc:sqlite:////home/admin/.tabul/sqlite.db
+sqlite_target   jdbc:sqlite:////home/admin/.tabul/sqlite_target.db
+sqlserver       jdbc:sqlserver://localhost:1433;databaseName=AdventureWorks;encrypt=true;trustServerCertificate=true
+</console>
+</unit>
+
+==== Listing only  a set of connections ====
+
+  * List only the connections with the name [[howto:oracle:howto_connection|oracle]] and [[howto:sqlite:howto_connection|sqlite]]
+<unit>
+<code bash>
+tabul connection list oracle sqlite
+</code>
+<console>
+NAME     URI
+------   -------------------------------------------
+oracle   jdbc:oracle:thin:@localhost:1521/freepdb1
+sqlite   jdbc:sqlite:////home/admin/.tabul/sqlite.db
+</console>
+</unit>
+
+==== Choosing the attributes to return ====
+
+List the connections with the [[docs:connection:name|name]], ''user'' and [[docs:connection:uri|url]] [[docs:connection:attribute|connection attribute]]
+<unit>
+<code bash>
+tabul connection list -a name -a user -a url *
+</code>
+<console>
+name            user       url
+-------------   --------   ---
+cd
+desktop
+entity
+home
+howto
+log
+memory
+mysql           root
+noop
+oracle          hr
+postgres        postgres
+smtp
+sqlite
+sqlite_target
+sqlserver       sa
+temp
+tpcds
+tpcds_query
+</console>
+</unit>

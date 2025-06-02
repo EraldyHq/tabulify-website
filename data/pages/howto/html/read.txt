@@ -23,17 +23,17 @@ This Howto shows you how to read a [[:docs:resource:html|HTML table]] from a htm
 By default, an [[:docs:resource:html|HTML resource]] will return the first HTML table found.
 
 
-Example: the first table of the [[https://en.wikipedia.org/wiki/List_of_countries_in_the_Eurovision_Song_Contest|Eurovision country]] with the data [[docs:tabli:data:head|data head command]]
+Example: the first table of the [[https://en.wikipedia.org/wiki/List_of_countries_in_the_Eurovision_Song_Contest|Eurovision country]] with the data [[docs:tabul:data:head|data head command]]
 <unit>
 <code bash>
-tabli data head https://en.wikipedia.org/wiki/List_of_countries_in_the_Eurovision_Song_Contest
+tabul data head https://en.wikipedia.org/wiki/List_of_countries_in_the_Eurovision_Song_Contest
 </code>
 <console>
-The first 10 rows of the data resource (List_of_countries_in_the_Eurovision_Song_Contest@en.wikipedia.org\wiki): 
-1   2                                                                                                                                               
--   ---------------------------------------------------------------------------------------------------------------------------------------------   
-†   Inactive – countries which participated in the past but did not appear in the most recent contest, or will not appear in the upcoming contest   
-◇   Ineligible – countries whose broadcasters are no longer part of the EBU and are therefore ineligible to participate                             
+The first 10 rows of the data resource (List_of_countries_in_the_Eurovision_Song_Contest@en.wikipedia.org\wiki):
+1   2
+-   ---------------------------------------------------------------------------------------------------------------------------------------------
+†   Inactive – countries which participated in the past but did not appear in the most recent contest, or will not appear in the upcoming contest
+◇   Ineligible – countries whose broadcasters are no longer part of the EBU and are therefore ineligible to participate
 ‡   Former – countries which previously participated but no longer exist
 </console>
 </unit>
@@ -51,24 +51,24 @@ were we specify the ''table-selector''
 With this selector, we get the second table:
 <unit>
 <code bash>
-tabli data head \
+tabul data head \
    -a 'table-selector=#mw-content-text > div.mw-content-ltr.mw-parser-output > table:nth-child(15)' \
    https://en.wikipedia.org/wiki/List_of_countries_in_the_Eurovision_Song_Contest
 </code>
 <console>
 
-The first 10 rows of the data resource (List_of_countries_in_the_Eurovision_Song_Contest@en.wikipedia.org\wiki): 
-Country                    Broadcaster(s)[12]   Debut year   Latest entry   Entries   Finals   Qualifying[b]   Latest final   Best placement   Wins        
-------------------------   ------------------   ----------   ------------   -------   ------   -------------   ------------   --------------   ---------   
-                                                                                                                                                           
-Albania                    RTSH                 2004         2025           21        12       11/20           55%            2025             5th         
-Andorra †                  RTVA                 2004         2009           6         0        0/6             0%             N/A              12th (SF)   
-Armenia                    AMPTV                2006         2025           17        14       13/16           81%            2025             4th         
-Australia                  SBS                  2015         2025           10        7        6/9             67%            2023             2nd         
-Austria                    ORF                  1957         2025           57        50       8/15            53%            2025             1st         
-Azerbaijan                 İTV                  2008         2025           17        13       12/16           75%            2022             1st         
-Belarus ◇                  BTRC                 2004         2019           16        6        6/16            38%            2019             6th         
-Belgium[d]                 RTBF[f] / VRT[g]     1956         2025           66        54       8/20            40%            2023             1st         
+The first 10 rows of the data resource (List_of_countries_in_the_Eurovision_Song_Contest@en.wikipedia.org\wiki):
+Country                    Broadcaster(s)[12]   Debut year   Latest entry   Entries   Finals   Qualifying[b]   Latest final   Best placement   Wins
+------------------------   ------------------   ----------   ------------   -------   ------   -------------   ------------   --------------   ---------
+
+Albania                    RTSH                 2004         2025           21        12       11/20           55%            2025             5th
+Andorra †                  RTVA                 2004         2009           6         0        0/6             0%             N/A              12th (SF)
+Armenia                    AMPTV                2006         2025           17        14       13/16           81%            2025             4th
+Australia                  SBS                  2015         2025           10        7        6/9             67%            2023             2nd
+Austria                    ORF                  1957         2025           57        50       8/15            53%            2025             1st
+Azerbaijan                 İTV                  2008         2025           17        13       12/16           75%            2022             1st
+Belarus ◇                  BTRC                 2004         2019           16        6        6/16            38%            2019             6th
+Belgium[d]                 RTBF[f] / VRT[g]     1956         2025           66        54       8/20            40%            2023             1st
 Bosnia and Herzegovina †   BHRT[h]              1993         2016           19        18       7/8             88%            2012             3rd
 
 </console>

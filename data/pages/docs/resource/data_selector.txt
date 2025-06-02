@@ -86,29 +86,29 @@ Only in [[docs:common:bash|bash based terminal]], see [[docs:common:bash#why_do_
 
 <unit>
 <code bash>
-tabli data info "https://en.wikipedia.org/w/api.php?action=query&titles=SQL&format=xml&prop=description"
+tabul data info "https://en.wikipedia.org/w/api.php?action=query&titles=SQL&format=xml&prop=description"
 </code>
 <console>
 Information about the data resource (api.php@en.wikipedia.org\w)
-attribute          value                                                                                              description                                                              
-----------------   ------------------------------------------------------------------------------------------------   ----------------------------------------------------------------------   
-CHARACTER_SET      UTF-8                                                                                              The character set of the file                                            
-COLUMN_NAME        xml                                                                                                The name of the column when the text content is returned on one column   
-END_OF_RECORD                                                                                                        The End Of Record string sequence                                        
-URI                https://en.wikipedia.org/w/api.php?prop=description&format=xml&action=query&titles=SQL             The URI of the file                                                      
-ABSOLUTE_PATH      /w/api.php                                                                                         The absolute path on the data system                                     
-CONNECTION         en.wikipedia.org\w                                                                                 The connection name                                                      
-COUNT              1                                                                                                  The number of records                                                    
-DATA_URI           api.php@en.wikipedia.org\w                                                                         The data uri                                                             
-LOGICAL_NAME       api                                                                                                The logical name                                                         
-MD5                3547b7e2532d9d3faab43788fa3b16e0                                                                   The Md5 hash                                                             
-NAME               api.php                                                                                            The name of the data resource                                            
-PARENT                                                                                                                The parent                                                               
-PATH               api.php                                                                                            The relative path to the default connection path                         
-SHA384             821189e9ced47527c2811626813b417adf4152fd02bec10c2a36f95ea9e8d158653e80216edb1b890cef49c449e3a9e0   The Sha384 hash                                                          
-SHA384_INTEGRITY   sha384-ghGJ6c7UdSfCgRYmgTtBet9BUv0CvsEMKjb5Xqno0VhlPoAhbtsbiQzvScRJ46ng                            The sha384 value used in the html integrity attribute                    
-SIZE               -1                                                                                                 The number of byte                                                       
-SUBTYPE            xml                                                                                                The media subType                                                        
+attribute          value                                                                                              description
+----------------   ------------------------------------------------------------------------------------------------   ----------------------------------------------------------------------
+CHARACTER_SET      UTF-8                                                                                              The character set of the file
+COLUMN_NAME        xml                                                                                                The name of the column when the text content is returned on one column
+END_OF_RECORD                                                                                                        The End Of Record string sequence
+URI                https://en.wikipedia.org/w/api.php?prop=description&format=xml&action=query&titles=SQL             The URI of the file
+ABSOLUTE_PATH      /w/api.php                                                                                         The absolute path on the data system
+CONNECTION         en.wikipedia.org\w                                                                                 The connection name
+COUNT              1                                                                                                  The number of records
+DATA_URI           api.php@en.wikipedia.org\w                                                                         The data uri
+LOGICAL_NAME       api                                                                                                The logical name
+MD5                3547b7e2532d9d3faab43788fa3b16e0                                                                   The Md5 hash
+NAME               api.php                                                                                            The name of the data resource
+PARENT                                                                                                                The parent
+PATH               api.php                                                                                            The relative path to the default connection path
+SHA384             821189e9ced47527c2811626813b417adf4152fd02bec10c2a36f95ea9e8d158653e80216edb1b890cef49c449e3a9e0   The Sha384 hash
+SHA384_INTEGRITY   sha384-ghGJ6c7UdSfCgRYmgTtBet9BUv0CvsEMKjb5Xqno0VhlPoAhbtsbiQzvScRJ46ng                            The sha384 value used in the html integrity attribute
+SIZE               -1                                                                                                 The number of byte
+SUBTYPE            xml                                                                                                The media subType
 TYPE               text/xml                                                                                           The media type
 </console>
 </unit>

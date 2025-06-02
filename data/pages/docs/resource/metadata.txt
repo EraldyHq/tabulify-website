@@ -10,7 +10,7 @@
 ''metadata'' are ''data'' about the [[resource|data resource]].
 
 For [[docs:resource:tabular|tabular data]], there is two kind of metadata:
-  * scalar - (ie creation date, size, ...) 
+  * scalar - (ie creation date, size, ...)
   * [[structure|data structure]] - (ie column, type, ...)
 
 
@@ -23,10 +23,10 @@ Metadata stores are [[:docs:system:system|system dependent]].
 
 On [[:docs:system:file|file system]], the metadata definition depends on the [[docs:resource:type|file type]].
 
-For a file type that does not store metadata along its data, tabulify uses [[docs:resource:attribute|attributes]] to specify them. 
+For a file type that does not store metadata along its data, tabulify uses [[docs:resource:attribute|attributes]] to specify them.
 
 You can pass them:
-     * via the [[:docs:tabli:option|cli options]] (''--attribute'', ''--source-attribute'', ''--target-attribute'')
+     * via the [[:docs:tabul:option|cli options]] (''--attribute'', ''--source-attribute'', ''--target-attribute'')
      * via a [[:docs:resource:data-definition|data definition file]]
 
 

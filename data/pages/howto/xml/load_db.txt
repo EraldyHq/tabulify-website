@@ -19,7 +19,7 @@ This Howto will show you how to load <icon name="mdi:xml"/> [[docs:resource:xml|
 
 <unit display="none">
 <code bash>
-tabli data drop --not-strict wikipedia@postgres
+tabul data drop --not-strict wikipedia@postgres
 </code>
 </unit>
 
@@ -30,11 +30,11 @@ Normally our database howto are created with [[docs:system:sqlite:sqlite|Sqlite]
 The next steps will be using the [[howto:postgres:howto_connection_service|postgres howto connection]].
 
   * You need to [[howto:postgres:howto_connection_service#docker|start the postgres docker image]].
-  * [[docs:tabli:connection:ping|Ping]] your connection to check that the database is up.
+  * [[docs:tabul:connection:ping|Ping]] your connection to check that the database is up.
 <unit>
 <code bash>
-tabli service start postgres
-tabli connection ping postgres
+tabul service start postgres
+tabul connection ping postgres
 </code>
 <console>
 
@@ -48,8 +48,8 @@ The connection (postgres) has been pinged successfully
 ==== The XML file to load ====
 
 We will load the [[docs:resource:xml|XML file]] ''relation.xml''
-  * located in the ''XML'' subdirectory of the [[docs:connection:howto|howto directory connection]] 
-  * that contains information over the [[wp>Relation_(database)|relation wikipedia page]] 
+  * located in the ''XML'' subdirectory of the [[docs:connection:howto|howto directory connection]]
+  * that contains information over the [[wp>Relation_(database)|relation wikipedia page]]
   * that have been created by the [[https://www.mediawiki.org/w/api.php|mediawiki API]]
 
 <unit>
@@ -85,29 +85,29 @@ An [[docs:resource:xml|XML resource]] is seen by ''Tabulify'' by default as a [[
 
 <unit>
 <code bash>
-tabli data struct xml/relation.xml@howto
+tabul data struct xml/relation.xml@howto
 </code>
 <console>
 Structure of the resource xml\relation.xml@howto
-position   name   data_type   precision   scale   primary_key   nullable   autoincrement   comment   
---------   ----   ---------   ---------   -----   -----------   --------   -------------   -------   
+position   name   data_type   precision   scale   primary_key   nullable   autoincrement   comment
+--------   ----   ---------   ---------   -----   -----------   --------   -------------   -------
 1          xml    sqlxml                                        x          false
 </console>
 </unit>
 
 === Changing the XML column name ===
 
-You can change the name of the ''xml'' column with the [[docs:resource:xml#attributes|columnName attribute]] 
+You can change the name of the ''xml'' column with the [[docs:resource:xml#attributes|columnName attribute]]
 
-For instance, to name the column ''data'', you would set the ''%%--attribute%%'' [[docs:tabli:option|option]] with the value ''column_name=data''
+For instance, to name the column ''data'', you would set the ''%%--attribute%%'' [[docs:tabul:option|option]] with the value ''column_name=data''
 <unit>
 <code bash>
-tabli data struct --attribute column_name=data xml/relation.xml@howto
+tabul data struct --attribute column_name=data xml/relation.xml@howto
 </code>
 <console>
 Structure of the resource xml\relation.xml@howto
-position   name   data_type   precision   scale   primary_key   nullable   autoincrement   comment   
---------   ----   ---------   ---------   -----   -----------   --------   -------------   -------   
+position   name   data_type   precision   scale   primary_key   nullable   autoincrement   comment
+--------   ----   ---------   ---------   -----   -----------   --------   -------------   -------
 1          data   sqlxml                                        x          false
 </console>
 </unit>
@@ -120,13 +120,13 @@ For instance, if you want to add the [[docs:resource:logicalname|logical name]].
 
 <unit>
 <code bash>
-tabli data struct --virtual-column filename=logical_name xml/relation.xml@howto
+tabul data struct --virtual-column filename=logical_name xml/relation.xml@howto
 </code>
 <console>
 Structure of the resource xml\relation.xml@howto
-position   name       data_type   precision   scale   primary_key   nullable   autoincrement   comment   
---------   --------   ---------   ---------   -----   -----------   --------   -------------   -------   
-1          xml        sqlxml                                        x          false                     
+position   name       data_type   precision   scale   primary_key   nullable   autoincrement   comment
+--------   --------   ---------   ---------   -----   -----------   --------   -------------   -------
+1          xml        sqlxml                                        x          false
 2          filename   varchar                                       x          false
 </console>
 </unit>
@@ -135,33 +135,33 @@ position   name       data_type   precision   scale   primary_key   nullable   a
 
 ==== Loading the XML file into the Postgres database ====
 
-To load an XML file, you can use any [[docs:tabli:data:transfer|transfer command]]. 
+To load an XML file, you can use any [[docs:tabul:data:transfer|transfer command]].
 
-We will be using the [[docs:tabli:data:insert|insert command]] that will:
+We will be using the [[docs:tabul:data:insert|insert command]] that will:
   * insert the [[docs:resource:xml|XML file]]
   * in a ''wikipedia'' target [[docs:resource:table|table]]
 
 <unit>
 <code bash>
-tabli data insert --virtual-column name=logicalName xml/relation.xml@howto wikipedia@postgres
+tabul data insert --virtual-column name=logicalName xml/relation.xml@howto wikipedia@postgres
 </code>
 <console>
-Source                   Target               Latency (ms)   Row Count   Error   Message   
-----------------------   ------------------   ------------   ---------   -----   -------   
+Source                   Target               Latency (ms)   Row Count   Error   Message
+----------------------   ------------------   ------------   ---------   -----   -------
 xml\relation.xml@howto   wikipedia@postgres   68             1
 </console>
 </unit>
 
 
-We can see that there is one row loaded in the ''wikipedia'' table with the [[docs:tabli:data:list|list command]]
+We can see that there is one row loaded in the ''wikipedia'' table with the [[docs:tabul:data:list|list command]]
 
 <unit>
 <code bash>
-tabli data list -a count wikipedia@postgres
+tabul data list -a count wikipedia@postgres
 </code>
 <console>
-count   
------   
+count
+-----
     1
 </console>
 </unit>
@@ -186,11 +186,11 @@ This command line will work only with a [[docs:common:bash|bash based terminal]]
 </note>
 <unit>
 <code bash>
-tabli data insert "https://en.wikipedia.org/w/api.php?action=query&titles=SQL&format=xml&prop=description|categories" wikipedia@postgres
+tabul data insert "https://en.wikipedia.org/w/api.php?action=query&titles=SQL&format=xml&prop=description|categories" wikipedia@postgres
 </code>
 <console>
-Source                                                                                                                           Target               Latency (ms)   Row Count   Error   Message   
-------------------------------------------------------------------------------------------------------------------------------   ------------------   ------------   ---------   -----   -------   
+Source                                                                                                                           Target               Latency (ms)   Row Count   Error   Message
+------------------------------------------------------------------------------------------------------------------------------   ------------------   ------------   ---------   -----   -------
 https://en.wikipedia.org/w/api.php?action=query&titles=SQL&format=xml&prop=description%7Ccategories@https:--en.wikipedia.org-w   wikipedia@postgres   690            1
 </console>
 </unit>
@@ -199,11 +199,11 @@ And we have now 2 rows
 
 <unit>
 <code bash>
-tabli data list -a count wikipedia@postgres
+tabul data list -a count wikipedia@postgres
 </code>
 <console>
-count   
------   
+count
+-----
     2
 </console>
 </unit>
@@ -231,12 +231,12 @@ FROM wikipedia;
 Let's run this [[docs:resource:select|Query SQL select]]
 <unit>
 <code bash>
-tabli data print (postgres/xml_wikipedia.sql@howto)@postgres
+tabul data print (postgres/xml_wikipedia.sql@howto)@postgres
 </code>
 <console>
-title                 description                                               
--------------------   -------------------------------------------------------   
-Relation (database)   The base data structure of relational databases           
+title                 description
+-------------------   -------------------------------------------------------
+Relation (database)   The base data structure of relational databases
 SQL                   Language for management and use of relational databases
 </console>
 </unit>
@@ -248,12 +248,12 @@ SQL                   Language for management and use of relational databases
 
 You can explore further, the [[https://www.postgresql.org/docs/9.1/functions-xml.html|XML Postgres functions]]
 <code sql>
-select 
+select
     xml, -- Because XML is an XML object, you will normally not see the content in a database IDE
     cast(xml as text) -- By casting it as text, you will see the content
     xml is document,  -- You can also check that this is a XML document
     xml_is_well_formed_document(cast(xml as text)), -- And that it's well formed
-from 
+from
     wikipedia;
 </code>
 

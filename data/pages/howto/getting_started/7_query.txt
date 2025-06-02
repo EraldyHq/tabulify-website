@@ -30,10 +30,10 @@ In the next steps, we will show this concepts by running a query of the [[docs:s
 We will execute the ''query 11'' that lists the customers that have generated growing sales from one year to another in the ''s'' and ''w'' sales type.
 
 
-Below is the 20 first lines shown with the [[docs:tabli:data:head|head command]].
+Below is the 20 first lines shown with the [[docs:tabul:data:head|head command]].
 <unit>
 <code bash>
-tabli data head --limit 20 sqlite/query_11.sql@tpcds_query
+tabul data head --type text --limit 20 sqlite/query_11.sql@tpcds_query
 </code>
 <console sql>
 The first 20 rows of the data resource (sqlite\query_11.sql@tpcds_query):
@@ -65,11 +65,11 @@ with year_total as (
 </code>
 ===== Printing the query =====
 
-[[docs:tabli:data:print|Printing]] the query against [[docs:connection:howtos|the sqlite connection]] will show us the customers that have generated growing sales from one year to another in the ''s'' and ''w'' sales type.
+[[docs:tabul:data:print|Printing]] the query against [[docs:connection:howtos|the sqlite connection]] will show us the customers that have generated growing sales from one year to another in the ''s'' and ''w'' sales type.
 
 <unit>
 <code bash>
-tabli data print '(sqlite/query_11.sql@tpcds_query)'@sqlite
+tabul data print '(sqlite/query_11.sql@tpcds_query)'@sqlite
 # The quotes are only mandatory in bash because parenthesis are a bash token (ie subshell)
 </code>
 <console>
@@ -94,21 +94,21 @@ Don't forget that a [[docs:resource:query|query]] is just a [[docs:resource:reso
 <unit display="none">
 In case of resume, we need to be sure that the target does not exist
 <code bash>
-tabli data drop --not-strict query_11@sqlite
+tabul data drop --not-strict query_11@sqlite
 </code>
 </unit>
 
-For instance, if you want to [[docs:tabli:data:copy|copy]] its output to a [[docs:resource:table|table]] called ''query_11'', you would issue the following command:
+For instance, if you want to [[docs:tabul:data:copy|copy]] its output to a [[docs:resource:table|table]] called ''query_11'', you would issue the following command:
 <unit>
 <code bash>
-tabli data copy '(sqlite/query_11.sql@tpcds_query)'@sqlite  query_11@sqlite
+tabul data copy '(sqlite/query_11.sql@tpcds_query)'@sqlite  query_11@sqlite
 # The quotes are only mandatory in bash because parenthesis are a bash token (ie subshell)
 </code>
 </unit>
 And the content of the new [[docs:resource:table|table]] is just the same than the output  of the ''query 11''.
 <unit>
 <code bash>
-tabli data print query_11@sqlite
+tabul data print query_11@sqlite
 </code>
 <console>
 customer_id        customer_first_name   customer_last_name   customer_email_address
@@ -123,20 +123,20 @@ AAAAAAAAOFCAAAAA   Timothy               Grogan               Timothy.Grogan@pn3
 
 ==== How to download a query as a CSV ====
 
-For instance, if you want to [[docs:tabli:data:copy|copy]] its output:
+For instance, if you want to [[docs:tabul:data:copy|copy]] its output:
   * to a [[:docs:resource:csv|CSV]] called ''query_11.csv''
   * into the [[:docs:connection:cd|current directory (cd)]]
 you would issue the following command
 <unit>
 <code bash>
-tabli data copy '(sqlite/query_11.sql@tpcds_query)'@sqlite  query_11.csv@cd
+tabul data copy '(sqlite/query_11.sql@tpcds_query)'@sqlite  query_11.csv@cd
 # The quotes are only mandatory in bash because parenthesis are a bash token (ie subshell)
 </code>
 </unit>
 And the content of the new csv is also just the same than the output  of the ''query 11''.
 <unit>
 <code bash>
-tabli data print query_11.csv@cd
+tabul data print query_11.csv@cd
 </code>
 <console>
 customer_id        customer_first_name   customer_last_name   customer_email_address

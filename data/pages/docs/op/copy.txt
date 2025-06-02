@@ -8,9 +8,9 @@
 
 ===== About =====
 ''copy'' is [[transfer|transfer]] ''data operation'' that will create a ''copy'' of the original [[docs:resource:resource|data resource]] meaning:
-  * with the same [[docs:resource:metadata|metadata (properties and structure)]] 
+  * with the same [[docs:resource:metadata|metadata (properties and structure)]]
   * and with the same [[docs:resource:content|data content]].
 
 A [[diff|diff]] operation should show no difference.
 
-The [[docs:tabli:data:copy|data copy operation]] supports the ''copy'' operation.
+The [[docs:tabul:data:copy|data copy operation]] supports the ''copy'' operation.

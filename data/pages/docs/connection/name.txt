@@ -24,4 +24,4 @@ Characters not allowed:
 ===== Management =====
 ==== See ====
 
-The connection name can be seen with the [[docs:tabli:connection:list|connection list command]]
+The connection name can be seen with the [[docs:tabul:connection:list|connection list command]]

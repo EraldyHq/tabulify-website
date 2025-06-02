@@ -39,14 +39,14 @@ If you want to see the first text lines of a document, you need to set the [[typ
 Example:
 <unit>
 <code bash>
-tabli data head --type text --limit 3 books_template.json@howto
+tabul data head --type text --limit 3 books_template.json@howto
 </code>
 <console>
-The first 3 rows of the data resource (books_template.json@howto): 
-lines              
-----------------   
-{                  
-  "${group}": {    
+The first 3 rows of the data resource (books_template.json@howto):
+lines
+----------------
+{
+  "${group}": {
     "${asin}": {
 </console>
 </unit>

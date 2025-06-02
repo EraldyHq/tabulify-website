@@ -11,7 +11,7 @@ A ''upsert'' operation is an [[op|operation]] against the [[docs:resource:conten
   * try to [[insert|insert]] a record
   * and [[update|update]] it if it already exists.
 
-The [[docs:tabli:data:upsert|data upsert operation]] supports the ''upsert'' operation.
+The [[docs:tabul:data:upsert|data upsert operation]] supports the ''upsert'' operation.
 
 
 ===== Requirements =====

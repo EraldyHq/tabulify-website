@@ -40,7 +40,7 @@ The ''select'' operations has the following arguments.
 
 <tabs skin="tabs">
 <tab panel="pipeline" selected="true">Flow</tab>
-<tab panel="tabli" >Tabli Data Command</tab>
+<tab panel="tabul" >Tabul Data Command</tab>
 </tabs>
 <tabpanels>
 <tabpanel id="pipeline">
@@ -58,18 +58,18 @@ pipeline:
       strict: yes
 </code>
 </tabpanel>
-<tabpanel id="tabli">
-In a [[docs:tabli:data:start|tabli data command]], you set :
+<tabpanel id="tabul">
+In a [[docs:tabul:data:start|tabul data command]], you set :
   * the [[docs:resource:data_selector|data selector]] as argument
-  * and the [[docs:op:with-dependencies|with-dependencies]] as [[docs:tabli:flag|flag]]
-  * and the ''not-strict'' as [[docs:tabli:flag|flag]]
+  * and the [[docs:op:with-dependencies|with-dependencies]] as [[docs:tabul:flag|flag]]
+  * and the ''not-strict'' as [[docs:tabul:flag|flag]]
 
 Example:
 <code bash>
-tabli data command [--not-strict] [--with-dependency] dataSelector
+tabul data command [--not-strict] [--with-dependency] dataSelector
 </code>
 
-You can verify the selected data resources with the [[:docs:tabli:data:list|tabli data list command]].
+You can verify the selected data resources with the [[:docs:tabul:data:list|tabul data list command]].
 </tabpanel>
 </tabpanels>
 

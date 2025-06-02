@@ -32,31 +32,31 @@ A [[docs:common:globbing|glob pattern]] permits to define the ''name'' or the ''
 
 ===== Normal Selection =====
 
-For instance, with the [[docs:system:tpcds|internal TPC-DS data store]], the below [[docs:tabli:data:list|list command]] will select all [[docs:resource:table|tables]] that ends with the term ''sales'' because the ''*'' character matches all characters.
+For instance, with the [[docs:system:tpcds|internal TPC-DS data store]], the below [[docs:tabul:data:list|list command]] will select all [[docs:resource:table|tables]] that ends with the term ''sales'' because the ''*'' character matches all characters.
 <unit>
 <code bash>
-tabli data list *sales@tpcds
+tabul data list *sales@tpcds
 </code>
 where:
-  * ''tabli'' is the [[docs:tabli:tabli|main command line utility]]
-  * ''data'' is a [[docs:tabli:module|module]] (ie the [[docs:tabli:data:start|data module]])
-  * ''list'' is a [[docs:tabli:command|command]]
+  * ''tabul'' is the [[docs:tabul:tabul|main command line utility]]
+  * ''data'' is a [[docs:tabul:module|module]] (ie the [[docs:tabul:data:start|data module]])
+  * ''list'' is a [[docs:tabul:command|command]]
   * ''*sales@tpcds'' is a [[docs:resource:data_selector|resource data selector]] that select [[docs:resource:resource|data resources]].
       * ''tpcds'' defines the [[docs:connection:connection|connection]]
       * ''*sales'' defines the [[docs:resource:table|tables]] to look for with a [[docs:common:globbing|glob pattern]]. In our case all tables that finish with the word ''sales'' because  ''*'' is the [[docs:common:globbing|globbing star]] and select all characters.
 
 Output:
 <console>
-path            
--------------   
-catalog_sales   
-store_sales     
+path
+-------------
+catalog_sales
+store_sales
 web_sales
 </console>
 </unit>
 
 <note>
-To get more practice on ''glob pattern'', you can have a look at this page. [[howto:tabli:glob]]
+To get more practice on ''glob pattern'', you can have a look at this page. [[howto:tabul:glob]]
 </note>
 
 
@@ -64,35 +64,35 @@ To get more practice on ''glob pattern'', you can have a look at this page. [[ho
 
 When moving data due to [[docs:resource:fkey|foreign-key constraint]], you need to move the data resources and their [[docs:resource:dependency|dependencies]].
 
-That's why ''Tabulify'' offers the  ''%%--with-dependencies%%'' [[docs:tabli:flag|flag]] that will select also the [[docs:resource:dependency|dependent resources]] of the selected [[docs:resource:resource|data resource]]
+That's why ''Tabulify'' offers the  ''%%--with-dependencies%%'' [[docs:tabul:flag|flag]] that will select also the [[docs:resource:dependency|dependent resources]] of the selected [[docs:resource:resource|data resource]]
 
 Example: All ''tables'' that have a name that ends with ''sales'' in the [[docs:system:tpcds|tpcds system]] and their [[docs:resource:dependency|dependent tables]]
 <unit>
 <code bash>
-tabli data list --with-dependencies *sales@tpcds
+tabul data list --with-dependencies *sales@tpcds
 </code>
 
 <console>
-path                     
-----------------------   
-call_center              
-catalog_page             
-catalog_sales            
-customer                 
-customer_address         
-customer_demographics    
-date_dim                 
-household_demographics   
-income_band              
-item                     
-promotion                
-ship_mode                
-store                    
-store_sales              
-time_dim                 
-warehouse                
-web_page                 
-web_sales                
+path
+----------------------
+call_center
+catalog_page
+catalog_sales
+customer
+customer_address
+customer_demographics
+date_dim
+household_demographics
+income_band
+item
+promotion
+ship_mode
+store
+store_sales
+time_dim
+warehouse
+web_page
+web_sales
 web_site
 </console>
 </unit>
@@ -100,10 +100,10 @@ web_site
 ===== Local File System =====
 The connection part of a [[docs:resource:data_selector|data selector]] is not mandatory as the default connection is the [[docs:connection:cd|local file system]].
 
-Therefore, performing the [[docs:tabli:data:list|list command]] with a [[docs:resource:data_selector|data selector]] without ''connection'' will give you a list of the file in your current directory.
+Therefore, performing the [[docs:tabul:data:list|list command]] with a [[docs:resource:data_selector|data selector]] without ''connection'' will give you a list of the file in your current directory.
 
 <code bash>
-tabli data list *
+tabul data list *
 </code>
 <console>
 path

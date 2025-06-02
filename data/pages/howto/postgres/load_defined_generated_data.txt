@@ -1,17 +1,17 @@
 ---json
 {
-    "description": "This how-to will show you how to define the generation of data via a data definition file and load it into a table via the tabli data fill operation.",
+    "description": "This how-to will show you how to define the generation of data via a data definition file and load it into a table via the tabul data fill operation.",
     "low_quality_page": "false",
     "name": "Defined Data Generation",
     "page_id": "ez3z31b5oz5o3v3uxsujz"
 }
 ---
-====== Tabli - How to fill a table with a data generation file ======
+====== Tabul - How to fill a table with a data generation file ======
 
 ===== About =====
 This [[..:howto|how-to]] will show you how to:
   * define the <icon name="mdi:cog"/> [[docs:generator:generator|generation of data]] via a [[docs:resource:data-definition|data definition file]]
-  * and [[docs:op:fill|load it]] into a <icon name="mdi:table-large" /> [[docs:resource:table|table]] via the [[docs:tabli:data:fill|tabli data fill operation]].
+  * and [[docs:op:fill|load it]] into a <icon name="mdi:table-large" /> [[docs:resource:table|table]] via the [[docs:tabul:data:fill|tabul data fill operation]].
 
 ===== Steps =====
 ==== Prerequisites ====
@@ -72,10 +72,10 @@ Columns:
 </file>
 </unit>
 ==== Fill the table ====
-The [[docs:tabli:data:fill|tabli data fill]] command takes the data definition as input and can load it into a table.
+The [[docs:tabul:data:fill|tabul data fill]] command takes the data definition as input and can load it into a table.
 <unit>
 <code bash>
-tabli data fill --generator-selector date_dim--datagen.yml@howto date_dim@postgres
+tabul data fill --generator-selector date_dim--datagen.yml@howto date_dim@postgres
 </code>
 <console>
 Source            Target              Latency (ms)   Row Count   Error   Message
@@ -88,7 +88,7 @@ date_dim@memgen   date_dim@postgres   748            100
 The table ''date_dim'' was filled with generated data
 <unit>
 <code bash>
-tabli data head date_dim@postgres
+tabul data head date_dim@postgres
 </code>
 <console>
 The first 10 rows of the data resource (date_dim@postgres):

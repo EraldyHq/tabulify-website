@@ -1,7 +1,7 @@
 ---json
 {
     "aliases": [
-        { "path": ":howto:database:tabli_load_csv" }
+        { "path": ":howto:database:tabul_load_csv" }
     ],
     "description": "How to upload a CSV file into a SQL table in two steps",
     "name": "Load data",
@@ -9,13 +9,13 @@
 }
 ---
 
-====== Tabli - How to load a CSV file into a SQL table ======
+====== Tabul - How to load a CSV file into a SQL table ======
 
 ===== About =====
 
 With tabulify, you can [[docs:op:upload|load]] any [[:docs:resource:resource|resource]] into a [[:docs:resource:table|SQL table]].
 
-You can load 
+You can load
   * any [[:docs:resource:file|files]]
     * a [[:howto:json:load_json|Json file]]
     * a [[:howto:xml:load_db|XML file]]
@@ -35,24 +35,24 @@ You should have ''Tabulify'' installed on your computer. [[howto:getting_started
 
 <unit display="none">
 <code bash>
-tabli data drop --not-strict characters@sqlite
+tabul data drop --not-strict characters@sqlite
 </code>
 </unit>
 ==== The CSV file to load ====
 
-We will load the ''characters.csv'' file of the [[docs:connection:howto|HowTo connection]]. The file can be seen with the [[docs:tabli:data:head|head command]].
+We will load the ''characters.csv'' file of the [[docs:connection:howto|HowTo connection]]. The file can be seen with the [[docs:tabul:data:head|head command]].
 <unit>
 <code bash>
-tabli data head characters.csv@howto
+tabul data head characters.csv@howto
 </code>
 <console>
-The first 10 rows of the data resource (characters.csv@howto): 
-last_name           first_name   birth_date   wikipedia_page                                                   
------------------   ----------   ----------   --------------------------------------------------------------   
-Schwarzenegger      Arnold       1947-07-30   https://en.wikipedia.org/wiki/Arnold_Schwarzenegger              
-Norman              Don          1935-12-25   https://en.wikipedia.org/wiki/Don_Norman                         
-Harbison Carnagey   Dale         1888-11-24   https://en.wikipedia.org/wiki/Dale_Carnegie                      
-Kahneman            Daniel       1934-03-05   https://en.wikipedia.org/wiki/Daniel_Kahneman                    
+The first 10 rows of the data resource (characters.csv@howto):
+last_name           first_name   birth_date   wikipedia_page
+-----------------   ----------   ----------   --------------------------------------------------------------
+Schwarzenegger      Arnold       1947-07-30   https://en.wikipedia.org/wiki/Arnold_Schwarzenegger
+Norman              Don          1935-12-25   https://en.wikipedia.org/wiki/Don_Norman
+Harbison Carnagey   Dale         1888-11-24   https://en.wikipedia.org/wiki/Dale_Carnegie
+Kahneman            Daniel       1934-03-05   https://en.wikipedia.org/wiki/Daniel_Kahneman
 Pittman             Bob          1953-12-28   https://en.wikipedia.org/wiki/Robert_Pittman_(media_executive)
 </console>
 </unit>
@@ -66,56 +66,56 @@ Example with:
   * another separator
   * and no header
 <code bash>
-tabli data head -a "type=csv" -a 'delimiterCharacter=;' -a 'headerRowId=0' characters.txt@howto
+tabul data head -a "type=csv" -a 'delimiterCharacter=;' -a 'headerRowId=0' characters.txt@howto
 </code>
 </note>
 
 ==== Loading the CSV file with the upsert command ====
 
-We can load the above data using the [[:docs:op:upsert|upsert]] [[docs:tabli:data:transfer|transfer command]] and the [[docs:connection:howtos#sqlite|sqlite built-in database]]
+We can load the above data using the [[:docs:op:upsert|upsert]] [[docs:tabul:data:transfer|transfer command]] and the [[docs:connection:howtos#sqlite|sqlite built-in database]]
 <unit>
 <code bash>
-tabli data upsert characters.csv@howto @sqlite
+tabul data upsert characters.csv@howto @sqlite
 </code>
 <console>
-Source                 Target              Latency (ms)   Row Count   Error   Message   
---------------------   -----------------   ------------   ---------   -----   -------   
+Source                 Target              Latency (ms)   Row Count   Error   Message
+--------------------   -----------------   ------------   ---------   -----   -------
 characters.csv@howto   characters@sqlite   64             5
 </console>
 </unit>
 
 ==== Check the data structure ====
 
-We can check with the [[docs:tabli:data:struct|structure command]] that the process has created a table with the same [[docs:resource:structure|structure]].
+We can check with the [[docs:tabul:data:struct|structure command]] that the process has created a table with the same [[docs:resource:structure|structure]].
 <unit >
 <code bash>
-tabli data struct characters@sqlite
+tabul data struct characters@sqlite
 </code>
 <console>
 Structure of the resource characters@sqlite
-position   name             type      precision   scale   primary_key   nullable   autoincrement   comment   
---------   --------------   -------   ---------   -----   -----------   --------   -------------   -------   
-1          last_name        varchar                                     x          false                     
-2          first_name       varchar                                     x          false                     
-3          birth_date       varchar                                     x          false                     
+position   name             type      precision   scale   primary_key   nullable   autoincrement   comment
+--------   --------------   -------   ---------   -----   -----------   --------   -------------   -------
+1          last_name        varchar                                     x          false
+2          first_name       varchar                                     x          false
+3          birth_date       varchar                                     x          false
 4          wikipedia_page   varchar                                     x          false
 </console>
 </unit>
 
 ==== Print the Sql table ====
 
-We can check with the [[docs:tabli:data:print|print command]] that the same data was loaded
+We can check with the [[docs:tabul:data:print|print command]] that the same data was loaded
 <unit>
 <code bash>
-tabli data print characters@sqlite
+tabul data print characters@sqlite
 </code>
 <console>
-last_name           first_name   birth_date   wikipedia_page                                                   
------------------   ----------   ----------   --------------------------------------------------------------   
-Schwarzenegger      Arnold       1947-07-30   https://en.wikipedia.org/wiki/Arnold_Schwarzenegger              
-Norman              Don          1935-12-25   https://en.wikipedia.org/wiki/Don_Norman                         
-Harbison Carnagey   Dale         1888-11-24   https://en.wikipedia.org/wiki/Dale_Carnegie                      
-Kahneman            Daniel       1934-03-05   https://en.wikipedia.org/wiki/Daniel_Kahneman                    
+last_name           first_name   birth_date   wikipedia_page
+-----------------   ----------   ----------   --------------------------------------------------------------
+Schwarzenegger      Arnold       1947-07-30   https://en.wikipedia.org/wiki/Arnold_Schwarzenegger
+Norman              Don          1935-12-25   https://en.wikipedia.org/wiki/Don_Norman
+Harbison Carnagey   Dale         1888-11-24   https://en.wikipedia.org/wiki/Dale_Carnegie
+Kahneman            Daniel       1934-03-05   https://en.wikipedia.org/wiki/Daniel_Kahneman
 Pittman             Bob          1953-12-28   https://en.wikipedia.org/wiki/Robert_Pittman_(media_executive)
 </console>
 </unit>

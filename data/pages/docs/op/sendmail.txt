@@ -37,9 +37,9 @@ pipeline:
         Please, find attached the report data
 
 </file>
-If you [[docs:tabli:flow:execute|execute this pipeline]]
+If you [[docs:tabul:flow:execute|execute this pipeline]]
 <code bash>
-tabli flow execute pipeline/email_resources.yml@howto
+tabul flow execute pipeline/email_resources.yml@howto
 </code>
 Output:
 <console>
@@ -76,9 +76,9 @@ pipeline:
       step-granularity: "record"
 
 </file>
-If you [[docs:tabli:flow:execute|execute this pipeline]]
+If you [[docs:tabul:flow:execute|execute this pipeline]]
 <code bash>
-tabli flow execute pipeline/email_list.yml@howto
+tabul flow execute pipeline/email_list.yml@howto
 </code>
 Output:
 <console>

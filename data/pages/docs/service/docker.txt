@@ -14,7 +14,7 @@ Docker is a [[docs:service:service|service]] provider that permits to create/sta
 ===== Example =====
 
 Example of a service in the [[:docs:conf:vault|configuration vault]]
-<code yaml .tabli.yaml>
+<code yaml .tabul.yaml>
 services:
   sqlserver:
     type: docker
@@ -27,7 +27,7 @@ services:
 </code>
 
 As for any value in the configuration vault, you can use:
-  *  plain value 
+  *  plain value
   * or any [[:docs:conf:secret|secret format]].
 ===== Attributes =====
 

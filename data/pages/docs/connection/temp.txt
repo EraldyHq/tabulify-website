@@ -16,31 +16,31 @@
 
 
 ===== Info =====
-With the [[docs:tabli:connection:info|connection info]] command
+With the [[docs:tabul:connection:info|connection info]] command
 <unit>
 <code bash>
-tabli connection info temp
+tabul connection info temp
 </code>
 <console>
 Information about the connection (temp)
-Attribute               Value                                                    Description                                                            
----------------------   ------------------------------------------------------   --------------------------------------------------------------------   
-BOOLEAN_DATA_TYPE       Native                                                   Boolean data type used to store boolean values                         
-COMMENT                 The local temporary directory of the local file system   A connection description                                               
-DATE_DATA_TYPE          NATIVE                                                   Date data type used to store date values                               
-HOST                                                                             Host Server                                                            
-MAX_CONCURRENT_THREAD                                                            The maximum number of threads that can be created against the system   
-MAX_NAME_IN_PATH                                                                 The maximum number of names in a path                                  
-NAME                    temp                                                     The name of the connection                                             
-NATIVES                                                                          Native Driver attributes (jdbc properties, ...)                        
-ORIGIN                  BUILT_IN                                                 The origin of the connection                                           
-PASSWORD                                                                         The user password                                                      
-PORT                    -1                                                       Host Port                                                              
-TABULAR_FILE_TYPE       text/csv                                                 The default file type when downloading tabular data                    
-TIMESTAMP_DATA_TYPE     NATIVE                                                   Timestamp data type used to store timestamp values                     
-TIME_DATA_TYPE          NATIVE                                                   Time format data type to store time values                             
-URI                     file:///tmp/                                             The uri of the connection                                              
-USER                                                                             The user name                                                          
+Attribute               Value                                                    Description
+---------------------   ------------------------------------------------------   --------------------------------------------------------------------
+BOOLEAN_DATA_TYPE       Native                                                   Boolean data type used to store boolean values
+COMMENT                 The local temporary directory of the local file system   A connection description
+DATE_DATA_TYPE          NATIVE                                                   Date data type used to store date values
+HOST                                                                             Host Server
+MAX_CONCURRENT_THREAD                                                            The maximum number of threads that can be created against the system
+MAX_NAME_IN_PATH                                                                 The maximum number of names in a path
+NAME                    temp                                                     The name of the connection
+NATIVES                                                                          Native Driver attributes (jdbc properties, ...)
+ORIGIN                  BUILT_IN                                                 The origin of the connection
+PASSWORD                                                                         The user password
+PORT                    -1                                                       Host Port
+TABULAR_FILE_TYPE       text/csv                                                 The default file type when downloading tabular data
+TIMESTAMP_DATA_TYPE     NATIVE                                                   Timestamp data type used to store timestamp values
+TIME_DATA_TYPE          NATIVE                                                   Time format data type to store time values
+URI                     file:///tmp/                                             The uri of the connection
+USER                                                                             The user name
 WORKING_PATH            /tmp                                                     The working path (Schema for database, directory for file system)
 </console>
 </unit>

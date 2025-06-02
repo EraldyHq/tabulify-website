@@ -8,8 +8,7 @@
         { "path": ":docs:system:tpc.png" }
     ],
     "name": "Tpc-ds",
-    "page_id": "yr3zjjle8idlp03w04k09",
-    "title": "How to execute the TPC-DS benchmark data and query"
+    "page_id": "yr3zjjle8idlp03w04k09"
 }
 ---
 
@@ -30,68 +29,68 @@
 This section shows you how to manage the sub-schema of ''TPC-DS''
 === All tables ===
 ''tpcds'' - all ''TPC-DS'' tables
-  * [[docs:tabli:data:list]]
+  * [[docs:tabul:data:list]]
 <code bash>
-tabli data list *@tpcds
+tabul data list *@tpcds
 </code>
-  * [[docs:tabli:data:create]]
+  * [[docs:tabul:data:create]]
 <code bash>
-tabli data create *@tpcds @targetConnection
+tabul data create *@tpcds @targetConnection
 </code>
-  * [[docs:tabli:data:fill]]
+  * [[docs:tabul:data:fill]]
 <code bash>
-tabli data fill *@tpcds @targetConnection
+tabul data fill *@tpcds @targetConnection
 </code>
 
 === Dwh ===
 the data-warehouse tables - all tables without the tables that starts with a ''s'' (ie without the staging tables)
-  * [[docs:tabli:data:list]]
+  * [[docs:tabul:data:list]]
 <code bash>
-tabli data list [!s]*@tpcds
+tabul data list [!s]*@tpcds
 </code>
-  * [[docs:tabli:data:create]]
+  * [[docs:tabul:data:create]]
 <code bash>
-tabli data create [!s]*@tpcds @targetConnection
+tabul data create [!s]*@tpcds @targetConnection
 </code>
-  * [[docs:tabli:data:fill]]
+  * [[docs:tabul:data:fill]]
 <code bash>
-tabli data fill [!s]*@tpcds @targetConnection
+tabul data fill [!s]*@tpcds @targetConnection
 </code>
 === Store Sales ===
 
 The ''store-sales'' schema has  the ''store_sales'' and ''store_return'' star schema (a data-warehouse schema).
 
-  * [[docs:tabli:data:list]]
+  * [[docs:tabul:data:list]]
 <unit>
 <code bash>
-tabli data list --with-dependencies store*@tpcds
+tabul data list --with-dependencies store*@tpcds
 </code>
 <console>
-path                     
-----------------------   
-customer                 
-customer_address         
-customer_demographics    
-date_dim                 
-household_demographics   
-income_band              
-item                     
-promotion                
-reason                   
-store                    
-store_returns            
-store_sales              
+path
+----------------------
+customer
+customer_address
+customer_demographics
+date_dim
+household_demographics
+income_band
+item
+promotion
+reason
+store
+store_returns
+store_sales
 time_dim
 </console>
 </unit>
 
-  * [[docs:tabli:data:create]]: With the same argument, you can create the tables
+  * [[docs:tabul:data:create]]: With the same argument, you can create the tables
 <code bash>
-tabli data create --with-dependencies store*@tpcds @targetConnection
+tabul data create --with-dependencies store*@tpcds @targetConnection
 </code>
-  * [[docs:tabli:data:copy]]
+  * [[docs:tabul:data:copy]]
 <code bash>
-tabli data copy --with-dependencies store*@tpcds @targetConnection
+tabul data copy --with-dependencies store*@tpcds @targetConnection
 </code>
 
 <note tip>

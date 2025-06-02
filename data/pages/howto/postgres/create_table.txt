@@ -3,19 +3,18 @@
     "description": "This Howto will show you how to copy the data definition of a SQL table from another SQL table",
     "low_quality_page": "false",
     "name": "Create a table from a table",
-    "page_id": "qotxtxkjlhw885z3nse6b",
-    "title": "How to create a table from the definition of another SQL table"
+    "page_id": "qotxtxkjlhw885z3nse6b"
 }
 ---
 
-====== Tabli - How to create a table from the definition of another table ======
+====== Tabul - How to create a table from the definition of another table ======
 
 
 ===== About =====
-This [[..:howto|Howto]] will show you how to copy the [[docs:resource:structure|data definition]] of a <icon name="carbon:SQL"/> [[docs:resource:table|SQL table]] from another [[docs:resource:table|SQL table]] by using the [[docs:tabli:data:create|Tabli table create command]].
+This [[..:howto|Howto]] will show you how to copy the [[docs:resource:structure|data definition]] of a <icon name="carbon:SQL"/> [[docs:resource:table|SQL table]] from another [[docs:resource:table|SQL table]] by using the [[docs:tabul:data:create|Tabul table create command]].
 
 <note important>
-This command does not copy the data. It just [[docs:op:create|create]] the structure (ie it performs a SQL ''CREATE'' statement). If you want to copy the data, use the [[docs:tabli:data:transfer|tabli data transfer command]] instead.
+This command does not copy the data. It just [[docs:op:create|create]] the structure (ie it performs a SQL ''CREATE'' statement). If you want to copy the data, use the [[docs:tabul:data:transfer|tabul data transfer command]] instead.
 </note>
 ===== Steps =====
 ==== Prerequisites ====
@@ -30,17 +29,17 @@ You should have ''Tabulify'' installed on your computer.
 <unit display="none">
 Delete the target destination
 <code bash>
-tabli data drop --not-strict *@postgres
+tabul data drop --not-strict *@postgres
 </code>
 </unit>
 
 The below command will create:
   * the table ''tpcds_sales'' into the [[howto_connection_service|Postgres Howto connection]]
   * from the data definition of the [[docs:system:tpcds|tpcds]] ''store_sales'' table
-  * with the [[docs:tabli:data:create|tabli data create]] command.
+  * with the [[docs:tabul:data:create|tabul data create]] command.
 <unit>
 <code bash>
-tabli data create store_sales@tpcds tpcds_sales@postgres
+tabul data create store_sales@tpcds tpcds_sales@postgres
 </code>
 <note tip>
 where:
@@ -56,10 +55,10 @@ store_sales@tpcds      tpcds_sales@postgres
 
 ==== Check the metadata ====
 
-Check the metadata with the [[docs:tabli:data:struct|tabli data meta]] command
+Check the metadata with the [[docs:tabul:data:struct|tabul data meta]] command
 <unit>
 <code bash>
-tabli data struct tpcds_sales@postgres
+tabul data struct tpcds_sales@postgres
 </code>
 <console>
 Structure of the resource tpcds_sales@postgres
@@ -96,7 +95,7 @@ position   name                    type      precision   scale   primary_key   n
 ==== Next ====
 
 <note tip width="50%">
-You can also create a table and its dependencies (foreign tables) at once with the [[docs:tabli:data:create|tabli data create command]].
+You can also create a table and its dependencies (foreign tables) at once with the [[docs:tabul:data:create|tabul data create command]].
 \\
 \\
 <btn>

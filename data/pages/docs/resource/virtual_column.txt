@@ -15,11 +15,11 @@
 
 ''Tabulify'' permits to add virtual columns that contains [[attribute|data resource attribute]] such as the [[name|name]] of a file with:
   * the [[docs:op:enrich|enrich operation]]
-  * or the ''virtual-column'' [[docs:tabli:option|tabli option]].
+  * or the ''virtual-column'' [[docs:tabul:option|tabul option]].
 
 
-==== tabli ====
-The [[docs:tabli:option|tabli option]] syntax is the following:
+==== tabul ====
+The [[docs:tabul:option|tabul option]] syntax is the following:
 <code>
 --virtual-column "virtualColumnName=resourceAttributeName "
 </code>

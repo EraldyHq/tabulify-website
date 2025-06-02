@@ -16,7 +16,7 @@ The ''Secure Shell protocol (SSH)'' means that the network communication is comp
 
 
 ===== URL =====
-When [[docs:tabli:connection:add|adding a ''SSH, SFTP'' connection]], you need to give the following URL:
+When [[docs:tabul:connection:add|adding a ''SSH, SFTP'' connection]], you need to give the following URL:
 <code>
 ssh://hostname[: port][ /absolutePath ]
 </code>

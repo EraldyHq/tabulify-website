@@ -2,11 +2,12 @@
 {
     "canonical": ":howto:database:query_execution",
     "description": "This howto will shows you to execute and shows the result of a SQL Query against the tpcds data",
-    "name": "Execute a query"
+    "name": "Execute a query",
+    "page_id": "prwbgcpxylm3ijtmvtqg1"
 }
 ---
 
-====== Tabli - How to execute and shows the result of a SQL Query ======
+====== Tabul - How to execute and shows the result of a SQL Query ======
 
 
 ===== About =====
@@ -23,11 +24,11 @@
 
 The file containing this query is located below the [[docs:connection:tpcds_query|tpcds-query connection]].
 
-To get the absolute path and other information, you can use the [[docs:tabli:data:info|data info]]. Example:
+To get the absolute path and other information, you can use the [[docs:tabul:data:info|data info]]. Example:
 
 <unit>
 <code bash>
-tabli data info postgres/query_11.sql@tpcds_query
+tabul data info postgres/query_11.sql@tpcds_query
 </code>
 <console>
 Information about the data resource (postgres/query_11.sql@tpcds_query)
@@ -61,7 +62,7 @@ This query shows customers that have generated growing sales from one year to an
 
 <unit>
 <code bash>
-tabli data print --type text postgres/query_11.sql@tpcds_query
+tabul data print --type text postgres/query_11.sql@tpcds_query
 </code>
 <console height="300px" scroll="toggle">
 The first 20 rows of the data resource (postgres/query_11.sql@tpcds_query):
@@ -76,13 +77,13 @@ SQL_STATEMENT
 To prevent any conflict, you can execute the below command to drop all tables from the [[howto_connection_service|postgres howto connection]]
 <unit>
 <code bash>
-tabli data drop --not-strict *@postgres
+tabul data drop --not-strict *@postgres
 </code>
 </unit>
-Loading the data with the [[docs:tabli:data:transfer|transfer command]]. The ''query_11'' is a sales query, we are then loading the ''sales'' data and their [[docs:resource:dependency|dependencies]]
+Loading the data with the [[docs:tabul:data:transfer|transfer command]]. The ''query_11'' is a sales query, we are then loading the ''sales'' data and their [[docs:resource:dependency|dependencies]]
 <unit>
 <code bash>
-tabli data transfer --with-dependencies *sales@tpcds @postgres
+tabul data transfer --with-dependencies *sales@tpcds @postgres
 </code>
 where:
   * ''*sales@tpcds'' is a [[docs:resource:data_selector|data selector]] that:
@@ -127,12 +128,12 @@ In the below ''script selector''
   * ''postgres/query_11.sql@tpcds_query'' is a [[docs:resource:data_selector|data selector]] that select the file ''query_11.sql'' in the subdirectory ''postgres'' of the [[docs:connection:tpcds_query|tpcds-queries]] connection.
   * ''sqlite'' is the connection where the ''query'' is executed.
 
-A ''query data uri'' can be used with all [[docs:tabli:data:start|command]].
+A ''query data uri'' can be used with all [[docs:tabul:data:start|command]].
 
-Example with the [[docs:tabli:data:print|data print]] command.
+Example with the [[docs:tabul:data:print|data print]] command.
 <unit>
 <code bash db_query_execute.sh>
-tabli data print (postgres/query_11.sql@tpcds_query)@postgres
+tabul data print (postgres/query_11.sql@tpcds_query)@postgres
 </code>
 <console>
 customer_id        customer_first_name    customer_last_name               customer_email_address

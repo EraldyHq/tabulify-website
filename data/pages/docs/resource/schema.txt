@@ -31,12 +31,12 @@ It has the same form as a SQL path form where the object name is the empty strin
 ===== How to see the default schema of a connection ? =====
 
 
-You can see the default schema of your connection with the [[docs:tabli:connection:info|connection info command]].
+You can see the default schema of your connection with the [[docs:tabul:connection:info|connection info command]].
 
 This is the value set in the [[docs:connection:working_path|working path]]
 
 <code bash>
-tabli connection info sqlite
+tabul connection info sqlite
 </code>
 ===== Sample =====
 See [[docs:system:sample_schema]]

@@ -1,6 +1,10 @@
 ---json
 {
-    "description": "This howto will shows you to execute and shows the result of a SQL Query against the tpcds data",
+    "aliases": [
+        { "path": ":howto:sql_select:execute_query" },
+        { "path": ":howto:sqlite:execute_query" }
+    ],
+    "description": "This howto will show you to execute and shows the result of a SQL Query against the tpcds data",
     "name": "Execute a query",
     "page_id": "dbj2xsbmhfu56qbw9urom"
 }
@@ -23,11 +27,11 @@
 
 The file containing this query is located below the [[docs:connection:tpcds_query|tpcds-query connection]].
 
-To get the absolute path and other information, you can use the [[docs:tabli:data:info|data info]]. Example:
+To get the absolute path and other information, you can use the [[docs:tabul:data:info|data info]]. Example:
 
 <unit>
 <code bash>
-tabli data info sqlite/query_11.sql@tpcds_query
+tabul data info sqlite/query_11.sql@tpcds_query
 </code>
 <console>
 
@@ -63,7 +67,7 @@ This query shows customers that have generated growing sales from one year to an
 
 <unit>
 <code bash>
-tabli data head --type text --limit 20 sqlite/query_11.sql@tpcds_query
+tabul data head --type text --limit 20 sqlite/query_11.sql@tpcds_query
 </code>
 <console>
 The first 20 rows of the data resource (sqlite/query_11.sql@tpcds_query):
@@ -97,14 +101,14 @@ with year_total as (
 To prevent any conflict, you can execute the below command to drop all tables from the [[docs:connection:howtos|sqlite howto connection]]
 <unit>
 <code bash>
-tabli data drop --not-strict *@sqlite
+tabul data drop --not-strict *@sqlite
 # not strict will not fail the command if there is no tables to drop
 </code>
 </unit>
-Loading the data with the [[docs:tabli:data:transfer|transfer command]]. The ''query_11'' is a sales query, we are then loading the ''sales'' data and their [[docs:resource:dependency|dependencies]]
+Loading the data with the [[docs:tabul:data:transfer|transfer command]]. The ''query_11'' is a sales query, we are then loading the ''sales'' data and their [[docs:resource:dependency|dependencies]]
 <unit>
 <code bash>
-tabli data transfer --with-dependencies *sales@tpcds @sqlite
+tabul data transfer --with-dependencies *sales@tpcds @sqlite
 </code>
 where:
   * ''*sales@tpcds'' is a [[docs:resource:data_selector|data selector]] that:
@@ -149,12 +153,12 @@ In the below ''script selector''
   * ''sqlite/query_11.sql@tpcds_query'' is a [[docs:resource:data_selector|data selector]] that select the file ''query_11.sql'' in the sub-directory ''sqlite'' of the [[docs:connection:tpcds_query|tpcds-queries]] connection.
   * ''sqlite'' is the connection where the ''query'' is executed.
 
-A ''query data uri'' can be used with all [[docs:tabli:data:start|command]].
+A ''query data uri'' can be used with all [[docs:tabul:data:start|command]].
 
-Example with the [[docs:tabli:data:print|data print]] command.
+Example with the [[docs:tabul:data:print|data print]] command.
 <unit>
 <code bash db_query_execute.cmd>
-tabli data print "(sqlite/query_11.sql@tpcds_query)"@sqlite
+tabul data print "(sqlite/query_11.sql@tpcds_query)"@sqlite
 # The quotes are only mandatory in bash because parenthesis are a bash token (ie subshell)
 </code>
 <console>

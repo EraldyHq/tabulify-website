@@ -15,33 +15,33 @@ In the [[4_select_data_resources|previous page]], we learned how to select [[doc
   * ''tail'': to print the last records of content
 
 ===== Print =====
-The [[docs:tabli:data:print|data print]] command print the whole content.
+The [[docs:tabul:data:print|data print]] command print the whole content.
 
 
 Example:
   * with the [[docs:connection:tpcds|tpcs connection]]:
 <unit>
 <code bash>
-tabli data print reason@tpcds
+tabul data print reason@tpcds
 </code>
 <console>
-r_reason_sk   r_reason_id        r_reason_desc         
------------   ----------------   -------------------   
+r_reason_sk   r_reason_id        r_reason_desc
+-----------   ----------------   -------------------
           1   AAAAAAAABAAAAAAA   Package was damaged
 </console>
 </unit>
   * or with the ''characters.csv'' file in the [[docs:connection:howto|howto connection]]:
 <unit>
 <code bash>
-tabli data print characters.csv@howto
+tabul data print characters.csv@howto
 </code>
 <console>
-last_name           first_name   birth_date   wikipedia_page                                                   
------------------   ----------   ----------   --------------------------------------------------------------   
-Schwarzenegger      Arnold       1947-07-30   https://en.wikipedia.org/wiki/Arnold_Schwarzenegger              
-Norman              Don          1935-12-25   https://en.wikipedia.org/wiki/Don_Norman                         
-Harbison Carnagey   Dale         1888-11-24   https://en.wikipedia.org/wiki/Dale_Carnegie                      
-Kahneman            Daniel       1934-03-05   https://en.wikipedia.org/wiki/Daniel_Kahneman                    
+last_name           first_name   birth_date   wikipedia_page
+-----------------   ----------   ----------   --------------------------------------------------------------
+Schwarzenegger      Arnold       1947-07-30   https://en.wikipedia.org/wiki/Arnold_Schwarzenegger
+Norman              Don          1935-12-25   https://en.wikipedia.org/wiki/Don_Norman
+Harbison Carnagey   Dale         1888-11-24   https://en.wikipedia.org/wiki/Dale_Carnegie
+Kahneman            Daniel       1934-03-05   https://en.wikipedia.org/wiki/Daniel_Kahneman
 Pittman             Bob          1953-12-28   https://en.wikipedia.org/wiki/Robert_Pittman_(media_executive)
 </console>
 </unit>
@@ -50,49 +50,49 @@ Pittman             Bob          1953-12-28   https://en.wikipedia.org/wiki/Robe
 The [[#print|print command]] is useful for [[docs:resource:resource|data resource]] with a small [[docs:resource:size|size]] but is not practicable with big [[docs:resource:resource|data resource]] because the output will overflow the console.
 
 That's when you can use one of this command:
-  * the [[docs:tabli:data:head|data head]] command print the first pieces of content of a data resource
-  * the [[docs:tabli:data:tail|data tail]] command print the last pieces of content of a data resource
+  * the [[docs:tabul:data:head|data head]] command print the first pieces of content of a data resource
+  * the [[docs:tabul:data:tail|data tail]] command print the last pieces of content of a data resource
 
 Example with the [[docs:connection:tpcds|tpcs connection]] and the fact table ''customer''
   * ''head''
 <unit>
 <code bash>
-tabli data head --limit 10 customer@tpcds
+tabul data head --limit 10 customer@tpcds
 </code>
 <console>
-The first 10 rows of the data resource (customer@tpcds): 
-c_customer_sk   c_customer_id      c_current_cdemo_sk   c_current_hdemo_sk   c_current_addr_sk   c_first_shipto_date_sk   c_first_sales_date_sk   c_salutation   c_first_name   c_last_name   c_preferred_cust_flag   c_birth_day   c_birth_month   c_birth_year   c_birth_country      c_login   c_email_address                     c_last_review_date_sk   
--------------   ----------------   ------------------   ------------------   -----------------   ----------------------   ---------------------   ------------   ------------   -----------   ---------------------   -----------   -------------   ------------   ------------------   -------   ---------------------------------   ---------------------   
-            1   AAAAAAAABAAAAAAA               980124                 7135                 946                  2452238                 2452208   Mr.            Javier         Lewis         Y                                 9              12           1936   CHILE                          Javier.Lewis@VFAxlnZEvOx.org                      2452508   
-            2   AAAAAAAACAAAAAAA               819667                 1461                 655                  2452318                 2452288   Dr.            Amy            Moses         Y                                 9               4           1966   TOGO                           Amy.Moses@Ovk9KjHH.com                            2452318   
-            3   AAAAAAAADAAAAAAA              1473522                 6247                 572                  2449130                 2449100   Miss           Latisha        Hamilton      N                                18               9           1979   NIUE                           Latisha.Hamilton@V.com                            2452313   
-            4   AAAAAAAAEAAAAAAA              1703214                 3986                 558                  2450030                 2450000   Dr.            Michael        White         N                                 7               6           1983   MEXICO                         Michael.White@i.org                               2452361   
-            5   AAAAAAAAFAAAAAAA               953372                 4470                 368                  2449438                 2449408   Sir            Robert         Moran         N                                 8               5           1956   FIJI                           Robert.Moran@Hh.edu                               2452469   
-            6   AAAAAAAAGAAAAAAA               213219                 6374                  82                  2451883                 2451853   Ms.            Brunilda       Sharp         N                                 4              12           1925   SURINAME                       Brunilda.Sharp@T3pylZEUQjm.org                    2452430   
-            7   AAAAAAAAHAAAAAAA                68377                 3219                 814                  2451438                 2451408   Ms.            Fonda          Wiles         Y                                24               4           1985   GAMBIA                         Fonda.Wiles@S9KnyEtz9hv.org                       2452360   
-            8   AAAAAAAAIAAAAAAA              1215897                 2471                 598                  2449406                 2449376   Sir            Ollie          Shipman       N                                26              12           1938   KOREA, REPUBLIC OF             Ollie.Shipman@be.org                              2452334   
-            9   AAAAAAAAJAAAAAAA              1168667                 1404                 388                  2452275                 2452245   Sir            Karl           Gilbert       N                                26              10           1966   MONTSERRAT                     Karl.Gilbert@Crg5KyP2IxX9C4d6.edu                 2452454   
+The first 10 rows of the data resource (customer@tpcds):
+c_customer_sk   c_customer_id      c_current_cdemo_sk   c_current_hdemo_sk   c_current_addr_sk   c_first_shipto_date_sk   c_first_sales_date_sk   c_salutation   c_first_name   c_last_name   c_preferred_cust_flag   c_birth_day   c_birth_month   c_birth_year   c_birth_country      c_login   c_email_address                     c_last_review_date_sk
+-------------   ----------------   ------------------   ------------------   -----------------   ----------------------   ---------------------   ------------   ------------   -----------   ---------------------   -----------   -------------   ------------   ------------------   -------   ---------------------------------   ---------------------
+            1   AAAAAAAABAAAAAAA               980124                 7135                 946                  2452238                 2452208   Mr.            Javier         Lewis         Y                                 9              12           1936   CHILE                          Javier.Lewis@VFAxlnZEvOx.org                      2452508
+            2   AAAAAAAACAAAAAAA               819667                 1461                 655                  2452318                 2452288   Dr.            Amy            Moses         Y                                 9               4           1966   TOGO                           Amy.Moses@Ovk9KjHH.com                            2452318
+            3   AAAAAAAADAAAAAAA              1473522                 6247                 572                  2449130                 2449100   Miss           Latisha        Hamilton      N                                18               9           1979   NIUE                           Latisha.Hamilton@V.com                            2452313
+            4   AAAAAAAAEAAAAAAA              1703214                 3986                 558                  2450030                 2450000   Dr.            Michael        White         N                                 7               6           1983   MEXICO                         Michael.White@i.org                               2452361
+            5   AAAAAAAAFAAAAAAA               953372                 4470                 368                  2449438                 2449408   Sir            Robert         Moran         N                                 8               5           1956   FIJI                           Robert.Moran@Hh.edu                               2452469
+            6   AAAAAAAAGAAAAAAA               213219                 6374                  82                  2451883                 2451853   Ms.            Brunilda       Sharp         N                                 4              12           1925   SURINAME                       Brunilda.Sharp@T3pylZEUQjm.org                    2452430
+            7   AAAAAAAAHAAAAAAA                68377                 3219                 814                  2451438                 2451408   Ms.            Fonda          Wiles         Y                                24               4           1985   GAMBIA                         Fonda.Wiles@S9KnyEtz9hv.org                       2452360
+            8   AAAAAAAAIAAAAAAA              1215897                 2471                 598                  2449406                 2449376   Sir            Ollie          Shipman       N                                26              12           1938   KOREA, REPUBLIC OF             Ollie.Shipman@be.org                              2452334
+            9   AAAAAAAAJAAAAAAA              1168667                 1404                 388                  2452275                 2452245   Sir            Karl           Gilbert       N                                26              10           1966   MONTSERRAT                     Karl.Gilbert@Crg5KyP2IxX9C4d6.edu                 2452454
            10   AAAAAAAAKAAAAAAA              1207553                 5143                 580                  2451353                 2451323   Ms.            Albert         Brunson       N                                15              10           1973   JORDAN                         Albert.Brunson@62.com                             2452641
 </console>
 </unit>
   * ''tail''
 <unit>
 <code bash>
-tabli data tail --limit 10 customer@tpcds
+tabul data tail --limit 10 customer@tpcds
 </code>
 <console>
-The last 10 records of the data resource (customer@tpcds): 
-c_customer_sk   c_customer_id      c_current_cdemo_sk   c_current_hdemo_sk   c_current_addr_sk   c_first_shipto_date_sk   c_first_sales_date_sk   c_salutation   c_first_name   c_last_name   c_preferred_cust_flag   c_birth_day   c_birth_month   c_birth_year   c_birth_country   c_login   c_email_address                      c_last_review_date_sk   
--------------   ----------------   ------------------   ------------------   -----------------   ----------------------   ---------------------   ------------   ------------   -----------   ---------------------   -----------   -------------   ------------   ---------------   -------   ----------------------------------   ---------------------   
-          991   AAAAAAAAPNDAAAAA               431980                 5803                 226                  2451020                 2450990   Sir            William        Aleman        Y                                 7               1           1963   LUXEMBOURG                  William.Aleman@cGd246jZI7Dt2.com                   2452366   
-          992   AAAAAAAAAODAAAAA              1583939                 3697                 855                  2449154                 2449124   Mrs.           Elnora         Dabney        N                                20              10           1984   ITALY                       Elnora.Dabney@NUVhk1lGbprY4s.com                   2452344   
-          993   AAAAAAAABODAAAAA               134778                  298                 418                  2450228                 2450198   Mr.            Joseph         Fountain      Y                                 7               4           1942   PERU                        Joseph.Fountain@9iBf4kl8dSfsfr.com                 2452511   
-          994   AAAAAAAACODAAAAA                                      4792                 294                                                                   Geneva         Archie                                         15               5           1948                               Geneva.Archie@eXycmPJO0e.edu                       2452637   
-          995   AAAAAAAADODAAAAA               330521                 5267                 860                  2452591                 2452561   Sir            Richie         Smith         Y                                14              10           1960   BERMUDA                     Richie.Smith@Z9FqyaNxVVr.com                       2452612   
-          996   AAAAAAAAEODAAAAA               951614                  990                 613                  2449734                 2449704   Dr.            Chris          Davis         Y                                24               6           1947   ALBANIA                     Chris.Davis@k6S3Q.com                              2452570   
-          997   AAAAAAAAFODAAAAA               626818                 5753                 335                                                    Sir            Harvey                       N                                29               8           1963                               Harvey.Stanford@sl59JiHqrp8X.org                   2452632   
-          998   AAAAAAAAGODAAAAA              1773352                 3520                  41                  2449992                 2449962   Ms.            Evelyn         Joyner        N                                 3               5           1980   TUVALU                      Evelyn.Joyner@ialYx1zLN.edu                        2452439   
-          999   AAAAAAAAHODAAAAA               780031                 5696                 361                  2449771                 2449741   Mrs.           Lisa           Clark         Y                                20               2           1957   ITALY                       Lisa.Clark@goPYS4tMB0.org                          2452646   
+The last 10 records of the data resource (customer@tpcds):
+c_customer_sk   c_customer_id      c_current_cdemo_sk   c_current_hdemo_sk   c_current_addr_sk   c_first_shipto_date_sk   c_first_sales_date_sk   c_salutation   c_first_name   c_last_name   c_preferred_cust_flag   c_birth_day   c_birth_month   c_birth_year   c_birth_country   c_login   c_email_address                      c_last_review_date_sk
+-------------   ----------------   ------------------   ------------------   -----------------   ----------------------   ---------------------   ------------   ------------   -----------   ---------------------   -----------   -------------   ------------   ---------------   -------   ----------------------------------   ---------------------
+          991   AAAAAAAAPNDAAAAA               431980                 5803                 226                  2451020                 2450990   Sir            William        Aleman        Y                                 7               1           1963   LUXEMBOURG                  William.Aleman@cGd246jZI7Dt2.com                   2452366
+          992   AAAAAAAAAODAAAAA              1583939                 3697                 855                  2449154                 2449124   Mrs.           Elnora         Dabney        N                                20              10           1984   ITALY                       Elnora.Dabney@NUVhk1lGbprY4s.com                   2452344
+          993   AAAAAAAABODAAAAA               134778                  298                 418                  2450228                 2450198   Mr.            Joseph         Fountain      Y                                 7               4           1942   PERU                        Joseph.Fountain@9iBf4kl8dSfsfr.com                 2452511
+          994   AAAAAAAACODAAAAA                                      4792                 294                                                                   Geneva         Archie                                         15               5           1948                               Geneva.Archie@eXycmPJO0e.edu                       2452637
+          995   AAAAAAAADODAAAAA               330521                 5267                 860                  2452591                 2452561   Sir            Richie         Smith         Y                                14              10           1960   BERMUDA                     Richie.Smith@Z9FqyaNxVVr.com                       2452612
+          996   AAAAAAAAEODAAAAA               951614                  990                 613                  2449734                 2449704   Dr.            Chris          Davis         Y                                24               6           1947   ALBANIA                     Chris.Davis@k6S3Q.com                              2452570
+          997   AAAAAAAAFODAAAAA               626818                 5753                 335                                                    Sir            Harvey                       N                                29               8           1963                               Harvey.Stanford@sl59JiHqrp8X.org                   2452632
+          998   AAAAAAAAGODAAAAA              1773352                 3520                  41                  2449992                 2449962   Ms.            Evelyn         Joyner        N                                 3               5           1980   TUVALU                      Evelyn.Joyner@ialYx1zLN.edu                        2452439
+          999   AAAAAAAAHODAAAAA               780031                 5696                 361                  2449771                 2449741   Mrs.           Lisa           Clark         Y                                20               2           1957   ITALY                       Lisa.Clark@goPYS4tMB0.org                          2452646
          1000   AAAAAAAAIODAAAAA               647134                 6138                 295                  2451536                 2451506   Sir            Mark           Bailey        N                                26               8           1947   MOROCCO                     Mark.Bailey@rg9qCNVJ0s7qeY.com                     2452443
 </console>
 </unit>

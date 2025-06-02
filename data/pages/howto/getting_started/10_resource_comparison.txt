@@ -16,7 +16,7 @@
   * the [[docs:resource:content|data content]]
   * and the [[docs:resource:structure|data structure]]
 
-The [[docs:op:diff|diff operation (comparison)]] is implemented with the [[docs:tabli:data:diff|data diff command]].
+The [[docs:op:diff|diff operation (comparison)]] is implemented with the [[docs:tabul:data:diff|data diff command]].
 
 ===== Data to compare =====
 
@@ -50,11 +50,11 @@ The fact that a record is missing can be easily spotted but there is a more subt
 
 ===== The comparison report =====
 
-All comparison can be executed with the [[docs:tabli:data:diff|data diff command]] by giving as argument the [[docs:flow:source|source]] and [[docs:flow:target|target]] data resource.
+All comparison can be executed with the [[docs:tabul:data:diff|data diff command]] by giving as argument the [[docs:flow:source|source]] and [[docs:flow:target|target]] data resource.
 
 <unit>
 <code bash>
-tabli data diff characters.csv@howto characters_target.csv@howto
+tabul data diff characters.csv@howto characters_target.csv@howto
 </code>
 <console>
 Comparison Report
@@ -77,7 +77,7 @@ To get a comparison on the record level, you set the ''report-level'' option to 
 
 <unit>
 <code bash>
-tabli data diff --report-level record characters.csv@howto characters_target.csv@howto
+tabul data diff --report-level record characters.csv@howto characters_target.csv@howto
 </code>
 <console>
 Comparison result between source (characters.csv@howto) and target (characters_target.csv@howto).
@@ -127,7 +127,7 @@ This is because the comparison was executed by ''record id'' and not by ''last n
 To improve our comparison, we will define the unique column of our data resource with the ''%%--unique-column%%'' column option.
 <unit>
 <code bash>
-tabli data diff --report-level record --unique-column "Last Name" characters.csv@howto characters_target.csv@howto
+tabul data diff --report-level record --unique-column "Last Name" characters.csv@howto characters_target.csv@howto
 </code>
 <console>
 Comparison result between source (characters.csv@howto) and target (characters_target.csv@howto).
@@ -153,7 +153,7 @@ We can see that:
 
 ===== Conclusion =====
 
-This page ends the learning guide of ''Tabulify'' at the command line with ''Tabli'' where we have learned to perform data operation one command at a time.
+This page ends the learning guide of ''Tabulify'' at the command line with ''Tabul'' where we have learned to perform data operation one command at a time.
 
 <box display="none">
 ''Tabulify'' supports also the creation of workflows with the ''pipeline'' scripting language where you bind all this operations in pipelines.

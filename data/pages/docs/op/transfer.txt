@@ -49,8 +49,8 @@ pipeline:
 </code>
     </panel>
     <panel>
-        <label>Tabli Data Transfer Command</label>
-The ''transfer'' operation is performed by the [[docs:tabli:data:transfer|tabli data transfer]] command
+        <label>Tabul Data Transfer Command</label>
+The ''transfer'' operation is performed by the [[docs:tabul:data:transfer|tabul data transfer]] command
     </panel>
 </tabs>
 

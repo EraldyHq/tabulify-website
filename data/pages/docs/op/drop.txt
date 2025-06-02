@@ -26,4 +26,4 @@ As there is no way to retrieve the data or metadata, you should use this operati
 
 ===== Execution =====
 
-See the [[:docs:tabli:data:drop|tabli data drop]] cli command
+See the [[:docs:tabul:data:drop|tabul data drop]] cli command

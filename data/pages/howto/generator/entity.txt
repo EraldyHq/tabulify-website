@@ -29,22 +29,22 @@ Columns:
 
 
 </file>
-  * You can see the output with [[:docs:tabli:data:print|tabli print]]
+  * You can see the output with [[:docs:tabul:data:print|tabul print]]
 <code bash>
-tabli data print generator/entity-basic--datagen.yml@howto
+tabul data print generator/entity-basic--datagen.yml@howto
 </code>
 <console>
-firstname   
----------   
-Phoebe      
-Penelope    
-Reggie      
-Cathleen    
-Reina       
-Dorthea     
-Lannie      
-Josephina   
-Wade        
+firstname
+---------
+Phoebe
+Penelope
+Reggie
+Cathleen
+Reina
+Dorthea
+Lannie
+Josephina
+Wade
 Ethelyn
 </console>
 </unit>
@@ -79,42 +79,42 @@ Columns:
 
 
 </file>
-  * You can see the output with [[:docs:tabli:data:print|tabli print]]
+  * You can see the output with [[:docs:tabul:data:print|tabul print]]
 <code bash>
-tabli data print generator/entity-meta-columns--datagen.yml@howto
+tabul data print generator/entity-meta-columns--datagen.yml@howto
 </code>
 <console height="300px" scroll="toggle">
-gender   firstname   
-------   ---------   
-M        Arnold      
-F        Beatris     
-M        Amado       
-F        Amanda      
-M        Alvin       
-F        Ashlie      
-F        Bettina     
-F        Alvera      
-F        Althea      
-F        Beatris     
-F        Bridgette   
-F        Ashlie      
-F        Alverta     
-F        Alyce       
-F        Britt       
-F        Alverta     
-F        Bettina     
-F        Amalia      
-M        Allan       
-F        Bettina     
-F        Amalia      
-F        Ashlie      
-M        Alphonso    
-M        Alvaro      
-M        Alphonso    
-M        Brice       
-M        Brandon     
-F        Alysa       
-F        Brittani    
+gender   firstname
+------   ---------
+M        Arnold
+F        Beatris
+M        Amado
+F        Amanda
+M        Alvin
+F        Ashlie
+F        Bettina
+F        Alvera
+F        Althea
+F        Beatris
+F        Bridgette
+F        Ashlie
+F        Alverta
+F        Alyce
+F        Britt
+F        Alverta
+F        Bettina
+F        Amalia
+M        Allan
+F        Bettina
+F        Amalia
+F        Ashlie
+M        Alphonso
+M        Alvaro
+M        Alphonso
+M        Brice
+M        Brandon
+F        Alysa
+F        Brittani
 F        Britta
 </console>
 </unit>

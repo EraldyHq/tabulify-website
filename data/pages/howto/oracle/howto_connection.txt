@@ -13,7 +13,7 @@
 ===== About =====
 This howto shows you how to:
   * start an <icon name="logos:oracle"/> [[:docs:system:oracle:oracle|oracle database]] with the [[:docs:service:docker|oracle docker service]]
-  * and use the  ''@oracle'' [[docs:connection:howtos|default howto oracle connection]] in tabli command.
+  * and use the  ''@oracle'' [[docs:connection:howtos|default howto oracle connection]] in tabul command.
 
 
 ===== Steps =====
@@ -30,36 +30,36 @@ Because [[:docs:service:howtos|howto services]] are [[:docs:service:docker|docke
 By default, the [[:docs:conf:vault|user configuration vault]] is created with the [[:docs:service:howtos|howto docker services]].
 
 You can check if the oracle service is present and see its [[:docs:service:service#attributes|attributes]] with:
-  * the [[:docs:tabli:service:info|tabli service info]] command
+  * the [[:docs:tabul:service:info|tabul service info]] command
   * or the [[:docs:conf:vault|configuration vault]]
 <tabs>
     <panel>
-       <label>Tabli Service Info</label>
+       <label>Tabul Service Info</label>
 <unit>
 <code bash>
-tabli service info oracle
+tabul service info oracle
 </code>
 <console>
 Information about the service (oracle)
-Attribute     Value                                                                                                                      Description                  
------------   ------------------------------------------------------------------------------------------------------------------------   --------------------------   
-COMMAND                                                                                                                                  The command                  
-ENVIRONMENT   {APP_USER=hr, APP_USER_PASSWORD=oracle, ORACLE_ALLOW_REMOTE=true, ORACLE_DISABLE_ASYNCH_IO=true, ORACLE_PASSWORD=oracle}   The environment attributes   
-IMAGE         ghcr.io/gvenzl/oracle-free:23.7-slim-faststart                                                                             The image                    
-IS_STARTED    false                                                                                                                      The status of the service    
-NAME          oracle                                                                                                                     The name of the service      
-ORIGIN        CONF                                                                                                                       The origin of the system     
-PORTS         1521:1521                                                                                                                  The ports                    
-TYPE          docker                                                                                                                     The type of the system       
+Attribute     Value                                                                                                                      Description
+-----------   ------------------------------------------------------------------------------------------------------------------------   --------------------------
+COMMAND                                                                                                                                  The command
+ENVIRONMENT   {APP_USER=hr, APP_USER_PASSWORD=oracle, ORACLE_ALLOW_REMOTE=true, ORACLE_DISABLE_ASYNCH_IO=true, ORACLE_PASSWORD=oracle}   The environment attributes
+IMAGE         ghcr.io/gvenzl/oracle-free:23.7-slim-faststart                                                                             The image
+IS_STARTED    false                                                                                                                      The status of the service
+NAME          oracle                                                                                                                     The name of the service
+ORIGIN        CONF                                                                                                                       The origin of the system
+PORTS         1521:1521                                                                                                                  The ports
+TYPE          docker                                                                                                                     The type of the system
 VOLUMES                                                                                                                                  The volumes
 </console>
 </unit>
    </panel>
    <panel selected>
-       <label>Tabli Yaml Vault </label>
+       <label>Tabul Yaml Vault </label>
 <unit>
 <code bash>
-tabli data print --type text .tabli/.tabli.yml@home | yq '.services.oracle'
+tabul data print --type text .tabul/.tabul.yml@home | yq '.services.oracle'
 </code>
 <console yaml>
 
@@ -81,12 +81,12 @@ type: docker
 
 If the service is not present:
   * move or delete your [[:docs:conf:vault|user configuration vault file]]
-  * or use the ''tabli init'' command
+  * or use the ''tabul init'' command
 
 ==== Start the oracle service ====
 
 To start the docker service, you can use
-  * the [[:docs:tabli:service:start_command|tabli service start]] command
+  * the [[:docs:tabul:service:start_command|tabul service start]] command
   * or the ''docker command''
 <tabs>
     <panel selected>
@@ -94,12 +94,12 @@ To start the docker service, you can use
 
 <unit>
 <code bash>
-tabli service start oracle
+tabul service start oracle
 </code>
 <console>
 1 service was started
-Name     Type     
-------   ------   
+Name     Type
+------   ------
 oracle   docker
 </console>
 </unit>
@@ -126,7 +126,7 @@ docker run \
 
 <unit>
 <code bash>
-tabli connection ping oracle
+tabul connection ping oracle
 </code>
 <console>
 The connection (oracle) could not be pinged
@@ -144,57 +144,57 @@ By default, the [[:docs:conf:vault|user configuration vault]] is created with th
 
 <tabs>
     <panel>
-       <label>Tabli Connection Info</label>
-You can check the service with the [[:docs:tabli:service:info|tabli service info]] command
+       <label>Tabul Connection Info</label>
+You can check the service with the [[:docs:tabul:service:info|tabul service info]] command
 <unit>
 <code bash>
-tabli connection info oracle
+tabul connection info oracle
 </code>
 <console>
 Information about the connection (oracle)
-Attribute                    Value                                       Description                                                            
---------------------------   -----------------------------------------   --------------------------------------------------------------------   
-BOOLEAN_DATA_TYPE            Native                                      Boolean data type used to store boolean values                         
-BUILDER_CACHE_ENABLED        true                                        Enable or disable the builder cache                                    
-COMMENT                      The default oracle connection               A connection description                                               
-CONNECTION_CLOSING_SCRIPT                                                A script that runs before a connection is closed                       
-CONNECTION_INIT_SCRIPT                                                   A script that runs after a connection has been established             
-DATABASE_MAJOR_VERSION                                                   The major version number of the database                               
-DATABASE_MINOR_VERSION                                                   The minor version number of the database                               
-DATABASE_PRODUCT_NAME                                                    The name of the database                                               
-DATABASE_PRODUCT_VERSION                                                 The version of the database                                            
-DATE_DATA_TYPE               NATIVE                                      Date data type used to store date values                               
-DRIVER                       oracle.jdbc.OracleDriver                    The jdbc driver class                                                  
-DRIVER_NAME                                                              The driver name                                                        
-DRIVER_VERSION                                                           The driver version                                                     
-HOST                                                                     Host Server                                                            
-JDBC_MAJOR_VERSION                                                       The major version number of JDBC                                       
-JDBC_MINOR_VERSION                                                       The minor version number of JDBC                                       
-MAX_CONCURRENT_THREAD                                                    The maximum number of threads that can be created against the system   
-MAX_NAME_IN_PATH                                                         The maximum number of names in a path                                  
-NAME                         oracle                                      The name of the connection                                             
-NAME_QUOTING_DISABLED_CASE   UPPERCASE                                   The case to apply when quoting is disabled                             
-NAME_QUOTING_ENABLED         false                                       Enable quoting of names                                                
-NATIVES                                                                  Native Driver attributes (jdbc properties, ...)                        
-ORIGIN                       CONF                                        The origin of the connection                                           
-PASSWORD                     oracle                                      The user password                                                      
-PORT                         1521                                        Host Port                                                              
-SUPPORT_BATCH_UPDATES                                                    If the system supports batch SQL updates                               
-SUPPORT_NAMED_PARAMETERS                                                 If the system supports named parameters in the SQL statement           
-TIMESTAMP_DATA_TYPE          NATIVE                                      Timestamp data type used to store timestamp values                     
-TIME_DATA_TYPE               NATIVE                                      Time format data type to store time values                             
-URI                          jdbc:oracle:thin:@localhost:1521/freepdb1   The uri of the connection                                              
-USER                         hr                                          The user name                                                          
+Attribute                    Value                                       Description
+--------------------------   -----------------------------------------   --------------------------------------------------------------------
+BOOLEAN_DATA_TYPE            Native                                      Boolean data type used to store boolean values
+BUILDER_CACHE_ENABLED        true                                        Enable or disable the builder cache
+COMMENT                      The default oracle connection               A connection description
+CONNECTION_CLOSING_SCRIPT                                                A script that runs before a connection is closed
+CONNECTION_INIT_SCRIPT                                                   A script that runs after a connection has been established
+DATABASE_MAJOR_VERSION                                                   The major version number of the database
+DATABASE_MINOR_VERSION                                                   The minor version number of the database
+DATABASE_PRODUCT_NAME                                                    The name of the database
+DATABASE_PRODUCT_VERSION                                                 The version of the database
+DATE_DATA_TYPE               NATIVE                                      Date data type used to store date values
+DRIVER                       oracle.jdbc.OracleDriver                    The jdbc driver class
+DRIVER_NAME                                                              The driver name
+DRIVER_VERSION                                                           The driver version
+HOST                                                                     Host Server
+JDBC_MAJOR_VERSION                                                       The major version number of JDBC
+JDBC_MINOR_VERSION                                                       The minor version number of JDBC
+MAX_CONCURRENT_THREAD                                                    The maximum number of threads that can be created against the system
+MAX_NAME_IN_PATH                                                         The maximum number of names in a path
+NAME                         oracle                                      The name of the connection
+NAME_QUOTING_DISABLED_CASE   UPPERCASE                                   The case to apply when quoting is disabled
+NAME_QUOTING_ENABLED         false                                       Enable quoting of names
+NATIVES                                                                  Native Driver attributes (jdbc properties, ...)
+ORIGIN                       CONF                                        The origin of the connection
+PASSWORD                     oracle                                      The user password
+PORT                         1521                                        Host Port
+SUPPORT_BATCH_UPDATES                                                    If the system supports batch SQL updates
+SUPPORT_NAMED_PARAMETERS                                                 If the system supports named parameters in the SQL statement
+TIMESTAMP_DATA_TYPE          NATIVE                                      Timestamp data type used to store timestamp values
+TIME_DATA_TYPE               NATIVE                                      Time format data type to store time values
+URI                          jdbc:oracle:thin:@localhost:1521/freepdb1   The uri of the connection
+USER                         hr                                          The user name
 WORKING_PATH                 HR.                                         The working path (Schema for database, directory for file system)
 </console>
 </unit>
    </panel>
    <panel selected>
-       <label>Tabli Yaml Vault </label>
+       <label>Tabul Yaml Vault </label>
 You can also check the connection attributes with the [[:docs:conf:vault|configuration vault]]
 <unit>
 <code bash>
-tabli data print --type text .tabli/.tabli.yml@home | yq '.connections.oracle'
+tabul data print --type text .tabul/.tabul.yml@home | yq '.connections.oracle'
 </code>
 <console yaml>
 
@@ -212,7 +212,7 @@ user: hr
 
 If the connection is not present:
   * move or delete your [[:docs:conf:vault|user configuration vault file]]
-  * or use the ''tabli init'' command
+  * or use the ''tabul init'' command
 
 
 
@@ -229,27 +229,27 @@ Example:
 <unit display="none">
 Drop all
 <code bash>
-tabli data drop --not-strict --force *@oracle
+tabul data drop --not-strict --force *@oracle
 </code>
 </unit>
 <unit>
 <code bash>
 # with sqlite
-# tabli data upsert characters.csv@howto @sqlite
+# tabul data upsert characters.csv@howto @sqlite
 # with oracle
-tabli data upsert characters.csv@howto @oracle
+tabul data upsert characters.csv@howto @oracle
 </code>
 </unit>
 <unit>
 <code bash>
 # with sqlite
-# tabli data list  *@sqlite
+# tabul data list  *@sqlite
 # with oracle
-tabli data list  *@oracle
+tabul data list  *@oracle
 </code>
 <console>
-path         type    
-----------   -----   
+path         type
+----------   -----
 CHARACTERS   TABLE
 </console>
 </unit>
@@ -278,21 +278,21 @@ In particularly, you can follow:
 ==== Stop the oracle service ====
 
 Once, you don't need the oracle service, you can stop it:
-  * with the [[:docs:tabli:service:stop|tabli service stop]] command
+  * with the [[:docs:tabul:service:stop|tabul service stop]] command
   * or with Docker
 
 
 <tabs>
     <panel selected>
-       <label>Tabli Service Stop</label>
+       <label>Tabul Service Stop</label>
 <unit>
 <code bash>
-tabli service stop oracle
+tabul service stop oracle
 </code>
 <console>
 1 service was stopped
-Name     Type     
-------   ------   
+Name     Type
+------   ------
 oracle   docker
 </console>
 </unit>

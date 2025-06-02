@@ -14,14 +14,14 @@ It's the default [[docs:connection:connection|connection]] of [[docs:op:sendmail
 
 ===== Default =====
 
-It defaults to the local smtp server as you can see with the [[docs:tabli:connection:list|tabli connection list]].
+It defaults to the local smtp server as you can see with the [[docs:tabul:connection:list|tabul connection list]].
 <unit>
 <code bash>
-tabli connection list smtp
+tabul connection list smtp
 </code>
 <console>
-name   uri                
-----   ----------------   
+name   uri
+----   ----------------
 smtp   smtp://localhost
 </console>
 </unit>

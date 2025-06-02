@@ -6,15 +6,14 @@
     "canonical": ":howto:database:benchmark",
     "description": "This howto will show you how to load a relational database schema in order to create a benchmark with the data query command",
     "name": "TPCDS benchmark",
-    "page_id": "pwp5v8ztbr31zv6afaw05",
-    "title": "How to load your database with the TPCDS benchmark"
+    "page_id": "pwp5v8ztbr31zv6afaw05"
 }
 ---
 
 ====== Database HowTo - How to load your database with the TPCDS benchmark ======
 
 ===== Query command =====
-This [[howto:howto|howto]] will show you how to load a <icon name="database"/> [[docs:system:relational|relational database]] in order to create a [[docs:benchmark|benchmark]] with the [[docs:tabli:data:query|data query command]].
+This [[howto:howto|howto]] will show you how to load a <icon name="database"/> [[docs:system:relational|relational database]] in order to create a [[docs:benchmark|benchmark]] with the [[docs:tabul:data:query|data query command]].
 
 [[docs:system:tpcds|tpcds]] is a [[docs:benchmark|benchmark]] and offers 100 [[docs:resource:query|queries]] that we will execute.
 
@@ -26,20 +25,20 @@ This [[howto:howto|howto]] will show you how to load a <icon name="database"/> [
 ==== Drop all tables ====
 For the purpose of this howto, we will use the [[docs:connection:howtos|Sqlite howto connection]]
 
-To be sure to start in a clean schema, the below [[docs:tabli:data:drop|data drop command]] will [[docs:op:drop|drop]] all [[docs:resource:table|tables]] in the [[docs:connection:howtos|Sqlite howto connection]]
+To be sure to start in a clean schema, the below [[docs:tabul:data:drop|data drop command]] will [[docs:op:drop|drop]] all [[docs:resource:table|tables]] in the [[docs:connection:howtos|Sqlite howto connection]]
 <unit>
 <code bash>
-tabli data drop *@sqlite
+tabul data drop *@sqlite
 </code>
 </unit>
 
 
 ==== Load the TPCDS data into the target system ====
 
-With the [[docs:tabli:data:copy|data copy command]], we will [[docs:op:copy|copy]] the [[docs:system:tpcds#store_sales|TPCDS store schema]] into the [[docs:connection:howtos|Sqlite howto connection]].
+With the [[docs:tabul:data:copy|data copy command]], we will [[docs:op:copy|copy]] the [[docs:system:tpcds#store_sales|TPCDS store schema]] into the [[docs:connection:howtos|Sqlite howto connection]].
 <unit>
 <code bash>
-tabli data copy --with-dependencies store*@tpcds @sqlite
+tabul data copy --with-dependencies store*@tpcds @sqlite
 </code>
 <console>
 Source                         Target                          Latency (ms)   Row Count   Error   Message
@@ -63,21 +62,21 @@ time_dim@tpcds                 time_dim@sqlite                 1218           86
 <note>
 We copy only the store star schema to make it quicker but you can try to load all the ''TPC-DS'' data
 <code bash>
-tabli data copy --with-dependencies store*@tpcds @sqlite
+tabul data copy --with-dependencies store*@tpcds @sqlite
 </code>
 </note>
 
 ==== Start the query command ====
 
 
-The below [[docs:tabli:data:query|data query command]] will select all ''Tpcds'' queries located in the [[docs:connection:tpcds_query|tpcds-query connection]] below the ''sqlite'' directory and run them.
+The below [[docs:tabul:data:query|data query command]] will select all ''Tpcds'' queries located in the [[docs:connection:tpcds_query|tpcds-query connection]] below the ''sqlite'' directory and run them.
 <unit>
 <code bash>
-tabli data query --not-strict (sqlite/query_*.sql@tpcds_query)@sqlite
+tabul data query --not-strict (sqlite/query_*.sql@tpcds_query)@sqlite
 </code>
 The output gives you latency data that you can then analyse.
 <note>
-If you want to get the latency data in another data resource such as a csv or table, you can make use of the [[docs:tabli:output|output]] options.
+If you want to get the latency data in another data resource such as a csv or table, you can make use of the [[docs:tabul:output|output]] options.
 </note>
 <console>
 Query Name       Start Time                End Time                  Latency (ms)   Row Count   Error   Error Message

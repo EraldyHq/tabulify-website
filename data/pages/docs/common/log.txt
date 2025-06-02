@@ -33,9 +33,9 @@ By default, the log level is the ''info'' level.
 
 You can change the log level:
 
-  * via the ''log-level'' [[docs:tabli:option|option]].
+  * via the ''log-level'' [[docs:tabul:option|option]].
 <code bash>
-tabli data list --log-level tip
+tabul data list --log-level tip
 </code>
   * via the [[docs:conf:vault|the configuration vault]]
 <code yaml>
@@ -44,7 +44,7 @@ env:
 </code>
   * via the ''log-level'' [[docs:conf:os|os environment variable]].
 <code bash>
-export TABLI_LOG_LEVEL=tip
+export TABUL_LOG_LEVEL=tip
 </code>
 
 

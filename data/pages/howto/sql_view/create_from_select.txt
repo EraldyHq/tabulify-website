@@ -25,86 +25,86 @@ We are going to use the [[:docs:connection:tpcds_query|tpcds]] ''query_11.sql'' 
 
 <unit>
 <code bash>
-tabli data print --type text sqlite/query_11.sql@tpcds_query
+tabul data print --type text sqlite/query_11.sql@tpcds_query
 </code>
 <console sql height="300px" scroll="toggle">
-with year_total as (                                                                                                        
- select c_customer_id customer_id                                                                                           
-       ,c_first_name customer_first_name                                                                                    
-       ,c_last_name customer_last_name                                                                                      
-       ,c_preferred_cust_flag customer_preferred_cust_flag                                                                  
-       ,c_birth_country customer_birth_country                                                                              
-       ,c_login customer_login                                                                                              
-       ,c_email_address customer_email_address                                                                              
-       ,d_year dyear                                                                                                        
-       ,sum(ss_ext_list_price-ss_ext_discount_amt) year_total                                                               
-       ,'s' sale_type                                                                                                       
- from customer                                                                                                              
-     ,store_sales                                                                                                           
-     ,date_dim                                                                                                              
- where c_customer_sk = ss_customer_sk                                                                                       
-   and ss_sold_date_sk = d_date_sk                                                                                          
- group by c_customer_id                                                                                                     
-         ,c_first_name                                                                                                      
-         ,c_last_name                                                                                                       
-         ,c_preferred_cust_flag                                                                                             
-         ,c_birth_country                                                                                                   
-         ,c_login                                                                                                           
-         ,c_email_address                                                                                                   
-         ,d_year                                                                                                            
- union all                                                                                                                  
- select c_customer_id customer_id                                                                                           
-       ,c_first_name customer_first_name                                                                                    
-       ,c_last_name customer_last_name                                                                                      
-       ,c_preferred_cust_flag customer_preferred_cust_flag                                                                  
-       ,c_birth_country customer_birth_country                                                                              
-       ,c_login customer_login                                                                                              
-       ,c_email_address customer_email_address                                                                              
-       ,d_year dyear                                                                                                        
-       ,sum(ws_ext_list_price-ws_ext_discount_amt) year_total                                                               
-       ,'w' sale_type                                                                                                       
- from customer                                                                                                              
-     ,web_sales                                                                                                             
-     ,date_dim                                                                                                              
- where c_customer_sk = ws_bill_customer_sk                                                                                  
-   and ws_sold_date_sk = d_date_sk                                                                                          
- group by c_customer_id                                                                                                     
-         ,c_first_name                                                                                                      
-         ,c_last_name                                                                                                       
-         ,c_preferred_cust_flag                                                                                             
-         ,c_birth_country                                                                                                   
-         ,c_login                                                                                                           
-         ,c_email_address                                                                                                   
-         ,d_year                                                                                                            
-         )                                                                                                                  
-  select                                                                                                                    
-                  t_s_secyear.customer_id                                                                                   
-                 ,t_s_secyear.customer_first_name                                                                           
-                 ,t_s_secyear.customer_last_name                                                                            
-                 ,t_s_secyear.customer_email_address                                                                        
- from year_total t_s_firstyear                                                                                              
-     ,year_total t_s_secyear                                                                                                
-     ,year_total t_w_firstyear                                                                                              
-     ,year_total t_w_secyear                                                                                                
- where t_s_secyear.customer_id = t_s_firstyear.customer_id                                                                  
-         and t_s_firstyear.customer_id = t_w_secyear.customer_id                                                            
-         and t_s_firstyear.customer_id = t_w_firstyear.customer_id                                                          
-         and t_s_firstyear.sale_type = 's'                                                                                  
-         and t_w_firstyear.sale_type = 'w'                                                                                  
-         and t_s_secyear.sale_type = 's'                                                                                    
-         and t_w_secyear.sale_type = 'w'                                                                                    
-         and t_s_firstyear.dyear = 2001                                                                                     
-         and t_s_secyear.dyear = 2001+1                                                                                     
-         and t_w_firstyear.dyear = 2001                                                                                     
-         and t_w_secyear.dyear = 2001+1                                                                                     
-         and t_s_firstyear.year_total > 0                                                                                   
-         and t_w_firstyear.year_total > 0                                                                                   
-         and case when t_w_firstyear.year_total > 0 then t_w_secyear.year_total / t_w_firstyear.year_total else 0.0 end     
-             > case when t_s_firstyear.year_total > 0 then t_s_secyear.year_total / t_s_firstyear.year_total else 0.0 end   
- order by t_s_secyear.customer_id                                                                                           
-         ,t_s_secyear.customer_first_name                                                                                   
-         ,t_s_secyear.customer_last_name                                                                                    
-         ,t_s_secyear.customer_email_address                                                                                
+with year_total as (
+ select c_customer_id customer_id
+       ,c_first_name customer_first_name
+       ,c_last_name customer_last_name
+       ,c_preferred_cust_flag customer_preferred_cust_flag
+       ,c_birth_country customer_birth_country
+       ,c_login customer_login
+       ,c_email_address customer_email_address
+       ,d_year dyear
+       ,sum(ss_ext_list_price-ss_ext_discount_amt) year_total
+       ,'s' sale_type
+ from customer
+     ,store_sales
+     ,date_dim
+ where c_customer_sk = ss_customer_sk
+   and ss_sold_date_sk = d_date_sk
+ group by c_customer_id
+         ,c_first_name
+         ,c_last_name
+         ,c_preferred_cust_flag
+         ,c_birth_country
+         ,c_login
+         ,c_email_address
+         ,d_year
+ union all
+ select c_customer_id customer_id
+       ,c_first_name customer_first_name
+       ,c_last_name customer_last_name
+       ,c_preferred_cust_flag customer_preferred_cust_flag
+       ,c_birth_country customer_birth_country
+       ,c_login customer_login
+       ,c_email_address customer_email_address
+       ,d_year dyear
+       ,sum(ws_ext_list_price-ws_ext_discount_amt) year_total
+       ,'w' sale_type
+ from customer
+     ,web_sales
+     ,date_dim
+ where c_customer_sk = ws_bill_customer_sk
+   and ws_sold_date_sk = d_date_sk
+ group by c_customer_id
+         ,c_first_name
+         ,c_last_name
+         ,c_preferred_cust_flag
+         ,c_birth_country
+         ,c_login
+         ,c_email_address
+         ,d_year
+         )
+  select
+                  t_s_secyear.customer_id
+                 ,t_s_secyear.customer_first_name
+                 ,t_s_secyear.customer_last_name
+                 ,t_s_secyear.customer_email_address
+ from year_total t_s_firstyear
+     ,year_total t_s_secyear
+     ,year_total t_w_firstyear
+     ,year_total t_w_secyear
+ where t_s_secyear.customer_id = t_s_firstyear.customer_id
+         and t_s_firstyear.customer_id = t_w_secyear.customer_id
+         and t_s_firstyear.customer_id = t_w_firstyear.customer_id
+         and t_s_firstyear.sale_type = 's'
+         and t_w_firstyear.sale_type = 'w'
+         and t_s_secyear.sale_type = 's'
+         and t_w_secyear.sale_type = 'w'
+         and t_s_firstyear.dyear = 2001
+         and t_s_secyear.dyear = 2001+1
+         and t_w_firstyear.dyear = 2001
+         and t_w_secyear.dyear = 2001+1
+         and t_s_firstyear.year_total > 0
+         and t_w_firstyear.year_total > 0
+         and case when t_w_firstyear.year_total > 0 then t_w_secyear.year_total / t_w_firstyear.year_total else 0.0 end
+             > case when t_s_firstyear.year_total > 0 then t_s_secyear.year_total / t_s_firstyear.year_total else 0.0 end
+ order by t_s_secyear.customer_id
+         ,t_s_secyear.customer_first_name
+         ,t_s_secyear.customer_last_name
+         ,t_s_secyear.customer_email_address
 limit 100;\n\n
 </console>
 </unit>
@@ -114,14 +114,14 @@ limit 100;\n\n
 <unit display="none">
 Drop the view if it exists
 <code bash>
-tabli data drop --not-strict query_11@sqlite
+tabul data drop --not-strict query_11@sqlite
 </code>
 </unit>
 
-With the [[:docs:tabli:data:create|tabli create]] command, to create view called ''query_11'' from the ''query_11.sql'' file, you would execute the following command:
+With the [[:docs:tabul:data:create|tabul create]] command, to create view called ''query_11'' from the ''query_11.sql'' file, you would execute the following command:
 <unit>
 <code bash>
-tabli data create \
+tabul data create \
    --target-attribute type=view \
    sqlite/query_11.sql@tpcds_query  \
    @sqlite
@@ -134,8 +134,8 @@ where:
 
 Output:
 <console>
-source                            target            
--------------------------------   ---------------   
+source                            target
+-------------------------------   ---------------
 sqlite/query_11.sql@tpcds_query   query_11@sqlite
 </console>
 </unit>
@@ -148,7 +148,7 @@ Because Tabulify is capable to process multiple files at once, we can also creat
 
 <unit>
 <code bash>
-tabli data create \
+tabul data create \
    --target-attribute type=view \
    sqlite/*.sql@tpcds_query  \
    'tpcds_$1@sqlite'
@@ -156,121 +156,121 @@ tabli data create \
 </code>
 where:
   * ''sqlite/*.sql@tpcds_query'' is a [[:docs:resource:data_selector|data selector]] that:
-    * selects all [[:docs:resource:sql|sql files]] thanks to the [[:howto:tabli:glob|star (glob expression)]]
+    * selects all [[:docs:resource:sql|sql files]] thanks to the [[:howto:tabul:glob|star (glob expression)]]
     * in the ''sqlite'' directory of the [[:docs:connection:tpcds_query|tpcds query directory]]
     * as [[:docs:flow:source|source]]
   * ''%%tpcds_$1@sqlite%%'' is a [[:docs:resource:target_uri|target uri]] that will:
       * create for each source,
       * a target with a name that:
          * starts with ''tpcds_''
-         * followed by the first matching part (''%%$1%%'') of the [[:howto:tabli:glob|star (glob expression)]]
+         * followed by the first matching part (''%%$1%%'') of the [[:howto:tabul:glob|star (glob expression)]]
       * as [[:docs:flow:target|target]]
 </unit>
 
 ==== Listing the views ====
 
-With the [[:docs:tabli:data:list|data list command]], we can see all of them as been created:
+With the [[:docs:tabul:data:list|data list command]], we can see all of them as been created:
 
 <unit>
 <code bash>
-tabli data list *@sqlite
+tabul data list *@sqlite
 </code>
 <console height="300px" scroll="toggle">
-path             type   
---------------   ----   
-query_11         VIEW   
-tpcds_query_1    VIEW   
-tpcds_query_2    VIEW   
-tpcds_query_3    VIEW   
-tpcds_query_4    VIEW   
-tpcds_query_5    VIEW   
-tpcds_query_6    VIEW   
-tpcds_query_7    VIEW   
-tpcds_query_8    VIEW   
-tpcds_query_9    VIEW   
-tpcds_query_10   VIEW   
-tpcds_query_11   VIEW   
-tpcds_query_12   VIEW   
-tpcds_query_13   VIEW   
-tpcds_query_14   VIEW   
-tpcds_query_15   VIEW   
-tpcds_query_18   VIEW   
-tpcds_query_19   VIEW   
-tpcds_query_20   VIEW   
-tpcds_query_21   VIEW   
-tpcds_query_22   VIEW   
-tpcds_query_23   VIEW   
-tpcds_query_24   VIEW   
-tpcds_query_25   VIEW   
-tpcds_query_26   VIEW   
-tpcds_query_27   VIEW   
-tpcds_query_28   VIEW   
-tpcds_query_29   VIEW   
-tpcds_query_30   VIEW   
-tpcds_query_31   VIEW   
-tpcds_query_32   VIEW   
-tpcds_query_33   VIEW   
-tpcds_query_34   VIEW   
-tpcds_query_35   VIEW   
-tpcds_query_36   VIEW   
-tpcds_query_37   VIEW   
-tpcds_query_38   VIEW   
-tpcds_query_40   VIEW   
-tpcds_query_41   VIEW   
-tpcds_query_42   VIEW   
-tpcds_query_43   VIEW   
-tpcds_query_44   VIEW   
-tpcds_query_45   VIEW   
-tpcds_query_46   VIEW   
-tpcds_query_47   VIEW   
-tpcds_query_48   VIEW   
-tpcds_query_49   VIEW   
-tpcds_query_50   VIEW   
-tpcds_query_52   VIEW   
-tpcds_query_53   VIEW   
-tpcds_query_54   VIEW   
-tpcds_query_55   VIEW   
-tpcds_query_56   VIEW   
-tpcds_query_57   VIEW   
-tpcds_query_58   VIEW   
-tpcds_query_59   VIEW   
-tpcds_query_60   VIEW   
-tpcds_query_61   VIEW   
-tpcds_query_62   VIEW   
-tpcds_query_63   VIEW   
-tpcds_query_64   VIEW   
-tpcds_query_65   VIEW   
-tpcds_query_66   VIEW   
-tpcds_query_67   VIEW   
-tpcds_query_68   VIEW   
-tpcds_query_69   VIEW   
-tpcds_query_70   VIEW   
-tpcds_query_71   VIEW   
-tpcds_query_72   VIEW   
-tpcds_query_73   VIEW   
-tpcds_query_74   VIEW   
-tpcds_query_75   VIEW   
-tpcds_query_76   VIEW   
-tpcds_query_77   VIEW   
-tpcds_query_78   VIEW   
-tpcds_query_79   VIEW   
-tpcds_query_80   VIEW   
-tpcds_query_81   VIEW   
-tpcds_query_82   VIEW   
-tpcds_query_83   VIEW   
-tpcds_query_84   VIEW   
-tpcds_query_85   VIEW   
-tpcds_query_86   VIEW   
-tpcds_query_88   VIEW   
-tpcds_query_89   VIEW   
-tpcds_query_90   VIEW   
-tpcds_query_91   VIEW   
-tpcds_query_92   VIEW   
-tpcds_query_93   VIEW   
-tpcds_query_94   VIEW   
-tpcds_query_95   VIEW   
-tpcds_query_96   VIEW   
-tpcds_query_98   VIEW   
+path             type
+--------------   ----
+query_11         VIEW
+tpcds_query_1    VIEW
+tpcds_query_2    VIEW
+tpcds_query_3    VIEW
+tpcds_query_4    VIEW
+tpcds_query_5    VIEW
+tpcds_query_6    VIEW
+tpcds_query_7    VIEW
+tpcds_query_8    VIEW
+tpcds_query_9    VIEW
+tpcds_query_10   VIEW
+tpcds_query_11   VIEW
+tpcds_query_12   VIEW
+tpcds_query_13   VIEW
+tpcds_query_14   VIEW
+tpcds_query_15   VIEW
+tpcds_query_18   VIEW
+tpcds_query_19   VIEW
+tpcds_query_20   VIEW
+tpcds_query_21   VIEW
+tpcds_query_22   VIEW
+tpcds_query_23   VIEW
+tpcds_query_24   VIEW
+tpcds_query_25   VIEW
+tpcds_query_26   VIEW
+tpcds_query_27   VIEW
+tpcds_query_28   VIEW
+tpcds_query_29   VIEW
+tpcds_query_30   VIEW
+tpcds_query_31   VIEW
+tpcds_query_32   VIEW
+tpcds_query_33   VIEW
+tpcds_query_34   VIEW
+tpcds_query_35   VIEW
+tpcds_query_36   VIEW
+tpcds_query_37   VIEW
+tpcds_query_38   VIEW
+tpcds_query_40   VIEW
+tpcds_query_41   VIEW
+tpcds_query_42   VIEW
+tpcds_query_43   VIEW
+tpcds_query_44   VIEW
+tpcds_query_45   VIEW
+tpcds_query_46   VIEW
+tpcds_query_47   VIEW
+tpcds_query_48   VIEW
+tpcds_query_49   VIEW
+tpcds_query_50   VIEW
+tpcds_query_52   VIEW
+tpcds_query_53   VIEW
+tpcds_query_54   VIEW
+tpcds_query_55   VIEW
+tpcds_query_56   VIEW
+tpcds_query_57   VIEW
+tpcds_query_58   VIEW
+tpcds_query_59   VIEW
+tpcds_query_60   VIEW
+tpcds_query_61   VIEW
+tpcds_query_62   VIEW
+tpcds_query_63   VIEW
+tpcds_query_64   VIEW
+tpcds_query_65   VIEW
+tpcds_query_66   VIEW
+tpcds_query_67   VIEW
+tpcds_query_68   VIEW
+tpcds_query_69   VIEW
+tpcds_query_70   VIEW
+tpcds_query_71   VIEW
+tpcds_query_72   VIEW
+tpcds_query_73   VIEW
+tpcds_query_74   VIEW
+tpcds_query_75   VIEW
+tpcds_query_76   VIEW
+tpcds_query_77   VIEW
+tpcds_query_78   VIEW
+tpcds_query_79   VIEW
+tpcds_query_80   VIEW
+tpcds_query_81   VIEW
+tpcds_query_82   VIEW
+tpcds_query_83   VIEW
+tpcds_query_84   VIEW
+tpcds_query_85   VIEW
+tpcds_query_86   VIEW
+tpcds_query_88   VIEW
+tpcds_query_89   VIEW
+tpcds_query_90   VIEW
+tpcds_query_91   VIEW
+tpcds_query_92   VIEW
+tpcds_query_93   VIEW
+tpcds_query_94   VIEW
+tpcds_query_95   VIEW
+tpcds_query_96   VIEW
+tpcds_query_98   VIEW
 tpcds_query_99   VIEW
 </console>
 </unit>

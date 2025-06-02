@@ -14,5 +14,5 @@
 
 ===== Example =====
 
-See the [[:docs:tabli:data:move|move tabli command for example]]
+See the [[:docs:tabul:data:move|move tabul command for example]]
 

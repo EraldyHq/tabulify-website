@@ -27,8 +27,8 @@ vaultQVE9PT5kclVidjZCZnYyUUtKMFBvT200UGF3PT0+SmZRZFhXU2dHWEhCZmFpe
 
 
 ===== Cli Commands (Encryption / Decrption) =====
-  * [[docs:tabli:vault:encrypt|Encrypt]]
-  * [[docs:tabli:vault:decrypt|Decrypt]] 
+  * [[docs:tabul:vault:encrypt|Encrypt]]
+  * [[docs:tabul:vault:decrypt|Decrypt]]
 
 
 ===== Technically =====

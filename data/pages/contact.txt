@@ -4,14 +4,10 @@
 }
 ---
 <container width="700px" align="center">
-====== Tabulify - Where To Get Help ======
+====== Tabulify - Contacts / Where To Get Help ======
 
 
-<note spacing="my-3">
-''Feedback'' and ''Questions'' are always welcome. 
 
-Even if we think heel hard about it, real experience is the best feedback and we can't wait to hear what you have to say.
-</note>
 
 <card-columns>
 

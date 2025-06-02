@@ -27,22 +27,22 @@ The [[docs:op:fill|data fill operation]] is an operation that will [[docs:op:sel
   * [[#auto fill|auto]] - the data generated is automatically chosen
   * [[#generator|generator]] - the data generated is defined in a file called the ''generator''
 
-The [[docs:op:fill|fill operation]] is supported by the [[docs:tabli:data:fill|data fill command]].
+The [[docs:op:fill|fill operation]] is supported by the [[docs:tabul:data:fill|data fill command]].
 
 ===== Auto Fill =====
 
-Let's first delete all data with the [[docs:tabli:data:truncate|data truncate command]] to get a clean schema.
+Let's first delete all data with the [[docs:tabul:data:truncate|data truncate command]] to get a clean schema.
 <unit >
 <code bash>
-tabli data truncate *@sqlite
+tabul data truncate *@sqlite
 </code>
 </unit>
 
-The below [[docs:tabli:data:fill|fill command]] will fill all [[docs:resource:table|tables]] with auto-generated data
+The below [[docs:tabul:data:fill|fill command]] will fill all [[docs:resource:table|tables]] with auto-generated data
 
 <unit >
 <code bash>
-tabli data fill *@sqlite
+tabul data fill *@sqlite
 </code>
 
 <console>
@@ -71,7 +71,7 @@ web_site@memgen                 web_site@sqlite                 96             1
 </unit>
 
 <note>
-The [[docs:tabli:data:fill|data fill command]] loads ''1000'' records for each [[docs:resource:table|table]] because this is the default value of the  [[docs:generator:max-record-count|max-record-count]] [[docs:tabli:option|option]] ( This option defines the number of records generated ).
+The [[docs:tabul:data:fill|data fill command]] loads ''1000'' records for each [[docs:resource:table|table]] because this is the default value of the  [[docs:generator:max-record-count|max-record-count]] [[docs:tabul:option|option]] ( This option defines the number of records generated ).
 </note>
 
 
@@ -80,7 +80,7 @@ The [[docs:tabli:data:fill|data fill command]] loads ''1000'' records for each [
 By running the [[howto:getting_started:7_query|query 11 (of the query lesson)]], we don't get any data back.
 <unit >
 <code bash>
-tabli data print (sqlite/query_11.sql@tpcds_query)@sqlite
+tabul data print (sqlite/query_11.sql@tpcds_query)@sqlite
 </code>
 <console>
 customer_id   customer_first_name   customer_last_name   customer_email_address
@@ -93,7 +93,7 @@ Why ? Because the [[howto:getting_started:7_query|query 11]] is based on time da
 
 <unit >
 <code bash>
-tabli data head --limit 10 date_dim@sqlite
+tabul data head --limit 10 date_dim@sqlite
 </code>
 <console>
 The first 10 rows of the data resource (date_dim@sqlite):
@@ -150,7 +150,7 @@ This [[docs:resource:generator|generator]] is also a [[docs:resource:content|con
 
 <unit>
 <code bash>
-tabli data head date_dim_2001--datagen.yml@howto
+tabul data head date_dim_2001--datagen.yml@howto
 </code>
 <console>
 The first 10 rows of the data resource (date_dim_2001--datagen.yml@howto):
@@ -171,10 +171,10 @@ d_date       d_year
 
 ===== Fill with generators =====
 
-After having created a generator for the ''date_dim'' [[docs:resource:table|table]], we can pass it to the [[docs:tabli:data:fill|data fill command]] with the ''--generator-selector'' option to make the data generation more controled.
+After having created a generator for the ''date_dim'' [[docs:resource:table|table]], we can pass it to the [[docs:tabul:data:fill|data fill command]] with the ''--generator-selector'' option to make the data generation more controled.
 <unit >
 <code bash>
-tabli data fill --generator-selector date_dim_2001--datagen.yml@howto   *@sqlite
+tabul data fill --generator-selector date_dim_2001--datagen.yml@howto   *@sqlite
 </code>
 <note>
 As the option ''generator-selector'' is a [[docs:resource:selector|resource selector]], you can create a [[docs:resource:generator|generator]] for each table where you want to customize the generated data and select them with the [[docs:common:globbing|glob pattern]].
@@ -209,7 +209,7 @@ And the ''query 11'' is now giving back a result. The generated data is minimal 
 
 <unit >
 <code bash>
-tabli data print (sqlite/query_11.sql@tpcds_query)@sqlite
+tabul data print (sqlite/query_11.sql@tpcds_query)@sqlite
 </code>
 
 <console>

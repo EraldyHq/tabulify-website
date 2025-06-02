@@ -14,31 +14,31 @@ The ''tpcds'' is the [[built-in|built-in connection]] to the [[docs:system:tpcds
 The following tabular tables are available
 <unit>
 <code bash>
-tabli data list  [!s]*@tpcds
+tabul data list  [!s]*@tpcds
 </code>
 <console>
-path                     
-----------------------   
-call_center              
-catalog_page             
-catalog_returns          
-catalog_sales            
-customer                 
-customer_address         
-customer_demographics    
-date_dim                 
-dbgen_version            
-household_demographics   
-income_band              
-inventory                
-item                     
-promotion                
-reason                   
-time_dim                 
-warehouse                
-web_page                 
-web_returns              
-web_sales                
+path
+----------------------
+call_center
+catalog_page
+catalog_returns
+catalog_sales
+customer
+customer_address
+customer_demographics
+date_dim
+dbgen_version
+household_demographics
+income_band
+inventory
+item
+promotion
+reason
+time_dim
+warehouse
+web_page
+web_returns
+web_sales
 web_site
 </console>
 </unit>

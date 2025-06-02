@@ -1,9 +1,9 @@
 ---json
 {
     "aliases": [
-        { "path": ":howto:database:tabli_load_generated_data" }
+        { "path": ":howto:database:tabul_load_generated_data" }
     ],
-    "description": "This how-to will show you how to fill a table with auto-generated data and the Tabli fill action.",
+    "description": "This how-to will show you how to fill a table with auto-generated data and the Tabul fill action.",
     "low_quality_page": "false",
     "name": "Fill a table with Auto Data Generation",
     "page_id": "jdsfx82vgfkzalqpn6pcm"
@@ -13,7 +13,7 @@
 
 
 ===== About =====
-This [[..:howto|how-to]] will show you how to <icon name="mdi:format-color-fill"/> [[docs:op:fill|fill]] a [[docs:resource:table|table]] with auto-[[docs:generator:generator|generated data]] and the [[docs:tabli:data:fill|Tabli fill action]].
+This [[..:howto|how-to]] will show you how to <icon name="mdi:format-color-fill"/> [[docs:op:fill|fill]] a [[docs:resource:table|table]] with auto-[[docs:generator:generator|generated data]] and the [[docs:tabul:data:fill|Tabul fill action]].
 
 ===== Steps =====
 ==== Prerequisites ====
@@ -22,7 +22,7 @@ You should have ''Tabulify'' installed on your computer. [[howto:getting_started
 
 <unit display="none">
 <code bash>
-tabli data drop *@sqlite
+tabul data drop *@sqlite
 </code>
 </unit>
 
@@ -32,47 +32,47 @@ For the purpose of this ''how-to'', we will work with the ''date_dim'' [[docs:sy
 
 <unit>
 <code bash>
-tabli data create date_dim@tpcds @sqlite
+tabul data create date_dim@tpcds @sqlite
 </code>
 <console>
-source           target            
---------------   ---------------   
+source           target
+--------------   ---------------
 date_dim@tpcds   date_dim@sqlite
 </console>
 </unit>
 ==== Fill the date_dim table with 10 rows ====
-With the [[docs:tabli:data:fill|tabli data fill operation]], insert ''10'' rows automatically generated into the [[docs:resource:table|table]] ''date_dim''
+With the [[docs:tabul:data:fill|tabul data fill operation]], insert ''10'' rows automatically generated into the [[docs:resource:table|table]] ''date_dim''
 
 
 <unit>
 <code bash>
-tabli data fill --max-record-count 10 date_dim@sqlite
+tabul data fill --max-record-count 10 date_dim@sqlite
 </code>
 <console>
-Source            Target            Latency (ms)   Row Count   Error   Message   
----------------   ---------------   ------------   ---------   -----   -------   
+Source            Target            Latency (ms)   Row Count   Error   Message
+---------------   ---------------   ------------   ---------   -----   -------
 date_dim@memgen   date_dim@sqlite   48             10
 </console>
 </unit>
 ==== Check the result ====
 
-With the [[docs:tabli:data:print|data print command]], we can see the content of the ''date_dim'' table in the [[docs:connection:howtos|sqlite connection]]
+With the [[docs:tabul:data:print|data print command]], we can see the content of the ''date_dim'' table in the [[docs:connection:howtos|sqlite connection]]
 <unit>
 <code bash>
-tabli data print date_dim@sqlite
+tabul data print date_dim@sqlite
 </code>
 <console>
-d_date_sk   d_date_id   d_date       d_month_seq   d_week_seq   d_quarter_seq   d_year   d_dow   d_moy   d_dom   d_qoy   d_fy_year   d_fy_quarter_seq   d_fy_week_seq   d_day_name   d_quarter_name   d_holiday   d_weekend   d_following_holiday   d_first_dom   d_last_dom   d_same_day_ly   d_same_day_lq   d_current_day   d_current_week   d_current_month   d_current_quarter   d_current_year   
----------   ---------   ----------   -----------   ----------   -------------   ------   -----   -----   -----   -----   ---------   ----------------   -------------   ----------   --------------   ---------   ---------   -------------------   -----------   ----------   -------------   -------------   -------------   --------------   ---------------   -----------------   --------------   
-        1   a           2025-05-17             4            3               3        8       2       7       9       7           3                  9               8   x            f                p           z           s                               7            4               5               3   x               u                j                 z                   q                
-        2   b           2025-05-19             4            9               5        8      10       6       4       0           6                 10              10   g            t                w           u           d                               0            3               1               2   l               c                s                 q                   p                
-        3   c           2025-05-16            10            3               7        1       3      10       8       9           4                 10               2   d            l                x           d           x                               1            3               3               9   k               g                n                 q                   p                
-        4   d           2025-05-13             0           10               7       10       1       2       1       3          10                 10               0   r            h                r           o           w                               7           10               8               7   h               m                o                 j                   w                
-        5   e           2025-05-11             5            7               5        7       4       3       4       2           5                 10               9   r            v                p           b           k                              10            1               9               9   p               s                f                 j                   i                
-        6   f           2025-05-13             1            8               0        7       2      10       3       5           7                  9               6   h            b                p           d           s                               8            2               9               6   w               l                v                 t                   s                
-        7   g           2025-05-16             0            1               2        9       3       1       6       0           2                  1               2   n            p                w           r           v                               4            1               8               1   k               g                t                 n                   e                
-        8   h           2025-05-12             8           10               4        2       4      10       4       2           4                  5               8   k            p                r           i           q                               4            0               1               0   c               z                j                 u                   p                
-        9   i           2025-05-21             6            4               7        3       2       2       8       3          10                  1               9   n            h                r           k           a                               6            3               3               8   s               q                b                 n                   x                
+d_date_sk   d_date_id   d_date       d_month_seq   d_week_seq   d_quarter_seq   d_year   d_dow   d_moy   d_dom   d_qoy   d_fy_year   d_fy_quarter_seq   d_fy_week_seq   d_day_name   d_quarter_name   d_holiday   d_weekend   d_following_holiday   d_first_dom   d_last_dom   d_same_day_ly   d_same_day_lq   d_current_day   d_current_week   d_current_month   d_current_quarter   d_current_year
+---------   ---------   ----------   -----------   ----------   -------------   ------   -----   -----   -----   -----   ---------   ----------------   -------------   ----------   --------------   ---------   ---------   -------------------   -----------   ----------   -------------   -------------   -------------   --------------   ---------------   -----------------   --------------
+        1   a           2025-05-17             4            3               3        8       2       7       9       7           3                  9               8   x            f                p           z           s                               7            4               5               3   x               u                j                 z                   q
+        2   b           2025-05-19             4            9               5        8      10       6       4       0           6                 10              10   g            t                w           u           d                               0            3               1               2   l               c                s                 q                   p
+        3   c           2025-05-16            10            3               7        1       3      10       8       9           4                 10               2   d            l                x           d           x                               1            3               3               9   k               g                n                 q                   p
+        4   d           2025-05-13             0           10               7       10       1       2       1       3          10                 10               0   r            h                r           o           w                               7           10               8               7   h               m                o                 j                   w
+        5   e           2025-05-11             5            7               5        7       4       3       4       2           5                 10               9   r            v                p           b           k                              10            1               9               9   p               s                f                 j                   i
+        6   f           2025-05-13             1            8               0        7       2      10       3       5           7                  9               6   h            b                p           d           s                               8            2               9               6   w               l                v                 t                   s
+        7   g           2025-05-16             0            1               2        9       3       1       6       0           2                  1               2   n            p                w           r           v                               4            1               8               1   k               g                t                 n                   e
+        8   h           2025-05-12             8           10               4        2       4      10       4       2           4                  5               8   k            p                r           i           q                               4            0               1               0   c               z                j                 u                   p
+        9   i           2025-05-21             6            4               7        3       2       2       8       3          10                  1               9   n            h                r           k           a                               6            3               3               8   s               q                b                 n                   x
        10   j           2025-05-14             1            4               4       10       8       6       6       2          10                  7               8   k            k                r           q           n                              10            8               6               5   l               a                q                 d                   o
 </console>
 </unit>
@@ -80,11 +80,11 @@ d_date_sk   d_date_id   d_date       d_month_seq   d_week_seq   d_quarter_seq   
 
 <unit>
 <code bash>
-tabli data fill --max-record-count 10000 date_dim@sqlite
+tabul data fill --max-record-count 10000 date_dim@sqlite
 </code>
 <console>
-Source            Target            Latency (ms)   Row Count   Error   Message   
----------------   ---------------   ------------   ---------   -----   -------   
+Source            Target            Latency (ms)   Row Count   Error   Message
+---------------   ---------------   ------------   ---------   -----   -------
 date_dim@memgen   date_dim@sqlite   513            10000
 </console>
 </unit>
@@ -93,11 +93,11 @@ date_dim@memgen   date_dim@sqlite   513            10000
 And we got ''10.000'' rows
 <unit>
 <code bash>
-tabli data list -a count date_dim@sqlite
+tabul data list -a count date_dim@sqlite
 </code>
 <console>
-count   
------   
+count
+-----
 10000
 </console>
 </unit>

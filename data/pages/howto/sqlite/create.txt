@@ -20,7 +20,7 @@ This howto shows you how to add a [[:docs:system:sqlite:sqlite|Sqlite]] [[:docs:
 
 An sqlite connection supports :
   * all [[:docs:connection:attribute|common connection attributes]]
-    * [[:docs:connection:uri|Uri]], 
+    * [[:docs:connection:uri|Uri]],
     * user,
     * [[:docs:connection:password|password]]
     * ...
@@ -37,12 +37,12 @@ When creating a connection, you need to give the path to your Sqlite database fi
 Here are the attributes of the [[howto:oracle:howto_connection|howto connection]]
 <unit>
 <code bash display="none">
-tabli data print --type text .tabli/.tabli.yml@home | yq '.connections.sqlite'
+tabul data print --type text .tabul/.tabul.yml@home | yq '.connections.sqlite'
 </code>
 <console yaml>
 comment: The sqlite default connection
 driver: org.sqlite.JDBC
-uri: jdbc:sqlite:////home/tabulify/.tabli/sqlite.db
+uri: jdbc:sqlite:////home/tabulify/.tabul/sqlite.db
 </console>
 </unit>
 
@@ -53,11 +53,11 @@ uri: jdbc:sqlite:////home/tabulify/.tabli/sqlite.db
 
 
 
-You can create a [[:docs:system:sqlite:sqlite|Sqlite]] connection, 
+You can create a [[:docs:system:sqlite:sqlite|Sqlite]] connection,
   * directly in the configuration vault
-  * or via the tabli command
+  * or via the tabul command
 
-==== Configuration Vault =====
+==== Configuration Vault ====
 
 In a [[docs:conf:vault|Configuration Vault]], to define a sqlite [[docs:connection:connection|connection]] with the name ''mySqlite'', you would write:
 \\
@@ -70,8 +70,8 @@ connections:
 </code>
    * On Windows
 <code yaml>
-connections: 
-  mySqlite: 
+connections:
+  mySqlite:
     url: jdbc\:sqlite\:///C\:/Users/user/AppData/Local/tabulify/sqlite.db
     driver: org.sqlite.JDBC
 </code>
@@ -80,18 +80,18 @@ connections:
 
 
 
-==== Tabli ====
+==== Tabul ====
 
 
-With the [[docs:tabli:connection:add|tabli add command of the connection module]], adding a Sqlite connection with the name ''sqliteConnectionName'':
+With the [[docs:tabul:connection:add|tabul add command of the connection module]], adding a Sqlite connection with the name ''sqliteConnectionName'':
 
 
   * On Windows
 <code bash>
-tabli connection add "sqliteConnectionName" "jdbc:sqlite:C:/work/mydatabase.db"
+tabul connection add "sqliteConnectionName" "jdbc:sqlite:C:/work/mydatabase.db"
 </code>
   * On Linux
 <code bash>
-tabli connection add "sqliteConnectionName" "jdbc:sqlite:/home/leo/work/mydatabase.db"
+tabul connection add "sqliteConnectionName" "jdbc:sqlite:/home/leo/work/mydatabase.db"
 </code>
 

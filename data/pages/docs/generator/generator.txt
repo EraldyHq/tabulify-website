@@ -1,8 +1,7 @@
 ---json
 {
     "description": "The data generator is a module that permits to generate data.",
-    "page_id": "xxxkddnftkzksslsaulzu",
-    "title": "Generate data as you wish"
+    "page_id": "xxxkddnftkzksslsaulzu"
 }
 ---
 ====== Data Generator ======

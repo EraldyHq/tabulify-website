@@ -11,5 +11,5 @@
 This operation will create an ''empty'' [[docs:resource:resource|data resource]] and defines optionally its [[docs:resource:metadata|metadata]] (ie [[docs:resource:structure|structure]])
 
 
-The [[docs:tabli:data:create|data create operation]] supports the ''create'' operation.
+The [[docs:tabul:data:create|data create operation]] supports the ''create'' operation.
 
