@@ -20,25 +20,26 @@ tabul connection info howto
 </code>
 <console>
 Information about the connection (howto)
-Attribute               Value                                   Description
----------------------   -------------------------------------   --------------------------------------------------------------------
-BOOLEAN_DATA_TYPE       Native                                  Boolean data type used to store boolean values
-COMMENT                 The location of the how to files        A connection description
-DATE_DATA_TYPE          NATIVE                                  Date data type used to store date values
-HOST                                                            Host Server
-MAX_CONCURRENT_THREAD                                           The maximum number of threads that can be created against the system
-MAX_NAME_IN_PATH                                                The maximum number of names in a path
-NAME                    howto                                   The name of the connection
-NATIVES                                                         Native Driver attributes (jdbc properties, ...)
-ORIGIN                                                          The origin of the connection
-PASSWORD                                                        The user password
-PORT                    -1                                      Host Port
-TABULAR_FILE_TYPE       text/csv                                The default file type when downloading tabular data
-TIMESTAMP_DATA_TYPE     NATIVE                                  Timestamp data type used to store timestamp values
-TIME_DATA_TYPE          NATIVE                                  Time format data type to store time values
-URI                     file:///opt/tabulify/resources/howto/   The uri of the connection
-USER                                                            The user name
-WORKING_PATH            /opt/tabulify/resources/howto           The working path (Schema for database, directory for file system)
+Attribute                   Value                                   Description                                                            
+-------------------------   -------------------------------------   --------------------------------------------------------------------   
+BOOLEAN_DATA_TYPE           Native                                  Boolean data type used to store boolean values                         
+COMMENT                     The location of the how to files        A connection description                                               
+DATE_DATA_TYPE              NATIVE                                  Date data type used to store date values                               
+HOST                                                                Host Server                                                            
+MAX_CONCURRENT_THREAD                                               The maximum number of threads that can be created against the system   
+MAX_NAME_IN_PATH                                                    The maximum number of names in a path                                  
+NAME                        howto                                   The name of the connection                                             
+NATIVES                                                             Native Driver attributes (jdbc properties, ...)                        
+ORIGIN                                                              The origin of the connection                                           
+PASSWORD                                                            The user password                                                      
+PORT                                                                Host Port                                                              
+TABULAR_FILE_TYPE           text/csv                                The default file type when downloading tabular data                    
+TIMESTAMP_DATA_TYPE         NATIVE                                  Timestamp data type used to store timestamp values                     
+TIME_DATA_TYPE              NATIVE                                  Time format data type to store time values                             
+URI                         file:///opt/tabulify/resources/howto/   The uri of the connection                                              
+USER                                                                The user name                                                          
+VARCHAR_DEFAULT_PRECISION                                           Default precision                                                      
+WORKING_PATH                /opt/tabulify/resources/howto           The working path (Schema for database, directory for file system)
 </console>
 </unit>
 

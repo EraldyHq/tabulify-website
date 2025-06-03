@@ -13,89 +13,8 @@
 
 ===== Example =====
 
-==== Sending data resources ====
-
-In the below [[:docs:flow:pipeline|pipeline]], we:
-  * [[docs:op:select|select]] data resources that will be send as attachement.
-  * and we send them
-<unit>
-<file yaml pipeline/email_resources.yml>
-pipeline:
-  - name: "Select"
-    comment: "This operation select the resources to send"
-    operation: "select"
-    args:
-      data-selector: "email/*.csv@howto"
-  - name: "Send"
-    comment: "Send the selected resources as email attachment"
-    operation: "sendmail"
-    args:
-      target-uri: "@smtp" # smtp is the default smtp connection and is therefore optional
-      to: "support@tabulify.com"
-      subject: "Demo: How to send resources"
-      txt: |
-        Please, find attached the report data
-
-</file>
-If you [[docs:tabul:flow:execute|execute this pipeline]]
-<code bash>
-tabul flow execute pipeline/email_resources.yml@howto
-</code>
-Output:
-<console>
-jakarta.mail.event.TransportEvent[source=smtps://admin@mailpit-bcf52bfa.nip.io]
-
-List of executions
-ExecutionId   OperationName   DataPathsCount   DataPathsList
------------   -------------   --------------   -------------------------
-1             select          1                email/analytics.csv@howto
-2             sendmail        1                email/analytics.csv@howto
-</console>
-</unit>
-
-==== Sending an email list ====
-
-<unit>
-<file yaml pipeline/email_list.yml>
-pipeline:
-  - name: "Define"
-    comment: "This operation defines a data path with the expected columns of a mailing list"
-    operation: "define"
-    args:
-      data-resource:
-        data-attributes:
-          columns: ["to","from","subject","txt","html"]
-        data:
-          - [ "foo@tabulify.com", "support@tabulify.com", "Email for foo", "A textual email body", "<html><body><h1>A html email body</h1></body></html>"]
-          - [ "bar@tabulify.com", "support@tabulify.com", "Email for bar", "A textual email body", "<html><body><h1>A html email body</h1></body></html>"]
-  - name: "Send"
-    comment: "Send the email"
-    operation: "sendmail"
-    args:
-      target-uri: "@smtp" # smtp is the default smtp connection and is therefore optional
-      step-granularity: "record"
-
-</file>
-If you [[docs:tabul:flow:execute|execute this pipeline]]
-<code bash>
-tabul flow execute pipeline/email_list.yml@howto
-</code>
-Output:
-<console>
-jakarta.mail.event.TransportEvent[source=smtps://admin@mailpit-bcf52bfa.nip.io]
-jakarta.mail.event.TransportEvent[source=smtps://admin@mailpit-bcf52bfa.nip.io]
-
-List of executions
-ExecutionId   OperationName   DataPathsCount   DataPathsList
------------   -------------   --------------   ----------------
-1             define          1                ace9e56e2@memory
-2             sendmail        1                ace9e56e2@memory
-</console>
-</unit>
-
-The result in [[https://github.com/ChangemakerStudios/Papercut-SMTP|PaperCut]].
-
-{{:docs:op:email_list_illustration.png|}}
+  * [[:howto:email:mailing_list|]]
+  * [[howto:email:send_resources|]]
 
 ===== Arguments =====
 
@@ -119,7 +38,7 @@ The result in [[https://github.com/ChangemakerStudios/Papercut-SMTP|PaperCut]].
 
 ==== Record run ====
 
-When running the send operation by record, the send operation except the following [[:docs:resource:column|columns]]:
+When running the [[:howto:email:mailing_list|send operation by record]], the send operation except the following [[:docs:resource:column|columns]]:
 
 ^ Column Name ^ Optionality ^ Default ^ Description ^
 | ''to'' | In [[docs:common:environment|production]], ''mandatory'', \\ in other environment, the ''to'' property of the smtp connection is used || The ''to'' address(es) |

@@ -17,28 +17,28 @@ The following tabular tables are available
 tabul data list  [!s]*@tpcds
 </code>
 <console>
-path
-----------------------
-call_center
-catalog_page
-catalog_returns
-catalog_sales
-customer
-customer_address
-customer_demographics
-date_dim
-dbgen_version
-household_demographics
-income_band
-inventory
-item
-promotion
-reason
-time_dim
-warehouse
-web_page
-web_returns
-web_sales
-web_site
+path                     type           
+----------------------   ------------   
+call_center              sql/relation   
+catalog_page             sql/relation   
+catalog_returns          sql/relation   
+catalog_sales            sql/relation   
+customer                 sql/relation   
+customer_address         sql/relation   
+customer_demographics    sql/relation   
+date_dim                 sql/relation   
+dbgen_version            sql/relation   
+household_demographics   sql/relation   
+income_band              sql/relation   
+inventory                sql/relation   
+item                     sql/relation   
+promotion                sql/relation   
+reason                   sql/relation   
+time_dim                 sql/relation   
+warehouse                sql/relation   
+web_page                 sql/relation   
+web_returns              sql/relation   
+web_sales                sql/relation   
+web_site                 sql/relation
 </console>
 </unit>

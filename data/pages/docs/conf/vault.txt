@@ -31,9 +31,9 @@ You can get the location of the configuration vault with the [[docs:tabul:env:li
 tabul env list conf
 </code>
 <console>
-attribute   value                              origin    description
----------   --------------------------------   -------   ------------------------
-CONF        /home/tabulify/.tabul/.tabul.yml   Default   The conf vault file path
+attribute   value                           origin    description                
+---------   -----------------------------   -------   ------------------------   
+CONF        /home/admin/.tabul/.tabul.yml   Default   The conf vault file path
 </console>
 </unit>
 

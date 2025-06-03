@@ -1,0 +1,51 @@
+====== How to send data resources ======
+
+===== About =====
+This howto shows you how to send an email with a data resource attached via the [[:docs:op:sendmail|sendmail]] operation.
+
+===== Steps =====
+
+
+In the below [[:docs:flow:pipeline|pipeline]], we use the following steps:
+  * [[docs:op:select|select]] to select data resources that will be send as attachement.
+  * [[:docs:op:sendmail|sendmail]] to send them
+
+==== The pipeline ====
+
+<unit>
+<file yaml pipeline/email_resources.yml>
+pipeline:
+  - name: "Select"
+    comment: "This operation select the resources to send"
+    operation: "select"
+    args:
+      data-selector: "email/*.csv@howto"
+  - name: "Send"
+    comment: "Send the selected resources as email attachment"
+    operation: "sendmail"
+    args:
+      target-uri: "@smtp" # smtp is the default smtp connection and is therefore optional
+      to: "support@tabulify.com"
+      subject: "Demo: How to send resources"
+      txt: |
+        Please, find attached the report data
+
+</file>
+</unit>
+
+==== The execution ====
+
+<unit>
+You can execute this pipeline with the [[docs:tabul:flow:execute|execute command]]
+<code bash>
+tabul flow execute pipeline/email_resources.yml@howto
+</code>
+Output:
+<console>
+List of executions
+ExecutionId   OperationName   DataPathsCount   DataPathsList
+-----------   -------------   --------------   -------------------------
+1             select          1                email/analytics.csv@howto
+2             sendmail        1                email/analytics.csv@howto
+</console>
+</unit>

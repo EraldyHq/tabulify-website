@@ -1,0 +1,62 @@
+====== How to send to a mailing list ======
+
+
+===== About =====
+This howto shows you how to send multiple email with the [[:docs:op:sendmail|sendmail]] operation.
+
+
+===== Steps =====
+
+==== Start a local smtp server ====
+
+  * [[https://github.com/ChangemakerStudios/Papercut-SMTP|PaperCut]].
+  * https://mailpit.axllent.org/
+==== Pipeline ====
+
+In this pipeline, we [[:docs:op:define|define a inline data resource]] but you can use any data resources (a [[:docs:resource:select|select query]], a [[docs:resource:csv|csv]], ...) where each column corresponds to a [[:docs:op:sendmail#record run|sendmail attributes]].
+
+
+<unit>
+<file yaml pipeline/email_list.yml>
+pipeline:
+  - name: "Define"
+    comment: "This operation defines a data path with the expected columns of a mailing list"
+    operation: "define"
+    args:
+      data-resource:
+        data-attributes:
+          columns: ["to","from","subject","txt","html"]
+        data:
+          - [ "foo@tabulify.com", "support@tabulify.com", "Email for foo", "A textual email body", "<html><body><h1>A html email body</h1></body></html>"]
+          - [ "bar@tabulify.com", "support@tabulify.com", "Email for bar", "A textual email body", "<html><body><h1>A html email body</h1></body></html>"]
+  - name: "Send"
+    comment: "Send the email"
+    operation: "sendmail"
+    args:
+      target-uri: "@smtp" # smtp is the default smtp connection and is therefore optional
+      step-granularity: "record"
+
+</file>
+</unit>
+
+==== Execution ====
+
+<unit>
+If you [[docs:tabul:flow:execute|execute this pipeline]]
+<code bash>
+tabul flow execute pipeline/email_list.yml@howto
+</code>
+Output:
+<console>
+List of executions
+ExecutionId   OperationName   DataPathsCount   DataPathsList
+-----------   -------------   --------------   ----------------
+1             define          1                ace9e56e2@memory
+2             sendmail        1                ace9e56e2@memory
+</console>
+</unit>
+
+
+
+{{:docs:op:email_list_illustration.png|}}
+
