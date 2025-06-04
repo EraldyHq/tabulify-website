@@ -26,17 +26,21 @@ After a [[howto:getting_started:1_install|fresh installation]], you should see t
 tabul service list
 </code>
 <console>
-4 services were found in the configuration vault (/home/tabulify/.tabul/.tabul.yml)
-name        type
----------   ------
-oracle      docker
+5 services were found in the configuration vault (/home/tabulify/.tabul/.tabul.yml)
+name        type     
+---------   ------   
+mysql       docker   
+oracle      docker   
+postgres    docker   
+smtp        docker   
 sqlserver   docker
-mysql       docker
-postgres    docker
 </console>
 </unit>
+
+where:
 
   * [[howto:oracle:howto_connection|oracle]] is an [[docs:system:oracle:oracle|oracle database]]
   * [[howto:sqlserver:howto_connection|sqlserver]] is an [[docs:system:sqlserver:sqlserver|sqlserver database]]
   * [[howto:mysql:howto_connection|mysql]] is a [[docs:system:mysql:mysql|mysql database]]
   * [[howto:postgres:howto_connection_service|postgres]] is a [[docs:system:postgres:postgres|postgres database]]
+  * [[howto:email:howto_connection_service|smtp]] is a [[:docs:system:smtp|smtp server]]

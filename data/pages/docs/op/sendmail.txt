@@ -53,14 +53,7 @@ When running the [[:howto:email:mailing_list|send operation by record]], the sen
 | ''txt'' | Mandatory if html is not present | none | The email text body |
 | ''html'' | Mandatory if txt is not present | none | The email html body |
 
-No attachements can be send for now in a record run.
+No attachements can be sent for now in a record run.
 
-===== Type =====
 
-==== MailPit Smtp Server for development ====
-
-In a local development environment, you could install a Mailpit smtp server (a server that accepts all message) such as:
-  * [[https://github.com/axllent/mailpit|Mailpit]]
-  * [[https://github.com/ChangemakerStudios/Papercut-SMTP|PaperCut]]
-to receive, test, and read the emails sent.
 

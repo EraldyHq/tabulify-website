@@ -1,5 +1,10 @@
 ---json
 {
+    "aliases": [
+        { "path": ":docs:connection:smtp" },
+        { "path": ":howto:email:connection_service" },
+        { "path": ":howto:email:howto_connection_service" }
+    ],
     "page_id": "2bzj3oyia935utmgfj7ik"
 }
 ---
@@ -7,22 +12,39 @@
 
 
 ===== About =====
-''smtp'' is a [[:docs:connection:built-in|built-in connection]] for a [[:docs:system:smtp|SMTP server system]].
+A ''smtp connection'' is a [[docs:connection:connection|connection]] to a <icon name="email" /> [[:docs:system:smtp|SMTP server system]].
 
-It's the default [[docs:connection:connection|connection]] of [[docs:op:sendmail|sendmail operation]].
+===== Howto =====
+
+  * [[howto:email:create_smtp_connection|]]
+  * [[howto:email:howto_connection_service]]
+  * [[howto:email:mailing_list|]]
+  * [[howto:email:send_resources|]]
+
+===== Default Name =====
+''smtp'' is the default connection name of [[docs:op:sendmail|sendmail operation]] if not specified.
+
+## Attributes
+
+You can modify the following [[:docs:conf:parameter|parameters]]
+
+In the URI, the host is mandatory.
 
 
-===== Default =====
+^ Name ^ Default ^ Description ^
+| URI | | ''%%smtp://host[:port]%%'' |
+| PORT | 25 | the smtp port |
+| FROM | user@fqdn | the default `from` address if none is provided |
+| FROM_NAME | user@fqdn | the default name `from` address if none is provided |
+| TO | | the default `to` address if none is provided |
+| TO_NAMES | | the default `names` to address if none is provided |
+| AUTH | false |
+| TLS | false | enable secured communication with TLS |
+| DEBUG | false | toggle for debug statement |
 
-It defaults to the local smtp server as you can see with the [[docs:tabul:connection:list|tabul connection list]].
-<unit>
-<code bash>
-tabul connection list smtp
-</code>
-<console>
-name   uri                
-----   ----------------   
-smtp   smtp://localhost
-</console>
-</unit>
+Inherited from [[:docs:connection:attribute|built-in connection attributes]]
+^ Name ^ Default ^ Description ^
+| USER | | the connection user |
+| PASSWORD | | the connection password |
+
 

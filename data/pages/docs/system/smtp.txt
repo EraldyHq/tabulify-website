@@ -7,77 +7,19 @@
 
 
 ===== About =====
-''smtp'' is a special [[docs:system:system|system]] where you can only [[docs:op:sendmail|send an email]].
+''smtp'' is a special [[docs:system:system|system]] where you can only [[docs:op:sendmail|send]] an <icon name="email" /> email.
+
+To send an email, you need to:
+  * create a [[:docs:connection:smtp|SMTP connection]]
+  * and use the [[:docs:op:sendmail|sendmail operation]]
 
 
-===== Built-in connection =====
+===== Howto =====
 
-The default connection is the [[docs:connection:smtp|smtp connection]].
-
-
-===== Smtp Server Connection creation =====
-
-To create a ''smtp'' connection, you have the following possibilities
-<tabs enclosed-tabs>
-<panel selected>
-<label>Configuration Vault</label>
-In a [[docs:conf:vault|Configuration Vault]], to define a smtp [[docs:connection:connection|connection]] with the name ''mySmtp'', you could write:
-\\
-
-<code yaml>
-connections:
-  mySmtp:
-    uri: smtp://localhost:587
-    user: user
-    password: ${TABUL_MY_SMTP_PASSWORD}
-    to: foo@tabulify.com; bar@tabulify.com
-    to-names: foo; bar
-    from: tabulify@server.com
-    from-name: tabulify
-    tls: true
-    auth: true
-</code>
-
-</panel>
-<panel>
-<label>Tabul</label>
-
-With the [[docs:tabul:connection:add|tabul add command of the connection module]], adding a smtp connection with the name ''smtpConnectionName'':
-
-<code bash>
-tabul connection add "smtpConnectionName" "smtp://localhost:587"
-</code>
-
-Note that you can add all configuration as query properties of the uri.
-
-</panel>
-</tabs>
-
-===== URI =====
-
-```
-smtp://host[:port]
-```
-## Parameters
-
-You can modify the following [[:docs:conf:parameter|parameters]]
-
-In the URI, the host is mandatory.
+  * [[howto:email:create_smtp_connection]]
+  * [[howto:email:send_resources|]]
+  * [[howto:email:mailing_list|]]
 
 
-^ Name ^ Default ^ Description ^
-| PORT | 25 | the smtp port |
-| FROM | user@fqdn | the default `from` address if none is provided |
-| FROM_NAME | user@fqdn | the default name `from` address if none is provided |
-| TO | | the default `to` address if none is provided |
-| TO_NAMES | | the default `names` to address if none is provided |
-| AUTH | false |
-| TLS | false | enable secured communication with TLS |
-| DEBUG | false | toggle for debug statement |
-
-Inherited from [[:docs:connection:attribute|built-in connection attributes]]
-^ Name ^ Default ^ Description ^
-| USER | | the connection user |
-| PASSWORD | | the connection password |
 
 

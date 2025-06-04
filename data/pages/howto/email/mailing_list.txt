@@ -1,16 +1,42 @@
+---json
+{
+    "page_id": "870ct5p9pv00ig38c0zp0"
+}
+---
 ====== How to send to a mailing list ======
 
 
 ===== About =====
-This howto shows you how to send multiple email with the [[:docs:op:sendmail|sendmail]] operation.
+This howto shows you how to send multiple email <icon name="email" /> with the [[:docs:op:sendmail|sendmail]] operation.
 
 
 ===== Steps =====
 
-==== Start a local smtp server ====
+==== Start the howto smtp server ====
 
-  * [[https://github.com/ChangemakerStudios/Papercut-SMTP|PaperCut]].
-  * https://mailpit.axllent.org/
+Start the [[howto:email:howto_connection_service|howto smtp server]]
+
+<unit>
+<code bash>
+tabul service start smtp
+</code>
+<console>
+1 service was started
+Name   Type     
+----   ------   
+smtp   docker
+</console>
+</unit>
+
+Check that you can ping it
+<unit>
+<code bash>
+tabul connection ping smtp
+</code>
+<console>
+The connection (smtp) has been pinged successfully
+</console>
+</unit>
 ==== Pipeline ====
 
 In this pipeline, we [[:docs:op:define|define a inline data resource]] but you can use any data resources (a [[:docs:resource:select|select query]], a [[docs:resource:csv|csv]], ...) where each column corresponds to a [[:docs:op:sendmail#record run|sendmail attributes]].
@@ -48,15 +74,20 @@ tabul flow execute pipeline/email_list.yml@howto
 </code>
 Output:
 <console>
+jakarta.mail.event.TransportEvent[source=smtp://admin@localhost]
+
 List of executions
-ExecutionId   OperationName   DataPathsCount   DataPathsList
------------   -------------   --------------   ----------------
-1             define          1                ace9e56e2@memory
-2             sendmail        1                ace9e56e2@memory
+ExecutionId   OperationName   DataPathsCount   DataPathsList      
+-----------   -------------   --------------   ----------------   
+1             define          1                e2428b3e6@memory   
+2             sendmail        1                e2428b3e6@memory
 </console>
 </unit>
 
+==== Check the Inbox ====
 
 
-{{:docs:op:email_list_illustration.png|}}
+In the [[http://localhost:8025|mailpit inbox]], you can then see the 2 emails.
+
+{{:docs:op:email_list_illustration.png?600|}}
 

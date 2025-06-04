@@ -1,7 +1,15 @@
+---json
+{
+    "aliases": [
+        { "path": ":howto:email:attachment" }
+    ],
+    "page_id": "pfxfd4ndhmp8h1al4g4ff"
+}
+---
 ====== How to send data resources ======
 
 ===== About =====
-This howto shows you how to send an email with a data resource attached via the [[:docs:op:sendmail|sendmail]] operation.
+This howto shows you how to send an email <icon name="email" /> with a data resource attached via the [[:docs:op:sendmail|sendmail]] operation.
 
 ===== Steps =====
 
@@ -9,6 +17,31 @@ This howto shows you how to send an email with a data resource attached via the 
 In the below [[:docs:flow:pipeline|pipeline]], we use the following steps:
   * [[docs:op:select|select]] to select data resources that will be send as attachement.
   * [[:docs:op:sendmail|sendmail]] to send them
+==== Start the howto smtp server ====
+
+Start the [[howto:email:howto_connection_service|howto smtp server]]
+
+<unit>
+<code bash>
+tabul service start smtp
+</code>
+<console>
+1 service was started
+Name   Type     
+----   ------   
+smtp   docker
+</console>
+</unit>
+
+Check that you can ping it
+<unit>
+<code bash>
+tabul connection ping smtp
+</code>
+<console>
+The connection (smtp) has been pinged successfully
+</console>
+</unit>
 
 ==== The pipeline ====
 
@@ -43,9 +76,16 @@ tabul flow execute pipeline/email_resources.yml@howto
 Output:
 <console>
 List of executions
-ExecutionId   OperationName   DataPathsCount   DataPathsList
------------   -------------   --------------   -------------------------
-1             select          1                email/analytics.csv@howto
+ExecutionId   OperationName   DataPathsCount   DataPathsList               
+-----------   -------------   --------------   -------------------------   
+1             select          1                email/analytics.csv@howto   
 2             sendmail        1                email/analytics.csv@howto
 </console>
 </unit>
+
+==== Check the Inbox ====
+
+
+In the [[http://localhost:8025|mailpit inbox]], you can then see the  email with the attached <icon name="carbon:csv" /> [[:docs:resource:csv|csv]].
+
+{{:howto:email:email_send_resource_illustration.png|}}
