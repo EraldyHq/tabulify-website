@@ -88,13 +88,17 @@ The ''transfer'' operation is performed by the [[docs:tabul:data:transfer|tabul 
 
 The ''transfer'' operation supports the following values for the ''transfer-operation'' argument.
 
-^ Name ^ Alias ^ Require Same \\ Source/Target \\ Structure and Data ^ Local Equivalent Metadata Operation ^
-| [[copy|copy]] | | Yes | - |
-| [[move|move]] | | Yes | [[rename|rename]] |
-| [[insert|insert]] | [[insert|append]] | No | - |
-| [[upsert|upsert]] | | No | - |
-| [[update|update]] | | No | - |
-| [[delete|delete]] | | No | - |
+^ Name ^ Source/Target with \\ Same  Structure \\ Same Data ^ Additional Constraint ^
+| [[copy|copy]] | Yes | target does not exist \\ or is empty |
+| [[insert|insert]] | No | - |
+| [[upsert|upsert]] | No | - |
+| [[update|update]] | No | - |
+| [[delete|delete]] | No | - |
+
+Alias of [[copy|copy]]:
+^ Name ^ Alias ^ Local Equivalent Metadata Operation ^
+|   [[move|move]] | alias of [[copy|copy]] with source drop | [[rename|rename]] |
+|   [[replace|replace]] | alias of [[copy|copy]] with target drop | - |
 
 
 The default transfer operation is [[docs:system:system|system dependent]]:
@@ -105,11 +109,9 @@ The default transfer operation is [[docs:system:system|system dependent]]:
 
 The following values may be used for the ''target-operation'' and ''source-operation'' arguments.
 
-^ Value ^ Description ^
-| ''truncate'' | Truncate the resource |
-| ''drop'' | Drop the resource |
-| ''replace'' | Replace the resource |
-| ''keep'' | Does not modify the actual resource (ie does not replace the target if it exists) |
+^ Value ^ Description ^ Operation Equivalence ^
+| ''truncate'' | Truncate the resource | |
+| ''drop'' | Drop the resource | On the source, [[:docs:op:move|move]] \\ On the target, [[:docs:op:replace|replace]] |
 
 ==== Result ====
 If you set the ''output'' arguments to ''result'', a ''result data path'' will be returned (in place of targets) and it will contain the following columns:

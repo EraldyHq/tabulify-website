@@ -11,7 +11,11 @@
   * [[rename|rename]] the [[docs:resource:resource|data resource]] if it happens on the same [[docs:connection:connection|connection]]
   * or [[copy|copy]] and [[drop|drop]] the source [[docs:resource:resource|data resource]] if it happens between two [[docs:connection:connection|connections]].
 
+===== Transfer Shortcut =====
 
+A  ''move'' operation is shortcut for a [[transfer|transfer operation]] with:
+  * the operation method set to ''copy''
+  * and the [[docs:op:transfer#resource_operation|source-operation]] set to ''drop''
 ===== Example =====
 
 See the [[:docs:tabul:data:move|move tabul command for example]]
