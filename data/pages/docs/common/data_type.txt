@@ -33,4 +33,6 @@ If the data type is not supported by the [[docs:system:system|system]], ''Tabuli
 ==== Complex ====
 
   * ''xml'' (see also: [[docs:resource:xml]])
-  * ''json'' (see also: [[docs:resource:json]])
+  * ''json'': We support 2 ''json'' [[:docs:resource:type|data resource types]]
+    * [[docs:resource:json]], 
+    * and [[docs:resource:yaml]]

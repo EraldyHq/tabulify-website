@@ -9,12 +9,13 @@
         { "path": ":combostrap:icons:codicon:json.svg" }
     ],
     "low_quality_page": "false",
-    "name": "Load JSON in Sql Table",
-    "page_id": "a8z097oexo9em70mdaha6"
+    "name": "Load JSON in a Sql Table",
+    "page_id": "a8z097oexo9em70mdaha6",
+    "title": "How to load a JSON documents in a database"
 }
 ---
 
-====== Database HowTo - How to load a JSON document in a database ======
+====== Database HowTo - How to load JSON documents in a database ======
 
 
 ===== A propos =====
@@ -198,7 +199,7 @@ tabul data insert --target-operation replace --source-attribute columnName=phone
 </code>
 where:
   * ''%%--target-operation%%'' will ''replace'' the target ''phones@sqlite''
-  * ''%%--source-attribute columnName=phones%%'' will set the [[docs:resource:json#attribute|JSON attribute columnName]] to ''phones''
+  * ''%%--source-attribute columnName=phones%%'' will set the [[docs:resource:json#attribute|JSON attribute columnName]] to ''phone''
   * ''%%--virtual-column name=logical_name%%'' will add the [[docs:resource:virtual_column|virtual column]] names ''name'' with the [[docs:resource:logicalname|logical name attribute]]  of the source
   * ''json/phone/*@howto'' is the [[docs:resource:data_selector|source data selector]]
   * ''phones@sqlite'' is the [[docs:resource:target_uri|target uri]]
