@@ -15,7 +15,7 @@
 
 We provide a ''smtp'':
   * [[:docs:connection:howtos|howto connection]]
-  * and [[:docs:service:howtos|howto service]] (a Mailpit smtp server, a local server that accepts all message)
+  * and [[:docs:service:howtos|howto service]] (ie a Mailpit smtp server, a local server that accepts all messages)
 
 
 
