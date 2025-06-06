@@ -23,6 +23,12 @@ After a [[howto:getting_started:1_install|fresh installation]], you should see t
   * [[howto:postgres:howto_connection_service|postgres]] is a [[docs:system:postgres:postgres|postgres database]]
   * [[howto:email:howto_connection_service|smtp]] is a [[:docs:system:smtp|smtp server]]
 
+<unit display="none">
+Init env
+<code bash>
+tabul data drop --not-strict .tabul/.tabul.yml@home
+</code>
+</unit>
 <unit>
 <code bash>
 tabul connection list

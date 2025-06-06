@@ -11,6 +11,7 @@
 ====== Tabulify - Configuration Vault (.tabul.yml) ======
 
 
+
 ===== About =====
 The ''configuration vault'' is a [[docs:conf:conf|configuration file]] named ''.tabul.yml'' that stores:
 
@@ -20,12 +21,13 @@ The ''configuration vault'' is a [[docs:conf:conf|configuration file]] named ''.
 
 ===== Location =====
 
-By default:
+By default,
   * the file is searched recursively from the working directory
   * if not found, the path is in the user ''%%$HOME\.tabul%%'' directory.
 
 
 You can get the location of the configuration vault with the [[docs:tabul:env:list|variable list command]].
+
 <unit>
 <code bash>
 tabul env list conf
@@ -44,6 +46,12 @@ By default, if a configuration vault file does not exist, it will be created wit
   * the [[:docs:connection:howtos|howtos connections]]
   * and [[:docs:service:howtos|howtos services]]
 
+<unit display="none">
+Init env
+<code bash>
+tabul data drop --not-strict .tabul/.tabul.yml@home
+</code>
+</unit>
 <unit>
 <code bash display="none">
 tabul data print --type text .tabul/.tabul.yml@home

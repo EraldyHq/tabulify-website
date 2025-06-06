@@ -28,6 +28,12 @@ The ''URI'' is also known as:
 
 Example of URI with the [[docs:tabul:connection:list|tabul connection list]] command where you can see the [[howtos|howtos]] connection.
 
+<unit display="none">
+Init env
+<code bash>
+tabul data drop --not-strict .tabul/.tabul.yml@home
+</code>
+</unit>
 <unit>
 <code bash>
 tabul connection list
