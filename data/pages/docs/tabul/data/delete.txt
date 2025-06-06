@@ -90,7 +90,7 @@ where:
 
     -tcf,--target-commit-frequency <TARGET_COMMIT_FREQUENCY>    defines the commit frequency in number of batches against the target data resource
 
-    -to,--target-operation <TARGET_OPERATION>                   defines the data operations (replace, truncate) on the existing target before transfer.
+    -to,--target-operation <TARGET_OPERATION>                   defines the data operations (drop or truncate) on the existing target before transfer. A `replace` operation will drop the target.
 
     -twc,--target-worker-count <TARGET_WORKER_COUNT>            defines the target number of thread against the target datastore
 
@@ -98,16 +98,16 @@ where:
 
     -tmm,--transfer-mapping-method <TRANSFER_MAPPING_METHOD>    defines the method used to map the source columns to the target columns
 
-    -op,--transfer-operation <TRANSFER_OPERATION>               defines the transfer operation (insert, update, delete, upsert, merge, move, copy). Default to `copy` for a file system and `insert` for a database.
+    -op,--transfer-operation <TRANSFER_OPERATION>               defines the transfer operation (insert, update, delete, upsert, merge, copy). Default to `copy` for a file system and `insert` for a database.
 
     -wbv,--with-bind-variables                                  defines if bind variables are used in the SQL statement
 
 
   Data Definition Options:
 
-    -sa,--source-attribute <attributeName=value>                Set a source data resource attribute
+    -sa,--source-attribute <attributeName=value>                Set a source attribute
 
-    -ta,--target-attribute <attributeName=value>                Set a target data resource attribute
+    -ta,--target-attribute <attributeName=value>                Set a target attribute
 
 
   Options:
@@ -126,7 +126,7 @@ where:
 
     -vf,--conf <path>                                           The path to a configuration file
 
-    -e,--env <env>                                              The name of the environment
+    -ee,--exec-env <name>                                       The execution environment (prod or dev)
 
     -h,--help                                                   Print this help
 
@@ -141,6 +141,8 @@ where:
     -oop,--output-transfer-operation <transferOperation>        defines the output transfer operation (insert, update, merge, copy). Default to `copy` for a file system and `insert` for a database.
 
     -pp,--passphrase <passphrase>                               A passphrase (master password) to decrypt the encrypted vault values (Env: TABUL_PASSPHRASE)
+
+    --pipe-mode                                                 Use pipe mode if you want to pipe the output in a shell. Pipe mode will not print the headers (ie column name) and will not make the control character visible
 
     -ph,--project-home <path>                                   The project home (default to the .tabul.yml file directory)
 

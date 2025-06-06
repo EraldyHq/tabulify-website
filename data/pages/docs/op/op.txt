@@ -3,7 +3,8 @@
     "description": "The data operation are all functions, operations, actions that you can perform on a data resources. They are the basic block of all data processing.",
     "low_quality_page": "false",
     "name": "Data Operations",
-    "page_id": "6zs99eognpbwidmi64e6q"
+    "page_id": "6zs99eognpbwidmi64e6q",
+    "title": "Data Operations - Process Your Data As You Want"
 }
 ---
 ====== Data Operations ======

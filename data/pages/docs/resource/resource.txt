@@ -2,7 +2,8 @@
 {
     "description": "A data resource is container that contains data. This section lists all data resources supported from file to directory, sql, script and more",
     "low_quality_page": "false",
-    "page_id": "t0mw1c6ff57bd90io67ej"
+    "page_id": "t0mw1c6ff57bd90io67ej",
+    "title": "Data Resources - Master your environment"
 }
 ---
 ====== Tabulify - Data Resources ======

@@ -41,7 +41,6 @@ Example:
 tabul data --help
 </code>
 <console>
-
 Tabul data
 ==========
 
@@ -89,15 +88,17 @@ where:
 
     query         Test load your system with queries and fetch data resources (ie query, view, ...)
 
+    replace       Replace a data resource
+
     structure     Show the data structure of data resources
 
-    summary       Count the number of data resources
+    summarize     Count the number of data resources
 
     tail          Print the last content of data resources
 
     template      Create data resources from a template and a data source
 
-    transfer      Transfer a data resource (insert, update, delete, upsert, merge, move, copy)
+    transfer      Transfer a data resource (insert, update, delete, upsert, merge, copy)
 
     truncate      Truncate data resources
 
@@ -109,6 +110,5 @@ where:
   Option:
 
     -h,--help     Print this help
-
 </console>
 </unit>

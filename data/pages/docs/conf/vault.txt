@@ -31,14 +31,109 @@ You can get the location of the configuration vault with the [[docs:tabul:env:li
 tabul env list conf
 </code>
 <console>
-attribute   value                           origin    description                
----------   -----------------------------   -------   ------------------------   
-CONF        /home/admin/.tabul/.tabul.yml   Default   The conf vault file path
+attribute   value                              origin    description
+---------   --------------------------------   -------   ------------------------
+CONF        /home/tabulify/.tabul/.tabul.yml   Default   The conf vault file path
 </console>
 </unit>
 
 
+===== Default creation if not found =====
 
+By default, if a configuration vault file does not exist, it will be created with:
+  * the [[:docs:connection:howtos|howtos connections]]
+  * and [[:docs:service:howtos|howtos services]]
+
+<unit>
+<code bash display="none">
+tabul data print --type text .tabul/.tabul.yml@home
+</code>
+<console yaml .tabul.yml height="150px" scroll="toggle">
+connections:
+  mysql:
+    comment: The default mysql data store
+    driver: com.mysql.cj.jdbc.Driver
+    password: my-secret-pw
+    uri: jdbc:mysql://localhost:3306/howto
+    user: root
+    varchar-default-precision: 2000
+  oracle:
+    comment: The howto oracle connection
+    driver: oracle.jdbc.OracleDriver
+    name-quoting-enabled: false
+    password: oracle
+    uri: jdbc:oracle:thin:@localhost:1521/freepdb1
+    user: hr
+  postgres:
+    comment: The howto postgres connection
+    driver: org.postgresql.Driver
+    password: welcome
+    uri: jdbc:postgresql://localhost:5432/postgres
+    user: postgres
+  smtp:
+    comment: HowTo Smtp Connection
+    uri: smtp://localhost:1025
+  sqlite:
+    comment: The sqlite default connection
+    driver: org.sqlite.JDBC
+    uri: jdbc:sqlite:////home/tabulify/.tabul/sqlite.db
+  sqlite_target:
+    comment: The default sqlite target (Sqlite cannot read and write with the same
+      connection)
+    driver: org.sqlite.JDBC
+    uri: jdbc:sqlite:////home/tabulify/.tabul/sqlite_target.db
+  sqlserver:
+    comment: The default sqlserver connection
+    driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    password: TheSecret1!
+    uri: jdbc:sqlserver://localhost:1433;encrypt=true;trustServerCertificate=true
+    user: sa
+services:
+  mysql:
+    environment:
+      MYSQL_DATABASE: howto
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+    image: mysql:5.7.37
+    ports:
+    - 3306:3306
+    type: docker
+  oracle:
+    environment:
+      APP_USER: hr
+      APP_USER_PASSWORD: oracle
+      ORACLE_ALLOW_REMOTE: 'true'
+      ORACLE_DISABLE_ASYNCH_IO: 'true'
+      ORACLE_PASSWORD: oracle
+    image: ghcr.io/gvenzl/oracle-free:23.7-slim-faststart
+    ports:
+    - 1521:1521
+    type: docker
+  postgres:
+    environment:
+      POSTGRES_PASSWORD: welcome
+    image: postgres:13.21
+    ports:
+    - 5432:5432
+    type: docker
+  smtp:
+    environment:
+      MP_LABEL: Tabulify HowTo Service
+      MP_TENANT_ID: tabulify
+    image: axllent/mailpit:v1.25.1
+    ports:
+    - 1025:1025
+    - 8025:8025
+    type: docker
+  sqlserver:
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: TheSecret1!
+    image: mcr.microsoft.com/mssql/server:2022-CU19-ubuntu-22.04
+    ports:
+    - 1433:1433
+    type: docker
+</console>
+</unit>
 ===== Cli Command =====
 
 Advanced user will modify the file directly with a text editor but
@@ -87,6 +182,12 @@ connections:
       applicationName: myName
   connectionName2:
     uri: xxx
+# List of Services
+services:
+   name:
+       type: docker
+       image: xxx
+       ...
 </code>
 
 

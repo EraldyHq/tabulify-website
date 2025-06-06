@@ -50,11 +50,11 @@ Example with the [[:docs:tabul:data:list|data list command]] that:
 tabul data list -a logicalName -a 1 web_*@tpcds
 </code>
 <console>
-logicalName   1         
------------   -------   
-web_page      page      
-web_returns   returns   
-web_sales     sales     
+logicalName   1
+-----------   -------
+web_page      page
+web_returns   returns
+web_sales     sales
 web_site      site
 </console>
 </unit>

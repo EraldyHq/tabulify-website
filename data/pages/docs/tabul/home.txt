@@ -22,8 +22,8 @@
 tabul env list home
 </code>
 <console>
-type       key         value
---------   ---------   ------------------
-Internal   home.path   C:\tabul
+attribute   value           origin    description
+---------   -------------   -------   ------------------------------------------
+HOME        /opt/tabulify   Default   The directory of the Tabulify installation
 </console>
 </unit>

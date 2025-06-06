@@ -72,41 +72,44 @@ You can get them in a tabular format with the [[docs:tabul:data:list|tabul data 
 <code bash>
 tabul data list -a name -a count -a size *@howto
 </code>
-<console>
+<console height="300px" scroll="toggle">
 name                                         count   size
 ------------------------------------------   -----   ----
-README.md                                        3    132
 books.csv                                        6    386
 books_template.json                              1    112
 characters.csv                                   5    432
 characters_target.csv                            3    268
 create_foo.sql                                   2     70
-date_dim--datagen.yml                          100
-date_dim_2001--datagen.yml                     100
-email                                            2
-generator_count--datagen.yml                   100
-histogram_normal_distribution--datagen.yml      30
-histogram_random--datagen.yml                   10
-json                                             1
-pebble                                           2
-pipeline                                         4
-postgres                                         1
-random--datagen.yml                             30
-recursive                                        1
+create_view_foo.sql                              1     32
+date_dim--datagen.yml                          100       
+date_dim_2001--datagen.yml                     100       
+email                                            2       
+generator                                        7       
+generator_count--datagen.yml                   100       
+histogram_normal_distribution--datagen.yml      30       
+histogram_random--datagen.yml                   10       
+json                                             1       
+pebble                                           2       
+pipeline                                         4       
+postgres                                         1       
+random--datagen.yml                             30       
+README.md                                        3    132
+recursive                                        1       
 select.yml                                       1    332
-sequence--datagen.yml                           30
-sequence_color--datagen.yml                     10
-sequence_number--datagen.yml                    14
-sequence_odometer--datagen.yml                 100
-sequence_time--datagen.yml                      30
-sequence_varchar--datagen.yml                   30
-sqlite                                           1
+sequence--datagen.yml                           30       
+sequence_color--datagen.yml                     10       
+sequence_number--datagen.yml                    14       
+sequence_odometer--datagen.yml                 100       
+sequence_time--datagen.yml                      30       
+sequence_varchar--datagen.yml                   30       
+sqlite                                           1       
 warehouse_delete.csv                             1     17
 warehouse_delete.sql                             1     65
 warehouse_original.csv                           1    301
 warehouse_update.sql                             1    230
 warehouse_upsert.csv                             2    420
-xml                                              1
+xml                                              1       
+yaml                                             1
 </console>
 </unit>
 

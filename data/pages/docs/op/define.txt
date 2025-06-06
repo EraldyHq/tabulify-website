@@ -67,8 +67,8 @@ tabul flow execute pipeline/define_single_inline.yml@howto
 you will get the data of the ''colors'' data resource [[docs:tabul:data:print|printed]] in a tabular format.
 <console>
 List of executions
-ExecutionId   OperationName   DataPathsCount   DataPathsList   
------------   -------------   --------------   -------------   
+ExecutionId   OperationName   DataPathsCount   DataPathsList
+-----------   -------------   --------------   -------------
 1             define          0
 </console>
 </unit>

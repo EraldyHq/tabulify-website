@@ -37,14 +37,14 @@ All entities are stored under the [[:docs:connection:built-in|entity built-in co
 tabul data list *@entity
 </code>
 <console>
-path        type              
----------   ---------------   
-country     inode/directory   
-firstname   inode/directory   
-gender      inode/directory   
-lastname    inode/directory   
-prefix      inode/directory   
-region      inode/directory   
+path        type
+---------   ---------------
+country     inode/directory
+firstname   inode/directory
+gender      inode/directory
+lastname    inode/directory
+prefix      inode/directory
+region      inode/directory
 subregion   inode/directory
 </console>
 </unit>
@@ -57,20 +57,20 @@ Example for the `firstname` entity
 tabul data list firstname/*@entity
 </code>
 <console>
-path                         type       
---------------------------   --------   
-firstname/firstname_ca.csv   text/csv   
-firstname/firstname_de.csv   text/csv   
-firstname/firstname_en.csv   text/csv   
-firstname/firstname_es.csv   text/csv   
-firstname/firstname_fr.csv   text/csv   
-firstname/firstname_gd.csv   text/csv   
-firstname/firstname_hu.csv   text/csv   
-firstname/firstname_it.csv   text/csv   
-firstname/firstname_nl.csv   text/csv   
-firstname/firstname_pl.csv   text/csv   
-firstname/firstname_pt.csv   text/csv   
-firstname/firstname_sk.csv   text/csv   
+path                         type
+--------------------------   --------
+firstname/firstname_ca.csv   text/csv
+firstname/firstname_de.csv   text/csv
+firstname/firstname_en.csv   text/csv
+firstname/firstname_es.csv   text/csv
+firstname/firstname_fr.csv   text/csv
+firstname/firstname_gd.csv   text/csv
+firstname/firstname_hu.csv   text/csv
+firstname/firstname_it.csv   text/csv
+firstname/firstname_nl.csv   text/csv
+firstname/firstname_pl.csv   text/csv
+firstname/firstname_pt.csv   text/csv
+firstname/firstname_sk.csv   text/csv
 firstname/firstname_tr.csv   text/csv
 </console>
 </unit>
@@ -95,17 +95,17 @@ tabul data head firstname/firstname_fr.csv@entity
 </code>
 <console>
 The first 10 rows of the data resource (firstname/firstname_fr.csv@entity): 
-firstname   gender   probability                  
----------   ------   --------------------------   
-Aadam       M        3.14396359513727576E-7       
-Aadel       M        6.52081338250694231E-7       
-Aadil       M        0.000002142552968537995330   
-Aahil       M        2.44530501844010337E-7       
-Aakash      M        3.02752049902108036E-7       
-Aalia       F        4.77416694076401133E-7       
-Aaliya      F        0.000002422016399216864286   
-Aaliyah     F        0.000028086074783226330085   
-Aalya       F        0.000001490471630287301099   
+firstname   gender   probability
+---------   ------   --------------------------
+Aadam       M        3.14396359513727576E-7
+Aadel       M        6.52081338250694231E-7
+Aadil       M        0.000002142552968537995330
+Aahil       M        2.44530501844010337E-7
+Aakash      M        3.02752049902108036E-7
+Aalia       F        4.77416694076401133E-7
+Aaliya      F        0.000002422016399216864286
+Aaliyah     F        0.000028086074783226330085
+Aalya       F        0.000001490471630287301099
 Aalyah      F        0.000002585036733779537844
 </console>
 </unit>

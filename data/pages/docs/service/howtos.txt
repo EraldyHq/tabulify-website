@@ -27,12 +27,12 @@ tabul service list
 </code>
 <console>
 5 services were found in the configuration vault (/home/tabulify/.tabul/.tabul.yml)
-name        type     
----------   ------   
-mysql       docker   
-oracle      docker   
-postgres    docker   
-smtp        docker   
+name        type
+---------   ------
+mysql       docker
+oracle      docker
+postgres    docker
+smtp        docker
 sqlserver   docker
 </console>
 </unit>

@@ -8,7 +8,8 @@
         { "path": ":docs:system:tpc.png" }
     ],
     "name": "Tpc-ds",
-    "page_id": "yr3zjjle8idlp03w04k09"
+    "page_id": "yr3zjjle8idlp03w04k09",
+    "title": "How to execute the TPC-DS benchmark data and query"
 }
 ---
 
@@ -66,21 +67,21 @@ The ''store-sales'' schema has  the ''store_sales'' and ''store_return'' star sc
 tabul data list --with-dependencies store*@tpcds
 </code>
 <console>
-path
-----------------------
-customer
-customer_address
-customer_demographics
-date_dim
-household_demographics
-income_band
-item
-promotion
-reason
-store
-store_returns
-store_sales
-time_dim
+path                     type
+----------------------   ------------
+customer                 sql/relation
+customer_address         sql/relation
+customer_demographics    sql/relation
+date_dim                 sql/relation
+household_demographics   sql/relation
+income_band              sql/relation
+item                     sql/relation
+promotion                sql/relation
+reason                   sql/relation
+store                    sql/relation
+store_returns            sql/relation
+store_sales              sql/relation
+time_dim                 sql/relation
 </console>
 </unit>
 

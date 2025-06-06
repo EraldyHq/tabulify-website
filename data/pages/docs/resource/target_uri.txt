@@ -78,14 +78,12 @@ Example with [[docs:system:tpcds|tpcds]] where we want to capture the name of th
 tabul data list  -a name -a 1 web_*@tpcds
 </code>
 <console>
-
 name          1
 -----------   -------
 web_page      page
 web_returns   returns
 web_sales     sales
 web_site      site
-
 </console>
 </unit>
 ==== Attribute Reference ====

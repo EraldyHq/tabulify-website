@@ -27,6 +27,7 @@ attribute      value                              origin           description
 CONF           /home/tabulify/.tabul/.tabul.yml   Default          The conf vault file path
 ENV            DEV                                Os environment   The execution environment
 HOME           /opt/tabulify                      Default          The directory of the Tabulify installation
+IS_STRICT      true                               Cli options      Strict mode (Fail early)
 LOG_LEVEL      ERROR                              Os environment   The log level
 PASSPHRASE                                        Default          The passphrase
 PROJECT_HOME                                      Default          The project home directory
@@ -44,7 +45,7 @@ tabul env list -h
 Tabul env list
 ==============
 
-List the configurations
+List the env attributes
 
 
 Tip:To have a nice output because a value may be very lengthy, you should set the width of your terminal to a big number (such as 10000)
@@ -54,10 +55,10 @@ Tip:To have a nice output because a value may be very lengthy, you should set th
 Examples
 --------
 
- 1 - List all `tabul` configurations
+ 1 - List all env attributes
 
 
-    tabul env list *
+    tabul env list
 
 
  2 - List all Home configurations
@@ -98,7 +99,7 @@ where:
 
     -vf,--conf <path>                                       The path to a configuration file
 
-    -e,--env <env>                                          The name of the environment
+    -ee,--exec-env <name>                                   The execution environment (prod or dev)
 
     -h,--help                                               Print this help
 
@@ -113,6 +114,8 @@ where:
     -oop,--output-transfer-operation <transferOperation>    defines the output transfer operation (insert, update, merge, copy). Default to `copy` for a file system and `insert` for a database.
 
     -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted vault values (Env: TABUL_PASSPHRASE)
+
+    --pipe-mode                                             Use pipe mode if you want to pipe the output in a shell. Pipe mode will not print the headers (ie column name) and will not make the control character visible
 
     -ph,--project-home <path>                               The project home (default to the .tabul.yml file directory)
 

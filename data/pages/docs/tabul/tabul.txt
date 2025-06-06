@@ -69,9 +69,7 @@ where:
 
     env             Management and configuration of the tabul execution environment
 
-    flow            Execute Flow
-
-    init            Create a project/configuration file
+    flow            Execute Flows
 
     service         Start and stop services
 

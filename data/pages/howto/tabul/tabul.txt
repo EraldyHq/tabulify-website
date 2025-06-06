@@ -6,7 +6,8 @@
     ],
     "canonical": ":howto:tabul",
     "description": "This sections regroups all howto's dedicated to the tabul command line",
-    "page_id": "lidl06dpsbmlpa9naen99"
+    "page_id": "lidl06dpsbmlpa9naen99",
+    "title": "Howto's for the tabul command line"
 }
 ---
 

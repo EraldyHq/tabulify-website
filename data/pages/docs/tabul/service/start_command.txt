@@ -27,8 +27,6 @@ tabul service start postgres
 tabul service start --help
 </code>
 <console>
-
-
 Tabul service start
 ===================
 
@@ -72,7 +70,7 @@ where:
 
     -vf,--conf <path>                                       The path to a configuration file
 
-    -e,--env <env>                                          The name of the environment
+    -ee,--exec-env <name>                                   The execution environment (prod or dev)
 
     -h,--help                                               Print this help
 
@@ -88,10 +86,10 @@ where:
 
     -pp,--passphrase <passphrase>                           A passphrase (master password) to decrypt the encrypted vault values (Env: TABUL_PASSPHRASE)
 
+    --pipe-mode                                             Use pipe mode if you want to pipe the output in a shell. Pipe mode will not print the headers (ie column name) and will not make the control character visible
+
     -ph,--project-home <path>                               The project home (default to the .tabul.yml file directory)
 
     -v,--version                                            Print version information
-
-
 </console>
 </unit>

@@ -4,7 +4,8 @@
         { "path": ":docs:tabli:start" }
     ],
     "description": "Tabul is the tabulify (tab) command line (li) client.",
-    "page_id": "dro1ljbupukyluuq2g12h"
+    "page_id": "dro1ljbupukyluuq2g12h",
+    "title": "Tabul - The command line terminal"
 }
 ---
 ====== Tabulify - Tabul ======
@@ -22,8 +23,9 @@ This sections regroups the reference documentation of each [[command|command]].
 
   * [[docs:tabul:connection:start]]
   * [[docs:tabul:data:start]]
-  * [[docs:tabul:flow:start]]
   * [[docs:tabul:env:start|]]
+  * [[docs:tabul:flow:start]]
+  * [[docs:tabul:service:start|]]
   * [[docs:tabul:vault:start|]]
 
 
