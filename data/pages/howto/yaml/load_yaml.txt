@@ -35,19 +35,19 @@ tabul data print --type text yaml/phonebook/Arnold.yaml@howto
 </code>
 <console yaml Arnold.yaml>
 
-phones:              
-  - "704-555-0150"   
-  - "202-555-0150"   
+phones:
+  - "704-555-0150"
+  - "202-555-0150"
 city: Los Angeles
 
 </console>
 </unit>
 
-is equivalent to this json file (note that `style=json` is optional as this is the default)
+is equivalent to this json file
 <unit>
 <code bash>
 tabul data print \
-   --no-headers \
+   --pipe-mode \
    --attribute style=json \
    yaml/phonebook/Arnold.yaml@howto | jq
 </code>
@@ -63,6 +63,11 @@ tabul data print \
 
 </console>
 </unit>
+
+Note that:
+   * `style=json` is optional as this is the default
+   * `--pipe-mode` is used to pipe a raw json into [[https://jqlang.org|jq]] (`pipe-mode` deletes the headers and will not print control characters)
+
 
 ==== Yaml relational structure ====
 
@@ -83,8 +88,8 @@ tabul data struct yaml/phonebook/Don.yaml@howto
 <console>
 
 Structure of the resource yaml/phonebook/Don.yaml@howto
-position   name   type   precision   scale   primary_key   nullable   autoincrement   comment   
---------   ----   ----   ---------   -----   -----------   --------   -------------   -------   
+position   name   type   precision   scale   primary_key   nullable   autoincrement   comment
+--------   ----   ----   ---------   -----   -----------   --------   -------------   -------
 1          yaml   json                                     x          false
 
 </console>
@@ -104,12 +109,12 @@ tabul data list yaml/phonebook/*.yaml@howto
 </code>
 <console>
 
-path                         type        
---------------------------   ---------   
-yaml/phonebook/Arnold.yaml   text/yaml   
-yaml/phonebook/Bob.yaml      text/yaml   
-yaml/phonebook/Dale.yaml     text/yaml   
-yaml/phonebook/Daniel.yaml   text/yaml   
+path                         type
+--------------------------   ---------
+yaml/phonebook/Arnold.yaml   text/yaml
+yaml/phonebook/Bob.yaml      text/yaml
+yaml/phonebook/Dale.yaml     text/yaml
+yaml/phonebook/Daniel.yaml   text/yaml
 yaml/phonebook/Don.yaml      text/yaml
 
 </console>
@@ -132,12 +137,12 @@ tabul data insert yaml/phonebook/*.yaml@howto  user@sqlite
 </code>
 <console>
 
-Source                             Target        Latency (ms)   Row Count   Error   Message   
---------------------------------   -----------   ------------   ---------   -----   -------   
-yaml/phonebook/Arnold.yaml@howto   user@sqlite   9              1                             
-yaml/phonebook/Bob.yaml@howto      user@sqlite   10             1                             
-yaml/phonebook/Dale.yaml@howto     user@sqlite   8              1                             
-yaml/phonebook/Daniel.yaml@howto   user@sqlite   10             1                             
+Source                             Target        Latency (ms)   Row Count   Error   Message
+--------------------------------   -----------   ------------   ---------   -----   -------
+yaml/phonebook/Arnold.yaml@howto   user@sqlite   9              1
+yaml/phonebook/Bob.yaml@howto      user@sqlite   10             1
+yaml/phonebook/Dale.yaml@howto     user@sqlite   8              1
+yaml/phonebook/Daniel.yaml@howto   user@sqlite   10             1
 yaml/phonebook/Don.yaml@howto      user@sqlite   70             1
 
 </console>
@@ -151,13 +156,13 @@ tabul data head user@sqlite
 </code>
 <console>
 
-The first 10 rows of the data resource (user@sqlite): 
-yaml                                                                                                 
---------------------------------------------------------------------------------------------------   
-{  "phones": [    "470-293-7517"  ]  ,  "city": "San Diego"}                                         
-{  "phones": [    "425-898-3481",    "360-637-7972",    "205-533-8271"  ]  ,  "city": "Princeton"}   
-{  "phones": [    "323-423-2238",    "747-444-3222",    "475-202-7142"  ]  ,  "city": "New York"}    
-{  "phones": [    "731-414-7236",    "256-233-3557",    "409-645-3618"  ]  ,  "city": "New York"}    
+The first 10 rows of the data resource (user@sqlite):
+yaml
+--------------------------------------------------------------------------------------------------
+{  "phones": [    "470-293-7517"  ]  ,  "city": "San Diego"}
+{  "phones": [    "425-898-3481",    "360-637-7972",    "205-533-8271"  ]  ,  "city": "Princeton"}
+{  "phones": [    "323-423-2238",    "747-444-3222",    "475-202-7142"  ]  ,  "city": "New York"}
+{  "phones": [    "731-414-7236",    "256-233-3557",    "409-645-3618"  ]  ,  "city": "New York"}
 {  "phones": [    "704-555-0150",    "202-555-0150"  ]  ,  "city": "Los Angeles"}
 
 </console>
@@ -173,9 +178,9 @@ tabul data head --attribute columnName=data yaml/phonebook/Don.yaml@howto
 </code>
 <console>
 
-The first 10 rows of the data resource (yaml/phonebook/Don.yaml@howto): 
-data                                                           
-------------------------------------------------------------   
+The first 10 rows of the data resource (yaml/phonebook/Don.yaml@howto):
+data
+------------------------------------------------------------
 {  "phones": [    "470-293-7517"  ]  ,  "city": "San Diego"}
 
 </console>
@@ -209,8 +214,8 @@ tabul data print \
     yaml/phonebook/Bob.yaml@howto
 </code>
 <console>
-data                                                                                                name   
--------------------------------------------------------------------------------------------------   ----   
+data                                                                                                name
+-------------------------------------------------------------------------------------------------   ----
 {  "phones": [    "323-423-2238",    "747-444-3222",    "475-202-7142"  ]  ,  "city": "New York"}   Bob
 </console>
 </unit>
@@ -239,12 +244,12 @@ where:
 
 Output:
 <console>
-Source                             Target        Latency (ms)   Row Count   Error   Message   
---------------------------------   -----------   ------------   ---------   -----   -------   
-yaml/phonebook/Arnold.yaml@howto   user@sqlite   11             1                             
-yaml/phonebook/Bob.yaml@howto      user@sqlite   8              1                             
-yaml/phonebook/Dale.yaml@howto     user@sqlite   9              1                             
-yaml/phonebook/Daniel.yaml@howto   user@sqlite   8              1                             
+Source                             Target        Latency (ms)   Row Count   Error   Message
+--------------------------------   -----------   ------------   ---------   -----   -------
+yaml/phonebook/Arnold.yaml@howto   user@sqlite   11             1
+yaml/phonebook/Bob.yaml@howto      user@sqlite   8              1
+yaml/phonebook/Dale.yaml@howto     user@sqlite   9              1
+yaml/phonebook/Daniel.yaml@howto   user@sqlite   8              1
 yaml/phonebook/Don.yaml@howto      user@sqlite   68             1
 </console>
 </unit>
@@ -257,12 +262,12 @@ The YAML data loaded has now the ''name'' column as identifier.
 tabul data print user@sqlite
 </code>
 <console>
-data                                                                                                 name     
---------------------------------------------------------------------------------------------------   ------   
-{  "phones": [    "470-293-7517"  ]  ,  "city": "San Diego"}                                         Don      
-{  "phones": [    "425-898-3481",    "360-637-7972",    "205-533-8271"  ]  ,  "city": "Princeton"}   Daniel   
-{  "phones": [    "323-423-2238",    "747-444-3222",    "475-202-7142"  ]  ,  "city": "New York"}    Bob      
-{  "phones": [    "731-414-7236",    "256-233-3557",    "409-645-3618"  ]  ,  "city": "New York"}    Dale     
+data                                                                                                 name
+--------------------------------------------------------------------------------------------------   ------
+{  "phones": [    "470-293-7517"  ]  ,  "city": "San Diego"}                                         Don
+{  "phones": [    "425-898-3481",    "360-637-7972",    "205-533-8271"  ]  ,  "city": "Princeton"}   Daniel
+{  "phones": [    "323-423-2238",    "747-444-3222",    "475-202-7142"  ]  ,  "city": "New York"}    Bob
+{  "phones": [    "731-414-7236",    "256-233-3557",    "409-645-3618"  ]  ,  "city": "New York"}    Dale
 {  "phones": [    "704-555-0150",    "202-555-0150"  ]  ,  "city": "Los Angeles"}                    Arnold
 </console>
 </unit>

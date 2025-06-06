@@ -104,8 +104,14 @@ id   seq_date     seq_timestamp
 
 
 
-Because a [[docs:resource:generator|generator]] is just a [[docs:resource:resource|data resource]], you can use it in every [[docs:op:op|data operation]].
+  * Because a [[docs:resource:generator|generator]] is just a [[docs:resource:resource|data resource]], you can use it in every [[docs:op:op|data operation]].
 
 <btn>
 [[generator_data_operation|How to use a generator in a data operation ]]
+</btn>
+
+  * You may want to add the month or year based on the generated time. That's the job of an expression generator.
+
+<btn>
+[[howto:generator:expression|How to add derived column such as a month column with the expression generator]]
 </btn>
