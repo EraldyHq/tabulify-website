@@ -11,6 +11,16 @@
   * with the same [[docs:resource:metadata|metadata (properties and structure)]]
   * and with the same [[docs:resource:content|data content]].
 
-A [[diff|diff]] operation should show no difference.
+A [[diff|diff]] operation would show no difference.
 
-The [[docs:tabul:data:copy|data copy operation]] supports the ''copy'' operation.
+
+
+
+===== Prerequisites =====
+
+If the target exists, the target should:
+    * have the same [[docs:resource:metadata|metadata (properties and structure)]]
+    * be empty
+
+===== Cli =====
+The [[docs:tabul:data:copy|tabul data copy command]] implements the ''copy'' operation.

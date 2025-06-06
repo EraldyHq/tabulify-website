@@ -34,10 +34,6 @@ tabul data  move *.txt@cd '$1.md@cd'
 
 
 
-===== Prerequisites =====
-A [[docs:op:move|move operation]] is logically a [[copy|copy operation]] followed by a [[drop|drop]] of the [[docs:flow:source|source]].
-
-Therefore this operations should follow the [[copy#prerequisites|prerequisites of the copy operation]]
 
 
 ===== Syntax =====
