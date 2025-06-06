@@ -22,13 +22,16 @@ For the [[docs:connection:attribute|connection attributes]], you may also config
 <code bash>
 tabul --passphrase hardToGuess vault encrypt secret
 </code>
+</unit>
+<!-- The console output is not in the code execution unit because the value changes at each run for greater security -->
+<!-- Needs to be update manually for now -->
 <console>
 The encryption result
 plaintext   ciphertext
 ---------   ------------------------------------------------------------------------------------------------------------------------------------------
 secret      tvaultQVE9PT5QSjFYVmpzOGtpQVlyckNVejY4VXNBPT0+ZFpoVGZSQTd3MUJRTkhIelFjZXNIc0FkVGVIbUhFNE1Pc2tsdzhjVkNhbz0+NEZFU1U4SEpqM0wzWWY4VnlCK3BBQT09
 </console>
-</unit>
+
 
 
 
