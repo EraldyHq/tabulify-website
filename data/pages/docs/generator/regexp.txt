@@ -9,26 +9,14 @@
 ===== About =====
 You can generate data based on a regular expression [[docs:generator:generator|generator]].
 
-===== Example: How to generate a number ?=====
+===== Example =====
+
+  * [[:howto:generator:regexp_number]]
+
+===== Syntax =====
 
 
-
-Example with a [[:docs:resource:generator|generator resources]] that generates a double with the following expression:
-```
-[0-9]{3}\.[0-9]{3}
-```
-where:
-  * `[0-9]{3}` asks for 3 digits
-  * `\.` print a point
-    * Note: `\` is the escape character that tells the generator to take the dot character and not the [[kb>lang:regexp:dot|regular expression dot matcher]].
-  * `[0-9]{3}` asks for 3 digits
-
-
-
-The [[:docs:resource:generator|generator]] would be then:
-<unit>
 <file yml generator/regexp--datagen.yml>
-maxRecordCount: 30
 columns:
   - name: regexp_double
     type: Double
@@ -37,50 +25,14 @@ columns:
     dataGenerator:
       type: regexp
       expression: '[0-9]{3}\.[0-9]{3}'
-
+      seed: 1234L # an optional seed
 </file>
- that would yield the following data:
-<code bash>
-tabul data print generator/regexp--datagen.yml@howto
-</code>
-<console height="300px" scroll="toggle">
-regexp_double
--------------
-      453.377
-      203.849
-      813.079
-      865.495
-      390.441
-      709.933
-      255.284
-       19.755
-      261.175
-      264.911
-      133.327
-      394.021
-      614.462
-      573.909
-       86.925
-      753.268
-      457.839
-      176.918
-      393.803
-      833.487
-       582.82
-       551.98
-      810.125
-      802.251
-      783.176
-      940.763
-      817.757
-       17.065
-       320.67
-      709.529
-</console>
-</unit>
 
-===== Supported Syntax =====
+===== Expression =====
 
+
+
+The following table shows the supported [[kb>lang:regexp:regexp|regular expression]] syntax:
 
 ^                        Pattern ^ Description  ^
 |                            `.` | Any symbol. See below details - `Dot pattern generated symbols` section.                                                             |
