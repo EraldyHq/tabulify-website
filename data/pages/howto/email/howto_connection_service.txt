@@ -43,6 +43,11 @@ You can check if the ''smtp'' service is present and see its [[:docs:service:ser
 <tabs>
     <panel>
        <label>Tabul Service Info</label>
+<unit display="none">
+<code bash>
+tabul service stop smtp
+</code>
+</unit>
 <unit>
 <code bash>
 tabul service info smtp
@@ -54,7 +59,7 @@ Attribute     Value                                                      Descrip
 COMMAND                                                                  The command
 ENVIRONMENT   {MP_LABEL=Tabulify HowTo Service, MP_TENANT_ID=tabulify}   The environment attributes
 IMAGE         axllent/mailpit:v1.25.1                                    The image
-IS_STARTED    true                                                       The status of the service
+IS_STARTED    false                                                       The status of the service
 NAME          smtp                                                       The name of the service
 ORIGIN        CONF                                                       The origin of the system
 PORTS         1025:1025, 8025:8025                                       The ports
@@ -179,7 +184,7 @@ CC_NAMES                                            The default carbon copy name
 COMMENT                     HowTo Smtp Connection   A connection description
 DATE_DATA_TYPE              NATIVE                  Date data type used to store date values
 DEBUG                       false                   Smtp Debug
-FROM                                                The default from address if none is provided
+FROM                        support@tabulify.com    The default from address if none is provided
 FROM_NAME                                           The default name from address if none is provided
 HOST                        localhost               Host Server
 MAX_CONCURRENT_THREAD                               The maximum number of threads that can be created against the system

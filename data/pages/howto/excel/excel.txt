@@ -56,24 +56,25 @@ tabul data info date_dim.xlsx@temp
 Information about the data resource (date_dim.xlsx@temp)
 attribute          value                                                                                              description
 ----------------   ------------------------------------------------------------------------------------------------   ---------------------------------------------------------------------
-DATE_FORMAT        dd/mm/yyyy hh:mm:ss                                                                                The default date format string (Format Cells > Number > Custom)
+DATE_FORMAT        yyyy-MM-dd                                                                                         The default date format string (Format Cells > Number > Custom)
 HEADER_ROW_ID      1                                                                                                  The row id of the header row - (0 means no header, 1 the first line)
 SHEET_NAME                                                                                                            The name of the sheet (By default, the first one)
+TIMESTAMP_FORMAT   yyyy-MM-dd HH:mm:ss                                                                                The default timestamp format string (Format Cells > Number > Custom)
 URI                file:///tmp/date_dim.xlsx                                                                          The URI of the file
 ABSOLUTE_PATH      /tmp/date_dim.xlsx                                                                                 The absolute path on the data system
 CONNECTION         temp                                                                                               The connection name
 COUNT              100                                                                                                The number of records
 DATA_URI           date_dim.xlsx@temp                                                                                 The data uri
 LOGICAL_NAME       date_dim                                                                                           The logical name
-MD5                3872fa261c6232ae09ef67e083c571ea                                                                   The Md5 hash
+MD5                dd68bc303b1cec83f547814c9ed3db54                                                                   The Md5 hash
 NAME               date_dim.xlsx                                                                                      The name of the data resource
 PARENT                                                                                                                The parent
 PATH               date_dim.xlsx                                                                                      The relative path to the default connection path
-SHA384             7fb6d4c3fb4444dcfa923606137e870df7cf83971076246070ddb4171b9284c04dc9b56b12606ff433f5eab993aa5e0e   The Sha384 hash
-SHA384_INTEGRITY   sha384-f7bUw/tERNz6kjYGE36HDffPg5cQdiRgcN20FxuShMBNybVrEmBv9DP16rmTql4O                            The sha384 value used in the html integrity attribute
-SIZE               7157                                                                                               The number of byte
-SUBTYPE            application                                                                                        The media subType
-TYPE               com.tabulify.excel.ExcelManagerProvider$1@4d774249                                                 The media type
+SHA384             411dd371538ae67c2071855f1cfe4d4ee6dd5fef5a68d53892743e0877002dcca07808f91f48b0e3374c0f1759f67156   The Sha384 hash
+SHA384_INTEGRITY   sha384-QR3TcVOK5nwgcYVfHP5NTubdX+9aaNU4knQ+CHcALcygeAj5H0iw4zdMDxdZ9nFW                            The sha384 value used in the html integrity attribute
+SIZE               7202                                                                                               The number of byte
+SUBTYPE            xlsx                                                                                               The media subType
+TYPE               XLSX                                                                                               The media type
 </console>
 </unit>
 
@@ -87,20 +88,17 @@ tabul data head date_dim.xlsx@temp
 </code>
 <console>
 The first 10 rows of the data resource (date_dim.xlsx@temp):
-d_date_sk   d_date             d_date_id    d_month_seq   d_day_name   d_moy   d_year
----------   ----------------   ----------   -----------   ----------   -----   ------
-      1.0   2025-05-19T00:00   2025-05-19      202505.0   Monday         5.0   2025
-      2.0   2025-05-18T00:00   2025-05-18      202505.0   Sunday         5.0   2025
-      3.0   2025-05-17T00:00   2025-05-17      202505.0   Saturday       5.0   2025
-      4.0   2025-05-16T00:00   2025-05-16      202505.0   Friday         5.0   2025
-      5.0   2025-05-15T00:00   2025-05-15      202505.0   Thursday       5.0   2025
-      6.0   2025-05-14T00:00   2025-05-14      202505.0   Wednesday      5.0   2025
-      7.0   2025-05-13T00:00   2025-05-13      202505.0   Tuesday        5.0   2025
-      8.0   2025-05-12T00:00   2025-05-12      202505.0   Monday         5.0   2025
-      9.0   2025-05-11T00:00   2025-05-11      202505.0   Sunday         5.0   2025
-     10.0   2025-05-10T00:00   2025-05-10      202505.0   Saturday       5.0   2025
+d_date_sk   d_date       d_date_id    d_month_seq   d_day_name   d_moy   d_year
+---------   ----------   ----------   -----------   ----------   -----   ------
+      1     2025-06-05   2025-06-05        202506   Thursday         6     2025
+      2     2025-06-04   2025-06-04        202506   Wednesday        6     2025
+      3     2025-06-03   2025-06-03        202506   Tuesday          6     2025
+      4     2025-06-02   2025-06-02        202506   Monday           6     2025
+      5     2025-06-01   2025-06-01        202506   Sunday           6     2025
+      6     2025-05-31   2025-05-31        202505   Saturday         5     2025
+      7     2025-05-30   2025-05-30        202505   Friday           5     2025
+      8     2025-05-29   2025-05-29        202505   Thursday         5     2025
+      9     2025-05-28   2025-05-28        202505   Wednesday        5     2025
+     10     2025-05-27   2025-05-27        202505   Tuesday          5     2025
 </console>
 </unit>
-
-Note that you can see that all numbers are printed as `Double` (ie `1.0` and not `1`).
-Why? Because Excel stores all numbers as Double.

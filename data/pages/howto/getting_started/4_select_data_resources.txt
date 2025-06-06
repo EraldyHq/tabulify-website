@@ -47,11 +47,11 @@ where:
 
 Output:
 <console>
-path
--------------
-catalog_sales
-store_sales
-web_sales
+path            type
+-------------   ------------
+catalog_sales   sql/relation
+store_sales     sql/relation
+web_sales       sql/relation
 </console>
 </unit>
 
@@ -73,27 +73,27 @@ tabul data list --with-dependencies *sales@tpcds
 </code>
 
 <console>
-path
-----------------------
-call_center
-catalog_page
-catalog_sales
-customer
-customer_address
-customer_demographics
-date_dim
-household_demographics
-income_band
-item
-promotion
-ship_mode
-store
-store_sales
-time_dim
-warehouse
-web_page
-web_sales
-web_site
+path                     type
+----------------------   ------------
+call_center              sql/relation
+catalog_page             sql/relation
+catalog_sales            sql/relation
+customer                 sql/relation
+customer_address         sql/relation
+customer_demographics    sql/relation
+date_dim                 sql/relation
+household_demographics   sql/relation
+income_band              sql/relation
+item                     sql/relation
+promotion                sql/relation
+ship_mode                sql/relation
+store                    sql/relation
+store_sales              sql/relation
+time_dim                 sql/relation
+warehouse                sql/relation
+web_page                 sql/relation
+web_sales                sql/relation
+web_site                 sql/relation
 </console>
 </unit>
 

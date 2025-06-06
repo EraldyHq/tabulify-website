@@ -81,8 +81,7 @@ Columns:
       expression: "x.getMonth()+1"
   - name: d_year
     comment: The year number
-    Type: Varchar
-    Precision: 4
+    Type: Integer
     DataGenerator:
       type: expression
       ColumnParents: d_date

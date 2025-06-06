@@ -63,6 +63,7 @@ TIMESTAMP_DATA_TYPE          NATIVE                                           Ti
 TIME_DATA_TYPE               NATIVE                                           Time format data type to store time values
 URI                          jdbc:sqlite:////home/tabulify/.tabul/sqlite.db   The uri of the connection
 USER                                                                          The user name
+VARCHAR_DEFAULT_PRECISION                                                     Default precision
 WORKING_PATH                                                                  The working path (Schema for database, directory for file system)
 </console>
 </unit>

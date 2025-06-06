@@ -27,8 +27,8 @@ tabul service start smtp
 </code>
 <console>
 1 service was started
-Name   Type     
-----   ------   
+Name   Type
+----   ------
 smtp   docker
 </console>
 </unit>
@@ -76,9 +76,9 @@ tabul flow execute pipeline/email_resources.yml@howto
 Output:
 <console>
 List of executions
-ExecutionId   OperationName   DataPathsCount   DataPathsList               
------------   -------------   --------------   -------------------------   
-1             select          1                email/analytics.csv@howto   
+ExecutionId   OperationName   DataPathsCount   DataPathsList
+-----------   -------------   --------------   -------------------------
+1             select          1                email/analytics.csv@howto
 2             sendmail        1                email/analytics.csv@howto
 </console>
 </unit>

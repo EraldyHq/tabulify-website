@@ -22,8 +22,8 @@ tabul service start smtp
 </code>
 <console>
 1 service was started
-Name   Type     
-----   ------   
+Name   Type
+----   ------
 smtp   docker
 </console>
 </unit>
@@ -77,9 +77,9 @@ Output:
 jakarta.mail.event.TransportEvent[source=smtp://admin@localhost]
 
 List of executions
-ExecutionId   OperationName   DataPathsCount   DataPathsList      
------------   -------------   --------------   ----------------   
-1             define          1                e2428b3e6@memory   
+ExecutionId   OperationName   DataPathsCount   DataPathsList
+-----------   -------------   --------------   ----------------
+1             define          1                e2428b3e6@memory
 2             sendmail        1                e2428b3e6@memory
 </console>
 </unit>

@@ -35,7 +35,12 @@ In this ''learning guide'', we used mostly:
 
 
 You can see the full list with the [[docs:tabul:connection:list|connection list]] command.
-
+<unit display="none">
+Init env
+<code bash>
+tabul data drop --not-strict .tabul/.tabul.yml@home
+</code>
+</unit>
 <unit>
 <code bash>
 tabul connection list
