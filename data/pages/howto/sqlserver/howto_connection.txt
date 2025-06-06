@@ -75,9 +75,7 @@ type: docker
    </panel>
 </tabs>
 
-If the service is not present:
-  * move or delete your [[:docs:conf:vault|user configuration vault file]]
-  * or use the ''tabul init'' command
+If the service is not present move or delete your [[:docs:conf:vault|user configuration vault file]].
 
 ==== Note on the password restriction ====
 
@@ -228,13 +226,7 @@ user: sa
    </panel>
 </tabs>
 
-If the connection is not present:
-  * move or delete your [[:docs:conf:vault|user configuration vault file]]
-  * or use the ''tabul init'' command
-
-
-
-
+If the connection is not present, move or delete your [[:docs:conf:vault|user configuration vault file]].
 
 
 ==== Use the sqlserver connection ====

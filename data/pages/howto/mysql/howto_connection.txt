@@ -74,9 +74,7 @@ type: docker
    </panel>
 </tabs>
 
-If the service is not present:
-  * move or delete your [[:docs:conf:vault|user configuration vault file]]
-  * or use the ''tabul init'' command
+If the service is not present, move or delete your [[:docs:conf:vault|user configuration vault file]]
 
 ==== Start the mysql service ====
 
@@ -212,13 +210,7 @@ varchar-default-precision: 2000
    </panel>
 </tabs>
 
-If the connection is not present:
-  * move or delete your [[:docs:conf:vault|user configuration vault file]]
-  * or use the ''tabul init'' command
-
-
-
-
+If the connection is not present, move or delete your [[:docs:conf:vault|user configuration vault file]]
 
 
 ==== Use the mysql connection ====

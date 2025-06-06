@@ -79,9 +79,7 @@ type: docker
    </panel>
 </tabs>
 
-If the service is not present:
-  * move or delete your [[:docs:conf:vault|user configuration vault file]]
-  * or use the ''tabul init'' command
+If the service is not present, move or delete your [[:docs:conf:vault|user configuration vault file]].
 
 ==== Start the oracle service ====
 
@@ -210,12 +208,7 @@ user: hr
    </panel>
 </tabs>
 
-If the connection is not present:
-  * move or delete your [[:docs:conf:vault|user configuration vault file]]
-  * or use the ''tabul init'' command
-
-
-
+If the connection is not present, move or delete your [[:docs:conf:vault|user configuration vault file]].
 
 
 

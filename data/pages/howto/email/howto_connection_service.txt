@@ -49,16 +49,16 @@ tabul service info smtp
 </code>
 <console>
 Information about the service (smtp)
-Attribute     Value                                                      Description                  
------------   --------------------------------------------------------   --------------------------   
-COMMAND                                                                  The command                  
-ENVIRONMENT   {MP_LABEL=Tabulify HowTo Service, MP_TENANT_ID=tabulify}   The environment attributes   
-IMAGE         axllent/mailpit:v1.25.1                                    The image                    
-IS_STARTED    true                                                       The status of the service    
-NAME          smtp                                                       The name of the service      
-ORIGIN        CONF                                                       The origin of the system     
-PORTS         1025:1025, 8025:8025                                       The ports                    
-TYPE          docker                                                     The type of the system       
+Attribute     Value                                                      Description
+-----------   --------------------------------------------------------   --------------------------
+COMMAND                                                                  The command
+ENVIRONMENT   {MP_LABEL=Tabulify HowTo Service, MP_TENANT_ID=tabulify}   The environment attributes
+IMAGE         axllent/mailpit:v1.25.1                                    The image
+IS_STARTED    true                                                       The status of the service
+NAME          smtp                                                       The name of the service
+ORIGIN        CONF                                                       The origin of the system
+PORTS         1025:1025, 8025:8025                                       The ports
+TYPE          docker                                                     The type of the system
 VOLUMES                                                                  The volumes
 </console>
 </unit>
@@ -83,9 +83,7 @@ type: docker
    </panel>
 </tabs>
 
-If the service is not present:
-  * move or delete your [[:docs:conf:vault|user configuration vault file]]
-  * or use the ''tabul init'' command
+If the service is not present move or delete your [[:docs:conf:vault|user configuration vault file]].
 
 ==== Start the smtp service ====
 
@@ -103,8 +101,8 @@ tabul service start smtp
 </code>
 <console>
 1 service was started
-Name   Type     
-----   ------   
+Name   Type
+----   ------
 smtp   docker
 </console>
 </unit>
@@ -170,35 +168,35 @@ tabul connection info smtp
 </code>
 <console>
 Information about the connection (smtp)
-Attribute                   Value                   Description                                                            
--------------------------   ---------------------   --------------------------------------------------------------------   
-AUTH                        false                   Smtp server authentication required?                                   
-BCC                                                 The default blind carbon copy addresses                                
-BCC_NAMES                                           The default blind carbon copy names                                    
-BOOLEAN_DATA_TYPE           Native                  Boolean data type used to store boolean values                         
-CC                                                  The default carbon copy addresses if none is provided                  
-CC_NAMES                                            The default carbon copy names to address if none is provided           
-COMMENT                     HowTo Smtp Connection   A connection description                                               
-DATE_DATA_TYPE              NATIVE                  Date data type used to store date values                               
-DEBUG                       false                   Smtp Debug                                                             
-FROM                                                The default from address if none is provided                           
-FROM_NAME                                           The default name from address if none is provided                      
-HOST                        localhost               Host Server                                                            
-MAX_CONCURRENT_THREAD                               The maximum number of threads that can be created against the system   
-MAX_NAME_IN_PATH                                    The maximum number of names in a path                                  
-NAME                        smtp                    The name of the connection                                             
-NATIVES                                             Native Driver attributes (jdbc properties, ...)                        
-ORIGIN                      CONF                    The origin of the connection                                           
-PASSWORD                                            The user password                                                      
-PORT                        1025                    Host Port                                                              
-TIMESTAMP_DATA_TYPE         NATIVE                  Timestamp data type used to store timestamp values                     
-TIME_DATA_TYPE              NATIVE                  Time format data type to store time values                             
-TLS                         false                   Smtp TLS communication required                                        
-TO                          support@tabulify.com    The default to address if none is provided                             
-TO_NAMES                                            The default names to address if none is provided                       
-URI                         smtp://localhost:1025   The uri of the connection                                              
-USER                                                The user name                                                          
-VARCHAR_DEFAULT_PRECISION                           Default precision                                                      
+Attribute                   Value                   Description
+-------------------------   ---------------------   --------------------------------------------------------------------
+AUTH                        false                   Smtp server authentication required?
+BCC                                                 The default blind carbon copy addresses
+BCC_NAMES                                           The default blind carbon copy names
+BOOLEAN_DATA_TYPE           Native                  Boolean data type used to store boolean values
+CC                                                  The default carbon copy addresses if none is provided
+CC_NAMES                                            The default carbon copy names to address if none is provided
+COMMENT                     HowTo Smtp Connection   A connection description
+DATE_DATA_TYPE              NATIVE                  Date data type used to store date values
+DEBUG                       false                   Smtp Debug
+FROM                                                The default from address if none is provided
+FROM_NAME                                           The default name from address if none is provided
+HOST                        localhost               Host Server
+MAX_CONCURRENT_THREAD                               The maximum number of threads that can be created against the system
+MAX_NAME_IN_PATH                                    The maximum number of names in a path
+NAME                        smtp                    The name of the connection
+NATIVES                                             Native Driver attributes (jdbc properties, ...)
+ORIGIN                      CONF                    The origin of the connection
+PASSWORD                                            The user password
+PORT                        1025                    Host Port
+TIMESTAMP_DATA_TYPE         NATIVE                  Timestamp data type used to store timestamp values
+TIME_DATA_TYPE              NATIVE                  Time format data type to store time values
+TLS                         false                   Smtp TLS communication required
+TO                          support@tabulify.com    The default to address if none is provided
+TO_NAMES                                            The default names to address if none is provided
+URI                         smtp://localhost:1025   The uri of the connection
+USER                                                The user name
+VARCHAR_DEFAULT_PRECISION                           Default precision
 WORKING_PATH                                        The working path (Schema for database, directory for file system)
 </console>
 </unit>
@@ -218,9 +216,7 @@ uri: smtp://localhost:1025
    </panel>
 </tabs>
 
-If the connection is not present:
-  * move or delete your [[:docs:conf:vault|user configuration vault file]]
-  * or use the ''tabul init'' command
+If the connection is not present, move or delete your [[:docs:conf:vault|user configuration vault file]]
 
 
 
@@ -261,12 +257,12 @@ Once, you don't need the smtp service, you can stop it:
        <label>Tabul Service Stop</label>
 <unit>
 <code bash>
-tabul service stop smtp 
+tabul service stop smtp
 </code>
 <console>
 1 service was stopped
-Name   Type     
-----   ------   
+Name   Type
+----   ------
 smtp   docker
 </console>
 </unit>
@@ -275,7 +271,7 @@ smtp   docker
        <label>Docker</label>
 You can also stop it with Docker
 <code bash>
-docker stop smtp 
+docker stop smtp
 </code>
 
    </panel>
