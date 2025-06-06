@@ -47,12 +47,10 @@ Examples
 
  1 - Show all the records of the table `sales` from the data store `sqlite`:
 
-
     tabul data print sales@sqlite
 
 
  2 - Show the content of the file `request.log`:
-
 
     tabul data print request.log
 

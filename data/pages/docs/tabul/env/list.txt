@@ -47,7 +47,6 @@ Tabul env list
 
 List the env attributes
 
-
 Tip:To have a nice output because a value may be very lengthy, you should set the width of your terminal to a big number (such as 10000)
 
 

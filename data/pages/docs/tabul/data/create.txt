@@ -49,7 +49,7 @@ Create a data resource(s) (table, file, ..) from:
   * the metadata of another data resource
   * a script (DDL)
 
-If the `target uri` is: 
+If the `target uri` is:
   * not specified, if the `data selector` is:
        * a script selector, the selected resources is executed
        * otherwise, a data resource is created (with the `data selector` as `data uri`)

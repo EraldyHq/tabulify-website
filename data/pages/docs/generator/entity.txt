@@ -94,7 +94,7 @@ Example with the `firstname_fr.csv` entity file
 tabul data head firstname/firstname_fr.csv@entity
 </code>
 <console>
-The first 10 rows of the data resource (firstname/firstname_fr.csv@entity): 
+The first 10 rows of the data resource (firstname/firstname_fr.csv@entity):
 firstname   gender   probability
 ---------   ------   --------------------------
 Aadam       M        3.14396359513727576E-7
