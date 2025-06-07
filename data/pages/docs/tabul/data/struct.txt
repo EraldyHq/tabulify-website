@@ -6,11 +6,11 @@
     "page_id": "4ibcxcc7pbzgeltt10z4f"
 }
 ---
-====== Tabul - Data Structure command  ======
+====== Tabul - Data Struct command  ======
 
 
 ===== About =====
-The [[..:tabul|Tabul]] ''data structure'' [[docs:tabul:command|command]] from the [[start|data module]] will shows the [[docs:resource:structure|data structure]] of a [[docs:resource:resource|data resource (such as a table or file)]]
+The [[..:tabul|Tabul]] ''data struct'' [[docs:tabul:command|command]] from the [[start|data module]] will shows the [[docs:resource:structure|data structure]] of a [[docs:resource:resource|data resource (such as a table or file)]]
 
 
 <note tip>
