@@ -48,25 +48,25 @@ tabul data fill *@sqlite
 <console>
 Source                          Target                          Latency (ms)   Row Count   Error   Message
 -----------------------------   -----------------------------   ------------   ---------   -----   -------
-call_center@memgen              call_center@sqlite              137            1000
-catalog_page@memgen             catalog_page@sqlite             48             1000
-catalog_sales@memgen            catalog_sales@sqlite            130            1000
-customer@memgen                 customer@sqlite                 98             1000
-customer_address@memgen         customer_address@sqlite         94             1000
-customer_demographics@memgen    customer_demographics@sqlite    62             1000
-date_dim@memgen                 date_dim@sqlite                 104            1000
-household_demographics@memgen   household_demographics@sqlite   32             1000
-income_band@memgen              income_band@sqlite              37             1000
-item@memgen                     item@sqlite                     195            1000
-promotion@memgen                promotion@sqlite                76             1000
-ship_mode@memgen                ship_mode@sqlite                45             1000
-store@memgen                    store@sqlite                    105            1000
-store_sales@memgen              store_sales@sqlite              100            1000
-time_dim@memgen                 time_dim@sqlite                 56             1000
-warehouse@memgen                warehouse@sqlite                81             1000
-web_page@memgen                 web_page@sqlite                 70             1000
-web_sales@memgen                web_sales@sqlite                135            1000
-web_site@memgen                 web_site@sqlite                 96             1000
+call_center@memgen              call_center@sqlite              20             100                 
+catalog_page@memgen             catalog_page@sqlite             10             100                 
+catalog_sales@memgen            catalog_sales@sqlite            19             100                 
+customer@memgen                 customer@sqlite                 19             100                 
+customer_address@memgen         customer_address@sqlite         15             100                 
+customer_demographics@memgen    customer_demographics@sqlite    14             100                 
+date_dim@memgen                 date_dim@sqlite                 19             100                 
+household_demographics@memgen   household_demographics@sqlite   9              100                 
+income_band@memgen              income_band@sqlite              9              100                 
+item@memgen                     item@sqlite                     50             100                 
+promotion@memgen                promotion@sqlite                12             100                 
+ship_mode@memgen                ship_mode@sqlite                10             100                 
+store@memgen                    store@sqlite                    17             100                 
+store_sales@memgen              store_sales@sqlite              14             100                 
+time_dim@memgen                 time_dim@sqlite                 12             100                 
+warehouse@memgen                warehouse@sqlite                16             100                 
+web_page@memgen                 web_page@sqlite                 11             100                 
+web_sales@memgen                web_sales@sqlite                18             100                 
+web_site@memgen                 web_site@sqlite                 17             100
 </console>
 </unit>
 
@@ -100,16 +100,16 @@ tabul data head --limit 10 date_dim@sqlite
 The first 10 rows of the data resource (date_dim@sqlite):
 d_date_sk   d_date_id   d_date       d_month_seq   d_week_seq   d_quarter_seq   d_year   d_dow   d_moy   d_dom   d_qoy   d_fy_year   d_fy_quarter_seq   d_fy_week_seq   d_day_name   d_quarter_name   d_holiday   d_weekend   d_following_holiday   d_first_dom   d_last_dom   d_same_day_ly   d_same_day_lq   d_current_day   d_current_week   d_current_month   d_current_quarter   d_current_year
 ---------   ---------   ----------   -----------   ----------   -------------   ------   -----   -----   -----   -----   ---------   ----------------   -------------   ----------   --------------   ---------   ---------   -------------------   -----------   ----------   -------------   -------------   -------------   --------------   ---------------   -----------------   --------------
-        1   a           2020-12-06             8            7               8        3       5       8       2       2           1                  3               2   j            e                r           w           q                               8            4               9               0   x               g                b                 k                   i
-        2   b           2020-12-04             0            6               7        0       1       5       6       5           4                  4               4   t            n                h           t           l                               3            8               4               5   b               j                x                 l                   a
-        3   c           2020-12-12             5            3               1        7       9       0       0       7           9                  5               9   m            c                c           b           g                               1            0               7               1   o               h                h                 f                   a
-        4   d           2020-12-12             9            4               9        9       0       4       9       2           8                 10               9   b            l                b           d           o                               8            2              10               1   d               h                k                 n                   n
-        5   e           2020-12-02             4            8               3        6       2       2       3       8           8                  8               8   i            e                e           g           k                               3            1               8               0   b               l                w                 a                   p
-        6   f           2020-12-09             8            2               0       10       3       6       2       0           5                  2               6   i            u                c           i           o                               4            1               3               5   e               q                p                 t                   v
-        7   g           2020-12-10             5           10              10        8       6       2       1       3          10                  7               2   e            o                h           h           a                               9            5               8               8   q               p                k                 n                   f
-        8   h           2020-12-06             1            6              10        7       7       5       5       2           1                 10               1   t            w                f           o           k                              10           10               4               4   y               j                m                 j                   h
-        9   i           2020-12-06             6            2               8        1       5       1       5       3           6                  9              10   s            q                l           v           d                               6            5               0               6   o               f                v                 n                   x
-       10   j           2020-12-03             6            8               6        8       6       0       3       7           9                  6               2   v            s                w           o           a                               1           10               1               6   w               n                v                 x                   q
+        1   a           2025-06-02             9            0               0        2       9       3       2       7           1                  2               2   z            j                p           j           g                               5            6               8               7   x               j                k                 m                   d
+        2   b           2025-05-29             9            9               0        3       8       2       0       0           4                 10               7   o            g                y           s           c                               4            5               5               4   b               q                d                 s                   y
+        3   c           2025-06-06            10            3               1        8       5       2       3       8           4                  1               9   b            a                c           o           x                               3            9              10               0   e               t                h                 o                   f
+        4   d           2025-06-03             7           10              10        7       9       1       8       3           0                  9               7   e            m                w           t           d                               4            3               9               4   x               a                v                 r                   l
+        5   e           2025-06-02             2            1               9        5       8       9       4       9           4                  4               3   c            j                d           s           w                              10            3               8               8   w               r                g                 p                   f
+        6   f           2025-06-04             0            5               7        5       4       1      10       1           7                  2               0   u            y                p           e           l                               7            2               2               4   i               v                a                 d                   z
+        7   g           2025-06-01             9            1               3        5       0       7       6       5           5                  6               7   b            k                w           j           a                               5            1               3               2   q               t                m                 v                   g
+        8   h           2025-06-06             7            0               7        7       9       8       2       6           6                  5               0   m            n                s           g           i                              10            2               3               1   q               i                j                 x                   j
+        9   i           2025-05-31             7            5               5        5       1       1      10       7           2                  3               3   f            e                s           g           x                               6            1               8               1   n               l                u                 x                   v
+       10   j           2025-05-28             1            4               0       10       1       4       6       7           6                  5               9   a            u                n           g           k                               1            3               1               8   o               n                s                 k                   x
 </console>
 </unit>
 
@@ -139,7 +139,7 @@ Columns:
   - name: d_year
     type: integer
     precision: 4
-    comment: A column with a expression generator that extract the year from the date column
+    comment: A column with a expression generator that extracts the year from the date column
     DataGenerator:
       type: expression
       ColumnParents: d_date
@@ -185,25 +185,25 @@ Output:
 <console>
 Source                          Target                          Latency (ms)   Row Count   Error   Message
 -----------------------------   -----------------------------   ------------   ---------   -----   -------
-call_center@memgen              call_center@sqlite              131            1000
-catalog_page@memgen             catalog_page@sqlite             49             1000
-catalog_sales@memgen            catalog_sales@sqlite            130            1000
-customer@memgen                 customer@sqlite                 71             1000
-customer_address@memgen         customer_address@sqlite         64             1000
-customer_demographics@memgen    customer_demographics@sqlite    84             1000
-date_dim@memgen                 date_dim@sqlite                 1794           1000
-household_demographics@memgen   household_demographics@sqlite   32             1000
-income_band@memgen              income_band@sqlite              30             1000
-item@memgen                     item@sqlite                     145            1000
-promotion@memgen                promotion@sqlite                77             1000
-ship_mode@memgen                ship_mode@sqlite                42             1000
-store@memgen                    store@sqlite                    108            1000
-store_sales@memgen              store_sales@sqlite              94             1000
-time_dim@memgen                 time_dim@sqlite                 53             1000
-warehouse@memgen                warehouse@sqlite                79             1000
-web_page@memgen                 web_page@sqlite                 66             1000
-web_sales@memgen                web_sales@sqlite                131            1000
-web_site@memgen                 web_site@sqlite                 122            1000
+call_center@memgen              call_center@sqlite              21             100                 
+catalog_page@memgen             catalog_page@sqlite             7              100                 
+catalog_sales@memgen            catalog_sales@sqlite            29             100                 
+customer@memgen                 customer@sqlite                 15             100                 
+customer_address@memgen         customer_address@sqlite         11             100                 
+customer_demographics@memgen    customer_demographics@sqlite    15             100                 
+date_dim@memgen                 date_dim@sqlite                 209            100                 
+household_demographics@memgen   household_demographics@sqlite   9              100                 
+income_band@memgen              income_band@sqlite              8              100                 
+item@memgen                     item@sqlite                     54             100                 
+promotion@memgen                promotion@sqlite                12             100                 
+ship_mode@memgen                ship_mode@sqlite                7              100                 
+store@memgen                    store@sqlite                    18             100                 
+store_sales@memgen              store_sales@sqlite              15             100                 
+time_dim@memgen                 time_dim@sqlite                 10             100                 
+warehouse@memgen                warehouse@sqlite                16             100                 
+web_page@memgen                 web_page@sqlite                 11             100                 
+web_sales@memgen                web_sales@sqlite                17             100                 
+web_site@memgen                 web_site@sqlite                 17             100
 </console>
 </unit>
 
@@ -218,13 +218,6 @@ tabul data print '(sqlite/query_11.sql@tpcds_query)@sqlite'
 <console>
 customer_id   customer_first_name   customer_last_name   customer_email_address
 -----------   -------------------   ------------------   ----------------------
-bbi           g                     k                    e
-bbx           j                     a                    w
-bhj           h                     r                    i
-cw            z                     w                    p
-ga            q                     e                    d
-kd            w                     f                    h
-sl            a                     x                    q
 </console>
 </unit>
 

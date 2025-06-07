@@ -156,19 +156,28 @@ w_warehouse_sk   w_warehouse_sq_ft   w_warehouse_sq_ft_old_value
 </unit>
 
 ==== The update command ====
-  * Calling the [[docs:tabul:data:update|data update command]] with the [[docs:resource:select|query]] as [[docs:flow:source|source]] will update the ''warehouse'' table ''w_warehouse_sq_ft'' columns by ''10'' square meters.
+
+Calling the [[docs:tabul:data:update|data update command]] with the [[docs:resource:select|query]] as [[docs:flow:source|source]] will update the ''warehouse'' table ''w_warehouse_sq_ft'' columns by ''10'' square meters.
+
+
 <unit>
 <code bash>
-tabul data update '(warehouse_update.sql@howto)@sqlite' warehouse@sqlite
+tabul data update \
+    --transfer-mapping-strict false \
+    '(warehouse_update.sql@howto)@sqlite' warehouse@sqlite
 # The quotes are only mandatory in bash because parenthesis are a bash token (ie subshell)
 </code>
 <console>
 Source                                Target             Latency (ms)   Row Count   Error   Message
 -----------------------------------   ----------------   ------------   ---------   -----   -------
-(warehouse_update.sql@howto)@sqlite   warehouse@sqlite   15             2
+(warehouse_update.sql@howto)@sqlite   warehouse@sqlite   27             2
 </console>
 </unit>
-  * We can verify it by [[docs:tabul:data:print|printing]] the ''warehouse'' table
+where:
+  * `--transfer-mapping-strict` is set to `false` because the source column `w_warehouse_sq_ft_old_value` is not a target column.
+
+
+We can verify it by [[docs:tabul:data:print|printing]] the ''warehouse'' table
 <unit>
 <code bash>
 tabul data print warehouse@sqlite
