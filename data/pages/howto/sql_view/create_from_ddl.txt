@@ -46,7 +46,7 @@ With the [[docs:tabul:data:create|tabul data create]] command, if you use a [[do
 To execute the previous SQL script, the below the command should be executed:
 <unit>
 <code bash>
-tabul data create '(create_view_foo.sql@howto)'@sqlite
+tabul data create '(create_view_foo.sql@howto)@sqlite'
 # The quotes are only mandatory in bash because parenthesis are a bash token (ie subshell)
 </code>
 where:

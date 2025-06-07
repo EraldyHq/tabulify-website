@@ -158,7 +158,7 @@ A ''query data uri'' can be used with all [[docs:tabul:data:start|command]].
 Example with the [[docs:tabul:data:print|data print]] command.
 <unit>
 <code bash db_query_execute.cmd>
-tabul data print "(sqlite/query_11.sql@tpcds_query)"@sqlite
+tabul data print '(sqlite/query_11.sql@tpcds_query)@sqlite'
 # The quotes are only mandatory in bash because parenthesis are a bash token (ie subshell)
 </code>
 <console>

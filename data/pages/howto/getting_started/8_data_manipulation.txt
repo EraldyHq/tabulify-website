@@ -129,9 +129,9 @@ The [[docs:flow:source|source]] [[docs:resource:select|query]] needs to include:
 Example with the ''warehouse_update.sql'' [[docs:resource:file|file]] in the [[docs:connection:howto|howto]] connection
 <unit>
 <code bash>
-tabul data print warehouse_update.sql@howto
+tabul data print --type text warehouse_update.sql@howto
 </code>
-<console>
+<console sql>
 select
   w_warehouse_sk,
   w_warehouse_sq_ft+10 as w_warehouse_sq_ft, -- the name of the column match the name of the target column
@@ -144,7 +144,8 @@ from
   * The result of the [[docs:resource:select|select query]] can be seen with the [[docs:tabul:data:print|print command]]
 <unit>
 <code bash>
-tabul data print (warehouse_update.sql@howto)@sqlite
+tabul data print '(warehouse_update.sql@howto)@sqlite'
+# The quotes are only mandatory in bash because parenthesis are a bash token (ie subshell)
 </code>
 <console>
 w_warehouse_sk   w_warehouse_sq_ft   w_warehouse_sq_ft_old_value
@@ -158,7 +159,8 @@ w_warehouse_sk   w_warehouse_sq_ft   w_warehouse_sq_ft_old_value
   * Calling the [[docs:tabul:data:update|data update command]] with the [[docs:resource:select|query]] as [[docs:flow:source|source]] will update the ''warehouse'' table ''w_warehouse_sq_ft'' columns by ''10'' square meters.
 <unit>
 <code bash>
-tabul data update (warehouse_update.sql@howto)@sqlite warehouse@sqlite
+tabul data update '(warehouse_update.sql@howto)@sqlite' warehouse@sqlite
+# The quotes are only mandatory in bash because parenthesis are a bash token (ie subshell)
 </code>
 <console>
 Source                                Target             Latency (ms)   Row Count   Error   Message
@@ -181,7 +183,7 @@ w_warehouse_sk   w_warehouse_id     w_warehouse_name          w_warehouse_sq_ft 
 
 ===== Warehouse Delete =====
 
-==== The source CSV file for the delete ====
+==== The source CSV file for the DELETE ====
 The [[docs:tabul:data:delete|delete command]] takes as input a [[docs:flow:source|source data resource]] that contains the primary or unique key of a [[docs:flow:target|target table]].
 
 We want to delete the second record, the CSV file contains then the primary key with the value ''2''

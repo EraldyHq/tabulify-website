@@ -36,7 +36,9 @@ Below is the 20 first lines shown with the [[docs:tabul:data:head|head command]]
 tabul data head --type text --limit 20 sqlite/query_11.sql@tpcds_query
 </code>
 <console sql>
-The first 20 rows of the data resource (sqlite\query_11.sql@tpcds_query):
+The first 20 rows of the data resource (sqlite/query_11.sql@tpcds_query):
+lines
+-------------------------------------------------------------
 
 with year_total as (
  select c_customer_id customer_id
@@ -69,7 +71,7 @@ with year_total as (
 
 <unit>
 <code bash>
-tabul data print '(sqlite/query_11.sql@tpcds_query)'@sqlite
+tabul data print '(sqlite/query_11.sql@tpcds_query)@sqlite'
 # The quotes are only mandatory in bash because parenthesis are a bash token (ie subshell)
 </code>
 <console>
@@ -101,11 +103,11 @@ tabul data drop --not-strict query_11@sqlite
 For instance, if you want to [[docs:tabul:data:copy|copy]] its output to a [[docs:resource:table|table]] called ''query_11'', you would issue the following command:
 <unit>
 <code bash>
-tabul data copy '(sqlite/query_11.sql@tpcds_query)'@sqlite  query_11@sqlite
+tabul data copy '(sqlite/query_11.sql@tpcds_query)@sqlite'  query_11@sqlite
 # The quotes are only mandatory in bash because parenthesis are a bash token (ie subshell)
 </code>
 </unit>
-And the content of the new [[docs:resource:table|table]] is just the same than the output  of the ''query 11''.
+And the content of the new [[docs:resource:table|table]] is just the same as the output  of the ''query 11''.
 <unit>
 <code bash>
 tabul data print query_11@sqlite
@@ -121,15 +123,34 @@ AAAAAAAAOFCAAAAA   Timothy               Grogan               Timothy.Grogan@pn3
 </console>
 </unit>
 
+
+Let's drop it to keep a clean schema
+<unit>
+<code bash>
+tabul data drop query_11@sqlite
+</code>
+<console>
+data_uri
+---------------
+query_11@sqlite
+</console>
+</unit>
+
 ==== How to download a query as a CSV ====
 
 For instance, if you want to [[docs:tabul:data:copy|copy]] its output:
   * to a [[:docs:resource:csv|CSV]] called ''query_11.csv''
   * into the [[:docs:connection:cd|current directory (cd)]]
 you would issue the following command
+<unit display="none">
+Drop the target if exists
+<code bash>
+tabul data drop --not-strict  query_11.csv@cd
+</code>
+</unit>
 <unit>
 <code bash>
-tabul data copy '(sqlite/query_11.sql@tpcds_query)'@sqlite  query_11.csv@cd
+tabul data copy '(sqlite/query_11.sql@tpcds_query)@sqlite'  query_11.csv@cd
 # The quotes are only mandatory in bash because parenthesis are a bash token (ie subshell)
 </code>
 </unit>
@@ -147,6 +168,13 @@ AAAAAAAAJGBAAAAA   Bonnie                Harrison             Bonnie.Harrison@AK
 AAAAAAAAKMDAAAAA   Alexander             White                Alexander.White@7v2XsptkFrc50K.org
 AAAAAAAAOFCAAAAA   Timothy               Grogan               Timothy.Grogan@pn3NH2BDng.org
 </console>
+</unit>
+
+<unit display="none">
+Drop the target to not have it in the git repo if we run it from the repo
+<code bash>
+tabul data drop --not-strict  query_11.csv@cd
+</code>
 </unit>
 
 ===== Next =====

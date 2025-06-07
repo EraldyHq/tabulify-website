@@ -47,22 +47,22 @@ tabul connection list
 </code>
 <console>
 name            uri
--------------   ----------------------------------------------------------------------------------------------------
+-------------   ------------------------------------------------------------------------
 cd              file:///home/tabulify/
 desktop         file:///home/tabulify/Desktop
 entity          file:///opt/tabulify/resources/entity/
 home            file:///home/tabulify/
 howto           file:///opt/tabulify/resources/howto/
-log             file:///home/tabulify/.tabul/logs
+log             file:///home/tabulify/.tabul/logs/
 memory          mem:/
 mysql           jdbc:mysql://localhost:3306/howto
 noop            noop
 oracle          jdbc:oracle:thin:@localhost:1521/freepdb1
 postgres        jdbc:postgresql://localhost:5432/postgres
-smtp            smtp://localhost
-sqlite          jdbc:sqlite:////home/tabulify/.tabul/sqlite.db
-sqlite_target   jdbc:sqlite:////home/tabulify/.tabul/sqlite_target.db
-sqlserver       jdbc:sqlserver://localhost:1433;databaseName=AdventureWorks;encrypt=true;trustServerCertificate=true
+smtp            smtp://localhost:1025
+sqlite          jdbc:sqlite:////home/tabulify/.tabul/sqlite.sqlite3
+sqlite_target   jdbc:sqlite:////home/tabulify/.tabul/sqlite_target.sqlite3
+sqlserver       jdbc:sqlserver://localhost:1433;encrypt=true;trustServerCertificate=true
 temp            file:///tmp/
 tpcds           tpcds
 tpcds_query     file:///opt/tabulify/resources/tpcds_query/
