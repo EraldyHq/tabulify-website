@@ -16,40 +16,47 @@ The ''diff'' may be performed:
   * at the [[docs:resource:metadata|metadata level]], meaning
       * on the [[docs:resource:attribute|data resource attributes]]
       * on the [[docs:resource:structure|data structure]]
-  * or and at the data level record by record
+  * or and at the data level:
+    * logically: record by record
+    * physically: block by block
+
+===== Example =====
+
+
+  * [[howto:getting_started:10_resource_comparison]]
 
 
 
-<note>
-Howto: [[howto:getting_started:10_resource_comparison]]
-</note>
 
 
-===== Command and Arguments =====
+===== Arguments =====
 
-The ''compare'' operation is supported by the [[docs:tabul:data:diff|data compare command]]
-==== Data Selector (Source) ====
-The [[docs:resource:data_selector|data selector]] can choose any [[docs:resource:content|content resource]] such as:
-  * [[docs:resource:table|table]]
-  * [[docs:resource:query|query]]
-  * [[docs:resource:file|file]]
-==== Target Uri ====
+^ Argument ^ Default ^ Description ^
+| [[#type|type]] | ''content'' | The type of diff |
+| [[#reporttype|report-type]] | ''resource'' | The report type (level) |
+| [[#driver columns]] |  | The columns name that drive the diff (Should be set to the unique columns normally). Default to \\ the record id (ie row id, line id) for a data comparison \\ the column name for a data structure comparison |
+| ''fail'' | true | If true, the operation fails if the diff shows inequality |
+| [[#target-data-uri|target-data-uri]] | | [[docs:resource:target_data_uri|a target data uri]] to select the target resource (if not set, the comparison is done against an empty set) |
+| ''target-attributes'' | | The [[docs:resource:attribute|data attributes]] defined in a [[:docs:resource:data-definition|data definition]] format |
 
-  * The [[docs:resource:target_uri|target uri]] may be not given as argument. If this is the case, the comparison will except an empty target.
+==== Target Data Uri ====
 
-==== Report Level ====
+The [[docs:resource:target_data_uri|target uri]] may be not given as argument. If this is the case, the comparison will except an empty resource.
+
+==== Report Type ====
 The ''report-level'' argument defines what the command will return:
   * ''resource'' - a comparison report will be created for all comparison
   * ''record'' - a comparison report will be created for each comparison and the record data comparison will be available
   * ''all'' - all type of comparison report will be created
 
-==== Data Source ====
-The ''data-source'' defines the origin of the data to compare.
+==== Type ====
+The ''type'' defines the origin of the data to compare.
   * ''content'' - the default - the data to compare will be the records
-  * ''structure'' - the data to compare will be the column definitions.
+  * ''structure'' - the data to compare will be the [[:docs:resource:structure|column definitions]] without the attributes
+  * ''attributes'' - the data to compare will be the [[:docs:resource:attribute|data attributes]] without the structure.
 
-==== Unique Columns / Driver Columns ====
-The ''unique columns (driver columns)'' are the columns that drives the comparison process.
+==== Driver Columns ====
+The ''driver columns'' are the columns that drives the comparison process (normally the unique columns)
 
 For instance, if you compare two resources that have an unique id column,
   * if the comparison has fetched:

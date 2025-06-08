@@ -17,10 +17,16 @@ You can diff:
   * [[docs:resource:content|content data resource]]
   * the [[docs:resource:structure|structure of data resource]]
 
-<note>
-Howto : [[howto:getting_started:10_resource_comparison]]
-</note>
+===== Example =====
 
+  * [[howto:getting_started:10_resource_comparison]]
+
+
+===== Data Selector (Source) ======
+The [[docs:resource:data_selector|data selector]] can choose any [[docs:resource:content|content resource]] such as:
+  * [[docs:resource:table|table]]
+  * [[docs:resource:query|query]]
+  * [[docs:resource:file|file]]
 
 
 ===== Syntax =====

@@ -14,7 +14,7 @@ For instance, in:
   * [[docs:conf:vault|a connection vault]]
   * [[:docs:flow:pipeline|pipeline file]]
   * [[:docs:resource:logicalname|logical name]] definition
-  * [[:docs:resource:target_uri|target uri]] definition
+  * [[docs:resource:target_data_uri|target uri]] definition
 
 
 You can see the attributes that you can use:

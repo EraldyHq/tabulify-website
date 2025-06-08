@@ -201,7 +201,7 @@ where:
   * ''%%--source-attribute columnName=phones%%'' will set the [[docs:resource:json#attribute|JSON attribute columnName]] to ''phone''
   * ''%%--virtual-column name=logical_name%%'' will add the [[docs:resource:virtual_column|virtual column]] names ''name'' with the [[docs:resource:logicalname|logical name attribute]]  of the source
   * ''json/phone/*@howto'' is the [[docs:resource:data_selector|source data selector]]
-  * ''phones@sqlite'' is the [[docs:resource:target_uri|target uri]]
+  * ''phones@sqlite'' is the [[docs:resource:target_data_uri|target uri]]
 
 Output:
 <console>

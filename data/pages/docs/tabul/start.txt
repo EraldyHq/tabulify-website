@@ -4,8 +4,7 @@
         { "path": ":docs:tabli:start" }
     ],
     "description": "Tabul is the tabulify (tab) command line (li) client.",
-    "page_id": "dro1ljbupukyluuq2g12h",
-    "title": "Tabul - The command line terminal"
+    "page_id": "dro1ljbupukyluuq2g12h"
 }
 ---
 ====== Tabulify - Tabul ======

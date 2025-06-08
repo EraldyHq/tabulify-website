@@ -14,7 +14,7 @@ A ''connection name'' is a mandatory [[attribute|connection attribute]] as it's 
 This name is used in:
   * [[docs:resource:data_uri|data uri]].
   * [[docs:resource:selector|data resource selector]]
-  * [[docs:resource:target_uri|target uri]]
+  * [[docs:resource:target_data_uri|target uri]]
 
 ===== Naming Convention =====
 

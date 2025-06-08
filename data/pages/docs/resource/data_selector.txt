@@ -28,7 +28,7 @@ where:
   * ''globPath'' is a path composed  of [[docs:common:globbing|glob pattern]] separated by a [[#separator_syntax_support|path separator]]
 
 <note tip>
-You can reference each wildcard character in a [[target_uri|target data uri]] to define the target resources.
+You can reference each wildcard character in a [[target_data_uri|target data uri]] to define the target resources.
 </note>
 
 

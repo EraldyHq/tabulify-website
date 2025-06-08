@@ -68,7 +68,7 @@ The ''transfer'' operation is performed by the [[docs:tabul:data:transfer|tabul 
 
 
 ^ Name ^ Default ^ Description ^
-| ''target-uri'' | - | The [[docs:resource:target_uri|target uri]] (Mandatory) |
+| ''target-uri'' | - | The [[docs:resource:target_data_uri|target uri]] (Mandatory) |
 | ''target-operation'' | - | A [[#resource-operation|resource operation]] that will happens on the target before the transfer |
 | ''source-operation'' | - | A [[#resource-operation|resource operation]] that will happens on the source after the transfer |
 ^ Flow Property ^^^

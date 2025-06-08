@@ -26,7 +26,7 @@ This is an alias command of the [[transfer|data transfer command]] where the ''t
 The below command will:
   * select all [[:docs:resource:text|text file]]
   * from the [[:docs:connection:cd|current directory]]
-  * and change the extension to `md` in the [[:docs:resource:target_uri|target uri]] thanks to the [[:docs:common:globbing|back reference $1]]
+  * and change the extension to `md` in the [[docs:resource:target_data_uri|target uri]] thanks to the [[:docs:common:globbing|back reference $1]]
 
 ```ps
 tabul data  move *.txt@cd '$1.md@cd'

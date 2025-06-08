@@ -2,8 +2,7 @@
 {
     "description": "A system connection is a set of properties that defines a connection to a system.",
     "low_quality_page": "false",
-    "page_id": "urykgvyu794pc7noibkm6",
-    "title": "What is a connection"
+    "page_id": "urykgvyu794pc7noibkm6"
 }
 ---
 ====== Connection ======

@@ -20,7 +20,7 @@
 
 
 ^ Argument ^ Default ^ Description ^
-| [[:docs:resource:target_uri|target-uri]] | ''@smtp'' | the smtp server to use to send the email (by default, the local smtp server without any authentication) |
+| [[docs:resource:target_data_uri|target-uri]] | ''@smtp'' | the smtp server to use to send the email (by default, the local smtp server without any authentication) |
 | ''to'' | ''to'' property of the smtp connection | the receiver email addresses |
 | ''to_names'' | ''to_names'' property of the smtp connection | the receiver email addresses name |
 | ''from'' | ''from'' property of the smtp connection \\ if not found ''user@host'' | the sender email address |
@@ -34,7 +34,7 @@
 | ''html'' | | the html body of the email |
 | ''body-type'' | ''['html','txt']'' | the resources type seen as email body (ie ''html'' and ''txt'' file are seen as email body and not attachment) |
 | [[:docs:flow:granularity|granularity]] | ''resource'' | with the value: \\ - ''resource'': one email is send with all resources attached \\ - ''record'' - an email is send by record (mailinglist) |
-| ''log-target-uri'' | A [[:docs:resource:target_uri|target-uri]] | the location of the logs that stores the emails sent (By default, the table ''smtp'' in the [[:docs:connection:log|log]]). You can use this parameter to point to a table in your database to exclude email from a list in your selection. |
+| ''log-target-uri'' | A [[docs:resource:target_data_uri|target-uri]] | the location of the logs that stores the emails sent (By default, the table ''smtp'' in the [[:docs:connection:log|log]]). You can use this parameter to point to a table in your database to exclude email from a list in your selection. |
 
 ==== Record run ====
 

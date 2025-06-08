@@ -39,7 +39,7 @@ ie:
 
 You can use this extra variable in:
   * a [[docs:conf:template|template name]]
-  * a [[:docs:resource:target_uri|target uri]]
+  * a [[docs:resource:target_data_uri|target uri]]
 
 Example with the [[:docs:tabul:data:list|data list command]] that:
   * selects the table that starts with ''web'' on a [[:docs:system:tpcds|tpcds schema]]

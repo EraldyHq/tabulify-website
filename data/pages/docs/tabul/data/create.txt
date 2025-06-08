@@ -20,7 +20,7 @@ This command does not create any data. It creates only the [[docs:resource:metad
 
 
 
-If the [[:docs:resource:target_uri|target data uri]] is:
+If the [[docs:resource:target_data_uri|target data uri]] is:
   * specified. If the target is:
     * a [[:docs:resource:view|view]], a [[:docs:resource:select|sql select query]] has source is expected
     * otherwise the [[docs:resource:metadata|metadata definition]] of the [[docs:op:select|selected data resources]] is copied

@@ -7,7 +7,8 @@
     "description": "This Howto will show you how to copy the data definition of a SQL table from another SQL table",
     "low_quality_page": "false",
     "name": "Create a table from a table or view",
-    "page_id": "2t3hp19xnajogs73xf0lp"
+    "page_id": "2t3hp19xnajogs73xf0lp",
+    "title": "How to create a table from the definition of another SQL table"
 }
 ---
 
@@ -48,7 +49,7 @@ tabul data create store_sales@tpcds tpcds_sales@sqlite
 <note tip>
 where:
   * ''store_sales@tpcds'' is a [[docs:resource:data_selector|data selector]]
-  * and ''tpcds_sales@sqlite'' is a [[docs:resource:target_uri|target data URI]]
+  * and ''tpcds_sales@sqlite'' is a [[docs:resource:target_data_uri|target data URI]]
 </note>
 <console>
 source              target

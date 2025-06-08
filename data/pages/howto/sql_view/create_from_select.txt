@@ -159,7 +159,7 @@ where:
     * selects all [[:docs:resource:sql|sql files]] thanks to the [[:howto:tabul:glob|star (glob expression)]]
     * in the ''sqlite'' directory of the [[:docs:connection:tpcds_query|tpcds query directory]]
     * as [[:docs:flow:source|source]]
-  * ''%%tpcds_$1@sqlite%%'' is a [[:docs:resource:target_uri|target uri]] that will:
+  * ''%%tpcds_$1@sqlite%%'' is a [[docs:resource:target_data_uri|target uri]] that will:
       * create for each source,
       * a target with a name that:
          * starts with ''tpcds_''

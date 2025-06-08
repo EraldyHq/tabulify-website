@@ -4,12 +4,12 @@
     "page_id": "repj70wjne9kncbcqm21l"
 }
 ---
-====== Learning Tabulify - Step 10 - How to compare data resources ? ======
+====== Learning Tabulify - Step 10 - Data Diff, a step by step ======
 
 
 
-===== Comparison =====
-''Data Diff'' is the corner stone of every development because it validates the processing of data.
+===== About =====
+''Data Diff'' is the cornerstone of every development because it validates the processing of data.
 
 
 ''Tabulify'' ships with a [[docs:op:diff|Data diff operation]] that allows you to compare:
@@ -48,13 +48,21 @@ Kahneman,Daniel,1934-03-05,https://en.wikipedia.org/wiki/Daniel_Kahneman
 
 The fact that a record is missing can be easily spotted but there is a more subtle differences.
 
-===== The comparison report =====
 
-All comparison can be executed with the [[docs:tabul:data:diff|data diff command]] by giving as argument the [[docs:flow:source|source]] and [[docs:flow:target|target]] data resource.
+===== Failure Behavior =====
+
+By default, a diff that detects differences will fail (ie return a bad exit code).
+  * The `--no-fail` option changes this behavior.
+  * You don't need to set it normally but as we monitor our documentation for failure, we don't want to fail
+
+===== The Diff report =====
+All diff can be executed with the [[docs:tabul:data:diff|data diff command]] by giving as argument the [[docs:flow:source|source]] and [[docs:flow:target|target]] data resource.
 
 <unit>
 <code bash>
-tabul data diff characters.csv@howto characters_target.csv@howto
+tabul data diff \
+  --no-fail \
+  characters.csv@howto characters_target.csv@howto
 </code>
 <console>
 Comparison Report
@@ -71,13 +79,16 @@ The default report is to show a high level that lists the source and target reso
 
 There is a total of ''4'' records that were compared and ''3'' were differents. It doesn't seem quite right, let's take a look at it by asking a comparison report at the record level to see the difference in details.
 
-===== The record comparison report =====
+===== The detailed diff report =====
 
 To get a comparison on the record level, you set the ''report-level'' option to the ''record'' value.
 
 <unit>
 <code bash>
-tabul data diff --report-level record characters.csv@howto characters_target.csv@howto
+tabul data diff \
+    --no-fail \
+    --report-type record \
+    characters.csv@howto characters_target.csv@howto
 </code>
 <console>
 Comparison result between source (characters.csv@howto) and target (characters_target.csv@howto).
@@ -93,7 +104,7 @@ comp_id   comp_origin   comp_comment                                            
 </console>
 </unit>
 
-==== Data Comparison Report explained ====
+==== Detailed Diff Report explained ====
 
 === Columns ===
 
@@ -122,12 +133,16 @@ This is not right because the source has also a ''Kahneman'' record and they sho
 
 This is because the comparison was executed by ''record id'' and not by ''last name''. The next step will show you how to define the unique column used to drive the comparison.
 
-===== Data Comparison Report with Unique Column Definition =====
+===== Detailed Data Diff Report with Unique Column Definition =====
 
 To improve our comparison, we will define the unique column of our data resource with the ''%%--unique-column%%'' column option.
 <unit>
 <code bash>
-tabul data diff --report-level record --unique-column "Last Name" characters.csv@howto characters_target.csv@howto
+tabul data diff \
+   --no-fail \
+   --report-type record \
+   --driver-column "Last Name" \
+   characters.csv@howto characters_target.csv@howto
 </code>
 <console>
 Comparison result between source (characters.csv@howto) and target (characters_target.csv@howto).
