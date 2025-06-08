@@ -7,19 +7,18 @@
 
 
 ===== Define =====
-''define'' is a [[:docs:flow:supplier|supplier]] [[op|operation]] that defines one or more [[docs:resource:resource|data resources]].
+''define'' is a [[:docs:flow:supplier|supplier]] [[op|operation]] that defines one or more inline [[docs:resource:resource|data resources]]
+in a [[docs:flow:pipeline|pipeline file]].
 
 
-A [[select|select operation]] may not return any [[docs:resource:resource|data resources]] but the ''define'' operation returns always the data resource that it defines.
-
-This operation is used:
-  * to define inline data resource in a [[docs:flow:pipeline|pipeline file]]
-  * before a [[create|create]] or [[fill|fill]] operation that will create data resource
+Note that a [[select|select operation]] may not return any [[docs:resource:resource|data resources]] but the ''define'' operation must return always the data resource that it defines.
 
 
+This is a first step (known as the [[docs:flow:supplier|supplier step]]) because it supplies [[docs:resource:resource|data resources]] to the others operations in the pipeline.
 
+===== Example =====
 
-
+  * [[howto:pipeline:define]]
 
 ===== Arguments =====
 The ''define'' operations accept the following arguments.
@@ -30,74 +29,3 @@ The ''define'' operations accept the following arguments.
 | ''data-attributes'' | no | The data attributes in a [[docs:resource:data-definition|data definition format]] |
 | ''data-resources'' | | to define more than one data resource (a list of inline data resources) |
 
-===== Usage =====
-This operation is only available as [[docs:flow:step|step]] in a [[docs:flow:pipeline|pipeline pipeline]] (ie not in a [[docs:tabul:data:start|tabul data command]])
-
-
-This is a first step (known as the [[docs:flow:supplier|supplier step]]) because it supplies [[docs:resource:resource|data resources]] to the others operations in the pipeline.
-
-
-==== Single Data Resource ====
-
-Example: A ''color'' data resource with two columns and 3 records.
-
-<unit>
-<file yaml pipeline/define_single_inline.yml>
-pipeline:
-  - name: "Define"
-    comment: "This operation define the tabular data resource named 'colors' with two columns"
-    operation: "define"
-    args:
-      data-attributes:
-        logicalName: "colors"
-        columns: ["id","color"]
-      data:
-        - ["1", "blue"]
-        - ["2", "red"]
-        - ["3", "yellow"]
-  - name: "Print"
-    comment: "Print the colors resource"
-    operation: "print"
-
-</file>
-If you [[docs:tabul:flow:execute|execute this pipeline]]
-<code bash>
-tabul flow execute pipeline/define_single_inline.yml@howto
-</code>
-you will get the data of the ''colors'' data resource [[docs:tabul:data:print|printed]] in a tabular format.
-<console>
-List of executions
-ExecutionId   OperationName   DataPathsCount   DataPathsList
------------   -------------   --------------   -------------
-1             define          0
-</console>
-</unit>
-==== Multiple Inline Data Resources ====
-
-Two inline data resources ''colors'' and ''characters''
-<code yaml>
-pipeline:
-  - name: 'Define'
-    operation: 'define'
-    args:
-      data-resources:
-        - data-attributes:
-            logicalName: "colors"
-            columns: ["id","color"]
-          data:
-            - ["1", "blue"]
-            - ["2", "red"]
-            - ["3", "yellow"]
-        - data-attributes:
-            logicalName: "characters"
-            columns:
-              - name: "id"
-                type: integer
-              - name: "name"
-              - name: "last_name"
-          data:
-            - [1, "Arnold","Schwarzy"]
-            - [2, "Don","Norman"]
-            - [3, "Dale","Carnegie"]
-            - [4, "Daniel","Kahneman"]
-</code>

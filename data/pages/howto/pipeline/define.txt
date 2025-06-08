@@ -1,0 +1,77 @@
+====== How to use the define operation? ======
+
+
+===== About =====
+This ''howto'' shows you how to use the [[:docs:op:define|define data operation]] to create data resources in the [[:docs:flow:pipeline|pipeline file]] (ie inline data resources)
+
+This operation is only available as [[docs:flow:step|step]] in a [[docs:flow:pipeline|pipeline]] (ie not in a [[docs:tabul:data:start|tabul data command]])
+
+
+This is a first step (known as the [[docs:flow:supplier|supplier step]]) because it supplies [[docs:resource:resource|data resources]] to the others operations in the pipeline.
+
+===== Example =====
+
+==== Single Data Resource ====
+
+Example: A ''color'' data resource with two columns and 3 records.
+
+<unit>
+<file yaml pipeline/define_single_inline.yml>
+pipeline:
+  - name: "Define"
+    comment: "This operation define the tabular data resource named 'colors' with two columns"
+    operation: "define"
+    args:
+      data-attributes:
+        logicalName: "colors"
+        columns: ["id","color"]
+      data:
+        - ["1", "blue"]
+        - ["2", "red"]
+        - ["3", "yellow"]
+  - name: "Print"
+    comment: "Print the colors resource"
+    operation: "print"
+
+</file>
+If you [[docs:tabul:flow:execute|execute this pipeline]]
+<code bash>
+tabul flow execute pipeline/define_single_inline.yml@howto
+</code>
+you will get the data of the ''colors'' data resource [[docs:tabul:data:print|printed]] in a tabular format.
+<console>
+List of executions
+ExecutionId   OperationName   DataPathsCount   DataPathsList
+-----------   -------------   --------------   -------------
+1             define          0
+</console>
+</unit>
+==== Multiple Inline Data Resources ====
+
+Two inline data resources ''colors'' and ''characters''
+<code yaml>
+pipeline:
+  - name: 'Define'
+    operation: 'define'
+    args:
+      data-resources:
+        - data-attributes:
+            logicalName: "colors"
+            columns: ["id","color"]
+          data:
+            - ["1", "blue"]
+            - ["2", "red"]
+            - ["3", "yellow"]
+        - data-attributes:
+            logicalName: "characters"
+            columns:
+              - name: "id"
+                type: integer
+              - name: "name"
+              - name: "last_name"
+          data:
+            - [1, "Arnold","Schwarzy"]
+            - [2, "Don","Norman"]
+            - [3, "Dale","Carnegie"]
+            - [4, "Daniel","Kahneman"]
+</code>
