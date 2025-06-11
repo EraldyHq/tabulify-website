@@ -21,7 +21,7 @@
 ==== tabul ====
 The [[docs:tabul:option|tabul option]] syntax is the following:
 <code>
---virtual-column "virtualColumnName=resourceAttributeName "
+--virtual-column "virtualColumnName=resourceAttributeName"
 </code>
 where:
   * ''virtualColumnName'' is the name of the column added

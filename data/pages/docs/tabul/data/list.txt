@@ -12,7 +12,7 @@
 ''data list'' is a [[docs:tabul:command|command]] of the [[docs:tabul:data:start|data module]] that lists the [[docs:resource:resource|data resources]] and their [[docs:resource:attribute|attributes]] in a [[docs:resource:tabular|tabular format]].
 
 <note>
-The ''data list'' is a super command that extends the [[wp>Ls|shell ls command]] to support not only the listing of [[docs:resource:file|files]] but also of [[docs:resource:table|tables]] (and by extension all other [[docs:resource:resource|data resource]])
+The ''data list'' is a super command that extends the [[wp>Ls|shell ls command]] to support not only the listing of [[docs:resource:file|files]] but also of [[docs:resource:table|tables]] (and by extension all other [[docs:resource:resource|data resources]])
 </note>
 
 It implements the [[:docs:op:select|data resource select operation]].
