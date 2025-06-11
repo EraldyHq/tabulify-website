@@ -9,7 +9,9 @@
 ====== Data Resource - Target Data URI ======
 
 ===== About =====
-A ''target data uri'' is a [[:docs:resource:data_uri|data uri]] that defines one or more [[docs:flow:target|target resources]] for [[docs:op:transfer|data transfer operations]].
+A ''target data uri'' is a [[:docs:resource:data_uri|data uri]] that defines one or more [[docs:flow:target|target resources]] via template pattern for operation with targets such as 
+  * [[docs:op:transfer|transfer operations]]
+  * [[:docs:op:diff|diff operation]]
 
 
 ===== Example =====
@@ -45,9 +47,9 @@ $2@sqlite
 
 ==== File system ====
 
-In a shell such as powsershell, the ''$'' character should be quoted. (That's why [[docs:common:bash|we recommand bash]])
+In a [[docs:common:shell|shell]] such as powershell, the ''$'' character should be quoted.
 
-<code bash>
+<code powershell>
 tabul data copy '*/bootstrap.min.css@cd' '/boot/bootstrap.$1.min.css@cd'
 </code>
 
