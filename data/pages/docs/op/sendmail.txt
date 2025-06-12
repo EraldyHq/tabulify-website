@@ -29,7 +29,7 @@
 | ''cc_names'' | ''cc_names'' property of the smtp connection | the carbon copy email address names (separated by a ;) |
 | ''bcc'' | ''bcc'' property of the smtp connection | the blind carbon copy email addresses (separated by a ;) |
 | ''bcc_names'' | ''bcc_names'' property of the smtp connection | the blind carbon copy email address names (separated by a ;) |
-| ''subject'' | the [[docs:resource:logicalname|logical name]] of the resource | the email subject |
+| ''subject'' | the [[docs:resource:logical_name|logical name]] of the resource | the email subject |
 | ''txt'' | | the text body of the email |
 | ''html'' | | the html body of the email |
 | ''body-type'' | ''['html','txt']'' | the resources type seen as email body (ie ''html'' and ''txt'' file are seen as email body and not attachment) |
@@ -49,7 +49,7 @@ When running the [[:howto:email:mailing_list|send operation by record]], the sen
 | ''cc_names'' | yes | The ''cc_names'' property of the smtp connection | The names of the ''cc'' address |
 | ''bcc'' | yes | The ''bcc'' property of the smtp connection | The ''bcc'' address (separated by a ;) |
 | ''bcc_names'' | yes | The ''bcc_names'' property of the smtp connection | The names of the ''bcc'' address |
-| ''subject'' | yes | [[docs:resource:logicalname|logical name]] of the resource and record id |
+| ''subject'' | yes | [[docs:resource:logical_name|logical name]] of the resource and record id |
 | ''txt'' | Mandatory if html is not present | none | The email text body |
 | ''html'' | Mandatory if txt is not present | none | The email html body |
 

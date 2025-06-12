@@ -43,7 +43,7 @@ You can use this extra variable in:
 
 Example with the [[:docs:tabul:data:list|data list command]] that:
   * selects the table that starts with ''web'' on a [[:docs:system:tpcds|tpcds schema]]
-  * shows the [[:docs:resource:logicalname|logical]] and the ''1'' first back-reference value
+  * shows the [[docs:resource:logical_name|logical]] and the ''1'' first back-reference value
 
 <unit>
 <code bash>

@@ -23,9 +23,28 @@ This is a first step (known as the [[docs:flow:supplier|supplier step]]) because
 ===== Arguments =====
 The ''define'' operations accept the following arguments.
 
+^ Arguments ^ Definition ^
+| ''data-resource'' | One [[#data resource definition]] |
+| ''data-resources'' | A list of [[#data resource definition]]   |
+
+
+==== Data resource Definition ====
+
+The following argument defines one data resource and can be set:
+  * once in the `data-resource` argument
+  * multiple time in the `data-resources` argument
+
+You can define a data resource by:
+  * `data-uri`
+  * or by `data` (inline rows)
+but not both
+
 ^ Arguments ^ Mandatory ^ Definition ^
+^ One resource definition by Data Uri ^^^
 | ''data-uri'' | only if ''data'' is not defined | The [[docs:resource:data_uri|data uri]] is the location of the resource |
+| ''media-type'' |  | The [[:docs:resource:type|media type]] of the data uri resource |
+^ One resource definition by Data ^^^
 | ''data'' | only if ''data-uri'' is not defined | The ''data'' as a list of [[docs:resource:record|records]] (the data are in the inline) |
+^ The optional data attributes ^^^
 | ''data-attributes'' | no | The data attributes in a [[docs:resource:data-definition|data definition format]] |
-| ''data-resources'' | | to define more than one data resource (a list of inline data resources) |
 

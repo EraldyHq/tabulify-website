@@ -17,7 +17,7 @@ To generate data, you need to create a [[docs:resource:generator|generator file]
 
 The below [[docs:resource:generator|data resource generator]]:
   * has the [[docs:resource:name|name]] ''sequence_time--datagen.yml''
-  * has the [[docs:resource:logicalname|logical name]] ''sequence_time''
+  * has the [[docs:resource:logical_name|logical name]] ''sequence_time''
   * will generate ''30'' values (''MaxRecordCount'' count)
   * has a column named ''id'' that has [[docs:generator:sequence|sequence data generator]] that:
       * starts by default at the value ''1''

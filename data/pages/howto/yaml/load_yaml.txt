@@ -201,7 +201,7 @@ where:
   * ''resourceAttributeName'' is the name of [[docs:resource:attribute|resource attribute]].
 
 For instance, if we want to add:
-  * the [[docs:resource:logicalname|logical name attribute]]
+  * the [[docs:resource:logical_name|logical name attribute]]
   * into a column called ''name'',
 we would add ''--virtual-column name=logical_name''
 
@@ -224,7 +224,7 @@ data                                                                            
 
 
 To reload the YAML files:
-  * with the extra column ''name'' and the [[docs:resource:logicalname|file logical name]]
+  * with the extra column ''name'' and the [[docs:resource:logical_name|file logical name]]
   * with a column ''data'' containing the ''YAML document''
 the syntax of the [[docs:tabul:data:insert|tabul data insert]] would be:
 <unit>
@@ -238,7 +238,7 @@ tabul data insert \
 where:
   * ''%%--target-operation%%'' will ''drop'' the target ''user@sqlite''
   * ''%%--source-attribute columnName=data%%'' will set the [[docs:resource:json#attribute|JSON attribute columnName]] to ''data''
-  * ''%%--virtual-column name=logical_name%%'' will add the [[docs:resource:virtual_column|virtual column]] names ''name'' with the [[docs:resource:logicalname|logical name attribute]]  of the source
+  * ''%%--virtual-column name=logical_name%%'' will add the [[docs:resource:virtual_column|virtual column]] names ''name'' with the [[docs:resource:logical_name|logical name attribute]]  of the source
   * ''yaml/phonebook/*@howto'' is the [[docs:resource:data_selector|source data selector]]
   * ''user@sqlite'' is the [[docs:resource:target_data_uri|target uri]]
 
