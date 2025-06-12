@@ -132,7 +132,7 @@ You can add the data resource attribute as extra-column via the [[virtual_column
 
 The following attributes are common:
   * [[name|name]] - the name of the [[resource|data resource]]
-  * [[logicalname|logicalName]] - the name of the [[resource|data resource]] without any extension
+  * [[logical_name|logicalName]] - the name of the [[resource|data resource]] without any extension
   * [[count|count]] - the number of children (Records for a [[table|table]], File or Directory for a [[directory|directory]], ..)
   * [[size|size]] - the size in byte on disk (may be blank if not yet supported)
   * [[path|path]] - the relative (if possible) path in the [[docs:connection:connection|connection]]
