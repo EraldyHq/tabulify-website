@@ -8,7 +8,7 @@
 
 ===== About =====
 
-''temp'' is [[built-in|built-in connection]] that points to the temporary [[docs:resource:directory|directory]] of the [[docs:system:local|local file system]].
+''tmp'' is [[built-in|built-in connection]] that points to the temporary [[docs:resource:directory|directory]] of the [[docs:system:local|local file system]].
 
 
 
@@ -16,7 +16,7 @@
 With the [[docs:tabul:connection:info|connection info]] command
 <unit>
 <code bash>
-tabul connection info temp
+tabul connection info tmp
 </code>
 <console>
 Information about the connection (temp)
