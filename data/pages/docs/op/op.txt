@@ -31,7 +31,8 @@ Because all data structure are represented logically as a [[docs:resource:resour
 | [[docs:op:concat|concat]] | ''cat'' | Concatenate multiple data resources into one |
 | [[docs:op:copy|copy]] | | Create a copy of a resource on data and metadata level |
 | [[docs:op:delete|delete]] | | Delete data from a data resource |
-| [[docs:op:diff|diff]] |  | Compare two data resources
+| [[docs:op:diff|diff]] |  | Compare two data resources |
+| [[docs:op:distinct|distinct]] |  | Filter data resource duplicate |
 | [[docs:op:drop|drop]] | [[docs:op:drop|remove]] | Remove the data and metadata of a data resource |
 | [[docs:op:fill|fill]] | [[docs:op:fill|generate]] | Generate data for a resource |
 | [[docs:op:insert|insert]] | [[docs:op:insert|append]] | Add data into a resource |
