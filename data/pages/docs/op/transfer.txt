@@ -101,8 +101,12 @@ The ''transfer'' operation supports the following values for the ''transfer-oper
 
 Alias of [[copy|copy]]:
 ^ Name ^ Alias ^ Local Equivalent Metadata Operation ^
-|   [[move|move]] | alias of [[copy|copy]] with source drop | [[rename|rename]] |
-|   [[replace|replace]] | alias of [[copy|copy]] with target drop | - |
+| [[move|move]] | alias of [[copy|copy]] with source drop | [[rename|rename]] |
+| [[replace|replace]] | alias of [[copy|copy]] with target drop | - |
+
+You can also perform a [[concat|concat]] in a stream fashion with the following argument:
+  * ''transfer-operation'': [[insert|insert]] 
+  * [[docs:resource:target_data_uri|target-data-uri]]: a constant target name (ie no [[:docs:resource:target_pattern|target pattern]]) 
 
 ==== Default Transfer Operation ====
 

@@ -28,6 +28,7 @@ Because all data structure are represented logically as a [[docs:resource:resour
 
 
 ^ Data Operations ^ Synonym ^ Description ^
+| [[docs:op:concat|concat]] | ''cat'' | Concatenate multiple data resources into one |
 | [[docs:op:copy|copy]] | | Create a copy of a resource on data and metadata level |
 | [[docs:op:delete|delete]] | | Delete data from a data resource |
 | [[docs:op:diff|diff]] |  | Compare two data resources

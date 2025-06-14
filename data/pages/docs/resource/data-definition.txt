@@ -32,7 +32,7 @@ The [[docs:resource:generator|resource generator]] uses this format to define th
 
 ===== Usage =====
 ==== File ====
-If you have a [[file|file]] with the [[logicalname|logical name]] ''foo'', you may defined its data definition by creating the yaml file ''foo--datadef.yml'' in the same directory.
+If you have a [[file|file]] with the [[logical_name|logical name]] ''foo'', you may defined its data definition by creating the yaml file ''foo--datadef.yml'' in the same directory.
 
 ==== Fragment ====
 This format is used in [[:docs:flow:supplier|data supplier pipeline step]] such as:
@@ -54,7 +54,7 @@ Example:
 LogicalName: LogicalName
 </code>
 where
-  * ''logicalName'' is the [[logicalname|logical name]] of the [[resource|resource]] (Default to the name of the file without structure information).
+  * ''logicalName'' is the [[logical_name|logical name]] of the [[resource|resource]] (Default to the name of the file without structure information).
 
 ==== Relational Structure ====
 
