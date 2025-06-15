@@ -3,22 +3,14 @@
 
 ===== About =====
 
-''Concat'' is an [[docs:op:op|data operation]] that will concatenate multiple data resources into one.
+''Concat'' is a [[docs:op:op|data operation]] that will concatenate multiple data resources into one.
 
 
-===== Concat vs Transfer =====
 
-You can also concatenate with the [[docs:op:transfer|transfer operation]]. 
+It's an alias of the [[docs:op:transfer|transfer operation]] where:
+  * the method is set to ''insert''
+  * the target name stays the same for all sources (ie the [[:docs:resource:target_data_uri|target data uri]] does not have a [[:docs:resource:target_pattern|target pattern]])
 
-The [[docs:op:transfer|transfer operation]] will concatenate when:
-  * the method is ''insert''
-  * the target name stays the same (ie is not a [[:docs:resource:target_pattern|target pattern]])
 
-The ''concat'' operation is an in-memory operation, if you want to concatenate large files, you should use the [[docs:op:transfer|transfer operation]].
 
-===== Arguments =====
 
-^ Name ^ Default ^ Description ^ 
-| ''target-name'' | | The [[:docs:resource:name|name]] of the concatenate data resource |
-| ''target-attributes'' | | The [[docs:resource:attribute|data resources attributes]] in a [[:docs:resource:data-definition|data definition format]] |
-| ''sequence-column'' | | A sequence column name. If the value is not empty, a extra column is added filled with a sequence number |
