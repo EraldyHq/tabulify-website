@@ -59,7 +59,7 @@ Table names are lowercase normalized by SQLite, not by Tabulify. The column name
 
 <code sql>
 create table FOO (bar char);
--- is equivalent to 
+-- is equivalent to
 create table foo (bar char);
 -- but not to
 create table foo (BAR char);
@@ -68,3 +68,36 @@ The second statement will result in the following error:
 <console>
 [SQLITE_ERROR] SQL error or missing database (table foo already exists)
 </console>
+
+
+===== SQLite does not support  =====
+
+Sqlite does not support:
+
+  * `select for update` statement because a transaction locks the entire database, not a row.
+  * no `sequence` object. Sequences are present on:
+     * a [https://www.sqlite.org/lang_createtable.html#rowid|INTEGER PRIMARY KEY column] already behaves as a rowid alias and automatically gets assigned a value one larger than the largest existing value in the table (or 1 if the table is empty).
+     * a `autoincrement` column, but you can't reuse the lost id.
+  * comments. No table or column comment, you need to create a table to store them.
+  * alter statement to add a constraint (primary key, index, foreign key)
+
+==== Migration needs rebuilt ====
+
+<code sql>
+PRAGMA foreign_keys = OFF;
+
+-- Create new table with the desired constraint
+CREATE TABLE my_table_new ();
+
+-- Copy data over
+INSERT INTO my_table_new SELECT * FROM my_table;
+
+-- Drop the old table
+DROP TABLE my_table;
+
+-- Rename the new one
+ALTER TABLE my_table_new RENAME TO my_table;
+
+PRAGMA foreign_key_check; -- verify integrity
+PRAGMA foreign_keys = ON;
+</code>
